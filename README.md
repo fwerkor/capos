@@ -21,7 +21,7 @@ CapOS is an lightweight open source server operating system derived from OpenWrt
 
 Some key highlights of CapOS:
 
-•**Highly Lightweight**: CapOS is built from OpenWrt, an embedded operating system based on Linux. It has a small footprint that can run on various hardware from routers to PCs. The lightweight design allows CapOS to run smoothly even on devices with limited resources.
+* **Highly Lightweight**: CapOS is built from OpenWrt, an embedded operating system based on Linux. It has a small footprint that can run on various hardware from routers to PCs. The lightweight design allows CapOS to run smoothly even on devices with limited resources.
 
 •**Friendly Web UI**: CapOS provides an simple but powerful web-based interface LuCI for easy server management. Users can easily manage system settings, monitor resources and install packages through the web UI without much Linux knowledge.  
 
@@ -132,17 +132,12 @@ For a list of supported devices see the [OpenWrt Hardware Database](https://open
 * [Developer Documentation](https://openwrt.org/docs/guide-developer/start)
 * [Technical Reference](https://openwrt.org/docs/techref/start)
 
-### Support Community
+### Community
 
-* [Forum](https://forum.openwrt.org): For usage, projects, discussions and hardware advise.
-* [Support Chat](https://webchat.oftc.net/#openwrt): Channel `#openwrt` on **oftc.net**.
-
-### Developer Community
-
-* [Bug Reports](https://bugs.openwrt.org): Report bugs in OpenWrt
-* [Dev Mailing List](https://lists.openwrt.org/mailman/listinfo/openwrt-devel): Send patches
-* [Dev Chat](https://webchat.oftc.net/#openwrt-devel): Channel `#openwrt-devel` on **oftc.net**.
+* [Github Issues](https://github.com/fwerkor/capos/Issues): For bug feedback, feature update suggestions. 
+* [FWERKOR Blog](https://blog.fwerkor.com): You can comment below the article. 
+* 
 
 ## License
 
-OpenWrt is licensed under GPL-2.0
+CapOS is licensed under GPL-2.0
