@@ -13,8 +13,6 @@ At present, this project is still in the initial stage of development, and there
 ***目前本项目还处于开发的起始阶段，暂时没有可用版本。***
 
 
-***README文档仍在编辑中，敬请期待。***
-
 ## Features
 
 CapOS is an lightweight open source server operating system derived from OpenWrt. It is designed to provide an easy-to-use Linux server experience for beginners. CapOS makes full use of the advantages of OpenWrt such as the LuCI web interface to develop into a fully functional server OS.
