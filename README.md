@@ -12,6 +12,13 @@ At present, this project is still in the initial stage of development, and there
 
 目前本项目还处于开发的起始阶段，暂时没有可用版本。
 
+
+
+/n/n/n
+
+README文档仍在编辑中，敬请期待。
+
+
 ## Download
 
 Generally speaking, the server of the FWERKOR team will automatically obtain the source code from Github and compile it every once in a while. The compiled version will be available for viewing and downloading in *FR-REPO*
