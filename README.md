@@ -14,7 +14,7 @@ At present, this project is still in the initial stage of development, and there
 
 
 
-/n/n/n
+\n\n\n
 
 README文档仍在编辑中，敬请期待。
 
