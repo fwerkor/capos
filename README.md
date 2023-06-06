@@ -10,10 +10,10 @@ Powered by FWERKOR Team, especially Castronaut.
 
 At present, this project is still in the initial stage of development, and there is no version available for the time being. 
 
-目前本项目还处于开发的起始阶段，暂时没有可用版本。
+***目前本项目还处于开发的起始阶段，暂时没有可用版本。***
 
 
-README文档仍在编辑中，敬请期待。
+***README文档仍在编辑中，敬请期待。***
 
 ## Features
 
