@@ -37,21 +37,25 @@ Some key highlights of CapOS:
 
 CapOS aims to provide beginners with an easy-to-use yet practical Linux server OS for learning and practice. The simplified web UI and CLI makes it easy to get started with CapOS. If you are looking for a lightweight but extensible Linux server solution, try CapOS! CapOS is open and free for all. Your feedback and suggestions will help us improve CapOS.
 
-CapOS是一个基于OpenWrt的开源服务器操作系统。 它旨在为初学者提供易于使用的 Linux 服务器操作系统。 CapOS 利用 OpenWrt 的优势，包括 LuCI 基于 Web 的管理界面，定制开发成一个全功能的服务器操作系统。
+CapOS 是从 OpenWrt 衍生出来的轻量级开源服务器操作系统。 它旨在为初学者提供易于使用的 Linux 服务器体验。 CapOS充分利用了OpenWrt的LuCI web界面等优势，开发成为一个功能齐全的服务器操作系统。
 
-CapOS 的一些关键特性：
+CapOS 的一些主要亮点：
 
-* **友好的网络用户界面**：CapOS配备了一个简单但功能强大的基于网络的用户界面LuCI，这使得服务器管理对于初学者来说更加容易。 用户可以通过 Web UI 轻松管理系统设置、监控资源和安装软件包。
+* **高度轻量级**：CapOS 由基于 Linux 的嵌入式操作系统 OpenWrt 构建而成。 它占地面积小，可以在从路由器到 PC 的各种硬件上运行。 轻量级设计让 CapOS 即使在资源有限的设备上也能流畅运行。
 
-* **轻量级和可扩展性**：CapOS 由基于Linux 的嵌入式操作系统OpenWrt 构建而成。 它是轻量级的而且具有高度的可扩展性，用户可以根据需要安装许多服务器应用程序和包。
+* **友好的 Web 用户界面**：CapOS 提供了一个简单但功能强大的基于 Web 的界面 LuCI，以便于服务器管理。 用户无需太多 Linux 知识即可通过 Web UI 轻松管理系统设置、监控资源和安装软件包。
 
-* **易于学习**：CapOS 为用户提供了一个简单干净的命令行界面。 加强了标准的 Linux 命令和自动化，以简化操作和维护。
+* **高度可扩展**：虽然轻量级，但 CapOS 具有高度可扩展性。 用户可以根据自己的需要，按需安装和运行许多服务器应用程序和软件包。 CapOS 旨在在轻量级和实用性之间取得平衡。
 
-* **稳定安全**：CapOS基于安全稳定的Linux系统OpenWrt开发。 配备最新的Linux内核和软件包，确保系统安全稳定。
+* **易于学习**：CapOS 具有简洁的命令行界面和标准化的 Linux 命令以简化操作。 自动化和简化的 CLI 让初学者可以轻松上手 CapOS。
 
-* **开源**：CapOS 在GPL 许可下发布。 欢迎开源社区为这个项目做出贡献，让 CapOS 更好地为用户服务。
+* **稳定安全**：CapOS基于安全稳定的Linux系统OpenWrt开发，采用最新的内核和软件包，最大限度保证安全性和稳定性。
 
-CapOS旨在为初学者提供一个简单易用的Linux服务器系统，用于自学和实践。 图形化的 Web UI 和标准化的 CLI 都可以帮助初学者轻松上手 CapOS。 如果您对 Linux 服务器感兴趣，欢迎尝试！ CapOS 对所有人开放且免费。 非常感谢您的反馈和建议，以帮助我们改进 CapOS。
+* **在各种硬件上运行**：CapOS 可以在从路由器、PC 到虚拟机的流行硬件上运行。 轻巧的设计使得即使在资源受限的设备上也能运行 CapOS。
+
+* **开源**：CapOS 在 GPL 许可下发布。 欢迎开源社区做出贡献，使 CapOS 更加轻巧、可扩展和用户友好。
+
+CapOS 旨在为初学者提供一个易于使用且实用的 Linux 服务器操作系统，以供学习和实践。 简化的 Web UI 和 CLI 使 CapOS 的入门变得容易。 如果您正在寻找轻量级但可扩展的 Linux 服务器解决方案，请尝试 CapOS！ CapOS 对所有人开放且免费。 您的反馈和建议将帮助我们改进 CapOS。
 
 ## Download
 
