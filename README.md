@@ -5,7 +5,7 @@ CapOS is an open source server operating system based on OpenWrt. It aims to pro
 CapOS是一个基于OpenWrt的开源服务器操作系统。 它旨在为初学者提供易于使用的 Linux 服务器操作系统。 CapOS 利用 OpenWrt 的优势，包括 LuCI 基于 Web 的管理界面，定制开发成一个全功能的服务器操作系统。
 
 
-Powered by FWERKOR Team, especially Castronaut. 
+Powered by FWERKOR Team, especially by Castronaut. 
 
 
 At present, this project is still in the initial stage of development, and there is no version available for the time being. 
@@ -59,9 +59,9 @@ CapOS 旨在为初学者提供一个易于使用且实用的 Linux 服务器操�
 
 ## Download
 
-Generally speaking, the server of the FWERKOR team will automatically obtain the source code from Github and compile it every once in a while. The compiled version will be available for viewing and downloading in *FR-REPO*
+Generally speaking, the server of the FWERKOR team will automatically obtain the source code from Github and compile it every once in a while. The compiled version will be available for viewing and downloading in *FR-REPO*.
 
-通常来说，FWERKOR团队的服务器会每隔一段时间自动从Github获取源代码并进行编译，编译完成后的版本将可以在*FR-REPO*查看并下载
+通常来说，FWERKOR团队的服务器会每隔一段时间自动从Github获取源代码并进行编译，编译完成后的版本将可以在*FR-REPO*查看并下载。
 
 * [FR-REPO](https://repo.fwerkor.com/)
 
@@ -69,7 +69,9 @@ Generally speaking, the server of the FWERKOR team will automatically obtain the
 
 ## 
 
-An advanced user may require additional or specific package. (Toolchain, SDK, ...) For everything else than simple firmware download, try the wiki download page:
+The compiled version we provide may not include support for the user's hardware architecture, so users with relevant professional knowledge can compile CapOS by themselves. 
+
+For everything else than simple firmware download, You can refer to some official documentation provided by OpenWrt:
 
 * [OpenWrt Wiki Download](https://openwrt.org/downloads)
 
@@ -81,9 +83,7 @@ case sensitive file system.
 
 ### Requirements
 
-You need the following tools to compile OpenWrt, the package names vary between
-distributions. A complete list with distribution specific packages is found in
-the [Build System Setup](https://openwrt.org/docs/guide-developer/build-system/install-buildsystem)
+You need the following tools to compile CapOS, the package names vary between distributions. A complete list with distribution specific packages can be found in OpenWrt's [Build System Setup](https://openwrt.org/docs/guide-developer/build-system/install-buildsystem)
 documentation.
 
 ```
@@ -113,34 +113,24 @@ different categories. All packages are installed via the OpenWrt package
 manager called `opkg`. If you're looking to develop the web interface or port
 packages to OpenWrt, please find the fitting repository below.
 
-* [LuCI Web Interface](https://github.com/openwrt/luci): Modern and modular
-  interface to control the device via a web browser.
+* [OpenWrt](https://github.com/openwrt/openwrt): Our upstream repositories
 
-* [OpenWrt Packages](https://github.com/openwrt/packages): Community repository
-  of ported packages.
+* [LuCI Web Interface](https://github.com/openwrt/luci): Modern and modular interface to control the device via a web browser.
 
-* [OpenWrt Routing](https://github.com/openwrt/routing): Packages specifically
-  focused on (mesh) routing.
+* [OpenWrt Packages](https://github.com/openwrt/packages): Community repository of ported packages.
 
-* [OpenWrt Video](https://github.com/openwrt/video): Packages specifically
-  focused on display servers and clients (Xorg and Wayland).
+* [OpenWrt Routing](https://github.com/openwrt/routing): Packages specifically focused on (mesh) routing.
 
-## Support Information
-
-For a list of supported devices see the [OpenWrt Hardware Database](https://openwrt.org/supported_devices)
+* [OpenWrt Video](https://github.com/openwrt/video): Packages specifically focused on display servers and clients (Xorg and Wayland).
 
 ### Documentation
 
-* [Quick Start Guide](https://openwrt.org/docs/guide-quick-start/start)
-* [User Guide](https://openwrt.org/docs/guide-user/start)
-* [Developer Documentation](https://openwrt.org/docs/guide-developer/start)
-* [Technical Reference](https://openwrt.org/docs/techref/start)
+* [FWERKOR Blog (For Capos)](https://blog.fwerkor.com/category/capos)
 
 ### Community
 
 * [Github Issues](https://github.com/fwerkor/capos/Issues): For bug feedback, feature update suggestions. 
-* [FWERKOR Blog](https://blog.fwerkor.com): You can comment below the article. 
-* 
+* [FWERKOR Blog](https://blog.fwerkor.com/category/capos/): You can comment below the article. 
 
 ## License
 
