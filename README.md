@@ -1,22 +1,21 @@
 ![OpenWrt logo](include/logo.png)
 
 CapOS is an open source server operating system based on OpenWrt. It aims to provide an easy-to-use Linux server OS for beginners. CapOS utilizes the advantages of OpenWrt including the LuCI web-based management interface, to customize the development into a full-featured server OS.  
-
 CapOS是一个基于OpenWrt的开源服务器操作系统。 它旨在为初学者提供易于使用的 Linux 服务器操作系统。 CapOS 利用 OpenWrt 的优势，包括 LuCI 基于 Web 的管理界面，定制开发成一个全功能的服务器操作系统。
 
 Powered by FWERKOR Team, especially Castronaut. 
 
+At present, this project is still in the initial stage of development, and there is no version available for the time being.
+目前本项目还处于开发的起始阶段，暂时没有可用版本。
+
 ## Download
 
-Built firmware images are available for many architectures and come with a
-package selection to be used as WiFi home router. To quickly find a factory
-image usable to migrate from a vendor stock firmware to OpenWrt, try the
-*Firmware Selector*.
+Generally speaking, the server of the FWERKOR team will automatically obtain the source code from Github and compile it every once in a while. The compiled version will be available for viewing and downloading in *FR-REPO*
+通常来说，FWERKOR团队的服务器会每隔一段时间自动从Github获取源代码并进行编译，编译完成后的版本将可以在*FR-REPO*查看并下载
 
-* [OpenWrt Firmware Selector](https://firmware-selector.openwrt.org/)
+* [FR-REPO](https://repo.fwerkor.com/)
 
-If your device is supported, please follow the **Info** link to see install
-instructions or consult the support resources listed below.
+
 
 ## 
 
