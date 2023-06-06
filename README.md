@@ -11,6 +11,7 @@ At present, this project is still in the initial stage of development, and there
 ## Download
 
 Generally speaking, the server of the FWERKOR team will automatically obtain the source code from Github and compile it every once in a while. The compiled version will be available for viewing and downloading in *FR-REPO*
+
 通常来说，FWERKOR团队的服务器会每隔一段时间自动从Github获取源代码并进行编译，编译完成后的版本将可以在*FR-REPO*查看并下载
 
 * [FR-REPO](https://repo.fwerkor.com/)
