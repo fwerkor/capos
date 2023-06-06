@@ -21,19 +21,19 @@ CapOS is an lightweight open source server operating system derived from OpenWrt
 
 Some key highlights of CapOS:
 
-•Highly Lightweight: CapOS is built from OpenWrt, an embedded operating system based on Linux. It has a small footprint that can run on various hardware from routers to PCs. The lightweight design allows CapOS to run smoothly even on devices with limited resources.
+•**Highly Lightweight**: CapOS is built from OpenWrt, an embedded operating system based on Linux. It has a small footprint that can run on various hardware from routers to PCs. The lightweight design allows CapOS to run smoothly even on devices with limited resources.
 
-•Friendly Web UI: CapOS provides an simple but powerful web-based interface LuCI for easy server management. Users can easily manage system settings, monitor resources and install packages through the web UI without much Linux knowledge.  
+•**Friendly Web UI**: CapOS provides an simple but powerful web-based interface LuCI for easy server management. Users can easily manage system settings, monitor resources and install packages through the web UI without much Linux knowledge.  
 
-•Highly Extensible: Although lightweight, CapOS is highly extensible. Users can install and run many server applications and packages on demand based on their needs. CapOS aims to strike a balance between being lightweight and practical.
+•**Highly Extensible**: Although lightweight, CapOS is highly extensible. Users can install and run many server applications and packages on demand based on their needs. CapOS aims to strike a balance between being lightweight and practical.
 
-•Easy to Learn: CapOS has a clean command line interface with standardized Linux commands to simplify operation. The automated and simplified CLI allows beginners to easily get started with CapOS.
+•**Easy to Learn**: CapOS has a clean command line interface with standardized Linux commands to simplify operation. The automated and simplified CLI allows beginners to easily get started with CapOS.
 
-•Stable and Secure: CapOS is developed based on OpenWrt, a secure and stable Linux system, with the latest kernel and software packages to ensure maximum security and stability.  
+•**Stable and Secure**: CapOS is developed based on OpenWrt, a secure and stable Linux system, with the latest kernel and software packages to ensure maximum security and stability.  
 
-•Runs on Various Hardware: CapOS can run on popular hardware from routers, PCs to virtual machines. The lightweight design makes it possible to operate CapOS even on resource-constrained devices.  
+•**Runs on Various Hardware**: CapOS can run on popular hardware from routers, PCs to virtual machines. The lightweight design makes it possible to operate CapOS even on resource-constrained devices.  
 
-•Open Source: CapOS is released under the GPL license. The open source community is welcome to contribute to make CapOS even more lightweight, extendable and user-friendly.
+•**Open Source**: CapOS is released under the GPL license. The open source community is welcome to contribute to make CapOS even more lightweight, extendable and user-friendly.
 
 CapOS aims to provide beginners with an easy-to-use yet practical Linux server OS for learning and practice. The simplified web UI and CLI makes it easy to get started with CapOS. If you are looking for a lightweight but extensible Linux server solution, try CapOS! CapOS is open and free for all. Your feedback and suggestions will help us improve CapOS.
 
@@ -41,15 +41,15 @@ CapOS是一个基于OpenWrt的开源服务器操作系统。 它旨在为初学�
 
 CapOS 的一些关键特性：
 
-•友好的网络用户界面：CapOS配备了一个简单但功能强大的基于网络的用户界面LuCI，这使得服务器管理对于初学者来说更加容易。 用户可以通过 Web UI 轻松管理系统设置、监控资源和安装软件包。
+•**友好的网络用户界面**：CapOS配备了一个简单但功能强大的基于网络的用户界面LuCI，这使得服务器管理对于初学者来说更加容易。 用户可以通过 Web UI 轻松管理系统设置、监控资源和安装软件包。
 
-• 轻量级和可扩展性：CapOS 由基于Linux 的嵌入式操作系统OpenWrt 构建而成。 它是轻量级的而且具有高度的可扩展性，用户可以根据需要安装许多服务器应用程序和包。
+•**轻量级和可扩展性**：CapOS 由基于Linux 的嵌入式操作系统OpenWrt 构建而成。 它是轻量级的而且具有高度的可扩展性，用户可以根据需要安装许多服务器应用程序和包。
 
-• 易于学习：CapOS 为用户提供了一个简单干净的命令行界面。 加强了标准的 Linux 命令和自动化，以简化操作和维护。
+•**易于学习**：CapOS 为用户提供了一个简单干净的命令行界面。 加强了标准的 Linux 命令和自动化，以简化操作和维护。
 
-•稳定安全：CapOS基于安全稳定的Linux系统OpenWrt开发。 配备最新的Linux内核和软件包，确保系统安全稳定。
+•**稳定安全**：CapOS基于安全稳定的Linux系统OpenWrt开发。 配备最新的Linux内核和软件包，确保系统安全稳定。
 
-•开源：CapOS 在GPL 许可下发布。 欢迎开源社区为这个项目做出贡献，让 CapOS 更好地为用户服务。
+•**开源**：CapOS 在GPL 许可下发布。 欢迎开源社区为这个项目做出贡献，让 CapOS 更好地为用户服务。
 
 CapOS旨在为初学者提供一个简单易用的Linux服务器系统，用于自学和实践。 图形化的 Web UI 和标准化的 CLI 都可以帮助初学者轻松上手 CapOS。 如果您对 Linux 服务器感兴趣，欢迎尝试！ CapOS 对所有人开放且免费。 非常感谢您的反馈和建议，以帮助我们改进 CapOS。
 
