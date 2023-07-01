@@ -176,6 +176,22 @@ define Device/glinet_gl-mt3000
 endef
 TARGET_DEVICES += glinet_gl-mt3000
 
+define Device/netgear_wax220
+  DEVICE_VENDOR := Netgear
+  DEVICE_MODEL := WAX220
+  DEVICE_DTS := mt7986b-netgear-wax220
+  DEVICE_DTS_DIR := ../dts
+  DEVICE_PACKAGES := kmod-mt7986-firmware mt7986-wo-firmware
+  IMAGES := sysupgrade.bin
+  KERNEL_IN_UBI := 1
+  KERNEL := kernel-bin | lzma | \
+        fit lzma $$(KDIR)/image-$$(firstword $$(DEVICE_DTS)).dtb
+  KERNEL_INITRAMFS := kernel-bin | lzma | \
+        fit lzma $$(KDIR)/image-$$(firstword $$(DEVICE_DTS)).dtb with-initrd | pad-to 64k
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+endef
+TARGET_DEVICES += netgear_wax220
+
 define Device/mediatek_mt7986a-rfb-nand
   DEVICE_VENDOR := MediaTek
   DEVICE_MODEL := MT7986 rfba AP (NAND)
@@ -233,6 +249,20 @@ define Device/mediatek_mt7988a-rfb-nand
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
 endef
 TARGET_DEVICES += mediatek_mt7988a-rfb-nand
+
+define Device/mercusys_mr90x-v1
+  DEVICE_VENDOR := Mercusys
+  DEVICE_MODEL := MR90X v1
+  DEVICE_DTS := mt7986b-mercusys-mr90x-v1
+  DEVICE_DTS_DIR := ../dts
+  DEVICE_PACKAGES := kmod-mt7986-firmware mt7986-wo-firmware
+  UBINIZE_OPTS := -E 5
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  IMAGE_SIZE := 51200k
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+endef
+TARGET_DEVICES += mercusys_mr90x-v1
 
 define Device/qihoo_360t7
   DEVICE_VENDOR := Qihoo
