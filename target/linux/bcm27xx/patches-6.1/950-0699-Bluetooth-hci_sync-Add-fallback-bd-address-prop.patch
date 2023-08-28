@@ -20,7 +20,7 @@ Signed-off-by: Phil Elwell <phil@raspberrypi.com>
 
 --- a/net/bluetooth/hci_sync.c
 +++ b/net/bluetooth/hci_sync.c
-@@ -4540,6 +4540,7 @@ static const struct {
+@@ -4635,6 +4635,7 @@ static const struct {
   */
  static int hci_dev_setup_sync(struct hci_dev *hdev)
  {
@@ -28,14 +28,14 @@ Signed-off-by: Phil Elwell <phil@raspberrypi.com>
  	int ret = 0;
  	bool invalid_bdaddr;
  	size_t i;
-@@ -4568,7 +4569,9 @@ static int hci_dev_setup_sync(struct hci
+@@ -4663,7 +4664,9 @@ static int hci_dev_setup_sync(struct hci
  
  	if (!ret) {
- 		if (test_bit(HCI_QUIRK_USE_BDADDR_PROPERTY, &hdev->quirks)) {
--			if (!bacmp(&hdev->public_addr, BDADDR_ANY))
-+			if (!bacmp(&hdev->public_addr, BDADDR_ANY) &&
-+			    (invalid_bdaddr ||
-+			     !fwnode_property_present(fwnode, "fallback-bd-address")))
- 				hci_dev_get_bd_addr_from_property(hdev);
+ 		if (test_bit(HCI_QUIRK_USE_BDADDR_PROPERTY, &hdev->quirks) &&
+-		    !bacmp(&hdev->public_addr, BDADDR_ANY))
++		    !bacmp(&hdev->public_addr, BDADDR_ANY) &&
++		    (invalid_bdaddr ||
++		     !fwnode_property_present(fwnode, "fallback-bd-address")))
+ 			hci_dev_get_bd_addr_from_property(hdev);
  
- 			if (bacmp(&hdev->public_addr, BDADDR_ANY) &&
+ 		if ((invalid_bdaddr ||

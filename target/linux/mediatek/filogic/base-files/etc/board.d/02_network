@@ -8,10 +8,14 @@ mediatek_setup_interfaces()
 	local board="$1"
 
 	case $board in
+	acer,predator-w6)
+		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3 game" eth1
+		;;
 	asus,tuf-ax4200)
 		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3 lan4" eth1
 		;;
-	netgear,wax220)
+	netgear,wax220|\
+	zyxel,nwa50ax-pro)
 		ucidef_set_interface_lan "eth0"
 		;;
 	bananapi,bpi-r3)
@@ -48,6 +52,9 @@ mediatek_setup_interfaces()
 	tplink,tl-xdr6086)
 		ucidef_set_interfaces_lan_wan "lan1 lan2" eth1
 		;;
+	xiaomi,mi-router-wr30u-112m-nmbm|\
+	xiaomi,mi-router-wr30u-stock|\
+	xiaomi,mi-router-wr30u-ubootmod|\
 	xiaomi,redmi-router-ax6000-stock|\
 	xiaomi,redmi-router-ax6000-ubootmod)
 		ucidef_set_interfaces_lan_wan "lan2 lan3 lan4" wan
@@ -93,6 +100,9 @@ mediatek_setup_macs()
 		wan_mac=$(macaddr_add "$lan_mac" 1)
 		label_mac=$wan_mac
 		;;
+	xiaomi,mi-router-wr30u-112m-nmbm|\
+	xiaomi,mi-router-wr30u-stock|\
+	xiaomi,mi-router-wr30u-ubootmod|\
 	xiaomi,redmi-router-ax6000-stock|\
 	xiaomi,redmi-router-ax6000-ubootmod)
 		wan_mac=$(mtd_get_mac_ascii Bdata ethaddr_wan)

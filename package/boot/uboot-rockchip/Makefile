@@ -66,12 +66,26 @@ define U-Boot/roc-cc-rk3328
     firefly_roc-rk3328-cc
 endef
 
+define U-Boot/rock64-rk3328
+  $(U-Boot/rk3328/Default)
+  NAME:=Rock64
+  BUILD_DEVICES:= \
+    pine64_rock64
+endef
+
 # RK3399 boards
 
 define U-Boot/rk3399/Default
   BUILD_SUBTARGET:=armv8
   DEPENDS:=+PACKAGE_u-boot-$(1):trusted-firmware-a-rk3399
   ATF:=rk3399_bl31.elf
+endef
+
+define U-Boot/nanopc-t4-rk3399
+  $(U-Boot/rk3399/Default)
+  NAME:=NanoPC T4
+  BUILD_DEVICES:= \
+    friendlyarm_nanopc-t4
 endef
 
 define U-Boot/nanopi-r4s-rk3399
@@ -96,6 +110,7 @@ define U-Boot/rockpro64-rk3399
 endef
 
 UBOOT_TARGETS := \
+  nanopc-t4-rk3399 \
   nanopi-r4s-rk3399 \
   rock-pi-4-rk3399 \
   rockpro64-rk3399 \
@@ -103,7 +118,8 @@ UBOOT_TARGETS := \
   nanopi-r2s-rk3328 \
   orangepi-r1-plus-rk3328 \
   orangepi-r1-plus-lts-rk3328 \
-  roc-cc-rk3328
+  roc-cc-rk3328 \
+  rock64-rk3328
 
 UBOOT_CONFIGURE_VARS += USE_PRIVATE_LIBGCC=yes
 

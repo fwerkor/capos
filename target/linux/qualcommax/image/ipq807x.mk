@@ -91,6 +91,30 @@ define Device/edimax_cax1800
 endef
 TARGET_DEVICES += edimax_cax1800
 
+define Device/netgear_rax120v2
+	$(call Device/FitImage)
+	$(call Device/UbiFit)
+	DEVICE_VENDOR := Netgear
+	DEVICE_MODEL := RAX120v2
+	BLOCKSIZE := 128k
+	PAGESIZE := 2048
+	DEVICE_DTS_CONFIG := config@hk01
+	SOC := ipq8074
+	KERNEL_SIZE := 29696k
+	NETGEAR_BOARD_ID := RAX120
+	NETGEAR_HW_ID := 29765589+0+512+1024+4x4+8x8
+	DEVICE_PACKAGES := ipq-wifi-netgear_rax120v2 kmod-spi-gpio \
+		kmod-spi-bitbang kmod-gpio-nxp-74hc164 kmod-hwmon-g761
+	IMAGES = web-ui-factory.img sysupgrade.bin
+	IMAGE/web-ui-factory.img := append-image initramfs-uImage.itb | \
+		pad-offset $$$$(BLOCKSIZE) 64 | append-uImage-fakehdr filesystem | \
+		netgear-dni
+	IMAGE/sysupgrade.bin := append-kernel | pad-offset $$$$(BLOCKSIZE) 64 | \
+		append-uImage-fakehdr filesystem | sysupgrade-tar kernel=$$$$@ | \
+		append-metadata
+endef
+TARGET_DEVICES += netgear_rax120v2
+
 define Device/netgear_wax218
 	$(call Device/FitImage)
 	$(call Device/UbiFit)
@@ -115,7 +139,8 @@ define Device/prpl_haze
 	DEVICE_MODEL := Haze
 	DEVICE_DTS_CONFIG := config@hk09
 	SOC := ipq8072
-	DEVICE_PACKAGES += ath11k-firmware-qcn9074 ipq-wifi-prpl_haze kmod-ath11k-pci
+	DEVICE_PACKAGES += ath11k-firmware-qcn9074 ipq-wifi-prpl_haze kmod-ath11k-pci \
+		mkf2fs f2fsck kmod-fs-f2fs
 endef
 TARGET_DEVICES += prpl_haze
 
