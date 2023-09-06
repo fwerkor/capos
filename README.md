@@ -111,7 +111,7 @@ different categories. All packages are installed via the OpenWrt package
 manager called `opkg`. If you're looking to develop the web interface or port
 packages to OpenWrt, please find the fitting repository below.
 
-* [OpenWrt](https://github.com/openwrt/openwrt): Our upstream repositories
+* [CapOS](https://github.com/fwerkor/capos-packages): CapOS's official package source.
 
 * [LuCI Web Interface](https://github.com/openwrt/luci): Modern and modular interface to control the device via a web browser.
 
