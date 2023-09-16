@@ -57,11 +57,7 @@ CapOS 旨在为初学者提供一个易于使用且实用的 Linux 服务器操�
 
 ## Download
 
-Generally speaking, the server of the FWERKOR team will automatically obtain the source code from Github and compile it every once in a while. The compiled version will be available for viewing and downloading in *FR-REPO*.
-
-通常来说，FWERKOR团队的服务器会每隔一段时间自动从Github获取源代码并进行编译，编译完成后的版本将可以在*FR-REPO*查看并下载。
-
-* [FR-REPO](https://repo.fwerkor.com/)
+* [Github Releases](https://github.com/fwerkor/capos/releases)
 
 
 
@@ -111,11 +107,9 @@ different categories. All packages are installed via the OpenWrt package
 manager called `opkg`. If you're looking to develop the web interface or port
 packages to OpenWrt, please find the fitting repository below.
 
-* [CapOS](https://github.com/fwerkor/capos-packages): CapOS's official package source.
+* [CapOS Packages](https://github.com/fwerkor/capos-packages): CapOS's official package source.
 
-* [LuCI Web Interface](https://github.com/openwrt/luci): Modern and modular interface to control the device via a web browser.
-
-* [OpenWrt Packages](https://github.com/openwrt/packages): Community repository of ported packages.
+* [CapOS LuCI Web Interface](https://github.com/fwerkor/capos-luci): Modern and modular interface to control the device via a web browser.
 
 * [OpenWrt Routing](https://github.com/openwrt/routing): Packages specifically focused on (mesh) routing.
 
@@ -127,7 +121,8 @@ packages to OpenWrt, please find the fitting repository below.
 
 ### Community
 
-* [Github Issues](https://github.com/fwerkor/capos/Issues): For bug feedback, feature update suggestions. 
+* [Github Issues](https://github.com/fwerkor/capos/issues): For bug feedback, feature update suggestions.
+* [Github Discussions](https://github.com/fwerkor/capos/discussions): For bug feedback, feature update suggestions.
 * [FWERKOR Blog](https://blog.fwerkor.com/category/capos/): You can comment below the article. 
 
 ## License
