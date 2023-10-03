@@ -12,6 +12,7 @@ At present, this project is still in the initial stage of development, and there
 
 ***目前本项目还处于开发的起始阶段，暂时没有可用版本。***
 
+当前正在努力实现的功能：基于LuCI的Web-desktop！！！（业内首创）
 
 ## Features
 
