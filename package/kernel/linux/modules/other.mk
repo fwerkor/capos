@@ -732,6 +732,7 @@ define KernelPackage/rtc-r7301
   SUBMENU:=$(OTHER_MENU)
   TITLE:=Epson RTC7301 support
   DEFAULT:=m if ALL_KMODS && RTC_SUPPORT
+  DEPENDS:=+kmod-regmap-mmio
   KCONFIG:=CONFIG_RTC_DRV_R7301 \
 	CONFIG_RTC_CLASS=y
   FILES:=$(LINUX_DIR)/drivers/rtc/rtc-r7301.ko
@@ -1045,31 +1046,33 @@ define KernelPackage/zram/description
 endef
 
 define KernelPackage/zram/config
-  choice
-    prompt "ZRAM Default compressor"
-    default ZRAM_DEF_COMP_LZORLE
+  if PACKAGE_kmod-zram
+    choice
+      prompt "ZRAM Default compressor"
+      default ZRAM_DEF_COMP_LZORLE
 
-  config ZRAM_DEF_COMP_LZORLE
+    config ZRAM_DEF_COMP_LZORLE
             bool "lzo-rle"
             select PACKAGE_kmod-lib-lzo
 
-  config ZRAM_DEF_COMP_LZO
+    config ZRAM_DEF_COMP_LZO
             bool "lzo"
             select PACKAGE_kmod-lib-lzo
 
-  config ZRAM_DEF_COMP_LZ4
+    config ZRAM_DEF_COMP_LZ4
             bool "lz4"
             select PACKAGE_kmod-lib-lz4
 
-  config ZRAM_DEF_COMP_LZ4HC
+    config ZRAM_DEF_COMP_LZ4HC
             bool "lz4-hc"
             select PACKAGE_kmod-lib-lz4hc
 
-  config ZRAM_DEF_COMP_ZSTD
+    config ZRAM_DEF_COMP_ZSTD
             bool "zstd"
             select PACKAGE_kmod-lib-zstd
 
-  endchoice
+    endchoice
+  endif
 endef
 
 $(eval $(call KernelPackage,zram))
