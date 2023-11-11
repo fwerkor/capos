@@ -249,10 +249,10 @@ menu "Target Images"
 	config GRUB_TITLE
 		string "Title for the menu entry in GRUB"
 		depends on GRUB_IMAGES || GRUB_EFI_IMAGES
-		default "OpenWrt"
+		default "CapOS"
 		help
 		  This is the title of the GRUB menu entry.
-		  If unspecified, it defaults to OpenWrt.
+		  If unspecified, it defaults to CapOS.
 
 	config ISO_IMAGES
 		bool "Build LiveCD image (ISO)"
