@@ -53,6 +53,8 @@ make4.1+ perl python3.7+ rsync subversion unzip which
 
 ### Quickstart
 
+Now, you can simply run `bash ./scripts/quickstart.sh` to start, or do the following steps yourself.
+
 1. Run `bash ./scripts/auto_install_dependencies.sh` to automatically install dependencies on some system, It is unstable so do it yourself if error occurs. 
 
 2. Run `./scripts/feeds update -a` to obtain all the latest package definitions defined in feeds.conf / feeds.conf.default
