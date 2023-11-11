@@ -1,4 +1,4 @@
-bash ./scripts/auto_install_dependencies.sh
+sudo bash ./scripts/auto_install_dependencies.sh
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 echo "\e[31mpreparations done!"
