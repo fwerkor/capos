@@ -95,7 +95,7 @@ packages to CapOS, please find the fitting repository below.
 
 ### Documentation
 
-* [FWERKOR Blog (For Capos)](https://blog.fwerkor.com/category/capos)
+* [FWERKOR Blog (For CapOS)](https://blog.fwerkor.com/category/capos)
 
 ### Community
 
