@@ -4,9 +4,6 @@ CapOS是一个基于OpenWrt的开源服务器操作系统。 它旨在提供更�
 
 Powered by FWERKOR Team, especially by Castronaut. 
 
-***目前本项目还处于开发的起始阶段，暂时没有可用版本。***
-
-
 ## Features
 
 CapOS 是从 OpenWrt 衍生出来的轻量级开源服务器操作系统。 它旨在为初学者提供易于使用的 Linux 服务器体验。 CapOS 利用 OpenWrt 的优势，包括基于LuCI改进而成的CWD（CapOS Web Desktop）管理界面，开发成为一个全功能的服务器操作系统。
@@ -44,14 +41,14 @@ To build your own firmware you need a GNU/Linux, BSD or MacOSX system (case sens
 ### Requirements
 
 You need the following tools to compile CapOS, the package names vary between distributions. A complete list with distribution specific packages can be found in OpenWrt's [Build System Setup](https://openwrt.org/docs/guide-developer/build-system/install-buildsystem)
-documentation. We CapOS has provided a script that can automatically install dependencies on some system, but it is unstable so do it yourself if error occurs. 
+documentation. CapOS has provided a script that can automatically install dependencies on some system, but it is unstable so do it yourself if error occurs. 
 
 ```
 binutils bzip2 diff find flex gawk gcc-6+ getopt grep install libc-dev libz-dev
 make4.1+ perl python3.7+ rsync subversion unzip which
 ```
 
-### Quickstart
+### Build
 
 Now, you can simply run `bash ./scripts/quickstart.sh` to start, or do the following steps yourself.
 
@@ -66,6 +63,16 @@ Now, you can simply run `bash ./scripts/quickstart.sh` to start, or do the follo
 5. (Optional) Run `make download` to download sources required to ensure the stability of compiling. It would be helpful especially in China Mainland.
 
 6. Run `make` to build your firmware. This will download all sources, build the cross-compile toolchain and then cross-compile the GNU/Linux kernel & all chosen applications for your target system.
+
+## Useage
+
+Web panel is on 2000/tcp (http) and 2020/tcp (https). 
+
+Telnet is running on 23/tcp before root password is set. 
+
+SSH will run on 22/tcp after root password is set. 
+
+## About
 
 ### Related Repositories
 
@@ -95,6 +102,6 @@ packages to CapOS, please find the fitting repository below.
 * [Github Issues](https://github.com/fwerkor/capos/issues): For bug feedback, feature update suggestions.
 * [Github Discussions](https://github.com/fwerkor/capos/discussions): For bug feedback, feature update suggestions.
 
-## License
+### License
 
 本软件允许出于非盈利目的的免费使用。未经开发者许可，不得用于商业目的。
