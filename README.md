@@ -58,7 +58,7 @@ Now, you can simply run `bash ./scripts/quickstart.sh` to start, or do the follo
 
 3. Run `./scripts/feeds install -a` to install symlinks for all obtained packages into package/feeds/
 
-4. Run `make menuconfig` to select your preferred configuration for the toolchain, target system & firmware packages.
+4. Run `make menuconfig` to select your preferred configuration for the toolchain, target system & firmware packages. Choosing LuCI is recommended
 
 5. (Optional) Run `make download` to download sources required to ensure the stability of compiling. It would be helpful especially in China Mainland.
 
