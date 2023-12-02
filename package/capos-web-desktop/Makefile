@@ -3,7 +3,7 @@ PKG_NAME:=capos-web-desktop
 PKG_VERSION:=0.9
 
 # 指定软件包依赖关系
-PKG_DEPENDS:=+luci +luci-theme-bootstrap
+PKG_DEPENDS:=+luci +luci-theme-bootstrap +luci-app-opkg
 
 # 指定软件包安装路径
 PKG_INSTALL_DIR:=$(PKG_BUILD_DIR)/root-$(ARCH)
