@@ -19,7 +19,7 @@ include $(INCLUDE_DIR)/kernel.mk
 include $(INCLUDE_DIR)/version.mk
 include $(INCLUDE_DIR)/feeds.mk
 
-define Package/cwd
+define Package/capos-web-desktop
   SECTION:=net
   CATEGORY:=Network
   TITLE:=capos-web-desktop
@@ -41,9 +41,9 @@ define Build/Compile
 	$(call Build/Compile/Default)
 endef
 
-define Package/cwd/install
+define Package/capos-web-desktop/install
 	$(INSTALL_DIR) $$(1)/usr/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/cwd $$(1)/usr/bin/
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/capos-web-desktop $$(1)/usr/bin/
 endef
 
-$(eval $(call BuildPackage,cwd))
+$(eval $(call BuildPackage,capos-web-desktop))
