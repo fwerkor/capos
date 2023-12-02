@@ -42,4 +42,4 @@ define Package/capos-full/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/capos-full $$(1)/usr/bin/
 endef
 
-$(eval $(call BuildPackage,capos-standard))
+$(eval $(call BuildPackage,capos-full))
