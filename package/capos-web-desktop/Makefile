@@ -1,23 +1,20 @@
-# 指定软件包名称和版本
 PKG_NAME:=capos-web-desktop
 PKG_RELEASE:=$(COMMITCOUNT)
 
-# 指定软件包依赖关系
 PKG_DEPENDS:=+luci +luci-theme-bootstrap +luci-app-opkg
+PKG_FILE_DEPENDS:=$(PLATFORM_DIR)/ $(GENERIC_PLATFORM_DIR)/capos-web-desktop/
+PKG_BUILD_DEPENDS:=usign/host ucert/host
 
-# 指定软件包安装路径
 PKG_INSTALL_DIR:=$(PKG_BUILD_DIR)/root-$(ARCH)
 
-# 指定软件包释放文件
 PKG_FILES := https://raw.githubusercontent.com/fwerkor/capos-web-desktop/main/files/*
-
-# 指定软件包释放路径
 PKG_FILE_PATHS:=/cwd
 
 include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/kernel.mk
 include $(INCLUDE_DIR)/version.mk
 include $(INCLUDE_DIR)/feeds.mk
+include $(INCLUDE_DIR)/package.mk
 
 define Package/capos-web-desktop
   SECTION:=net
