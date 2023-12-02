@@ -1,6 +1,7 @@
 PKG_NAME:=capos-web-desktop
 PKG_RELEASE:=$(COMMITCOUNT)
 PKG_VERSION:=0.9
+PKG_MAINTAINER:=FWERKOR Team
 
 PKG_DEPENDS:=+luci +luci-theme-bootstrap +luci-app-opkg
 PKG_FILE_DEPENDS:=$(PLATFORM_DIR)/ $(GENERIC_PLATFORM_DIR)/capos-web-desktop/
