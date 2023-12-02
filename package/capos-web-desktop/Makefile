@@ -1,5 +1,5 @@
 # 指定软件包名称和版本
-PKG_NAME:=cwd
+PKG_NAME:=capos-web-desktop
 PKG_VERSION:=0.9
 
 # 指定软件包依赖关系
@@ -22,11 +22,11 @@ include $(INCLUDE_DIR)/feeds.mk
 define Package/cwd
   SECTION:=net
   CATEGORY:=Network
-  TITLE:=cwd
+  TITLE:=capos-web-desktop
 endef
 
-define Package/mypackage/description
-  CapOS Web Desktop, based on LuCI.
+define Package/capos-web-desktop/description
+  CapOS Web Desktop Core.
 endef
 
 define Build/Prepare
