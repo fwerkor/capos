@@ -95,7 +95,6 @@ packages to CapOS, please find the fitting repository below.
  
 * [CapOS Targets](https://github.com/fwerkor/capos-video): Packages not maintained in mainline anymore.
 
-* [CapOS] 
 
 ### Documentation
 
