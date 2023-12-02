@@ -17,7 +17,7 @@ include $(INCLUDE_DIR)/package.mk
 
 define Package/capos-full
   SECTION:=col
-  CATEGORY:=Collection
+  CATEGORY:=Collections
   TITLE:=capos-full
 endef
 
