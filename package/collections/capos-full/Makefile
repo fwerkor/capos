@@ -13,4 +13,8 @@ LUCI_DEPENDS:= \
 
 PKG_LICENSE:=Apache-2.0
 
+include $(TOPDIR)/rules.mk
+include $(INCLUDE_DIR)/kernel.mk
+include $(INCLUDE_DIR)/version.mk
+include $(INCLUDE_DIR)/feeds.mk
 include $(INCLUDE_DIR)/package.mk
