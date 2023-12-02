@@ -107,4 +107,4 @@ packages to CapOS, please find the fitting repository below.
 
 ### License
 
-CapOS is licensed under GPL-2.0, but a some apps maybe not. 
+CapOS is licensed under GPL-2.0. 
