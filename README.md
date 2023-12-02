@@ -81,6 +81,8 @@ different categories. All packages are installed via the CapOS package
 manager called `opkg`. If you're looking to develop the web interface or port
 packages to CapOS, please find the fitting repository below.
 
+* [CapOS Web Desktop](https://github.com/fwerkor/capos-web-desktop): CapOS Web Desktop.
+
 * [CapOS Packages](https://github.com/fwerkor/capos-packages): CapOS's official package source.
 
 * [CapOS LuCI Web Interface](https://github.com/fwerkor/capos-luci): Modern and modular interface to control the device via a web browser.
@@ -92,6 +94,8 @@ packages to CapOS, please find the fitting repository below.
 * [CapOS Telephony](https://github.com/fwerkor/capos-video): Packages community maintained for telephony.
  
 * [CapOS Targets](https://github.com/fwerkor/capos-video): Packages not maintained in mainline anymore.
+
+* [CapOS] 
 
 ### Documentation
 
