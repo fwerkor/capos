@@ -3,7 +3,7 @@ include $(TOPDIR)/rules.mk
 
 LUCI_TYPE:=col
 LUCI_BASENAME:=capos-standard
-PKG_RELEASE:=1
+PKG_RELEASE:=$(COMMITCOUNT)
 PKG_MAINTAINER:=FWERKOR Team
 
 LUCI_TITLE:=CapOS Standard
