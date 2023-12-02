@@ -9,7 +9,6 @@ LUCI_TITLE:=CapOS Standard
 LUCI_DESCRIPTION:=CapOS Standard Collection
 LUCI_DEPENDS:= \
 	+capos-web-desktop \
-	+luci \
 
 PKG_LICENSE:=Apache-2.0
 
