@@ -104,4 +104,4 @@ packages to CapOS, please find the fitting repository below.
 
 ### License
 
-本软件允许出于非盈利目的的免费使用。未经开发者许可，不得用于商业目的。
+CapOS is licensed under GPL-2.0, but a some apps maybe not. 
