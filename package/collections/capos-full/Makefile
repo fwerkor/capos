@@ -4,6 +4,7 @@ include $(TOPDIR)/rules.mk
 LUCI_TYPE:=col
 LUCI_BASENAME:=capos-full
 PKG_RELEASE:=1
+PKG_MAINTAINER:=FWERKOR Team
 
 LUCI_TITLE:=CapOS Full
 LUCI_DESCRIPTION:=CapOS Full Collection
