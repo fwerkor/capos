@@ -5,7 +5,6 @@ PKG_MAINTAINER:=FWERKOR Team
 
 PKG_DEPENDS:=+luci +luci-theme-bootstrap +luci-app-opkg
 PKG_FILE_DEPENDS:=$(PLATFORM_DIR)/ $(GENERIC_PLATFORM_DIR)/capos-web-desktop/
-PKG_BUILD_DEPENDS:=usign/host ucert/host
 
 PKG_INSTALL_DIR:=$(PKG_BUILD_DIR)/root-$(ARCH)
 
