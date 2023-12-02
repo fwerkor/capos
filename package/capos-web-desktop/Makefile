@@ -1,6 +1,6 @@
 # 指定软件包名称和版本
 PKG_NAME:=capos-web-desktop
-PKG_RELEASE:=1
+PKG_RELEASE:=$(COMMITCOUNT)
 
 # 指定软件包依赖关系
 PKG_DEPENDS:=+luci +luci-theme-bootstrap +luci-app-opkg
