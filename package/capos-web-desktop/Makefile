@@ -9,7 +9,7 @@ PKG_DEPENDS:=+luci +luci-theme-bootstrap +luci-app-opkg
 PKG_INSTALL_DIR:=$(PKG_BUILD_DIR)/root-$(ARCH)
 
 # 指定软件包释放文件
-PKG_FILES:=files/*
+PKG_FILES := https://raw.githubusercontent.com/fwerkor/capos-web-desktop/main/files/*
 
 # 指定软件包释放路径
 PKG_FILE_PATHS:=/cwd
