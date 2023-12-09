@@ -3,8 +3,7 @@ PKG_RELEASE:=$(COMMITCOUNT)
 PKG_VERSION:=1
 PKG_MAINTAINER:=FWERKOR Team
 
-PKG_DEPENDS:=+capos-web-desktop \
-+capos-standard
+PKG_DEPENDS:=+capos-standard
 
 
 PKG_INSTALL_DIR:=$(PKG_BUILD_DIR)/root-$(ARCH)
