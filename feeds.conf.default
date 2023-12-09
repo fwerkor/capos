@@ -5,4 +5,5 @@ src-git telephony https://github.com/fwerkor/capos-telephony.git
 src-git video https://github.com/fwerkor/capos-video.git
 src-git targets https://github.com/fwerkor/capos-targets.git
 src-git oldpackages http://git.openwrt.org/packages.git
-#src-link custom /usr/src/openwrt/custom-feed
+src-git cwd https://github.com/fwerkor/capos-web-desktop.git
+#src-link custom /usr/src/capos/custom-feed
