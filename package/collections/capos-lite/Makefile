@@ -21,7 +21,7 @@ define Package/capos-lite
 endef
 
 define Package/capos-lite/description
-  CapOS Standard Collection.
+  CapOS Lite Collection.
 endef
 
 define Build/Prepare
