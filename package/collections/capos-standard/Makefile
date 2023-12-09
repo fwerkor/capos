@@ -3,7 +3,7 @@ PKG_RELEASE:=$(COMMITCOUNT)
 PKG_VERSION:=1
 PKG_MAINTAINER:=FWERKOR Team
 
-PKG_DEPENDS:=+capos-lite
+PKG_DEPENDS:=+capos-lite kmod-usb-storage usbutils block-mount gdisk e2fsprogs kmod-fs-ext4 kmod-fs-fat32 kmod-fs-ntfs
 
 
 PKG_INSTALL_DIR:=$(PKG_BUILD_DIR)/root-$(ARCH)
