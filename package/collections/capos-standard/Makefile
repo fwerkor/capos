@@ -14,13 +14,13 @@ include $(INCLUDE_DIR)/version.mk
 include $(INCLUDE_DIR)/feeds.mk
 include $(INCLUDE_DIR)/package.mk
 
-define Package/capos-standard
+define Package/$(PKG_NAME)
   SECTION:=col
   CATEGORY:=Collections
-  TITLE:=capos-standard
+  TITLE:=$(PKG_NAME)
 endef
 
-define Package/capos-standard/description
+define Package/$(PKG_NAME)/description
   CapOS Standard Collection.
 endef
 
@@ -36,9 +36,9 @@ define Build/Compile
 	$(call Build/Compile/Default)
 endef
 
-define Package/capos-standard/install
+define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $$(1)/usr/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/capos-standard $$(1)/usr/bin/
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/$(PKG_NAME) $$(1)/usr/bin/
 endef
 
-$(eval $(call BuildPackage,capos-standard))
+$(eval $(call BuildPackage,$(PKG_NAME)))
