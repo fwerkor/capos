@@ -3,7 +3,7 @@ PKG_RELEASE:=$(COMMITCOUNT)
 PKG_VERSION:=1
 PKG_MAINTAINER:=FWERKOR Team
 
-PKG_DEPENDS:=+capos-web-desktop
+PKG_DEPENDS:=+cwd-core
 
 
 PKG_INSTALL_DIR:=$(PKG_BUILD_DIR)/root-$(ARCH)
@@ -14,13 +14,13 @@ include $(INCLUDE_DIR)/version.mk
 include $(INCLUDE_DIR)/feeds.mk
 include $(INCLUDE_DIR)/package.mk
 
-define Package/capos-lite
+define Package/$(PKG_NAME)
   SECTION:=col
   CATEGORY:=Collections
-  TITLE:=capos-lite
+  TITLE:=$(PKG_NAME)
 endef
 
-define Package/capos-lite/description
+define Package/$(PKG_NAME)/description
   CapOS Lite Collection.
 endef
 
@@ -36,7 +36,9 @@ define Build/Compile
 	$(call Build/Compile/Default)
 endef
 
-define Package/capos-lite/install
+define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $$(1)/usr/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/capos-lite $$(1)/usr/bin/
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/$(PKG_NAME) $$(1)/usr/bin/
 endef
+
+$(eval $(call BuildPackage,$(PKG_NAME)))
