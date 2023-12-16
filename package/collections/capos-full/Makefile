@@ -14,13 +14,13 @@ include $(INCLUDE_DIR)/version.mk
 include $(INCLUDE_DIR)/feeds.mk
 include $(INCLUDE_DIR)/package.mk
 
-define Package/capos-full
+define Package/$(PKG_NAME)
   SECTION:=col
   CATEGORY:=Collections
-  TITLE:=capos-full
+  TITLE:=$(PKG_NAME)
 endef
 
-define Package/capos-full/description
+define Package/$(PKG_NAME)/description
   CapOS Full Collection.
 endef
 
@@ -36,9 +36,9 @@ define Build/Compile
 	$(call Build/Compile/Default)
 endef
 
-define Package/capos-full/install
+define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $$(1)/usr/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/capos-full $$(1)/usr/bin/
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/$(PKG_NAME) $$(1)/usr/bin/
 endef
 
-$(eval $(call BuildPackage,capos-full))
+$(eval $(call BuildPackage,$(PKG_NAME)))
