@@ -1,18 +1,18 @@
 ![OpenWrt logo](include/logo.png)
 
-CapOS是一个基于OpenWrt的开源服务器操作系统。 它旨在提供更适合用于家庭部署和专业部署且易于使用的 Linux 服务器操作系统。 CapOS 利用 OpenWrt 的优势，包括基于LuCI改进而成的CWD（CapOS Web Desktop）管理界面，定制开发成一个全功能的服务器操作系统。
+CapOS是一个基于OpenWrt的开源服务器操作系统。 它旨在提供更适合用于家庭部署和专业部署且易于使用的 Linux 服务器操作系统。 CapOS 利用 OpenWrt 的优势，并加入CWD（CapOS Web Desktop）管理界面，定制开发成一个全功能的服务器操作系统。
 
 Powered by FWERKOR Team, especially by Castronaut. 
 
 ## Features
 
-CapOS 是从 OpenWrt 衍生出来的轻量级开源服务器操作系统。 它旨在为初学者提供易于使用的 Linux 服务器体验。 CapOS 利用 OpenWrt 的优势，包括基于LuCI改进而成的CWD（CapOS Web Desktop）管理界面，开发成为一个全功能的服务器操作系统。
+CapOS 是从 OpenWrt 衍生出来的轻量级开源服务器操作系统。 它旨在为初学者提供易于使用的 Linux 服务器体验。 CapOS 利用 OpenWrt 的优势，并加入CWD（CapOS Web Desktop）管理界面，开发成为一个全功能的服务器操作系统。
 
 CapOS 的一些主要亮点：
 
 * **高度轻量级**：CapOS 由基于 Linux 的嵌入式操作系统 OpenWrt 构建而成。 它占地面积小，可以在从路由器到 PC 的各种硬件上运行。 轻量级设计让 CapOS 即使在资源有限的设备上也能流畅运行。
 
-* **友好的 Web 用户界面**：CapOS 提供了一个基于LuCI改进而成的CWD（CapOS Web Desktop）管理界面，可以在浏览器中通过美观易用的界面控制服务器。 用户无需太多 Linux 知识即可通过 Web UI 轻松管理系统设置、监控资源和安装软件包等。
+* **友好的 Web 用户界面**：CapOS 提供了CWD（CapOS Web Desktop）管理界面，可以在浏览器中通过美观易用的界面控制服务器。 用户无需太多 Linux 知识即可通过 Web UI 轻松管理系统设置、监控资源和安装软件包等。
 
 * **高度可扩展**：虽然轻量级，但 CapOS 具有高度可扩展性。 用户可以根据自己的需要，按需安装和运行许多服务器应用程序和软件包。 CapOS 旨在在轻量级和实用性之间取得平衡。
 
