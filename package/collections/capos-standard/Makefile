@@ -18,6 +18,7 @@ define Package/$(PKG_NAME)
   SECTION:=col
   CATEGORY:=Collections
   TITLE:=$(PKG_NAME)
+  DEPENDS:=$(PKG_DEPENDS)
 endef
 
 define Package/$(PKG_NAME)/description
