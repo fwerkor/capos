@@ -2,7 +2,7 @@ PKG_NAME:=capos-standard
 PKG_VERSION:=1
 PKG_MAINTAINER:=FWERKOR Team
 
-PKG_DEPENDS:=+capos-lite +kmod-usb-storage +usbutils +block-mount +gdisk +fdisk +e2fsprogs +kmod-fs-ext4 +kmod-fs-fat32 +kmod-fs-ntfs
+PKG_DEPENDS:=+capos-lite +kmod-usb-storage +usbutils +block-mount +gdisk +fdisk +e2fsprogs +kmod-fs-ext4 +kmod-fs-ntfs
 
 
 PKG_INSTALL_DIR:=$(PKG_BUILD_DIR)/root-$(ARCH)
