@@ -1,9 +1,9 @@
 src-git packages https://github.com/fwerkor/capos-packages.git
+src-git cwd https://github.com/fwerkor/cwd.git
 src-git luci https://github.com/fwerkor/capos-luci.git
 src-git routing https://github.com/fwerkor/capos-routing.git
 src-git telephony https://github.com/fwerkor/capos-telephony.git
 src-git video https://github.com/fwerkor/capos-video.git
 src-git targets https://github.com/fwerkor/capos-targets.git
-src-git oldpackages http://git.openwrt.org/packages.git
-src-git cwd https://github.com/fwerkor/cwd.git
+#src-git oldpackages http://git.openwrt.org/packages.git
 #src-link custom /usr/src/capos/custom-feed
