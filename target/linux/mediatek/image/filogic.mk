@@ -324,7 +324,7 @@ define Device/confiabits_mt7981
   IMAGE_SIZE := 65536k
   KERNEL_IN_UBI := 1
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
-  DEVICE_PACKAGES := kmod-usb3 kmod-mt7981-firmware
+  DEVICE_PACKAGES := kmod-usb3 kmod-mt7981-firmware mt7981-wo-firmware
 endef
 TARGET_DEVICES += confiabits_mt7981
 
@@ -343,7 +343,7 @@ define Device/cudy_wr3000-v1
   KERNEL_INITRAMFS := kernel-bin | lzma | \
 	fit lzma $$(KDIR)/image-$$(firstword $$(DEVICE_DTS)).dtb with-initrd | pad-to 64k
   IMAGE/sysupgrade.bin := append-kernel | pad-to 128k | append-rootfs | pad-rootfs | check-size | append-metadata
-  DEVICE_PACKAGES := kmod-mt7981-firmware
+  DEVICE_PACKAGES := kmod-mt7981-firmware mt7981-wo-firmware
 endef
 TARGET_DEVICES += cudy_wr3000-v1
 
@@ -653,6 +653,17 @@ define Device/qihoo_360t7
 endef
 TARGET_DEVICES += qihoo_360t7
 
+define Device/routerich_ax3000
+  DEVICE_VENDOR := Routerich
+  DEVICE_MODEL := AX3000
+  DEVICE_DTS := mt7981b-routerich-ax3000
+  DEVICE_DTS_DIR := ../dts
+  DEVICE_PACKAGES := kmod-mt7981-firmware mt7981-wo-firmware kmod-usb3
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+  SUPPORTED_DEVICES += mediatek,mt7981-spim-snand-rfb
+endef
+TARGET_DEVICES += routerich_ax3000
+
 define Device/tplink_tl-xdr-common
   DEVICE_VENDOR := TP-Link
   DEVICE_DTS_DIR := ../dts
@@ -830,6 +841,23 @@ define Device/zbtlink_zbt-z8102ax
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
 endef
 TARGET_DEVICES += zbtlink_zbt-z8102ax
+
+define Device/zbtlink_zbt-z8103ax
+  DEVICE_VENDOR := Zbtlink
+  DEVICE_MODEL := ZBT-Z8103AX
+  DEVICE_DTS := mt7981b-zbtlink-zbt-z8103ax
+  DEVICE_DTS_DIR := ../dts
+  DEVICE_PACKAGES := kmod-mt7981-firmware mt7981-wo-firmware
+  KERNEL_IN_UBI := 1
+  UBINIZE_OPTS := -E 5
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  IMAGE_SIZE := 65536k
+  IMAGES += factory.bin
+  IMAGE/factory.bin := append-ubi | check-size $$(IMAGE_SIZE)
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+endef
+TARGET_DEVICES += zbtlink_zbt-z8103ax
 
 define Device/zyxel_ex5601-t0-stock
   DEVICE_VENDOR := Zyxel
