@@ -19,6 +19,8 @@ proto_ncm_init_config() {
 	proto_config_add_string delay
 	proto_config_add_string mode
 	proto_config_add_string pdptype
+	proto_config_add_boolean sourcefilter
+	proto_config_add_boolean delegate
 	proto_config_add_int profile
 	proto_config_add_defaults
 }
@@ -26,12 +28,13 @@ proto_ncm_init_config() {
 proto_ncm_setup() {
 	local interface="$1"
 
-	local manufacturer initialize setmode connect finalize devname devpath ifpath
+	local connect context_type devname devpath finalize ifpath initialize manufacturer setmode
 
-	local device ifname  apn auth username password pincode delay mode pdptype profile $PROTO_DEFAULT_OPTIONS
-	json_get_vars device ifname apn auth username password pincode delay mode pdptype profile $PROTO_DEFAULT_OPTIONS
+	local delegate sourcefilter $PROTO_DEFAULT_OPTIONS
+	json_get_vars delegate sourcefilter $PROTO_DEFAULT_OPTIONS
 
-	local context_type
+	local apn auth delay device ifname mode password pdptype pincode profile username
+	json_get_vars apn auth delay device ifname mode password pdptype pincode profile username
 
 	[ "$metric" = "" ] && metric="0"
 
@@ -88,7 +91,7 @@ proto_ncm_setup() {
 
 	start=$(date +%s)
 	while true; do
-		manufacturer=$(gcom -d "$device" -s /etc/gcom/getcardinfo.gcom | awk 'NF && $0 !~ /AT\+CGMI/ { sub(/\+CGMI: /,""); print tolower($1); exit; }')
+		manufacturer=$(gcom -d "$device" -s /etc/gcom/getcardinfo.gcom | awk -v RS='\r?\n' 'NF && $0 !~ /AT\+CGMI/ { sub(/\+CGMI: /,""); print tolower($1); exit; }')
 		[ "$manufacturer" = "error" ] && {
 			manufacturer=""
 		}
@@ -202,6 +205,8 @@ proto_ncm_setup() {
 		json_add_string ifname "@$interface"
 		json_add_string proto "dhcpv6"
 		json_add_string extendprefix 1
+		[ "$delegate" = "0" ] && json_add_boolean delegate "0"
+		[ "$sourcefilter" = "0" ] && json_add_boolean sourcefilter "0"
 		proto_add_dynamic_defaults
 		[ -n "$zone" ] && {
 			json_add_string zone "$zone"

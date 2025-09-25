@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=b43-tools
-PKG_DATE:=2022-07-05
+PKG_DATE:=2025-05-04
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/mbuesch/b43-tools.git
-PKG_SOURCE_VERSION:=2fe10ea6690df9a068cb21cde537236bae784a14
-PKG_MIRROR_HASH:=4f1cde5da35a1e768f6a01d67888549d04512073990769342381af1b2c9e7fd2
+PKG_SOURCE_VERSION:=cc352349153eeda9c164ecd0d06c161a59ec8753
+PKG_MIRROR_HASH:=c1feba649c2cf3e984a2b897b4a6938252515c0833358d51bd15e049b6b2fb65
 
 include $(INCLUDE_DIR)/host-build.mk
 
@@ -23,7 +23,7 @@ define Host/Compile
 		$(HOST_MAKE_FLAGS) \
 		$(1) QUIET_SPARSE=:
 	+$(MAKE) $(HOST_JOBS) -C $(HOST_BUILD_DIR)/assembler \
-		CFLAGS="$(HOST_CFLAGS) -include endian.h" \
+		CFLAGS="$(HOST_CFLAGS) -include endian.h -Wno-error=int-conversion" \
 		$(HOST_MAKE_FLAGS) \
 		LDFLAGS= \
 		$(1) QUIET_SPARSE=:

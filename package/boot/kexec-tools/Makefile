@@ -8,12 +8,16 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=kexec-tools
-PKG_VERSION:=2.0.26
-PKG_RELEASE:=1
+PKG_VERSION:=2.0.28
+PKG_RELEASE:=2
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
 PKG_SOURCE_URL:=@KERNEL/linux/utils/kernel/kexec
-PKG_HASH:=7fe36a064101cd5c515e41b2be393dce3ca88adce59d6ee668e0af7c0c4570cd
+PKG_HASH:=d2f0ef872f39e2fe4b1b01feb62b0001383207239b9f8041f98a95564161d053
+
+PKG_LICENSE:=GPL-2.0-only
+PKG_LICENSE_FILES:=COPYING
+PKG_CPE_ID:=cpe:/a:kernel:kexec-tools
 
 PKG_CONFIG_DEPENDS := CONFIG_KEXEC_ZLIB CONFIG_KEXEC_LZMA
 
@@ -24,7 +28,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/kexec-tools/Default
   SECTION:=utils
   CATEGORY:=Utilities
-  URL:=http://kernel.org/pub/linux/kernel/people/horms/kexec-tools/
+  URL:=https://github.com/horms/kexec-tools
 endef
 
 define Package/kexec-tools

@@ -2,6 +2,7 @@
 
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/input/input.h>
+#include <dt-bindings/leds/common.h>
 #include <dt-bindings/mtd/partitions/uimage.h>
 
 / {
@@ -35,7 +36,8 @@
 		compatible = "gpio-leds";
 
 		led_status: status {
-			label = "green:status";
+			function = LED_FUNCTION_STATUS;
+			color = <LED_COLOR_ID_GREEN>;
 			gpios = <&gpio0 14 GPIO_ACTIVE_LOW>;
 		};
 
@@ -54,7 +56,6 @@
 
 	gpio_export {
 		compatible = "gpio-export";
-		#size-cells = <0>;
 
 		usbpower {
 			gpio-export,name = "usbpower";
@@ -91,7 +92,7 @@
 				reg = <0x10000 0xfe0000>;
 			};
 
-			config: partition@ff0000 {
+			partition@ff0000 {
 				label = "config";
 				reg = <0xff0000 0x10000>;
 				read-only;
@@ -164,7 +165,8 @@
 };
 
 &pcie0 {
-	mt76x0e@0,0 {
+	wifi@0,0 {
+		compatible = "mediatek,mt76";
 		reg = <0x0000 0 0 0 0>;
 		nvmem-cells = <&eeprom_config_e08a>, <&macaddr_config_e07e 2>;
 		nvmem-cell-names = "eeprom", "mac-address";

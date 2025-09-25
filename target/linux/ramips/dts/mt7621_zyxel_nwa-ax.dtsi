@@ -36,10 +36,24 @@
 			read-only;
 		};
 
-		factory: partition@100000 {
+		partition@100000 {
 			label = "factory";
 			reg = <0x100000 0x80000>;
 			read-only;
+
+			nvmem-layout {
+				compatible = "fixed-layout";
+				#address-cells = <1>;
+				#size-cells = <1>;
+
+				eeprom_factory_0: eeprom@0 {
+					reg = <0x0 0xe00>;
+				};
+
+				precal_factory_e10: precal@e10 {
+					reg = <0xe10 0x19c10>;
+				};
+			};
 		};
 
 		partition@180000 {
@@ -92,7 +106,7 @@
 			reg = <0x7700000 0x80000>;
 		};
 
-		mrd: partition@7780000 {
+		partition@7780000 {
 			label = "mrd";
 			reg = <0x7780000 0x80000>;
 			read-only;
@@ -103,7 +117,9 @@
 				#size-cells = <1>;
 
 				macaddr_mrd_1fff8: macaddr@1fff8 {
+					compatible = "mac-base";
 					reg = <0x1fff8 0x6>;
+					#nvmem-cell-cells = <1>;
 				};
 			};
 		};
@@ -116,17 +132,30 @@
 
 &pcie1 {
 	wlan_5g: wifi@0,0 {
-		reg = <0x0 0 0 0 0>;
 		compatible = "mediatek,mt76";
+		reg = <0x0000 0 0 0 0>;
+		nvmem-cells = <&eeprom_factory_0>, <&precal_factory_e10>;
+		nvmem-cell-names = "eeprom", "precal";
 
-		mediatek,mtd-eeprom = <&factory 0x0>;
+		#address-cells = <1>;
+		#size-cells = <0>;
 
-		/* MAC-Address set in userspace */
+		band@0 {
+			reg = <0>;
+			nvmem-cells = <&macaddr_mrd_1fff8 0>;
+			nvmem-cell-names = "mac-address";
+		};
+
+		band@1 {
+			reg = <1>;
+			nvmem-cells = <&macaddr_mrd_1fff8 1>;
+			nvmem-cell-names = "mac-address";
+		};
 	};
 };
 
 &gmac0 {
-	nvmem-cells = <&macaddr_mrd_1fff8>;
+	nvmem-cells = <&macaddr_mrd_1fff8 0>;
 	nvmem-cell-names = "mac-address";
 };
 

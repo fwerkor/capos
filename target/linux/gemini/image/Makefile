@@ -55,8 +55,9 @@ define Build/dns313-images
 		--root $@.tmp $@.tmp-boot
 
 	# The device firmware needs revision 1 of EXT2
-	tune2fs -O filetype $@.tmp-boot
-	e2fsck -pDf $@.tmp-boot > /dev/null
+	$(STAGING_DIR_HOST)/bin/tune2fs -O filetype $@.tmp-boot
+	# Ignore errors because file system was intentionally broken with tune2fs
+	-$(STAGING_DIR_HOST)/bin/e2fsck -pDf $@.tmp-boot > /dev/null
 
 	./dns313_gen_hdd_img.sh $@ $@.tmp-boot $(IMAGE_ROOTFS) \
 		$(CONFIG_TARGET_KERNEL_PARTSIZE) \
@@ -124,6 +125,7 @@ endef
 # All DTB files are prefixed with "gemini-"
 define Device/Default
 	PROFILES := Default
+	DEVICE_DTS_DIR = $$(DTS_DIR)/gemini
 	KERNEL_DEPENDS = $$(wildcard $(DTS_DIR)/$$(DEVICE_DTS).dts)
 	KERNEL_NAME := zImage
 	KERNEL := kernel-bin | append-dtb
@@ -133,10 +135,10 @@ endef
 # A reasonable set of default packages handling the NAS type
 # of devices out of the box (former NAS42x0 IcyBox defaults)
 GEMINI_NAS_PACKAGES := $(DEFAULT_PACKAGES.nas) \
-		kmod-md-mod kmod-md-linear kmod-md-multipath \
+		kmod-md-mod kmod-md-linear \
 		kmod-md-raid0 kmod-md-raid1 kmod-md-raid10 kmod-md-raid456 \
 		kmod-fs-btrfs kmod-fs-cifs kmod-fs-nfs \
-		kmod-fs-nfsd kmod-fs-ntfs kmod-fs-reiserfs kmod-fs-vfat \
+		kmod-fs-nfsd kmod-fs-ntfs3 kmod-fs-reiserfs kmod-fs-vfat \
 		kmod-nls-utf8 kmod-usb-storage-extras kmod-hwmon-drivetemp \
 		cfdisk e2fsprogs badblocks \
 		partx-utils
@@ -156,7 +158,7 @@ define Device/dlink_dir-685
 	DEVICE_MODEL := DIR-685 Xtreme N Storage Router
 	DEVICE_DTS := gemini-dlink-dir-685
 	DEVICE_PACKAGES := $(GEMINI_NAS_PACKAGES) \
-			kmod-rt2800-pci
+			kmod-dsa-rtl8366rb
 	IMAGES := factory.bin sysupgrade.bin
 	# Pad to 128k erase blocks with 160 bytes WRGG header
 	IMAGE/factory.bin := append-kernel | pad-offset 128k 160 | append-rootfs | dir685-pad-rootfs | dir685-image
@@ -168,7 +170,7 @@ define Device/dlink_dns-313
 	DEVICE_VENDOR := D-Link
 	DEVICE_MODEL := DNS-313 1-Bay Network Storage Enclosure
 	DEVICE_DTS := gemini-dlink-dns-313
-	DEVICE_PACKAGES := $(GEMINI_NAS_PACKAGES)
+	DEVICE_PACKAGES := $(GEMINI_NAS_PACKAGES) usbgadget-acm
 	BLOCKSIZE := 1k
 	FILESYSTEMS := ext4
 	IMAGES := factory.bin.gz
@@ -192,7 +194,7 @@ define Device/itian_sq201
 	DEVICE_VENDOR := ITian
 	DEVICE_MODEL := Square One SQ201
 	DEVICE_DTS := gemini-sq201
-	DEVICE_PACKAGES += kmod-rt61-pci kmod-usb2-pci
+	DEVICE_PACKAGES += kmod-rt61-pci kmod-usb2-pci kmod-dsa-vsc73xx-spi
 endef
 TARGET_DEVICES += itian_sq201
 
@@ -209,6 +211,7 @@ define Device/storlink_sl93512r
 	DEVICE_VENDOR := StorLink
 	DEVICE_MODEL := SL93512r
 	DEVICE_DTS := gemini-sl93512r
+	DEVICE_PACKAGES += kmod-dsa-vsc73xx-spi
 endef
 TARGET_DEVICES += storlink_sl93512r
 

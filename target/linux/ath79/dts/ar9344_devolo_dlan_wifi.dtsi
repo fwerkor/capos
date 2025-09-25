@@ -4,6 +4,7 @@
 
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/input/input.h>
+#include <dt-bindings/leds/common.h>
 
 / {
 	aliases {
@@ -17,7 +18,8 @@
 		compatible = "gpio-leds";
 
 		wlan {
-			label = "white:wlan";
+			function = LED_FUNCTION_WLAN;
+			color = <LED_COLOR_ID_WHITE>;
 			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
 			linux,default-trigger = "phy1tpt";
 		};
@@ -112,7 +114,7 @@
 				reg = <0x70000 0xf80000>;
 			};
 
-			art: partition@ff0000 {
+			partition@ff0000 {
 				label = "art";
 				reg = <0xff0000 0x10000>;
 				read-only;
@@ -122,10 +124,18 @@
 					#address-cells = <1>;
 					#size-cells = <1>;
 
+					cal_art_1000: calibration@1000 {
+						reg = <0x1000 0x440>;
+					};
+
 					macaddr_art_1002: macaddr@1002 {
 						compatible = "mac-base";
 						reg = <0x1002 0x6>;
 						#nvmem-cell-cells = <1>;
+					};
+
+					cal_art_5000: calibration@5000 {
+						reg = <0x5000 0x844>;
 					};
 				};
 			};
@@ -152,7 +162,8 @@
 &wmac {
 	status = "okay";
 
-	mtd-cal-data = <&art 0x1000>;
+	nvmem-cells = <&cal_art_1000>;
+	nvmem-cell-names = "calibration";
 };
 
 &pcie {
@@ -161,6 +172,8 @@
 	wifi@0,0 {
 		compatible = "qcom,ath10k";
 		reg = <0 0 0 0 0>;
+		nvmem-cells = <&cal_art_5000>;
+		nvmem-cell-names = "calibration";
 	};
 };
 

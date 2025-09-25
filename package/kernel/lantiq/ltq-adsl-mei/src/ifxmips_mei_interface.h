@@ -515,9 +515,10 @@ typedef struct DSL_DEV_Device
 	DSL_int_t nInUse;                /* modem state, update by bsp driver, */
 	DSL_void_t *pPriv;
 	DSL_uint32_t base_address;       /* mei base address */
-	DSL_int_t nIrq[2];                  /* irq number */
+	DSL_int_t nIrq[3];                  /* irq number */
 #define IFX_DFEIR		0
 #define IFX_DYING_GASP	1
+#define IFX_USB_OC	2
 	DSL_DEV_MeiDebug_t lop_debugwr;  /* dying gasp */
 	struct module *owner;
 } DSL_DEV_Device_t;			/* ifx_adsl_device_t */
@@ -617,6 +618,9 @@ extern DSL_DEV_MeiError_t DSL_BSP_Showtime(DSL_DEV_Device_t *, DSL_uint32_t, DSL
 extern int DSL_BSP_ATMLedCBRegister( int (*ifx_adsl_ledcallback)(void));
 extern DSL_DEV_MeiError_t DSL_BSP_MemoryDebugAccess(DSL_DEV_Device_t *, DSL_BSP_MemoryAccessType_t, DSL_uint32_t, DSL_uint32_t *, DSL_uint32_t);
 extern volatile DSL_DEV_Device_t *adsl_dev;
+extern int DSL_BSP_ATMLedCBUnregister (int (*ifx_adsl_ledcallback) (void));
+extern int ifx_mei_atm_led_blink(void);
+extern int ifx_mei_atm_showtime_check(int *is_showtime, struct port_cell_info *port_cell, void **xdata_addr);
 
 /**
  *    Dummy structure by now to show mechanism of extended data that will be

@@ -107,8 +107,8 @@
 	led_power_green: led@8 {
 		reg = <8>;
 		active-low;
-		label = "green:power";
-		default-state = "on";
+		function = LED_FUNCTION_POWER;
+		color = <LED_COLOR_ID_GREEN>;
 	};
 
 	led@10 {
@@ -132,7 +132,8 @@
 	led@13 {
 		reg = <13>;
 		active-low;
-		label = "green:wps";
+		function = LED_FUNCTION_WPS;
+		color = <LED_COLOR_ID_GREEN>;
 	};
 
 	led@14 {
@@ -144,7 +145,8 @@
 	led@15 {
 		reg = <15>;
 		active-low;
-		label = "green:usb";
+		function = LED_FUNCTION_USB;
+		color = <LED_COLOR_ID_GREEN>;
 	};
 
 	led@17 {
@@ -187,7 +189,7 @@
 			#address-cells = <1>;
 			#size-cells = <1>;
 
-			cferom: partition@0 {
+			partition@0 {
 				label = "cferom";
 				reg = <0x0000000 0x0020000>;
 				read-only;

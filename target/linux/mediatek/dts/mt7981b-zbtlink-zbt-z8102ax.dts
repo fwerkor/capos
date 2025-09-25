@@ -2,7 +2,9 @@
 
 /dts-v1/;
 
-#include "mt7981.dtsi"
+#include <dt-bindings/pinctrl/mt65xx.h>
+
+#include "mt7981b.dtsi"
 
 / {
 	model = "Zbtlink ZBT-Z8102AX";
@@ -19,11 +21,12 @@
 
 	chosen {
 		stdout-path = "serial0:115200n8";
-		bootargs = "earlycon=uart8250,mmio32,0x11002000 console=ttyS0,115200n8 loglevel=8";
+		bootargs = "earlycon=uart8250,mmio32,0x11002000 console=ttyS0,115200n8";
 	};
 
-	memory {
+	memory@40000000 {
 		reg = <0 0x40000000 0 0x40000000>;
+		device_type = "memory";
 	};
 
 	gpio-keys {
@@ -52,28 +55,24 @@
 		compatible = "gpio-leds";
 
 		led_status_red: red {
-			label = "red:status";
 			gpios = <&pio 9 GPIO_ACTIVE_HIGH>;
 			color = <LED_COLOR_ID_RED>;
 			function = LED_FUNCTION_STATUS;
 		};
 
 		led_status_green: green {
-			label = "green:status";
 			gpios = <&pio 10 GPIO_ACTIVE_LOW>;
 			color = <LED_COLOR_ID_GREEN>;
 			function = LED_FUNCTION_STATUS;
 		};
 
 		blue {
-			label = "blue:status";
 			gpios = <&pio 11 GPIO_ACTIVE_LOW>;
 			color = <LED_COLOR_ID_BLUE>;
 			function = LED_FUNCTION_STATUS;
 		};
 
 		4g {
-			label = "blue:4g";
 			gpios = <&pio 8 GPIO_ACTIVE_LOW>;
 			color = <LED_COLOR_ID_BLUE>;
 			function = LED_FUNCTION_USB;
@@ -81,7 +80,6 @@
 		};
 
 		4g2 {
-			label = "blue:4g2";
 			gpios = <&pio 14 GPIO_ACTIVE_LOW>;
 			color = <LED_COLOR_ID_BLUE>;
 			function = LED_FUNCTION_USB;
@@ -98,7 +96,6 @@
 
 	gpio-export {
 		compatible = "gpio-export";
-		#size-cells = <0>;
 
 		pcie {
 			gpio-export,name = "pcie_power";
@@ -166,7 +163,7 @@
 &mdio_bus {
 	switch: switch@1f {
 		compatible = "mediatek,mt7531";
-		reg = <0x1f>;
+		reg = <31>;
 		reset-gpios = <&pio 39 GPIO_ACTIVE_HIGH>;
 		interrupt-controller;
 		#interrupt-cells = <1>;
@@ -295,14 +292,14 @@
 
 		conf-pu {
 			pins = "SPI0_CS", "SPI0_HOLD", "SPI0_WP";
-			drive-strength = <8>;
-			bias-pull-up = <103>;
+			drive-strength = <MTK_DRIVE_8mA>;
+			bias-pull-up = <MTK_PUPD_SET_R1R0_11>;
 		};
 
 		conf-pd {
 			pins = "SPI0_CLK", "SPI0_MOSI", "SPI0_MISO";
-			drive-strength = <8>;
-			bias-pull-down = <103>;
+			drive-strength = <MTK_DRIVE_8mA>;
+			bias-pull-down = <MTK_PUPD_SET_R1R0_11>;
 		};
 	};
 };

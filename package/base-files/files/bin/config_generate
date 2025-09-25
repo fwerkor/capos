@@ -3,6 +3,7 @@
 CFG=/etc/board.json
 
 . /usr/share/libubox/jshn.sh
+. /lib/functions/ipv4.sh
 
 [ -s $CFG ] || /bin/board_detect || exit 1
 [ -s /etc/config/network -a -s /etc/config/system ] && exit 0
@@ -42,8 +43,7 @@ generate_static_network() {
 		set network.loopback='interface'
 		set network.loopback.device='lo'
 		set network.loopback.proto='static'
-		set network.loopback.ipaddr='127.0.0.1'
-		set network.loopback.netmask='255.0.0.0'
+		add_list network.loopback.ipaddr='127.0.0.1/8'
 	EOF
 		[ -e /proc/sys/net/ipv6 ] && {
 			uci -q batch <<-EOF
@@ -160,18 +160,19 @@ generate_network() {
 
 	case "$protocol" in
 		static)
-			local ipad
+			local ipad netm prefix
 			case "$1" in
 				lan) ipad=${ipaddr:-"192.168.1.1"} ;;
 				*) ipad=${ipaddr:-"192.168.$((addr_offset++)).1"} ;;
 			esac
 
 			netm=${netmask:-"255.255.255.0"}
+			str2ip netm "$netm"
+			netmask2prefix prefix "$netm"
 
 			uci -q batch <<-EOF
 				set network.$1.proto='static'
-				set network.$1.ipaddr='$ipad'
-				set network.$1.netmask='$netm'
+				add_list network.$1.ipaddr='$ipad/$prefix'
 			EOF
 			[ -e /proc/sys/net/ipv6 ] && uci set network.$1.ip6assign='60'
 		;;
@@ -193,7 +194,9 @@ generate_network() {
 
 		pppoe)
 			uci -q batch <<-EOF
-				set network.$1.proto='dhcp'
+				set network.$1.proto='pppoe'
+				set network.$1.username='username'
+				set network.$1.password='password'
 			EOF
 			[ -e /proc/sys/net/ipv6 ] && {
 				uci -q batch <<-EOF
@@ -309,20 +312,21 @@ generate_static_system() {
 	uci -q batch <<-EOF
 		delete system.@system[0]
 		add system system
-		set system.@system[-1].hostname='CapOS'
-		set system.@system[-1].timezone='UTC'
+		set system.@system[-1].hostname='OpenWrt'
+		set system.@system[-1].timezone='GMT0'
+		set system.@system[-1].zonename='UTC'
 		set system.@system[-1].ttylogin='0'
-		set system.@system[-1].log_size='64'
+		set system.@system[-1].log_size='128'
 		set system.@system[-1].urandom_seed='0'
 
 		delete system.ntp
 		set system.ntp='timeserver'
 		set system.ntp.enabled='1'
 		set system.ntp.enable_server='0'
-		add_list system.ntp.server='0.pool.ntp.org'
-		add_list system.ntp.server='1.pool.ntp.org'
-		add_list system.ntp.server='2.pool.ntp.org'
-		add_list system.ntp.server='3.pool.ntp.org'
+		add_list system.ntp.server='0.openwrt.pool.ntp.org'
+		add_list system.ntp.server='1.openwrt.pool.ntp.org'
+		add_list system.ntp.server='2.openwrt.pool.ntp.org'
+		add_list system.ntp.server='3.openwrt.pool.ntp.org'
 	EOF
 
 	if json_is_a system object; then
@@ -337,6 +341,11 @@ generate_static_system() {
 				uci -q set "system.@system[-1].compat_version=$compat_version"
 			else
 				uci -q set "system.@system[-1].compat_version=1.0"
+			fi
+
+			local timezone
+			if json_get_var timezone timezone; then
+				uci -q set "system.@system[-1].timezone=$timezone"
 			fi
 
 			if json_is_a ntpserver array; then

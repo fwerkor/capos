@@ -14,29 +14,29 @@
  
  /* Entry point of driver */
 -int __init DSL_ModuleInit(void)
-+static int __devinit ltq_adsl_probe(struct platform_device *pdev)
++static int ltq_adsl_probe(struct platform_device *pdev)
  {
     struct class *dsl_class;
     DSL_int_t i;
-@@ -1124,7 +1124,7 @@ int __init DSL_ModuleInit(void)
+@@ -1128,7 +1128,7 @@ int __init DSL_ModuleInit(void)
     return 0;
  }
  
 -void __exit DSL_ModuleCleanup(void)
-+static int __devexit ltq_adsl_remove(struct platform_device *pdev)
++static void ltq_adsl_remove(struct platform_device *pdev)
  {
     printk("Module will be unloaded"DSL_DRV_CRLF);
  
-@@ -1139,7 +1139,7 @@ void __exit DSL_ModuleCleanup(void)
+@@ -1142,8 +1142,6 @@ void __exit DSL_ModuleCleanup(void)
+                DSL_FPGA_BND_REGS_SZ_BYTE,
                 (DSL_uint8_t**)&g_BndFpgaBase);
  #endif /* defined(INCLUDE_DSL_CPE_API_VINAX) && defined(INCLUDE_DSL_BONDING)*/
- 
+-
 -   return;
-+   return 0;
  }
  
  #ifndef _lint
-@@ -1155,8 +1155,30 @@ module_param(debug_level, byte, 0);
+@@ -1159,8 +1157,29 @@ module_param(debug_level, byte, 0);
  MODULE_PARM_DESC(debug_level, "set to get more (1) or fewer (4) debug outputs");
  #endif /* #ifndef DSL_DEBUG_DISABLE*/
  
@@ -56,10 +56,9 @@
 +
 +static struct platform_driver ltq_adsl_driver = {
 +	.probe = ltq_adsl_probe,
-+	.remove = __devexit_p(ltq_adsl_remove),
++	.remove_new = ltq_adsl_remove,
 +	.driver = {
 +		.name = "adsl",
-+		.owner = THIS_MODULE,
 +		.of_match_table = ltq_adsl_match,
 +	},
 +};

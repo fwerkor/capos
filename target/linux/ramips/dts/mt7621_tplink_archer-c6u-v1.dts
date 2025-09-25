@@ -4,6 +4,7 @@
 
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/input/input.h>
+#include <dt-bindings/leds/common.h>
 
 / {
 	compatible = "tplink,archer-c6u-v1", "mediatek,mt7621-soc";
@@ -41,24 +42,28 @@
 		compatible = "gpio-leds";
 
 		led_power: power {
-			label = "green:power";
+			function = LED_FUNCTION_POWER;
+			color = <LED_COLOR_ID_GREEN>;
 			gpios = <&gpio 4 GPIO_ACTIVE_LOW>;
 		};
 
 		usb {
-			label = "green:usb";
+			function = LED_FUNCTION_USB;
+			color = <LED_COLOR_ID_GREEN>;
 			gpios = <&gpio 13 GPIO_ACTIVE_LOW>;
 			trigger-sources = <&ehci_port2>;
 			linux,default-trigger = "usbport";
 		};
 
 		wan-orange {
-			label = "orange:wan";
+			function = LED_FUNCTION_WAN;
+			color = <LED_COLOR_ID_ORANGE>;
 			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
 		};
 
 		lan {
-			label = "green:lan";
+			function = LED_FUNCTION_LAN;
+			color = <LED_COLOR_ID_GREEN>;
 			gpios = <&gpio 15 GPIO_ACTIVE_LOW>;
 		};
 
@@ -75,18 +80,10 @@
 		};
 
 		wan-green {
-			label = "green:wan";
+			function = LED_FUNCTION_WAN;
+			color = <LED_COLOR_ID_GREEN>;
 			gpios = <&gpio 45 GPIO_ACTIVE_LOW>;
 		};
-	};
-
-	reg_usb_vbus: regulator {
-		compatible = "regulator-fixed";
-		regulator-name = "usb_vbus";
-		regulator-min-microvolt = <5000000>;
-		regulator-max-microvolt = <5000000>;
-		gpio = <&gpio 3 GPIO_ACTIVE_HIGH>;
-		enable-active-high;
 	};
 };
 
@@ -96,7 +93,7 @@
 	flash@0 {
 		compatible = "jedec,spi-nor";
 		reg = <0>;
-		spi-max-frequency = <80000000>;
+		spi-max-frequency = <50000000>;
 
 		partitions {
 			compatible = "fixed-partitions";
@@ -115,7 +112,7 @@
 				reg = <0x040000 0xf60000>;
 			};
 
-			config: partition@fa0000 {
+			partition@fa0000 {
 				label = "config";
 				reg = <0xfa0000 0x010000>;
 				read-only;
@@ -139,7 +136,7 @@
 				read-only;
 			};
 
-			radio: partition@ff0000 {
+			partition@ff0000 {
 				label = "radio";
 				reg = <0xff0000 0x010000>;
 				read-only;
@@ -167,7 +164,7 @@
 };
 
 &pcie0 {
-	mt76@0,0 {
+	wifi@0,0 {
 		compatible = "mediatek,mt76";
 		reg = <0x0000 0 0 0 0>;
 		nvmem-cells = <&eeprom_radio_0>, <&macaddr_config_8 0>;
@@ -177,7 +174,7 @@
 };
 
 &pcie1 {
-	mt76@0,0 {
+	wifi@0,0 {
 		compatible = "mediatek,mt76";
 		reg = <0x0000 0 0 0 0>;
 		nvmem-cells = <&eeprom_radio_8000>, <&macaddr_config_8 (-1)>;
@@ -200,10 +197,14 @@
 	nvmem-cell-names = "mac-address";
 };
 
-&mdio {
-	ethphy0: ethernet-phy@0 {
-		reg = <0>;
-	};
+&ethphy0 {
+	/delete-property/ interrupts;
+};
+
+&reg_vbus {
+	/delete-property/ regulator-always-on;
+	gpios = <&gpio 3 GPIO_ACTIVE_HIGH>;
+	enable-active-high;
 };
 
 &switch0 {
@@ -235,8 +236,4 @@
 		groups = "i2c", "uart2", "uart3", "jtag", "wdt", "sdhci";
 		function = "gpio";
 	};
-};
-
-&xhci {
-	vbus-supply = <&reg_usb_vbus>;
 };

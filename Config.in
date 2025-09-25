@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2006-2013 OpenWrt.org
 
-mainmenu "CapOS Configuration"
+mainmenu "OpenWrt Configuration"
 
 config MODULES
 	modules

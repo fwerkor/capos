@@ -4,10 +4,11 @@
 
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/input/input.h>
+#include <dt-bindings/leds/common.h>
 
 / {
 	compatible = "zyxel,lte5398-m904", "mediatek,mt7621-soc";
-	model = "ZyXEL LTE5398-M904";
+	model = "Zyxel LTE5398-M904";
 
 	aliases {
 		label-mac-device = &gmac0;
@@ -37,12 +38,14 @@
 		compatible = "gpio-leds";
 
 		led_power_green: power_green {
-			label = "green:power";
+			function = LED_FUNCTION_POWER;
+			color = <LED_COLOR_ID_GREEN>;
 			gpios = <&gpio 16 GPIO_ACTIVE_HIGH>;
 		};
 
 		power_blue {
-			label = "blue:power";
+			function = LED_FUNCTION_POWER;
+			color = <LED_COLOR_ID_BLUE>;
 			gpios = <&gpio 22 GPIO_ACTIVE_HIGH>;
 			linux,default-trigger = "usbport";
 			trigger-sources = <&ehci_port2>;
@@ -82,18 +85,11 @@
 
 	gpio_export {
 		compatible = "gpio-export";
-		#size-cells = <0>;
 
 		lte_power {
 			gpio-export,name = "lte_power";
 			gpio-export,output = <0>;
 			gpios = <&gpio 27 GPIO_ACTIVE_LOW>;
-		};
-
-		usb_power {
-			gpio-export,name = "usb_power";
-			gpio-export,output = <1>;
-			gpios = <&gpio 0 GPIO_ACTIVE_HIGH>;
 		};
 	};
 };
@@ -117,7 +113,7 @@
 			reg = <0x80000 0x80000>;
 		};
 
-		factory: partition@100000 {
+		partition@100000 {
 			label = "Factory";
 			reg = <0x100000 0x40000>;
 			read-only;
@@ -228,4 +224,11 @@
 		nvmem-cells = <&eeprom_factory_8000>;
 		nvmem-cell-names = "eeprom";
 	};
+};
+
+&reg_vbus {
+	/delete-property/ regulator-always-on;
+	gpios = <&gpio 0 GPIO_ACTIVE_HIGH>;
+	enable-active-high;
+	regulator-boot-on;
 };

@@ -9,6 +9,7 @@ HWMON_MENU:=Hardware Monitoring Support
 
 define KernelPackage/hwmon-core
   SUBMENU:=$(HWMON_MENU)
+  DEPENDS:=+!LINUX_6_6:kmod-i2c-core
   TITLE:=Hardware monitoring support
   KCONFIG:= \
 	CONFIG_HWMON \
@@ -34,7 +35,7 @@ define KernelPackage/hwmon-ad7418
   KCONFIG:=CONFIG_SENSORS_AD7418
   FILES:=$(LINUX_DIR)/drivers/hwmon/ad7418.ko
   AUTOLOAD:=$(call AutoLoad,60,ad7418 ad7418)
-  $(call AddDepends/hwmon,+kmod-i2c-core)
+  $(call AddDepends/hwmon,+kmod-i2c-core +kmod-regmap-core)
 endef
 
 define KernelPackage/hwmon-ad7418/description
@@ -52,7 +53,7 @@ define KernelPackage/hwmon-adt7410
 	$(LINUX_DIR)/drivers/hwmon/adt7x10.ko \
 	$(LINUX_DIR)/drivers/hwmon/adt7410.ko
   AUTOLOAD:=$(call AutoLoad,60,adt7x10 adt7410)
-  $(call AddDepends/hwmon,+kmod-i2c-core +LINUX_6_1:kmod-regmap-core)
+  $(call AddDepends/hwmon,+kmod-i2c-core +kmod-regmap-core)
 endef
 
 define KernelPackage/hwmon-adt7410/description
@@ -82,7 +83,7 @@ define KernelPackage/hwmon-coretemp
   KCONFIG:=CONFIG_SENSORS_CORETEMP
   FILES:=$(LINUX_DIR)/drivers/hwmon/coretemp.ko
   AUTOLOAD:=$(call AutoProbe,coretemp)
-  $(call AddDepends/hwmon,)
+  $(call AddDepends/hwmon,@TARGET_x86)
 endef
 
 define KernelPackage/hwmon-coretemp/description
@@ -125,6 +126,21 @@ endef
 $(eval $(call KernelPackage,hwmon-drivetemp))
 
 
+define KernelPackage/hwmon-emc2305
+  TITLE:=Microchip EMC2301/2/3/5 fan controller
+  KCONFIG:=CONFIG_SENSORS_EMC2305
+  FILES:=$(LINUX_DIR)/drivers/hwmon/emc2305.ko
+  AUTOLOAD:=$(call AutoProbe,emc2305)
+  $(call AddDepends/hwmon,+kmod-i2c-core +PACKAGE_kmod-thermal:kmod-thermal +kmod-regmap-i2c)
+endef
+
+define KernelPackage/hwmon-emc2305/description
+ Kernel module for Microchip EMC2301/EMC2302/EMC2303/EMC2305 fan controllers
+endef
+
+$(eval $(call KernelPackage,hwmon-emc2305))
+
+
 define KernelPackage/hwmon-gsc
   TITLE:=Gateworks System Controller support
   KCONFIG:=CONFIG_MFD_GATEWORKS_GSC \
@@ -133,7 +149,7 @@ define KernelPackage/hwmon-gsc
 	$(LINUX_DIR)/drivers/mfd/gateworks-gsc.ko \
 	$(LINUX_DIR)/drivers/hwmon/gsc-hwmon.ko
   AUTOLOAD:=$(call AutoLoad,20,gsc-hwmon,1)
-  $(call AddDepends/hwmon,+kmod-i2c-core)
+  $(call AddDepends/hwmon,+kmod-i2c-core +kmod-mfd)
 endef
 
 define KernelPackage/hwmon-gsc/description
@@ -183,7 +199,7 @@ define KernelPackage/hwmon-g762
 endef
 
 define KernelPackage/hwmon-g762/description
- Kernel module for Global Mixed-mode Technology Inc G762 and G763 fan speed PWM controller chips.
+ Kernel module for Global Mixed-mode Technology Inc G761/G762/G763 fan speed PWM controller chips.
 endef
 
 $(eval $(call KernelPackage,hwmon-g762))
@@ -346,7 +362,7 @@ define KernelPackage/hwmon-lm92
   KCONFIG:=CONFIG_SENSORS_LM92
   FILES:=$(LINUX_DIR)/drivers/hwmon/lm92.ko
   AUTOLOAD:=$(call AutoProbe,lm92)
-  $(call AddDepends/hwmon,+kmod-i2c-core)
+  $(call AddDepends/hwmon,+kmod-i2c-core +!LINUX_6_6:kmod-regmap-core)
 endef
 
 define KernelPackage/hwmon-lm92/description
@@ -391,7 +407,7 @@ define KernelPackage/hwmon-max6642
   KCONFIG:=CONFIG_SENSORS_MAX6642
   FILES:=$(LINUX_DIR)/drivers/hwmon/max6642.ko
   AUTOLOAD:=$(call AutoLoad,60,max6642 max6642)
-  $(call AddDepends/hwmon,+kmod-i2c-core)
+  $(call AddDepends/hwmon,@LINUX_6_6 +kmod-i2c-core)
 endef
 
 define KernelPackage/hwmon-max6642/description
@@ -406,7 +422,7 @@ define KernelPackage/hwmon-max6697
   KCONFIG:=CONFIG_SENSORS_MAX6697
   FILES:=$(LINUX_DIR)/drivers/hwmon/max6697.ko
   AUTOLOAD:=$(call AutoProbe,max6697)
-  $(call AddDepends/hwmon,+kmod-i2c-core)
+  $(call AddDepends/hwmon,+kmod-i2c-core +!LINUX_6_6:kmod-regmap-i2c)
 endef
 
 define KernelPackage/hwmon-max6697/description
@@ -513,7 +529,7 @@ define KernelPackage/hwmon-pwmfan
   KCONFIG:=CONFIG_SENSORS_PWM_FAN
   FILES:=$(LINUX_DIR)/drivers/hwmon/pwm-fan.ko
   AUTOLOAD:=$(call AutoLoad,60,pwm-fan)
-  $(call AddDepends/hwmon, +PACKAGE_kmod-thermal:kmod-thermal)
+  $(call AddDepends/hwmon,@PWM_SUPPORT +PACKAGE_kmod-thermal:kmod-thermal)
 endef
 
 define KernelPackage/hwmon-pwmfan/description
@@ -532,7 +548,7 @@ define KernelPackage/hwmon-sch5627
 	$(LINUX_DIR)/drivers/hwmon/sch5627.ko \
 	$(LINUX_DIR)/drivers/hwmon/sch56xx-common.ko
   AUTOLOAD:=$(call AutoProbe,sch5627)
-  $(call AddDepends/hwmon,+kmod-i2c-core)
+  $(call AddDepends/hwmon,+kmod-i2c-core +!LINUX_6_6:kmod-regmap-core)
 endef
 
 define KernelPackage/hwmon-sch5627/description
@@ -570,6 +586,21 @@ define KernelPackage/hwmon-sht3x/description
 endef
 
 $(eval $(call KernelPackage,hwmon-sht3x))
+
+
+define KernelPackage/hwmon-tc654
+  TITLE:=TC654 monitoring support
+  KCONFIG:=CONFIG_SENSORS_TC654
+  FILES:=$(LINUX_DIR)/drivers/hwmon/tc654.ko
+  AUTOLOAD:=$(call AutoLoad,60,tc654)
+  $(call AddDepends/hwmon,+kmod-i2c-core)
+endef
+
+define KernelPackage/hwmon-tc654/description
+ Kernel module for Microchip TC654/TC655 and compatibles
+endef
+
+$(eval $(call KernelPackage,hwmon-tc654))
 
 
 define KernelPackage/hwmon-tmp102
@@ -715,3 +746,12 @@ endef
 $(eval $(call KernelPackage,hwmon-adcxx))
 
 
+define KernelPackage/polynomial
+  TITLE:=polynomial support
+  KCONFIG:=CONFIG_POLYNOMIAL
+  HIDDEN:=1
+  FILES:=$(LINUX_DIR)/lib/polynomial.ko
+  AUTOLOAD:=$(call AutoProbe, polynomial)
+endef
+
+$(eval $(call KernelPackage,polynomial))

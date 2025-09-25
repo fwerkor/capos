@@ -28,17 +28,20 @@
 		compatible = "gpio-leds";
 
 		led_status_green: status_green {
-			label = "green:status";
+			function = LED_FUNCTION_STATUS;
+			color = <LED_COLOR_ID_GREEN>;
 			gpios = <&gpio 15 GPIO_ACTIVE_LOW>;
 		};
 
 		led_status_blue: status_blue {
-			label = "blue:status";
+			function = LED_FUNCTION_STATUS;
+			color = <LED_COLOR_ID_BLUE>;
 			gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
 		};
 
 		led_status_red: status_red {
-			label = "red:status";
+			function = LED_FUNCTION_STATUS;
+			color = <LED_COLOR_ID_RED>;
 			gpios = <&gpio 13 GPIO_ACTIVE_LOW>;
 		};
 	};
@@ -48,6 +51,7 @@
 		led-failsafe = &led_status_red;
 		led-running = &led_status_blue;
 		led-upgrade = &led_status_red;
+		label-mac-device = &gmac0;
 	};
 };
 
@@ -59,7 +63,17 @@
 	wifi@0,0 {
 		compatible = "mediatek,mt76";
 		reg = <0x0000 0 0 0 0>;
-		mediatek,mtd-eeprom = <&factory 0x0>;
+		nvmem-cells = <&eeprom_factory_0>;
+		nvmem-cell-names = "eeprom";
+
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		band@1 {
+			reg = <1>;
+			nvmem-cells = <&macaddr_factory_8004>;
+			nvmem-cell-names = "mac-address";
+		};
 	};
 };
 
@@ -86,7 +100,7 @@
 				read-only;
 			};
 
-			factory: partition@50000 {
+			partition@50000 {
 				label = "factory";
 				reg = <0x50000 0x10000>;
 				read-only;
@@ -95,6 +109,14 @@
 					compatible = "fixed-layout";
 					#address-cells = <1>;
 					#size-cells = <1>;
+
+					eeprom_factory_0: eeprom@0 {
+						reg = <0x0 0xe00>;
+					};
+
+					macaddr_factory_8004: macaddr@8004 {
+						reg = <0x8004 0x6>;
+					};
 
 					macaddr_factory_e000: macaddr@e000 {
 						compatible = "mac-base";

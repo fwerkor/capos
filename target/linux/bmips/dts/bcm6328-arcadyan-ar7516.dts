@@ -69,7 +69,7 @@
 			#address-cells = <1>;
 			#size-cells = <1>;
 
-			cfe: partition@0 {
+			partition@0 {
 				label = "cfe";
 				reg = <0x000000 0x010000>;
 				read-only;
@@ -117,7 +117,8 @@
 	led@6 {
 		reg = <6>;
 		active-low;
-		label = "green:wan";
+		function = LED_FUNCTION_WAN;
+		color = <LED_COLOR_ID_GREEN>;
 	};
 
 	led@7 {

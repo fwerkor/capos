@@ -25,7 +25,6 @@
 		compatible = "gpio-leds";
 
 		led_system: led-0 {
-			label = "green:system";
 			color = <LED_COLOR_ID_GREEN>;
 			function = LED_FUNCTION_POWER;
 			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
@@ -123,8 +122,8 @@
 &wmac {
 	status = "okay";
 
-	nvmem-cells = <&macaddr_art_1002 0>, <&calibration_art_1000>;
-	nvmem-cell-names = "mac-address", "calibration";
+	nvmem-cells = <&calibration_art_1000>;
+	nvmem-cell-names = "calibration";
 };
 
 &pcie {

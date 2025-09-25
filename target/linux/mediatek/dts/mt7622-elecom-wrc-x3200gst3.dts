@@ -4,6 +4,7 @@
 #include <dt-bindings/input/input.h>
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/leds/common.h>
+#include <dt-bindings/pinctrl/mt65xx.h>
 
 #include "mt7622.dtsi"
 #include "mt6380.dtsi"
@@ -25,22 +26,21 @@
 		bootargs = "earlycon=uart8250,mmio32,0x11002000 console=ttyS0,115200n8 swiotlb=512";
 	};
 
-	memory {
+	memory@40000000 {
 		reg = <0 0x40000000 0 0x1f000000>;
+		device_type = "memory";
 	};
 
 	leds {
 		compatible = "gpio-leds";
 
 		led-0 {
-			label = "red:wps";
 			gpios = <&pio 47 GPIO_ACTIVE_HIGH>;
 			color = <LED_COLOR_ID_RED>;
 			function = LED_FUNCTION_WPS;
 		};
 
 		led_power_red: led-1 {
-			label = "red:power";
 			gpios = <&pio 48 GPIO_ACTIVE_HIGH>;
 			color = <LED_COLOR_ID_RED>;
 			function = LED_FUNCTION_POWER;
@@ -48,7 +48,6 @@
 		};
 
 		led_power_green: led-2 {
-			label = "green:power";
 			gpios = <&pio 49 GPIO_ACTIVE_HIGH>;
 			color = <LED_COLOR_ID_GREEN>;
 			function = LED_FUNCTION_POWER;
@@ -56,7 +55,6 @@
 		};
 
 		led-3 {
-			label = "blue:power";
 			gpios = <&pio 50 GPIO_ACTIVE_HIGH>;
 			color = <LED_COLOR_ID_BLUE>;
 			function = LED_FUNCTION_POWER;
@@ -64,7 +62,6 @@
 		};
 
 		led-4 {
-			label = "white:wlan2g";
 			gpios = <&pio 85 GPIO_ACTIVE_HIGH>;
 			color = <LED_COLOR_ID_WHITE>;
 			function = LED_FUNCTION_WLAN;
@@ -73,7 +70,6 @@
 		};
 
 		led-5 {
-			label = "white:wlan5g";
 			gpios = <&pio 89 GPIO_ACTIVE_HIGH>;
 			color = <LED_COLOR_ID_WHITE>;
 			function = LED_FUNCTION_WLAN;
@@ -164,13 +160,13 @@
 		conf-cmd-data {
 			pins = "SPI_WP", "SPI_HOLD", "SPI_MOSI",
 			       "SPI_MISO", "SPI_CS";
-			drive-strength = <16>;
+			drive-strength = <MTK_DRIVE_16mA>;
 			bias-pull-up;
 		};
 
 		conf-clk {
 			pins = "SPI_CLK";
-			drive-strength = <16>;
+			drive-strength = <MTK_DRIVE_16mA>;
 			bias-pull-down;
 		};
 	};
@@ -215,9 +211,9 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
-		switch@0 {
+		switch@1f {
 			compatible = "mediatek,mt7531";
-			reg = <0>;
+			reg = <31>;
 			interrupt-controller;
 			#interrupt-cells = <1>;
 			interrupt-parent = <&pio>;

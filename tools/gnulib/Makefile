@@ -2,11 +2,11 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=gnulib
 PKG_CPE_ID:=cpe:/a:gnu:$(PKG_NAME)
-PKG_VERSION:=f9a4ee73c3e7b544f640d0d04b55983d3a7b894e# # master
 
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://git.savannah.gnu.org/cgit/$(PKG_NAME).git/snapshot
-PKG_HASH:=514716d58987a9c0de0d69fb22d42bcd19edf80eed099882a004ff162060f1a8
+PKG_SOURCE_URL=git://git.git.savannah.gnu.org/$(PKG_NAME).git
+PKG_SOURCE_DATE:=2025-07-01
+PKG_SOURCE_VERSION:=a3151d456d6919c9066b54dc6f680452168165cf# # stable-202501
+PKG_MIRROR_HASH:=b695d96e915ecd6c4551436f417cb2c0879aef4ef6318721c8d5cc86cb44ba9d
 
 include $(INCLUDE_DIR)/host-build.mk
 
@@ -14,14 +14,14 @@ define Host/Configure
 endef
 
 define Host/Install
+	$(call Host/Uninstall)
 	$(INSTALL_DIR) $(1)/share/aclocal
 	$(INSTALL_DATA) $(HOST_BUILD_DIR)/m4/*.m4 $(1)/share/aclocal/
-	$(INSTALL_DIR) $(1)/share/gnulib
-	$(CP) $(HOST_BUILD_DIR)/* $(1)/share/gnulib/
+	$(CP) $(HOST_BUILD_DIR)/ $(1)/share/gnulib/
 	ln -sf ../share/gnulib/gnulib-tool $(STAGING_DIR_HOST)/bin/gnulib-tool
 endef
 
-define Host/Clean
+define Host/Uninstall
 	rm -rf $(STAGING_DIR_HOST)/bin/gnulib-tool $(STAGING_DIR_HOST)/share/gnulib
 endef
 

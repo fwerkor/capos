@@ -13,6 +13,8 @@ platform_do_upgrade() {
 	arris,tr4400-v2 |\
 	askey,rt4230w-rev6 |\
 	compex,wpq864|\
+	fortinet,fap-421e|\
+	linksys,e8350-v1|\
 	netgear,d7800 |\
 	netgear,r7500 |\
 	netgear,r7500v2 |\
@@ -33,7 +35,8 @@ platform_do_upgrade() {
 		CI_ROOTPART="ubi_rootfs"
 		nand_do_upgrade "$1"
 		;;
-	edgecore,ecw5410)
+	edgecore,ecw5410 |\
+	ignitenet,ss-w2-ac2600)
 		part="$(awk -F 'ubi.mtd=' '{printf $2}' /proc/cmdline | sed -e 's/ .*$//')"
 		if [ "$part" = "rootfs1" ]; then
 			fw_setenv active 2 || exit 1

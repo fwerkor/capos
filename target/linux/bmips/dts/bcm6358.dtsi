@@ -7,6 +7,7 @@
 #include <dt-bindings/input/input.h>
 #include <dt-bindings/interrupt-controller/bcm6358-interrupt-controller.h>
 #include <dt-bindings/interrupt-controller/irq.h>
+#include <dt-bindings/leds/common.h>
 #include <dt-bindings/reset/bcm6358-reset.h>
 
 / {
@@ -41,6 +42,7 @@
 	cpus {
 		#address-cells = <1>;
 		#size-cells = <0>;
+		brcm,bmips-cbr-reg = <0xff400000>;
 		mips-hpt-frequency = <150000000>;
 
 		cpu@0 {

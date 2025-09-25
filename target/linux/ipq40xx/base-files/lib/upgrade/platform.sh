@@ -120,6 +120,7 @@ platform_do_upgrade() {
 	glinet,gl-ap1300 |\
 	luma,wrtq-329acn |\
 	mobipromo,cm520-79f |\
+	netgear,lbr20 |\
 	netgear,wac510 |\
 	p2w,r619ac-64m |\
 	p2w,r619ac-128m |\
@@ -173,6 +174,9 @@ platform_do_upgrade() {
 	linksys,whw01 |\
 	linksys,whw03v2)
 		platform_do_upgrade_linksys "$1"
+		;;
+	linksys,whw03)
+		platform_do_upgrade_linksys_emmc "$1"
 		;;
 	meraki,mr33 |\
 	meraki,mr74)
@@ -235,7 +239,8 @@ platform_do_upgrade() {
 platform_copy_config() {
 	case "$(board_name)" in
 	glinet,gl-b2200 |\
-	google,wifi)
+	google,wifi |\
+	linksys,whw03)
 		emmc_copy_config
 		;;
 	esac
