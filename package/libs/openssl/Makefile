@@ -8,7 +8,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=openssl
-PKG_VERSION:=3.0.12
+PKG_VERSION:=3.0.18
 PKG_RELEASE:=1
 PKG_BUILD_FLAGS:=no-mips16 gc-sections no-lto
 
@@ -17,17 +17,14 @@ PKG_BUILD_PARALLEL:=1
 PKG_BASE:=$(subst $(space),.,$(wordlist 1,2,$(subst .,$(space),$(PKG_VERSION))))
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:= \
-	http://www.openssl.org/source/ \
-	http://www.openssl.org/source/old/$(PKG_BASE)/ \
-	http://ftp.fi.muni.cz/pub/openssl/source/ \
-	http://ftp.fi.muni.cz/pub/openssl/source/old/$(PKG_BASE)/ \
-	ftp://ftp.pca.dfn.de/pub/tools/net/openssl/source/ \
-	ftp://ftp.pca.dfn.de/pub/tools/net/openssl/source/old/$(PKG_BASE)/
+	https://www.openssl.org/source/ \
+	https://www.openssl.org/source/old/$(PKG_BASE)/ \
+	https://github.com/openssl/openssl/releases/download/$(PKG_NAME)-$(PKG_VERSION)/
 
-PKG_HASH:=f93c9e8edde5e9166119de31755fc87b4aa34863662f67ddfcba14d0b6b69b61
+PKG_HASH:=d80c34f5cf902dccf1f1b5df5ebb86d0392e37049e5d73df1b3abae72e4ffe8b
 
 PKG_LICENSE:=Apache-2.0
-PKG_LICENSE_FILES:=LICENSE
+PKG_LICENSE_FILES:=LICENSE.txt
 PKG_MAINTAINER:=Eneas U de Queiroz <cotequeiroz@gmail.com>
 PKG_CPE_ID:=cpe:/a:openssl:openssl
 PKG_CONFIG_DEPENDS:= \
@@ -73,7 +70,7 @@ endif
 
 define Package/openssl/Default
   TITLE:=Open source SSL toolkit
-  URL:=http://www.openssl.org/
+  URL:=https://www.openssl.org/
   SECTION:=libs
   CATEGORY:=Libraries
 endef
@@ -416,6 +413,8 @@ define Package/libopenssl-conf/install
 	$(INSTALL_BIN) ./files/openssl.init $(1)/etc/init.d/openssl
 	$(SED) 's!%ENGINES_DIR%!/usr/lib/$(ENGINES_DIR)!' $(1)/etc/init.d/openssl
 	touch $(1)/etc/config/openssl
+	$(if $(CONFIG_OPENSSL_ENGINE),,
+		$(SED) 's!engines = engines_sect!#&!' $(1)/etc/ssl/openssl.cnf)
 	$(if $(CONFIG_OPENSSL_ENGINE_BUILTIN_DEVCRYPTO),
 		$(CP) ./files/devcrypto.cnf $(1)/etc/ssl/modules.cnf.d/
 		echo -e "config engine 'devcrypto'\n\toption enabled '1'\n\toption builtin '1'" >> $(1)/etc/config/openssl)

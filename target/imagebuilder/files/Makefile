@@ -26,6 +26,7 @@ include $(INCLUDE_DIR)/debug.mk
 include $(INCLUDE_DIR)/depends.mk
 include $(INCLUDE_DIR)/rootfs.mk
 
+include $(INCLUDE_DIR)/default-packages.mk
 include $(INCLUDE_DIR)/version.mk
 export REVISION
 export SOURCE_DATE_EPOCH
@@ -83,14 +84,25 @@ help: FORCE
 
 
 # override variables from rules.mk
-PACKAGE_DIR:=$(TOPDIR)/packages
+BUILD_KEY_APK_SEC=$(TOPDIR)/keys/local-private-key.pem
+BUILD_KEY_APK_PUB=$(TOPDIR)/keys/local-public-key.pem
+export PACKAGE_DIR:=$(TOPDIR)/packages
 LISTS_DIR:=$(subst $(space),/,$(patsubst %,..,$(subst /,$(space),$(TARGET_DIR))))$(DL_DIR)
+export PACKAGE_DIR_ALL:=$(TOPDIR)/packages
+
 export OPKG_KEYS:=$(TOPDIR)/keys
 OPKG:=$(call opkg,$(TARGET_DIR)) \
 	-f $(TOPDIR)/repositories.conf \
 	--verify-program $(SCRIPT_DIR)/opkg-key \
 	--cache $(DL_DIR) \
 	--lists-dir $(LISTS_DIR)
+
+export APK_KEYS:=$(TOPDIR)/keys
+APK:=$(call apk,$(TARGET_DIR)) \
+	--repositories-file $(TOPDIR)/repositories \
+	$(if $(CONFIG_SIGNATURE_CHECK),,--allow-untrusted) \
+	--cache-dir $(DL_DIR)
+
 
 include $(INCLUDE_DIR)/target.mk
 -include .profiles.mk
@@ -103,7 +115,7 @@ PROFILE_LIST = $(foreach p,$(PROFILE_NAMES), \
 
 
 .profiles.mk: .targetinfo
-	@$(SCRIPT_DIR)/target-metadata.pl profile_mk $< '$(BOARD)$(if $(SUBTARGET),/$(SUBTARGET))' > $@
+	@$(SCRIPT_DIR)/target-metadata.pl profile_mk $< '$(BOARD)/$(SUBTARGET)' > $@
 
 staging_dir/host/.prereq-build: include/prereq-build.mk
 	mkdir -p tmp
@@ -127,6 +139,11 @@ _call_info: FORCE
 	echo 'Available Profiles:'
 	echo; $(PROFILE_LIST)
 
+ifneq ($(CONFIG_USE_APK),)
+  DEFAULT_PACKAGES += apk-mbedtls
+else
+  DEFAULT_PACKAGES += opkg
+endif
 BUILD_PACKAGES:=$(sort $(DEFAULT_PACKAGES) $($(USER_PROFILE)_PACKAGES) kernel)
 # "-pkgname" in the package list means remove "pkgname" from the package list
 BUILD_PACKAGES:=$(filter-out $(filter -%,$(BUILD_PACKAGES)) $(patsubst -%,%,$(filter -%,$(BUILD_PACKAGES))),$(BUILD_PACKAGES))
@@ -152,20 +169,33 @@ _call_manifest: FORCE
 	mkdir -p $(TARGET_DIR) $(BIN_DIR) $(TMP_DIR) $(DL_DIR)
 	$(MAKE) package_reload >/dev/null
 	$(MAKE) package_install >/dev/null
+ifeq ($(CONFIG_USE_APK),)
 	$(OPKG) list-installed $(if $(STRIP_ABI),--strip-abi)
+else
+	$(APK) list --quiet --manifest --no-network
+endif
 
 package_index: FORCE
 	@echo >&2
 	@echo Building package index... >&2
 	@mkdir -p $(TMP_DIR) $(TARGET_DIR)/tmp
+ifeq ($(CONFIG_USE_APK),)
 	(cd $(PACKAGE_DIR); $(SCRIPT_DIR)/ipkg-make-index.sh . > Packages && \
 		gzip -9nc Packages > Packages.gz; \
 		$(if $(CONFIG_SIGNATURE_CHECK), \
 			$(STAGING_DIR_HOST)/bin/usign -S -m Packages -s $(BUILD_KEY)) \
 	) >/dev/null 2>/dev/null
 	$(OPKG) update >&2 || true
+else
+	$(APK) add --initdb
+	(cd $(PACKAGE_DIR); $(APK) mkndx \
+		$(if $(CONFIG_SIGNATURE_CHECK), --keys-dir $(APK_KEYS) --sign $(BUILD_KEY_APK_SEC)) \
+		--allow-untrusted --output packages.adb *.apk) >/dev/null 2>/dev/null || true
+	$(APK) update >&2 || true
+endif
 
 package_reload:
+ifeq ($(CONFIG_USE_APK),)
 	if [ -d "$(PACKAGE_DIR)" ] && ( \
 			[ ! -f "$(PACKAGE_DIR)/Packages" ] || \
 			[ ! -f "$(PACKAGE_DIR)/Packages.gz" ] || \
@@ -176,37 +206,72 @@ package_reload:
 		mkdir -p $(TARGET_DIR)/tmp; \
 		$(OPKG) update >&2 || true; \
 	fi
+else
+	if [ -d "$(PACKAGE_DIR)" ] && ( \
+			[ ! -f "$(PACKAGE_DIR)/packages.adb" ] || \
+			[ "`find $(PACKAGE_DIR) -cnewer $(PACKAGE_DIR)/packages.adb`" ] ); then \
+		echo "Package list missing or not up-to-date, generating it." >&2 ;\
+		$(MAKE) package_index; \
+	else \
+		mkdir -p $(TARGET_DIR)/tmp; \
+		$(APK) update >&2 || true; \
+	fi
+endif
 
 package_list: FORCE
 	@$(MAKE) -s package_reload
+ifeq ($(CONFIG_USE_APK),)
 	@$(OPKG) list --size 2>/dev/null
+else
+	@$(APK) list --size 2>/dev/null
+endif
 
 package_install: FORCE
 	@echo
 	@echo Installing packages...
+ifeq ($(CONFIG_USE_APK),)
 	$(OPKG) install $(firstword $(wildcard $(LINUX_DIR)/libc_*.ipk $(PACKAGE_DIR)/libc_*.ipk))
 	$(OPKG) install $(firstword $(wildcard $(LINUX_DIR)/kernel_*.ipk $(PACKAGE_DIR)/kernel_*.ipk))
 	$(OPKG) install $(BUILD_PACKAGES)
+else
+	$(APK) add --no-scripts $(firstword $(wildcard $(LINUX_DIR)/libc-*.apk $(PACKAGE_DIR)/libc-*.apk))
+	$(APK) add --no-scripts $(firstword $(wildcard $(LINUX_DIR)/kernel-*.apk $(PACKAGE_DIR)/kernel-*.apk))
+	$(APK) add --no-scripts $(BUILD_PACKAGES)
+endif
 
 prepare_rootfs: FORCE
 	@echo
 	@echo Finalizing root filesystem...
 
 	$(CP) $(TARGET_DIR) $(TARGET_DIR_ORIG)
+ifeq ($(CONFIG_USE_APK),)
 	$(if $(CONFIG_SIGNATURE_CHECK), \
 		$(if $(ADD_LOCAL_KEY), \
 			OPKG_KEYS=$(TARGET_DIR)/etc/opkg/keys/ \
 			$(SCRIPT_DIR)/opkg-key add $(BUILD_KEY).pub \
 		) \
 	)
+else
+	$(if $(CONFIG_SIGNATURE_CHECK), \
+		$(if $(ADD_LOCAL_KEY), \
+			mkdir -p $(TARGET_DIR)/etc/opkg/keys/; \
+			cp $(BUILD_KEY_APK_PUB) $(TARGET_DIR)/etc/apk/keys/; \
+		) \
+	)
+endif
 	$(call prepare_rootfs,$(TARGET_DIR),$(USER_FILES),$(DISABLED_SERVICES))
 
 build_image: FORCE
 	@echo
 	@echo Building images...
 	rm -rf $(BUILD_DIR)/json_info_files/
-	$(NO_TRACE_MAKE) -C target/linux/$(BOARD)/image install TARGET_BUILD=1 IB=1 EXTRA_IMAGE_NAME="$(EXTRA_IMAGE_NAME)" \
-		$(if $(USER_PROFILE),PROFILE="$(USER_PROFILE)")
+	if [ -d "target/linux/feeds/$(BOARD)" ]; then \
+		$(NO_TRACE_MAKE) -C target/linux/feeds/$(BOARD)/image install TARGET_BUILD=1 IB=1 EXTRA_IMAGE_NAME="$(EXTRA_IMAGE_NAME)" \
+			$(if $(USER_PROFILE),PROFILE="$(USER_PROFILE)"); \
+	else \
+		$(NO_TRACE_MAKE) -C target/linux/$(BOARD)/image install TARGET_BUILD=1 IB=1 EXTRA_IMAGE_NAME="$(EXTRA_IMAGE_NAME)" \
+			$(if $(USER_PROFILE),PROFILE="$(USER_PROFILE)"); \
+	fi
 
 $(BIN_DIR)/profiles.json: FORCE
 	$(if $(CONFIG_JSON_OVERVIEW_IMAGE_INFO), \
@@ -241,6 +306,7 @@ endif
 
 _check_keys: FORCE
 ifneq ($(CONFIG_SIGNATURE_CHECK),)
+ifeq ($(CONFIG_USE_APK),)
 	@if [ ! -s $(BUILD_KEY) -o ! -s $(BUILD_KEY).pub ]; then \
 		echo Generate local signing keys... >&2; \
 		$(STAGING_DIR_HOST)/bin/usign -G \
@@ -254,6 +320,15 @@ ifneq ($(CONFIG_SIGNATURE_CHECK),)
 			-p $(BUILD_KEY).pub \
 			-s $(BUILD_KEY); \
 	fi
+else
+	@if [ ! -s $(BUILD_KEY_APK_SEC) -o ! -s $(BUILD_KEY_APK_PUB) ]; then \
+		echo Generate local signing keys... >&2; \
+		$(STAGING_DIR_HOST)/bin/openssl ecparam -name prime256v1 -genkey -noout -out $(BUILD_KEY_APK_SEC); \
+		sed -i '1s/^/untrusted comment: Local build key\n/' $(BUILD_KEY_APK_SEC); \
+		$(STAGING_DIR_HOST)/bin/openssl ec -in $(BUILD_KEY_APK_SEC) -pubout > $(BUILD_KEY_APK_PUB); \
+		sed -i '1s/^/untrusted comment: Local build key\n/' $(BUILD_KEY_APK_PUB); \
+	fi
+endif
 endif
 
 image:
@@ -282,7 +357,11 @@ ifeq ($(PACKAGE),)
 	@exit 1
 endif
 	@$(MAKE) -s package_reload
+ifeq ($(CONFIG_USE_APK),)
 	@$(OPKG) whatdepends -A $(PACKAGE)
+else
+	@$(APK) list --depends $(PACKAGE)
+endif
 
 package_depends: FORCE
 ifeq ($(PACKAGE),)
@@ -290,7 +369,10 @@ ifeq ($(PACKAGE),)
 	@exit 1
 endif
 	@$(MAKE) -s package_reload
+ifeq ($(CONFIG_USE_APK),)
 	@$(OPKG) depends -A $(PACKAGE)
-
+else
+	@$(OPKG) whatdepends -A $(PACKAGE)
+endif
 
 .SILENT: help info image manifest package_whatdepends package_depends

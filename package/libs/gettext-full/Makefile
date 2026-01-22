@@ -8,24 +8,27 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=gettext-full
-PKG_VERSION:=0.21.1
-PKG_RELEASE:=2
+PKG_VERSION:=0.22.5
+PKG_RELEASE:=1
 
 PKG_SOURCE:=gettext-$(PKG_VERSION).tar.xz
 PKG_SOURCE_URL:=@GNU/gettext
-PKG_HASH:=50dbc8f39797950aa2c98e939947c527e5ac9ebd2c1b99dd7b06ba33a6767ae6
+PKG_HASH:=fe10c37353213d78a5b83d48af231e005c4da84db5ce88037d88355938259640
 PKG_BUILD_DIR:=$(BUILD_DIR)/gettext-$(PKG_VERSION)
 HOST_BUILD_DIR:=$(BUILD_DIR_HOST)/gettext-$(PKG_VERSION)
 
 PKG_MAINTAINER:=Jo-Philipp Wich <jo@mein.io>
-PKG_LICENSE:=GPL-3.0-or-later
+PKG_LICENSE:=LGPL-2.1-or-later
+PKG_LICENSE_FILES:=gettext-runtime/intl/COPYING.LIB
 PKG_CPE_ID:=cpe:/a:gnu:gettext
 
 PKG_INSTALL:=1
 PKG_BUILD_DEPENDS:=gettext-full/host libunistring libxml2
 PKG_BUILD_PARALLEL:=0
 
-HOST_BUILD_DEPENDS:=gperf/host libunistring/host libxml2/host
+PKG_FIXUP:=autoreconf
+
+HOST_BUILD_DEPENDS:=gperf/host libiconv-full/host libunistring/host libxml2/host
 HOST_BUILD_PARALLEL:=0
 
 PKG_SUBDIRS:= \
@@ -99,14 +102,12 @@ HOST_CONFIGURE_ARGS += \
 	--disable-java \
 	--disable-openmp \
 	--without-emacs \
+	--with-libiconv-prefix=$(STAGING_DIR_HOSTPKG) \
 	--with-libunistring-prefix=$(STAGING_DIR_HOSTPKG) \
 	--with-libxml2-prefix=$(STAGING_DIR_HOSTPKG)
 
 HOST_CONFIGURE_VARS += \
 	EMACS="no" \
-	am_cv_lib_iconv=no \
-	am_cv_func_iconv=no \
-	ac_cv_header_iconv_h=no \
 
 HOST_CFLAGS += $(HOST_FPIC)
 

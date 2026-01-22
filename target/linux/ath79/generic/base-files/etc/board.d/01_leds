@@ -10,6 +10,10 @@ case "$board" in
 	ucidef_set_led_netdev "lan" "LAN" "orange:eth0" "eth0"
 	ucidef_set_led_switch "wan" "WAN" "orange:eth1" "switch0" "0x04"
 	;;
+8dev,carambola3)
+	ucidef_set_led_netdev "lan" "LAN" "green:lan" "eth0" "link"
+	ucidef_set_led_netdev "wan" "WAN" "green:wan" "eth1" "link"
+	;;
 alcatel,hh40v)
 	ucidef_set_led_netdev "lan_data" "LAN Data" "green:lan" "eth1" "tx rx"
 	ucidef_set_led_netdev "lan_link" "LAN Link" "orange:lan" "eth1" "link"
@@ -18,6 +22,7 @@ alcatel,hh40v)
 	;;
 alfa-network,ap121f|\
 alfa-network,ap121fe|\
+alfa-network,wifi-camppro-nano-duo|\
 avm,fritz450e|\
 glinet,6408|\
 glinet,6416|\
@@ -27,7 +32,8 @@ pcs,cap324|\
 tplink,cpe605-v1|\
 tplink,cpe610-v1|\
 tplink,cpe610-v2|\
-tplink,tl-wa1201-v2)
+tplink,tl-wa1201-v2|\
+ubnt,litebeam-m5-xw)
 	ucidef_set_led_netdev "lan" "LAN" "green:lan" "eth0"
 	;;
 tplink,tl-wdr6500-v2)
@@ -198,6 +204,7 @@ comfast,cf-e560ac)
 	ucidef_set_led_switch "lan3" "LAN3" "blue:lan3" "switch0" "0x08"
 	ucidef_set_led_switch "lan4" "LAN4" "blue:lan4" "switch0" "0x10"
 	;;
+comfast,cf-ew71-v2|\
 comfast,cf-ew72|\
 openmesh,om2p-v2|\
 openmesh,om2p-hs-v1|\
@@ -215,7 +222,8 @@ openmesh,mr900-v1|\
 openmesh,mr900-v2|\
 openmesh,mr1750-v1|\
 openmesh,mr1750-v2|\
-tplink,cpe710-v1)
+tplink,cpe710-v1|\
+tplink,cpe710-v2)
 	ucidef_set_led_netdev "lan" "LAN" "blue:lan" "eth0"
 	;;
 compex,wpj344-16m|\
@@ -225,6 +233,10 @@ compex,wpj531-16m)
 	ucidef_set_led_rssi "sig2" "SIG2" "yellow:sig2" "wlan0" "75" "100"
 	ucidef_set_led_rssi "sig3" "SIG3" "green:sig3" "wlan0" "65" "100"
 	ucidef_set_led_rssi "sig4" "SIG4" "green:sig4" "wlan0" "50" "100"
+	;;
+dell,apl26-0ae)
+	ucidef_set_led_switch "lan1" "LAN1" "amber:lan-1" "switch0" "0x04"
+	ucidef_set_led_switch "lan2" "LAN2" "amber:lan-2" "switch0" "0x08"
 	;;
 devolo,dlan-pro-1200plus-ac|\
 devolo,magic-2-wifi)
@@ -240,19 +252,6 @@ dlink,dap-1365-a1)
 	ucidef_set_led_rssi "rssimediumlow" "RSSIMEDIUMLOW" "green:rssimediumlow" "wlan0" "1" "100"
 	ucidef_set_led_rssi "rssimediumhigh" "RSSIMEDIUMHIGH" "green:rssimediumhigh" "wlan0" "51" "100"
 	ucidef_set_led_rssi "rssihigh" "RSSIHIGH" "green:rssihigh" "wlan0" "76" "100"
-	;;
-dlink,dap-1720-a1)
-	ucidef_set_rssimon "wlan0" "200000" "1"
-	ucidef_set_led_rssi "rssilow" "RSSI LOW" "red:signal-1" "wlan0" "1" "40"
-	ucidef_set_led_rssi "rssimediumlow" "RSSI MEDIUM-LOW" "green:signal-1" "wlan0" "21" "100"
-	ucidef_set_led_rssi "rssimediumhigh" "RSSI MEDIUM-HIGH" "green:signal-2" "wlan0" "61" "100"
-	ucidef_set_led_rssi "rssihigh" "RSSI HIGH" "green:signal-3" "wlan0" "81" "100"
-	;;
-dlink,dir-859-a1)
-	ucidef_set_led_switch "internet" "WAN" "green:internet" "switch0" "0x20"
-	;;
-dlink,dir-859-a3)
-	ucidef_set_led_switch "wan" "WAN" "green:wan" "switch0" "0x20"
 	;;
 engenius,ens202ext-v1|\
 engenius,enstationac-v1)

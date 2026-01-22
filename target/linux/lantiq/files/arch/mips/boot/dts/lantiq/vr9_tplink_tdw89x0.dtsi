@@ -1,6 +1,7 @@
 #include "vr9.dtsi"
 
 #include <dt-bindings/input/input.h>
+#include <dt-bindings/leds/common.h>
 #include <dt-bindings/mips/lantiq_rcu_gphy.h>
 
 / {
@@ -66,7 +67,8 @@
 		};
 
 		usb0 {
-			label = "green:usb";
+			function = LED_FUNCTION_USB;
+			color = <LED_COLOR_ID_GREEN>;
 			gpios = <&gpio 19 GPIO_ACTIVE_HIGH>;
 			trigger-sources = <&ehci_port1>;
 			linux,default-trigger = "usbport";
@@ -80,7 +82,8 @@
 		};
 
 		led_wps: wps {
-			label = "green:wps";
+			function = LED_FUNCTION_WPS;
+			color = <LED_COLOR_ID_GREEN>;
 			gpios = <&gpio 37 GPIO_ACTIVE_HIGH>;
 		};
 	};
@@ -104,7 +107,7 @@
 		regulator-min-microvolt = <5000000>;
 		regulator-max-microvolt = <5000000>;
 
-		gpio = <&gpio 33 GPIO_ACTIVE_HIGH>;
+		gpios = <&gpio 33 GPIO_ACTIVE_HIGH>;
 		enable-active-high;
 	};
 };
@@ -197,15 +200,11 @@
 		#address-cells = <3>;
 		device_type = "pci";
 
-		ath9k: wifi@168c,002e {
-			compatible = "pci168c,002e";
+		ath9k: wifi@0,0 {
 			reg = <0 0 0 0 0>;
 			#gpio-cells = <2>;
 			gpio-controller;
-			qca,no-eeprom;
 			ieee80211-freq-limit = <2402000 2482000>;
-			nvmem-cells = <&macaddr_ath9k_cal_f100 2>;
-			nvmem-cell-names = "mac-address";
 		};
 	};
 };
@@ -241,12 +240,12 @@
 				read-only;
 			};
 
-			ath9k_cal: partition@7d0000 {
+			partition@7d0000 {
 				reg = <0x7d0000 0x30000>;
 				label = "boardconfig";
 				read-only;
 
-				nvmem-layout {
+				boardconfig: nvmem-layout {
 					compatible = "fixed-layout";
 					#address-cells = <1>;
 					#size-cells = <1>;

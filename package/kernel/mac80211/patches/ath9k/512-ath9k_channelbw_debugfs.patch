@@ -1,6 +1,6 @@
 --- a/drivers/net/wireless/ath/ath9k/debug.c
 +++ b/drivers/net/wireless/ath/ath9k/debug.c
-@@ -1472,6 +1472,7 @@ int ath9k_init_debug(struct ath_hw *ah)
+@@ -1430,6 +1430,7 @@ int ath9k_init_debug(struct ath_hw *ah)
  	ath9k_cmn_debug_base_eeprom(sc->debug.debugfs_phy, sc->sc_ah);
  	ath9k_cmn_debug_modal_eeprom(sc->debug.debugfs_phy, sc->sc_ah);
  	ath9k_cmn_debug_eeprom(sc->debug.debugfs_phy, sc->sc_ah);
@@ -10,7 +10,7 @@
  			   sc->debug.debugfs_phy, &sc->sc_ah->gpio_mask);
 --- a/drivers/net/wireless/ath/ath.h
 +++ b/drivers/net/wireless/ath/ath.h
-@@ -153,6 +153,7 @@ struct ath_common {
+@@ -151,6 +151,7 @@ struct ath_common {
  	int debug_mask;
  	enum ath_device_state state;
  	unsigned long op_flags;
@@ -79,7 +79,7 @@
  }
 --- a/drivers/net/wireless/ath/ath9k/common-debug.c
 +++ b/drivers/net/wireless/ath/ath9k/common-debug.c
-@@ -316,3 +316,55 @@ void ath9k_cmn_debug_eeprom(struct dentr
+@@ -315,3 +315,55 @@ void ath9k_cmn_debug_eeprom(struct dentr
  			    &fops_eeprom);
  }
  EXPORT_SYMBOL(ath9k_cmn_debug_eeprom);
@@ -137,7 +137,7 @@
 +EXPORT_SYMBOL(ath9k_cmn_debug_chanbw);
 --- a/drivers/net/wireless/ath/ath9k/htc_drv_debug.c
 +++ b/drivers/net/wireless/ath/ath9k/htc_drv_debug.c
-@@ -520,6 +520,7 @@ int ath9k_htc_init_debug(struct ath_hw *
+@@ -513,6 +513,7 @@ int ath9k_htc_init_debug(struct ath_hw *
  	ath9k_cmn_debug_base_eeprom(priv->debug.debugfs_phy, priv->ah);
  	ath9k_cmn_debug_modal_eeprom(priv->debug.debugfs_phy, priv->ah);
  	ath9k_cmn_debug_eeprom(priv->debug.debugfs_phy, priv->ah);
@@ -181,7 +181,7 @@
  	hw->max_listen_interval = 1;
 --- a/drivers/net/wireless/ath/ath9k/init.c
 +++ b/drivers/net/wireless/ath/ath9k/init.c
-@@ -733,6 +733,7 @@ static int ath9k_init_softc(u16 devid, s
+@@ -735,6 +735,7 @@ static int ath9k_init_softc(u16 devid, s
  	if (!ath9k_is_chanctx_enabled())
  		sc->cur_chan->hw_queue_base = 0;
  

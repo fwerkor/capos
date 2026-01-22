@@ -3,6 +3,7 @@
 #include "ar9132.dtsi"
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/input/input.h>
+#include <dt-bindings/leds/common.h>
 
 / {
 	aliases {
@@ -133,7 +134,7 @@
 				read-only;
 			};
 
-			art: partition@1fe0000 {
+			partition@1fe0000 {
 				label = "art";
 				reg = <0x1fe0000 0x020000>;
 				read-only;
@@ -142,6 +143,10 @@
 					compatible = "fixed-layout";
 					#address-cells = <1>;
 					#size-cells = <1>;
+
+					cal_art_11000: calibration@11000 {
+						reg = <0x11000 0xeb8>;
+					};
 
 					macaddr_art_1120c: macaddr@1120c {
 						reg = <0x1120c 0x6>;
@@ -155,7 +160,8 @@
 		compatible = "gpio-leds";
 
 		usb {
-			label = "blue:usb";
+			function = LED_FUNCTION_USB;
+			color = <LED_COLOR_ID_BLUE>;
 			gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
 			trigger-sources = <&hub_port>;
 			linux,default-trigger = "usbport";
@@ -246,7 +252,8 @@
 &wmac {
 	status = "okay";
 
-	mtd-cal-data = <&art 0x11000>;
+	nvmem-cells = <&cal_art_11000>;
+	nvmem-cell-names = "calibration";
 };
 
 &uart {

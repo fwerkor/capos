@@ -1,26 +1,26 @@
-define Device/FitImage
-	KERNEL_SUFFIX := -uImage.itb
-	KERNEL = kernel-bin | libdeflate-gzip | fit gzip $$(KDIR)/image-$$(DEVICE_DTS).dtb
-	KERNEL_NAME := Image
+DEVICE_VARS += NETGEAR_BOARD_ID NETGEAR_HW_ID
+
+define Build/asus-fake-ramdisk
+	rm -rf $(KDIR)/tmp/fakerd
+	dd if=/dev/zero bs=32 count=1 > $(KDIR)/tmp/fakerd
+	$(info KERNEL_INITRAMFS is $(KERNEL_INITRAMFS))
 endef
 
-define Device/FitImageLzma
-	KERNEL_SUFFIX := -uImage.itb
-	KERNEL = kernel-bin | lzma | fit lzma $$(KDIR)/image-$$(DEVICE_DTS).dtb
-	KERNEL_NAME := Image
+define Build/asus-fake-rootfs
+	$(eval comp=$(word 1,$(1)))
+	$(eval filepath=$(word 2,$(1)))
+	$(eval filecont=$(word 3,$(1)))
+	rm -rf $(KDIR)/tmp/fakefs $(KDIR)/tmp/fakehsqs
+	mkdir -p $(KDIR)/tmp/fakefs/$$(dirname $(filepath))
+	echo '$(filecont)' > $(KDIR)/tmp/fakefs/$(filepath)
+	$(STAGING_DIR_HOST)/bin/mksquashfs4 $(KDIR)/tmp/fakefs $(KDIR)/tmp/fakehsqs -comp $(comp) \
+		-b 4096 -no-exports -no-sparse -no-xattrs -all-root -noappend \
+		$(wordlist 4,$(words $(1)),$(1))
 endef
 
-define Device/EmmcImage
-	IMAGES += factory.bin sysupgrade.bin
-	IMAGE/factory.bin := append-rootfs | pad-rootfs | pad-to 64k
-	IMAGE/sysupgrade.bin/squashfs := append-rootfs | pad-to 64k | sysupgrade-tar rootfs=$$$$@ | append-metadata
-endef
-
-define Device/UbiFit
-	KERNEL_IN_UBI := 1
-	IMAGES := factory.ubi sysupgrade.bin
-	IMAGE/factory.ubi := append-ubi
-	IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+define Build/asus-trx
+	$(STAGING_DIR_HOST)/bin/asusuimage $(wordlist 1,$(words $(1)),$(1)) -i $@ -o $@.new
+	mv $@.new $@
 endef
 
 define Build/wax6xx-netgear-tar
@@ -47,6 +47,36 @@ define Device/arcadyan_aw1000
 endef
 TARGET_DEVICES += arcadyan_aw1000
 
+define Device/asus_rt-ax89x
+       DEVICE_VENDOR := Asus
+	DEVICE_MODEL := RT-AX89X
+	BLOCKSIZE := 128k
+	PAGESIZE := 2048
+	DEVICE_DTS_CONFIG := config@hk01
+	SOC := ipq8074
+	DEVICE_PACKAGES := kmod-hwmon-gpiofan ipq-wifi-asus_rt-ax89x
+	KERNEL_NAME := vmlinux
+	KERNEL := kernel-bin | libdeflate-gzip
+	KERNEL_IN_UBI := 1
+	IMAGE/sysupgrade.bin/squashfs := \
+		append-kernel | asus-fake-ramdisk |\
+		multiImage gzip $$(KDIR)/tmp/fakerd $$(KDIR)/image-$$(DEVICE_DTS).dtb |\
+		sysupgrade-tar kernel=$$$$@ | append-metadata
+ifeq ($(IB),)
+ifneq ($(CONFIG_TARGET_ROOTFS_INITRAMFS),)
+	ARTIFACTS := initramfs-factory.trx initramfs-uImage.itb
+	ARTIFACT/initramfs-uImage.itb := \
+		append-image-stage initramfs-kernel.bin | fit gzip $$(KDIR)/image-$$(DEVICE_DTS).dtb
+	ARTIFACT/initramfs-factory.trx := \
+		append-image-stage initramfs-kernel.bin |\
+		asus-fake-rootfs xz /lib/firmware/IPQ8074A/fw_version.txt "fake" -no-compression |\
+		multiImage gzip $$(KDIR)/tmp/fakehsqs $$(KDIR)/image-$$(DEVICE_DTS).dtb |\
+		asus-trx -v 2 -n RT-AX89U -b 388 -e 49000
+endif
+endif
+endef
+TARGET_DEVICES += asus_rt-ax89x
+
 define Device/buffalo_wxr-5950ax12
 	$(call Device/FitImage)
 	DEVICE_VENDOR := Buffalo
@@ -55,11 +85,24 @@ define Device/buffalo_wxr-5950ax12
 	PAGESIZE := 2048
 	DEVICE_DTS_CONFIG := config@hk01
 	SOC := ipq8074
-	IMAGES := sysupgrade.bin
-	IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
 	DEVICE_PACKAGES := ipq-wifi-buffalo_wxr-5950ax12
 endef
 TARGET_DEVICES += buffalo_wxr-5950ax12
+
+define Device/cmcc_rm2-6
+	$(call Device/FitImage)
+	$(call Device/UbiFit)
+	DEVICE_VENDOR := CMCC
+	DEVICE_MODEL := RM2-6
+	BLOCKSIZE := 128k
+	PAGESIZE := 2048
+	DEVICE_DTS_CONFIG := config@ac02
+	SOC := ipq8070
+	IMAGES += factory.bin
+	IMAGE/factory.bin := append-ubi | qsdk-ipq-factory-nand
+	DEVICE_PACKAGES := ipq-wifi-cmcc_rm2-6 kmod-hwmon-gpiofan
+endef
+TARGET_DEVICES += cmcc_rm2-6
 
 define Device/compex_wpq873
 	$(call Device/FitImage)
@@ -115,30 +158,81 @@ define Device/edimax_cax1800
 endef
 TARGET_DEVICES += edimax_cax1800
 
-define Device/linksys_mx4200v1
+define Device/linksys_homewrk
 	$(call Device/FitImage)
 	$(call Device/UbiFit)
 	DEVICE_VENDOR := Linksys
-        DEVICE_MODEL := MX4200
-        DEVICE_VARIANT := v1
+	DEVICE_MODEL := HomeWRK
+	DEVICE_DTS_CONFIG := config@oak03
+	BLOCKSIZE := 256k
+	PAGESIZE := 4096
+	IMAGE_SIZE := 475m
+	NAND_SIZE := 1024m
+	SOC := ipq8174
+	DEVICE_PACKAGES += kmod-leds-pca963x ipq-wifi-linksys_homewrk
+endef
+TARGET_DEVICES += linksys_homewrk
+
+define Device/linksys_mx
+	$(call Device/FitImage)
+	DEVICE_VENDOR := Linksys
 	BLOCKSIZE := 128k
 	PAGESIZE := 2048
-        KERNEL_SIZE := 6144k
+	KERNEL_SIZE := 6144k
 	IMAGE_SIZE := 147456k
 	NAND_SIZE := 512m
-	KERNEL_IN_UBI :=
-	SOC := ipq8174
+	SOC := ipq8072
 	IMAGES += factory.bin
-	IMAGE/factory.bin  := append-kernel | pad-to $$$$(KERNEL_SIZE) | append-ubi | linksys-image type=MX4200
-	DEVICE_PACKAGES := kmod-leds-pca963x ipq-wifi-linksys_mx4200 kmod-bluetooth
+	IMAGE/factory.bin := append-kernel | pad-to $$$$(KERNEL_SIZE) | append-ubi | linksys-image type=$$$$(DEVICE_MODEL)
+	DEVICE_PACKAGES := kmod-leds-pca963x
+endef
+
+define Device/linksys_mx4x00
+	$(call Device/linksys_mx)
+	SOC := ipq8174
+	DEVICE_PACKAGES += ipq-wifi-linksys_mx4200
+endef
+
+define Device/linksys_mx4200v1
+	$(call Device/linksys_mx4x00)
+	DEVICE_MODEL := MX4200
+	DEVICE_VARIANT := v1
+	DEVICE_PACKAGES += kmod-bluetooth
 endef
 TARGET_DEVICES += linksys_mx4200v1
 
 define Device/linksys_mx4200v2
 	$(call Device/linksys_mx4200v1)
-        DEVICE_VARIANT := v2
+	DEVICE_VARIANT := v2
 endef
 TARGET_DEVICES += linksys_mx4200v2
+
+define Device/linksys_mx4300
+	$(call Device/linksys_mx4x00)
+	DEVICE_MODEL := MX4300
+	BLOCKSIZE := 256k
+	PAGESIZE := 4096
+	KERNEL_SIZE := 8192k
+	IMAGE_SIZE := 171264k
+	NAND_SIZE := 1024m
+endef
+TARGET_DEVICES += linksys_mx4300
+
+define Device/linksys_mx5300
+	$(call Device/linksys_mx)
+	DEVICE_MODEL := MX5300
+	DEVICE_PACKAGES += kmod-rtc-ds1307 ipq-wifi-linksys_mx5300 \
+		kmod-ath10k-ct ath10k-firmware-qca9984-ct
+endef
+TARGET_DEVICES += linksys_mx5300
+
+define Device/linksys_mx8500
+	$(call Device/linksys_mx)
+	DEVICE_MODEL := MX8500
+	DEVICE_PACKAGES += ipq-wifi-linksys_mx8500 kmod-ath11k-pci \
+		ath11k-firmware-qcn9074 kmod-bluetooth
+endef
+TARGET_DEVICES += linksys_mx8500
 
 define Device/netgear_rax120v2
 	$(call Device/FitImage)
@@ -153,16 +247,47 @@ define Device/netgear_rax120v2
 	NETGEAR_BOARD_ID := RAX120
 	NETGEAR_HW_ID := 29765589+0+512+1024+4x4+8x8
 	DEVICE_PACKAGES := ipq-wifi-netgear_rax120v2 kmod-spi-gpio \
-		kmod-spi-bitbang kmod-gpio-nxp-74hc164 kmod-hwmon-g761
-	IMAGES = web-ui-factory.img sysupgrade.bin
+		kmod-spi-bitbang kmod-gpio-nxp-74hc164 kmod-hwmon-g762
+ifeq ($(IB),)
+ifneq ($(CONFIG_TARGET_ROOTFS_INITRAMFS),)
+	IMAGES += web-ui-factory.img
 	IMAGE/web-ui-factory.img := append-image initramfs-uImage.itb | \
 		pad-offset $$$$(BLOCKSIZE) 64 | append-uImage-fakehdr filesystem | \
 		netgear-dni
+endif
+endif
 	IMAGE/sysupgrade.bin := append-kernel | pad-offset $$$$(BLOCKSIZE) 64 | \
 		append-uImage-fakehdr filesystem | sysupgrade-tar kernel=$$$$@ | \
 		append-metadata
 endef
 TARGET_DEVICES += netgear_rax120v2
+
+define Device/netgear_sxk80
+	$(call Device/FitImage)
+	$(call Device/UbiFit)
+	DEVICE_PACKAGES += ipq-wifi-netgear_sxk80
+	DEVICE_VENDOR := Netgear
+	BLOCKSIZE := 128k
+	PAGESIZE := 2048
+	DEVICE_DTS_CONFIG := config@hk01
+	SOC := ipq8074
+	KERNEL_SIZE := 6272k
+	NETGEAR_HW_ID := 29766265+0+512+1024+4x4+4x4+4x4
+endef
+
+define Device/netgear_sxr80
+	$(call Device/netgear_sxk80)
+	DEVICE_MODEL := SXR80
+	NETGEAR_BOARD_ID := SXR80
+endef
+TARGET_DEVICES += netgear_sxr80
+
+define Device/netgear_sxs80
+	$(call Device/netgear_sxk80)
+	DEVICE_MODEL := SXS80
+	NETGEAR_BOARD_ID := SXS80
+endef
+TARGET_DEVICES += netgear_sxs80
 
 define Device/netgear_wax218
 	$(call Device/FitImage)
@@ -173,10 +298,12 @@ define Device/netgear_wax218
 	BLOCKSIZE := 128k
 	PAGESIZE := 2048
 	SOC := ipq8072
+ifeq ($(IB),)
 ifneq ($(CONFIG_TARGET_ROOTFS_INITRAMFS),)
 	ARTIFACTS := web-ui-factory.fit
 	ARTIFACT/web-ui-factory.fit := append-image initramfs-uImage.itb | \
 		ubinize-kernel | qsdk-ipq-factory-nand
+endif
 endif
 	DEVICE_PACKAGES := kmod-spi-gpio kmod-spi-bitbang kmod-gpio-nxp-74hc164 \
 		ipq-wifi-netgear_wax218
@@ -192,7 +319,7 @@ define Device/netgear_wax620
 	BLOCKSIZE := 128k
 	PAGESIZE := 2048
 	SOC := ipq8072
-	DEVICE_PACKAGES += kmod-spi-gpio kmod-gpio-nxp-74hc164 \
+	DEVICE_PACKAGES := kmod-spi-gpio kmod-gpio-nxp-74hc164 \
 		ipq-wifi-netgear_wax620
 endef
 TARGET_DEVICES += netgear_wax620
@@ -206,9 +333,9 @@ define Device/netgear_wax630
 	BLOCKSIZE := 128k
 	PAGESIZE := 2048
 	SOC := ipq8074
-	IMAGES := ui-factory.tar factory.ubi sysupgrade.bin
+	IMAGES += ui-factory.tar
 	IMAGE/ui-factory.tar := append-ubi | wax6xx-netgear-tar
-	DEVICE_PACKAGES += kmod-spi-gpio ipq-wifi-netgear_wax630
+	DEVICE_PACKAGES := kmod-spi-gpio ipq-wifi-netgear_wax630
 endef
 TARGET_DEVICES += netgear_wax630
 
@@ -219,8 +346,8 @@ define Device/prpl_haze
 	DEVICE_MODEL := Haze
 	DEVICE_DTS_CONFIG := config@hk09
 	SOC := ipq8072
-	DEVICE_PACKAGES += ath11k-firmware-qcn9074 ipq-wifi-prpl_haze kmod-ath11k-pci \
-		mkf2fs f2fsck kmod-fs-f2fs
+	DEVICE_PACKAGES := ath11k-firmware-qcn9074 ipq-wifi-prpl_haze kmod-ath11k-pci \
+		kmod-fs-f2fs f2fs-tools kmod-leds-lp5562
 endef
 TARGET_DEVICES += prpl_haze
 
@@ -232,7 +359,7 @@ define Device/qnap_301w
 	DEVICE_DTS_CONFIG := config@hk01
 	KERNEL_SIZE := 16384k
 	SOC := ipq8072
-	DEVICE_PACKAGES += ipq-wifi-qnap_301w
+	DEVICE_PACKAGES := kmod-fs-f2fs f2fs-tools ipq-wifi-qnap_301w
 endef
 TARGET_DEVICES += qnap_301w
 
@@ -243,6 +370,32 @@ define Device/redmi_ax6
 	DEVICE_PACKAGES := ipq-wifi-redmi_ax6
 endef
 TARGET_DEVICES += redmi_ax6
+
+define Device/spectrum_sax1v1k
+	$(call Device/FitImage)
+	$(call Device/EmmcImage)
+	DEVICE_VENDOR := Spectrum
+	DEVICE_MODEL := SAX1V1K
+	DEVICE_DTS_CONFIG := config@rt5010w-d187-rev6
+	SOC := ipq8072
+	IMAGES := sysupgrade.bin
+	DEVICE_PACKAGES := kmod-fs-f2fs f2fs-tools ipq-wifi-spectrum_sax1v1k
+endef
+TARGET_DEVICES += spectrum_sax1v1k
+
+define Device/tplink_eap660hd-v1
+	$(call Device/FitImage)
+	$(call Device/UbiFit)
+	DEVICE_VENDOR := TP-Link
+	DEVICE_MODEL := EAP660 HD
+	DEVICE_VARIANT := v1
+	BLOCKSIZE := 128k
+	PAGESIZE := 2048
+	SOC := ipq8072
+	DEVICE_PACKAGES := ipq-wifi-tplink_eap660hd-v1
+	TPLINK_SUPPORT_STRING := SupportList:\r\nEAP660 HD(TP-Link|UN|AX3600-D):1.0\r\n
+endef
+TARGET_DEVICES += tplink_eap660hd-v1
 
 define Device/xiaomi_ax3600
 	$(call Device/FitImage)
@@ -255,9 +408,11 @@ define Device/xiaomi_ax3600
 	SOC := ipq8071
 	KERNEL_SIZE := 36608k
 	DEVICE_PACKAGES := ipq-wifi-xiaomi_ax3600 kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9887-ct
+ifeq ($(IB),)
 ifneq ($(CONFIG_TARGET_ROOTFS_INITRAMFS),)
 	ARTIFACTS := initramfs-factory.ubi
 	ARTIFACT/initramfs-factory.ubi := append-image-stage initramfs-uImage.itb | ubinize-kernel
+endif
 endif
 endef
 TARGET_DEVICES += xiaomi_ax3600
@@ -273,10 +428,12 @@ define Device/xiaomi_ax9000
 	SOC := ipq8072
 	KERNEL_SIZE := 57344k
 	DEVICE_PACKAGES := ipq-wifi-xiaomi_ax9000 kmod-ath11k-pci ath11k-firmware-qcn9074 \
-	kmod-ath10k-ct ath10k-firmware-qca9887-ct
+		kmod-ath10k-ct ath10k-firmware-qca9887-ct
+ifeq ($(IB),)
 ifneq ($(CONFIG_TARGET_ROOTFS_INITRAMFS),)
 	ARTIFACTS := initramfs-factory.ubi
 	ARTIFACT/initramfs-factory.ubi := append-image-stage initramfs-uImage.itb | ubinize-kernel
+endif
 endif
 endef
 TARGET_DEVICES += xiaomi_ax9000
@@ -295,6 +452,21 @@ define Device/yuncore_ax880
 	IMAGE/factory.bin := append-ubi | qsdk-ipq-factory-nand
 endef
 TARGET_DEVICES += yuncore_ax880
+
+define Device/zbtlink_zbt-z800ax
+	$(call Device/FitImage)
+	$(call Device/UbiFit)
+	DEVICE_VENDOR := Zbtlink
+	DEVICE_MODEL := ZBT-Z800AX
+	BLOCKSIZE := 128k
+	PAGESIZE := 2048
+	DEVICE_DTS_CONFIG := config@hk09
+	SOC := ipq8072
+	DEVICE_PACKAGES := ipq-wifi-zbtlink_zbt-z800ax
+	IMAGES += factory.bin
+	IMAGE/factory.bin := append-ubi | qsdk-ipq-factory-nand
+endef
+TARGET_DEVICES += zbtlink_zbt-z800ax
 
 define Device/zte_mf269
 	$(call Device/FitImage)
@@ -317,7 +489,7 @@ define Device/zyxel_nbg7815
 	DEVICE_MODEL := NBG7815
 	DEVICE_DTS_CONFIG := config@nbg7815
 	SOC := ipq8074
-	DEVICE_PACKAGES += ipq-wifi-zyxel_nbg7815 kmod-ath11k-pci \
+	DEVICE_PACKAGES := kmod-fs-f2fs f2fs-tools ipq-wifi-zyxel_nbg7815 kmod-ath11k-pci \
 		kmod-bluetooth kmod-hwmon-tmp103
 endef
 TARGET_DEVICES += zyxel_nbg7815

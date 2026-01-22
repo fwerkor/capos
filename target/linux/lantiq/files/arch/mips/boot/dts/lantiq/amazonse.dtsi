@@ -197,7 +197,7 @@
 			compatible = "lantiq,mei-xway";
 			reg = <0xe116000 0x400>;
 			interrupt-parent = <&icu0>;
-			interrupts = <81>;
+			interrupts = <81 83 92>;
 		};
 
 		usb: usb@e101000 {
@@ -229,7 +229,7 @@
 			interrupts = <85>;
 		};
 
-		gsw: etop@e180000 {
+		gsw: ethernet@e180000 {
 			compatible = "lantiq,etop-xway";
 			reg = <0xe180000 0x40000>;
 			interrupt-parent = <&icu0>;

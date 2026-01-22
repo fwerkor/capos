@@ -7,7 +7,7 @@
 
 / {
 	compatible = "zyxel,nr7101", "mediatek,mt7621-soc";
-	model = "ZyXEL NR7101";
+	model = "Zyxel NR7101";
 
 	aliases {
 		led-boot = &led_system_green;
@@ -88,7 +88,7 @@
 			reg = <0x80000 0x80000>;
 		};
 
-		factory: partition@100000 {
+		partition@100000 {
 			label = "Factory";
 			reg = <0x100000 0x40000>;
 			read-only;

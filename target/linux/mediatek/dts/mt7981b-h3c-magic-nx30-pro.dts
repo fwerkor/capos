@@ -3,6 +3,7 @@
 /dts-v1/;
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/input/input.h>
+#include <dt-bindings/leds/common.h>
 
 #include "mt7981.dtsi"
 
@@ -19,6 +20,8 @@
 	};
 
 	chosen {
+		bootargs-append = " root=/dev/fit0 rootwait";
+		rootdisk = <&ubi_rootdisk>;
 		stdout-path = "serial0:115200n8";
 	};
 
@@ -46,12 +49,14 @@
 		compatible = "gpio-leds";
 
 		led_status_green: green {
-			label = "green:status";
+			function = LED_FUNCTION_STATUS;
+			color = <LED_COLOR_ID_GREEN>;
 			gpios = <&pio 4 GPIO_ACTIVE_LOW>;
 		};
 
 		led_status_red: red {
-			label = "red:status";
+			function = LED_FUNCTION_STATUS;
+			color = <LED_COLOR_ID_RED>;
 			gpios = <&pio 5 GPIO_ACTIVE_LOW>;
 		};
 	};
@@ -138,6 +143,13 @@
 			partition@580000 {
 				label = "ubi";
 				reg = <0x0580000 0x4000000>;
+				compatible = "linux,ubi";
+
+				volumes {
+					ubi_rootdisk: ubi-volume-fit {
+						volname = "fit";
+					};
+				};
 			};
 
 			/* yaffs partition */

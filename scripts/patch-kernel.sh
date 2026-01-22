@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 # A little script I whipped up to make it easy to
 # patch source trees and have sane error handling
 # -Erik
@@ -43,12 +43,3 @@ for i in ${patchdir}/${patchpattern} ; do
 	exit 1
     fi
 done
-
-# Check for rejects...
-if [ "`find $targetdir/ '(' -name '*.rej' -o -name '.*.rej' ')' -print`" ] ; then
-    echo "Aborting.  Reject files found."
-    exit 1
-fi
-
-# Remove backup files
-find $targetdir/ '(' -name '*.orig' -o -name '.*.orig' ')' -exec rm -f {} \;

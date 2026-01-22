@@ -75,7 +75,7 @@
 		regulator-name = "pa-5g";
 		regulator-min-microvolt = <5000000>;
 		regulator-max-microvolt = <5000000>;
-		gpio = <&gpio 7 GPIO_ACTIVE_HIGH>;
+		gpios = <&gpio 7 GPIO_ACTIVE_HIGH>;
 		enable-active-high;
 		regulator-boot-on;
 		regulator-always-on;
@@ -185,11 +185,6 @@
 	};
 };
 
-&ethernet {
-	pinctrl-names = "default";
-	pinctrl-0 = <&mdio_pins>;
-};
-
 &gmac0 {
 	nvmem-cells = <&macaddr_custom_40 0>;
 	nvmem-cell-names = "mac-address";
@@ -204,10 +199,8 @@
 	nvmem-cell-names = "mac-address";
 };
 
-&mdio {
-	ethphy4: ethernet-phy@4 {
-		reg = <4>;
-	};
+&ethphy4 {
+	/delete-property/ interrupts;
 };
 
 &switch0 {

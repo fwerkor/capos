@@ -55,8 +55,9 @@ define Build/dns313-images
 		--root $@.tmp $@.tmp-boot
 
 	# The device firmware needs revision 1 of EXT2
-	tune2fs -O filetype $@.tmp-boot
-	e2fsck -pDf $@.tmp-boot > /dev/null
+	$(STAGING_DIR_HOST)/bin/tune2fs -O filetype $@.tmp-boot
+	# Ignore errors because file system was intentionally broken with tune2fs
+	-$(STAGING_DIR_HOST)/bin/e2fsck -pDf $@.tmp-boot > /dev/null
 
 	./dns313_gen_hdd_img.sh $@ $@.tmp-boot $(IMAGE_ROOTFS) \
 		$(CONFIG_TARGET_KERNEL_PARTSIZE) \
@@ -124,6 +125,7 @@ endef
 # All DTB files are prefixed with "gemini-"
 define Device/Default
 	PROFILES := Default
+	DEVICE_DTS_DIR = $$(DTS_DIR)/gemini
 	KERNEL_DEPENDS = $$(wildcard $(DTS_DIR)/$$(DEVICE_DTS).dts)
 	KERNEL_NAME := zImage
 	KERNEL := kernel-bin | append-dtb

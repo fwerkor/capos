@@ -2,6 +2,8 @@
 
 /dts-v1/;
 
+#include <dt-bindings/leds/common.h>
+
 #include "mt7981.dtsi"
 
 / {
@@ -9,8 +11,7 @@
 	compatible = "cudy,wr3000-v1", "mediatek,mt7981";
 
 	aliases {
-		ethernet0 = &gmac0;
-		label-mac-device = &lan1;
+		label-mac-device = &gmac0;
 		led-boot = &led_status;
 		led-failsafe = &led_status;
 		led-running = &led_status;
@@ -34,7 +35,7 @@
 		wps {
 			label = "wps";
 			linux,code = <KEY_WPS_BUTTON>;
-			gpios = <&pio 0 GPIO_ACTIVE_HIGH>;
+			gpios = <&pio 0 GPIO_ACTIVE_LOW>;
 		};
 	};
 
@@ -42,7 +43,8 @@
 		compatible = "gpio-leds";
 
 		led_status: led@0 {
-			label = "blue:status";
+			function = LED_FUNCTION_STATUS;
+			color = <LED_COLOR_ID_BLUE>;
 			gpios = <&pio 10 GPIO_ACTIVE_LOW>;
 		};
 
@@ -52,12 +54,14 @@
 		};
 
 		led@2 {
-			label = "blue:wan";
+			function = LED_FUNCTION_WAN;
+			color = <LED_COLOR_ID_BLUE>;
 			gpios = <&pio 5 GPIO_ACTIVE_LOW>;
 		};
 
 		led@3 {
-			label = "blue:lan";
+			function = LED_FUNCTION_LAN;
+			color = <LED_COLOR_ID_BLUE>;
 			gpios = <&pio 9 GPIO_ACTIVE_LOW>;
 		};
 
@@ -238,28 +242,19 @@
 			nvmem-cells = <&macaddr_bdinfo_de00 1>;
 		};
 
-		lan1: port@1 {
+		port@1 {
 			reg = <1>;
 			label = "lan1";
-
-			nvmem-cell-names = "mac-address";
-			nvmem-cells = <&macaddr_bdinfo_de00 0>;
 		};
 
 		port@2 {
 			reg = <2>;
 			label = "lan2";
-
-			nvmem-cell-names = "mac-address";
-			nvmem-cells = <&macaddr_bdinfo_de00 0>;
 		};
 
 		port@3 {
 			reg = <3>;
 			label = "lan3";
-
-			nvmem-cell-names = "mac-address";
-			nvmem-cells = <&macaddr_bdinfo_de00 0>;
 		};
 
 		port@6 {

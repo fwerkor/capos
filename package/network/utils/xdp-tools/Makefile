@@ -2,8 +2,8 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=xdp-tools
 PKG_RELEASE:=1
-PKG_VERSION:=1.2.9
-PKG_HASH:=159ed8d3c8195d812ec3cde83bd736245a72743af372998320d39c2ba69ab142
+PKG_VERSION:=1.4.3
+PKG_HASH:=6e727e2c7c079dec86575c5d0e7aac7ecd582aabe04b3b176d7ef50e653b60c0
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://codeload.github.com/xdp-project/xdp-tools/tar.gz/v$(PKG_VERSION)?
@@ -85,8 +85,14 @@ CONFIGURE_VARS += \
 	CFLAGS="$(TARGET_CFLAGS)" \
 	LDFLAGS="$(TARGET_LDFLAGS)" \
 	CLANG="$(CLANG)" \
-	BPF_TARGET="$(BPF_TARGET)" \
-	LLC="$(LLVM_LLC)"
+	BPF_TARGET="$(BPF_ARCH)-linux-gnu" \
+	LLC="$(LLVM_LLC)" \
+	BPF_LDFLAGS="-march=$(BPF_TARGET) -mcpu=v3" \
+	BPFTOOL=""
+
+ifneq ($(findstring s,$(OPENWRT_VERBOSE)),)
+	MAKE_FLAGS+=V=1
+endif
 
 MAKE_VARS += \
 	PREFIX=/usr \
@@ -94,7 +100,7 @@ MAKE_VARS += \
 
 define Build/Configure
 	$(call Build/Configure/Default)
-	echo "BPF_CFLAGS += -I$(BPF_HEADERS_DIR)/tools/lib -fno-stack-protector" >> $(PKG_BUILD_DIR)/config.mk
+	echo "BPF_CFLAGS += $(BPF_CFLAGS) -Wno-error -fno-stack-protector" >> $(PKG_BUILD_DIR)/config.mk
 endef
 
 define Build/InstallDev

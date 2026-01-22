@@ -42,33 +42,37 @@
 	leds {
 		compatible = "gpio-leds";
 
-		led@5 {
+		led-5 {
 			label = "green:internet";
 			gpios = <&gpio 5 GPIO_ACTIVE_HIGH>;
 		};
 
-		led@14 {
-			label = "green:usb";
+		led-14 {
+			function = LED_FUNCTION_USB;
+			color = <LED_COLOR_ID_GREEN>;
 			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
 		};
 
-		led_power_green: led@22 {
-			label = "green:power";
+		led_power_green: led-22 {
+			function = LED_FUNCTION_POWER;
+			color = <LED_COLOR_ID_GREEN>;
 			gpios = <&gpio 22 GPIO_ACTIVE_HIGH>;
 		};
 
-		led@23 {
-			label = "green:wps";
+		led-23 {
+			function = LED_FUNCTION_WPS;
+			color = <LED_COLOR_ID_GREEN>;
 			gpios = <&gpio 23 GPIO_ACTIVE_LOW>;
 		};
 
-		led_power_red: led@24 {
-			label = "red:power";
+		led_power_red: led-24 {
+			function = LED_FUNCTION_POWER;
+			color = <LED_COLOR_ID_RED>;
 			gpios = <&gpio 24 GPIO_ACTIVE_HIGH>;
 			panic-indicator;
 		};
 
-		led@31 {
+		led-31 {
 			label = "red:internet";
 			gpios = <&gpio 31 GPIO_ACTIVE_HIGH>;
 		};
@@ -165,7 +169,7 @@
 		#address-cells = <1>;
 		#size-cells = <1>;
 
-		cfe: partition@0 {
+		partition@0 {
 			label = "CFE";
 			reg = <0x000000 0x010000>;
 			read-only;

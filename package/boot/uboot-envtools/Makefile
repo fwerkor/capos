@@ -9,15 +9,15 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=uboot-envtools
 PKG_DISTNAME:=u-boot
-PKG_VERSION:=2023.07.02
-PKG_RELEASE:=3
+PKG_VERSION:=2024.07
+PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_DISTNAME)-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL:= \
     https://ftp.denx.de/pub/u-boot \
     https://mirror.cyberbits.eu/u-boot \
     ftp://ftp.denx.de/pub/u-boot
-PKG_HASH:=6b6a48581c14abb0f95bd87c1af4d740922406d7b801002a9f94727fdde021d5
+PKG_HASH:=f591da9ab90ef3d6b3d173766d0ddff90c4ed7330680897486117df390d83c8f
 PKG_SOURCE_SUBDIR:=$(PKG_DISTNAME)-$(PKG_VERSION)
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_DISTNAME)-$(PKG_VERSION)
 
@@ -71,6 +71,9 @@ define Package/uboot-envtools/install
 	$(LN) fw_printenv $(1)/usr/sbin/fw_setenv
 	$(INSTALL_BIN) ./files/fw_printsys $(1)/usr/sbin
 	$(INSTALL_BIN) ./files/fw_setsys $(1)/usr/sbin
+	$(INSTALL_BIN) ./files/fw_loadenv $(1)/usr/sbin
+	$(INSTALL_DIR) $(1)/etc/board.d
+	$(INSTALL_DATA) ./files/fw_defaults $(1)/etc/board.d/05_fw_defaults
 	$(INSTALL_DIR) $(1)/lib
 	$(INSTALL_DATA) ./files/uboot-envtools.sh $(1)/lib
 	$(INSTALL_DIR) $(1)/etc/uci-defaults

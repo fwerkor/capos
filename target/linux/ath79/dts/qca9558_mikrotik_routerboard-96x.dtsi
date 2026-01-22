@@ -10,7 +10,6 @@
 		led-boot = &led_user;
 		led-failsafe = &led_user;
 		led-upgrade = &led_user;
-		serial0 = &uart;
 	};
 
 	leds {
@@ -45,7 +44,7 @@
 
 		usb_power {
 			gpio-export,name = "usb-power";
-			gpio-export,output = <0>;
+			gpio-export,output = <1>;
 			gpios = <&gpio 13 GPIO_ACTIVE_HIGH>;
 		};
 	};

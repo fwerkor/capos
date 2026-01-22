@@ -84,6 +84,7 @@ define Device/Default
   KERNEL_NAME := zImage
   KERNEL := kernel-bin | uImage none
   KERNEL_LOADADDR := 0x10008000
+  DTS_DIR := $(DTS_DIR)/nxp/imx
   IMAGES :=
 endef
 
@@ -120,7 +121,8 @@ define Device/gateworks_ventana
 	imx6q-gw5913
   DEVICE_PACKAGES := kmod-sky2 kmod-sound-core kmod-sound-soc-imx \
 	kmod-sound-soc-imx-sgtl5000 kmod-can kmod-can-flexcan kmod-can-raw \
-	kmod-hwmon-gsc kmod-leds-gpio kmod-pps-gpio kobs-ng
+	kmod-hwmon-gsc kmod-leds-gpio kmod-pps-gpio kobs-ng \
+	kmod-gpio-button-hotplug
   KERNEL += | boot-overlay
   IMAGES := img.gz nand.ubi bootfs.tar.gz dtb
   IMAGE/nand.ubi := append-ubi

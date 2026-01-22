@@ -4,6 +4,7 @@
 
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/input/input.h>
+#include <dt-bindings/leds/common.h>
 
 / {
 	compatible = "dlink,dap-x1860-a1", "mediatek,mt7621-soc";
@@ -41,18 +42,21 @@
 		compatible = "gpio-leds";
 
 		led_power_green: power_green {
-			label = "green:power";
+			function = LED_FUNCTION_POWER;
+			color = <LED_COLOR_ID_GREEN>;
 			gpios = <&gpio 3 GPIO_ACTIVE_LOW>;
 			default-state = "on";
 		};
 
 		led_power_red: power_red {
-			label = "red:power";
+			function = LED_FUNCTION_POWER;
+			color = <LED_COLOR_ID_RED>;
 			gpios = <&gpio 7 GPIO_ACTIVE_LOW>;
 		};
 
 		power_orange {
-			label = "orange:power";
+			function = LED_FUNCTION_POWER;
+			color = <LED_COLOR_ID_ORANGE>;
 			gpios = <&gpio 8 GPIO_ACTIVE_LOW>;
 		};
 
@@ -124,7 +128,7 @@
 			read-only;
 		};
 
-		factory: partition@100000 {
+		partition@100000 {
 			label = "factory";
 			reg = <0x100000 0x80000>;
 			read-only;
@@ -134,8 +138,16 @@
 				#address-cells = <1>;
 				#size-cells = <1>;
 
+				eeprom_factory_0: eeprom@0 {
+					reg = <0x0 0xe00>;
+				};
+
 				macaddr_factory_4: macaddr@4 {
 					reg = <0x4 0x6>;
+				};
+
+				precal_factory_e10: precal@e10 {
+					reg = <0xe10 0x19c10>;
 				};
 			};
 		};
@@ -177,7 +189,8 @@
 	wifi@0,0 {
 		compatible = "mediatek,mt76";
 		reg = <0x0000 0 0 0 0>;
-		mediatek,mtd-eeprom = <&factory 0x0>;
+		nvmem-cells = <&eeprom_factory_0>, <&precal_factory_e10>;
+		nvmem-cell-names = "eeprom", "precal";
 		mediatek,disable-radar-background;
 	};
 };

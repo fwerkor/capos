@@ -1,4 +1,5 @@
 REQUIRE_IMAGE_METADATA=1
+RAMFS_COPY_BIN='fitblk'
 
 asus_initial_setup()
 {
@@ -39,13 +40,15 @@ xiaomi_initial_setup()
 		return 0
 	fi
 
-	fw_setenv boot_wait on
-	fw_setenv uart_en 1
-	fw_setenv flag_boot_rootfs 0
-	fw_setenv flag_last_success 1
-	fw_setenv flag_boot_success 1
-	fw_setenv flag_try_sys1_failed 8
-	fw_setenv flag_try_sys2_failed 8
+	fw_setenv -s - <<-EOF
+		boot_wait on
+		uart_en 1
+		flag_boot_rootfs 0
+		flag_last_success 1
+		flag_boot_success 1
+		flag_try_sys1_failed 8
+		flag_try_sys2_failed 8
+	EOF
 
 	local board=$(board_name)
 	case "$board" in
@@ -63,78 +66,89 @@ platform_do_upgrade() {
 	local board=$(board_name)
 
 	case "$board" in
+	abt,asr3000|\
+	bananapi,bpi-r3|\
+	bananapi,bpi-r3-mini|\
+	bananapi,bpi-r4|\
+	bananapi,bpi-r4-poe|\
+	cmcc,a10-ubootmod|\
+	cmcc,rax3000m|\
+	cudy,tr3000-v1-ubootmod|\
+	gatonetworks,gdsp|\
+	h3c,magic-nx30-pro|\
+	jcg,q30-pro|\
+	jdcloud,re-cp-03|\
+	konka,komi-a31|\
+	mediatek,mt7981-rfb|\
+	mediatek,mt7988a-rfb|\
+	mercusys,mr90x-v1-ubi|\
+	netis,nx31|\
+	nokia,ea0326gmp|\
+	openwrt,one|\
+	netcore,n60|\
+	qihoo,360t7|\
+	routerich,ax3000-ubootmod|\
+	tplink,tl-xdr4288|\
+	tplink,tl-xdr6086|\
+	tplink,tl-xdr6088|\
+	tplink,tl-xtr8488|\
+	xiaomi,mi-router-ax3000t-ubootmod|\
+	xiaomi,redmi-router-ax6000-ubootmod|\
+	xiaomi,mi-router-wr30u-ubootmod|\
+	zyxel,ex5601-t0-ubootmod)
+		fit_do_upgrade "$1"
+		;;
 	acer,predator-w6|\
+	acer,predator-w6d|\
+	acer,vero-w6m|\
+	arcadyan,mozart|\
+	glinet,gl-mt2500|\
+	glinet,gl-mt6000|\
+	glinet,gl-x3000|\
+	glinet,gl-xe3000|\
+	huasifei,wh3000|\
+	huasifei,wh3000-pro|\
 	smartrg,sdg-8612|\
 	smartrg,sdg-8614|\
 	smartrg,sdg-8622|\
-	smartrg,sdg-8632)
+	smartrg,sdg-8632|\
+	smartrg,sdg-8733|\
+	smartrg,sdg-8733a|\
+	smartrg,sdg-8734)
 		CI_KERNPART="kernel"
 		CI_ROOTPART="rootfs"
 		emmc_do_upgrade "$1"
 		;;
+	asus,rt-ax52|\
 	asus,rt-ax59u|\
 	asus,tuf-ax4200|\
+	asus,tuf-ax4200q|\
 	asus,tuf-ax6000)
 		CI_UBIPART="UBI_DEV"
 		CI_KERNPART="linux"
 		nand_do_upgrade "$1"
 		;;
-	bananapi,bpi-r3)
-		local rootdev="$(cmdline_get_var root)"
-		rootdev="${rootdev##*/}"
-		rootdev="${rootdev%p[0-9]*}"
-		case "$rootdev" in
-		mmc*)
-			CI_ROOTDEV="$rootdev"
-			CI_KERNPART="production"
-			emmc_do_upgrade "$1"
-			;;
-		mtdblock*)
-			PART_NAME="fit"
-			default_do_upgrade "$1"
-			;;
-		ubiblock*)
-			CI_KERNPART="fit"
-			nand_do_upgrade "$1"
-			;;
-		esac
-		;;
-	cmcc,rax3000m)
-		case "$(cmdline_get_var root)" in
-		/dev/mmc*)
-			CI_KERNPART="production"
-			emmc_do_upgrade "$1"
-			;;
-		*)
-			CI_KERNPART="fit"
-			nand_do_upgrade "$1"
-			;;
-		esac
-		;;
-	cudy,wr3000-v1|\
-	yuncore,ax835)
-		default_do_upgrade "$1"
-		;;
-	glinet,gl-mt2500|\
-	glinet,gl-mt6000)
-		CI_KERNPART="kernel"
-		CI_ROOTPART="rootfs"
-		emmc_do_upgrade "$1"
-		;;
-	h3c,magic-nx30-pro|\
-	jcg,q30-pro|\
-	mediatek,mt7981-rfb|\
-	qihoo,360t7|\
-	tplink,tl-xdr4288|\
-	tplink,tl-xdr6086|\
-	tplink,tl-xdr6088|\
-	xiaomi,mi-router-ax3000t-ubootmod|\
-	xiaomi,mi-router-wr30u-ubootmod|\
-	xiaomi,redmi-router-ax6000-ubootmod)
-		CI_KERNPART="fit"
+	cudy,wr3000h-v1|\
+	cudy,wr3000p-v1)
+		CI_UBIPART="ubi"
 		nand_do_upgrade "$1"
 		;;
-	mercusys,mr90x-v1)
+	cudy,re3000-v1|\
+	cudy,wr3000-v1|\
+	yuncore,ax835|\
+	wavlink,wl-wn573hx3|\
+	totolink,x6000r)
+		default_do_upgrade "$1"
+		;;
+	dlink,aquila-pro-ai-m30-a1|\
+	dlink,aquila-pro-ai-m60-a1)
+		fw_setenv sw_tryactive 0
+		nand_do_upgrade "$1"
+		;;
+	mercusys,mr80x-v3|\
+	mercusys,mr90x-v1|\
+	tplink,archer-ax80-v1|\
+	tplink,re6000xd)
 		CI_UBIPART="ubi0"
 		nand_do_upgrade "$1"
 		;;
@@ -143,6 +157,23 @@ platform_do_upgrade() {
 		EMMC_ROOT_DEV="$(cmdline_get_var root)"
 		emmc_do_upgrade "$1"
 		;;
+	unielec,u7981-01*)
+		local rootdev="$(cmdline_get_var root)"
+		rootdev="${rootdev##*/}"
+		rootdev="${rootdev%p[0-9]*}"
+		case "$rootdev" in
+		mmc*)
+			CI_ROOTDEV="$rootdev"
+			CI_KERNPART="kernel"
+			CI_ROOTPART="rootfs"
+			emmc_do_upgrade "$1"
+			;;
+		*)
+			CI_KERNPART="fit"
+			nand_do_upgrade "$1"
+			;;
+		esac
+		;;
 	xiaomi,mi-router-ax3000t|\
 	xiaomi,mi-router-wr30u-stock|\
 	xiaomi,redmi-router-ax6000-stock)
@@ -150,11 +181,6 @@ platform_do_upgrade() {
 		CI_ROOT_UBIPART=ubi
 		nand_do_upgrade "$1"
 		;;
-        zyxel,ex5601-t0-ubootmod)
-		CI_KERNPART="fit"
-		CI_ROOTPART="ubi_rootfs"
-                nand_do_upgrade "$1"
-                ;;
 	*)
 		nand_do_upgrade "$1"
 		;;
@@ -171,6 +197,9 @@ platform_check_image() {
 
 	case "$board" in
 	bananapi,bpi-r3|\
+	bananapi,bpi-r3-mini|\
+	bananapi,bpi-r4|\
+	bananapi,bpi-r4-poe|\
 	cmcc,rax3000m)
 		[ "$magic" != "d00dfeed" ] && {
 			echo "Invalid image type."
@@ -190,16 +219,32 @@ platform_check_image() {
 platform_copy_config() {
 	case "$(board_name)" in
 	bananapi,bpi-r3|\
+	bananapi,bpi-r3-mini|\
+	bananapi,bpi-r4|\
+	bananapi,bpi-r4-poe|\
 	cmcc,rax3000m)
-		case "$(cmdline_get_var root)" in
-		/dev/mmc*)
+		if [ "$CI_METHOD" = "emmc" ]; then
 			emmc_copy_config
-			;;
-		esac
+		fi
 		;;
 	acer,predator-w6|\
+	acer,predator-w6d|\
+	acer,vero-w6m|\
+	arcadyan,mozart|\
 	glinet,gl-mt2500|\
 	glinet,gl-mt6000|\
+	glinet,gl-x3000|\
+	glinet,gl-xe3000|\
+	huasifei,wh3000|\
+	huasifei,wh3000-pro|\
+	jdcloud,re-cp-03|\
+	smartrg,sdg-8612|\
+	smartrg,sdg-8614|\
+	smartrg,sdg-8622|\
+	smartrg,sdg-8632|\
+	smartrg,sdg-8733|\
+	smartrg,sdg-8733a|\
+	smartrg,sdg-8734|\
 	ubnt,unifi-6-plus)
 		emmc_copy_config
 		;;
@@ -210,8 +255,10 @@ platform_pre_upgrade() {
 	local board=$(board_name)
 
 	case "$board" in
+	asus,rt-ax52|\
 	asus,rt-ax59u|\
 	asus,tuf-ax4200|\
+	asus,tuf-ax4200q|\
 	asus,tuf-ax6000)
 		asus_initial_setup
 		;;

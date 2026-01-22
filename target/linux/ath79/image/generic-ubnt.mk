@@ -18,6 +18,19 @@ define Device/ubnt_aircube-isp
 endef
 TARGET_DEVICES += ubnt_aircube-isp
 
+define Device/ubnt_amplifi-router-hd
+  IMAGE_SIZE := 11264k
+  UBNT_BOARD := AFi-R-HD
+  UBNT_TYPE := AFi-R
+  UBNT_VERSION := 3.6.3
+  SOC := qca9563
+  DEVICE_VENDOR := Ubiquiti
+  DEVICE_MODEL := AmpliFi Router HD
+  UBNT_CHIP := qca956x
+  DEVICE_PACKAGES += kmod-ath10k-ct-smallbuffers ath10k-firmware-qca988x-ct kmod-usb2
+endef
+TARGET_DEVICES += ubnt_amplifi-router-hd
+
 define Device/ubnt_bullet-ac
   $(Device/ubnt-2wa)
   DEVICE_MODEL := Bullet AC
@@ -28,6 +41,9 @@ TARGET_DEVICES += ubnt_bullet-ac
 define Device/ubnt_bullet-m-xw
   $(Device/ubnt-xw)
   DEVICE_MODEL := Bullet M
+  DEVICE_ALT0_VENDOR := Ubiquiti
+  DEVICE_ALT0_MODEL := Rocket M
+  DEVICE_ALT0_VARIANT := XW
   DEVICE_PACKAGES += rssileds
   SUPPORTED_DEVICES += bullet-m-xw
 endef
@@ -42,8 +58,9 @@ TARGET_DEVICES += ubnt_edgeswitch-5xp
 define Device/ubnt_edgeswitch-8xp
   $(Device/ubnt-sw)
   DEVICE_MODEL := EdgeSwitch 8XP
-  DEVICE_PACKAGES += kmod-switch-bcm53xx-mdio
-  DEFAULT := n
+  DEVICE_PACKAGES += kmod-dsa-b53-mdio
+  DEVICE_COMPAT_VERSION := 1.1
+  DEVICE_COMPAT_MESSAGE := Config cannot be migrated from swconfig to DSA
 endef
 TARGET_DEVICES += ubnt_edgeswitch-8xp
 
@@ -61,6 +78,14 @@ define Device/ubnt_litebeam-ac-gen2
   DEVICE_PACKAGES := kmod-ath10k-ct-smallbuffers ath10k-firmware-qca988x-ct
 endef
 TARGET_DEVICES += ubnt_litebeam-ac-gen2
+
+define Device/ubnt_litebeam-m5-xw
+  $(Device/ubnt-xw)
+  DEVICE_MODEL := LiteBeam M5
+  SUPPORTED_DEVICES += lbe-m5
+  DEVICE_PACKAGES := -kmod-usb2
+endef
+TARGET_DEVICES += ubnt_litebeam-m5-xw
 
 define Device/ubnt_nanobeam-ac
   $(Device/ubnt-wa)
@@ -87,14 +112,6 @@ define Device/ubnt_nanobeam-ac-xc
 endef
 TARGET_DEVICES += ubnt_nanobeam-ac-xc
 
-define Device/ubnt_nanobeam-m5-xw
-  $(Device/ubnt-xw)
-  DEVICE_MODEL := NanoBeam M5
-  DEVICE_PACKAGES += rssileds
-  SUPPORTED_DEVICES += loco-m-xw
-endef
-TARGET_DEVICES += ubnt_nanobeam-m5-xw
-
 define Device/ubnt_nanostation-ac
   $(Device/ubnt-wa)
   DEVICE_MODEL := Nanostation AC
@@ -112,8 +129,17 @@ TARGET_DEVICES += ubnt_nanostation-ac-loco
 define Device/ubnt_nanostation-loco-m-xw
   $(Device/ubnt-xw)
   DEVICE_MODEL := Nanostation Loco M
-  DEVICE_PACKAGES += rssileds
-  SUPPORTED_DEVICES += loco-m-xw
+  DEVICE_PACKAGES += rssileds -kmod-usb2
+  DEVICE_ALT0_VENDOR := Ubiquiti
+  DEVICE_ALT0_MODEL := AirGrid M5 HP
+  DEVICE_ALT0_VARIANT := XW
+  DEVICE_ALT1_VENDOR := Ubiquiti
+  DEVICE_ALT1_MODEL := PowerBeam M5 300
+  DEVICE_ALT1_VARIANT := XW
+  DEVICE_ALT2_VENDOR := Ubiquiti
+  DEVICE_ALT2_MODEL := NanoBeam M5
+  DEVICE_ALT2_VARIANT := XW
+  SUPPORTED_DEVICES += loco-m-xw nanostation-m-xw ubnt,nanobeam-m5-xw
 endef
 TARGET_DEVICES += ubnt_nanostation-loco-m-xw
 

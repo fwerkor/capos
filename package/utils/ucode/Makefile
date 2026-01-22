@@ -12,28 +12,33 @@ PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL=https://github.com/jow-/ucode.git
-PKG_SOURCE_DATE:=2023-11-30
-PKG_SOURCE_VERSION:=6e89b89e95bbb140bbff5ab72b8c9632727bf6a6
-PKG_MIRROR_HASH:=20ba99f8c2591b581cdf0245dd40301e517659193cddaa3a3888125fcc85b2aa
+PKG_SOURCE_DATE:=2025-07-18
+PKG_SOURCE_VERSION:=3f64c8089bf3ea4847c96b91df09fbfcaec19e1d
+PKG_MIRROR_HASH:=55fbff7c527e1fadbda2e038636f39419649841ee63a5f3cdb50b9714b13420c
 PKG_MAINTAINER:=Jo-Philipp Wich <jo@mein.io>
 PKG_LICENSE:=ISC
 
 PKG_ABI_VERSION:=20230711
+PKG_BUILD_DEPENDS:=libmd
+HOST_BUILD_DEPENDS:=libjson-c/host
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/host-build.mk
 include $(INCLUDE_DIR)/cmake.mk
 
-CMAKE_OPTIONS += -DSOVERSION=$(PKG_ABI_VERSION)
+CMAKE_OPTIONS += \
+	-DSOVERSION=$(PKG_ABI_VERSION)
+
+CMAKE_HOST_OPTIONS += \
+	-DCMAKE_SKIP_RPATH=FALSE \
+	-DCMAKE_INSTALL_RPATH="${STAGING_DIR_HOSTPKG}/lib"
 
 ifeq ($(HOST_OS),Darwin)
   CMAKE_HOST_OPTIONS += \
-	-DCMAKE_SKIP_RPATH=FALSE \
-	-DCMAKE_MACOSX_RPATH=1 \
-	-DCMAKE_INSTALL_RPATH="${STAGING_DIR_HOSTPKG}/lib"
+	-DCMAKE_MACOSX_RPATH=1
 else
   CMAKE_HOST_OPTIONS += \
-	-DSOVERSION=$(PKG_ABI_VERSION)
+	-DUSE_RPATH="${STAGING_DIR_HOSTPKG}/lib"
 endif
 
 CMAKE_HOST_OPTIONS += \
@@ -47,7 +52,8 @@ CMAKE_HOST_OPTIONS += \
 	-DUCI_SUPPORT=OFF \
 	-DULOOP_SUPPORT=OFF \
 	-DDEBUG_SUPPORT=ON \
-	-DLOG_SUPPORT=OFF
+	-DLOG_SUPPORT=OFF \
+	-DDIGEST_SUPPORT=OFF
 
 
 define Package/ucode/default
@@ -155,6 +161,10 @@ $(eval $(call UcodeModule, \
 	The rtnl plugin provides access to the Linux routing netlink API.))
 
 $(eval $(call UcodeModule, \
+	socket, SOCKET_SUPPORT, , \
+	The socket plugin provides access to IPv4, IPv6, Unix and packet socket APIs.))
+
+$(eval $(call UcodeModule, \
 	struct, STRUCT_SUPPORT, , \
 	The struct plugin implements Python 3 compatible struct.pack/unpack functionality.))
 
@@ -169,6 +179,10 @@ $(eval $(call UcodeModule, \
 $(eval $(call UcodeModule, \
 	uloop, ULOOP_SUPPORT, +libubox, \
 	The uloop module allows ucode scripts to interact with OpenWrt uloop event loop implementation.))
+
+$(eval $(call UcodeModule, \
+	digest, DIGEST_SUPPORT, , \
+	The digest module allows ucode scripts to use libmd digests.))
 
 $(eval $(call BuildPackage,libucode))
 $(eval $(call BuildPackage,ucode))

@@ -8,13 +8,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ls-rcw
-PKG_VERSION:=lf-6.1.1-1.0.0
+PKG_VERSION:=6.6.23.2.0.0
 PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/nxp-qoriq/rcw
-PKG_SOURCE_VERSION:=lf-6.1.1-1.0.0
-PKG_MIRROR_HASH:=3127285549a0a7dd3cded20c2fbfb67b06943faa8dab529f61936dc1bea177db
+PKG_SOURCE_VERSION:=lf-6.6.23-2.0.0
+PKG_MIRROR_HASH:=f5e62ac040564eb97f4d1c58496a1586a470008469cb4daee6d7c70be7fdfa07
 
 PKG_FLAGS:=nonshared
 
@@ -25,6 +25,8 @@ define Package/layerscape-rcw
   CATEGORY:=Firmware
   TITLE:=NXP Layerscape RCW binaries
   DEPENDS:=@TARGET_layerscape
+  DEFAULT:=y if TARGET_layerscape_armv7
+  HIDDEN:=1
 endef
 
 BOARDS := \

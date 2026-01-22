@@ -2,6 +2,7 @@
 #
 # Copyright (C) 2012-2015 OpenWrt.org
 # Copyright (C) 2016 LEDE Project
+# Copyright (C) 2026 CapOS Project
 
 # Substituted by SDK, do not remove
 # REVISION:=x
@@ -23,29 +24,29 @@ PKG_CONFIG_DEPENDS += \
 sanitize = $(call tolower,$(subst _,-,$(subst $(space),-,$(1))))
 
 VERSION_NUMBER:=$(call qstrip,$(CONFIG_VERSION_NUMBER))
-VERSION_NUMBER:=$(if $(VERSION_NUMBER),$(VERSION_NUMBER),SNAPSHOT)
+VERSION_NUMBER:=$(if $(VERSION_NUMBER),$(VERSION_NUMBER),24.10.5)
 
 VERSION_CODE:=$(call qstrip,$(CONFIG_VERSION_CODE))
-VERSION_CODE:=$(if $(VERSION_CODE),$(VERSION_CODE),$(REVISION))
+VERSION_CODE:=$(if $(VERSION_CODE),$(VERSION_CODE),r29087-d9c5716d1d)
 
 VERSION_REPO:=$(call qstrip,$(CONFIG_VERSION_REPO))
-VERSION_REPO:=$(if $(VERSION_REPO),$(VERSION_REPO),https://capos.fwerkor.com/repository/snapshots)
+VERSION_REPO:=$(if $(VERSION_REPO),$(VERSION_REPO),https://repository.fwerkor.com/capos/snapshots)
 
 VERSION_DIST:=$(call qstrip,$(CONFIG_VERSION_DIST))
-VERSION_DIST:=$(if $(VERSION_DIST),$(VERSION_DIST),OpenWrt)
+VERSION_DIST:=$(if $(VERSION_DIST),$(VERSION_DIST),CapOS)
 VERSION_DIST_SANITIZED:=$(call sanitize,$(VERSION_DIST))
 
 VERSION_MANUFACTURER:=$(call qstrip,$(CONFIG_VERSION_MANUFACTURER))
 VERSION_MANUFACTURER:=$(if $(VERSION_MANUFACTURER),$(VERSION_MANUFACTURER),CapOS)
 
 VERSION_MANUFACTURER_URL:=$(call qstrip,$(CONFIG_VERSION_MANUFACTURER_URL))
-VERSION_MANUFACTURER_URL:=$(if $(VERSION_MANUFACTURER_URL),$(VERSION_MANUFACTURER_URL),https://capos.fwerkor.com/)
+VERSION_MANUFACTURER_URL:=$(if $(VERSION_MANUFACTURER_URL),$(VERSION_MANUFACTURER_URL),https://os.fwerkor.org/)
 
 VERSION_BUG_URL:=$(call qstrip,$(CONFIG_VERSION_BUG_URL))
 VERSION_BUG_URL:=$(if $(VERSION_BUG_URL),$(VERSION_BUG_URL),https://github.com/fwerkor/capos/issues)
 
 VERSION_HOME_URL:=$(call qstrip,$(CONFIG_VERSION_HOME_URL))
-VERSION_HOME_URL:=$(if $(VERSION_HOME_URL),$(VERSION_HOME_URL),https://capos.fwerkor.com/)
+VERSION_HOME_URL:=$(if $(VERSION_HOME_URL),$(VERSION_HOME_URL),https://www.fwerkor.com/)
 
 VERSION_SUPPORT_URL:=$(call qstrip,$(CONFIG_VERSION_SUPPORT_URL))
 VERSION_SUPPORT_URL:=$(if $(VERSION_SUPPORT_URL),$(VERSION_SUPPORT_URL),https://github.com/fwerkor/capos/discussions)
@@ -95,7 +96,7 @@ VERSION_SED_SCRIPT:=$(SED) 's,%U,$(call sed_escape,$(VERSION_REPO)),g' \
 	-e 's,%d,\L$(call sed_escape,$(subst $(space),_,$(VERSION_DIST))),g' \
 	-e 's,%R,$(call sed_escape,$(REVISION)),g' \
 	-e 's,%T,$(call sed_escape,$(BOARD)),g' \
-	-e 's,%S,$(call sed_escape,$(BOARD)/$(if $(SUBTARGET),$(SUBTARGET),generic)),g' \
+	-e 's,%S,$(call sed_escape,$(BOARD)/$(SUBTARGET)),g' \
 	-e 's,%A,$(call sed_escape,$(ARCH_PACKAGES)),g' \
 	-e 's,%t,$(call sed_escape,$(VERSION_TAINTS)),g' \
 	-e 's,%M,$(call sed_escape,$(VERSION_MANUFACTURER)),g' \
@@ -104,5 +105,6 @@ VERSION_SED_SCRIPT:=$(SED) 's,%U,$(call sed_escape,$(VERSION_REPO)),g' \
 	-e 's,%u,$(call sed_escape,$(VERSION_HOME_URL)),g' \
 	-e 's,%s,$(call sed_escape,$(VERSION_SUPPORT_URL)),g' \
 	-e 's,%P,$(call sed_escape,$(VERSION_PRODUCT)),g' \
-	-e 's,%h,$(call sed_escape,$(VERSION_HWREV)),g'
+	-e 's,%h,$(call sed_escape,$(VERSION_HWREV)),g' \
+	-e 's,%B,$(call sed_escape,$(SOURCE_DATE_EPOCH)),g'
 

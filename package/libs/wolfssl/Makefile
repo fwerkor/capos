@@ -8,12 +8,15 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=wolfssl
-PKG_VERSION:=5.6.6-stable
+PKG_VERSION:=5.7.6
+PKG_REAL_VERSION:=$(PKG_VERSION)-stable
 PKG_RELEASE:=1
 
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://github.com/wolfSSL/wolfssl/archive/v$(PKG_VERSION)
-PKG_HASH:=3d2ca672d41c2c2fa667885a80d6fa03c3e91f0f4f72f87aef2bc947e8c87237
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_REAL_VERSION).tar.gz
+PKG_SOURCE_URL:=https://github.com/wolfSSL/wolfssl/archive/v$(PKG_REAL_VERSION)
+PKG_HASH:=52b1e439e30d1ed8162a16308a8525a862183b67aa30373b11166ecbab000d63
+
+PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(BUILD_VARIANT)/$(PKG_NAME)-$(PKG_REAL_VERSION)
 
 PKG_FIXUP:=libtool libtool-abiver
 PKG_INSTALL:=1
@@ -40,7 +43,7 @@ PKG_CONFIG_DEPENDS:=\
 	CONFIG_WOLFSSL_HAS_TLSV13 \
 	CONFIG_WOLFSSL_HAS_WPAS
 
-PKG_ABI_VERSION:=$(patsubst %-stable,%,$(PKG_VERSION)).$(call version_abbrev,$(call confvar,$(PKG_CONFIG_DEPENDS)))
+PKG_ABI_VERSION:=$(PKG_VERSION).$(call version_abbrev,$(call confvar,$(PKG_CONFIG_DEPENDS)))
 
 PKG_CONFIG_DEPENDS+=\
 	CONFIG_PACKAGE_libwolfssl-benchmark \
@@ -50,6 +53,8 @@ PKG_CONFIG_DEPENDS+=\
 	CONFIG_WOLFSSL_HAS_DEVCRYPTO_FULL
 
 include $(INCLUDE_DIR)/package.mk
+
+DISABLE_NLS:=
 
 define Package/libwolfssl/Default
   SECTION:=libs

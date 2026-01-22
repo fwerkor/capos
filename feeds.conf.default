@@ -1,9 +1,12 @@
-src-git packages https://github.com/fwerkor/capos-packages.git
-src-git cwd https://github.com/fwerkor/cwd.git
-src-git luci https://github.com/fwerkor/capos-luci.git
-src-git routing https://github.com/fwerkor/capos-routing.git
-src-git telephony https://github.com/fwerkor/capos-telephony.git
-src-git video https://github.com/fwerkor/capos-video.git
-src-git targets https://github.com/fwerkor/capos-targets.git
-#src-git oldpackages http://git.openwrt.org/packages.git
-#src-link custom /usr/src/capos/custom-feed
+src-git packages https://git.openwrt.org/feed/packages.git^953b6d47b4e9f0ad3c39547c6d3f9a828f10e206
+src-git luci https://git.openwrt.org/project/luci.git^d88390be4ec9722cb427fee03368fc8c8582627d
+src-git routing https://git.openwrt.org/feed/routing.git^178a40d321d6c11f18528f34777f4e24ce62b19a
+src-git telephony https://git.openwrt.org/feed/telephony.git^92892fa285360b8981f62bf4e0a097e6449e7e33
+
+# If you want to add custom src feeds, write them here. Like:
+# src-git custom1 https://github.com/someone/some-feed.git
+# src-link custom2 /usr/src/capos/custom-feed
+# 
+# Then you need to run the following commands before "make menuconfig"
+# ./scripts/feeds update -a
+# ./scripts/feeds install -a

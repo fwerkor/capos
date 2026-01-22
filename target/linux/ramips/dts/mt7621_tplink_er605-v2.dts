@@ -29,22 +29,19 @@
 		compatible = "gpio-leds";
 
 		led_usb: usb {
-			label = "green:usb";
 			color = <LED_COLOR_ID_GREEN>;
-			function = LED_FUNCTION_STATUS;
+			function = LED_FUNCTION_USB;
 			gpios = <&gpio 11 GPIO_ACTIVE_HIGH>;
 		};
 
 		led_power: power {
-			label = "green:power";
 			color = <LED_COLOR_ID_GREEN>;
-			function = LED_FUNCTION_STATUS;
+			function = LED_FUNCTION_POWER;
 			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
 			default-state = "on";
 		};
 
 		led_system: system {
-			label = "green:system";
 			color = <LED_COLOR_ID_GREEN>;
 			function = LED_FUNCTION_STATUS;
 			gpios = <&gpio 7 GPIO_ACTIVE_HIGH>;
@@ -67,7 +64,7 @@
 		regulator-name = "usb_vbus";
 		regulator-min-microvolt = <5000000>;
 		regulator-max-microvolt = <5000000>;
-		gpio = <&gpio 10 GPIO_ACTIVE_HIGH>;
+		gpios = <&gpio 10 GPIO_ACTIVE_HIGH>;
 		enable-active-high;
 	};
 
@@ -87,7 +84,7 @@
 
 &gmac1 {
 	status = "okay";
-	label = "eth0";
+	label = "wan1";
 	phy-handle = <&ethphy0>;
 };
 
@@ -100,22 +97,22 @@
 
 		port@1 {
 			status = "okay";
-			label = "eth1";
+			label = "lan2";
 		};
 
 		port@2 {
 			status = "okay";
-			label = "eth2";
+			label = "lan3";
 		};
 
 		port@3 {
 			status = "okay";
-			label = "eth3";
+			label = "lan4";
 		};
 
 		port@4 {
 			status = "okay";
-			label = "eth4";
+			label = "lan5";
 		};
 	};
 };
@@ -140,7 +137,7 @@
 			read-only;
 		};
 
-		factory: partition@100000 {
+		partition@100000 {
 			label = "factory";
 			reg = <0x100000 0x40000>;
 			read-only;
@@ -158,11 +155,8 @@
 	};
 };
 
-
-&mdio {
-	ethphy0: ethernet-phy@0 {
-		reg = <0>;
-	};
+&ethphy0 {
+	/delete-property/ interrupts;
 };
 
 &state_default {

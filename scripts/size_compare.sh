@@ -35,7 +35,7 @@ SUBTARGET=${SUBTARGET:-$CONFIG_TARGET_SUBTARGET}
 ARCH=${ARCH:-$CONFIG_TARGET_ARCH_PACKAGES}
 PACKAGES=${PACKAGES:-$CONFIG_PACKAGES}
 BIN_DIR=${CONFIG_BINARY_FOLDER:-./bin}
-BASE_URL="${BASE_URL:-https://capos.fwerkor.com/repository/snapshots}"
+BASE_URL="${BASE_URL:-https://repository.fwerkor.com/capos/snapshots}"
 CHECK_INSTALLED="${CHECK_INSTALLED:-y}"
 
 TARGET_URL="$BASE_URL/targets/$TARGET/$SUBTARGET/packages/Packages.gz"

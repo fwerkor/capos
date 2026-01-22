@@ -13,28 +13,28 @@ body:
   - type: input
     id: version
     attributes:
-      label: OpenWrt version
+      label: CapOS version
       description: |
-        The OpenWrt release or commit hash where this bug occurs (use command below).
-        ```. /etc/openwrt_release && echo $DISTRIB_REVISION```
+        The CapOS release or commit hash where this bug occurs (use command below).
+        ```. /etc/capos_release && echo $DISTRIB_REVISION```
     validations:
       required: true
   - type: input
     id: release
     attributes:
-      label: OpenWrt release
+      label: CapOS release
       description: |
-        The OpenWrt release or commit hash where this bug occurs (use command below).
-        ```. /etc/openwrt_release && echo $DISTRIB_RELEASE```
+        The CapOS release or commit hash where this bug occurs (use command below).
+        ```. /etc/capos_release && echo $DISTRIB_RELEASE```
     validations:
       required: true
   - type: input
     id: target
     attributes:
-      label: OpenWrt target/subtarget
+      label: CapOS target/subtarget
       description: |
-        The OpenWrt target and subtarget where this bug is observed (use command below).
-        ```. /etc/openwrt_release && echo $DISTRIB_TARGET```
+        The CapOS target and subtarget where this bug is observed (use command below).
+        ```. /etc/capos_release && echo $DISTRIB_TARGET```
     validations:
       required: true
   - type: input
@@ -89,5 +89,6 @@ body:
       label: Terms
       description: By submitting this issue, you agree to the terms below.
       options:
-        - label: I am reporting an issue for OpenWrt, not an unsupported fork.
+        - label: I am reporting an issue for CapOS, not an unsupported fork.
+        - label: I am certain that there are no other issues with content that highly overlaps with this one.
           required: true

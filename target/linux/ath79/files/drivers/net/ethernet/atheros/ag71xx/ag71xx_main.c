@@ -1162,33 +1162,10 @@ static int ag71xx_do_ioctl(struct net_device *dev, struct ifreq *ifr, int cmd)
 {
 	struct ag71xx *ag = netdev_priv(dev);
 
+	if (ag->phy_dev == NULL)
+		return -ENODEV;
 
-	switch (cmd) {
-	case SIOCSIFHWADDR:
-		if (copy_from_user
-			((void*)dev->dev_addr, ifr->ifr_data, sizeof(dev->dev_addr)))
-			return -EFAULT;
-		return 0;
-
-	case SIOCGIFHWADDR:
-		if (copy_to_user
-			(ifr->ifr_data, dev->dev_addr, sizeof(dev->dev_addr)))
-			return -EFAULT;
-		return 0;
-
-	case SIOCGMIIPHY:
-	case SIOCGMIIREG:
-	case SIOCSMIIREG:
-		if (ag->phy_dev == NULL)
-			break;
-
-		return phy_mii_ioctl(ag->phy_dev, ifr, cmd);
-
-	default:
-		break;
-	}
-
-	return -EOPNOTSUPP;
+	return phy_mii_ioctl(ag->phy_dev, ifr, cmd);
 }
 
 static void ag71xx_oom_timer_handler(struct timer_list *t)
@@ -1319,7 +1296,6 @@ static int ag71xx_rx_packets(struct ag71xx *ag, int limit)
 	int ring_mask = BIT(ring->order) - 1;
 	int ring_size = BIT(ring->order);
 	struct list_head rx_list;
-	struct sk_buff *next;
 	struct sk_buff *skb;
 	int done = 0;
 
@@ -1379,7 +1355,7 @@ next:
 
 	ag71xx_ring_rx_refill(ag);
 
-	list_for_each_entry_safe(skb, next, &rx_list, list)
+	list_for_each_entry(skb, &rx_list, list)
 		skb->protocol = eth_type_trans(skb, dev);
 	netif_receive_skb_list(&rx_list);
 
@@ -1502,7 +1478,7 @@ static const struct net_device_ops ag71xx_netdev_ops = {
 	.ndo_open		= ag71xx_open,
 	.ndo_stop		= ag71xx_stop,
 	.ndo_start_xmit		= ag71xx_hard_start_xmit,
-	.ndo_do_ioctl		= ag71xx_do_ioctl,
+	.ndo_eth_ioctl		= ag71xx_do_ioctl,
 	.ndo_tx_timeout		= ag71xx_tx_timeout,
 	.ndo_change_mtu		= ag71xx_change_mtu,
 	.ndo_set_mac_address	= eth_mac_addr,
@@ -1669,7 +1645,11 @@ static int ag71xx_probe(struct platform_device *pdev)
 	ag->stop_desc->ctrl = 0;
 	ag->stop_desc->next = (u32) ag->stop_desc_dma;
 
-	if (of_get_ethdev_address(np, dev)) {
+	err = of_get_ethdev_address(np, dev);
+	if (err) {
+		if (err == -EPROBE_DEFER)
+			return err;
+
 		dev_err(&pdev->dev, "invalid MAC address, using random address\n");
 		eth_hw_addr_random(dev);
 	}
@@ -1698,11 +1678,7 @@ static int ag71xx_probe(struct platform_device *pdev)
 			break;
 		}
 
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,19,0)
 	netif_napi_add_weight(dev, &ag->napi, ag71xx_poll, AG71XX_NAPI_WEIGHT);
-#else
-	netif_napi_add(dev, &ag->napi, ag71xx_poll, AG71XX_NAPI_WEIGHT);
-#endif
 
 	ag71xx_dump_regs(ag);
 

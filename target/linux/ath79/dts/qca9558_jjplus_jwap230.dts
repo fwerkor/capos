@@ -21,7 +21,6 @@
 		compatible = "gpio-leds";
 
 		led_power: led-0 {
-			label = "green:power";
 			color = <LED_COLOR_ID_GREEN>;
 			function = LED_FUNCTION_POWER;
 			gpios = <&gpio 23 GPIO_ACTIVE_LOW>;
@@ -79,7 +78,7 @@
 				reg = <0x050000 0xfa0000>;
 			};
 
-			art: partition@ff0000 {
+			partition@ff0000 {
 				label = "art";
 				reg = <0xff0000 0x010000>;
 				read-only;

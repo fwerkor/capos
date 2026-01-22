@@ -211,7 +211,7 @@ void init_gsw(void)
 	set_rtl8367s_rgmii();
 }
 
-// bleow are platform driver
+// below are platform driver
 static const struct of_device_id rtk_gsw_match[] = {
 	{ .compatible = "mediatek,rtk-gsw" },
 	{},
@@ -258,7 +258,7 @@ static int rtk_gsw_probe(struct platform_device *pdev)
 
 	init_gsw();
 
-	//init default vlan or init swocnfig
+	//init default vlan or init swconfig
 	if(!of_property_read_string(pdev->dev.of_node,
 						"mediatek,port_map", &pm)) {
 
@@ -296,7 +296,6 @@ static struct platform_driver gsw_driver = {
 	.remove = rtk_gsw_remove,
 	.driver = {
 		.name = "rtk-gsw",
-		.owner = THIS_MODULE,
 		.of_match_table = rtk_gsw_match,
 	},
 };

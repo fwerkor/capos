@@ -13,6 +13,8 @@ platform_do_upgrade() {
 	arris,tr4400-v2 |\
 	askey,rt4230w-rev6 |\
 	compex,wpq864|\
+	fortinet,fap-421e|\
+	linksys,e8350-v1|\
 	netgear,d7800 |\
 	netgear,r7500 |\
 	netgear,r7500v2 |\

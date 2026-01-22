@@ -87,7 +87,7 @@
 	flash@0 {
 		compatible = "jedec,spi-nor";
 		reg = <0>;
-		spi-max-frequency = <80000000>;
+		spi-max-frequency = <50000000>;
 		m25p,fast-read;
 
 		partitions {
@@ -111,7 +111,7 @@
 			 * firmware, so we do not use it either
 			 */
 
-			factory: partition@50000 {
+			partition@50000 {
 				label = "Factory";
 				reg = <0x50000 0x40000>;
 				read-only;
@@ -120,6 +120,14 @@
 					compatible = "fixed-layout";
 					#address-cells = <1>;
 					#size-cells = <1>;
+
+					eeprom_factory_0: eeprom@0 {
+						reg = <0x0 0xe00>;
+					};
+
+					precal_factory_e10: precal@e10 {
+						reg = <0xe10 0x19c10>;
+					};
 
 					macaddr_factory_e000: macaddr@e000 {
 						compatible = "mac-base";
@@ -146,7 +154,8 @@
 	wifi@0,0 {
 		compatible = "mediatek,mt76";
 		reg = <0x0000 0 0 0 0>;
-		mediatek,mtd-eeprom = <&factory 0x0>;
+		nvmem-cells = <&eeprom_factory_0>, <&precal_factory_e10>;
+		nvmem-cell-names = "eeprom", "precal";
 		mediatek,disable-radar-background;
 	};
 };
@@ -165,10 +174,8 @@
 	nvmem-cell-names = "mac-address";
 };
 
-&mdio {
-	ethphy0: ethernet-phy@0 {
-		reg = <0>;
-	};
+&ethphy0 {
+	/delete-property/ interrupts;
 };
 
 &switch0 {
