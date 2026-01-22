@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/devel/flex/Makefile
+
+Package: flex
+Version: 2.6.4-r4
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: devel
+Category: Development
+Repository: base
+Title: flex
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: flex-2.6.4.tar.gz
+License: BSD-2-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:flex_project:flex
+URL: https://github.com/westes/flex
+Type: ipkg
+Description:   flex is a tool for generating scanners: programs which recognize lexical patterns in text
+@@
+
+

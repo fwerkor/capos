@@ -1,0 +1,54 @@
+Source-Makefile: feeds/packages/lang/python/python-semantic-version/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host
+Build-Types: host
+
+Package: python3-semantic-version
+Submenu: Python
+Version: 2.10.0-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Library implementing the 'SemVer' scheme
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: semantic_version-2.10.0.tar.gz
+License: BSD-2-Clause
+LicenseFiles: LICENSE
+URL: https://github.com/rbarrois/python-semanticversion
+Type: ipkg
+Build-Only: 1
+Description: This small python library provides a few tools to handle SemVer in
+Python. It follows strictly the 2.0.0 version of the SemVer scheme.
+@@
+
+Package: python3-semantic-version-src
+Submenu: Python
+Version: 2.10.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Library implementing the 'SemVer' scheme (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: semantic_version-2.10.0.tar.gz
+License: BSD-2-Clause
+LicenseFiles: LICENSE
+URL: https://github.com/rbarrois/python-semanticversion
+Type: ipkg
+Build-Only: 1
+Description:     This small python library provides a few tools to handle SemVer in
+Python. It follows strictly the 2.0.0 version of the SemVer scheme.
+
+    This package contains the Python source files for python3-semantic-version.
+@@
+Config:
+    depends on PACKAGE_python3-semantic-version
+@@
+
+

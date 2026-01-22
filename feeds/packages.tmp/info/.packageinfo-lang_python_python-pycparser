@@ -1,0 +1,55 @@
+Source-Makefile: feeds/packages/lang/python/python-pycparser/Makefile
+Build-Depends: python-ply/host  
+Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host python-ply/host
+Build-Types: host
+
+Package: python3-pycparser
+Submenu: Python
+Version: 2.21-r2
+Depends: +libc +python3-light +python3-ply
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: C parser in Python
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: pycparser-2.21.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://github.com/eliben/pycparser
+Type: ipkg
+Description: pycparser is a parser for the C language, written in pure Python. It is a
+module designed to be easily integrated into applications that need to parse
+C source code.
+@@
+
+Package: python3-pycparser-src
+Submenu: Python
+Version: 2.21-r2
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: C parser in Python (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: pycparser-2.21.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://github.com/eliben/pycparser
+Type: ipkg
+Description:     pycparser is a parser for the C language, written in pure Python. It is a
+module designed to be easily integrated into applications that need to parse
+C source code.
+
+    This package contains the Python source files for python3-pycparser.
+@@
+Config:
+    depends on PACKAGE_python3-pycparser
+@@
+
+

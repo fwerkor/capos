@@ -1,0 +1,56 @@
+Source-Makefile: feeds/packages/lang/python/python-flit-scm/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-flit-core/host python-setuptools-scm/host
+Build-Types: host
+
+Package: python3-flit-scm
+Submenu: Python
+Version: 1.7.0-r2
+Depends: +libc +python3-light +python3-flit-core +python3-setuptools-scm
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: A PEP 518 build backend that uses setuptools_scm and flit
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: flit_scm-1.7.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://gitlab.com/WillDaSilva/flit_scm
+Type: ipkg
+Build-Only: 1
+Description: A PEP 518 build backend that uses setuptools_scm to generate a version
+file from your version control system, then flit_core to build the
+package.
+@@
+
+Package: python3-flit-scm-src
+Submenu: Python
+Version: 1.7.0-r2
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: A PEP 518 build backend that uses setuptools_scm and flit (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: flit_scm-1.7.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://gitlab.com/WillDaSilva/flit_scm
+Type: ipkg
+Build-Only: 1
+Description:     A PEP 518 build backend that uses setuptools_scm to generate a version
+file from your version control system, then flit_core to build the
+package.
+
+    This package contains the Python source files for python3-flit-scm.
+@@
+Config:
+    depends on PACKAGE_python3-flit-scm
+@@
+
+

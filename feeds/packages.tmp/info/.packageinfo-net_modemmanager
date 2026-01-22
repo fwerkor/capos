@@ -1,0 +1,51 @@
+Source-Makefile: feeds/packages/net/modemmanager/Makefile
+Build-Depends: glib2/host libxslt/host
+
+Package: modemmanager
+Version: 1.22.0-r20
+Depends: +libc +BUILD_NLS:libintl-full +glib2 +dbus +ppp +MODEMMANAGER_WITH_MBIM:libmbim +MODEMMANAGER_WITH_QMI:libqmi +MODEMMANAGER_WITH_QRTR:libqrtr-glib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Control utility for any kind of mobile broadband modem
+Maintainer: Nicholas Smith <nicholas@nbembedded.com>
+Source: modemmanager-1.22.0.tar.zst
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.freedesktop.org/wiki/Software/ModemManager
+Type: ipkg
+Description:   ModemManager is a D-Bus-activated service which allows controlling mobile
+  broadband modems. Add kernel modules for your modems as needed.
+  Select Utilities/usb-modeswitch if needed.
+@@
+Config:
+  source "feeds/packages/net/modemmanager/Config.in"
+@@
+
+Package: modemmanager-rpcd
+Version: 1.22.0-r20
+Depends: +libc modemmanager +lua-cjson
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: RPC interface for ModemManager for rpcd
+Maintainer: Nicholas Smith <nicholas@nbembedded.com>
+Source: modemmanager-1.22.0.tar.zst
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.freedesktop.org/wiki/Software/ModemManager
+Type: ipkg
+Description:   ModemManager is a D-Bus-activated service which allows controlling mobile
+  broadband modems.
+
+  This package enables an rpcd interface for getting information from
+  ModemManager using e.g. ubus.
+@@
+
+

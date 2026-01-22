@@ -1,0 +1,158 @@
+Source-Makefile: feeds/packages/utils/prometheus-node-exporter-ucode/Makefile
+
+Package: prometheus-node-exporter-ucode
+Version: 2024.02.07-r2
+Depends: +libc +uhttpd +uhttpd-mod-ucode +rpcd +ucode-mod-fs +ucode-mod-ubus
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Prometheus node exporter
+Maintainer: Andre Heider <a.heider@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Description:   Provides node metrics as Prometheus scraping endpoint.
+
+  This service is a lightweight rewrite in ucode of the offical Prometheus node_exporter.
+@@
+
+Package: prometheus-node-exporter-ucode-dnsmasq
+Version: 2024.02.07-r2
+Depends: +libc prometheus-node-exporter-ucode @dnsmasq
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Prometheus node exporter (Dnsmasq collector)
+Maintainer: Andre Heider <a.heider@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Description: Prometheus node exporter (Dnsmasq collector)
+@@
+
+Package: prometheus-node-exporter-ucode-ltq-dsl
+Version: 2024.02.07-r2
+Depends: +libc prometheus-node-exporter-ucode @ltq-dsl-app
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Prometheus node exporter (Lantiq/Intel/MaxLinear DSL collector)
+Maintainer: Andre Heider <a.heider@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Description: Prometheus node exporter (Lantiq/Intel/MaxLinear DSL collector)
+@@
+
+Package: prometheus-node-exporter-ucode-netstat
+Version: 2024.02.07-r2
+Depends: +libc prometheus-node-exporter-ucode
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Prometheus node exporter (netstat collector)
+Maintainer: Andre Heider <a.heider@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Description: Prometheus node exporter (netstat collector)
+@@
+
+Package: prometheus-node-exporter-ucode-openwrt
+Version: 2024.02.07-r2
+Depends: +libc prometheus-node-exporter-ucode
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Prometheus node exporter (OpenWrt collector)
+Maintainer: Andre Heider <a.heider@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Description: Prometheus node exporter (OpenWrt collector)
+@@
+
+Package: prometheus-node-exporter-ucode-snmp6
+Version: 2024.02.07-r2
+Depends: +libc prometheus-node-exporter-ucode
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Prometheus node exporter (snmp6 collector)
+Maintainer: Andre Heider <a.heider@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Description: Prometheus node exporter (snmp6 collector)
+@@
+
+Package: prometheus-node-exporter-ucode-uci_dhcp_host
+Version: 2024.02.07-r2
+Depends: +libc prometheus-node-exporter-ucode
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Prometheus node exporter (UCI DHCP host collector)
+Maintainer: Andre Heider <a.heider@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Description: Prometheus node exporter (UCI DHCP host collector)
+@@
+
+Package: prometheus-node-exporter-ucode-wifi
+Version: 2024.02.07-r2
+Depends: +libc prometheus-node-exporter-ucode +ucode-mod-nl80211
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Prometheus node exporter (Wi-Fi collector)
+Maintainer: Andre Heider <a.heider@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Description: Prometheus node exporter (Wi-Fi collector)
+@@
+
+Package: prometheus-node-exporter-ucode-wireguard
+Version: 2024.02.07-r2
+Depends: +libc prometheus-node-exporter-ucode +rpcd-mod-wireguard
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Prometheus node exporter (Wireguard collector)
+Maintainer: Andre Heider <a.heider@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Description: Prometheus node exporter (Wireguard collector)
+@@
+
+

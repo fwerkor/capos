@@ -1,0 +1,26 @@
+Source-Makefile: feeds/packages/libs/libtins/Makefile
+
+Package: libtins
+Menu: 1
+Version: 4.5-r1
+Depends: +libc +libstdcpp +LIBTINS_ENABLE_PCAP:libpcap +LIBTINS_ENABLE_WPA2:libopenssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Libraries
+Repository: base
+Title: libtins
+Maintainer: Steven Hessing <steven.hessing@gmail.com>
+Source: libtins-4.5.tar.zst
+License: BSD-2-Clause
+LicenseFiles: LICENSE
+URL: https://libtins.github.io/
+Type: ipkg
+Description:   libtins is a high-level, multiplatform C++ network packet sniffing and crafting library.
+@@
+Config:
+	source "feeds/packages/libs/libtins/Config.in"
+@@
+
+

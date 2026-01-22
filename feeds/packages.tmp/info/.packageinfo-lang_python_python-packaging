@@ -1,0 +1,53 @@
+Source-Makefile: feeds/packages/lang/python/python-packaging/Makefile
+Build-Depends: python-flit-core/host
+Build-Depends/host: python3/host python-flit-core/host python-installer/host
+Build-Types: host
+
+Package: python3-packaging
+Submenu: Python
+Version: 25.0-r1
+Depends: +libc +python3-light +python3-email +python3-logging +python3-urllib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Core utilities for Python packages
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>, Jeffery To <jeffery.to@gmail.com>
+Source: packaging-25.0.tar.gz
+License: Apache-2.0 BSD-2-Clause
+LicenseFiles: LICENSE.APACHE LICENSE.BSD
+URL: https://github.com/pypa/packaging
+Type: ipkg
+Description:   The packaging project includes version handling, specifiers,
+  markers, requirements, tags, utilities.
+@@
+
+Package: python3-packaging-src
+Submenu: Python
+Version: 25.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Core utilities for Python packages (sources)
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>, Jeffery To <jeffery.to@gmail.com>
+Source: packaging-25.0.tar.gz
+License: Apache-2.0 BSD-2-Clause
+LicenseFiles: LICENSE.APACHE LICENSE.BSD
+URL: https://github.com/pypa/packaging
+Type: ipkg
+Description:       The packaging project includes version handling, specifiers,
+  markers, requirements, tags, utilities.
+
+    This package contains the Python source files for python3-packaging.
+@@
+Config:
+    depends on PACKAGE_python3-packaging
+@@
+
+

@@ -1,0 +1,58 @@
+Source-Makefile: feeds/packages/lang/python/python-passlib/Makefile
+
+Package: python3-passlib
+Submenu: Python
+Version: 1.7.4-r1
+Depends: +libc +python3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Comprehensive password hashing framework
+Maintainer: 
+Source: passlib-1.7.4.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://passlib.readthedocs.io/
+Type: ipkg
+Description: Passlib is a password hashing library for Python 2 & 3, which provides
+cross-platform implementations of over 30 password hashing algorithms,
+as well as a framework for managing existing password hashes. It’s
+designed to be useful for a wide range of tasks, from verifying a hash
+found in /etc/shadow, to providing full-strength password hashing for
+multi-user applications.
+@@
+
+Package: python3-passlib-src
+Submenu: Python
+Version: 1.7.4-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Comprehensive password hashing framework (sources)
+Maintainer: 
+Source: passlib-1.7.4.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://passlib.readthedocs.io/
+Type: ipkg
+Description:     Passlib is a password hashing library for Python 2 & 3, which provides
+cross-platform implementations of over 30 password hashing algorithms,
+as well as a framework for managing existing password hashes. It’s
+designed to be useful for a wide range of tasks, from verifying a hash
+found in /etc/shadow, to providing full-strength password hashing for
+multi-user applications.
+
+    This package contains the Python source files for python3-passlib.
+@@
+Config:
+    depends on PACKAGE_python3-passlib
+@@
+
+

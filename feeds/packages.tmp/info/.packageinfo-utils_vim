@@ -1,0 +1,135 @@
+Source-Makefile: feeds/packages/utils/vim/Makefile
+Build-Types: host
+
+Package: vim
+Submenu: Editors
+Version: 9.1-r1
+Depends: +libc +libncurses
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Vi IMproved - enhanced vi editor (Tiny)
+Maintainer: Marko Ratkaj <markoratkaj@gmail.com>
+Source: vim-9.1.tar.bz2
+License: Vim
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:vim:vim
+URL: http://www.vim.org/
+Type: ipkg
+Description:  Vim is an almost compatible version of the UNIX editor Vi.
+ (Tiny build)
+@@
+
+Package: vim-full
+Submenu: Editors
+Version: 9.1-r1
+Depends: +libc +libncurses
+Conflicts: vim
+Menu-Depends: 
+Provides: vim
+Section: utils
+Category: Utilities
+Repository: base
+Title: Vi IMproved - enhanced vi editor (Normal)
+Maintainer: Marko Ratkaj <markoratkaj@gmail.com>
+Source: vim-9.1.tar.bz2
+License: Vim
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:vim:vim
+URL: http://www.vim.org/
+Type: ipkg
+Description:  Vim is an almost compatible version of the UNIX editor Vi.
+ (Normal build)
+@@
+
+Package: vim-fuller
+Submenu: Editors
+Version: 9.1-r1
+Depends: +libc +libncurses
+Conflicts: vim vim-full
+Menu-Depends: 
+Provides: vim vim-full
+Section: utils
+Category: Utilities
+Repository: base
+Title: Vi IMproved - enhanced vi editor (Big)
+Maintainer: Marko Ratkaj <markoratkaj@gmail.com>
+Source: vim-9.1.tar.bz2
+License: Vim
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:vim:vim
+URL: http://www.vim.org/
+Type: ipkg
+Description:  Vim is an almost compatible version of the UNIX editor Vi.
+ (Big build)
+@@
+
+Package: vim-runtime
+Submenu: Editors
+Version: 9.1-r1
+Depends: +libc +libncurses
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Vi IMproved - enhanced vi editor (runtime files)
+Maintainer: Marko Ratkaj <markoratkaj@gmail.com>
+Source: vim-9.1.tar.bz2
+License: Vim
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:vim:vim
+URL: http://www.vim.org/
+Type: ipkg
+Description:  Vim is an almost compatible version of the UNIX editor Vi.
+ (Runtime files)
+@@
+
+Package: vim-help
+Submenu: Editors
+Version: 9.1-r1
+Depends: +libc +libncurses
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Vi IMproved - enhanced vi editor (help files)
+Maintainer: Marko Ratkaj <markoratkaj@gmail.com>
+Source: vim-9.1.tar.bz2
+License: Vim
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:vim:vim
+URL: http://www.vim.org/
+Type: ipkg
+Description:  Vim is an almost compatible version of the UNIX editor Vi.
+ (Help files)
+@@
+
+Package: xxd
+Version: 9.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: make a hexdump or do the reverse
+Maintainer: Marko Ratkaj <markoratkaj@gmail.com>
+Source: vim-9.1.tar.bz2
+License: Vim
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:vim:vim
+URL: http://www.vim.org/
+Type: ipkg
+Description:  xxd creates a hex dump of a given file or standard input, it can also convert
+ a hex dump back to its original binary form.
+@@
+
+

@@ -1,0 +1,328 @@
+Source-Makefile: feeds/packages/net/nginx/Makefile
+
+Package: nginx-ssl
+Submenu: Web Servers/Proxies
+Version: 1.26.1-r2
+Depends: +libc +libopenssl +libpthread +NGINX_PCRE:libpcre2 +NGINX_PCRE:nginx-ssl-util +!NGINX_PCRE:nginx-ssl-util-nopcre +NGINX_HTTP_GZIP:zlib +NGINX_DAV:libxml2
+Conflicts: nginx-full
+Menu-Depends: 
+Provides: nginx
+Build-Variant: ssl
+Section: net
+Category: Network
+Repository: base
+Title: Nginx web server with SSL support
+Maintainer: Thomas Heil <heil@terminal-consulting.de> Christian Marangi <ansuelsmth@gmail.com>
+Source: nginx-1.26.1.tar.gz
+License: 2-clause BSD-like license
+CPE-ID: cpe:/a:f5:nginx_open_source
+URL: http://nginx.org/
+Type: ipkg
+Description:  nginx is an HTTP and reverse proxy server, as well as a mail proxy server, written by Igor Sysoev. This variant is compiled with SSL support enabled. To enable additional module select them in the nginx default configuration menu.
+@@
+Config:
+  source "feeds/packages/net/nginx/Config_ssl.in"
+@@
+
+Package: nginx-full
+Submenu: Web Servers/Proxies
+Version: 1.26.1-r2
+Depends: +libc +libopenssl +libpthread +libpcre2 +nginx-ssl-util +zlib +libxml2
+Conflicts: 
+Menu-Depends: 
+Provides: nginx nginx-ssl
+Build-Variant: full
+Section: net
+Category: Network
+Repository: base
+Title: Nginx web server with ALL config selected
+Maintainer: Thomas Heil <heil@terminal-consulting.de> Christian Marangi <ansuelsmth@gmail.com>
+Source: nginx-1.26.1.tar.gz
+License: 2-clause BSD-like license
+CPE-ID: cpe:/a:f5:nginx_open_source
+URL: http://nginx.org/
+Type: ipkg
+Description:  nginx is an HTTP and reverse proxy server, as well as a mail proxy server, written by Igor Sysoev. This variant is compiled with ALL config selected.
+@@
+
+Package: nginx-mod-luci
+Submenu: Web Servers/Proxies
+Version: 1.26.1-r2
+Depends: +libc +uwsgi +uwsgi-luci-support +nginx-ssl +nginx-mod-ubus
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Support file for Nginx
+Maintainer: Thomas Heil <heil@terminal-consulting.de> Christian Marangi <ansuelsmth@gmail.com>
+Source: nginx-1.26.1.tar.gz
+License: 2-clause BSD-like license
+CPE-ID: cpe:/a:f5:nginx_open_source
+URL: http://nginx.org/
+Type: ipkg
+Description:  Support file for LuCI in nginx. Include custom nginx configuration, autostart script for uwsgi.
+@@
+
+Package: nginx-mod-lua-resty-lrucache
+Submenu: Web Servers/Proxies
+Version: 1.26.1-r2
+Depends: +libc @HAS_LUAJIT_ARCH +luajit2
+Conflicts: 
+Menu-Depends: 
+Provides: nginx
+Section: net
+Category: Network
+Repository: base
+Title: Nginx Lua OpenResty lrucache module
+Maintainer: Thomas Heil <heil@terminal-consulting.de> Christian Marangi <ansuelsmth@gmail.com>
+Source: nginx-1.26.1.tar.gz
+License: 2-clause BSD-like license
+CPE-ID: cpe:/a:f5:nginx_open_source
+URL: http://nginx.org/
+Type: ipkg
+Description: Nginx Lua OpenResty lrucache module
+@@
+
+Package: nginx-mod-lua-resty-core
+Submenu: Web Servers/Proxies
+Version: 1.26.1-r2
+Depends: +libc +nginx-mod-lua-resty-lrucache
+Conflicts: 
+Menu-Depends: 
+Provides: nginx
+Section: net
+Category: Network
+Repository: base
+Title: Nginx Lua OpenResty core module
+Maintainer: Thomas Heil <heil@terminal-consulting.de> Christian Marangi <ansuelsmth@gmail.com>
+Source: nginx-1.26.1.tar.gz
+License: 2-clause BSD-like license
+CPE-ID: cpe:/a:f5:nginx_open_source
+URL: http://nginx.org/
+Type: ipkg
+Description: Nginx Lua OpenResty core module
+@@
+
+Package: nginx-mod-stream
+Submenu: Web Servers/Proxies
+Version: 1.26.1-r2
+Depends: +libc +nginx-ssl +@NGINX_STREAM_CORE_MODULE
+Conflicts: 
+Menu-Depends: 
+Provides: nginx
+Section: net
+Category: Network
+Repository: base
+Title: Nginx stream module
+Maintainer: Thomas Heil <heil@terminal-consulting.de> Christian Marangi <ansuelsmth@gmail.com>
+Source: nginx-1.26.1.tar.gz
+License: 2-clause BSD-like license
+CPE-ID: cpe:/a:f5:nginx_open_source
+URL: http://nginx.org/
+Type: ipkg
+Description:     Add support for NGINX request streaming.
+@@
+
+Package: nginx-mod-lua
+Submenu: Web Servers/Proxies
+Version: 1.26.1-r2
+Depends: +libc +nginx-ssl +nginx-mod-lua-resty-core
+Conflicts: 
+Menu-Depends: 
+Provides: nginx
+Section: net
+Category: Network
+Repository: base
+Title: Nginx lua module
+Maintainer: Thomas Heil <heil@terminal-consulting.de> Christian Marangi <ansuelsmth@gmail.com>
+Source: nginx-1.26.1.tar.gz
+License: 2-clause BSD-like license
+CPE-ID: cpe:/a:f5:nginx_open_source
+URL: http://nginx.org/
+Type: ipkg
+Description:     Enable Lua module (luajit2 based, OpenResty patches)
+@@
+
+Package: nginx-mod-ubus
+Submenu: Web Servers/Proxies
+Version: 1.26.1-r2
+Depends: +libc +nginx-ssl +libubus +libjson-c +libblobmsg-json +@NGINX_UBUS
+Conflicts: 
+Menu-Depends: 
+Provides: nginx
+Section: net
+Category: Network
+Repository: base
+Title: Nginx ubus module
+Maintainer: Thomas Heil <heil@terminal-consulting.de> Christian Marangi <ansuelsmth@gmail.com>
+Source: nginx-1.26.1.tar.gz
+License: 2-clause BSD-like license
+CPE-ID: cpe:/a:f5:nginx_open_source
+URL: http://nginx.org/
+Type: ipkg
+Description:     Enable UBUS api support directly from the server.
+@@
+
+Package: nginx-mod-dav-ext
+Submenu: Web Servers/Proxies
+Version: 1.26.1-r2
+Depends: +libc +nginx-ssl +@NGINX_DAV +libxml2
+Conflicts: 
+Menu-Depends: 
+Provides: nginx
+Section: net
+Category: Network
+Repository: base
+Title: Nginx dav-ext module
+Maintainer: Thomas Heil <heil@terminal-consulting.de> Christian Marangi <ansuelsmth@gmail.com>
+Source: nginx-1.26.1.tar.gz
+License: 2-clause BSD-like license
+CPE-ID: cpe:/a:f5:nginx_open_source
+URL: http://nginx.org/
+Type: ipkg
+Description:     Enable the WebDAV methods PROPFIND OPTIONS LOCK UNLOCK.
+@@
+
+Package: nginx-mod-headers-more
+Submenu: Web Servers/Proxies
+Version: 1.26.1-r2
+Depends: +libc +nginx-ssl
+Conflicts: 
+Menu-Depends: 
+Provides: nginx
+Section: net
+Category: Network
+Repository: base
+Title: Nginx headers-more module
+Maintainer: Thomas Heil <heil@terminal-consulting.de> Christian Marangi <ansuelsmth@gmail.com>
+Source: nginx-1.26.1.tar.gz
+License: 2-clause BSD-like license
+CPE-ID: cpe:/a:f5:nginx_open_source
+URL: http://nginx.org/
+Type: ipkg
+Description:     Set and clear input and output headers...more than "add"!
+@@
+
+Package: nginx-mod-rtmp
+Submenu: Web Servers/Proxies
+Version: 1.26.1-r2
+Depends: +libc +nginx-ssl
+Conflicts: 
+Menu-Depends: 
+Provides: nginx
+Section: net
+Category: Network
+Repository: base
+Title: Nginx rtmp module
+Maintainer: Thomas Heil <heil@terminal-consulting.de> Christian Marangi <ansuelsmth@gmail.com>
+Source: nginx-1.26.1.tar.gz
+License: 2-clause BSD-like license
+CPE-ID: cpe:/a:f5:nginx_open_source
+URL: http://nginx.org/
+Type: ipkg
+Description:     Add support for NGINX-based Media Streaming Server module. DASH enhanced
+@@
+
+Package: nginx-mod-ts
+Submenu: Web Servers/Proxies
+Version: 1.26.1-r2
+Depends: +libc +nginx-ssl
+Conflicts: 
+Menu-Depends: 
+Provides: nginx
+Section: net
+Category: Network
+Repository: base
+Title: Nginx ts module
+Maintainer: Thomas Heil <heil@terminal-consulting.de> Christian Marangi <ansuelsmth@gmail.com>
+Source: nginx-1.26.1.tar.gz
+License: 2-clause BSD-like license
+CPE-ID: cpe:/a:f5:nginx_open_source
+URL: http://nginx.org/
+Type: ipkg
+Description:     Add support for MPEG-TS Live Module module.
+@@
+
+Package: nginx-mod-brotli
+Submenu: Web Servers/Proxies
+Version: 1.26.1-r2
+Depends: +libc +nginx-ssl
+Conflicts: 
+Menu-Depends: 
+Provides: nginx
+Section: net
+Category: Network
+Repository: base
+Title: Nginx brotli module
+Maintainer: Thomas Heil <heil@terminal-consulting.de> Christian Marangi <ansuelsmth@gmail.com>
+Source: nginx-1.26.1.tar.gz
+License: 2-clause BSD-like license
+CPE-ID: cpe:/a:f5:nginx_open_source
+URL: http://nginx.org/
+Type: ipkg
+Description:     Add support for brotli compression module.
+@@
+
+Package: nginx-mod-naxsi
+Submenu: Web Servers/Proxies
+Version: 1.26.1-r2
+Depends: +libc +nginx-ssl
+Conflicts: 
+Menu-Depends: 
+Provides: nginx
+Section: net
+Category: Network
+Repository: base
+Title: Nginx naxsi module
+Maintainer: Thomas Heil <heil@terminal-consulting.de> Christian Marangi <ansuelsmth@gmail.com>
+Source: nginx-1.26.1.tar.gz
+License: 2-clause BSD-like license
+CPE-ID: cpe:/a:f5:nginx_open_source
+URL: http://nginx.org/
+Type: ipkg
+Description:     Enable NAXSI module.
+@@
+
+Package: nginx-mod-geoip2
+Submenu: Web Servers/Proxies
+Version: 1.26.1-r2
+Depends: +libc +nginx-ssl +@NGINX_STREAM_CORE_MODULE +nginx-mod-stream +libmaxminddb
+Conflicts: 
+Menu-Depends: 
+Provides: nginx
+Section: net
+Category: Network
+Repository: base
+Title: Nginx geoip2 module
+Maintainer: Thomas Heil <heil@terminal-consulting.de> Christian Marangi <ansuelsmth@gmail.com>
+Source: nginx-1.26.1.tar.gz
+License: 2-clause BSD-like license
+CPE-ID: cpe:/a:f5:nginx_open_source
+URL: http://nginx.org/
+Type: ipkg
+Description:     Enable MaxMind GeoIP2 module.
+@@
+
+Package: nginx-mod-njs
+Submenu: Web Servers/Proxies
+Version: 1.26.1-r2
+Depends: +libc +nginx-ssl +zlib +libxml2 +libxslt +libpcre2
+Conflicts: 
+Menu-Depends: 
+Provides: nginx
+Section: net
+Category: Network
+Repository: base
+Title: Nginx njs module
+Maintainer: Thomas Heil <heil@terminal-consulting.de> Christian Marangi <ansuelsmth@gmail.com>
+Source: nginx-1.26.1.tar.gz
+License: 2-clause BSD-like license
+CPE-ID: cpe:/a:f5:nginx_open_source
+URL: http://nginx.org/
+Type: ipkg
+Description:     Enable NJS module.
+@@
+
+

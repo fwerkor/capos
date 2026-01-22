@@ -1,0 +1,26 @@
+Source-Makefile: feeds/packages/net/zerotier/Makefile
+
+Package: zerotier
+Submenu: VPN
+Version: 1.14.1-r3
+Depends: +libc +libpthread +libstdcpp +kmod-tun +ip +libminiupnpc +libnatpmp +libatomic
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Create flat virtual Ethernet networks of almost unlimited size
+Maintainer: Moritz Warning <moritzwarning@web.de>
+Source: zerotier-1.14.1.tar.gz
+License: BSL 1.1
+LicenseFiles: LICENSE.txt
+URL: https://www.zerotier.com
+Type: ipkg
+Description: 	ZeroTier creates a global provider-independent virtual private cloud network.
+@@
+Config:
+	source "feeds/packages/net/zerotier/Config.in"
+@@
+
+

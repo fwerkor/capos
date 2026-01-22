@@ -1,0 +1,48 @@
+Source-Makefile: feeds/packages/lang/python/python-yarl/Makefile
+
+Package: python3-yarl
+Submenu: Python
+Version: 1.9.2-r1
+Depends: +libc +python3-light +python3-multidict +python3-urllib +python3-idna
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Yet another URL library
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: yarl-1.9.2.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/aio-libs/yarl
+Type: ipkg
+Description: Yet another URL library
+@@
+
+Package: python3-yarl-src
+Submenu: Python
+Version: 1.9.2-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Yet another URL library (sources)
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: yarl-1.9.2.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/aio-libs/yarl
+Type: ipkg
+Description:     Yet another URL library
+
+    This package contains the Python source files for python3-yarl.
+@@
+Config:
+    depends on PACKAGE_python3-yarl
+@@
+
+

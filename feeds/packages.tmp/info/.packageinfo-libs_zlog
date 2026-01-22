@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/libs/zlog/Makefile
+
+Package: zlog
+Version: 1.2.17-r2
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Pure C logging library
+Maintainer: Marko Ratkaj <markoratkaj@gmail.com>
+Source: zlog-1.2.17.tar.zst
+License: Apache-2.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:zlog_project:zlog
+URL: http://hardysimpson.github.io/zlog/
+Type: ipkg
+Description:   zlog is a reliable, high-performance, thread safe, flexible, clear-model, pure C logging library.
+@@
+
+

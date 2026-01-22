@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/net/libcurl-gnutls/Makefile
+Build-Depends: curl
+
+Package: libcurl-gnutls
+Version: 8.9.1-r1
+Depends: +libc +libgnutls +libidn2 +zlib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: A client-side HTTP/HTTPS transfer library (build against gnuTLS)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: curl-8.9.1.tar.xz
+License: MIT
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:haxx:libcurl
+URL: https://gnunet.org/en/gnurl.html
+ABI-Version: 4
+Type: ipkg
+Description: A client-side HTTP/HTTPS transfer library (build against gnuTLS)
+@@
+
+

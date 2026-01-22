@@ -1,0 +1,30 @@
+Source-Makefile: feeds/packages/net/respondd/Makefile
+
+Package: respondd
+Version: 2019.05.01~58405297e76f97d4752dc7511dc15bbc7a01e586-r2
+Depends: +libc @IPV6 +libjson-c
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Lightweight metadata multicast-responder
+Maintainer: David Bauer <mail@david-bauer.net>
+Source: respondd-2019.05.01~58405297e76f97d4752dc7511dc15bbc7a01e586.tar.zst
+License: BSD-2-Clause
+Type: ipkg
+Description: respondd is a server distributing information within a network.
+
+For doing so, respondd spawns a UDP socket (in Gluon 1001/udp),
+optionally joining a multicast group. When a request is received,
+the information requested is transmitted to the requester.
+
+All information is organized in a non-hierarchical namespace.
+Each entry identifies a request name (e.g. statistics, nodeinfo, ...)
+implemented by at least one "provider" C module. The respond is the
+result of merging the outputs of all providers for the given request
+name.
+@@
+
+

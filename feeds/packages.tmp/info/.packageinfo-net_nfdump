@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/net/nfdump/Makefile
+
+Package: nfdump
+Version: 1.7.4-r1
+Depends: +libc +flex +libbz2 +USE_MUSL:musl-fts +libatomic +libzstd +liblz4
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: nfdump
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: nfdump-1.7.4.tar.zst
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:nfdump_project:nfdump
+URL: https://github.com/phaag/nfdump/
+Type: ipkg
+Description:   NetFlow collecting and processing tools
+@@
+
+

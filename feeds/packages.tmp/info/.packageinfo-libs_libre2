@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/libs/libre2/Makefile
+
+Package: re2
+Version: 2023.02.01~b025c6a3ae05995660e3b882eb3277f4399ced1a-r1
+Depends: +libc +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: RE2 - C++ regular expression library
+Maintainer: 
+Source: re2-2023.02.01~b025c6a3ae05995660e3b882eb3277f4399ced1a.tar.zst
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://github.com/google/re2
+ABI-Version: 10
+Type: ipkg
+Description:   RE2 is a fast, safe, thread-friendly alternative to backtracking regular
+  expression engines like those used in PCRE, Perl, and Python.
+  It is a C++ library.
+@@
+
+

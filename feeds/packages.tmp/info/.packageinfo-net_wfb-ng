@@ -1,0 +1,46 @@
+Source-Makefile: feeds/packages/net/wfb-ng/Makefile
+Build-Depends: libevent2
+
+Package: wfb-ng
+Submenu: Wireless
+Version: 25.01-r1
+Depends: +libc +libpcap +libsodium +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Long-range packet radio link using raw WiFi
+Maintainer: Vasily Evseenko <svpcom@p2ptech.org>
+Source: wfb-ng-25.01.tar.gz
+License: GPL-3.0-only
+LicenseFiles: LICENSE
+URL: https://github.com/svpcom/wfb-ng
+Type: ipkg
+Description:   The next generation of long-range packet radio link using raw WiFi
+  This is a base version that have only binaries and can act as cluster node,
+  standalone receiver or transmitter without diversity.
+@@
+
+Package: wfb-ng-tun
+Submenu: Wireless
+Version: 25.01-r1
+Depends: +libc +libevent2-core +kmod-tun
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Long-range packet radio link using raw WiFi (tunnel)
+Maintainer: Vasily Evseenko <svpcom@p2ptech.org>
+Source: wfb-ng-25.01.tar.gz
+License: GPL-3.0-only
+LicenseFiles: LICENSE
+URL: https://github.com/svpcom/wfb-ng
+Type: ipkg
+Description: Long-range packet radio link using raw WiFi (tunnel)
+@@
+
+

@@ -1,0 +1,50 @@
+Source-Makefile: feeds/packages/lang/python/python-awscli/Makefile
+
+Package: python3-awscli
+Submenu: Python
+Version: 1.29.7-r1
+Depends: +libc +python3 +python3-botocore +python3-colorama +python3-docutils +python3-rsa +python3-s3transfer +python3-yaml
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Universal Command Line Environment for AWS
+Maintainer: Daniel Danzberger <daniel@dd-wrt.com>
+Source: awscli-1.29.7.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE.txt
+URL: https://github.com/aws/aws-cli
+Type: ipkg
+Description: This package provides a unified command line interface to Amazon Web
+Services.
+@@
+
+Package: python3-awscli-src
+Submenu: Python
+Version: 1.29.7-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Universal Command Line Environment for AWS (sources)
+Maintainer: Daniel Danzberger <daniel@dd-wrt.com>
+Source: awscli-1.29.7.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE.txt
+URL: https://github.com/aws/aws-cli
+Type: ipkg
+Description:     This package provides a unified command line interface to Amazon Web
+Services.
+
+    This package contains the Python source files for python3-awscli.
+@@
+Config:
+    depends on PACKAGE_python3-awscli
+@@
+
+

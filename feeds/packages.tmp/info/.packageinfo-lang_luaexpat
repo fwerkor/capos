@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/lang/luaexpat/Makefile
+
+Package: luaexpat
+Submenu: Lua
+Version: 1.5.1-r1
+Depends: +libc +lua +libexpat
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: LuaExpat
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: luaexpat-1.5.1.tar.zst
+CPE-ID: cpe:/a:matthewwild:luaexpat
+URL: http://matthewwild.co.uk/projects/luaexpat/
+Type: ipkg
+Description:   LuaExpat is a SAX XML parser based on the Expat library.
+@@
+
+

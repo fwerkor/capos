@@ -1,0 +1,60 @@
+Source-Makefile: feeds/packages/lang/python/python-jsonpath-ng/Makefile
+
+Package: python3-jsonpath-ng
+Submenu: Python
+Version: 1.5.3-r1
+Depends: +libc +python3-light +python3-logging +python3-ply +python3-six +python3-decorator
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Standard compliant implementation of JSONPath
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com> 
+Source: jsonpath-ng-1.5.3.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/h2non/jsonpath-ng
+Type: ipkg
+Description: A final implementation of JSONPath for Python that aims to be standard
+compliant, including arithmetic and binary comparison operators, as
+defined in the original JSONPath proposal.
+
+This packages merges both jsonpath-rw and jsonpath-rw-ext and provides
+several AST API enhancements, such as the ability to update or removes
+nodes in the tree.
+@@
+
+Package: python3-jsonpath-ng-src
+Submenu: Python
+Version: 1.5.3-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Standard compliant implementation of JSONPath (sources)
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com> 
+Source: jsonpath-ng-1.5.3.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/h2non/jsonpath-ng
+Type: ipkg
+Description:     A final implementation of JSONPath for Python that aims to be standard
+compliant, including arithmetic and binary comparison operators, as
+defined in the original JSONPath proposal.
+
+This packages merges both jsonpath-rw and jsonpath-rw-ext and provides
+several AST API enhancements, such as the ability to update or removes
+nodes in the tree.
+
+    This package contains the Python source files for python3-jsonpath-ng.
+@@
+Config:
+    depends on PACKAGE_python3-jsonpath-ng
+@@
+
+

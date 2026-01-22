@@ -1,0 +1,50 @@
+Source-Makefile: feeds/packages/lang/python/python-cachelib/Makefile
+
+Package: python3-cachelib
+Submenu: Python
+Version: 0.10.2-r1
+Depends: +libc +python3-light +python3-logging
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Collection of cache libraries
+Maintainer: Stepan Henek <stepan.henek@nic.cz>
+Source: cachelib-0.10.2.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE.rst
+URL: https://github.com/pallets-eco/cachelib/
+Type: ipkg
+Description:   A collection of cache libraries in the same API interface.
+  Extracted from werkzeug.
+@@
+
+Package: python3-cachelib-src
+Submenu: Python
+Version: 0.10.2-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Collection of cache libraries (sources)
+Maintainer: Stepan Henek <stepan.henek@nic.cz>
+Source: cachelib-0.10.2.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE.rst
+URL: https://github.com/pallets-eco/cachelib/
+Type: ipkg
+Description:       A collection of cache libraries in the same API interface.
+  Extracted from werkzeug.
+
+    This package contains the Python source files for python3-cachelib.
+@@
+Config:
+    depends on PACKAGE_python3-cachelib
+@@
+
+

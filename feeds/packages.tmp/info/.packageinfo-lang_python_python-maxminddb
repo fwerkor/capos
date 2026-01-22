@@ -1,0 +1,48 @@
+Source-Makefile: feeds/packages/lang/python/python-maxminddb/Makefile
+
+Package: python3-maxminddb
+Submenu: Python
+Version: 2.4.0-r1
+Depends: +libc +python3-light +libmaxminddb
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Reader for the MaxMind DB format
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Source: maxminddb-2.4.0.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://www.maxmind.com/
+Type: ipkg
+Description:   Module for reading MaxMind DB files
+@@
+
+Package: python3-maxminddb-src
+Submenu: Python
+Version: 2.4.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Reader for the MaxMind DB format (sources)
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Source: maxminddb-2.4.0.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://www.maxmind.com/
+Type: ipkg
+Description:       Module for reading MaxMind DB files
+
+    This package contains the Python source files for python3-maxminddb.
+@@
+Config:
+    depends on PACKAGE_python3-maxminddb
+@@
+
+

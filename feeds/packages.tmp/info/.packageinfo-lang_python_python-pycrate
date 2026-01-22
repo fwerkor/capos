@@ -1,0 +1,50 @@
+Source-Makefile: feeds/packages/lang/python/python-pycrate/Makefile
+
+Package: python3-pycrate
+Submenu: Python
+Version: 0.6.0-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: A software suite to handle various data formats
+Maintainer: David Bauer <mail@david-bauer.net>
+Source: pycrate-0.6.0.tar.gz
+License: LGPL-2.1-or-later
+LicenseFiles: license.txt
+URL: https://github.com/P1sec/pycrate
+Type: ipkg
+Description: Provides a runtime for encoding and decoding data structures, including CSN.1
+and ASN.1. Additionally, it features a 3G and LTE mobile core network.
+@@
+
+Package: python3-pycrate-src
+Submenu: Python
+Version: 0.6.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: A software suite to handle various data formats (sources)
+Maintainer: David Bauer <mail@david-bauer.net>
+Source: pycrate-0.6.0.tar.gz
+License: LGPL-2.1-or-later
+LicenseFiles: license.txt
+URL: https://github.com/P1sec/pycrate
+Type: ipkg
+Description:     Provides a runtime for encoding and decoding data structures, including CSN.1
+and ASN.1. Additionally, it features a 3G and LTE mobile core network.
+
+    This package contains the Python source files for python3-pycrate.
+@@
+Config:
+    depends on PACKAGE_python3-pycrate
+@@
+
+

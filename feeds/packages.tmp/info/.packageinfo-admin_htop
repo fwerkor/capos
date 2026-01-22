@@ -1,0 +1,37 @@
+Source-Makefile: feeds/packages/admin/htop/Makefile
+Build-Depends: HTOP_LMSENSORS:lm-sensors
+
+Package: htop
+Version: 3.4.1-r1
+Depends: +libc +libncurses
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: admin
+Category: Administration
+Repository: base
+Title: Interactive processes viewer
+Maintainer: Etienne CHAMPETIER <champetier.etienne@gmail.com>
+Source: htop-3.4.1.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:htop:htop
+URL: https://hisham.hm/htop/
+Type: ipkg
+Description:  Htop is an ncursed-based process viewer similar to top, but
+ it allows to scroll the list vertically and horizontally to
+ see all processes and their full command lines.
+@@
+Config:
+	config HTOP_LMSENSORS
+		bool "Compile Htop with lm-sensors support"
+		depends on PACKAGE_htop
+		default y
+		help
+			Build htop with lm-sensors support.
+			This increases the binary by approx 5 kB.
+			Users wanting this functionality need to
+			install libsensors.
+@@
+
+

@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/net/hev-socks5-tproxy/Makefile
+
+Package: hev-socks5-tproxy
+Version: 2.10.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: A simple, lightweight socks5 transparent proxy for Linux
+Maintainer: Ray Wang <git@hev.cc>
+Source: hev-socks5-tproxy-2.10.0.tar.xz
+License: MIT
+LicenseFiles: License
+URL: https://github.com/heiher/hev-socks5-tproxy
+Type: ipkg
+Description: hev-socks5-tproxy is a lightweight tool that enables transparent proxying of
+network traffic through a SOCKS5 proxy. It’s designed to enhance privacy, bypass
+restrictions, and improve connectivity without requiring manual configuration on
+client devices.
+@@
+
+

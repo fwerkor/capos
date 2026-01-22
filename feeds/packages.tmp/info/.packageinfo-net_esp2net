@@ -1,0 +1,26 @@
+Source-Makefile: feeds/packages/net/esp2net/Makefile
+
+Package: esp2net
+Version: 2023.06.20~be514c7a50bd8f3aac146ba267856d66cad1abd9-r1
+Depends: +libc +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Espressif ESP chip network monitor and flash proxy
+Maintainer: Nuno Gonçalves <nunojpg@gmail.com>
+Source: esp2net-2023.06.20~be514c7a50bd8f3aac146ba267856d66cad1abd9.tar.zst
+License: GPL-2.0-only
+Type: ipkg
+Description: 	Allows to flash a Espressif chip connected to this device.
+	The functionality is identical to "esp_rfc2217_server.py" but without Python.
+	Typically you want also to install one or more USB serial drivers:
+	 * kmod-usb-serial-cp210x
+	 * kmod-usb-serial-ftdi
+	 * kmod-usb-serial-ch341
+	 * kmod-usb-acm
+@@
+
+

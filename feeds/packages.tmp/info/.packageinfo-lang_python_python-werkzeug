@@ -1,0 +1,54 @@
+Source-Makefile: feeds/packages/lang/python/python-werkzeug/Makefile
+
+Package: python3-werkzeug
+Submenu: Python
+Version: 2.3.6-r1
+Depends: +libc +python3 +python3-markupsafe
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Comprehensive WSGI web application library
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Werkzeug-2.3.6.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE.rst
+CPE-ID: cpe:/a:palletsprojects:werkzeug
+URL: https://palletsprojects.com/p/werkzeug/
+Type: ipkg
+Description: Werkzeug is a comprehensive WSGI web application library. It began as a
+simple collection of various utilities for WSGI applications and has
+become one of the most advanced WSGI utility libraries.
+@@
+
+Package: python3-werkzeug-src
+Submenu: Python
+Version: 2.3.6-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Comprehensive WSGI web application library (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Werkzeug-2.3.6.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE.rst
+CPE-ID: cpe:/a:palletsprojects:werkzeug
+URL: https://palletsprojects.com/p/werkzeug/
+Type: ipkg
+Description:     Werkzeug is a comprehensive WSGI web application library. It began as a
+simple collection of various utilities for WSGI applications and has
+become one of the most advanced WSGI utility libraries.
+
+    This package contains the Python source files for python3-werkzeug.
+@@
+Config:
+    depends on PACKAGE_python3-werkzeug
+@@
+
+

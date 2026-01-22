@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/utils/sunwait/Makefile
+
+Package: sunwait
+Submenu: Utilities
+Version: 0.9.1-r2
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: util
+Category: Utilities
+Repository: base
+Title: Sunwait
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: sunwait-0.9.1.tar.gz
+License: GPL-3.0
+LicenseFiles: LICENSE
+URL: https://github.com/risacher/sunwait
+Type: ipkg
+Description: 	Calculate sunrise and sunset, as well as civil, nautical, and astronomical twilights. 
+	Has features that make it useful for home automation tasks.
+@@
+
+

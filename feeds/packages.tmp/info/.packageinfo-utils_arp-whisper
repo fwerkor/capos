@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/utils/arp-whisper/Makefile
+Build-Depends: rust/host
+
+Package: arp-whisper
+Version: 0.1.2-r2
+Depends: +libc @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: ARP responses based on MAC-IP pairs
+Maintainer: Facundo Acevedo <facevedo@disroot.org>
+Source: arp-whisper-0.1.2.tar.gz
+License: GPL-3.0-or-later
+LicenseFiles: LICENCE
+URL: https://github.com/FacundoAcevedo/arp-whisper
+Type: ipkg
+Description:   arp-whisper listens to ARP requests on a network interface and responds
+  to them based on a list of IP-MAC address mappings defined in a
+  configuration file.
+@@
+
+

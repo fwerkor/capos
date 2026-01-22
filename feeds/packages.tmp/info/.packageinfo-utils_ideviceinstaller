@@ -1,0 +1,30 @@
+Source-Makefile: feeds/packages/utils/ideviceinstaller/Makefile
+
+Package: ideviceinstaller
+Submenu: libimobiledevice
+Version: 2024.01.15~22872c3571b8d2646a9fbb74ec1d7e186941053d-r1
+Depends: +libc +libimobiledevice +libzip
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Manage apps and app archives on iOS devices
+Maintainer: Rosen Penev <rosenp@gmail.com>
+Source: ideviceinstaller-2024.01.15~22872c3571b8d2646a9fbb74ec1d7e186941053d.tar.zst
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:libimobiledevice:ideviceinstaller
+URL: https://www.libimobiledevice.org/
+Type: ipkg
+Description:   A command-line application to manage apps and app archives on iOS devices.
+  Allows interacting with the app installation service of an iOS device.
+  - Status: Install, upgrade, uninstall, and enumerate apps
+  - Browse: Allows to retrieve a list of installed apps with filter options
+  - Install: Supports app package, carrier bundle and developer .app directory
+  - Format: Allows command output in plist, XML, or JSON format
+  - Compatibility: Supports latest device firmware releases
+@@
+
+

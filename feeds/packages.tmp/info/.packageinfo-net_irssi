@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/net/irssi/Makefile
+
+Package: irssi
+Submenu: Instant Messaging
+Version: 1.4.5-r1
+Depends: +libc +glib2 +libncurses +libpthread +libopenssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Console IRC client
+Maintainer: Peter Wagner <tripolar@gmx.at>
+Source: irssi-1.4.5.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:irssi:irssi
+URL: https://irssi.org/
+Type: ipkg
+Description: 	Irssi is a terminal based IRC client for UNIX systems.
+@@
+
+

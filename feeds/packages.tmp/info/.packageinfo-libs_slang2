@@ -1,0 +1,525 @@
+Source-Makefile: feeds/packages/libs/slang2/Makefile
+
+Package: libslang2-mod-base64
+Version: 2.3.3-r2
+Depends: +libc @PACKAGE_libslang2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: S-Lang Programmer's Library (base64 module)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: slang-2.3.3.tar.bz2
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.jedsoft.org/slang/
+Type: ipkg
+Description: Multi-platform programmer's library providing facilities for interactive
+applications. Includes such things as display/screen management,
+keyboard input, keymaps, etc. Includes the embeddable S-Lang
+interpreter.
+
+This package contains the base64 module.
+@@
+
+Package: libslang2-mod-chksum
+Version: 2.3.3-r2
+Depends: +libc @PACKAGE_libslang2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: S-Lang Programmer's Library (chksum module)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: slang-2.3.3.tar.bz2
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.jedsoft.org/slang/
+Type: ipkg
+Description: Multi-platform programmer's library providing facilities for interactive
+applications. Includes such things as display/screen management,
+keyboard input, keymaps, etc. Includes the embeddable S-Lang
+interpreter.
+
+This package contains the chksum module.
+@@
+
+Package: libslang2-mod-csv
+Version: 2.3.3-r2
+Depends: +libc @PACKAGE_libslang2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: S-Lang Programmer's Library (csv module)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: slang-2.3.3.tar.bz2
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.jedsoft.org/slang/
+Type: ipkg
+Description: Multi-platform programmer's library providing facilities for interactive
+applications. Includes such things as display/screen management,
+keyboard input, keymaps, etc. Includes the embeddable S-Lang
+interpreter.
+
+This package contains the csv module.
+@@
+
+Package: libslang2-mod-fcntl
+Version: 2.3.3-r2
+Depends: +libc @PACKAGE_libslang2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: S-Lang Programmer's Library (fcntl module)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: slang-2.3.3.tar.bz2
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.jedsoft.org/slang/
+Type: ipkg
+Description: Multi-platform programmer's library providing facilities for interactive
+applications. Includes such things as display/screen management,
+keyboard input, keymaps, etc. Includes the embeddable S-Lang
+interpreter.
+
+This package contains the fcntl module.
+@@
+
+Package: libslang2-mod-fork
+Version: 2.3.3-r2
+Depends: +libc @PACKAGE_libslang2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: S-Lang Programmer's Library (fork module)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: slang-2.3.3.tar.bz2
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.jedsoft.org/slang/
+Type: ipkg
+Description: Multi-platform programmer's library providing facilities for interactive
+applications. Includes such things as display/screen management,
+keyboard input, keymaps, etc. Includes the embeddable S-Lang
+interpreter.
+
+This package contains the fork module.
+@@
+
+Package: libslang2-mod-histogram
+Version: 2.3.3-r2
+Depends: +libc @PACKAGE_libslang2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: S-Lang Programmer's Library (histogram module)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: slang-2.3.3.tar.bz2
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.jedsoft.org/slang/
+Type: ipkg
+Description: Multi-platform programmer's library providing facilities for interactive
+applications. Includes such things as display/screen management,
+keyboard input, keymaps, etc. Includes the embeddable S-Lang
+interpreter.
+
+This package contains the histogram module.
+@@
+
+Package: libslang2-mod-iconv
+Version: 2.3.3-r2
+Depends: +libc @PACKAGE_libslang2 +BUILD_NLS:libiconv-full
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: S-Lang Programmer's Library (iconv module)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: slang-2.3.3.tar.bz2
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.jedsoft.org/slang/
+Type: ipkg
+Description: Multi-platform programmer's library providing facilities for interactive
+applications. Includes such things as display/screen management,
+keyboard input, keymaps, etc. Includes the embeddable S-Lang
+interpreter.
+
+This package contains the iconv module.
+@@
+
+Package: libslang2-mod-json
+Version: 2.3.3-r2
+Depends: +libc @PACKAGE_libslang2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: S-Lang Programmer's Library (json module)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: slang-2.3.3.tar.bz2
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.jedsoft.org/slang/
+Type: ipkg
+Description: Multi-platform programmer's library providing facilities for interactive
+applications. Includes such things as display/screen management,
+keyboard input, keymaps, etc. Includes the embeddable S-Lang
+interpreter.
+
+This package contains the json module.
+@@
+
+Package: libslang2-mod-onig
+Version: 2.3.3-r2
+Depends: +libc @PACKAGE_libslang2 +PACKAGE_libslang2-mod-onig:oniguruma
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: S-Lang Programmer's Library (onig module)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: slang-2.3.3.tar.bz2
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.jedsoft.org/slang/
+Type: ipkg
+Description: Multi-platform programmer's library providing facilities for interactive
+applications. Includes such things as display/screen management,
+keyboard input, keymaps, etc. Includes the embeddable S-Lang
+interpreter.
+
+This package contains the onig module.
+@@
+
+Package: libslang2-mod-png
+Version: 2.3.3-r2
+Depends: +libc @PACKAGE_libslang2 +PACKAGE_libslang2-mod-png:libpng
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: S-Lang Programmer's Library (png module)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: slang-2.3.3.tar.bz2
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.jedsoft.org/slang/
+Type: ipkg
+Description: Multi-platform programmer's library providing facilities for interactive
+applications. Includes such things as display/screen management,
+keyboard input, keymaps, etc. Includes the embeddable S-Lang
+interpreter.
+
+This package contains the png module.
+@@
+
+Package: libslang2-mod-rand
+Version: 2.3.3-r2
+Depends: +libc @PACKAGE_libslang2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: S-Lang Programmer's Library (rand module)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: slang-2.3.3.tar.bz2
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.jedsoft.org/slang/
+Type: ipkg
+Description: Multi-platform programmer's library providing facilities for interactive
+applications. Includes such things as display/screen management,
+keyboard input, keymaps, etc. Includes the embeddable S-Lang
+interpreter.
+
+This package contains the rand module.
+@@
+
+Package: libslang2-mod-select
+Version: 2.3.3-r2
+Depends: +libc @PACKAGE_libslang2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: S-Lang Programmer's Library (select module)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: slang-2.3.3.tar.bz2
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.jedsoft.org/slang/
+Type: ipkg
+Description: Multi-platform programmer's library providing facilities for interactive
+applications. Includes such things as display/screen management,
+keyboard input, keymaps, etc. Includes the embeddable S-Lang
+interpreter.
+
+This package contains the select module.
+@@
+
+Package: libslang2-mod-slsmg
+Version: 2.3.3-r2
+Depends: +libc @PACKAGE_libslang2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: S-Lang Programmer's Library (slsmg module)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: slang-2.3.3.tar.bz2
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.jedsoft.org/slang/
+Type: ipkg
+Description: Multi-platform programmer's library providing facilities for interactive
+applications. Includes such things as display/screen management,
+keyboard input, keymaps, etc. Includes the embeddable S-Lang
+interpreter.
+
+This package contains the slsmg module.
+@@
+
+Package: libslang2-mod-socket
+Version: 2.3.3-r2
+Depends: +libc @PACKAGE_libslang2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: S-Lang Programmer's Library (socket module)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: slang-2.3.3.tar.bz2
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.jedsoft.org/slang/
+Type: ipkg
+Description: Multi-platform programmer's library providing facilities for interactive
+applications. Includes such things as display/screen management,
+keyboard input, keymaps, etc. Includes the embeddable S-Lang
+interpreter.
+
+This package contains the socket module.
+@@
+
+Package: libslang2-mod-stats
+Version: 2.3.3-r2
+Depends: +libc @PACKAGE_libslang2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: S-Lang Programmer's Library (stats module)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: slang-2.3.3.tar.bz2
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.jedsoft.org/slang/
+Type: ipkg
+Description: Multi-platform programmer's library providing facilities for interactive
+applications. Includes such things as display/screen management,
+keyboard input, keymaps, etc. Includes the embeddable S-Lang
+interpreter.
+
+This package contains the stats module.
+@@
+
+Package: libslang2-mod-sysconf
+Version: 2.3.3-r2
+Depends: +libc @PACKAGE_libslang2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: S-Lang Programmer's Library (sysconf module)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: slang-2.3.3.tar.bz2
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.jedsoft.org/slang/
+Type: ipkg
+Description: Multi-platform programmer's library providing facilities for interactive
+applications. Includes such things as display/screen management,
+keyboard input, keymaps, etc. Includes the embeddable S-Lang
+interpreter.
+
+This package contains the sysconf module.
+@@
+
+Package: libslang2-mod-termios
+Version: 2.3.3-r2
+Depends: +libc @PACKAGE_libslang2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: S-Lang Programmer's Library (termios module)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: slang-2.3.3.tar.bz2
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.jedsoft.org/slang/
+Type: ipkg
+Description: Multi-platform programmer's library providing facilities for interactive
+applications. Includes such things as display/screen management,
+keyboard input, keymaps, etc. Includes the embeddable S-Lang
+interpreter.
+
+This package contains the termios module.
+@@
+
+Package: libslang2-mod-varray
+Version: 2.3.3-r2
+Depends: +libc @PACKAGE_libslang2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: S-Lang Programmer's Library (varray module)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: slang-2.3.3.tar.bz2
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.jedsoft.org/slang/
+Type: ipkg
+Description: Multi-platform programmer's library providing facilities for interactive
+applications. Includes such things as display/screen management,
+keyboard input, keymaps, etc. Includes the embeddable S-Lang
+interpreter.
+
+This package contains the varray module.
+@@
+
+Package: libslang2-mod-zlib
+Version: 2.3.3-r2
+Depends: +libc @PACKAGE_libslang2 +PACKAGE_libslang2-mod-zlib:zlib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: S-Lang Programmer's Library (zlib module)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: slang-2.3.3.tar.bz2
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.jedsoft.org/slang/
+Type: ipkg
+Description: Multi-platform programmer's library providing facilities for interactive
+applications. Includes such things as display/screen management,
+keyboard input, keymaps, etc. Includes the embeddable S-Lang
+interpreter.
+
+This package contains the zlib module.
+@@
+
+Package: libslang2
+Version: 2.3.3-r2
+Depends: +libc +terminfo
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: S-Lang Programmer's Library
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: slang-2.3.3.tar.bz2
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.jedsoft.org/slang/
+Type: ipkg
+Description: Multi-platform programmer's library providing facilities for interactive
+applications. Includes such things as display/screen management,
+keyboard input, keymaps, etc. Includes the embeddable S-Lang
+interpreter.
+@@
+
+Package: libslang2-modules
+Version: 2.3.3-r2
+Depends: +libc @PACKAGE_libslang2 +libslang2-mod-base64 +libslang2-mod-chksum +libslang2-mod-csv +libslang2-mod-fcntl +libslang2-mod-fork +libslang2-mod-histogram +libslang2-mod-iconv +libslang2-mod-json +libslang2-mod-onig +libslang2-mod-png +libslang2-mod-rand +libslang2-mod-select +libslang2-mod-slsmg +libslang2-mod-socket +libslang2-mod-stats +libslang2-mod-sysconf +libslang2-mod-termios +libslang2-mod-varray +libslang2-mod-zlib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: S-Lang Programmer's Library (all modules)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: slang-2.3.3.tar.bz2
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.jedsoft.org/slang/
+Type: ipkg
+Description: Multi-platform programmer's library providing facilities for interactive
+applications. Includes such things as display/screen management,
+keyboard input, keymaps, etc. Includes the embeddable S-Lang
+interpreter.
+
+This package installs all of S-Lang's bundled modules.
+@@
+
+Package: slsh
+Version: 2.3.3-r2
+Depends: +libc +libslang2 +libslang2-modules
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: S-Lang shell
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: slang-2.3.3.tar.bz2
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.jedsoft.org/slang/slsh.html
+Type: ipkg
+Description: This is a shell which is mostly just a wrapper around the S-Lang
+Interpreter, which is part of the S-Lang Library.
+@@
+
+

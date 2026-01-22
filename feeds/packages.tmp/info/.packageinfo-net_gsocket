@@ -1,0 +1,40 @@
+Source-Makefile: feeds/packages/net/gsocket/Makefile
+
+Package: gsocket
+Version: 1.4.39-r1
+Depends: +libc +libopenssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Connect like there is no firewall
+Maintainer: Ralf Kaiser <skyper@thc.org>
+Source: gsocket-1.4.39.tar.gz
+License: BSD-2-Clause
+LicenseFiles: LICENSE
+URL: https://gsocket.io
+Type: ipkg
+Description:   Global Socket allows two workstations on different private networks to
+  communicate with each other. Through firewalls and through NAT - like
+  there is no firewall.
+
+  The TCP connection is secured with AES-256 and using OpenSSL's SRP
+  protocol (RFC 5054). It does not require a PKI and has forward
+  secrecy and (optional) TOR support.
+
+  The gsocket tools derive temporary session keys and IDs and connect
+  two TCP pipes through the Global Socket Relay Network (GSRN). This is 
+  done regardless and independent of the local IP Address or geographical
+  location.
+
+  The session keys (secrets) never leave the workstation. The GSRN sees only
+  the encrypted traffic.
+
+  The workhorse is 'gs-netcat' which opens a ssh-like interactive PTY
+  command shell to a remote workstation (which resides on a private and
+  remote network and/or behind a firewall).
+@@
+
+

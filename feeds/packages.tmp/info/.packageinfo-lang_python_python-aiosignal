@@ -1,0 +1,48 @@
+Source-Makefile: feeds/packages/lang/python/python-aiosignal/Makefile
+
+Package: python3-aiosignal
+Submenu: Python
+Version: 1.3.1-r1
+Depends: +libc +python3-light +python3-frozenlist
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: List of registered asynchronous callbacks
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: aiosignal-1.3.1.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/aio-libs/aiosignal
+Type: ipkg
+Description: A project to manage callbacks in asyncio projects.
+@@
+
+Package: python3-aiosignal-src
+Submenu: Python
+Version: 1.3.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: List of registered asynchronous callbacks (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: aiosignal-1.3.1.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/aio-libs/aiosignal
+Type: ipkg
+Description:     A project to manage callbacks in asyncio projects.
+
+    This package contains the Python source files for python3-aiosignal.
+@@
+Config:
+    depends on PACKAGE_python3-aiosignal
+@@
+
+

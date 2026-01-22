@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/libs/libaio/Makefile
+
+Package: libaio
+Version: 0.3.113-r3
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Linux kernel AIO interface access library
+Maintainer: 
+Source: libaio-0.3.113.tar.gz
+License: LGPL-2.1-only
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:libaio_project:libaio
+URL: http://lse.sourceforge.net/io/aio.html
+Type: ipkg
+Description: Linux kernel AIO interface access library
+@@
+
+

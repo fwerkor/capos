@@ -1,0 +1,31 @@
+Source-Makefile: feeds/routing/mesh11sd/Makefile
+
+Package: mesh11sd
+Submenu: Captive Portals
+Version: 5.1.3-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Dynamic 802.11s Mesh Configuration Daemon
+Maintainer: Rob White <rob@blue-wave.net>
+Source: mesh11sd-5.1.3.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE
+URL: https://github.com/opennds/mesh11sd
+Type: ipkg
+Description:   Mesh11sd is a package that autonomously configures and manages all aspects of an 802.11s mesh network and its connected nodes.
+  The package acts as a service daemon, dynamically setting mesh parameters across all nodes.
+  It is particularly useful for simplifying setup, reducing manual configuration, and improving network reliability.
+  Support for point to multi-point vxlan tunneling over the wireless backhaul is included as standard.
+  A guest/iot type network is auto-configured without requiring complex vlan setup.
+  If required, custom vlan trunking over the vxlan tunnel is supported.
+  Mesh-gate access point usage is collected in a central database on the mesh portal.
+  A command line interface is provided for reporting in json format output.
+  An optional Customer/Client Premises Equipment (CPE) mode, greatly simplifies rollout of community WISP projects.
+@@
+
+

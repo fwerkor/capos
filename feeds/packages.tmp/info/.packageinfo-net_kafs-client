@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/net/kafs-client/Makefile
+
+Package: kafs-client
+Submenu: Filesystem
+Version: 0.5~9957339e-r2
+Depends: +libc +keyutils +krb5-libs +kmod-fs-afs +kmod-crypto-user
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: kafs client library
+Maintainer: 
+Source: kafs-client-0.5~9957339e.tar.zst
+License: GPL-2.0
+LicenseFiles: LICENSE
+URL: http://git.infradead.org/users/dhowells/kafs-client.git
+Type: ipkg
+Description: kAFS utilities
+@@
+
+

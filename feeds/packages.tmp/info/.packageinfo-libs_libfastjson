@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/libs/libfastjson/Makefile
+
+Package: libfastjson
+Version: 1.2304.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: A fast JSON library for C
+Maintainer: Dov Murik <dmurik@us.ibm.com>
+Source: libfastjson-1.2304.0.tar.gz
+License: MIT
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:rsyslog:libfastjson
+URL: https://github.com/rsyslog/libfastjson
+Type: ipkg
+Description:   libfastjson - A fast JSON library for C
+@@
+
+

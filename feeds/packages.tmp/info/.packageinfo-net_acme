@@ -1,0 +1,21 @@
+Source-Makefile: feeds/packages/net/acme/Makefile
+
+Package: acme
+Version: 4.0.0
+Depends: +libc +acme-acmesh
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Shorthand package for acme-acmesh
+Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
+Source: 
+License: GPL-3.0-only
+LicenseFiles: LICENSE.md
+Type: ipkg
+Description: Shorthand package for acme-acmesh.
+@@
+
+

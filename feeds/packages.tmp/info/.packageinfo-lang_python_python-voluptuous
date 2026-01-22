@@ -1,0 +1,50 @@
+Source-Makefile: feeds/packages/lang/python/python-voluptuous/Makefile
+
+Package: python3-voluptuous
+Submenu: Python
+Version: 0.13.1-r1
+Depends: +libc +python3-light +python3-decimal +python3-urllib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Data validation library
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: voluptuous-0.13.1.tar.gz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+URL: https://github.com/alecthomas/voluptuous
+Type: ipkg
+Description: It is primarily intended for validating data coming into Python as JSON,
+YAML, etc.
+@@
+
+Package: python3-voluptuous-src
+Submenu: Python
+Version: 0.13.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Data validation library (sources)
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: voluptuous-0.13.1.tar.gz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+URL: https://github.com/alecthomas/voluptuous
+Type: ipkg
+Description:     It is primarily intended for validating data coming into Python as JSON,
+YAML, etc.
+
+    This package contains the Python source files for python3-voluptuous.
+@@
+Config:
+    depends on PACKAGE_python3-voluptuous
+@@
+
+

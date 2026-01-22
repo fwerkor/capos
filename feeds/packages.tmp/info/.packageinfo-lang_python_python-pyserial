@@ -1,0 +1,56 @@
+Source-Makefile: feeds/packages/lang/python/python-pyserial/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host
+Build-Types: host
+
+Package: python3-pyserial
+Submenu: Python
+Version: 3.5-r2
+Depends: +libc +python3-light +python3-logging +python3-urllib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Serial Port Extension
+Maintainer: Micke Prag <micke.prag@telldus.se>
+Source: pyserial-3.5.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE.txt
+URL: https://github.com/pyserial/pyserial
+Type: ipkg
+Description: This module encapsulates the access for the serial port. It provides
+backends for Python running on Windows, OSX, Linux, BSD (possibly any
+POSIX compliant system) and IronPython. The module named "serial"
+automatically selects the appropriate backend.
+@@
+
+Package: python3-pyserial-src
+Submenu: Python
+Version: 3.5-r2
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Serial Port Extension (sources)
+Maintainer: Micke Prag <micke.prag@telldus.se>
+Source: pyserial-3.5.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE.txt
+URL: https://github.com/pyserial/pyserial
+Type: ipkg
+Description:     This module encapsulates the access for the serial port. It provides
+backends for Python running on Windows, OSX, Linux, BSD (possibly any
+POSIX compliant system) and IronPython. The module named "serial"
+automatically selects the appropriate backend.
+
+    This package contains the Python source files for python3-pyserial.
+@@
+Config:
+    depends on PACKAGE_python3-pyserial
+@@
+
+

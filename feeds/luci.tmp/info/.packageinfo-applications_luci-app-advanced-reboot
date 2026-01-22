@@ -1,0 +1,695 @@
+Source-Makefile: feeds/luci/applications/luci-app-advanced-reboot/Makefile
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+
+Package: luci-app-advanced-reboot
+Submenu: 3. Applications
+Version: 1.1.0-r1
+Depends: +libc +luci-base +jshn
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: Advanced Linksys Reboot Web UI
+Maintainer: OpenWrt LuCI community
+Source: 
+License: AGPL-3.0-or-later
+URL: https://github.com/stangri/luci-app-advanced-reboot/
+Type: ipkg
+Description:    Provides Web UI (found under System/Advanced Reboot) to reboot supported Linksys and ZyXEL routers to an alternative partition. Also provides Web UI to shut down (power off) your device. Supported dual-partition routers are listed at https://docs.openwrt.melmac.ca/luci-app-advanced-reboot/
+@@
+Config:
+# shown in make menuconfig <Help>
+help
+	Advanced Linksys Reboot Web UI
+	.
+	Version: 1.1.0-1
+@@
+
+Package: luci-i18n-advanced-reboot-ar
+Default: LUCI_LANG_ar||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - ar translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - العربية (Arabic)
+@@
+
+Package: luci-i18n-advanced-reboot-bg
+Default: LUCI_LANG_bg||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - bg translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - български (Bulgarian)
+@@
+
+Package: luci-i18n-advanced-reboot-bn
+Default: LUCI_LANG_bn_BD||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - bn translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - বাংলা (Bengali)
+@@
+
+Package: luci-i18n-advanced-reboot-ca
+Default: LUCI_LANG_ca||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - ca translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Català (Catalan)
+@@
+
+Package: luci-i18n-advanced-reboot-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - cs translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Čeština (Czech)
+@@
+
+Package: luci-i18n-advanced-reboot-da
+Default: LUCI_LANG_da||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - da translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Dansk (Danish)
+@@
+
+Package: luci-i18n-advanced-reboot-de
+Default: LUCI_LANG_de||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - de translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Deutsch (German)
+@@
+
+Package: luci-i18n-advanced-reboot-el
+Default: LUCI_LANG_el||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - el translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Ελληνικά (Greek)
+@@
+
+Package: luci-i18n-advanced-reboot-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - es translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Español (Spanish)
+@@
+
+Package: luci-i18n-advanced-reboot-fi
+Default: LUCI_LANG_fi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - fi translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Suomi (Finnish)
+@@
+
+Package: luci-i18n-advanced-reboot-fr
+Default: LUCI_LANG_fr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - fr translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Français (French)
+@@
+
+Package: luci-i18n-advanced-reboot-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - ga translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-advanced-reboot-he
+Default: LUCI_LANG_he||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - he translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - עִבְרִית (Hebrew)
+@@
+
+Package: luci-i18n-advanced-reboot-hi
+Default: LUCI_LANG_hi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - hi translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - हिंदी (Hindi)
+@@
+
+Package: luci-i18n-advanced-reboot-hu
+Default: LUCI_LANG_hu||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - hu translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Magyar (Hungarian)
+@@
+
+Package: luci-i18n-advanced-reboot-it
+Default: LUCI_LANG_it||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - it translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Italiano (Italian)
+@@
+
+Package: luci-i18n-advanced-reboot-ja
+Default: LUCI_LANG_ja||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - ja translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - 日本語 (Japanese)
+@@
+
+Package: luci-i18n-advanced-reboot-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - ko translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - 한국어 (Korean)
+@@
+
+Package: luci-i18n-advanced-reboot-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - lt translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-advanced-reboot-mr
+Default: LUCI_LANG_mr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - mr translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Marāṭhī (Marathi)
+@@
+
+Package: luci-i18n-advanced-reboot-ms
+Default: LUCI_LANG_ms||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - ms translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Bahasa Melayu (Malay)
+@@
+
+Package: luci-i18n-advanced-reboot-no
+Default: LUCI_LANG_nb_NO||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - no translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Norsk (Norwegian)
+@@
+
+Package: luci-i18n-advanced-reboot-nl
+Default: LUCI_LANG_nl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - nl translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Nederlands (Dutch)
+@@
+
+Package: luci-i18n-advanced-reboot-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - pl translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Polski (Polish)
+@@
+
+Package: luci-i18n-advanced-reboot-pt
+Default: LUCI_LANG_pt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - pt translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Português (Portuguese)
+@@
+
+Package: luci-i18n-advanced-reboot-pt-br
+Default: LUCI_LANG_pt_BR||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - pt-br translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Português do Brasil (Brazilian Portuguese)
+@@
+
+Package: luci-i18n-advanced-reboot-ro
+Default: LUCI_LANG_ro||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - ro translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Română (Romanian)
+@@
+
+Package: luci-i18n-advanced-reboot-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - ru translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Русский (Russian)
+@@
+
+Package: luci-i18n-advanced-reboot-sk
+Default: LUCI_LANG_sk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - sk translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Slovenčina (Slovak)
+@@
+
+Package: luci-i18n-advanced-reboot-sv
+Default: LUCI_LANG_sv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - sv translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Svenska (Swedish)
+@@
+
+Package: luci-i18n-advanced-reboot-tr
+Default: LUCI_LANG_tr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - tr translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Türkçe (Turkish)
+@@
+
+Package: luci-i18n-advanced-reboot-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - uk translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-advanced-reboot-vi
+Default: LUCI_LANG_vi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - vi translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Tiếng Việt (Vietnamese)
+@@
+
+Package: luci-i18n-advanced-reboot-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - zh-cn translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-advanced-reboot-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - zh-tw translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - 正體中文 (Traditional Chinese)
+@@
+
+

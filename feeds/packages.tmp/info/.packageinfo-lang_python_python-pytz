@@ -1,0 +1,48 @@
+Source-Makefile: feeds/packages/lang/python/python-pytz/Makefile
+
+Package: python3-pytz
+Submenu: Python
+Version: 2024.1-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: World timezone definitions, modern and historical
+Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
+Source: pytz-2024.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE.txt
+URL: https://pythonhosted.org/pytz/
+Type: ipkg
+Description:   World timezone definitions, modern and historical
+@@
+
+Package: python3-pytz-src
+Submenu: Python
+Version: 2024.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: World timezone definitions, modern and historical (sources)
+Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
+Source: pytz-2024.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE.txt
+URL: https://pythonhosted.org/pytz/
+Type: ipkg
+Description:       World timezone definitions, modern and historical
+
+    This package contains the Python source files for python3-pytz.
+@@
+Config:
+    depends on PACKAGE_python3-pytz
+@@
+
+

@@ -1,0 +1,62 @@
+Source-Makefile: feeds/packages/lang/python/python-editables/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-flit-core/host
+Build-Types: host
+
+Package: python3-editables
+Submenu: Python
+Version: 0.5-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Editable installations
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: editables-0.5.tar.gz
+License: MIT
+LicenseFiles: LICENSE.txt
+URL: https://github.com/pfmoore/editables
+Type: ipkg
+Build-Only: 1
+Description: A Python library for creating "editable wheels"
+
+This library supports the building of wheels which, when installed, will
+expose packages in a local directory on sys.path in "editable mode". In
+other words, changes to the package source will be reflected in the
+package visible to Python, without needing a reinstall.
+@@
+
+Package: python3-editables-src
+Submenu: Python
+Version: 0.5-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Editable installations (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: editables-0.5.tar.gz
+License: MIT
+LicenseFiles: LICENSE.txt
+URL: https://github.com/pfmoore/editables
+Type: ipkg
+Build-Only: 1
+Description:     A Python library for creating "editable wheels"
+
+This library supports the building of wheels which, when installed, will
+expose packages in a local directory on sys.path in "editable mode". In
+other words, changes to the package source will be reflected in the
+package visible to Python, without needing a reinstall.
+
+    This package contains the Python source files for python3-editables.
+@@
+Config:
+    depends on PACKAGE_python3-editables
+@@
+
+

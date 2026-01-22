@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/net/dnstop/Makefile
+
+Package: dnstop
+Version: 2018.05.22~a5a5d2e2ca9a433bb8f017682ac6f2085741bdf8-r1
+Depends: +libc +libpcap +libncurses
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: stay on top of your dns traffic
+Maintainer: Ken Xu <windedge99@gmail.com>
+Source: dnstop-2018.05.22~a5a5d2e2ca9a433bb8f017682ac6f2085741bdf8.tar.zst
+License: NLPL
+LicenseFiles: LICENSE
+URL: http://dns.measurement-factory.com/tools/dnstop/
+Type: ipkg
+Description:  dnstop is a libpcap application (like tcpdump) that displays various tables of DNS traffic on your network
+@@
+
+

@@ -1,0 +1,49 @@
+Source-Makefile: feeds/packages/lang/python/python-zipp/Makefile
+Build-Depends: python-setuptools-scm/host  
+
+Package: python3-zipp
+Submenu: Python
+Version: 3.16.2-r1
+Depends: +libc +python3-light +python3-urllib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Zipfile object wrapper
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Source: zipp-3.16.2.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/jaraco/zipp
+Type: ipkg
+Description:   Backport of pathlib-compatible object wrapper for zip files
+@@
+
+Package: python3-zipp-src
+Submenu: Python
+Version: 3.16.2-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Zipfile object wrapper (sources)
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Source: zipp-3.16.2.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/jaraco/zipp
+Type: ipkg
+Description:       Backport of pathlib-compatible object wrapper for zip files
+
+    This package contains the Python source files for python3-zipp.
+@@
+Config:
+    depends on PACKAGE_python3-zipp
+@@
+
+

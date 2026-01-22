@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/libs/libsndfile/Makefile
+
+Package: libsndfile
+Version: 1.2.2-r1
+Depends: +libc +lame-lib +libmpg123
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Library for reading/writing audio files
+Maintainer: Peter Wagner <tripolar@gmx.at>
+Source: libsndfile-1.2.2.tar.xz
+License: LGPLv2.1
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:libsndfile_project:libsndfile
+URL: https://libsndfile.github.io/libsndfile/
+Type: ipkg
+Description:  libsndfile is a library of C routines for reading and writing files
+ containing sampled audio data.
+@@
+
+

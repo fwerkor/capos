@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/multimedia/v4l2camera/Makefile
+
+Package: v4l2camera
+Version: 0.2.1-r2
+Depends: +libc +libstdcpp +alsa-lib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: multimedia
+Category: Multimedia
+Repository: base
+Title: v4l2camera
+Maintainer: Michel Promonet<michel.promonet@free.fr>
+Source: v4l2camera-0.2.1.tar.zst
+License: Unlicense
+LicenseFiles: LICENCE
+URL: https://github.com/mpromonet/v4l2camera
+Type: ipkg
+Description: v4l2camera
+@@
+
+

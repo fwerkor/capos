@@ -1,0 +1,102 @@
+Source-Makefile: feeds/packages/net/softethervpn5/Makefile
+Build-Depends: softethervpn5/host
+Build-Depends/host: ncurses/host readline/host
+Build-Types: host
+
+Package: softethervpn5-libs
+Submenu: VPN
+Version: 5.02.5184-r1
+Depends: +libc +libsodium +libpthread +librt +libreadline +libopenssl +libncurses +kmod-tun +zlib +BUILD_NLS:libiconv-full
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: softethervpn5 v5.02.5184 libs
+Maintainer: 
+Source: SoftEtherVPN-5.02.5184.tar.xz
+License: GPL-2.0
+LicenseFiles: COPYING
+URL: http://www.softether.org/
+Type: ipkg
+Hidden: 1
+Description: softethervpn5 v5.02.5184 libs
+@@
+
+Package: softethervpn5-server
+Submenu: VPN
+Version: 5.02.5184-r1
+Depends: +libc +softethervpn5-libs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: softethervpn5 v5.02.5184 server
+Maintainer: 
+Source: SoftEtherVPN-5.02.5184.tar.xz
+License: GPL-2.0
+LicenseFiles: COPYING
+URL: http://www.softether.org/
+Type: ipkg
+Description:     SoftEther VPN supports SSL-VPN, OpenVPN, L2TP, EtherIP, L2TPv3 and IPsec as a single VPN software.
+  SoftEther VPN is not only an alternative VPN server to existing VPN products (OpenVPN, IPsec and MS-SSTP),
+  but has also original strong SSL-VPN protocol to penetrate any kinds of firewalls.
+  Guide: https://wordpress.tirlins.com/2015/03/setting-up-softether-vpn-on-openwrt/
+
+  Provides the vpnserver (daemon).
+@@
+
+Package: softethervpn5-bridge
+Submenu: VPN
+Version: 5.02.5184-r1
+Depends: +libc +softethervpn5-libs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: softethervpn5 v5.02.5184 bridge
+Maintainer: 
+Source: SoftEtherVPN-5.02.5184.tar.xz
+License: GPL-2.0
+LicenseFiles: COPYING
+URL: http://www.softether.org/
+Type: ipkg
+Description:     SoftEther VPN supports SSL-VPN, OpenVPN, L2TP, EtherIP, L2TPv3 and IPsec as a single VPN software.
+  SoftEther VPN is not only an alternative VPN server to existing VPN products (OpenVPN, IPsec and MS-SSTP),
+  but has also original strong SSL-VPN protocol to penetrate any kinds of firewalls.
+  Guide: https://wordpress.tirlins.com/2015/03/setting-up-softether-vpn-on-openwrt/
+
+  Provides the vpnbridge (daemon).
+@@
+
+Package: softethervpn5-client
+Submenu: VPN
+Version: 5.02.5184-r1
+Depends: +libc +softethervpn5-libs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: softethervpn5 v5.02.5184 client
+Maintainer: 
+Source: SoftEtherVPN-5.02.5184.tar.xz
+License: GPL-2.0
+LicenseFiles: COPYING
+URL: http://www.softether.org/
+Type: ipkg
+Description:     SoftEther VPN supports SSL-VPN, OpenVPN, L2TP, EtherIP, L2TPv3 and IPsec as a single VPN software.
+  SoftEther VPN is not only an alternative VPN server to existing VPN products (OpenVPN, IPsec and MS-SSTP),
+  but has also original strong SSL-VPN protocol to penetrate any kinds of firewalls.
+  Guide: https://wordpress.tirlins.com/2015/03/setting-up-softether-vpn-on-openwrt/
+
+  Provides the vpnclient.
+@@
+
+

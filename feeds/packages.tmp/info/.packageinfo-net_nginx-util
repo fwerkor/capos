@@ -1,0 +1,41 @@
+Source-Makefile: feeds/packages/net/nginx-util/Makefile
+
+Package: nginx-ssl-util
+Submenu: Web Servers/Proxies
+Version: 1.7-r1
+Depends: +libc +libstdcpp +libuci +libubus +libubox +libpthread +libopenssl +libpcre2
+Conflicts: nginx-ssl-util-nopcre,
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Nginx configurator including SSL (using PCRE)
+Maintainer: Peter Stadler <peter.stadler@student.uibk.ac.at>
+Source: 
+Type: ipkg
+Description:   Utility that builds dynamically LAN listen directives for Nginx.
+  Furthermore, it manages SSL directives for its server parts and can create
+  corresponding (self-signed) certificates. It uses the PCRE library for performance.
+@@
+
+Package: nginx-ssl-util-nopcre
+Submenu: Web Servers/Proxies
+Version: 1.7-r1
+Depends: +libc +libstdcpp +libuci +libubus +libubox +libpthread +libopenssl
+Conflicts: nginx-ssl-util
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Nginx configurator including SSL (using <regex>)
+Maintainer: Peter Stadler <peter.stadler@student.uibk.ac.at>
+Source: 
+Type: ipkg
+Description:   Utility that builds dynamically LAN listen directives for Nginx.
+  Furthermore, it manages SSL directives for its server parts and can create
+  corresponding (self-signed) certificates. It uses the standard regex library of C++.
+@@
+
+

@@ -1,0 +1,192 @@
+Source-Makefile: feeds/telephony/libs/pjproject/Makefile
+
+Package: libpj
+Submenu: Telephony
+Version: 2.14.1-r1
+Depends: +libc +libstdcpp +libopenssl +libuuid +libpthread +librt
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lib
+Category: Libraries
+Repository: base
+Title: libpj library
+Maintainer: Jiri Slachta <jiri@slachta.eu>
+Source: pjproject-2.14.1.tar.gz
+License: GPL-2.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:pjsip:pjsip
+URL: https://www.pjsip.org
+Type: ipkg
+Description: libpj library
+@@
+
+Package: libpjlib-util
+Submenu: Telephony
+Version: 2.14.1-r1
+Depends: +libc +libstdcpp +libopenssl +libuuid +libpthread +libpj +librt
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lib
+Category: Libraries
+Repository: base
+Title: libpjlib-util library
+Maintainer: Jiri Slachta <jiri@slachta.eu>
+Source: pjproject-2.14.1.tar.gz
+License: GPL-2.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:pjsip:pjsip
+URL: https://www.pjsip.org
+Type: ipkg
+Description: libpjlib-util library
+@@
+
+Package: libpjmedia
+Submenu: Telephony
+Version: 2.14.1-r1
+Depends: +libc +libstdcpp +libopenssl +libuuid +libpthread +libpj +libpjlib-util +libpjnath +librt
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lib
+Category: Libraries
+Repository: base
+Title: libpjmedia library
+Maintainer: Jiri Slachta <jiri@slachta.eu>
+Source: pjproject-2.14.1.tar.gz
+License: GPL-2.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:pjsip:pjsip
+URL: https://www.pjsip.org
+Type: ipkg
+Description: libpjmedia library
+@@
+
+Package: libpjnath
+Submenu: Telephony
+Version: 2.14.1-r1
+Depends: +libc +libstdcpp +libopenssl +libuuid +libpthread +libpj +libpjlib-util +librt
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lib
+Category: Libraries
+Repository: base
+Title: libpjnath library
+Maintainer: Jiri Slachta <jiri@slachta.eu>
+Source: pjproject-2.14.1.tar.gz
+License: GPL-2.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:pjsip:pjsip
+URL: https://www.pjsip.org
+Type: ipkg
+Description: libpjnath library
+@@
+
+Package: libpjsip-simple
+Submenu: Telephony
+Version: 2.14.1-r1
+Depends: +libc +libstdcpp +libopenssl +libuuid +libpthread +libpj +libpjlib-util +libpjsip +librt
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lib
+Category: Libraries
+Repository: base
+Title: libpjsip-simple library
+Maintainer: Jiri Slachta <jiri@slachta.eu>
+Source: pjproject-2.14.1.tar.gz
+License: GPL-2.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:pjsip:pjsip
+URL: https://www.pjsip.org
+Type: ipkg
+Description: libpjsip-simple library
+@@
+
+Package: libpjsip-ua
+Submenu: Telephony
+Version: 2.14.1-r1
+Depends: +libc +libstdcpp +libopenssl +libuuid +libpthread +libpj +libpjlib-util +libpjmedia +libpjsip-simple +libpjsip +librt
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lib
+Category: Libraries
+Repository: base
+Title: libpjsip-ua library
+Maintainer: Jiri Slachta <jiri@slachta.eu>
+Source: pjproject-2.14.1.tar.gz
+License: GPL-2.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:pjsip:pjsip
+URL: https://www.pjsip.org
+Type: ipkg
+Description: libpjsip-ua library
+@@
+
+Package: libpjsip
+Submenu: Telephony
+Version: 2.14.1-r1
+Depends: +libc +libstdcpp +libopenssl +libuuid +libpthread +libpj +libpjlib-util +librt
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lib
+Category: Libraries
+Repository: base
+Title: libpjsip library
+Maintainer: Jiri Slachta <jiri@slachta.eu>
+Source: pjproject-2.14.1.tar.gz
+License: GPL-2.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:pjsip:pjsip
+URL: https://www.pjsip.org
+Type: ipkg
+Description: libpjsip library
+@@
+
+Package: libpjsua
+Submenu: Telephony
+Version: 2.14.1-r1
+Depends: +libc +libstdcpp +libopenssl +libuuid +libpthread +libpj +libpjlib-util +libpjmedia +libpjnath +libpjsip-simple +libpjsip-ua +libpjsip +librt
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lib
+Category: Libraries
+Repository: base
+Title: libpjsua library
+Maintainer: Jiri Slachta <jiri@slachta.eu>
+Source: pjproject-2.14.1.tar.gz
+License: GPL-2.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:pjsip:pjsip
+URL: https://www.pjsip.org
+Type: ipkg
+Description: libpjsua library
+@@
+
+Package: libpjsua2
+Submenu: Telephony
+Version: 2.14.1-r1
+Depends: +libc +libstdcpp +libopenssl +libuuid +libpthread +libpj +libpjlib-util +libpjmedia +libpjnath +libpjsip-simple +libpjsip-ua +libpjsip +librt +libpjsua
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lib
+Category: Libraries
+Repository: base
+Title: libpjsua2 library
+Maintainer: Jiri Slachta <jiri@slachta.eu>
+Source: pjproject-2.14.1.tar.gz
+License: GPL-2.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:pjsip:pjsip
+URL: https://www.pjsip.org
+Type: ipkg
+Description: libpjsua2 library
+@@
+
+

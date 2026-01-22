@@ -1,0 +1,214 @@
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2025-10-30 03:42+0000\n"
+"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/openwrt/"
+"luciapplicationsadvanced-reboot/cs/>\n"
+"Language: cs\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.14.1-dev\n"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:294
+#: applications/luci-app-advanced-reboot/root/usr/share/luci/menu.d/luci-app-advanced-reboot.json:3
+msgid "Advanced Reboot"
+msgstr "Rozšířený restart"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:96
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:227
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:265
+msgid "Compressed"
+msgstr "Komprimované"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:207
+msgid "Confirm"
+msgstr "Potvrdit"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:131
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:179
+msgid "Device unreachable! Still waiting for device..."
+msgstr "Zařízení není dostupné! Pokračuje čekání na zařízení…"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:312
+msgid "ERROR:"
+msgstr "CHYBA:"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:324
+msgid "Firmware"
+msgstr "Firmware"
+
+#: applications/luci-app-advanced-reboot/root/usr/share/rpcd/acl.d/luci-app-advanced-reboot.json:3
+msgid "Grant UCI and file access for luci-app-advanced-reboot"
+msgstr ""
+"Udělit luci-app-advanced-reboot přístup do UCI nastavování a k souborům"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:202
+msgid "No access to fw_printenv or fw_printenv!"
+msgstr ""
+"Není přístup k nástrojům /usr/sbin/fw_printenv nebo /usr/sbin/fw_setenv!"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:322
+msgid "Partition"
+msgstr "Oddíl"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:317
+msgid "Partitions"
+msgstr "Oddíly"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:371
+msgid "Perform power off..."
+msgstr "Provést vypnutí…"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:81
+msgid "Power Off Device"
+msgstr "Vypnout zařízení"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:105
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:236
+msgid "Proceed"
+msgstr "Pokračovat"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:325
+msgid "Reboot"
+msgstr "Restartovat"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:207
+msgid "Reboot Device to an Alternative Partition"
+msgstr "Restartovat zařízení do alternativního oddílu"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:257
+msgid "Reboot to alternative partition..."
+msgstr "Restartovat do alternativního oddílu…"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:254
+msgid "Reboot to current partition"
+msgstr "Restartovat do stávajícího oddílu"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:122
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:127
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:164
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:175
+msgid "Rebooting…"
+msgstr "Restartování…"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:68
+msgid "Shutting down..."
+msgstr "Vypínání…"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:323
+msgid "Status"
+msgstr "Stav"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:27
+msgid "The Dual Boot Flag Partition: %s is not a block device."
+msgstr "Oddíl označený jako Dual Boot: %s není blokovým zařízením."
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:117
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:159
+msgid "The reboot command failed with code %d"
+msgstr "Příkaz k restartu se nezdařil s kódem %d"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:169
+msgid ""
+"The system is rebooting to an alternative partition now.<br /> DO NOT POWER "
+"OFF THE DEVICE!<br /> Wait a few minutes before you try to reconnect. It "
+"might be necessary to renew the address of your computer to reach the device "
+"again, depending on your settings."
+msgstr ""
+"Systém je nyní restartován do alternativního oddílu.<br/>NEVYPÍNEJTE "
+"ZAŘÍZENÍ!<br/>Počkejte několik minut, než se pokusíte znovu připojit. V "
+"závislosti na nastavení může být pro spojení se zařízením nutné znovu načíst "
+"IP adresu počítače."
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:73
+msgid ""
+"The system is shutting down now.<br /> DO NOT POWER OFF THE DEVICE!<br /> It "
+"might be necessary to renew the address of your computer to reach the device "
+"again, depending on your settings."
+msgstr ""
+"Systém se nyní vypíná.<br/>ZAŘÍZENÍ NEVYPÍNEJTE<br/>V závislosti na "
+"nastavení může být pro spojení se zařízením nutné znovu načíst IP adresu "
+"počítače."
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:20
+msgid "Unable to find Device Board Name."
+msgstr "Nepodařilo se najít název/označení desky zařízení."
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:23
+msgid "Unable to find Dual Boot Flag Partition."
+msgstr "Nebylo možné najít druhý oddíl s příznakem pro zavádění systému."
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:36
+msgid "Unable to obtain firmware environment variable: %s."
+msgstr "Nepodařilo se získat proměnnou prostředí firmwaru: %s."
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:32
+msgid "Unable to set Dual Boot Flag Partition entry for partition: %s."
+msgstr "Nepodařilo se označit oddíl pro Dual Boot: %s."
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:41
+msgid "Unable to set firmware environment variable: %s to %s."
+msgstr "Nepodařilo se nastavit proměnnou prostředí firmwaru: %s na hodnotu %s."
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:264
+msgid "Unknown"
+msgstr "Neznámý"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:212
+msgid ""
+"WARNING: An alternative partition might have its own settings and completely "
+"different firmware.<br /><br /> As your network configuration and WiFi SSID/"
+"password on alternative partition might be different, you might have to "
+"adjust your computer settings to be able to access your device once it "
+"reboots.<br /><br /> Please also be aware that alternative partition "
+"firmware might not provide an easy way to switch active partition and boot "
+"back to the currently active partition.<br /><br /> Click \"Proceed\" below "
+"to reboot device to an alternative partition."
+msgstr ""
+"VAROVÁNÍ: Alternativní oddíl může mít vlastní nastavení a zcela odlišný "
+"firmware.<br /> <br /> Protože se vaše síťové nastavení a WiFi SSID / heslo "
+"v alternativním oddílu mohou lišit, možná bude nutné upravit nastavení "
+"počítače, aby bylo možné se k vašemu zařízení připojit po restartu.<br /> "
+"<br /> Mějte prosím na paměti, že firmware alternativního oddílu nemusí "
+"poskytovat snadný způsob přepnutí aktivního oddílu a spuštění zpět do "
+"aktuálně aktivního oddílu.<br /> <br /> Klepnutím na „Pokračovat“ níže "
+"restartujte zařízení do jiného oddílu."
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:85
+msgid ""
+"WARNING: Power off might result in a reboot on a device which doesn't "
+"support power off.<br /><br /> Click \"Proceed\" below to power off your "
+"device."
+msgstr ""
+"VAROVÁNÍ: Vypnutí může vést k restartu zařízení, které nepodporuje vypínání."
+"<br /> <br /> Pokud chcete zařízení vypnout, níže klikněte na „Pokračovat“."
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:123
+msgid "Waiting for device..."
+msgstr "Čekání na zařízení…"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:342
+msgid ""
+"Warning: Device (%s) is unknown or isn't a dual-firmware device!%sIf you are "
+"seeing this on an OpenWrt dual-firmware supported device,%splease refer to "
+"%sHow to add a new device section of the README%s."
+msgstr ""
+"Upozornění: Zařízení (%s) je neznámé nebo není zařízením s dvojitým "
+"firmwarem!%sPokud toto vidíte na zařízení s podporou dvojitého firmwaru "
+"OpenWrt,%spokračujte prosím na sekci %sJak přidat nové zařízení v README%s."
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:301
+msgid "Warning: There are unsaved changes that will get lost on reboot!"
+msgstr "Varování: jsou zde neuložené změny, které budou při restartu ztraceny!"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:376
+msgid "Warning: This system does not support powering off!"
+msgstr "Varování: Tento systém nepodporuje vypínání!"
+
+#: applications/luci-app-advanced-reboot/htdocs/luci-static/resources/view/system/advanced_reboot.js:357
+msgid "Warning: Unable to obtain device information!"
+msgstr "Varování: Nepodařilo se získat informace o zařízení!"

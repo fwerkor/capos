@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/utils/catatonit/Makefile
+
+Package: catatonit
+Version: 0.2.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: A container init that is so simple it's effectively brain-dead.
+Maintainer: Oskari Rauta <oskari.rauta@gmail.com>
+Source: catatonit-0.2.0.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://github.com/openSUSE/catatonit
+Type: ipkg
+Description:   This is a rewrite of initrs in C, because we found that it is not
+  possible to statically compile Rust binaries without using musl.
+  That was, in turn, a reimplementation of other container inits like
+  tini and dumb-init.
+@@
+
+

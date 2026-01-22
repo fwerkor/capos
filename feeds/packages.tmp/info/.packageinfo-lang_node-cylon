@@ -1,0 +1,84 @@
+Source-Makefile: feeds/packages/lang/node-cylon/Makefile
+Build-Depends: node/host
+
+Package: node-cylon
+Submenu: Node.js
+Version: 0.24.0-r4
+Depends: +libc +node +node-npm
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: CylonJS - Core
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: cylon-firmata-0.24.0.tgz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://www.npmjs.org/package/cylon-firmata
+Type: ipkg
+Description:  JavaScript Robotics, By Your Command Next generation robotics framework with support for 36 different platforms Get Started
+@@
+
+Package: node-cylon-i2c
+Submenu: Node.js
+Version: 0.24.0-r4
+Depends: +libc +node +node-npm +node-cylon
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: CylonJS - I2C
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: cylon-firmata-0.24.0.tgz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://www.npmjs.org/package/cylon-firmata
+Type: ipkg
+Description: CylonJS - I2C
+@@
+
+Package: node-cylon-gpio
+Submenu: Node.js
+Version: 0.24.0-r4
+Depends: +libc +node +node-npm +node-cylon
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: CylonJS - GPIO
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: cylon-firmata-0.24.0.tgz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://www.npmjs.org/package/cylon-firmata
+Type: ipkg
+Description: CylonJS - GPIO
+@@
+
+Package: node-cylon-firmata
+Submenu: Node.js
+Version: 0.24.0-r4
+Depends: +libc +node +node-npm +node-cylon-gpio +node-cylon-i2c +node-arduino-firmata
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: CylonJS - Firmata
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: cylon-firmata-0.24.0.tgz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://www.npmjs.org/package/cylon-firmata
+Type: ipkg
+Description: CylonJS - Firmata
+@@
+
+

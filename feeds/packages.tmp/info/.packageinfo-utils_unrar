@@ -1,0 +1,49 @@
+Source-Makefile: feeds/packages/utils/unrar/Makefile
+
+Package: unrar
+Submenu: Compression
+Version: 7.0.9-r1
+Depends: +libc +libstdcpp +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: bin
+Section: utils
+Category: Utilities
+Repository: base
+Title: UnRAR (application)
+Maintainer: Álvaro Fernández Rojas <noltari@gmail.com>, Ted Hess <thess@kitschensync.net>
+Source: unrarsrc-7.0.9.tar.gz
+License: UnRAR
+LicenseFiles: license.txt
+CPE-ID: cpe:/a:rarlab:unrar
+URL: https://www.rarlab.com/
+Type: ipkg
+Description:   UnRAR is an application that can decompress files and archives created using
+  the RAR compression scheme
+@@
+
+Package: libunrar
+Submenu: Compression
+Version: 7.0.9-r1
+Depends: +libc +libstdcpp +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: lib
+Section: libs
+Category: Libraries
+Repository: base
+Title: UnRAR (library)
+Maintainer: Álvaro Fernández Rojas <noltari@gmail.com>, Ted Hess <thess@kitschensync.net>
+Source: unrarsrc-7.0.9.tar.gz
+License: UnRAR
+LicenseFiles: license.txt
+CPE-ID: cpe:/a:rarlab:unrar
+URL: https://www.rarlab.com/
+Type: ipkg
+Description:   UnRAR library is a shared library that provides file extraction from RAR
+  archives
+@@
+
+

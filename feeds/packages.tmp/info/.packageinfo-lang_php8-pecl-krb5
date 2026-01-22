@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/php8-pecl-krb5/Makefile
+Build-Depends: php8
+
+Package: php8-pecl-krb5
+Submenu: PHP8
+Version: 1.1.5-r1
+Depends: +libc php8 +krb5-libs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Bindings for the Kerberos library
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: krb5-1.1.5.tgz
+License: MIT
+LicenseFiles: LICENSE
+URL: http://pecl.php.net/
+Type: ipkg
+Description: Bindings for the Kerberos library
+@@
+
+

@@ -1,0 +1,54 @@
+Source-Makefile: feeds/packages/lang/python/python-hatch-vcs/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-hatchling/host python-setuptools-scm/host
+Build-Types: host
+
+Package: python3-hatch-vcs
+Submenu: Python
+Version: 0.4.0-r1
+Depends: +libc +python3-light +python3-hatchling +python3-setuptools-scm
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Hatch plugin for versioning with your preferred VCS
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: hatch_vcs-0.4.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE.txt
+URL: https://github.com/ofek/hatch-vcs
+Type: ipkg
+Build-Only: 1
+Description: This provides a plugin for Hatch that uses your preferred version
+control system (like Git) to determine project versions.
+@@
+
+Package: python3-hatch-vcs-src
+Submenu: Python
+Version: 0.4.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Hatch plugin for versioning with your preferred VCS (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: hatch_vcs-0.4.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE.txt
+URL: https://github.com/ofek/hatch-vcs
+Type: ipkg
+Build-Only: 1
+Description:     This provides a plugin for Hatch that uses your preferred version
+control system (like Git) to determine project versions.
+
+    This package contains the Python source files for python3-hatch-vcs.
+@@
+Config:
+    depends on PACKAGE_python3-hatch-vcs
+@@
+
+

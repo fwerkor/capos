@@ -1,0 +1,50 @@
+Source-Makefile: feeds/packages/net/conntrack-tools/Makefile
+Build-Depends: libtirpc
+
+Package: conntrack
+Submenu: Firewall
+Version: 1.4.8-r1
+Depends: +libc +libnetfilter-conntrack +libnetfilter-cttimeout +libnetfilter-cthelper +libnetfilter-queue
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Connection tracking tool
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: conntrack-tools-1.4.8.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:netfilter:conntrack-tools
+URL: https://conntrack-tools.netfilter.org/
+Type: ipkg
+Description:  Conntrack is a userspace command line program targeted at system
+ administrators. It enables them to view and manage the in-kernel
+ connection tracking state table.
+@@
+
+Package: conntrackd
+Submenu: Firewall
+Version: 1.4.8-r1
+Depends: +libc +libnetfilter-conntrack +libnetfilter-cttimeout +libnetfilter-cthelper +libnetfilter-queue
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Connection tracking daemon
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: conntrack-tools-1.4.8.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:netfilter:conntrack-tools
+URL: https://conntrack-tools.netfilter.org/
+Type: ipkg
+Description:  Conntrackd can replicate the status of the connections that are
+ currently being processed by your stateful firewall based on Linux.
+ Conntrackd can also run as statistics daemon.
+@@
+
+

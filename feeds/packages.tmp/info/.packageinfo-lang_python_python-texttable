@@ -1,0 +1,48 @@
+Source-Makefile: feeds/packages/lang/python/python-texttable/Makefile
+
+Package: python3-texttable
+Submenu: Python
+Version: 1.7.0-r1
+Depends: +libc +python3-light +python3-codecs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Module for creating simple ASCII tables
+Maintainer: Javier Marcet <javier@marcet.info>
+Source: texttable-1.7.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/foutaise/texttable/
+Type: ipkg
+Description:   Module for creating simple ASCII tables
+@@
+
+Package: python3-texttable-src
+Submenu: Python
+Version: 1.7.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Module for creating simple ASCII tables (sources)
+Maintainer: Javier Marcet <javier@marcet.info>
+Source: texttable-1.7.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/foutaise/texttable/
+Type: ipkg
+Description:       Module for creating simple ASCII tables
+
+    This package contains the Python source files for python3-texttable.
+@@
+Config:
+    depends on PACKAGE_python3-texttable
+@@
+
+

@@ -1,0 +1,27 @@
+Source-Makefile: feeds/packages/libs/srt/Makefile
+
+Package: srt
+Menu: 1
+Version: 1.5.3-r1
+Depends: +libc +libstdcpp +libatomic +SRT_OPENSSL:libopenssl +SRT_MBEDTLS:libmbedtls +SRT_GNUTLS:libgnutls
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: secure reliable transport
+Maintainer: Koen Vandeputte <koen.vandeputte@citymesh.com>
+Source: srt-1.5.3.tar.gz
+License: MPL-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/Haivision/srt
+Type: ipkg
+Description:   This package provides the Secure Reliable Transport library which
+  is mostly used by the gstreamer srt sink plugin
+@@
+Config:
+  source "feeds/packages/libs/srt/Config.in"
+@@
+
+

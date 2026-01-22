@@ -1,0 +1,72 @@
+Source-Makefile: feeds/packages/lang/lua-ffi/Makefile
+
+Package: lua-ffi
+Submenu: Lua
+Version: 1.0.0-r1
+Depends: +libc +libffi +liblua
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: lua51
+Section: lang
+Category: Languages
+Repository: base
+Title: A portable lightweight C FFI for lua5.1, based on libffi
+Maintainer: Jianhui Zhao <zhaojh329@gmail.com>
+Source: lua-ffi-1.0.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/zhaojh329/lua-ffi
+Type: ipkg
+Description:   Lua-ffi is a portable lightweight C FFI for Lua, based on libffi
+  and aiming to be mostly compatible with LuaJIT FFI, but written
+  from scratch in C language.
+@@
+
+Package: lua-ffi-lua5.3
+Submenu: Lua
+Version: 1.0.0-r1
+Depends: +libc +libffi +liblua5.3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: lua53
+Section: lang
+Category: Languages
+Repository: base
+Title: A portable lightweight C FFI for lua5.3, based on libffi
+Maintainer: Jianhui Zhao <zhaojh329@gmail.com>
+Source: lua-ffi-1.0.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/zhaojh329/lua-ffi
+Type: ipkg
+Description:   Lua-ffi is a portable lightweight C FFI for Lua, based on libffi
+  and aiming to be mostly compatible with LuaJIT FFI, but written
+  from scratch in C language.
+@@
+
+Package: lua-ffi-lua5.4
+Submenu: Lua
+Version: 1.0.0-r1
+Depends: +libc +libffi +liblua5.4
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: lua54
+Section: lang
+Category: Languages
+Repository: base
+Title: A portable lightweight C FFI for lua5.4, based on libffi
+Maintainer: Jianhui Zhao <zhaojh329@gmail.com>
+Source: lua-ffi-1.0.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/zhaojh329/lua-ffi
+Type: ipkg
+Description:   Lua-ffi is a portable lightweight C FFI for Lua, based on libffi
+  and aiming to be mostly compatible with LuaJIT FFI, but written
+  from scratch in C language.
+@@
+
+

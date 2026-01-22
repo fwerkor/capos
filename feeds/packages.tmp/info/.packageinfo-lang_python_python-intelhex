@@ -1,0 +1,50 @@
+Source-Makefile: feeds/packages/lang/python/python-intelhex/Makefile
+
+Package: python3-intelhex
+Submenu: Python
+Version: 2.3.0-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Intel HEX files manipulations
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com> 
+Source: intelhex-2.3.0.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE.txt
+URL: https://github.com/python-intelhex/intelhex
+Type: ipkg
+Description:   This work implements an intelhex Python library to read, write, create from
+  scratch and manipulate data from Intel HEX file format.
+@@
+
+Package: python3-intelhex-src
+Submenu: Python
+Version: 2.3.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Intel HEX files manipulations (sources)
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com> 
+Source: intelhex-2.3.0.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE.txt
+URL: https://github.com/python-intelhex/intelhex
+Type: ipkg
+Description:       This work implements an intelhex Python library to read, write, create from
+  scratch and manipulate data from Intel HEX file format.
+
+    This package contains the Python source files for python3-intelhex.
+@@
+Config:
+    depends on PACKAGE_python3-intelhex
+@@
+
+

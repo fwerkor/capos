@@ -1,0 +1,97 @@
+Source-Makefile: feeds/packages/lang/python/micropython-lib/Makefile
+Build-Depends: python3/host
+
+Package: micropython-lib
+Submenu: Python
+Version: 20241017~68e3e07bc7ab63931cead3854b2a114e9a084248-r1
+Depends: +libc +micropython
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: MicroPython package repository
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: micropython-lib-20241017~68e3e07bc7ab63931cead3854b2a114e9a084248.tar.zst
+License: MIT Python-2.0.1
+LicenseFiles: LICENSE
+URL: https://github.com/micropython/micropython-lib
+Type: ipkg
+Description: This is a repository of packages designed to be useful for writing
+MicroPython applications.
+
+This contains packages common to all MicroPython ports.
+@@
+
+Package: micropython-lib-src
+Submenu: Python
+Version: 20241017~68e3e07bc7ab63931cead3854b2a114e9a084248-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: MicroPython package repository (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: micropython-lib-20241017~68e3e07bc7ab63931cead3854b2a114e9a084248.tar.zst
+License: MIT Python-2.0.1
+LicenseFiles: LICENSE
+URL: https://github.com/micropython/micropython-lib
+Type: ipkg
+Description: This is a repository of packages designed to be useful for writing
+MicroPython applications.
+
+This contains source files for packages common to all MicroPython ports.
+@@
+
+Package: micropython-lib-unix
+Submenu: Python
+Version: 20241017~68e3e07bc7ab63931cead3854b2a114e9a084248-r1
+Depends: +libc +micropython +libpcre2 +librt +libsqlite3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: MicroPython package repository - Unix port packages
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: micropython-lib-20241017~68e3e07bc7ab63931cead3854b2a114e9a084248.tar.zst
+License: MIT Python-2.0.1
+LicenseFiles: LICENSE
+URL: https://github.com/micropython/micropython-lib
+Type: ipkg
+Description: This is a repository of packages designed to be useful for writing
+MicroPython applications.
+
+This contains packages specific to the MicroPython Unix port.
+@@
+
+Package: micropython-lib-unix-src
+Submenu: Python
+Version: 20241017~68e3e07bc7ab63931cead3854b2a114e9a084248-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: MicroPython package repository - Unix port packages (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: micropython-lib-20241017~68e3e07bc7ab63931cead3854b2a114e9a084248.tar.zst
+License: MIT Python-2.0.1
+LicenseFiles: LICENSE
+URL: https://github.com/micropython/micropython-lib
+Type: ipkg
+Description: This is a repository of packages designed to be useful for writing
+MicroPython applications.
+
+This contains source files for packages specific to the MicroPython Unix
+port.
+@@
+
+

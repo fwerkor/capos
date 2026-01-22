@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/libs/websocketpp/Makefile
+
+Package: websocketpp
+Version: 0.8.2-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: WebSocket++
+Maintainer: Bruno Randolf <br1@einfach.org>
+Source: websocketpp-0.8.2.tar.gz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:zaphoyd:websocketpp
+URL: https://www.zaphoyd.com/websocketpp
+Type: ipkg
+Build-Only: 1
+Description: 	WebSocket++ is a header only C++ library that implements RFC6455
+	The WebSocket Protocol.
+@@
+
+

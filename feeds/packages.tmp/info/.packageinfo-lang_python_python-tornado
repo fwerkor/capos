@@ -1,0 +1,58 @@
+Source-Makefile: feeds/packages/lang/python/python-tornado/Makefile
+
+Package: python3-tornado
+Submenu: Python
+Version: 6.3.3-r1
+Depends: +libc +python3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Web framework and asynchronous networking library
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: tornado-6.3.3.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:tornadoweb:tornado
+URL: https://www.tornadoweb.org
+Type: ipkg
+Description:   Tornado is a Python web framework and asynchronous networking library,
+  originally developed at FriendFeed. By using non-blocking network I/O,
+  Tornado can scale to tens of thousands of open connections, making it
+  ideal for long polling, WebSockets, and other applications that require
+  a long-lived connection to each user.
+@@
+
+Package: python3-tornado-src
+Submenu: Python
+Version: 6.3.3-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Web framework and asynchronous networking library (sources)
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: tornado-6.3.3.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:tornadoweb:tornado
+URL: https://www.tornadoweb.org
+Type: ipkg
+Description:       Tornado is a Python web framework and asynchronous networking library,
+  originally developed at FriendFeed. By using non-blocking network I/O,
+  Tornado can scale to tens of thousands of open connections, making it
+  ideal for long polling, WebSockets, and other applications that require
+  a long-lived connection to each user.
+
+    This package contains the Python source files for python3-tornado.
+@@
+Config:
+    depends on PACKAGE_python3-tornado
+@@
+
+

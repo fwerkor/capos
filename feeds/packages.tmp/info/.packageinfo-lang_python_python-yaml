@@ -1,0 +1,53 @@
+Source-Makefile: feeds/packages/lang/python/python-yaml/Makefile
+Build-Depends: python-cython/host
+Build-Depends/host: python-cython/host
+Build-Types: host
+
+Package: python3-yaml
+Submenu: Python
+Version: 6.0.3-r1
+Depends: +libc +libyaml +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: YAML parser and emitter
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: pyyaml-6.0.3.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:pyyaml:pyyaml
+URL: https://github.com/yaml/pyyaml
+Type: ipkg
+Description:   PyYAML is a YAML parser and emitter for the Python programming language.
+@@
+
+Package: python3-yaml-src
+Submenu: Python
+Version: 6.0.3-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: YAML parser and emitter (sources)
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: pyyaml-6.0.3.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:pyyaml:pyyaml
+URL: https://github.com/yaml/pyyaml
+Type: ipkg
+Description:       PyYAML is a YAML parser and emitter for the Python programming language.
+
+    This package contains the Python source files for python3-yaml.
+@@
+Config:
+    depends on PACKAGE_python3-yaml
+@@
+
+

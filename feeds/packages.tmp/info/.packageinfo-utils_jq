@@ -1,0 +1,48 @@
+Source-Makefile: feeds/packages/utils/jq/Makefile
+
+Package: jq
+Version: 1.8.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: jq
+Build-Variant: noregex
+Default-Variant: noregex
+Section: utils
+Category: Utilities
+Repository: base
+Title: Lightweight and flexible command-line JSON processor without regex support.
+Maintainer: Marko Ratkaj <markoratkaj@gmail.com>
+Source: jq-1.8.1.tar.gz
+License: MIT
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:jqlang:jq
+URL: https://jqlang.github.io/jq/
+Type: ipkg
+Description:   Lightweight and flexible command-line JSON processor.
+  This package was compiled without ONIGURUMA regex libary. match/test/sub and related functions are not available. 
+@@
+
+Package: jq-full
+Version: 1.8.1-r1
+Depends: +libc +oniguruma
+Conflicts: 
+Menu-Depends: 
+Provides: jq
+Build-Variant: regex
+Section: utils
+Category: Utilities
+Repository: base
+Title: Lightweight and flexible command-line JSON processor with regex support.
+Maintainer: Marko Ratkaj <markoratkaj@gmail.com>
+Source: jq-1.8.1.tar.gz
+License: MIT
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:jqlang:jq
+URL: https://jqlang.github.io/jq/
+Type: ipkg
+Description:   Lightweight and flexible command-line JSON processor.
+  This package was compiled with ONIGURUMA regex libary and has full regex support.
+@@
+
+

@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/libs/libsamplerate/Makefile
+
+Package: libsamplerate
+Version: 0.2.2-r1
+Depends: +libc +libsndfile
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Sample Rate Converter
+Maintainer: Ted Hess <thess@kitschensync.net>
+Source: libsamplerate-0.2.2.tar.xz
+License: BSD-2-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:libsamplerate_project:libsamplerate
+URL: https://libsndfile.github.io/libsamplerate/
+Type: ipkg
+Description:  Secret Rabbit Code (aka libsamplerate) is a Sample Rate
+ Converter for audio.
+@@
+
+

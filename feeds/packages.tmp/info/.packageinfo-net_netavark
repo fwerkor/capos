@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/net/netavark/Makefile
+Build-Depends: rust/host protobuf/host
+
+Package: netavark
+Version: 1.12.2-r1
+Depends: +libc @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: A container network stack
+Maintainer: Oskari Rauta <oskari.rauta@gmail.com>
+Source: netavark-1.12.2.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/containers/netavark
+Type: ipkg
+Description:   Netavark is a rust based network stack for containers. It is being designed to work with Podman but is also
+  applicable for other OCI container management applications.
+@@
+
+

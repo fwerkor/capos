@@ -1,0 +1,51 @@
+Source-Makefile: feeds/packages/lang/python/python-gevent/Makefile
+Build-Depends: python-cffi/host python-greenlet/host python-cython/host
+
+Package: python3-gevent
+Submenu: Python
+Version: 23.9.1-r1
+Depends: +libc +python3-light +python3-cffi +python3-greenlet +python3-zope-interface +libcares +libev +libuv
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Coroutine-based network library
+Maintainer: Andy Syam <privasisource@gmail.com>
+Source: gevent-23.9.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/gevent/gevent
+Type: ipkg
+Description:   gevent is a coroutine -based Python networking library that uses greenlet
+  to provide a high-level synchronous API on top of the libev or libuv event loop.
+@@
+
+Package: python3-gevent-src
+Submenu: Python
+Version: 23.9.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Coroutine-based network library (sources)
+Maintainer: Andy Syam <privasisource@gmail.com>
+Source: gevent-23.9.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/gevent/gevent
+Type: ipkg
+Description:       gevent is a coroutine -based Python networking library that uses greenlet
+  to provide a high-level synchronous API on top of the libev or libuv event loop.
+
+    This package contains the Python source files for python3-gevent.
+@@
+Config:
+    depends on PACKAGE_python3-gevent
+@@
+
+

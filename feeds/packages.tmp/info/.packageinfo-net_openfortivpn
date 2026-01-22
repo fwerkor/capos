@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/net/openfortivpn/Makefile
+
+Package: openfortivpn
+Submenu: VPN
+Version: 1.22.1-r1
+Depends: +libc +ppp +libopenssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Fortinet SSL VPN client
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: openfortivpn-1.22.1.tar.gz
+License: GPL-3.0-or-later OpenSSL
+LicenseFiles: LICENSE LICENSE.OpenSSL
+URL: https://github.com/adrienverge/openfortivpn
+Type: ipkg
+Description:   An open implementation of Fortinet's proprietary PPP+SSL VPN solution
+  It spawns a pppd process and operates the communication between the gateway and this process.
+  It is compatible with Fortinet VPNs.
+@@
+
+

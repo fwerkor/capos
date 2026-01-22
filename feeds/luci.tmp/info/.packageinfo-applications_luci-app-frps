@@ -1,0 +1,688 @@
+Source-Makefile: feeds/luci/applications/luci-app-frps/Makefile
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+
+Package: luci-app-frps
+Submenu: 3. Applications
+Version: x
+Depends: +libc +luci-base +frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: LuCI Support for frp server
+Maintainer: OpenWrt LuCI community
+Source: 
+License: Apache-2.0
+URL: https://github.com/openwrt/luci
+Type: ipkg
+Description: LuCI Support for frp server
+@@
+
+Package: luci-i18n-frps-ar
+Default: LUCI_LANG_ar||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - ar translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - العربية (Arabic)
+@@
+
+Package: luci-i18n-frps-bg
+Default: LUCI_LANG_bg||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - bg translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - български (Bulgarian)
+@@
+
+Package: luci-i18n-frps-bn
+Default: LUCI_LANG_bn_BD||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - bn translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - বাংলা (Bengali)
+@@
+
+Package: luci-i18n-frps-ca
+Default: LUCI_LANG_ca||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - ca translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Català (Catalan)
+@@
+
+Package: luci-i18n-frps-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - cs translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Čeština (Czech)
+@@
+
+Package: luci-i18n-frps-da
+Default: LUCI_LANG_da||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - da translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Dansk (Danish)
+@@
+
+Package: luci-i18n-frps-de
+Default: LUCI_LANG_de||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - de translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Deutsch (German)
+@@
+
+Package: luci-i18n-frps-el
+Default: LUCI_LANG_el||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - el translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Ελληνικά (Greek)
+@@
+
+Package: luci-i18n-frps-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - es translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Español (Spanish)
+@@
+
+Package: luci-i18n-frps-fi
+Default: LUCI_LANG_fi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - fi translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Suomi (Finnish)
+@@
+
+Package: luci-i18n-frps-fr
+Default: LUCI_LANG_fr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - fr translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Français (French)
+@@
+
+Package: luci-i18n-frps-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - ga translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-frps-he
+Default: LUCI_LANG_he||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - he translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - עִבְרִית (Hebrew)
+@@
+
+Package: luci-i18n-frps-hi
+Default: LUCI_LANG_hi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - hi translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - हिंदी (Hindi)
+@@
+
+Package: luci-i18n-frps-hu
+Default: LUCI_LANG_hu||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - hu translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Magyar (Hungarian)
+@@
+
+Package: luci-i18n-frps-it
+Default: LUCI_LANG_it||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - it translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Italiano (Italian)
+@@
+
+Package: luci-i18n-frps-ja
+Default: LUCI_LANG_ja||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - ja translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - 日本語 (Japanese)
+@@
+
+Package: luci-i18n-frps-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - ko translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - 한국어 (Korean)
+@@
+
+Package: luci-i18n-frps-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - lt translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-frps-mr
+Default: LUCI_LANG_mr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - mr translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Marāṭhī (Marathi)
+@@
+
+Package: luci-i18n-frps-ms
+Default: LUCI_LANG_ms||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - ms translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Bahasa Melayu (Malay)
+@@
+
+Package: luci-i18n-frps-no
+Default: LUCI_LANG_nb_NO||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - no translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Norsk (Norwegian)
+@@
+
+Package: luci-i18n-frps-nl
+Default: LUCI_LANG_nl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - nl translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Nederlands (Dutch)
+@@
+
+Package: luci-i18n-frps-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - pl translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Polski (Polish)
+@@
+
+Package: luci-i18n-frps-pt
+Default: LUCI_LANG_pt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - pt translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Português (Portuguese)
+@@
+
+Package: luci-i18n-frps-pt-br
+Default: LUCI_LANG_pt_BR||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - pt-br translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Português do Brasil (Brazilian Portuguese)
+@@
+
+Package: luci-i18n-frps-ro
+Default: LUCI_LANG_ro||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - ro translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Română (Romanian)
+@@
+
+Package: luci-i18n-frps-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - ru translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Русский (Russian)
+@@
+
+Package: luci-i18n-frps-sk
+Default: LUCI_LANG_sk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - sk translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Slovenčina (Slovak)
+@@
+
+Package: luci-i18n-frps-sv
+Default: LUCI_LANG_sv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - sv translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Svenska (Swedish)
+@@
+
+Package: luci-i18n-frps-tr
+Default: LUCI_LANG_tr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - tr translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Türkçe (Turkish)
+@@
+
+Package: luci-i18n-frps-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - uk translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-frps-vi
+Default: LUCI_LANG_vi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - vi translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - Tiếng Việt (Vietnamese)
+@@
+
+Package: luci-i18n-frps-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - zh-cn translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-frps-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frps - zh-tw translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frps - 正體中文 (Traditional Chinese)
+@@
+
+

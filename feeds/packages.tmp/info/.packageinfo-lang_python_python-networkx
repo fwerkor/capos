@@ -1,0 +1,52 @@
+Source-Makefile: feeds/packages/lang/python/python-networkx/Makefile
+
+Package: python3-networkx
+Submenu: Python
+Version: 3.5-r1
+Depends: +libc +python3-light +python3-uuid +python3-xml
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Creating and manipulating graphs and networks
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: networkx-3.5.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE.txt
+CPE-ID: cpe:/a:python:networkx
+URL: https://networkx.org/
+Type: ipkg
+Description: NetworkX is a Python package for the creation, manipulation, and study
+of the structure, dynamics, and functions of complex networks.
+@@
+
+Package: python3-networkx-src
+Submenu: Python
+Version: 3.5-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Creating and manipulating graphs and networks (sources)
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: networkx-3.5.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE.txt
+CPE-ID: cpe:/a:python:networkx
+URL: https://networkx.org/
+Type: ipkg
+Description:     NetworkX is a Python package for the creation, manipulation, and study
+of the structure, dynamics, and functions of complex networks.
+
+    This package contains the Python source files for python3-networkx.
+@@
+Config:
+    depends on PACKAGE_python3-networkx
+@@
+
+

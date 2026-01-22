@@ -1,0 +1,48 @@
+Source-Makefile: feeds/packages/lang/python/python-s3transfer/Makefile
+
+Package: python3-s3transfer
+Submenu: Python
+Version: 0.6.1-r1
+Depends: +libc +python3-light +python3-logging +python3-multiprocessing +python3-botocore
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Amazon S3 Transfer Manager
+Maintainer: Daniel Danzberger <daniel@dd-wrt.com>
+Source: s3transfer-0.6.1.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE.txt
+URL: https://github.com/boto/s3transfer
+Type: ipkg
+Description: S3transfer is a Python library for managing Amazon S3 transfers.
+@@
+
+Package: python3-s3transfer-src
+Submenu: Python
+Version: 0.6.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Amazon S3 Transfer Manager (sources)
+Maintainer: Daniel Danzberger <daniel@dd-wrt.com>
+Source: s3transfer-0.6.1.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE.txt
+URL: https://github.com/boto/s3transfer
+Type: ipkg
+Description:     S3transfer is a Python library for managing Amazon S3 transfers.
+
+    This package contains the Python source files for python3-s3transfer.
+@@
+Config:
+    depends on PACKAGE_python3-s3transfer
+@@
+
+

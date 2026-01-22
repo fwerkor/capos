@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/libs/libx264/Makefile
+
+Package: libx264
+Version: 2024.05.13~4613ac3c15fd75cebc4b9f65b7fb95e70a3acce1-r1
+Depends: +libc +libpthread @BUILD_PATENTED
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: H264/AVC free codec library
+Maintainer: Adrian Panella <ianchi74@outlook.com>
+Source: x264-2024.05.13~4613ac3c15fd75cebc4b9f65b7fb95e70a3acce1.tar.zst
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://www.videolan.org/developers/x264.html
+Type: ipkg
+Description:   x264 is a free software library for encoding
+  video streams into the H.264/MPEG-4 AVC compression format.
+@@
+
+

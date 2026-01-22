@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/utils/sexpect/Makefile
+
+Package: sexpect
+Version: 2.3.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Expect for Shells
+Maintainer: Clark Wang <dearvoid@gmail.com>
+Source: sexpect-2.3.14.tar.gz
+License: GPL-3.0-only
+LicenseFiles: LICENSE
+URL: https://github.com/clarkwang/sexpect
+Type: ipkg
+Description:   Sexpect is another implementation of Expect which is specifically designed
+  for shells. It's lightweight and has no dependency on other packages.
+@@
+
+

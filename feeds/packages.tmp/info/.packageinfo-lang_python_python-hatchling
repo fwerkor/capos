@@ -1,0 +1,52 @@
+Source-Makefile: feeds/packages/lang/python/python-hatchling/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-editables/host python-packaging/host python-pathspec/host python-pluggy/host python-trove-classifiers/host
+Build-Types: host
+
+Package: python3-hatchling
+Submenu: Python
+Version: 1.27.0-r1
+Depends: +libc +python3-light +python3-email +python3-editables +python3-packaging +python3-pathspec +python3-pluggy +python3-trove-classifiers
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Modern, extensible Python build backend
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: hatchling-1.27.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE.txt
+URL: https://hatch.pypa.io/latest/
+Type: ipkg
+Build-Only: 1
+Description: This is the extensible, standards compliant build backend used by Hatch.
+@@
+
+Package: python3-hatchling-src
+Submenu: Python
+Version: 1.27.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Modern, extensible Python build backend (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: hatchling-1.27.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE.txt
+URL: https://hatch.pypa.io/latest/
+Type: ipkg
+Build-Only: 1
+Description:     This is the extensible, standards compliant build backend used by Hatch.
+
+    This package contains the Python source files for python3-hatchling.
+@@
+Config:
+    depends on PACKAGE_python3-hatchling
+@@
+
+

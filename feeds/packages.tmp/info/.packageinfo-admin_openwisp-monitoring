@@ -1,0 +1,46 @@
+Source-Makefile: feeds/packages/admin/openwisp-monitoring/Makefile
+
+Package: openwisp-monitoring
+Submenu: openwisp
+Version: 0.3.0-r1
+Depends: +libc +netjson-monitoring +openwisp-config
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: admin
+Category: Administration
+Repository: base
+Title: OpenWISP Monitoring agent
+Maintainer: Federico Capoano <support@openwisp.io>
+Source: openwisp-monitoring-0.3.0.tar.zst
+License: GPL-3.0-or-later
+LicenseFiles: LICENSE
+URL: http://openwisp.org
+Type: ipkg
+Description: OpenWISP Monitoring agent
+@@
+
+Package: netjson-monitoring
+Submenu: openwisp
+Version: 0.3.0-r1
+Depends: +libc +libubus-lua +lua-cjson +rpcd +NETJSON_MONITORING_IWINFO:rpcd-mod-iwinfo
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: admin
+Category: Administration
+Repository: base
+Title: NetJSON Monitoring
+Maintainer: Federico Capoano <support@openwisp.io>
+Source: openwisp-monitoring-0.3.0.tar.zst
+License: GPL-3.0-or-later
+LicenseFiles: LICENSE
+URL: http://openwisp.org
+Type: ipkg
+Description: NetJSON Monitoring
+@@
+Config:
+  source "feeds/packages/admin/openwisp-monitoring/Config.in"
+@@
+
+

@@ -1,0 +1,53 @@
+Source-Makefile: feeds/packages/lang/python/python-pytest-xdist/Makefile
+Build-Depends: python-setuptools-scm/host
+
+Package: python3-pytest-xdist
+Submenu: Python
+Version: 3.3.1-r1
+Depends: +libc +python3-light +python3-uuid +python3-execnet +python3-pytest
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: pytest plugin for distributed testing
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Source: pytest-xdist-3.3.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/pytest-dev/pytest-xdist
+Type: ipkg
+Description: The pytest-xdist plugin extends pytest with new test execution modes,
+the most used being distributing tests across multiple CPUs to speed up
+test execution.
+@@
+
+Package: python3-pytest-xdist-src
+Submenu: Python
+Version: 3.3.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: pytest plugin for distributed testing (sources)
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Source: pytest-xdist-3.3.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/pytest-dev/pytest-xdist
+Type: ipkg
+Description:     The pytest-xdist plugin extends pytest with new test execution modes,
+the most used being distributing tests across multiple CPUs to speed up
+test execution.
+
+    This package contains the Python source files for python3-pytest-xdist.
+@@
+Config:
+    depends on PACKAGE_python3-pytest-xdist
+@@
+
+

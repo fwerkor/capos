@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/libs/nghttp3/Makefile
+
+Package: libnghttp3
+Version: 1.5.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: HTTP/3 library written in C
+Maintainer: Aleksey Vasilenko <aleksey.vasilenko@gmail.com>
+Source: nghttp3-1.5.0.tar.xz
+License: MIT
+LicenseFiles: COPYING
+URL: https://nghttp2.org/nghttp3
+Type: ipkg
+Description: nghttp3 is a thin HTTP/3 layer over an underlying QUIC stack.
+@@
+
+

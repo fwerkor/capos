@@ -1,0 +1,41 @@
+Source-Makefile: feeds/packages/libs/libcgroup/Makefile
+
+Package: libcgroup
+Version: 2.0.3-r1
+Depends: +libc +USE_MUSL:musl-fts +@KERNEL_CGROUPS
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: CGroup config and exec library
+Maintainer: Daniel Danzberger <daniel@dd-wrt.com>
+Source: libcgroup-2.0.3.tar.gz
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:libcgroup_project:libcgroup
+Type: ipkg
+Description:   Helpers utils for working with cgroups.
+@@
+
+Package: cgroup-tools
+Version: 2.0.3-r1
+Depends: +libc +libcgroup
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: opt
+Category: Utilities
+Repository: base
+Title: CGroup config and exec tools
+Maintainer: Daniel Danzberger <daniel@dd-wrt.com>
+Source: libcgroup-2.0.3.tar.gz
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:libcgroup_project:libcgroup
+Type: ipkg
+Description: CGroup config and exec tools
+@@
+
+

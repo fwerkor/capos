@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/net/cloudreve/Makefile
+Build-Depends: golang/host node/host node-yarn/host
+
+Package: cloudreve
+Submenu: Cloud Manager
+Version: 4.9.2-r1
+Depends: +libc @(aarch64||arm||i386||i686||riscv64||x86_64) +ca-bundle
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: A project helps you build your own cloud in minutes
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: cloudreve-4.9.2.tar.zst
+License: GPL-3.0-only
+LicenseFiles: LICENSE
+URL: https://cloudreve.org
+Type: ipkg
+Description:   Self-deployed file management and sharing system, supports multiple
+  storage providers.
+@@
+
+

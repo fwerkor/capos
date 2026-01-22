@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/multimedia/v4l2rtspserver/Makefile
+
+Package: v4l2rtspserver
+Version: 0.3.11-r10
+Depends: +libc +libstdcpp +alsa-lib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: multimedia
+Category: Multimedia
+Repository: base
+Title: v4l2rtspserver
+Maintainer: Roger Dammit <rogerdammit@gmail.com>
+Source: v4l2rtspserver-0.3.11.tar.zst
+License: Unlicense
+LicenseFiles: LICENSE
+URL: https://github.com/mpromonet/v4l2rtspserver
+Type: ipkg
+Description: 	RTSP server for v4L2 video sources
+@@
+
+

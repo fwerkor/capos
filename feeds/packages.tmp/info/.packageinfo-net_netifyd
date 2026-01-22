@@ -1,0 +1,28 @@
+Source-Makefile: feeds/packages/net/netifyd/Makefile
+
+Package: netifyd
+Version: 4.4.7-r2
+Depends: +libc +ca-bundle +libatomic +libcurl +libmnl +libnetfilter-conntrack +libpcap +zlib +libpthread +libstdcpp +NETIFYD_WITH_LOCAL_LIBGCRYPT:libgcrypt
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Netify Agent
+Maintainer: Darryl Sokoloski <darryl@egloo.ca>
+Source: netifyd-4.4.7.tar.zst
+License: GPL-3.0-or-later
+URL: http://www.netify.ai/
+Type: ipkg
+Description: The Netify Agent is a deep-packet inspection server which detects network
+protocols and applications.  These detections can be saved locally, served over
+a UNIX or TCP socket, and/or "pushed" (via HTTP POSTs) to a remote third-party
+server.  Flow metadata, network statistics, and detection classifications are
+JSON encoded for easy consumption by third-party applications.
+@@
+Config:
+	source "feeds/packages/net/netifyd/Config.in"
+@@
+
+

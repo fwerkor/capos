@@ -1,0 +1,22 @@
+Source-Makefile: feeds/routing/vis/Makefile
+
+Package: vis
+Submenu: Routing and Redirection
+Version: 2013.04.07~7710cce42e8d63ea114056a4a140835d4a452933-r9
+Depends: +libc +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: visualization server for B.A.T.M.A.N. layer 3
+Maintainer: Corinna Aichele <onelektra@gmx.net>
+Source: vis-2013.04.07~7710cce42e8d63ea114056a4a140835d4a452933.tar.zst
+License: GPL-2.0-only
+URL: https://www.open-mesh.org/
+Type: ipkg
+Description: visualization server for B.A.T.M.A.N. layer 3
+@@
+
+

@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/utils/aliyun-cli/Makefile
+Build-Depends: golang/host
+
+Package: aliyun-cli
+Version: 3.0.290-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) +ca-bundle
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Alibaba Cloud OpenAPI
+Maintainer: Bruce Chen <a805899926@gmail.com>
+Source: aliyun-cli-3.0.290.tar.zst
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/aliyun/aliyun-cli
+Type: ipkg
+Description:   The Alibaba Cloud CLI is a tool to manage and use Alibaba Cloud resources through a command line interface.
+@@
+
+

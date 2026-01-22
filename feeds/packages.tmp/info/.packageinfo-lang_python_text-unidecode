@@ -1,0 +1,48 @@
+Source-Makefile: feeds/packages/lang/python/text-unidecode/Makefile
+
+Package: python3-text-unidecode
+Submenu: Python
+Version: 1.3-r2
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: The most basic Text::Unidecode port
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: text-unidecode-1.3.tar.gz
+License: Artistic-1.0-cl8
+LicenseFiles: LICENSE
+URL: https://github.com/kmike/text-unidecode/
+Type: ipkg
+Description: text-unidecode is the most basic port of the Text::Unidecode Perl library.
+@@
+
+Package: python3-text-unidecode-src
+Submenu: Python
+Version: 1.3-r2
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: The most basic Text::Unidecode port (sources)
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: text-unidecode-1.3.tar.gz
+License: Artistic-1.0-cl8
+LicenseFiles: LICENSE
+URL: https://github.com/kmike/text-unidecode/
+Type: ipkg
+Description:     text-unidecode is the most basic port of the Text::Unidecode Perl library.
+
+    This package contains the Python source files for python3-text-unidecode.
+@@
+Config:
+    depends on PACKAGE_python3-text-unidecode
+@@
+
+

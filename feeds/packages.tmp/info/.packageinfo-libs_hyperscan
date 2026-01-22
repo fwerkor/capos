@@ -1,0 +1,42 @@
+Source-Makefile: feeds/packages/libs/hyperscan/Makefile
+Build-Depends: ragel/host python3/host boost/host
+
+Package: hyperscan-headers
+Version: 5.4.2-r3
+Depends: +libc @TARGET_x86_64
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Hyperscan Headers
+Maintainer: John Audia <therealgraysky@proton.me>
+Source: hyperscan-5.4.2.tar.gz
+License: BSD-3-Clause BSD-2-Clause BSL-1.0
+LicenseFiles: LICENSE
+URL: https://github.com/intel/hyperscan
+Type: ipkg
+Description:   This package contains the headers for Hyperscan.
+@@
+
+Package: hyperscan-runtime
+Version: 5.4.2-r3
+Depends: +libc @TARGET_x86_64 +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Hyperscan Runtime
+Maintainer: John Audia <therealgraysky@proton.me>
+Source: hyperscan-5.4.2.tar.gz
+License: BSD-3-Clause BSD-2-Clause BSL-1.0
+LicenseFiles: LICENSE
+URL: https://github.com/intel/hyperscan
+Type: ipkg
+Description:   This package contains the shared objects for Hyperscan.
+@@
+
+

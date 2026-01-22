@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/net/beanstalkd/Makefile
+
+Package: beanstalkd
+Version: 1.13-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Beanstalk
+Maintainer: Philip Prindeville <philipp@redfish-solutions.com>
+Source: beanstalkd-v1.13.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:wildbit:beanstalkd
+Type: ipkg
+Description:  Beanstalk is a simple, fast work queue.
+@@
+
+

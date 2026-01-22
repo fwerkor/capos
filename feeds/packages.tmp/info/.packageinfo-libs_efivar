@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/libs/efivar/Makefile
+
+Package: efivar
+Version: 38-r4
+Depends: +libc @(TARGET_x86_64||TARGET_armsr_armv8)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Tools and libraries to work with EFI variables
+Maintainer: Oskari Rauta <oskari.rauta@gmail.com>
+Source: efivar-38.tar.bz2
+License: LGPL-2.1-only
+LicenseFiles: COPYING
+URL: https://github.com/rhboot/efibootmgr
+Type: ipkg
+Description:   Tools and libraries to work with EFI variables
+@@
+
+

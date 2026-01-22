@@ -1,0 +1,27 @@
+Source-Makefile: feeds/packages/net/linuxptp/Makefile
+
+Package: linuxptp
+Submenu: Time Synchronization
+Version: 4.4-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Linux Precision Time Protocol (PTP) daemon
+Maintainer: Wojciech Dubowik <Wojciech.Dubowik@westermo.com>
+Source: linuxptp-4.4.tgz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:linuxptp_project:linuxptp
+URL: https://linuxptp.nwtime.org/
+Type: ipkg
+Description:  The PTP daemon (PTPd) implements version 2 of the Precision Time Protocol (PTP)
+ as defined by the IEEE 1588-2008 standard.
+ PTP was developed to provide very precise time coordination of LAN connected
+ computers.
+@@
+
+

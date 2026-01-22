@@ -1,0 +1,41 @@
+Source-Makefile: feeds/packages/net/arp-scan/Makefile
+
+Package: arp-scan
+Submenu: arp-scan
+Version: 1.10.0-r2
+Depends: +libc +libpcap
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ARP scanner
+Maintainer: Sergey Urushkin <urusha.v1.0@gmail.com>
+Source: arp-scan-1.10.0.tar.gz
+License: GPL-3.0-or-later
+URL: https://github.com/royhills/arp-scan
+Type: ipkg
+Description:     ARP scanner
+@@
+
+Package: arp-scan-database
+Submenu: arp-scan
+Version: 1.10.0-r2
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: MAC database for ARP scanner
+Maintainer: Sergey Urushkin <urusha.v1.0@gmail.com>
+Source: arp-scan-1.10.0.tar.gz
+License: GPL-3.0-or-later
+URL: https://github.com/royhills/arp-scan
+Type: ipkg
+Description:     MAC database for ARP scanner
+@@
+
+

@@ -1,0 +1,52 @@
+Source-Makefile: feeds/packages/lang/python/python-ruamel-yaml/Makefile
+
+Package: python3-ruamel-yaml
+Submenu: Python
+Version: 0.18.16-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: YAML 1.2 loader/dumper
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: ruamel.yaml-0.18.16.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:ruamel.yaml_project:ruamel.yaml
+URL: https://sourceforge.net/p/ruamel-yaml/code/ci/default/tree
+Type: ipkg
+Description: ruamel-yaml is a YAML parser/emitter that supports roundtrip
+preservation of comments, seq/map flow style, and map key order
+@@
+
+Package: python3-ruamel-yaml-src
+Submenu: Python
+Version: 0.18.16-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: YAML 1.2 loader/dumper (sources)
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: ruamel.yaml-0.18.16.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:ruamel.yaml_project:ruamel.yaml
+URL: https://sourceforge.net/p/ruamel-yaml/code/ci/default/tree
+Type: ipkg
+Description:     ruamel-yaml is a YAML parser/emitter that supports roundtrip
+preservation of comments, seq/map flow style, and map key order
+
+    This package contains the Python source files for python3-ruamel-yaml.
+@@
+Config:
+    depends on PACKAGE_python3-ruamel-yaml
+@@
+
+

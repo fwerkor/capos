@@ -1,0 +1,103 @@
+Source-Makefile: feeds/packages/utils/stlink/Makefile
+
+Package: stlink
+Menu: 1
+Version: 1.8.0-r2
+Depends: +libc +libusb-1.0
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: stlink - program and debug STM32 devices
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: stlink-1.8.0.tar.zst
+License: BSD-3-Clause
+LicenseFiles: LICENSE.md
+URL: https://github.com/stlink-org/stlink
+ABI-Version: 1
+Type: ipkg
+Description:  stlink is an open source toolset to program and debug STM32 devices
+ and boards manufactured by STMicroelectronics. It supports several so
+ called STLINK programmer boards (and clones thereof) which use a
+ microcontroller chip to translate commands from USB to JTAG/SWD.
+@@
+
+Package: stlink-st-info
+Version: 1.8.0-r2
+Depends: +libc stlink
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility st-info from stlink
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: stlink-1.8.0.tar.zst
+License: BSD-3-Clause
+LicenseFiles: LICENSE.md
+URL: https://github.com/stlink-org/stlink
+Type: ipkg
+Description:      Utility st-info from the stlink package.
+@@
+
+Package: stlink-st-flash
+Version: 1.8.0-r2
+Depends: +libc stlink
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility st-flash from stlink
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: stlink-1.8.0.tar.zst
+License: BSD-3-Clause
+LicenseFiles: LICENSE.md
+URL: https://github.com/stlink-org/stlink
+Type: ipkg
+Description:      Utility st-flash from the stlink package.
+@@
+
+Package: stlink-st-trace
+Version: 1.8.0-r2
+Depends: +libc stlink
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility st-trace from stlink
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: stlink-1.8.0.tar.zst
+License: BSD-3-Clause
+LicenseFiles: LICENSE.md
+URL: https://github.com/stlink-org/stlink
+Type: ipkg
+Description:      Utility st-trace from the stlink package.
+@@
+
+Package: stlink-st-util
+Version: 1.8.0-r2
+Depends: +libc stlink
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility st-util from stlink
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: stlink-1.8.0.tar.zst
+License: BSD-3-Clause
+LicenseFiles: LICENSE.md
+URL: https://github.com/stlink-org/stlink
+Type: ipkg
+Description:      Utility st-util from the stlink package.
+@@
+
+

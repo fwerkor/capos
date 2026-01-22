@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/utils/fontconfig/Makefile
+Build-Depends: gperf/host
+
+Package: fontconfig
+Submenu: Font-Utils
+Version: 2.15.0-r1
+Depends: +libc +libpthread +libexpat +libfreetype
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: xorg-util
+Category: Xorg
+Repository: base
+Title: fontconfig
+Maintainer: 
+Source: fontconfig-2.15.0.tar.xz
+CPE-ID: cpe:/a:fontconfig_project:fontconfig
+URL: https://www.freedesktop.org/wiki/Software/fontconfig/
+Type: ipkg
+Description: fontconfig
+@@
+
+

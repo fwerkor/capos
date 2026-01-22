@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/net/tmate-ssh-server/Makefile
+
+Package: tmate-ssh-server
+Version: 2023.06.02~d7334ee4c3c8036c27fb35c7a24df3a88a15676b-r1
+Depends: +libc +libevent2 +libncurses +libpthread +libssh +msgpack-c +terminfo +openssh-keygen
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Instant Terminal Sharing Server
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: tmate-ssh-server-2023.06.02~d7334ee4c3c8036c27fb35c7a24df3a88a15676b.tar.zst
+License: ISC
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:tmate:tmate-ssh-server
+URL: https://tmate.io
+Type: ipkg
+Description:   tmate-ssh-server is the server side part of tmate.io.
+@@
+
+

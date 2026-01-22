@@ -1,0 +1,76 @@
+Source-Makefile: feeds/packages/lang/lua5.4/Makefile
+Build-Types: host
+
+Package: liblua5.4
+Version: 5.4.7-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Lua programming language (version 5.4) (libraries)
+Maintainer: Christian Marangi <ansuelsmth@gmail.com>
+Source: lua-5.4.7.tar.gz
+License: MIT
+LicenseFiles: COPYRIGHT
+CPE-ID: cpe:/a:lua:lua
+URL: https://www.lua.org/
+ABI-Version: 5.4
+Type: ipkg
+Description:   Lua is a powerful, efficient, lightweight, embeddable scripting language. It
+  supports procedural programming, object-oriented programming, functional
+  programming, data-driven programming, and data description.
+ This package contains the Lua shared libraries, needed by other programs.
+@@
+
+Package: lua5.4
+Submenu: Lua
+Version: 5.4.7-r1
+Depends: +libc +liblua5.4
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Lua programming language (version 5.4) (interpreter)
+Maintainer: Christian Marangi <ansuelsmth@gmail.com>
+Source: lua-5.4.7.tar.gz
+License: MIT
+LicenseFiles: COPYRIGHT
+CPE-ID: cpe:/a:lua:lua
+URL: https://www.lua.org/
+Type: ipkg
+Description:   Lua is a powerful, efficient, lightweight, embeddable scripting language. It
+  supports procedural programming, object-oriented programming, functional
+  programming, data-driven programming, and data description.
+  This package contains the Lua language interpreter.
+@@
+
+Package: luac5.4
+Submenu: Lua
+Version: 5.4.7-r1
+Depends: +libc +liblua5.4
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Lua programming language (version 5.4) (compiler)
+Maintainer: Christian Marangi <ansuelsmth@gmail.com>
+Source: lua-5.4.7.tar.gz
+License: MIT
+LicenseFiles: COPYRIGHT
+CPE-ID: cpe:/a:lua:lua
+URL: https://www.lua.org/
+Type: ipkg
+Description:   Lua is a powerful, efficient, lightweight, embeddable scripting language. It
+  supports procedural programming, object-oriented programming, functional
+  programming, data-driven programming, and data description.
+  This package contains the Lua language compiler.
+@@
+
+

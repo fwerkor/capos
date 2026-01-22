@@ -1,0 +1,53 @@
+Source-Makefile: feeds/packages/lang/python/python-urllib3/Makefile
+Build-Depends: python-hatch-vcs/host python-hatchling/host python-setuptools-scm/host
+Build-Depends/host: python-hatch-vcs/host python-hatchling/host python-setuptools-scm/host
+Build-Types: host
+
+Package: python3-urllib3
+Submenu: Python
+Version: 2.5.0-r1
+Depends: +libc +python3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Sanity-friendly HTTP client
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: urllib3-2.5.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE.txt
+CPE-ID: cpe:/a:python:urllib3
+URL: https://urllib3.readthedocs.io/
+Type: ipkg
+Description:   HTTP library with thread-safe connection pooling, file post, and more.
+@@
+
+Package: python3-urllib3-src
+Submenu: Python
+Version: 2.5.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Sanity-friendly HTTP client (sources)
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: urllib3-2.5.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE.txt
+CPE-ID: cpe:/a:python:urllib3
+URL: https://urllib3.readthedocs.io/
+Type: ipkg
+Description:       HTTP library with thread-safe connection pooling, file post, and more.
+
+    This package contains the Python source files for python3-urllib3.
+@@
+Config:
+    depends on PACKAGE_python3-urllib3
+@@
+
+

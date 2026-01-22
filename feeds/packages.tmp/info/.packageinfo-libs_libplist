@@ -1,0 +1,44 @@
+Source-Makefile: feeds/packages/libs/libplist/Makefile
+
+Package: libplist
+Submenu: libimobiledevice
+Version: 2.4.0-r1
+Depends: +libc +libxml2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Apple property list library
+Maintainer: Rosen Penev <rosenp@gmail.com>
+Source: libplist-2.4.0.tar.bz2
+CPE-ID: cpe:/a:libimobiledevice:libplist
+URL: https://www.libimobiledevice.org/
+Type: ipkg
+Description:     A library to handle Apple Property List format whereas it's binary or XML
+@@
+
+Package: plistutil
+Submenu: libimobiledevice
+Version: 2.4.0-r1
+Depends: +libc +libplist
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Apple property list converter
+Maintainer: Rosen Penev <rosenp@gmail.com>
+Source: libplist-2.4.0.tar.bz2
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:libimobiledevice:libplist
+URL: https://www.libimobiledevice.org/
+Type: ipkg
+Description:     A library to handle Apple Property List format whereas it's binary or XML
+  This package contains the libplist utilities.
+@@
+
+

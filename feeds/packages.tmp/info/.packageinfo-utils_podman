@@ -1,0 +1,32 @@
+Source-Makefile: feeds/packages/utils/podman/Makefile
+Build-Depends: golang/host protobuf/host btrfs-progs
+
+Package: podman
+Version: 5.2.2-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) +conmon +libgpgme +libseccomp +nsenter +zoneinfo-simple +kmod-veth +slirp4netns +netavark +aardvark-dns +catatonit +crun +PODMAN_SELINUX_SUPPORT:libselinux
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Podman
+Maintainer: Oskari Rauta <oskari.rauta@gmail.com>
+Source: podman-5.2.2.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://podman.io
+Type: ipkg
+Description:   Podman: A tool for managing OCI containers and pods
+@@
+Config:
+  menu "Configuration"
+
+    config PODMAN_SELINUX_SUPPORT
+    bool "Enable SELinux support"
+    default n
+
+  endmenu
+@@
+
+

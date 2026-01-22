@@ -1,0 +1,125 @@
+Source-Makefile: feeds/packages/net/uwsgi/Makefile
+Build-Depends: python3/host
+
+Package: uwsgi
+Submenu: Web Servers/Proxies
+Version: 2.0.26-r1
+Depends: +libc +libpcre2 +libcap +libuuid
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: The uWSGI server
+Maintainer: Christian Marangi <ansuelsmth@gmail.com>
+Source: uwsgi-2.0.26.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:unbit:uwsgi
+URL: https://uwsgi-docs.readthedocs.io/en/latest/
+Type: ipkg
+Description: 	The uWSGI project (to be used together with nginx or nginx-ssl).
+@@
+
+Package: uwsgi-logfile-plugin
+Submenu: Web Servers/Proxies
+Version: 2.0.26-r1
+Depends: +libc uwsgi
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: The Logfile plugin for the uWSGI server
+Maintainer: Christian Marangi <ansuelsmth@gmail.com>
+Source: uwsgi-2.0.26.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:unbit:uwsgi
+Type: ipkg
+Description: 	The Logfile plugin for the uWSGI project.
+@@
+
+Package: uwsgi-syslog-plugin
+Submenu: Web Servers/Proxies
+Version: 2.0.26-r1
+Depends: +libc uwsgi
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: The Syslog plugin for the uWSGI server
+Maintainer: Christian Marangi <ansuelsmth@gmail.com>
+Source: uwsgi-2.0.26.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:unbit:uwsgi
+Type: ipkg
+Description: 	The Syslog plugin for the uWSGI project.
+@@
+
+Package: uwsgi-cgi-plugin
+Submenu: Web Servers/Proxies
+Version: 2.0.26-r1
+Depends: +libc uwsgi
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: The CGI plugin for the uWSGI server
+Maintainer: Christian Marangi <ansuelsmth@gmail.com>
+Source: uwsgi-2.0.26.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:unbit:uwsgi
+Type: ipkg
+Description: 	The CGI plugin for the uWSGI project.
+@@
+
+Package: uwsgi-python3-plugin
+Submenu: Web Servers/Proxies
+Version: 2.0.26-r1
+Depends: +libc uwsgi +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: The Python3 plugin for the uWSGI server
+Maintainer: Christian Marangi <ansuelsmth@gmail.com>
+Source: uwsgi-2.0.26.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:unbit:uwsgi
+Type: ipkg
+Description: 	The Python3 plugin for the uWSGI project.
+@@
+
+Package: uwsgi-luci-support
+Submenu: Web Servers/Proxies
+Version: 2.0.26-r1
+Depends: +libc uwsgi +uwsgi-syslog-plugin +uwsgi-cgi-plugin
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Support files for LuCI on Nginx
+Maintainer: Christian Marangi <ansuelsmth@gmail.com>
+Source: uwsgi-2.0.26.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:unbit:uwsgi
+Type: ipkg
+Description: 	Support files for LuCI on Nginx
+@@
+
+

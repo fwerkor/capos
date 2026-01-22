@@ -1,0 +1,70 @@
+Source-Makefile: feeds/packages/net/flent/Makefile
+
+Package: flent
+Version: 2.1.1-r1
+Depends: +libc +python3-light +python3-uuid +python3-logging +python3-distutils +python3-defusedxml +flent-tools +netperf +fping
+Conflicts: python3-flent
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: The FLExible Network Tester
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: flent-2.1.1.tar.gz
+License: GPL-3.0-only
+LicenseFiles: LICENSE
+URL: https://flent.org
+Type: ipkg
+Description:   Flent is a Python wrapper to run multiple simultaneous
+  netperf/iperf/ping instances and aggregate the results.
+@@
+
+Package: flent-src
+Version: 2.1.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: The FLExible Network Tester (sources)
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: flent-2.1.1.tar.gz
+License: GPL-3.0-only
+LicenseFiles: LICENSE
+URL: https://flent.org
+Type: ipkg
+Description:       Flent is a Python wrapper to run multiple simultaneous
+  netperf/iperf/ping instances and aggregate the results.
+
+    This package contains the Python source files for flent.
+@@
+Config:
+    depends on PACKAGE_flent
+@@
+
+Package: flent-tools
+Version: 2.1.1-r1
+Depends: +libc +librt +coreutils-sleep +coreutils-date
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Helper programs for the Flent test tool
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: flent-2.1.1.tar.gz
+License: GPL-3.0-only
+LicenseFiles: LICENSE
+URL: https://flent.org
+Type: ipkg
+Description: 	This builds the C helper programs for gathering data for
+	the Flent network testing tool. These tools are needed for
+	gathering data when a Bash shell is not available (and also
+	perform better than the shell equivalents).
+@@
+
+

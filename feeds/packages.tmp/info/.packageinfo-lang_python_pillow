@@ -1,0 +1,51 @@
+Source-Makefile: feeds/packages/lang/python/pillow/Makefile
+Build-Depends: python-setuptools-scm/host
+
+Package: python3-pillow
+Submenu: Python
+Version: 10.1.0-r1
+Depends: +libc +libfreetype +libjpeg +libtiff +zlib +libwebp +python3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: The friendly PIL fork
+Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
+Source: Pillow-10.1.0.tar.gz
+License: HPND
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:python:pillow
+URL: https://python-pillow.org/
+Type: ipkg
+Description:   The friendly PIL fork
+@@
+
+Package: python3-pillow-src
+Submenu: Python
+Version: 10.1.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: The friendly PIL fork (sources)
+Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
+Source: Pillow-10.1.0.tar.gz
+License: HPND
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:python:pillow
+URL: https://python-pillow.org/
+Type: ipkg
+Description:       The friendly PIL fork
+
+    This package contains the Python source files for python3-pillow.
+@@
+Config:
+    depends on PACKAGE_python3-pillow
+@@
+
+

@@ -1,0 +1,72 @@
+Source-Makefile: feeds/packages/lang/python/python-cython/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host
+Build-Types: host
+
+Package: python3-cython
+Submenu: Python
+Version: 3.1.5-r1
+Depends: +libc +python3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Cython compiler for writing C extensions
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: cython-3.1.5.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE.txt
+URL: https://cython.org/
+Type: ipkg
+Build-Only: 1
+Description: Cython is a language that makes writing C extensions for Python as easy
+as Python itself. Cython is based on Pyrex, but supports more cutting
+edge functionality and optimizations.
+
+The Cython language is very close to the Python language, but Cython
+additionally supports calling C functions and declaring C types on
+variables and class attributes. This allows the compiler to generate
+very efficient C code from Cython code.
+
+This makes Cython the ideal language for wrapping external C libraries,
+and for fast C modules that speed up the execution of Python code.
+@@
+
+Package: python3-cython-src
+Submenu: Python
+Version: 3.1.5-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Cython compiler for writing C extensions (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: cython-3.1.5.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE.txt
+URL: https://cython.org/
+Type: ipkg
+Build-Only: 1
+Description:     Cython is a language that makes writing C extensions for Python as easy
+as Python itself. Cython is based on Pyrex, but supports more cutting
+edge functionality and optimizations.
+
+The Cython language is very close to the Python language, but Cython
+additionally supports calling C functions and declaring C types on
+variables and class attributes. This allows the compiler to generate
+very efficient C code from Cython code.
+
+This makes Cython the ideal language for wrapping external C libraries,
+and for fast C modules that speed up the execution of Python code.
+
+    This package contains the Python source files for python3-cython.
+@@
+Config:
+    depends on PACKAGE_python3-cython
+@@
+
+

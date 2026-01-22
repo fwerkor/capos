@@ -1,0 +1,156 @@
+Source-Makefile: feeds/packages/libs/unixodbc/Makefile
+Build-Depends/host: unixodbc
+Build-Types: host
+
+Package: libodbc
+Submenu: Database
+Version: 2.3.12-r3
+Depends: +libc +libltdl +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: unixODBC Driver Manager library
+Maintainer: Thomas Heil <heil@terminal-consulting.de>
+Source: unixODBC-2.3.12.tar.gz
+License: LGPL-2.1-or-later GPL-2.0-or-later
+LicenseFiles: COPYING exe/COPYING
+CPE-ID: cpe:/a:unixodbc:unixodbc
+URL: https://www.unixodbc.org
+ABI-Version: 2
+Type: ipkg
+Description: unixODBC is an Open Source ODBC sub-system and an ODBC SDK for Linux,
+Mac OSX, and UNIX.
+
+This package provides the unixODBC Driver Manager library.
+@@
+
+Package: libodbccr
+Submenu: Database
+Version: 2.3.12-r3
+Depends: +libc +libodbc +libltdl +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: unixODBC Cursor library
+Maintainer: Thomas Heil <heil@terminal-consulting.de>
+Source: unixODBC-2.3.12.tar.gz
+License: LGPL-2.1-or-later GPL-2.0-or-later
+LicenseFiles: COPYING exe/COPYING
+CPE-ID: cpe:/a:unixodbc:unixodbc
+URL: https://www.unixodbc.org
+ABI-Version: 2
+Type: ipkg
+Description: unixODBC is an Open Source ODBC sub-system and an ODBC SDK for Linux,
+Mac OSX, and UNIX.
+
+This package provides the unixODBC Cursor library.
+@@
+
+Package: libodbcinst
+Submenu: Database
+Version: 2.3.12-r3
+Depends: +libc +libltdl +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: unixODBC Configuration library
+Maintainer: Thomas Heil <heil@terminal-consulting.de>
+Source: unixODBC-2.3.12.tar.gz
+License: LGPL-2.1-or-later GPL-2.0-or-later
+LicenseFiles: COPYING exe/COPYING
+CPE-ID: cpe:/a:unixodbc:unixodbc
+URL: https://www.unixodbc.org
+ABI-Version: 2
+Type: ipkg
+Description: unixODBC is an Open Source ODBC sub-system and an ODBC SDK for Linux,
+Mac OSX, and UNIX.
+
+This package provides the unixODBC Configuration library.
+@@
+
+Package: unixodbc
+Submenu: Database
+Version: 2.3.12-r3
+Depends: +libc +libodbc +libodbccr +libodbcinst
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: unixODBC (libraries)
+Maintainer: Thomas Heil <heil@terminal-consulting.de>
+Source: unixODBC-2.3.12.tar.gz
+License: LGPL-2.1-or-later GPL-2.0-or-later
+LicenseFiles: COPYING exe/COPYING
+CPE-ID: cpe:/a:unixodbc:unixodbc
+URL: https://www.unixodbc.org
+Type: ipkg
+Description: unixODBC is an Open Source ODBC sub-system and an ODBC SDK for Linux,
+Mac OSX, and UNIX.
+
+This package installs the unixODBC Driver Manager, Cursor, and
+Configuration libraries. This package is provided for backwards
+compatibility; these libraries are available in separate packages.
+@@
+
+Package: unixodbc-tools
+Submenu: Database
+Version: 2.3.12-r3
+Depends: +libc +libodbc +libodbcinst +libltdl +libreadline
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: unixODBC Tools
+Maintainer: Thomas Heil <heil@terminal-consulting.de>
+Source: unixODBC-2.3.12.tar.gz
+License: LGPL-2.1-or-later GPL-2.0-or-later
+LicenseFiles: COPYING exe/COPYING
+CPE-ID: cpe:/a:unixodbc:unixodbc
+URL: https://www.unixodbc.org
+Type: ipkg
+Description: unixODBC is an Open Source ODBC sub-system and an ODBC SDK for Linux,
+Mac OSX, and UNIX.
+
+This package provides command-line tools to help install a driver and
+work with SQL.
+@@
+
+Package: pgsqlodbc
+Submenu: Database
+Version: 2.3.12-r3
+Depends: +libc +libodbc +libpq +libltdl +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: PostgreSQL driver for ODBC
+Maintainer: Thomas Heil <heil@terminal-consulting.de>
+Source: unixODBC-2.3.12.tar.gz
+License: LGPL-2.1-or-later GPL-2.0-or-later
+LicenseFiles: COPYING exe/COPYING
+CPE-ID: cpe:/a:unixodbc:unixodbc
+URL: https://www.unixodbc.org
+ABI-Version: 2
+Type: ipkg
+Description: unixODBC is an Open Source ODBC sub-system and an ODBC SDK for Linux,
+Mac OSX, and UNIX.
+
+This package provides the PostgreSQL driver for ODBC.
+@@
+
+

@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/luajit2/Makefile
+Build-Types: host
+
+Package: luajit2
+Submenu: Lua
+Version: 2.1.2025.05.29-r1
+Depends: +libc @HAS_LUAJIT_ARCH
+Conflicts: 
+Menu-Depends: 
+Provides: luajit
+Section: lang
+Category: Languages
+Repository: base
+Title: LuaJIT from OpenResty
+Maintainer: Javier Marcet <javier@marcet.info>
+Source: luajit2-2.1.2025.05.29.tar.zst
+License: MIT
+LicenseFiles: COPYRIGHT
+URL: https://www.luajit.org
+Type: ipkg
+Description:  OpenResty's maintained branch of LuaJIT, a Just-In-Time (JIT) compiler for the Lua programming language
+@@
+
+

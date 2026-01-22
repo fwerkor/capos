@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/net/adblock/Makefile
+
+Package: adblock
+Version: 4.4.2-r4
+Depends: +libc +jshn +jsonfilter +coreutils +coreutils-sort +gawk +ca-bundle +rpcd +rpcd-mod-rpcsys
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: adblock blocks ad/abuse domains by using DNS
+Maintainer: Dirk Brenken <dev@brenken.org>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Description: adblock blocks ad/abuse domains via dnsmasq, unbound, named, smartdns or kresd.
+adblock consumes a minimum of memory, is very fast and supports many domain blocklist sites plus local block- and allowlist overrides.
+Please see https://github.com/openwrt/packages/blob/master/net/adblock/files/README.md for further information.
+
+@@
+
+

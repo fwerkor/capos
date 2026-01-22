@@ -1,0 +1,53 @@
+Source-Makefile: feeds/packages/lang/python/python-sqlparse/Makefile
+Build-Depends: python-flit-core/host
+
+Package: python3-sqlparse
+Submenu: Python
+Version: 0.4.4-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Non-validating SQL parser
+Maintainer: Peter Stadler <peter.stadler@student.uibk.ac.at>
+Source: sqlparse-0.4.4.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:sqlparse_project:sqlparse
+URL: https://github.com/andialbrecht/sqlparse
+Type: ipkg
+Description: sqlparse is a non-validating SQL parser for Python. It provides support
+for parsing, splitting and formatting SQL statements.
+@@
+
+Package: python3-sqlparse-src
+Submenu: Python
+Version: 0.4.4-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Non-validating SQL parser (sources)
+Maintainer: Peter Stadler <peter.stadler@student.uibk.ac.at>
+Source: sqlparse-0.4.4.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:sqlparse_project:sqlparse
+URL: https://github.com/andialbrecht/sqlparse
+Type: ipkg
+Description:     sqlparse is a non-validating SQL parser for Python. It provides support
+for parsing, splitting and formatting SQL statements.
+
+    This package contains the Python source files for python3-sqlparse.
+@@
+Config:
+    depends on PACKAGE_python3-sqlparse
+@@
+
+

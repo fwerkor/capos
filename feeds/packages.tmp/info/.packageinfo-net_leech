@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/net/leech/Makefile
+
+Package: leech
+Submenu: Download Manager
+Version: 1.7-r1
+Depends: +libc +xsltproc +curl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: RSS-feeds parser/files downloader
+Maintainer: Leong Hui Wong <wong.leonghui@gmail.com>
+Source: leech-1.7.tar.zst
+License: blessing
+LicenseFiles: COPYING
+URL: https://bitbucket.org/alekseyt/leech/
+Type: ipkg
+Description:   leech downloads files for you if you give it RSS-feeds of your favorite
+  trackers. Configuration files are under /etc/leech.
+@@
+
+

@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/libs/pixman/Makefile
+
+Package: pixman
+Version: 0.43.4-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: a low-level software library for pixel manipulation
+Maintainer: Yousong Zhou <yszhou4tech@gmail.com>
+Source: pixman-0.43.4.tar.gz
+License: MIT
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:pixman:pixman
+URL: https://www.pixman.org/
+Type: ipkg
+Description:   Pixman is a low-level software library for pixel manipulation, providing
+  features such as image compositing and trapezoid rasterization. Important
+  users of pixman are the cairo graphics library and the X server.
+@@
+
+

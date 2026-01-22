@@ -1,0 +1,50 @@
+Source-Makefile: feeds/packages/lang/python/python-botocore/Makefile
+
+Package: python3-botocore
+Submenu: Python
+Version: 1.31.7-r1
+Depends: +libc +python3 +python3-dateutil +python3-jmespath +python3-urllib3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Low-level, data-driven core of boto 3
+Maintainer: Daniel Danzberger <daniel@dd-wrt.com>
+Source: botocore-1.31.7.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE.txt
+URL: https://github.com/boto/botocore
+Type: ipkg
+Description: A low-level interface to a growing number of Amazon Web Services. The
+botocore package is the foundation for the AWS CLI as well as boto3.
+@@
+
+Package: python3-botocore-src
+Submenu: Python
+Version: 1.31.7-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Low-level, data-driven core of boto 3 (sources)
+Maintainer: Daniel Danzberger <daniel@dd-wrt.com>
+Source: botocore-1.31.7.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE.txt
+URL: https://github.com/boto/botocore
+Type: ipkg
+Description:     A low-level interface to a growing number of Amazon Web Services. The
+botocore package is the foundation for the AWS CLI as well as boto3.
+
+    This package contains the Python source files for python3-botocore.
+@@
+Config:
+    depends on PACKAGE_python3-botocore
+@@
+
+

@@ -1,0 +1,293 @@
+Source-Makefile: feeds/packages/mail/exim/Makefile
+Build-Types: host
+
+Package: exim
+Version: 4.99-r1
+Depends: +libc +USE_GLIBC:libcrypt-compat +libdb47 +libpcre2 +BUILD_NLS:libiconv-full +BUILD_NLS:libidn2 +BUILD_NLS:libidn
+Conflicts: exim-openssl exim-gnutls exim-ldap
+Menu-Depends: 
+Provides: 
+Build-Variant: nossl
+Section: mail
+Category: Mail
+Repository: base
+Title: Exim message transfer agent
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Require-User: exim=42:exim=42
+Source: exim-4.99.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE NOTICE
+CPE-ID: cpe:/a:exim:exim
+URL: http://www.exim.org/
+Type: ipkg
+Description: Exim is a message transfer agent (MTA) developed at the University of
+Cambridge for use on Unix systems connected to the Internet.
+
+This package provides Exim without TLS support.
+@@
+
+Package: exim-gnutls
+Version: 4.99-r1
+Depends: +libc +USE_GLIBC:libcrypt-compat +libdb47 +libpcre2 +BUILD_NLS:libiconv-full +BUILD_NLS:libidn2 +BUILD_NLS:libidn +PACKAGE_exim-gnutls:libgnutls +EXIM_GNUTLS_DANE:libgnutls-dane
+Conflicts: exim-openssl exim-ldap
+Menu-Depends: 
+Provides: exim
+Build-Variant: gnutls
+Section: mail
+Category: Mail
+Repository: base
+Title: Exim message transfer agent (with GnuTLS)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Require-User: exim=42:exim=42
+Source: exim-4.99.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE NOTICE
+CPE-ID: cpe:/a:exim:exim
+URL: http://www.exim.org/
+Type: ipkg
+Description: Exim is a message transfer agent (MTA) developed at the University of
+Cambridge for use on Unix systems connected to the Internet.
+
+This package provides Exim built with GnuTLS.
+@@
+Config:
+  	config EXIM_GNUTLS_DANE
+  		bool "exim-gnutls DANE support"
+  			depends on PACKAGE_exim-gnutls
+  			default n
+  			help
+  				Build exim-gnutls against libgnutls-dane for DANE support.
+  				libgnutls-dane depends on libunbound which depends on libopenssl.
+@@
+
+Package: exim-openssl
+Version: 4.99-r1
+Depends: +libc +USE_GLIBC:libcrypt-compat +libdb47 +libpcre2 +BUILD_NLS:libiconv-full +BUILD_NLS:libidn2 +BUILD_NLS:libidn +PACKAGE_exim-openssl:libopenssl
+Conflicts: exim-ldap
+Menu-Depends: 
+Provides: exim
+Build-Variant: openssl
+Section: mail
+Category: Mail
+Repository: base
+Title: Exim message transfer agent (with OpenSSL)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Require-User: exim=42:exim=42
+Source: exim-4.99.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE NOTICE
+CPE-ID: cpe:/a:exim:exim
+URL: http://www.exim.org/
+Type: ipkg
+Description: Exim is a message transfer agent (MTA) developed at the University of
+Cambridge for use on Unix systems connected to the Internet.
+
+This package provides Exim built with OpenSSL.
+@@
+
+Package: exim-ldap
+Version: 4.99-r1
+Depends: +libc +USE_GLIBC:libcrypt-compat +libdb47 +libpcre2 +BUILD_NLS:libiconv-full +BUILD_NLS:libidn2 +BUILD_NLS:libidn +PACKAGE_exim-ldap:libopenssl +PACKAGE_exim-ldap:libsasl2 +PACKAGE_exim-ldap:libopenldap
+Conflicts: 
+Menu-Depends: 
+Provides: exim
+Build-Variant: ldap
+Section: mail
+Category: Mail
+Repository: base
+Title: Exim message transfer agent (with OpenSSL and OpenLDAP)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Require-User: exim=42:exim=42
+Source: exim-4.99.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE NOTICE
+CPE-ID: cpe:/a:exim:exim
+URL: http://www.exim.org/
+Type: ipkg
+Description: Exim is a message transfer agent (MTA) developed at the University of
+Cambridge for use on Unix systems connected to the Internet.
+
+This package provides Exim built with OpenSSL, OpenLDAP and Cyrus SASL.
+@@
+
+Package: exim-lookup-cdb
+Version: 4.99-r1
+Depends: +libc exim
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: mail
+Category: Mail
+Repository: base
+Title: Exim lookup module cdb
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: exim-4.99.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE NOTICE
+CPE-ID: cpe:/a:exim:exim
+URL: http://www.exim.org/
+Type: ipkg
+Description: Exim lookup module cdb
+@@
+
+Package: exim-lookup-dbmdb
+Version: 4.99-r1
+Depends: +libc exim
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: mail
+Category: Mail
+Repository: base
+Title: Exim lookup module dbmdb
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: exim-4.99.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE NOTICE
+CPE-ID: cpe:/a:exim:exim
+URL: http://www.exim.org/
+Type: ipkg
+Description: Exim lookup module dbmdb
+@@
+
+Package: exim-lookup-dnsdb
+Version: 4.99-r1
+Depends: +libc exim
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: mail
+Category: Mail
+Repository: base
+Title: Exim lookup module dnsdb
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: exim-4.99.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE NOTICE
+CPE-ID: cpe:/a:exim:exim
+URL: http://www.exim.org/
+Type: ipkg
+Description: Exim lookup module dnsdb
+@@
+
+Package: exim-lookup-json
+Version: 4.99-r1
+Depends: +libc exim +PACKAGE_exim-lookup-json:jansson
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: mail
+Category: Mail
+Repository: base
+Title: Exim lookup module json
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: exim-4.99.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE NOTICE
+CPE-ID: cpe:/a:exim:exim
+URL: http://www.exim.org/
+Type: ipkg
+Description: Exim lookup module json
+@@
+
+Package: exim-lookup-mysql
+Version: 4.99-r1
+Depends: +libc exim +PACKAGE_exim-lookup-mysql:libmariadb
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: mail
+Category: Mail
+Repository: base
+Title: Exim lookup module mysql
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: exim-4.99.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE NOTICE
+CPE-ID: cpe:/a:exim:exim
+URL: http://www.exim.org/
+Type: ipkg
+Description: Exim lookup module mysql
+@@
+
+Package: exim-lookup-passwd
+Version: 4.99-r1
+Depends: +libc exim
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: mail
+Category: Mail
+Repository: base
+Title: Exim lookup module passwd
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: exim-4.99.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE NOTICE
+CPE-ID: cpe:/a:exim:exim
+URL: http://www.exim.org/
+Type: ipkg
+Description: Exim lookup module passwd
+@@
+
+Package: exim-lookup-pgsql
+Version: 4.99-r1
+Depends: +libc exim +PACKAGE_exim-lookup-pgsql:libpq
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: mail
+Category: Mail
+Repository: base
+Title: Exim lookup module pgsql
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: exim-4.99.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE NOTICE
+CPE-ID: cpe:/a:exim:exim
+URL: http://www.exim.org/
+Type: ipkg
+Description: Exim lookup module pgsql
+@@
+
+Package: exim-lookup-redis
+Version: 4.99-r1
+Depends: +libc exim +PACKAGE_exim-lookup-redis:libhiredis
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: mail
+Category: Mail
+Repository: base
+Title: Exim lookup module redis
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: exim-4.99.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE NOTICE
+CPE-ID: cpe:/a:exim:exim
+URL: http://www.exim.org/
+Type: ipkg
+Description: Exim lookup module redis
+@@
+
+Package: exim-lookup-sqlite
+Version: 4.99-r1
+Depends: +libc exim +PACKAGE_exim-lookup-sqlite:libsqlite3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: mail
+Category: Mail
+Repository: base
+Title: Exim lookup module sqlite
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: exim-4.99.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE NOTICE
+CPE-ID: cpe:/a:exim:exim
+URL: http://www.exim.org/
+Type: ipkg
+Description: Exim lookup module sqlite
+@@
+
+

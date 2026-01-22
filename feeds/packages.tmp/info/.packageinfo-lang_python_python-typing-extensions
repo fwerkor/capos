@@ -1,0 +1,65 @@
+Source-Makefile: feeds/packages/lang/python/python-typing-extensions/Makefile
+Build-Depends: python-flit-core/host
+Build-Depends/host: python3/host python-build/host python-installer/host python-flit-core/host
+Build-Types: host
+
+Package: python3-typing-extensions
+Submenu: Python
+Version: 4.9.0-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Backported and Experimental Type Hints
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>, Jeffery To <jeffery.to@gmail.com>
+Source: typing_extensions-4.9.0.tar.gz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE
+URL: https://github.com/python/typing_extensions
+Type: ipkg
+Description: The typing_extensions module serves two related purposes:
+
+* Enable use of new type system features on older Python versions. For
+  example, typing.TypeGuard is new in Python 3.10, but typing_extensions
+  allows users on previous Python versions to use it too.
+
+* Enable experimentation with new type system PEPs before they are
+  accepted and added to the typing module.
+@@
+
+Package: python3-typing-extensions-src
+Submenu: Python
+Version: 4.9.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Backported and Experimental Type Hints (sources)
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>, Jeffery To <jeffery.to@gmail.com>
+Source: typing_extensions-4.9.0.tar.gz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE
+URL: https://github.com/python/typing_extensions
+Type: ipkg
+Description:     The typing_extensions module serves two related purposes:
+
+* Enable use of new type system features on older Python versions. For
+  example, typing.TypeGuard is new in Python 3.10, but typing_extensions
+  allows users on previous Python versions to use it too.
+
+* Enable experimentation with new type system PEPs before they are
+  accepted and added to the typing module.
+
+    This package contains the Python source files for python3-typing-extensions.
+@@
+Config:
+    depends on PACKAGE_python3-typing-extensions
+@@
+
+

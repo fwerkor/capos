@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/utils/fatresize/Makefile
+
+Package: fatresize
+Submenu: Disc
+Version: 2023.06.11~ab78c48fe46d0eb29fcdfa3c6586ade223218433-r1
+Depends: +libc +libparted
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: fatresize
+Maintainer: Oskari Rauta <oskari.rauta@gmail.com>
+Source: fatresize-2023.06.11~ab78c48fe46d0eb29fcdfa3c6586ade223218433.tar.zst
+License: GPL-3.0-only
+LicenseFiles: COPYING
+URL: https://github.com/ya-mouse/fatresize
+Type: ipkg
+Description:   Resize FAT partitions using libparted
+@@
+
+

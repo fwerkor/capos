@@ -1,0 +1,30 @@
+Source-Makefile: feeds/packages/net/geoipupdate/Makefile
+Build-Depends: golang/host
+
+Package: geoipupdate
+Version: 7.1.1-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GeoIP Update
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: geoipupdate-7.1.1.tar.gz
+License: Apache-2.0 MIT
+LicenseFiles: LICENSE-APACHE LICENSE-MIT
+URL: https://github.com/maxmind/geoipupdate
+Type: ipkg
+Description:  The GeoIP Update program performs automatic updates of GeoIP2 and GeoIP
+ Legacy binary databases. CSV databases are not supported.
+
+ Users will need to update /etc/GeoIP.conf with their API key and DB
+ choice, currently set to country only. To update the DB, the user can
+ manually run the utility or set up a cron job.
+
+ This package contains the program and config file.
+@@
+
+

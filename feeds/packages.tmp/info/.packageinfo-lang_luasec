@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/lang/luasec/Makefile
+
+Package: luasec
+Submenu: Lua
+Version: 1.3.2-r1
+Depends: +libc +lua +libopenssl +luasocket
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: LuaSec
+Maintainer: 
+Source: luasec-1.3.2.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/brunoos/luasec
+Type: ipkg
+Description:   LuaSec is a binding for OpenSSL library to provide TLS/SSL communication.
+@@
+
+

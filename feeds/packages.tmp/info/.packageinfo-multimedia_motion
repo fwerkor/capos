@@ -1,0 +1,53 @@
+Source-Makefile: feeds/packages/multimedia/motion/Makefile
+Build-Depends: gettext-full/host
+
+Package: motion-noffmpeg
+Version: 4.5.0-r1
+Depends: +libc +libjpeg +libpthread +libmicrohttpd +BUILD_NLS:libintl-full
+Conflicts: 
+Menu-Depends: 
+Provides: motion
+Build-Variant: noffmpeg
+Default-Variant: noffmpeg
+Section: multimedia
+Category: Multimedia
+Repository: base
+Title: webcam motion sensing and logging (w/o FFMPEG support)
+Maintainer: Roger D <rogerdammit@gmail.com>
+Source: motion-release-4.5.0.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:motion_project:motion
+URL: https://motion-project.github.io/
+Type: ipkg
+Description: Motion is a program that monitor video signals from many types of cameras and
+depending upon how they are configured, perform actions when movement is
+detected.
+This package is built without FFMPEG support.
+@@
+
+Package: motion-ffmpeg
+Version: 4.5.0-r1
+Depends: +libc +libjpeg +libpthread +libmicrohttpd +BUILD_NLS:libintl-full +libffmpeg-full
+Conflicts: 
+Menu-Depends: 
+Provides: motion
+Build-Variant: ffmpeg
+Section: multimedia
+Category: Multimedia
+Repository: base
+Title: webcam motion sensing and logging (with FFMPEG support)
+Maintainer: Roger D <rogerdammit@gmail.com>
+Source: motion-release-4.5.0.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:motion_project:motion
+URL: https://motion-project.github.io/
+Type: ipkg
+Description: Motion is a program that monitor video signals from many types of cameras and
+depending upon how they are configured, perform actions when movement is
+detected.
+This package is built with FFMPEG support.
+@@
+
+

@@ -1,0 +1,50 @@
+Source-Makefile: feeds/packages/lang/python/python-trio/Makefile
+
+Package: python3-trio
+Submenu: Python
+Version: 0.22.2-r1
+Depends: +libc +python3-light +python3-attrs +python3-idna +python3-outcome +python3-sniffio +python3-sortedcontainers
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Friendly library for async concurrency and I/O
+Maintainer: Julien Malik <julien.malik@paraiso.me>
+Source: trio-0.22.2.tar.gz
+License: Apache-2.0 MIT
+LicenseFiles: LICENSE.APACHE2 LICENSE.MIT
+URL: https://github.com/python-trio/trio
+Type: ipkg
+Description: The Trio project’s goal is to produce a production-quality, permissively
+licensed, async/await-native I/O library for Python.
+@@
+
+Package: python3-trio-src
+Submenu: Python
+Version: 0.22.2-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Friendly library for async concurrency and I/O (sources)
+Maintainer: Julien Malik <julien.malik@paraiso.me>
+Source: trio-0.22.2.tar.gz
+License: Apache-2.0 MIT
+LicenseFiles: LICENSE.APACHE2 LICENSE.MIT
+URL: https://github.com/python-trio/trio
+Type: ipkg
+Description:     The Trio project’s goal is to produce a production-quality, permissively
+licensed, async/await-native I/O library for Python.
+
+    This package contains the Python source files for python3-trio.
+@@
+Config:
+    depends on PACKAGE_python3-trio
+@@
+
+

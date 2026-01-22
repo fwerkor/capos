@@ -1,0 +1,55 @@
+Source-Makefile: feeds/packages/lang/python/python-cryptography/Makefile
+Build-Depends: libffi/host python-cffi/host python-setuptools-rust/host
+
+Package: python3-cryptography
+Submenu: Python
+Version: 41.0.7-r1
+Depends: +libc +libopenssl +libopenssl-legacy +python3-light +python3-email +python3-urllib +python3-cffi @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Cryptographic recipes and primitives
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: cryptography-41.0.7.tar.gz
+License: Apache-2.0 BSD-3-Clause
+LicenseFiles: LICENSE.APACHE LICENSE.BSD
+CPE-ID: cpe:/a:cryptography_project:cryptography
+URL: https://github.com/pyca/cryptography
+Type: ipkg
+Description: cryptography is a package which provides cryptographic recipes and
+primitives to Python developers. Our goal is for it to be your
+"cryptographic standard library".
+@@
+
+Package: python3-cryptography-src
+Submenu: Python
+Version: 41.0.7-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Cryptographic recipes and primitives (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: cryptography-41.0.7.tar.gz
+License: Apache-2.0 BSD-3-Clause
+LicenseFiles: LICENSE.APACHE LICENSE.BSD
+CPE-ID: cpe:/a:cryptography_project:cryptography
+URL: https://github.com/pyca/cryptography
+Type: ipkg
+Description:     cryptography is a package which provides cryptographic recipes and
+primitives to Python developers. Our goal is for it to be your
+"cryptographic standard library".
+
+    This package contains the Python source files for python3-cryptography.
+@@
+Config:
+    depends on PACKAGE_python3-cryptography
+@@
+
+

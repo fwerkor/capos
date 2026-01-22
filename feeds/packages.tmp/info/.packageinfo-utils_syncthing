@@ -1,0 +1,76 @@
+Source-Makefile: feeds/packages/utils/syncthing/Makefile
+Build-Depends: golang/host
+
+Package: syncthing
+Version: 1.30.0-r3
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Continuous file synchronization program
+Maintainer: Van Waholtz <brvphoenix@gmail.com>, George Sapkin <george@sapk.in>
+Require-User: syncthing=499:syncthing=499
+Source: syncthing-source-v1.30.0.tar.gz
+License: MPL-2.0
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:syncthing:syncthing
+URL: https://syncthing.net
+Type: ipkg
+Description:   Syncthing replaces proprietary sync and cloud services with something
+  open, trustworthy and decentralized. Your data is your data alone and
+  you deserve to choose where it is stored, if it is shared with some
+  third party and how it's transmitted over the Internet.
+@@
+
+Package: stdiscosrv
+Version: 1.30.0-r3
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Discovery server for syncthing
+Maintainer: Van Waholtz <brvphoenix@gmail.com>, George Sapkin <george@sapk.in>
+Require-User: syncthing=499:syncthing=499
+Source: syncthing-source-v1.30.0.tar.gz
+License: MPL-2.0
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:syncthing:syncthing
+URL: https://syncthing.net
+Type: ipkg
+Description:   Syncthing relies on a discovery server to find peers on the internet.
+  Anyone can run a discovery server and point Syncthing installations to
+  it. The Syncthing project also maintains a global cluster for public
+  use.
+@@
+
+Package: strelaysrv
+Version: 1.30.0-r3
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Relay server for syncthing
+Maintainer: Van Waholtz <brvphoenix@gmail.com>, George Sapkin <george@sapk.in>
+Require-User: syncthing=499:syncthing=499
+Source: syncthing-source-v1.30.0.tar.gz
+License: MPL-2.0
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:syncthing:syncthing
+URL: https://syncthing.net
+Type: ipkg
+Description:   Syncthing relies on a network of community-contributed relay servers.
+  Anyone can run a relay server, and it will automatically join the relay
+  pool and be available to Syncthing users. The current list of relays can
+  be found at https://relays.syncthing.net/.
+@@
+
+

@@ -1,0 +1,57 @@
+Source-Makefile: feeds/packages/utils/bcm27xx-eeprom/Makefile
+
+Package: bcm27xx-eeprom
+Version: 2025.05.08~1bb6edeff52c6d30c358f0a7e7a0db47427a7e21-r1
+Depends: +libc bcm27xx-utils +blkid +coreutils +coreutils-od +mount-utils +pciutils +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: BCM27xx EEPROM tools
+Maintainer: Álvaro Fernández Rojas <noltari@gmail.com>
+Source: bcm27xx-eeprom-2025.05.08~1bb6edeff52c6d30c358f0a7e7a0db47427a7e21.tar.zst
+License: BSD-3-Clause Custom
+LicenseFiles: LICENSE
+Type: ipkg
+Description:   BCM27xx EEPROM config and update tools.
+@@
+
+Package: bcm2711-eeprom
+Version: 2025.05.08~1bb6edeff52c6d30c358f0a7e7a0db47427a7e21-r1
+Depends: +libc +bcm27xx-eeprom
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: BCM2711 EEPROM tools
+Maintainer: Álvaro Fernández Rojas <noltari@gmail.com>
+Source: bcm27xx-eeprom-2025.05.08~1bb6edeff52c6d30c358f0a7e7a0db47427a7e21.tar.zst
+License: BSD-3-Clause Custom
+LicenseFiles: LICENSE
+Type: ipkg
+Description:   BCM2711 EEPROM config and update tools.
+@@
+
+Package: bcm2712-eeprom
+Version: 2025.05.08~1bb6edeff52c6d30c358f0a7e7a0db47427a7e21-r1
+Depends: +libc +bcm27xx-eeprom
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: BCM2712 EEPROM tools
+Maintainer: Álvaro Fernández Rojas <noltari@gmail.com>
+Source: bcm27xx-eeprom-2025.05.08~1bb6edeff52c6d30c358f0a7e7a0db47427a7e21.tar.zst
+License: BSD-3-Clause Custom
+LicenseFiles: LICENSE
+Type: ipkg
+Description:   BCM2712 EEPROM config and update tools.
+@@
+
+

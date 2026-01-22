@@ -1,0 +1,26 @@
+Source-Makefile: feeds/packages/net/nqptp/Makefile
+
+Package: nqptp
+Version: 1.2.4-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Not Quite Peer-to-Peer
+Maintainer: Ben Klang <bklang@wirehack.net>
+Source: nqptp-1.2.4.tar.gz
+License: GPL-2.0-only
+LicenseFiles: COPYING LICENSES nqptp.c
+URL: https://github.com/mikebrady/nqptp
+Type: ipkg
+Description:   nqptp is a daemon that monitors timing data from PTP clocks it sees on ports
+  319 and 320. It maintains records for one clock, identified by its Clock ID.
+
+  It is a companion application to Shairport Sync and provides timing
+  information for AirPlay 2 operation.
+@@
+
+

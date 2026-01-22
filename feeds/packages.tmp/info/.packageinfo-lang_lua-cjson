@@ -1,0 +1,68 @@
+Source-Makefile: feeds/packages/lang/lua-cjson/Makefile
+Build-Depends/host: lua/host
+Build-Types: host
+
+Package: lua-cjson
+Submenu: Lua
+Version: 2.1.0-r5
+Depends: +libc +liblua
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: lua-51
+Section: lang
+Category: Languages
+Repository: base
+Title: Lua CJSON parser
+Maintainer: Dirk Chang <dirk@kooiot.com>
+Source: lua-cjson-2.1.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/mpx/lua-cjson
+Type: ipkg
+Description:   Lua CJSON is a fast JSON encoding/parsing module for Lua.
+@@
+
+Package: lua-cjson-lua5.3
+Submenu: Lua
+Version: 2.1.0-r5
+Depends: +libc +liblua5.3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: lua-53
+Section: lang
+Category: Languages
+Repository: base
+Title: Lua CJSON parser
+Maintainer: Dirk Chang <dirk@kooiot.com>
+Source: lua-cjson-2.1.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/mpx/lua-cjson
+Type: ipkg
+Description:   Lua CJSON is a fast JSON encoding/parsing module for Lua.
+@@
+
+Package: lua-cjson-lua5.4
+Submenu: Lua
+Version: 2.1.0-r5
+Depends: +libc +liblua5.4
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: lua-54
+Section: lang
+Category: Languages
+Repository: base
+Title: Lua CJSON parser
+Maintainer: Dirk Chang <dirk@kooiot.com>
+Source: lua-cjson-2.1.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/mpx/lua-cjson
+Type: ipkg
+Description:   Lua CJSON is a fast JSON encoding/parsing module for Lua.
+@@
+
+

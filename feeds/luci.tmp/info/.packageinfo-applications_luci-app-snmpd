@@ -1,0 +1,707 @@
+Source-Makefile: feeds/luci/applications/luci-app-snmpd/Makefile
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+
+Package: luci-app-snmpd
+Submenu: 3. Applications
+Version: x
+Depends: +libc +luci-base +snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: Net-SNMP LuCI interface
+Maintainer: OpenWrt LuCI community
+Source: 
+License: Apache-2.0
+URL: https://github.com/openwrt/luci
+Type: ipkg
+Description:    Some common net-snmp config items. In no way is this comprehensive.
+@@
+
+Package: luci-i18n-snmpd-ar
+Default: LUCI_LANG_ar||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - ar translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - العربية (Arabic)
+@@
+
+Package: luci-i18n-snmpd-bg
+Default: LUCI_LANG_bg||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - bg translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - български (Bulgarian)
+@@
+
+Package: luci-i18n-snmpd-bn
+Default: LUCI_LANG_bn_BD||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - bn translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - বাংলা (Bengali)
+@@
+
+Package: luci-i18n-snmpd-ca
+Default: LUCI_LANG_ca||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - ca translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Català (Catalan)
+@@
+
+Package: luci-i18n-snmpd-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - cs translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Čeština (Czech)
+@@
+
+Package: luci-i18n-snmpd-da
+Default: LUCI_LANG_da||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - da translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Dansk (Danish)
+@@
+
+Package: luci-i18n-snmpd-de
+Default: LUCI_LANG_de||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - de translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Deutsch (German)
+@@
+
+Package: luci-i18n-snmpd-el
+Default: LUCI_LANG_el||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - el translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Ελληνικά (Greek)
+@@
+
+Package: luci-i18n-snmpd-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - es translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Español (Spanish)
+@@
+
+Package: luci-i18n-snmpd-fi
+Default: LUCI_LANG_fi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - fi translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Suomi (Finnish)
+@@
+
+Package: luci-i18n-snmpd-fr
+Default: LUCI_LANG_fr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - fr translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Français (French)
+@@
+
+Package: luci-i18n-snmpd-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - ga translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-snmpd-he
+Default: LUCI_LANG_he||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - he translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - עִבְרִית (Hebrew)
+@@
+
+Package: luci-i18n-snmpd-hi
+Default: LUCI_LANG_hi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - hi translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - हिंदी (Hindi)
+@@
+
+Package: luci-i18n-snmpd-hu
+Default: LUCI_LANG_hu||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - hu translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Magyar (Hungarian)
+@@
+
+Package: luci-i18n-snmpd-it
+Default: LUCI_LANG_it||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - it translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Italiano (Italian)
+@@
+
+Package: luci-i18n-snmpd-ja
+Default: LUCI_LANG_ja||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - ja translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - 日本語 (Japanese)
+@@
+
+Package: luci-i18n-snmpd-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - ko translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - 한국어 (Korean)
+@@
+
+Package: luci-i18n-snmpd-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - lt translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-snmpd-mr
+Default: LUCI_LANG_mr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - mr translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Marāṭhī (Marathi)
+@@
+
+Package: luci-i18n-snmpd-ms
+Default: LUCI_LANG_ms||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - ms translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Bahasa Melayu (Malay)
+@@
+
+Package: luci-i18n-snmpd-no
+Default: LUCI_LANG_nb_NO||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - no translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Norsk (Norwegian)
+@@
+
+Package: luci-i18n-snmpd-nl
+Default: LUCI_LANG_nl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - nl translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Nederlands (Dutch)
+@@
+
+Package: luci-i18n-snmpd-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - pl translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Polski (Polish)
+@@
+
+Package: luci-i18n-snmpd-pt
+Default: LUCI_LANG_pt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - pt translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Português (Portuguese)
+@@
+
+Package: luci-i18n-snmpd-pt-br
+Default: LUCI_LANG_pt_BR||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - pt-br translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Português do Brasil (Brazilian Portuguese)
+@@
+
+Package: luci-i18n-snmpd-ro
+Default: LUCI_LANG_ro||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - ro translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Română (Romanian)
+@@
+
+Package: luci-i18n-snmpd-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - ru translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Русский (Russian)
+@@
+
+Package: luci-i18n-snmpd-sk
+Default: LUCI_LANG_sk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - sk translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Slovenčina (Slovak)
+@@
+
+Package: luci-i18n-snmpd-sv
+Default: LUCI_LANG_sv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - sv translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Svenska (Swedish)
+@@
+
+Package: luci-i18n-snmpd-tr
+Default: LUCI_LANG_tr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - tr translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Türkçe (Turkish)
+@@
+
+Package: luci-i18n-snmpd-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - uk translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-snmpd-vi
+Default: LUCI_LANG_vi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - vi translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Tiếng Việt (Vietnamese)
+@@
+
+Package: luci-i18n-snmpd-yua
+Default: LUCI_LANG_yua||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - yua translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Yucateco (Yucatec Maya)
+@@
+
+Package: luci-i18n-snmpd-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - zh-cn translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-snmpd-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - zh-tw translation
+Maintainer: Karl Palsson <karlp@etactica.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - 正體中文 (Traditional Chinese)
+@@
+
+

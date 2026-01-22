@@ -1,0 +1,58 @@
+Source-Makefile: feeds/packages/lang/python/python-websockets/Makefile
+
+Package: python3-websockets
+Submenu: Python
+Version: 11.0.3-r1
+Depends: +libc +python3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Implementation of the WebSocket Protocol
+Maintainer: Michal Vasilek <michal.vasilek@nic.cz>
+Source: websockets-11.0.3.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://github.com/aaugustin/websockets
+Type: ipkg
+Description: websockets is a library for building WebSocket servers and clients in
+Python with a focus on correctness, simplicity, robustness, and
+performance.
+
+Built on top of asyncio, Python's standard asynchronous I/O framework,
+the default implementation provides an elegant coroutine-based API.
+@@
+
+Package: python3-websockets-src
+Submenu: Python
+Version: 11.0.3-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Implementation of the WebSocket Protocol (sources)
+Maintainer: Michal Vasilek <michal.vasilek@nic.cz>
+Source: websockets-11.0.3.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://github.com/aaugustin/websockets
+Type: ipkg
+Description:     websockets is a library for building WebSocket servers and clients in
+Python with a focus on correctness, simplicity, robustness, and
+performance.
+
+Built on top of asyncio, Python's standard asynchronous I/O framework,
+the default implementation provides an elegant coroutine-based API.
+
+    This package contains the Python source files for python3-websockets.
+@@
+Config:
+    depends on PACKAGE_python3-websockets
+@@
+
+

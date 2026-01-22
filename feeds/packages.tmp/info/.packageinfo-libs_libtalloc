@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/libs/libtalloc/Makefile
+Build-Depends: python3/host
+
+Package: libtalloc
+Version: 2.4.2-r1
+Depends: +libc +libattr
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Core memory allocator used in Samba
+Maintainer: Ted Hess <thess@kitschensync.net>
+Source: talloc-2.4.2.tar.gz
+License: LGPL-3.0-or-later
+URL: https://talloc.samba.org/talloc/doc/html/index.html
+Type: ipkg
+Description:   talloc is a hierarchical, reference counted memory pool system with destructors.
+@@
+
+

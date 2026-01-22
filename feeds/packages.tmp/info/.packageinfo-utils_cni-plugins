@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/utils/cni-plugins/Makefile
+Build-Depends: golang/host
+
+Package: cni-plugins
+Version: 1.1.1-r2
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) +ip-full +kmod-veth
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: cni-plugins
+Maintainer: Daniel Golle <daniel@makrotopia.org>, Paul Spooren <mail@aparcar.org>
+Source: cni-plugins-1.1.1.tar.zst
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/containernetworking/cni-plugins
+Type: ipkg
+Description:   Some CNI network plugins, maintained by the containernetworking team. For
+  more information, see the individual READMEs.
+@@
+
+

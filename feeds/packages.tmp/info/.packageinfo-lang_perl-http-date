@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/lang/perl-http-date/Makefile
+
+Package: perl-http-date
+Submenu: Perl
+Version: 6.05.5.40-r2
+Depends: +libc perl +perlbase-essential +perlbase-time
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Date conversion routines
+Maintainer: Marcel Denia <naoir@gmx.net>
+Source: HTTP-Date-6.05.tar.gz
+License: GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE
+URL: http://search.cpan.org/dist/HTTP-Date/
+Type: ipkg
+Description: Date conversion routines
+@@
+
+

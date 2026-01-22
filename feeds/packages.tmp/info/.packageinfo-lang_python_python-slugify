@@ -1,0 +1,48 @@
+Source-Makefile: feeds/packages/lang/python/python-slugify/Makefile
+
+Package: python3-slugify
+Submenu: Python
+Version: 8.0.1-r1
+Depends: +libc +python3-light +python3-codecs +python3-text-unidecode
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Slugify application that handles Unicode
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: python-slugify-8.0.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/un33k/python-slugify
+Type: ipkg
+Description:   A Python slugify application that handles unicode.
+@@
+
+Package: python3-slugify-src
+Submenu: Python
+Version: 8.0.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Slugify application that handles Unicode (sources)
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: python-slugify-8.0.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/un33k/python-slugify
+Type: ipkg
+Description:       A Python slugify application that handles unicode.
+
+    This package contains the Python source files for python3-slugify.
+@@
+Config:
+    depends on PACKAGE_python3-slugify
+@@
+
+

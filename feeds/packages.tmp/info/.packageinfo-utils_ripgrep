@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/utils/ripgrep/Makefile
+Build-Depends: rust/host
+
+Package: ripgrep
+Version: 14.1.1-r1
+Depends: +libc @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64) +libpcre2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: ripgrep (rg) regex grep
+Maintainer: Luca Barbato <lu_zero@luminem.org>
+Source: ripgrep-14.1.1.tar.gz
+License: MIT Unlicense
+LicenseFiles: LICENSE-MIT UNLICENSE
+CPE-ID: cpe:/a:ripgrep_project:ripgrep
+URL: https://github.com/BurntSushi/ripgrep
+Type: ipkg
+Description:   ripgrep (rg) recursively searches directories for a regex pattern
+  while respecting your gitignore
+@@
+
+

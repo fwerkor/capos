@@ -1,0 +1,27 @@
+Source-Makefile: feeds/packages/net/gatling/Makefile
+Build-Depends: px5g-mbedtls libowfat
+
+Package: gatling
+Submenu: Web Servers/Proxies
+Version: 0.16-r2
+Depends: +libc +zlib +libcap +libopenssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: gatling - a high performance web server
+Maintainer: Martin Hübner <martin.hubner@web.de>
+Source: gatling-0.16.tar.xz
+License: GPL-2.0-only
+LicenseFiles: LICENSE
+URL: https://www.fefe.de/gatling/
+Type: ipkg
+Description:   gatling - a high performance web server
+  with a a rather small binary size but a decent set of extra features
+  like ftp, basic htaccess and basic DoS-Protection.
+  Gatling is particularly good in situations with very high load.
+@@
+
+

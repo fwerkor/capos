@@ -1,0 +1,48 @@
+Source-Makefile: feeds/packages/lang/python/python-click-log/Makefile
+
+Package: python3-click-log
+Submenu: Python
+Version: 0.4.0-r1
+Depends: +libc +python3-light +python3-logging +python3-click
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Logging integration for Click
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com> 
+Source: click-log-0.4.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/click-contrib/click-log
+Type: ipkg
+Description:   Simple and beautiful logging for click applications
+@@
+
+Package: python3-click-log-src
+Submenu: Python
+Version: 0.4.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Logging integration for Click (sources)
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com> 
+Source: click-log-0.4.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/click-contrib/click-log
+Type: ipkg
+Description:       Simple and beautiful logging for click applications
+
+    This package contains the Python source files for python3-click-log.
+@@
+Config:
+    depends on PACKAGE_python3-click-log
+@@
+
+

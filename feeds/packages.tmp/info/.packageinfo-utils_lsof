@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/utils/lsof/Makefile
+
+Package: lsof
+Version: 4.99.3-r1
+Depends: +libc +libtirpc
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: LiSt Open Files - a diagnostic tool
+Maintainer: Maxim Storchak <m.storchak@gmail.com>
+Source: lsof-4.99.3.tar.gz
+License: lsof
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lsof_project:lsof
+URL: http://people.freebsd.org/~abe/
+Type: ipkg
+Description: LiSt Open Files - a diagnostic tool
+@@
+
+

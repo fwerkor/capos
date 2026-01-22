@@ -1,0 +1,50 @@
+Source-Makefile: feeds/packages/lang/python/python-jmespath/Makefile
+
+Package: python3-jmespath
+Submenu: Python
+Version: 1.0.1-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: JSON Matching Expressions
+Maintainer: Daniel Danzberger <daniel@dd-wrt.com>
+Source: jmespath-1.0.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE.txt
+URL: https://github.com/jmespath/jmespath.py
+Type: ipkg
+Description: JMESPath (pronounced “james path”) allows you to declaratively specify
+how to extract elements from a JSON document.
+@@
+
+Package: python3-jmespath-src
+Submenu: Python
+Version: 1.0.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: JSON Matching Expressions (sources)
+Maintainer: Daniel Danzberger <daniel@dd-wrt.com>
+Source: jmespath-1.0.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE.txt
+URL: https://github.com/jmespath/jmespath.py
+Type: ipkg
+Description:     JMESPath (pronounced “james path”) allows you to declaratively specify
+how to extract elements from a JSON document.
+
+    This package contains the Python source files for python3-jmespath.
+@@
+Config:
+    depends on PACKAGE_python3-jmespath
+@@
+
+

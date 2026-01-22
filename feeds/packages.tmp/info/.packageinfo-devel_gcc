@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/devel/gcc/Makefile
+Build-Depends: libtool
+
+Package: gcc
+Menu: 1
+Version: 7
+Depends: +libc +binutils +libstdcpp +libzstd @!arc
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: devel
+Category: Development
+Repository: base
+Title: gcc
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: gcc-.tar.xz
+CPE-ID: cpe:/a:gnu:gcc
+Type: ipkg
+Description: gcc
+@@
+Config:
+  source "feeds/packages/devel/gcc/Config.in"
+@@
+
+

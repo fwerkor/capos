@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/sound/wavpack/Makefile
+
+Package: libwavpack
+Version: 5.8.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: sound
+Category: Sound
+Repository: base
+Title: Hybrid Lossless Audio Compression
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: wavpack-5.8.1.tar.xz
+License: BSD-3c
+LicenseFiles: COPYING LICENSE
+CPE-ID: cpe:/a:wavpack:wavpack
+URL: https://www.wavpack.com/
+Type: ipkg
+Description:   WavPack is a completely open audio compression format providing lossless,
+  high-quality lossy, and a unique hybrid compression mode.
+@@
+
+

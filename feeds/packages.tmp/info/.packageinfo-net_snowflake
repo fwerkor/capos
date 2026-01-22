@@ -1,0 +1,134 @@
+Source-Makefile: feeds/packages/net/snowflake/Makefile
+Build-Depends: golang/host
+
+Package: snowflake-broker
+Version: 2.10.1-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Snowflake Broker
+Maintainer: Daniel Golle <daniel@makrotopia.org>, Nick Hainke <vincent@systemli.org>
+Require-User: snowflake:snowflake
+Source: snowflake-2.10.1.tar.zst
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://snowflake.torproject.org/
+Type: ipkg
+Description: Snowflake is a system that allows people from all over the world to
+access censored websites and applications. Similar to how VPNs assist
+users in getting around Internet censorship, Snowflake helps you avoid
+being noticed by Internet censors by making your Internet activity appear
+as though you're using the Internet for a regular video or voice call.
+
+This package provides the Snowflake broker service.
+@@
+
+Package: snowflake-client
+Version: 2.10.1-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Snowflake Client
+Maintainer: Daniel Golle <daniel@makrotopia.org>, Nick Hainke <vincent@systemli.org>
+Require-User: snowflake:snowflake
+Source: snowflake-2.10.1.tar.zst
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://snowflake.torproject.org/
+Type: ipkg
+Description: Snowflake is a system that allows people from all over the world to
+access censored websites and applications. Similar to how VPNs assist
+users in getting around Internet censorship, Snowflake helps you avoid
+being noticed by Internet censors by making your Internet activity appear
+as though you're using the Internet for a regular video or voice call.
+
+This package contains the Snowflake client which provides the bridge to TOR.
+@@
+
+Package: snowflake-probetest
+Version: 2.10.1-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Snowflake Probe test
+Maintainer: Daniel Golle <daniel@makrotopia.org>, Nick Hainke <vincent@systemli.org>
+Require-User: snowflake:snowflake
+Source: snowflake-2.10.1.tar.zst
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://snowflake.torproject.org/
+Type: ipkg
+Description: Snowflake is a system that allows people from all over the world to
+access censored websites and applications. Similar to how VPNs assist
+users in getting around Internet censorship, Snowflake helps you avoid
+being noticed by Internet censors by making your Internet activity appear
+as though you're using the Internet for a regular video or voice call.
+
+This package provides the Snowflake probe test.
+@@
+
+Package: snowflake-proxy
+Version: 2.10.1-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Snowflake Proxy
+Maintainer: Daniel Golle <daniel@makrotopia.org>, Nick Hainke <vincent@systemli.org>
+Require-User: snowflake:snowflake
+Source: snowflake-2.10.1.tar.zst
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://snowflake.torproject.org/
+Type: ipkg
+Description: Snowflake is a system that allows people from all over the world to
+access censored websites and applications. Similar to how VPNs assist
+users in getting around Internet censorship, Snowflake helps you avoid
+being noticed by Internet censors by making your Internet activity appear
+as though you're using the Internet for a regular video or voice call.
+
+This package provides the standalone Snowflake proxy.
+@@
+
+Package: snowflake-server
+Version: 2.10.1-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Snowflake Server
+Maintainer: Daniel Golle <daniel@makrotopia.org>, Nick Hainke <vincent@systemli.org>
+Require-User: snowflake:snowflake
+Source: snowflake-2.10.1.tar.zst
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://snowflake.torproject.org/
+Type: ipkg
+Description: Snowflake is a system that allows people from all over the world to
+access censored websites and applications. Similar to how VPNs assist
+users in getting around Internet censorship, Snowflake helps you avoid
+being noticed by Internet censors by making your Internet activity appear
+as though you're using the Internet for a regular video or voice call.
+
+This package provides the Snowflake server.
+@@
+
+

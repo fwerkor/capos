@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/libs/libwebp/Makefile
+
+Package: libwebp
+Version: 1.4.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: WebP library
+Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
+Source: libwebp-1.4.0.tar.gz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+URL: https://www.webmproject.org
+Type: ipkg
+Description:   The libwebp package contains a library for the WebP format.
+@@
+
+

@@ -1,0 +1,49 @@
+Source-Makefile: feeds/packages/lang/python/python-zeroconf/Makefile
+Build-Depends: python-cython/host python-poetry-core/host
+
+Package: python3-zeroconf
+Submenu: Python
+Version: 0.131.0-r1
+Depends: +libc +python3-light +python3-asyncio +python3-logging +python3-ifaddr
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Multicast DNS Service Discovery Library
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: zeroconf-0.131.0.tar.gz
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+URL: https://github.com/python-zeroconf/python-zeroconf
+Type: ipkg
+Description:   Pure Python Multicast DNS Service Discovery Library (Bonjour/Avahi compatible)
+@@
+
+Package: python3-zeroconf-src
+Submenu: Python
+Version: 0.131.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Multicast DNS Service Discovery Library (sources)
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: zeroconf-0.131.0.tar.gz
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+URL: https://github.com/python-zeroconf/python-zeroconf
+Type: ipkg
+Description:       Pure Python Multicast DNS Service Discovery Library (Bonjour/Avahi compatible)
+
+    This package contains the Python source files for python3-zeroconf.
+@@
+Config:
+    depends on PACKAGE_python3-zeroconf
+@@
+
+

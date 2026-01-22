@@ -1,0 +1,70 @@
+Source-Makefile: feeds/packages/lang/python/python-hatch-fancy-pypi-readme/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-hatchling/host
+Build-Types: host
+
+Package: python3-hatch-fancy-pypi-readme
+Submenu: Python
+Version: 23.1.0-r1
+Depends: +libc +python3-light +python3-hatchling
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Fancy PyPI READMEs with Hatch
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: hatch_fancy_pypi_readme-23.1.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE.txt
+URL: https://github.com/hynek/hatch-fancy-pypi-readme
+Type: ipkg
+Build-Only: 1
+Description: hatch-fancy-pypi-readme is a Hatch metadata plugin for everyone who
+cares about the first impression of their project’s PyPI landing page.
+It allows you to define your PyPI project description in terms of
+concatenated fragments that are based on static strings, files, and most
+importantly: parts of files defined using cut-off points or regular
+expressions.
+
+Once you’ve assembled your readme, you can additionally run regular
+expression-based substitutions over it. For instance to make relative
+links absolute or to linkify users and issue numbers in your changelog.
+@@
+
+Package: python3-hatch-fancy-pypi-readme-src
+Submenu: Python
+Version: 23.1.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Fancy PyPI READMEs with Hatch (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: hatch_fancy_pypi_readme-23.1.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE.txt
+URL: https://github.com/hynek/hatch-fancy-pypi-readme
+Type: ipkg
+Build-Only: 1
+Description:     hatch-fancy-pypi-readme is a Hatch metadata plugin for everyone who
+cares about the first impression of their project’s PyPI landing page.
+It allows you to define your PyPI project description in terms of
+concatenated fragments that are based on static strings, files, and most
+importantly: parts of files defined using cut-off points or regular
+expressions.
+
+Once you’ve assembled your readme, you can additionally run regular
+expression-based substitutions over it. For instance to make relative
+links absolute or to linkify users and issue numbers in your changelog.
+
+    This package contains the Python source files for python3-hatch-fancy-pypi-readme.
+@@
+Config:
+    depends on PACKAGE_python3-hatch-fancy-pypi-readme
+@@
+
+

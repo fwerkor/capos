@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/libs/libpam/Makefile
+
+Package: libpam
+Version: 1.5.2-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: the Linux-PAM libraries and modules.
+Maintainer: Nikos Mavrogiannopoulos <n.mavrogiannopoulos@gmail.com>
+Source: Linux-PAM-1.5.2.tar.xz
+License: BSD-3c GPL
+LicenseFiles: COPYING Copyright
+CPE-ID: cpe:/a:linux-pam:linux-pam
+URL: http://www.kernel.org/pub/linux/libs/pam
+Type: ipkg
+Description: 	The Linux-PAM Pluggable Authentication Modules.
+@@
+
+

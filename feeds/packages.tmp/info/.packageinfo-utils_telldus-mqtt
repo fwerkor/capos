@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/utils/telldus-mqtt/Makefile
+
+Package: telldus-mqtt
+Version: 0.3-r1
+Depends: +libc +telldus-core +libmosquitto +cJSON
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Telldus MQTT converter
+Maintainer: Peter Liedholm <PeterFromSwe884@gmail.com>
+Source: telldus-mqtt-0.3.tar.zst
+License: LGPL-2.1-or-later
+LicenseFiles: LICENSE
+Type: ipkg
+Description: 	MQTT protocol converter for Telldus USB-based 433 MHz RF transceiver for home automation.
+	Please see https://github.com/PeterFromSweden/telldus-mqtt/blob/master/Readme.md for more information.
+@@
+
+

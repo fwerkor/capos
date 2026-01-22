@@ -1,0 +1,51 @@
+Source-Makefile: feeds/packages/lang/python/python-argcomplete/Makefile
+Build-Depends: python-setuptools-scm/host
+
+Package: python3-argcomplete
+Submenu: Python
+Version: 3.2.1-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Bash tab completion for argparse
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: argcomplete-3.2.1.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE.rst
+URL: https://github.com/kislyuk/argcomplete
+Type: ipkg
+Description: Argcomplete provides easy, extensible command line tab completion of
+arguments for your Python application.
+@@
+
+Package: python3-argcomplete-src
+Submenu: Python
+Version: 3.2.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Bash tab completion for argparse (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: argcomplete-3.2.1.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE.rst
+URL: https://github.com/kislyuk/argcomplete
+Type: ipkg
+Description:     Argcomplete provides easy, extensible command line tab completion of
+arguments for your Python application.
+
+    This package contains the Python source files for python3-argcomplete.
+@@
+Config:
+    depends on PACKAGE_python3-argcomplete
+@@
+
+

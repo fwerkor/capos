@@ -1,0 +1,27 @@
+Source-Makefile: feeds/packages/utils/quectel-timesync/Makefile
+
+Package: quectel-timesync
+Version: 2023.10.08~4333888cb8025b92511597a95859943fae0a0bc8-r1
+Depends: +libc +kmod-usb-serial-option
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Tool for configuring system clock using Quectel cellular modems
+Maintainer: David Bauer <mail@david-bauer.net>
+Source: quectel-timesync-2023.10.08~4333888cb8025b92511597a95859943fae0a0bc8.tar.zst
+License: GPL-2.0-only
+Type: ipkg
+Description: This tool allows for acquiring the current time from
+the cellular network for configuring the local clock.
+Compared to NTP, this has the advantage of nut using up
+mobile traffic.
+
+It takes advantage of the AT+QLTS command found on Quectel
+modems. This functionality depends on support of the mobile
+network.
+@@
+
+

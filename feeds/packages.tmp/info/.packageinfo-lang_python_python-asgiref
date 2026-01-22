@@ -1,0 +1,50 @@
+Source-Makefile: feeds/packages/lang/python/python-asgiref/Makefile
+
+Package: python3-asgiref
+Submenu: Python
+Version: 3.7.2-r1
+Depends: +libc +python3-light +python3-logging +python3-asyncio
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: ASGI specs, helper code, and adapters
+Maintainer: Peter Stadler <peter.stadler@student.uibk.ac.at>
+Source: asgiref-3.7.2.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://github.com/django/asgiref/
+Type: ipkg
+Description:   ASGI is a standard for Python asynchronous web apps and servers to communicate
+  with each other, and positioned as an asynchronous successor to WSGI.
+@@
+
+Package: python3-asgiref-src
+Submenu: Python
+Version: 3.7.2-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: ASGI specs, helper code, and adapters (sources)
+Maintainer: Peter Stadler <peter.stadler@student.uibk.ac.at>
+Source: asgiref-3.7.2.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://github.com/django/asgiref/
+Type: ipkg
+Description:       ASGI is a standard for Python asynchronous web apps and servers to communicate
+  with each other, and positioned as an asynchronous successor to WSGI.
+
+    This package contains the Python source files for python3-asgiref.
+@@
+Config:
+    depends on PACKAGE_python3-asgiref
+@@
+
+

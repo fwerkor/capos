@@ -1,0 +1,52 @@
+Source-Makefile: feeds/packages/lang/python/python-ply/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host
+Build-Types: host
+
+Package: python3-ply
+Submenu: Python
+Version: 3.11-r2
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: lex and yacc for Python
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: ply-3.11.tar.gz
+License: BSD-3-Clause
+LicenseFiles: README.md
+URL: http://www.dabeaz.com/ply/
+Type: ipkg
+Description: PLY is a 100% Python implementation of the common parsing tools lex
+and yacc.
+@@
+
+Package: python3-ply-src
+Submenu: Python
+Version: 3.11-r2
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: lex and yacc for Python (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: ply-3.11.tar.gz
+License: BSD-3-Clause
+LicenseFiles: README.md
+URL: http://www.dabeaz.com/ply/
+Type: ipkg
+Description:     PLY is a 100% Python implementation of the common parsing tools lex
+and yacc.
+
+    This package contains the Python source files for python3-ply.
+@@
+Config:
+    depends on PACKAGE_python3-ply
+@@
+
+

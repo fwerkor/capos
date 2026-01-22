@@ -1,0 +1,60 @@
+Source-Makefile: feeds/packages/lang/python/micropython/Makefile
+Build-Depends: python3/host
+Build-Types: host
+
+Package: micropython-mbedtls
+Submenu: Python
+Version: 1.23.0-r1
+Depends: +libc +libffi +PACKAGE_micropython-mbedtls:libmbedtls
+Conflicts: micropython-nossl
+Menu-Depends: 
+Provides: micropython
+Build-Variant: mbedtls
+Default-Variant: mbedtls
+Section: lang
+Category: Languages
+Repository: base
+Title: MicroPython (mbedtls)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: micropython-1.23.0.tar.xz
+License: MIT
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:micropython:micropython
+URL: https://micropython.org
+Type: ipkg
+Description: MicroPython is a lean and efficient implementation of the Python 3
+programming language that includes a small subset of the Python standard
+library and is optimised to run on microcontrollers and in constrained
+environments.
+
+This version uses the Mbed TLS library.
+@@
+
+Package: micropython-nossl
+Submenu: Python
+Version: 1.23.0-r1
+Depends: +libc +libffi
+Conflicts: 
+Menu-Depends: 
+Provides: micropython
+Build-Variant: nossl
+Section: lang
+Category: Languages
+Repository: base
+Title: MicroPython (nossl)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: micropython-1.23.0.tar.xz
+License: MIT
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:micropython:micropython
+URL: https://micropython.org
+Type: ipkg
+Description: MicroPython is a lean and efficient implementation of the Python 3
+programming language that includes a small subset of the Python standard
+library and is optimised to run on microcontrollers and in constrained
+environments.
+
+This version is built without TLS and mip.
+@@
+
+

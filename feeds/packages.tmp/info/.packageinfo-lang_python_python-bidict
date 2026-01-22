@@ -1,0 +1,48 @@
+Source-Makefile: feeds/packages/lang/python/python-bidict/Makefile
+
+Package: python3-bidict
+Submenu: Python
+Version: 0.22.1-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Bidirectional mapping library
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Source: bidict-0.22.1.tar.gz
+License: MPL-2.0
+LicenseFiles: LICENSE
+URL: https://bidict.readthedocs.io/
+Type: ipkg
+Description:   The bidirectional mapping library for Python.
+@@
+
+Package: python3-bidict-src
+Submenu: Python
+Version: 0.22.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Bidirectional mapping library (sources)
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Source: bidict-0.22.1.tar.gz
+License: MPL-2.0
+LicenseFiles: LICENSE
+URL: https://bidict.readthedocs.io/
+Type: ipkg
+Description:       The bidirectional mapping library for Python.
+
+    This package contains the Python source files for python3-bidict.
+@@
+Config:
+    depends on PACKAGE_python3-bidict
+@@
+
+

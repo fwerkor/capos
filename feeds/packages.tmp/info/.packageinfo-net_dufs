@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/net/dufs/Makefile
+Build-Depends: rust/host
+
+Package: dufs
+Submenu: Web Servers/Proxies
+Version: 0.45.0-r1
+Depends: +libc @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64) @!(i386||mips64) +liblzma
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: A distinctive utility file server
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: dufs-0.45.0.tar.gz
+License: Apache-2.0 MIT
+LicenseFiles: LICENSE-APACHE LICENSE-MIT
+URL: https://github.com/sigoden/dufs
+Type: ipkg
+Description:   Dufs is a distinctive utility file server that supports static
+  serving, uploading, searching, accessing control, webdav...
+@@
+
+

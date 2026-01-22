@@ -1,0 +1,21 @@
+Source-Makefile: feeds/packages/net/acme-common/Makefile
+
+Package: acme-common
+Version: 1.4.3
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ACME client wrapper common files
+Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
+Source: 
+License: GPL-3.0-only
+LicenseFiles: LICENSE.md
+Type: ipkg
+Description: ACME client wrapper common files.
+@@
+
+

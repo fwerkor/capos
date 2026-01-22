@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/libs/libredblack/Makefile
+Build-Types: host
+
+Package: libredblack
+Version: 1.3-r4
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: RedBlack tree library
+Maintainer: Mislav Novakovic <mislav.novakovic@sartura.hr>
+Source: libredblack-1.3.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: http://libredblack.sourceforge.net/
+Type: ipkg
+Description:  RedBlack Balanced Tree Searching and Sorting Library.
+@@
+
+

@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/net/dmapd/Makefile
+
+Package: dmapd
+Version: 0.0.95-r1
+Depends: +libc +libdmapsharing +libdb47 +vips +libgst1pbutils +totem-pl-parser
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: dmapd
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Require-User: dmapd=56:dmapd=56
+Source: dmapd-0.0.95.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: http://www.flyn.org/projects/dmapd/
+Type: ipkg
+Description: 	Dmapd is a DMAP server
+@@
+
+

@@ -1,0 +1,625 @@
+Source-Makefile: feeds/packages/net/gnunet/Makefile
+Build-Depends: sqlite3
+
+Package: gnunet
+Menu: 1
+Version: 0.21.2-r1
+Depends: +libc +libatomic +libgcrypt +libgmp +libgpg-error +libidn2 +libltdl +libsodium +libunistring +librt +zlib +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet - a peer-to-peer framework focusing on security
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Require-User: gnunet=958:gnunet=958
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description:  GNUnet is a peer-to-peer framework focusing on security. The first and
+ primary application for GNUnet is anonymous file-sharing.  GNUnet is
+ currently developed by a worldwide group of independent free software
+ developers.  GNUnet is a GNU package (http://www.gnu.org/).
+
+ This is an ALPHA release.  There are known and significant bugs as
+ well as many missing features in this release.
+
+ This package provides the core components of GNUnet including the
+ CADET routing engine, a DHT implementation and basic transports as
+ well as their helpers.
+@@
+
+Package: gnunet-abd
+Version: 0.21.2-r1
+Depends: +libc gnunet +gnunet-gns
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet credential service components
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet credential service components
+@@
+
+Package: gnunet-auction
+Version: 0.21.2-r1
+Depends: +libc gnunet +gnunet-reclaim +jansson
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet auction components
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet auction components
+@@
+
+Package: gnunet-conversation
+Version: 0.21.2-r1
+Depends: +libc gnunet +gnunet-gns +libgst1app +libgst1audio +libgstreamer1 +glib2 +pulseaudio-daemon +libopus +libogg
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet conversation component
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet conversation component
+@@
+
+Package: gnunet-curl
+Version: 0.21.2-r1
+Depends: +libc gnunet +libcurl-gnutls +jansson
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet cURL wrapper component
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet cURL wrapper component
+@@
+
+Package: gnunet-datastore
+Version: 0.21.2-r1
+Depends: +libc gnunet +gnunet-gns
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet data storage components
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet data storage components
+@@
+
+Package: gnunet-dht-cli
+Version: 0.21.2-r1
+Depends: +libc gnunet
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet DHT command line clients
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet DHT command line clients
+@@
+
+Package: gnunet-fs
+Version: 0.21.2-r1
+Depends: +libc gnunet +gnunet-datastore +libextractor
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet file-sharing components
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet file-sharing components
+@@
+
+Package: gnunet-gns
+Default: y if PACKAGE_gnunet
+Version: 0.21.2-r1
+Depends: +libc gnunet +gnunet-vpn +iptables-mod-extra
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet name resolution components
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Require-User: :gnunetdns=452
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet name resolution components
+@@
+
+Package: gnunet-gns-proxy
+Version: 0.21.2-r1
+Depends: +libc gnunet +gnunet-gns +gnunet-curl +libmicrohttpd-ssl +PACKAGE_libgnutls-dane:libgnutls-dane
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet gns-proxy component
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet gns-proxy component
+@@
+
+Package: gnunet-hostlist
+Default: y if PACKAGE_gnunet
+Version: 0.21.2-r1
+Depends: +libc gnunet +libmicrohttpd-ssl +gnunet-curl +ca-bundle
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet HTTP bootstrap hostlist client and server
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet HTTP bootstrap hostlist client and server
+@@
+
+Package: gnunet-messenger
+Version: 0.21.2-r1
+Depends: +libc gnunet
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet group chat messenger
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet group chat messenger
+@@
+
+Package: gnunet-reclaim
+Version: 0.21.2-r1
+Depends: +libc gnunet +gnunet-gns +gnunet-sqlite +libpbc +libgabe +jansson
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet reclaim identity-provider subsystem
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet reclaim identity-provider subsystem
+@@
+
+Package: gnunet-rest
+Version: 0.21.2-r1
+Depends: +libc gnunet +gnunet-gns +gnunet-reclaim +libmicrohttpd-ssl +jansson +libjose
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet REST interface
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet REST interface
+@@
+
+Package: gnunet-rps
+Default: y if PACKAGE_gnunet
+Version: 0.21.2-r1
+Depends: +libc gnunet
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet RPS routing component
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet RPS routing component
+@@
+
+Package: gnunet-dhtcache-heap
+Default: y if PACKAGE_gnunet
+Version: 0.21.2-r1
+Depends: +libc gnunet
+Conflicts: gnunet-dhtcache-pgsql gnunet-dhtcache-sqlite
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet heap-based dhtcache plugin
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet heap-based dhtcache plugin
+@@
+
+Package: gnunet-fs-heap
+Version: 0.21.2-r1
+Depends: +libc gnunet +gnunet-datastore
+Conflicts: gnunet-fs-pgsql gnunet-fs-sqlite
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet heap-based filesharing plugin
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet heap-based filesharing plugin
+@@
+
+Package: gnunet-pgsql
+Version: 0.21.2-r1
+Depends: +libc gnunet +libpq +pgsql-server
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet PostgreSQL backend
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Require-User: gnunet=958::postgres=5432
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet PostgreSQL backend
+@@
+
+Package: gnunet-dhtcache-pgsql
+Version: 0.21.2-r1
+Depends: +libc gnunet +gnunet-pgsql
+Conflicts: gnunet-dhtcache-sqlite
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet PostgreSQL dhtcache plugin
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet PostgreSQL dhtcache plugin
+@@
+
+Package: gnunet-fs-pgsql
+Version: 0.21.2-r1
+Depends: +libc gnunet +gnunet-pgsql +gnunet-datastore
+Conflicts: gnunet-fs-sqlite
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet PostgreSQL filesharing plugin
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet PostgreSQL filesharing plugin
+@@
+
+Package: gnunet-gns-pgsql
+Version: 0.21.2-r1
+Depends: +libc gnunet +gnunet-pgsql +gnunet-gns
+Conflicts: gnunet-gns-sqlite
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet PostgreSQL GNS plugins
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet PostgreSQL GNS plugins
+@@
+
+Package: gnunet-sqlite
+Version: 0.21.2-r1
+Depends: +libc gnunet +libsqlite3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet libsqlite3 backend
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet libsqlite3 backend
+@@
+
+Package: gnunet-dhtcache-sqlite
+Version: 0.21.2-r1
+Depends: +libc gnunet +gnunet-sqlite
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet libsqlite3 dhtcache plugin
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet libsqlite3 dhtcache plugin
+@@
+
+Package: gnunet-fs-sqlite
+Version: 0.21.2-r1
+Depends: +libc gnunet +gnunet-datastore +gnunet-sqlite
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet libsqlite3 filesharing plugin
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet libsqlite3 filesharing plugin
+@@
+
+Package: gnunet-gns-sqlite
+Version: 0.21.2-r1
+Depends: +libc gnunet +gnunet-gns +gnunet-sqlite
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet libsqlite3 gns plugins
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet libsqlite3 gns plugins
+@@
+
+Package: gnunet-peerstore-sqlite
+Version: 0.21.2-r1
+Depends: +libc gnunet +gnunet-sqlite
+Conflicts: gnunet-peerstore-flat
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet libsqlite3 peerstore plugin
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet libsqlite3 peerstore plugin
+@@
+
+Package: gnunet-communicator-tcp
+Default: y if PACKAGE_gnunet
+Version: 0.21.2-r1
+Depends: +libc gnunet
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet tng transport TCP communicator
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet tng transport TCP communicator
+@@
+
+Package: gnunet-communicator-udp
+Default: y if PACKAGE_gnunet
+Version: 0.21.2-r1
+Depends: +libc gnunet
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet tng transport UDP communicator
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet tng transport UDP communicator
+@@
+
+Package: gnunet-utils
+Version: 0.21.2-r1
+Depends: +libc gnunet +certtool +openssl-util
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet administration utililties
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet administration utililties
+@@
+
+Package: gnunet-vpn
+Default: y if PACKAGE_gnunet
+Version: 0.21.2-r1
+Depends: +libc gnunet +kmod-tun +iptables +uci-firewall
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GNUnet vpn components
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gnunet-0.21.2.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnunet:gnunet
+URL: https://www.gnunet.org/
+Type: ipkg
+Description: GNUnet vpn components
+@@
+
+

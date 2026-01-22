@@ -1,0 +1,536 @@
+Source-Makefile: feeds/luci/applications/luci-app-crowdsec-firewall-bouncer/Makefile
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+
+Package: luci-app-crowdsec-firewall-bouncer
+Submenu: 3. Applications
+Version: x
+Depends: +libc +luci-base +crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: CrowdSec firewall bouncer LuCI interface
+Maintainer: OpenWrt LuCI community
+Source: 
+License: Apache-2.0
+URL: https://github.com/openwrt/luci
+Type: ipkg
+Description: CrowdSec firewall bouncer LuCI interface
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-ar
+Default: LUCI_LANG_ar||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - ar translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - العربية (Arabic)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-bn
+Default: LUCI_LANG_bn_BD||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - bn translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - বাংলা (Bengali)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - cs translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - Čeština (Czech)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-da
+Default: LUCI_LANG_da||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - da translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - Dansk (Danish)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-de
+Default: LUCI_LANG_de||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - de translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - Deutsch (German)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - es translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - Español (Spanish)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-fi
+Default: LUCI_LANG_fi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - fi translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - Suomi (Finnish)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-fr
+Default: LUCI_LANG_fr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - fr translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - Français (French)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - ga translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-hu
+Default: LUCI_LANG_hu||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - hu translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - Magyar (Hungarian)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-it
+Default: LUCI_LANG_it||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - it translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - Italiano (Italian)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-ja
+Default: LUCI_LANG_ja||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - ja translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - 日本語 (Japanese)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - lt translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-no
+Default: LUCI_LANG_nb_NO||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - no translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - Norsk (Norwegian)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-nl
+Default: LUCI_LANG_nl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - nl translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - Nederlands (Dutch)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - pl translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - Polski (Polish)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-pt
+Default: LUCI_LANG_pt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - pt translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - Português (Portuguese)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-pt-br
+Default: LUCI_LANG_pt_BR||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - pt-br translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - Português do Brasil (Brazilian Portuguese)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-ro
+Default: LUCI_LANG_ro||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - ro translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - Română (Romanian)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - ru translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - Русский (Russian)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-sv
+Default: LUCI_LANG_sv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - sv translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - Svenska (Swedish)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-tr
+Default: LUCI_LANG_tr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - tr translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - Türkçe (Turkish)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - uk translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-vi
+Default: LUCI_LANG_vi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - vi translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - Tiếng Việt (Vietnamese)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-yua
+Default: LUCI_LANG_yua||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - yua translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - Yucateco (Yucatec Maya)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - zh-cn translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-crowdsec-firewall-bouncer-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - zh-tw translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - 正體中文 (Traditional Chinese)
+@@
+
+

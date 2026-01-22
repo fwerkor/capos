@@ -1,0 +1,50 @@
+Source-Makefile: feeds/packages/lang/python/python-flask-seasurf/Makefile
+
+Package: python3-flask-seasurf
+Submenu: Python
+Version: 2.0.0-r1
+Depends: +libc +python3-flask +python3-light +python3-urllib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Updated CSRF extension for Flask
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: Flask-SeaSurf-2.0.0.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://github.com/maxcountryman/flask-seasurf
+Type: ipkg
+Description: SeaSurf is a Flask extension for preventing cross-site request forgery
+(CSRF).
+@@
+
+Package: python3-flask-seasurf-src
+Submenu: Python
+Version: 2.0.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Updated CSRF extension for Flask (sources)
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: Flask-SeaSurf-2.0.0.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://github.com/maxcountryman/flask-seasurf
+Type: ipkg
+Description:     SeaSurf is a Flask extension for preventing cross-site request forgery
+(CSRF).
+
+    This package contains the Python source files for python3-flask-seasurf.
+@@
+Config:
+    depends on PACKAGE_python3-flask-seasurf
+@@
+
+

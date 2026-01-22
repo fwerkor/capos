@@ -1,0 +1,53 @@
+Source-Makefile: feeds/packages/lang/python/python-dbus-fast/Makefile
+Build-Depends: python-poetry-core/host python-cython/host python-wheel/host
+
+Package: python3-dbus-fast
+Submenu: Python
+Version: 2.21.1-r1
+Depends: +libc +python3-light +python3-async-timeout +python3-asyncio +python3-logging +python3-urllib +python3-xml
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: A faster version of dbus-next
+Maintainer: Quintin Hill <stuff@quintin.me.uk>
+Source: dbus_fast-2.21.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/Bluetooth-Devices/dbus-fast
+Type: ipkg
+Description:   dbus-fast is a Python library for DBus that aims to be a performant fully
+  featured high level library primarily geared towards integration of
+  applications into Linux desktop and mobile environments.
+@@
+
+Package: python3-dbus-fast-src
+Submenu: Python
+Version: 2.21.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: A faster version of dbus-next (sources)
+Maintainer: Quintin Hill <stuff@quintin.me.uk>
+Source: dbus_fast-2.21.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/Bluetooth-Devices/dbus-fast
+Type: ipkg
+Description:       dbus-fast is a Python library for DBus that aims to be a performant fully
+  featured high level library primarily geared towards integration of
+  applications into Linux desktop and mobile environments.
+
+    This package contains the Python source files for python3-dbus-fast.
+@@
+Config:
+    depends on PACKAGE_python3-dbus-fast
+@@
+
+

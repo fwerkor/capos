@@ -1,0 +1,55 @@
+Source-Makefile: feeds/packages/lang/python/python-bleak/Makefile
+Build-Depends: python-poetry-core/host
+
+Package: python3-bleak
+Submenu: Python
+Version: 0.21.1-r2
+Depends: +libc +python3-light +python3-async-timeout +python3-asyncio +python3-dbus-fast +python3-ctypes +python3-typing-extensions +python3-logging
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Bluetooth Low Energy platform Agnostic Klient
+Maintainer: Quintin Hill <stuff@quintin.me.uk>
+Source: bleak-0.21.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/hbldh/bleak
+Type: ipkg
+Description:   Bleak is an acronym for Bluetooth Low Energy platform Agnostic Klient.
+  Bleak is a GATT client software, capable of connecting to BLE devices acting
+  as GATT servers.  It is designed to provide a asynchronous, cross-platform
+  Python API to connect and communicate with e.g. sensors.
+@@
+
+Package: python3-bleak-src
+Submenu: Python
+Version: 0.21.1-r2
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Bluetooth Low Energy platform Agnostic Klient (sources)
+Maintainer: Quintin Hill <stuff@quintin.me.uk>
+Source: bleak-0.21.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/hbldh/bleak
+Type: ipkg
+Description:       Bleak is an acronym for Bluetooth Low Energy platform Agnostic Klient.
+  Bleak is a GATT client software, capable of connecting to BLE devices acting
+  as GATT servers.  It is designed to provide a asynchronous, cross-platform
+  Python API to connect and communicate with e.g. sensors.
+
+    This package contains the Python source files for python3-bleak.
+@@
+Config:
+    depends on PACKAGE_python3-bleak
+@@
+
+

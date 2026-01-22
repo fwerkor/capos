@@ -1,0 +1,49 @@
+Source-Makefile: feeds/packages/lang/python/python-orjson/Makefile
+Build-Depends: python-maturin/host
+
+Package: python3-orjson
+Submenu: Python
+Version: 3.10.0-r1
+Depends: +libc +python3-light @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Fast, correct Python JSON library
+Maintainer: Timothy Ace <openwrt@timothyace.com>
+Source: orjson-3.10.0.tar.gz
+License: Apache-2.0 MIT
+LicenseFiles: LICENSE-APACHE LICENSE-MIT
+URL: https://github.com/ijl/orjson
+Type: ipkg
+Description: Fast, correct Python JSON library supporting dataclasses, datetimes, and numpy
+@@
+
+Package: python3-orjson-src
+Submenu: Python
+Version: 3.10.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Fast, correct Python JSON library (sources)
+Maintainer: Timothy Ace <openwrt@timothyace.com>
+Source: orjson-3.10.0.tar.gz
+License: Apache-2.0 MIT
+LicenseFiles: LICENSE-APACHE LICENSE-MIT
+URL: https://github.com/ijl/orjson
+Type: ipkg
+Description:     Fast, correct Python JSON library supporting dataclasses, datetimes, and numpy
+
+    This package contains the Python source files for python3-orjson.
+@@
+Config:
+    depends on PACKAGE_python3-orjson
+@@
+
+

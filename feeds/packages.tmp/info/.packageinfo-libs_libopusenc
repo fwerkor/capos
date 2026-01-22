@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/libs/libopusenc/Makefile
+
+Package: libopusenc
+Version: 0.2.1-r1
+Depends: +libc +libopus
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: OPUS Audio stream files
+Maintainer: Eduardo Abinader <eduardoabinader@gmail.com>
+Source: libopusenc-0.2.1.tar.gz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+URL: https://opus-codec.org
+Type: ipkg
+Description: OPUS Audio stream files
+@@
+
+

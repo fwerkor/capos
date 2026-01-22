@@ -1,0 +1,54 @@
+Source-Makefile: feeds/packages/lang/python/python-frozenlist/Makefile
+
+Package: python3-frozenlist
+Submenu: Python
+Version: 1.4.0-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: List-like structure
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: frozenlist-1.4.0.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/aio-libs/frozenlist
+Type: ipkg
+Description: frozenlist.FrozenList is a list-like structure which implements
+collections.abc.MutableSequence. The list is mutable until
+FrozenList.freeze is called, after which list modifications raise
+RuntimeError.
+@@
+
+Package: python3-frozenlist-src
+Submenu: Python
+Version: 1.4.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: List-like structure (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: frozenlist-1.4.0.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/aio-libs/frozenlist
+Type: ipkg
+Description:     frozenlist.FrozenList is a list-like structure which implements
+collections.abc.MutableSequence. The list is mutable until
+FrozenList.freeze is called, after which list modifications raise
+RuntimeError.
+
+    This package contains the Python source files for python3-frozenlist.
+@@
+Config:
+    depends on PACKAGE_python3-frozenlist
+@@
+
+

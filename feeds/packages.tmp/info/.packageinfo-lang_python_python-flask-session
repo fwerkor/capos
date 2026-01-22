@@ -1,0 +1,48 @@
+Source-Makefile: feeds/packages/lang/python/python-flask-session/Makefile
+
+Package: python3-flask-session
+Submenu: Python
+Version: 0.8.0-r1
+Depends: +libc +python3-cachelib +python3-flask +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Flask Session
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: flask_session-0.8.0.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://github.com/fengsp/flask-session
+Type: ipkg
+Description:   Adds server-side session support to your Flask application.
+@@
+
+Package: python3-flask-session-src
+Submenu: Python
+Version: 0.8.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Flask Session (sources)
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: flask_session-0.8.0.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://github.com/fengsp/flask-session
+Type: ipkg
+Description:       Adds server-side session support to your Flask application.
+
+    This package contains the Python source files for python3-flask-session.
+@@
+Config:
+    depends on PACKAGE_python3-flask-session
+@@
+
+

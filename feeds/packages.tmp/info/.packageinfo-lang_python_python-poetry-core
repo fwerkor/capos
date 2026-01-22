@@ -1,0 +1,58 @@
+Source-Makefile: feeds/packages/lang/python/python-poetry-core/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host
+Build-Types: host
+
+Package: python3-poetry-core
+Submenu: Python
+Version: 1.8.1-r1
+Depends: +libc +python3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Poetry PEP 517 Build Backend
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: poetry_core-1.8.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/python-poetry/poetry-core
+Type: ipkg
+Build-Only: 1
+Description: A PEP 517 build backend implementation developed for Poetry. This
+project is intended to be a light weight, fully compliant,
+self-contained package allowing PEP 517 compatible build frontends to
+build Poetry managed projects.
+@@
+
+Package: python3-poetry-core-src
+Submenu: Python
+Version: 1.8.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Poetry PEP 517 Build Backend (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: poetry_core-1.8.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/python-poetry/poetry-core
+Type: ipkg
+Build-Only: 1
+Description:     A PEP 517 build backend implementation developed for Poetry. This
+project is intended to be a light weight, fully compliant,
+self-contained package allowing PEP 517 compatible build frontends to
+build Poetry managed projects.
+
+    This package contains the Python source files for python3-poetry-core.
+@@
+Config:
+    depends on PACKAGE_python3-poetry-core
+@@
+
+

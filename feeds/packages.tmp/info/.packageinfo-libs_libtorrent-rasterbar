@@ -1,0 +1,46 @@
+Source-Makefile: feeds/packages/libs/libtorrent-rasterbar/Makefile
+Build-Depends: boost
+
+Package: libtorrent-rasterbar
+Version: 2.0.11-r2
+Depends: +libc +libopenssl +libatomic +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Rasterbar BitTorrent library
+Maintainer: David Yang <mmyangfl@gmail.com>
+Source: libtorrent-rasterbar-2.0.11.tar.gz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+URL: https://libtorrent.org/
+Type: ipkg
+Description:   Rasterbar libtorrent is a C++ library that aims to be a good alternative to
+  all the other bittorrent implementations around.
+@@
+
+Package: python3-libtorrent
+Submenu: Python
+Version: 2.0.11-r2
+Depends: +libc +libtorrent-rasterbar +boost-python3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Rasterbar BitTorrent library (Python 3)
+Maintainer: David Yang <mmyangfl@gmail.com>
+Source: libtorrent-rasterbar-2.0.11.tar.gz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+URL: https://libtorrent.org/
+Type: ipkg
+Description:     Rasterbar libtorrent is a C++ library that aims to be a good alternative to
+  all the other bittorrent implementations around.
+  This package contains Python 3 bindings for the libtorrent-rasterbar library.
+@@
+
+

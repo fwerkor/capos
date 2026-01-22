@@ -1,0 +1,60 @@
+Source-Makefile: feeds/packages/libs/liboping/Makefile
+
+Package: liboping
+Version: 1.10.0-r3
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: C library to generate ICMP echo requests.
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: liboping-1.10.0.tar.bz2
+License: LGPL-2.1-or-later
+CPE-ID: cpe:/a:noping:liboping
+URL: https://noping.cc
+Type: ipkg
+Description: C library to generate ICMP echo requests.
+@@
+
+Package: oping
+Version: 1.10.0-r3
+Depends: +libc +liboping
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Send ICMP echo request to network hosts
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: liboping-1.10.0.tar.bz2
+License: LGPL-2.1-or-later
+CPE-ID: cpe:/a:noping:liboping
+URL: https://noping.cc
+Type: ipkg
+Description: Send ICMP echo request to network hosts
+@@
+
+Package: noping
+Version: 1.10.0-r3
+Depends: +libc +liboping +libncurses
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Ncurses application to send ICMP echo request to network hosts
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: liboping-1.10.0.tar.bz2
+License: LGPL-2.1-or-later
+CPE-ID: cpe:/a:noping:liboping
+URL: https://noping.cc
+Type: ipkg
+Description: Ncurses application to send ICMP echo request to network hosts
+@@
+
+

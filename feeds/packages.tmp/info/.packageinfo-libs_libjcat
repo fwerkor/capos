@@ -1,0 +1,27 @@
+Source-Makefile: feeds/packages/libs/libjcat/Makefile
+Build-Depends: glib2/host
+
+Package: libjcat
+Version: 0.2.1-r1
+Depends: +libc +glib2 +json-glib +LIBJCAT_GPG:libgpgme +LIBJCAT_GPG:libgpg-error +LIBJCAT_PKCS7:libgnutls +LIBJCAT_ED25519:libgnutls +LIBJCAT_ED25519:libnettle
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: libjcat
+Maintainer: Lukas Voegl <lvoegl@tdt.de>
+Source: libjcat-0.2.1.tar.xz
+License: LGPL-2.1-or-later
+LicenseFiles: LICENSE
+URL: https://github.com/hughsie/libjcat
+Type: ipkg
+Description:   libjcat allows reading and writing gzip-compressed JSON catalog files,
+  which can be used to store GPG, PKCS-7 and SHA-256 checksums for each file.
+@@
+Config:
+	source "feeds/packages/libs/libjcat/Config.in"
+@@
+
+

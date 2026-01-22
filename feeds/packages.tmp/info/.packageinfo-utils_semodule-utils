@@ -1,0 +1,113 @@
+Source-Makefile: feeds/packages/utils/semodule-utils/Makefile
+
+Package: semodule-utils
+Version: 3.6-r1
+Depends: +libc semodule-expand semodule-link semodule-package semodule-unpackage
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: SELinux policy module utility meta-package
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: semodule-utils-3.6.tar.gz
+License: GPL-2.0-only
+LicenseFiles: LICENSE
+URL: http://selinuxproject.org/page/Main_Page
+Type: ipkg
+Description: semodule-utils is a collection of utilities for dealing with policy
+modules.
+
+This is a meta-package that installs all of the semodule-utils tools.
+@@
+
+Package: semodule-expand
+Version: 3.6-r1
+Depends: +libc +libsepol
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: SELinux policy module utility semodule_expand
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: semodule-utils-3.6.tar.gz
+License: GPL-2.0-only
+LicenseFiles: LICENSE
+URL: http://selinuxproject.org/page/Main_Page
+Type: ipkg
+Description: semodule-utils is a collection of utilities for dealing with policy
+modules.
+
+This contains the semodule_expand tool.
+@@
+
+Package: semodule-link
+Version: 3.6-r1
+Depends: +libc +libsepol
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: SELinux policy module utility semodule_link
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: semodule-utils-3.6.tar.gz
+License: GPL-2.0-only
+LicenseFiles: LICENSE
+URL: http://selinuxproject.org/page/Main_Page
+Type: ipkg
+Description: semodule-utils is a collection of utilities for dealing with policy
+modules.
+
+This contains the semodule_link tool.
+@@
+
+Package: semodule-package
+Version: 3.6-r1
+Depends: +libc +libsepol
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: SELinux policy module utility semodule_package
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: semodule-utils-3.6.tar.gz
+License: GPL-2.0-only
+LicenseFiles: LICENSE
+URL: http://selinuxproject.org/page/Main_Page
+Type: ipkg
+Description: semodule-utils is a collection of utilities for dealing with policy
+modules.
+
+This contains the semodule_package tool.
+@@
+
+Package: semodule-unpackage
+Version: 3.6-r1
+Depends: +libc +libsepol
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: SELinux policy module utility semodule_unpackage
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: semodule-utils-3.6.tar.gz
+License: GPL-2.0-only
+LicenseFiles: LICENSE
+URL: http://selinuxproject.org/page/Main_Page
+Type: ipkg
+Description: semodule-utils is a collection of utilities for dealing with policy
+modules.
+
+This contains the semodule_unpackage tool.
+@@
+
+

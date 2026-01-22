@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/libs/libdeflate/Makefile
+
+Package: libdeflate
+Version: 1.22-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: library for fast, whole-buffer DEFLATE-based compression and decompression
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: libdeflate-1.22.tar.gz
+License: COPYING
+LicenseFiles: MIT
+URL: https://github.com/ebiggers/libdeflate
+Type: ipkg
+Description: library for fast, whole-buffer DEFLATE-based compression and decompression
+@@
+
+

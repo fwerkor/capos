@@ -1,0 +1,50 @@
+Source-Makefile: feeds/packages/utils/acl/Makefile
+
+Package: acl
+Submenu: Filesystem
+Version: 2.3.2-r2
+Depends: +libc +libacl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Access control list (ACL) manipulation utils
+Maintainer: Maxim Storchak <m.storchak@gmail.com>
+Source: acl-2.3.2.tar.xz
+License: LGPL-2.1 GPL-2.0
+LicenseFiles: doc/COPYING doc/COPYING.LGPL
+CPE-ID: cpe:/a:acl_project:acl
+URL: https://savannah.nongnu.org/projects/acl
+Type: ipkg
+Description:   Access control list support
+ This package provides ACL manipulation utilities
+ - chacl
+ - getfacl
+ - setfacl
+@@
+
+Package: libacl
+Submenu: Filesystem
+Version: 2.3.2-r2
+Depends: +libc +libattr
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Access control list (ACL) manipulation library
+Maintainer: Maxim Storchak <m.storchak@gmail.com>
+Source: acl-2.3.2.tar.xz
+License: LGPL-2.1 GPL-2.0
+LicenseFiles: doc/COPYING doc/COPYING.LGPL
+CPE-ID: cpe:/a:acl_project:acl
+URL: https://savannah.nongnu.org/projects/acl
+Type: ipkg
+Description:   Access control list support
+ This package provides libacl
+@@
+
+

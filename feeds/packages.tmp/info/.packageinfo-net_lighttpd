@@ -1,0 +1,993 @@
+Source-Makefile: feeds/packages/net/lighttpd/Makefile
+Build-Depends: LIGHTTPD_PCRE2:pcre2 LIGHTTPD_CRYPTOLIB_NETTLE:nettle LIGHTTPD_CRYPTOLIB_GNUTLS:gnutls LIGHTTPD_CRYPTOLIB_MBEDTLS:mbedtls LIGHTTPD_CRYPTOLIB_OPENSSL:openssl LIGHTTPD_CRYPTOLIB_WOLFSSL:wolfssl
+
+Package: lighttpd
+Menu: 1
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc +libpthread +LIGHTTPD_LOGROTATE:logrotate +LIGHTTPD_PCRE2:libpcre2 +LIGHTTPD_CRYPTOLIB_NETTLE:libnettle +LIGHTTPD_CRYPTOLIB_GNUTLS:libgnutls +LIGHTTPD_CRYPTOLIB_MBEDTLS:libmbedtls +LIGHTTPD_CRYPTOLIB_OPENSSL:libopenssl +LIGHTTPD_CRYPTOLIB_WOLFSSL:libwolfssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: A flexible and lightweight web server
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: A flexible and lightweight web server
+@@
+Config:
+config LIGHTTPD_SSL
+	bool "SSL support (recommended)"
+	depends on PACKAGE_lighttpd
+	default y
+	help
+	  Implements SSL support in lighttpd (using libopenssl). This
+	  option is enabled by default for backwards compatibility.
+          Select one TLS module below if you enable the SSL engine in
+	  your lighttpd configuration file.
+          (mod_gnutls, mod_mbedtls, mod_nss, mod_openssl, mod_wolfssl)
+
+config LIGHTTPD_SSL_DEPENDS
+        bool
+        depends on LIGHTTPD_SSL
+        default PACKAGE_lighttpd-mod-mbedtls || PACKAGE_lighttpd-mod-wolfssl || PACKAGE_lighttpd-mod-gnutls || PACKAGE_lighttpd-mod-nss
+
+config LIGHTTPD_SSL_SELECT
+        tristate
+        depends on LIGHTTPD_SSL
+        default m if !LIGHTTPD_SSL_DEPENDS
+        select PACKAGE_lighttpd-mod-openssl
+
+config LIGHTTPD_PCRE2
+	bool "PCRE2 support (recommended)"
+	depends on PACKAGE_lighttpd
+	default y
+	help
+	  PCRE2 regular expressions for lighttpd.conf conditions
+
+if PACKAGE_lighttpd
+	choice
+		prompt "crypto library"
+		default LIGHTTPD_CRYPTOLIB_MBEDTLS
+		help
+		  library to use for cryptographic algorithms
+
+		config LIGHTTPD_CRYPTOLIB_NONE
+			bool "None"
+
+		config LIGHTTPD_CRYPTOLIB_NETTLE
+			bool "libnettle"
+
+		config LIGHTTPD_CRYPTOLIB_GNUTLS
+			bool "libgnutls"
+
+		config LIGHTTPD_CRYPTOLIB_MBEDTLS
+			bool "libmbedtls"
+
+		config LIGHTTPD_CRYPTOLIB_OPENSSL
+			bool "libopenssl"
+
+		config LIGHTTPD_CRYPTOLIB_WOLFSSL
+			bool "libwolfssl"
+	endchoice
+endif
+
+config LIGHTTPD_LOGROTATE
+	bool "Logrotate support"
+	depends on PACKAGE_lighttpd
+	default n
+	help
+	  It adds support for logrotate functionality.
+@@
+
+Package: lighttpd-mod-auth
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd +LIGHTTPD_CRYPTOLIB_NETTLE:libnettle +LIGHTTPD_CRYPTOLIB_GNUTLS:libgnutls +LIGHTTPD_CRYPTOLIB_MBEDTLS:libmbedtls +LIGHTTPD_CRYPTOLIB_OPENSSL:libopenssl +LIGHTTPD_CRYPTOLIB_WOLFSSL:libwolfssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Authentication module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: Authentication module
+@@
+
+Package: lighttpd-mod-authn_dbi
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd lighttpd-mod-auth libdbi +LIGHTTPD_CRYPTOLIB_NETTLE:libnettle +LIGHTTPD_CRYPTOLIB_GNUTLS:libgnutls +LIGHTTPD_CRYPTOLIB_MBEDTLS:libmbedtls +LIGHTTPD_CRYPTOLIB_OPENSSL:libopenssl +LIGHTTPD_CRYPTOLIB_WOLFSSL:libwolfssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: DBI-based authentication module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: DBI-based authentication module
+@@
+
+Package: lighttpd-mod-authn_file
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd lighttpd-mod-auth +LIGHTTPD_CRYPTOLIB_NETTLE:libnettle +LIGHTTPD_CRYPTOLIB_GNUTLS:libgnutls +LIGHTTPD_CRYPTOLIB_MBEDTLS:libmbedtls +LIGHTTPD_CRYPTOLIB_OPENSSL:libopenssl +LIGHTTPD_CRYPTOLIB_WOLFSSL:libwolfssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: File-based authentication module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: File-based authentication module
+@@
+
+Package: lighttpd-mod-authn_gssapi
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd lighttpd-mod-auth krb5-libs +LIGHTTPD_CRYPTOLIB_NETTLE:libnettle +LIGHTTPD_CRYPTOLIB_GNUTLS:libgnutls +LIGHTTPD_CRYPTOLIB_MBEDTLS:libmbedtls +LIGHTTPD_CRYPTOLIB_OPENSSL:libopenssl +LIGHTTPD_CRYPTOLIB_WOLFSSL:libwolfssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Kerberos-based authentication module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: Kerberos-based authentication module
+@@
+
+Package: lighttpd-mod-authn_ldap
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd lighttpd-mod-auth libopenldap
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: LDAP-based authentication module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: LDAP-based authentication module
+@@
+
+Package: lighttpd-mod-authn_pam
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd lighttpd-mod-auth libpam
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: PAM-based authentication module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: PAM-based authentication module
+@@
+
+Package: lighttpd-mod-authn_sasl
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd lighttpd-mod-auth libsasl2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: SASL-based authentication module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: SASL-based authentication module
+@@
+
+Package: lighttpd-mod-accesslog
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Access logging module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: Access logging module
+@@
+
+Package: lighttpd-mod-ajp13
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: AJP13 Tomcat connector module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: AJP13 Tomcat connector module
+@@
+
+Package: lighttpd-mod-cgi
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: CGI module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: CGI module
+@@
+
+Package: lighttpd-mod-deflate
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd +PACKAGE_lighttpd-mod-deflate:zlib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Compress dynamic output module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: Compress dynamic output module
+@@
+
+Package: lighttpd-mod-extforward
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Extract client module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: Extract client module
+@@
+
+Package: lighttpd-mod-gnutls
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd @LIGHTTPD_SSL +PACKAGE_lighttpd-mod-gnutls:libgnutls
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: TLS using gnutls module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: TLS using gnutls module
+@@
+
+Package: lighttpd-mod-magnet
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd +PACKAGE_lighttpd-mod-magnet:liblua
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Magnet module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: Magnet module
+@@
+
+Package: lighttpd-mod-maxminddb
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd +PACKAGE_lighttpd-mod-maxminddb:libmaxminddb
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: MaxMind DB module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: MaxMind DB module
+@@
+
+Package: lighttpd-mod-mbedtls
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd @LIGHTTPD_SSL +PACKAGE_lighttpd-mod-mbedtls:libmbedtls
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: TLS using mbedtls module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: TLS using mbedtls module
+@@
+
+Package: lighttpd-mod-nss
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd @LIGHTTPD_SSL +PACKAGE_lighttpd-mod-nss:libnss
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: TLS using nss module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: TLS using nss module
+@@
+
+Package: lighttpd-mod-openssl
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd @LIGHTTPD_SSL +PACKAGE_lighttpd-mod-openssl:libopenssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: TLS using openssl module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: TLS using openssl module
+@@
+
+Package: lighttpd-mod-proxy
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Proxy module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: Proxy module
+@@
+
+Package: lighttpd-mod-rrdtool
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd rrdtool1
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: RRDtool module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: RRDtool module
+@@
+
+Package: lighttpd-mod-sockproxy
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: sockproxy module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: sockproxy module
+@@
+
+Package: lighttpd-mod-ssi
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: SSI module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: SSI module
+@@
+
+Package: lighttpd-mod-status
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Server status display module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: Server status display module
+@@
+
+Package: lighttpd-mod-userdir
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: User directory module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: User directory module
+@@
+
+Package: lighttpd-mod-vhostdb
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Virtual Host Database module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: Virtual Host Database module
+@@
+
+Package: lighttpd-mod-vhostdb_dbi
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd lighttpd-mod-vhostdb +PACKAGE_lighttpd-mod-vhostdb_dbi:libdbi
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Virtual Host Database (DBI) module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: Virtual Host Database (DBI) module
+@@
+
+Package: lighttpd-mod-vhostdb_ldap
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd lighttpd-mod-vhostdb +PACKAGE_lighttpd-mod-vhostdb_ldap:libopenldap
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Virtual Host Database (LDAP) module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: Virtual Host Database (LDAP) module
+@@
+
+Package: lighttpd-mod-vhostdb_mysql
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd lighttpd-mod-vhostdb +PACKAGE_lighttpd-mod-vhostdb_mysql:libmariadb
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Virtual Host Database (MariaDB) module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: Virtual Host Database (MariaDB) module
+@@
+
+Package: lighttpd-mod-vhostdb_pgsql
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd lighttpd-mod-vhostdb +PACKAGE_lighttpd-mod-vhostdb_pgsql:libpq
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Virtual Host Database (PostgreSQL) module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: Virtual Host Database (PostgreSQL) module
+@@
+
+Package: lighttpd-mod-webdav
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd +PACKAGE_lighttpd-mod-webdav:libsqlite3 +PACKAGE_lighttpd-mod-webdav:libxml2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: WebDAV module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: WebDAV module
+@@
+
+Package: lighttpd-mod-webdav_min
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: WebDAV module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: WebDAV module
+@@
+
+Package: lighttpd-mod-wolfssl
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd @LIGHTTPD_SSL +PACKAGE_lighttpd-mod-wolfssl:libwolfssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: TLS using wolfssl module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: TLS using wolfssl module
+@@
+
+Package: lighttpd-mod-wstunnel
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd +LIGHTTPD_CRYPTOLIB_NETTLE:libnettle +LIGHTTPD_CRYPTOLIB_GNUTLS:libgnutls +LIGHTTPD_CRYPTOLIB_MBEDTLS:libmbedtls +LIGHTTPD_CRYPTOLIB_OPENSSL:libopenssl +LIGHTTPD_CRYPTOLIB_WOLFSSL:libwolfssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Websocket tunneling module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: Websocket tunneling module
+@@
+
+Package: lighttpd-mod-access
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Access restrictions module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: Access restrictions module
+@@
+
+Package: lighttpd-mod-alias
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Directory alias module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: Directory alias module
+@@
+
+Package: lighttpd-mod-evhost
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Enhanced Virtual-Hosting module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: Enhanced Virtual-Hosting module
+@@
+
+Package: lighttpd-mod-expire
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Expire module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: Expire module
+@@
+
+Package: lighttpd-mod-fastcgi
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: FastCGI module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: FastCGI module
+@@
+
+Package: lighttpd-mod-redirect
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd +LIGHTTPD_PCRE2:libpcre2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: URL redirection module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: URL redirection module
+@@
+
+Package: lighttpd-mod-rewrite
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd +LIGHTTPD_PCRE2:libpcre2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: URL rewriting module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: URL rewriting module
+@@
+
+Package: lighttpd-mod-scgi
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: SCGI module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: SCGI module
+@@
+
+Package: lighttpd-mod-setenv
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Environment variable setting module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: Environment variable setting module
+@@
+
+Package: lighttpd-mod-simple_vhost
+Submenu: Web Servers/Proxies
+Version: 1.4.82-r1
+Depends: +libc lighttpd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Simple virtual hosting module
+Maintainer: Glenn Strauss <gstrauss@gluelogic.com>
+Source: lighttpd-1.4.82.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:lighttpd:lighttpd
+URL: https://www.lighttpd.net/
+Type: ipkg
+Description: Simple virtual hosting module
+@@
+
+

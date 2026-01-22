@@ -1,0 +1,29 @@
+Source-Makefile: feeds/packages/lang/rust/Makefile
+Build-Types: host
+
+Package: rust
+Submenu: Rust
+Version: 1.89.0-r1
+Depends: +libc @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Rust Programming Language Compiler
+Maintainer: Luca Barbato <lu_zero@luminem.org>
+Source: rustc-1.89.0-src.tar.xz
+License: Apache-2.0 MIT
+LicenseFiles: LICENSE-APACHE LICENSE-MIT
+URL: https://www.rust-lang.org/
+Type: ipkg
+Description:   Rust is a multi-paradigm, general-purpose programming language designed for performance
+  and safety, especially safe concurrency. Rust is syntactically similar to C++, but can
+  guarantee memory safety by using a borrow checker to validate references.
+@@
+Config:
+  source "feeds/packages/lang/rust/Config.in"
+@@
+
+

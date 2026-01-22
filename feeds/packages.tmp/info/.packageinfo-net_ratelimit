@@ -1,0 +1,21 @@
+Source-Makefile: feeds/packages/net/ratelimit/Makefile
+
+Package: ratelimit
+Version: 2025.06.15~125fff7fab6b0f58a17fe1eb1d0a9622d457f6b1-r1
+Depends: +libc +tc +kmod-ifb +ucode-mod-log
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: client devices ratelimiting daemon
+Maintainer: Thibaut VARÈNE <hacks@slashdirt.org>
+Source: ratelimit-2025.06.15~125fff7fab6b0f58a17fe1eb1d0a9622d457f6b1.tar.zst
+License: MIT
+Type: ipkg
+Description:   This daemon provides a stateful interface to the HTB traffic shaper,
+  enabling per-client bandwidth limits assignment.
+@@
+
+

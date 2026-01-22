@@ -1,0 +1,21 @@
+Source-Makefile: feeds/packages/libs/libuwifi/Makefile
+
+Package: libuwifi
+Version: 2024.03.27~9006d3b379927854fb077e1013ed297b66920547-r1
+Depends: +libc +libradiotap +libnl-tiny
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Userspace Wifi Library
+Maintainer: Bruno Randolf <br1@einfach.org>, Nick Hainke <vincent@systemli.org>
+Source: libuwifi-2024.03.27~9006d3b379927854fb077e1013ed297b66920547.tar.zst
+License: LGPL-3.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Description: 	Library for parsing, generating and analyzing Wifi (WLAN 802.11) frames in userspace and related functions.
+@@
+
+

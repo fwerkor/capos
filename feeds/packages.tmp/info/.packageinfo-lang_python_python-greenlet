@@ -1,0 +1,52 @@
+Source-Makefile: feeds/packages/lang/python/python-greenlet/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host
+Build-Types: host
+
+Package: python3-greenlet
+Submenu: Python
+Version: 3.0.2-r1
+Depends: +libc +python3-light +libstdcpp @!arc
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Lightweight coroutines for in-process concurrent programming
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Source: greenlet-3.0.2.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/python-greenlet/greenlet
+Type: ipkg
+Description:   The greenlet package is a spin-off of Stackless
+  a version of CPython that supports micro-threads called tasklets.
+@@
+
+Package: python3-greenlet-src
+Submenu: Python
+Version: 3.0.2-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Lightweight coroutines for in-process concurrent programming (sources)
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Source: greenlet-3.0.2.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/python-greenlet/greenlet
+Type: ipkg
+Description:       The greenlet package is a spin-off of Stackless
+  a version of CPython that supports micro-threads called tasklets.
+
+    This package contains the Python source files for python3-greenlet.
+@@
+Config:
+    depends on PACKAGE_python3-greenlet
+@@
+
+

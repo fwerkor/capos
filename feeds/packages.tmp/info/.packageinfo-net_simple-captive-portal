@@ -1,0 +1,21 @@
+Source-Makefile: feeds/packages/net/simple-captive-portal/Makefile
+
+Package: simple-captive-portal
+Submenu: Captive Portals
+Version: 2025.06.22-r1
+Depends: +libc +uhttpd +uhttpd-mod-lua +luci-lib-ip
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Simple captive portal
+Maintainer: Etienne CHAMPETIER <champetier.etienne@gmail.com>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Description:   Provides a simple captive portal splash page.
+@@
+
+

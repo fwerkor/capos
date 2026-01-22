@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/libs/libtirpc/Makefile
+Build-Types: host
+
+Package: libtirpc
+Version: 1.3.4-r1
+Depends: +libc +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Library TI RPC for RPC bindings
+Maintainer: 
+Source: libtirpc-1.3.4.tar.bz2
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:libtirpc_project:libtirpc
+URL: http://libtirpc.sourceforge.net/
+Type: ipkg
+Description: Library TI RPC for RPC bindings
+@@
+
+

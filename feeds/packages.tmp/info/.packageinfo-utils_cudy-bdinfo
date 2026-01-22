@@ -1,0 +1,21 @@
+Source-Makefile: feeds/packages/utils/cudy-bdinfo/Makefile
+
+Package: cudy-bdinfo
+Version: 2023.06.01~5a60308c0fff610c4698207387d7153aba5fd62b-r1
+Depends: +libc @(TARGET_ramips||TARGET_mediatek) +libopenssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Tool for reading the bdinfo partition of Cudy routers
+Maintainer: David Bauer <mail@david-bauer.net>
+Source: cudy-bdinfo-2023.06.01~5a60308c0fff610c4698207387d7153aba5fd62b.tar.zst
+License: GPL-2.0-or-later
+Type: ipkg
+Description: This program can be used to obtain information stored on the
+bdinfo parition found on routers from Shenzhen Cudy Technology.
+@@
+
+

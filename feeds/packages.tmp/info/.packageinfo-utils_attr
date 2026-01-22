@@ -1,0 +1,50 @@
+Source-Makefile: feeds/packages/utils/attr/Makefile
+
+Package: attr
+Submenu: Filesystem
+Version: 2.5.2-r3
+Depends: +libc +libattr
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Extended attributes (xattr) manipulation utils
+Maintainer: Maxim Storchak <m.storchak@gmail.com>
+Source: attr-2.5.2.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: doc/COPYING
+CPE-ID: cpe:/a:attr_project:attr
+URL: http://savannah.nongnu.org/projects/attr
+Type: ipkg
+Description:   Extended attributes support
+ This package provides xattr manipulation utilities
+ - attr
+ - getfattr
+ - setfattr
+@@
+
+Package: libattr
+Submenu: Filesystem
+Version: 2.5.2-r3
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Extended attributes (xattr) manipulation library
+Maintainer: Maxim Storchak <m.storchak@gmail.com>
+Source: attr-2.5.2.tar.xz
+License: LGPL-2.1-or-later
+LicenseFiles: doc/COPYING.LGPL
+CPE-ID: cpe:/a:attr_project:attr
+URL: http://savannah.nongnu.org/projects/attr
+Type: ipkg
+Description:   Extended attributes support
+ This package provides libattr
+@@
+
+

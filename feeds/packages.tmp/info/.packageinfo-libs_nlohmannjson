@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/libs/nlohmannjson/Makefile
+
+Package: nlohmannjson
+Version: 3.11.2-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: JSON for Modern C++
+Maintainer: Leonid Esman <leonid.esman@gmail.com>
+Source: nlohmannjson-3.11.2.zip
+License: MIT
+LicenseFiles: LICENSE.MIT
+CPE-ID: cpe:/a:json-for-modern-cpp_project:json-for-modern-cpp
+URL: https://nlohmann.github.io/json/
+Type: ipkg
+Build-Only: 1
+Description:   Niels Lohmann's JSON headers-only library for modern C++
+@@
+
+

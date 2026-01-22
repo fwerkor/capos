@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/net/slirp4netns/Makefile
+
+Package: slirp4netns
+Version: 1.3.1-r1
+Depends: +libc @!arc +libslirp +libseccomp +glib2 +libcap
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: slirp4netns
+Maintainer: Oskari Rauta <oskari.rauta@gmail.com>
+Source: slirp4netns-1.3.1.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://github.com/rootless-containers/slirp4netns
+Type: ipkg
+Description:   User-mode networking for unprivileged network namespaces
+@@
+
+

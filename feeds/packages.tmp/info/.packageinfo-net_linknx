@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/net/linknx/Makefile
+Build-Depends: USE_MUSL:argp-standalone
+
+Package: linknx
+Version: 0.0.1.38-r3
+Depends: +libc +pthsem +lua +luac +libcurl +libesmtp +libstdcpp +BUILD_NLS:libiconv-full
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: KNX home automation platform
+Maintainer: Othmar Truniger <github@truniger.ch>
+Source: linknx-0.0.1.38.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE
+URL: https://github.com/linknx/linknx
+Type: ipkg
+Description: KNX home automation platform
+@@
+
+

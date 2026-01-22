@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/net/phantap/Makefile
+
+Package: phantap
+Version: 2022.10.30~815c312c1843ef02d758b10f3d24ccaad96e1782-r1
+Depends: +libc +libpcap +libnl-tiny +ip-full +kmod-nft-bridge +kmod-nft-netdev
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: PhanTap
+Maintainer: Diana Dragusin <diana.dragusin@nccgroup.com>, Etienne Champetier <champetier.etienne@gmail.com>
+Source: phantap-2022.10.30~815c312c1843ef02d758b10f3d24ccaad96e1782.tar.zst
+License: GPL-3.0-only
+URL: https://github.com/nccgroup/phantap
+Type: ipkg
+Description:   PhanTap or Phantom tap is a small set of scripts and C code that allow you to setup a
+  network tap that automatically impersonate a victim device, allowing you to access
+  internet using the IP & MAC of the victim.
+@@
+
+

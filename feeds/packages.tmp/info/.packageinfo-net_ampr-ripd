@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/net/ampr-ripd/Makefile
+
+Package: ampr-ripd
+Submenu: Routing and Redirection
+Version: 2.4.2-r2
+Depends: +libc +kmod-ipip +ip
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Routing daemon for the AMPR network
+Maintainer: Dan Srebnick <k2ie@k2ie.net>
+Source: ampr-ripd-2.4.2.tgz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+URL: https://www.yo2loj.ro/hamprojects
+Type: ipkg
+Description:   Routing daemon written in C similar to Hessu's rip44d including
+  optional resending of RIPv2 broadcasts for router injection.
+@@
+
+

@@ -1,0 +1,145 @@
+Source-Makefile: feeds/packages/net/tor/Makefile
+
+Package: tor
+Version: 0.4.8.21-r1
+Depends: +libc +libevent2 +libopenssl +libpthread +librt +zlib +libcap
+Conflicts: tor-basic
+Menu-Depends: 
+Provides: tor-basic
+Build-Variant: full
+Section: net
+Category: Network
+Repository: base
+Title: Tor routing daemon (full)
+Maintainer: Rui Salvaterra <rsalvaterra@gmail.com>
+Require-User: tor=52:tor=52
+Source: tor-0.4.8.21.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:torproject:tor
+URL: https://www.torproject.org/
+Type: ipkg
+Description: Tor is a toolset for a wide range of organizations and people that want to
+improve their safety and security on the Internet. Using Tor can help you
+anonymize web browsing and publishing, instant messaging, IRC, SSH, and
+more. Tor also provides a platform on which software developers can build
+new applications with built-in anonymity, safety, and privacy features.
+
+This package contains the full tor daemon.
+
+@@
+
+Package: tor-basic
+Version: 0.4.8.21-r1
+Depends: +libc +libevent2 +libopenssl +libpthread +librt +zlib +libcap
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: basic
+Section: net
+Category: Network
+Repository: base
+Title: Tor routing daemon (no bridge/relay support)
+Maintainer: Rui Salvaterra <rsalvaterra@gmail.com>
+Require-User: tor=52:tor=52
+Source: tor-0.4.8.21.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:torproject:tor
+URL: https://www.torproject.org/
+Type: ipkg
+Description: Tor is a toolset for a wide range of organizations and people that want to
+improve their safety and security on the Internet. Using Tor can help you
+anonymize web browsing and publishing, instant messaging, IRC, SSH, and
+more. Tor also provides a platform on which software developers can build
+new applications with built-in anonymity, safety, and privacy features.
+
+This package contains the basic tor daemon, without bridge/relay support.
+
+@@
+
+Package: tor-gencert
+Version: 0.4.8.21-r1
+Depends: +libc tor
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Tor certificate generation
+Maintainer: Rui Salvaterra <rsalvaterra@gmail.com>
+Require-User: tor=52:tor=52
+Source: tor-0.4.8.21.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:torproject:tor
+URL: https://www.torproject.org/
+Type: ipkg
+Description: Tor is a toolset for a wide range of organizations and people that want to
+improve their safety and security on the Internet. Using Tor can help you
+anonymize web browsing and publishing, instant messaging, IRC, SSH, and
+more. Tor also provides a platform on which software developers can build
+new applications with built-in anonymity, safety, and privacy features.
+
+Generate certs and keys for Tor directory authorities.
+
+@@
+
+Package: tor-resolve
+Version: 0.4.8.21-r1
+Depends: +libc tor-basic
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: tor hostname resolve
+Maintainer: Rui Salvaterra <rsalvaterra@gmail.com>
+Require-User: tor=52:tor=52
+Source: tor-0.4.8.21.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:torproject:tor
+URL: https://www.torproject.org/
+Type: ipkg
+Description: Tor is a toolset for a wide range of organizations and people that want to
+improve their safety and security on the Internet. Using Tor can help you
+anonymize web browsing and publishing, instant messaging, IRC, SSH, and
+more. Tor also provides a platform on which software developers can build
+new applications with built-in anonymity, safety, and privacy features.
+
+Resolve a hostname to an IP address via tor.
+
+@@
+
+Package: tor-geoip
+Version: 0.4.8.21-r1
+Depends: +libc tor-basic
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GeoIP db for tor
+Maintainer: Rui Salvaterra <rsalvaterra@gmail.com>
+Require-User: tor=52:tor=52
+Source: tor-0.4.8.21.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:torproject:tor
+URL: https://www.torproject.org/
+Type: ipkg
+Description: Tor is a toolset for a wide range of organizations and people that want to
+improve their safety and security on the Internet. Using Tor can help you
+anonymize web browsing and publishing, instant messaging, IRC, SSH, and
+more. Tor also provides a platform on which software developers can build
+new applications with built-in anonymity, safety, and privacy features.
+
+This package contains a GeoIP database mapping IP addresses to countries.
+
+@@
+
+

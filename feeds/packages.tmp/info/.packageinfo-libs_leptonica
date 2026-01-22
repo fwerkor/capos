@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/libs/leptonica/Makefile
+
+Package: libleptonica
+Version: 1.84.1-r1
+Depends: +libc +giflib +libjpeg +libpng +libtiff +libwebp +zlib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: A library for efficient image processing and image analysis operations
+Maintainer: Valentín Kivachuk <vk18496@gmail.com>
+Source: leptonica-1.84.1.tar.gz
+License: BSD-2-Clause
+LicenseFiles: leptonica-license.txt
+CPE-ID: cpe:/a:leptonica:leptonica
+URL: http://www.leptonica.org/
+Type: ipkg
+Description: A library for efficient image processing and image analysis operations
+@@
+
+

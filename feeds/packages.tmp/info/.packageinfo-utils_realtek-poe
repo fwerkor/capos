@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/utils/realtek-poe/Makefile
+
+Package: realtek-poe
+Version: 1.3-r1
+Depends: +libc +libubox +libubus +libuci
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Realtek PoE Switch Port daemon
+Maintainer: Martin Kennedy <hurricos@gmail.com>
+Source: realtek-poe-1.3.tar.gz
+License: GPL-2.0-or-later
+URL: https://github.com/Hurricos/realtek-poe
+Type: ipkg
+Description: 	Power over Ethernet interface for Realtek switches.
+	Supports enabling/disabling PoE supply on ports and monitoring PoE client
+	 power usage as well as total switch power budget.
+@@
+
+

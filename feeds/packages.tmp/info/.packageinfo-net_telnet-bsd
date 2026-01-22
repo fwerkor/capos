@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/net/telnet-bsd/Makefile
+
+Package: telnet-bsd
+Version: 1.2-r1
+Depends: +libc +libncurses
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: telnet-bsd
+Maintainer: Paul Spooren <mail@aparcar.org>
+Source: telnet-bsd-1.2.tar.bz2
+License: BSD-3-Clause
+LicenseFiles: COPYING
+URL: https://www.openbsd.org/
+Type: ipkg
+Description:   Telnet client ported from OpenBSD
+@@
+
+

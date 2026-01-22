@@ -1,0 +1,26 @@
+Source-Makefile: feeds/packages/utils/dysk/Makefile
+Build-Depends: rust/host
+
+Package: dysk
+Version: 2.8.2-r1
+Depends: +libc @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility for efficient file and directory management
+Maintainer: Facundo Acevedo <facevedo@disroot.org>
+Source: dysk-2.8.2.tar.gz
+License: MIT
+LicenseFiles: LICENCE
+URL: https://dystroy.org/dysk
+Type: ipkg
+Description:   Dysk is a command-line tool designed for efficient file and
+  directory management in Unix-like environments. It offers a
+  streamlined approach to organizing and manipulating files,
+  potentially simplifying various file-related tasks.
+@@
+
+

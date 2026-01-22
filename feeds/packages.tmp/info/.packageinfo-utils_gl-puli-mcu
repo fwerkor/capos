@@ -1,0 +1,27 @@
+Source-Makefile: feeds/packages/utils/gl-puli-mcu/Makefile
+
+Package: gl-puli-mcu
+Menu: 1
+Version: 2-r1
+Depends: +libc +CONFIG_GL_PULI_MCU_XE300:kmod-usb-serial-ch341 +libubus +libubox
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: GL.iNet power monitoring support
+Maintainer: Nuno Goncalves <nunojpg@gmail.com>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Description:   Interfaces with GL.iNet Puli family power monitoring MCU over
+  a USB to UART adapter present on the device and provides
+  battery SOC, temperature, charging state and cycle count at
+  ubus battery/info.
+@@
+Config:
+  source "feeds/packages/utils/gl-puli-mcu/Config.in"
+@@
+
+

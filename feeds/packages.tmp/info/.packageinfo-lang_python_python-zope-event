@@ -1,0 +1,53 @@
+Source-Makefile: feeds/packages/lang/python/python-zope-event/Makefile
+Build-Depends: python3/host python-setuptools/host
+
+Package: python3-zope-event
+Submenu: Python
+Version: 6.1-r1
+Depends: +libc +python3-light +python3-logging
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Very basic event publishing system
+Maintainer: Andy Syam <privasisource@gmail.com>
+Source: zope_event-6.1.tar.gz
+License: ZPL-2.1
+LicenseFiles: LICENSE.txt
+URL: https://github.com/zopefoundation/zope.event
+Type: ipkg
+Description: The zope.event package provides a simple event system, including:
+An event publishing API, intended for use by applications which are unaware of any subscribers to their events.
+A very simple synchronous event-dispatching system, on which more sophisticated event dispatching systems can be built. For example, a type-based event dispatching system that builds on zope.event can be found in zope.component.
+@@
+
+Package: python3-zope-event-src
+Submenu: Python
+Version: 6.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Very basic event publishing system (sources)
+Maintainer: Andy Syam <privasisource@gmail.com>
+Source: zope_event-6.1.tar.gz
+License: ZPL-2.1
+LicenseFiles: LICENSE.txt
+URL: https://github.com/zopefoundation/zope.event
+Type: ipkg
+Description:     The zope.event package provides a simple event system, including:
+An event publishing API, intended for use by applications which are unaware of any subscribers to their events.
+A very simple synchronous event-dispatching system, on which more sophisticated event dispatching systems can be built. For example, a type-based event dispatching system that builds on zope.event can be found in zope.component.
+
+    This package contains the Python source files for python3-zope-event.
+@@
+Config:
+    depends on PACKAGE_python3-zope-event
+@@
+
+

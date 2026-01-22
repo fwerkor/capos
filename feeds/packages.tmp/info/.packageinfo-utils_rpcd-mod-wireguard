@@ -1,0 +1,20 @@
+Source-Makefile: feeds/packages/utils/rpcd-mod-wireguard/Makefile
+
+Package: rpcd-mod-wireguard
+Version: 1
+Depends: +libc +rpcd +kmod-wireguard
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: WireGuard rpcd module
+Maintainer: Andre Heider <a.heider@gmail.com>
+Source: 
+License: LGPL-2.1+
+Type: ipkg
+Description: WireGuard rpcd module
+@@
+
+

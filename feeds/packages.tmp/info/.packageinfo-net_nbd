@@ -1,0 +1,41 @@
+Source-Makefile: feeds/packages/net/nbd/Makefile
+
+Package: nbd
+Version: 3.25-r1
+Depends: +libc +kmod-nbd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Network Block Device utilities
+Maintainer: Marcin Jurkowski <marcin1j@gmail.com>
+Source: nbd-3.25.tar.xz
+License: GPL-2.0-or-later
+CPE-ID: cpe:/a:network_block_device_project:network_block_device
+URL: https://nbd.sourceforge.io
+Type: ipkg
+Description:   This package contains the network block device client.
+@@
+
+Package: nbd-server
+Version: 3.25-r1
+Depends: +libc +glib2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Network Block Device Server
+Maintainer: Marcin Jurkowski <marcin1j@gmail.com>
+Source: nbd-3.25.tar.xz
+License: GPL-2.0-or-later
+CPE-ID: cpe:/a:network_block_device_project:network_block_device
+URL: https://nbd.sourceforge.io
+Type: ipkg
+Description:   This package contains the network block device server.
+@@
+
+

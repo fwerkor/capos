@@ -1,0 +1,57 @@
+Source-Makefile: feeds/packages/net/usbip/Makefile
+
+Package: usbip
+Version: 15
+Depends: +libc @USB_SUPPORT +libwrap +kmod-usbip +libudev +usbids
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: USB-over-IP (common)
+Maintainer: Nuno Goncalves <nunojpg@gmail.com>
+Source: 
+License: GPL-2.0-only
+URL: http://usbip.sourceforge.net/
+Type: ipkg
+Description: USB-over-IP (common)
+@@
+
+Package: usbip-client
+Version: 15
+Depends: +libc @USB_SUPPORT usbip +kmod-usbip-client
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: USB-over-IP (client)
+Maintainer: Nuno Goncalves <nunojpg@gmail.com>
+Source: 
+License: GPL-2.0-only
+URL: http://usbip.sourceforge.net/
+Type: ipkg
+Description: USB-over-IP (client)
+@@
+
+Package: usbip-server
+Version: 15
+Depends: +libc @USB_SUPPORT usbip +kmod-usbip-server
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: USB-over-IP (server)
+Maintainer: Nuno Goncalves <nunojpg@gmail.com>
+Source: 
+License: GPL-2.0-only
+URL: http://usbip.sourceforge.net/
+Type: ipkg
+Description: USB-over-IP (server)
+@@
+
+

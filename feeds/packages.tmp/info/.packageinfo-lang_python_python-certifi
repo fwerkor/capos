@@ -1,0 +1,56 @@
+Source-Makefile: feeds/packages/lang/python/python-certifi/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host
+Build-Types: host
+
+Package: python3-certifi
+Submenu: Python
+Version: 2025.8.3-r1
+Depends: +libc +python3-light +python3-urllib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python package for Mozilla's CA Bundle
+Maintainer: Eneas U de Queiroz <cotequeiroz@gmail.com>
+Source: certifi-2025.8.3.tar.gz
+License: MPL-2.0
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:certifi:certifi
+URL: https://github.com/certifi/python-certifi
+Type: ipkg
+Description: Certifi provides Mozilla's carefully curated collection of Root
+Certificates for validating the trustworthiness of SSL certificates
+while verifying the identity of TLS hosts.
+@@
+
+Package: python3-certifi-src
+Submenu: Python
+Version: 2025.8.3-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python package for Mozilla's CA Bundle (sources)
+Maintainer: Eneas U de Queiroz <cotequeiroz@gmail.com>
+Source: certifi-2025.8.3.tar.gz
+License: MPL-2.0
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:certifi:certifi
+URL: https://github.com/certifi/python-certifi
+Type: ipkg
+Description:     Certifi provides Mozilla's carefully curated collection of Root
+Certificates for validating the trustworthiness of SSL certificates
+while verifying the identity of TLS hosts.
+
+    This package contains the Python source files for python3-certifi.
+@@
+Config:
+    depends on PACKAGE_python3-certifi
+@@
+
+

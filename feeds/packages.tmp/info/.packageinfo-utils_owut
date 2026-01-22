@@ -1,0 +1,27 @@
+Source-Makefile: feeds/packages/utils/owut/Makefile
+
+Package: owut
+Version: 2025.12.01~4482dd097f48615cc862524ef2492ff83d365db5-r1
+Depends: +libc +attendedsysupgrade-common +rpcd-mod-file +ucode +ucode-mod-fs +ucode-mod-ubus +ucode-mod-uci +ucode-mod-uclient +ucode-mod-uloop
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: owut - an OpenWrt Upgrade Tool
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>
+Source: owut-2025.12.01~4482dd097f48615cc862524ef2492ff83d365db5.tar.zst
+License: GPL-2.0-only
+URL: http://github.com/efahl/owut
+Type: ipkg
+Description:   The OpenWrt Upgrade Tool (owut) is a command line program that
+  checks for new packages, package build breakages, generates
+  sysupgrade images containing installed packages and installs
+  images.  It is written in ucode for easy end-user customization.
+
+  Documentation is available at
+  https://openwrt.org/docs/guide-user/installation/sysupgrade.owut
+@@
+
+

@@ -1,0 +1,47 @@
+Source-Makefile: feeds/packages/lang/python/python-dateutil/Makefile
+Build-Depends: python-setuptools-scm/host
+
+Package: python3-dateutil
+Submenu: Python
+Version: 2.9.0-r1
+Depends: +libc +python3 +python3-six
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Extensions to the standard Python datetime module
+Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
+Source: python-dateutil-2.9.0.tar.gz
+License: BSD-2-Clause
+URL: https://dateutil.readthedocs.org/
+Type: ipkg
+Description:   Extensions to the standard Python datetime module
+@@
+
+Package: python3-dateutil-src
+Submenu: Python
+Version: 2.9.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Extensions to the standard Python datetime module (sources)
+Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
+Source: python-dateutil-2.9.0.tar.gz
+License: BSD-2-Clause
+URL: https://dateutil.readthedocs.org/
+Type: ipkg
+Description:       Extensions to the standard Python datetime module
+
+    This package contains the Python source files for python3-dateutil.
+@@
+Config:
+    depends on PACKAGE_python3-dateutil
+@@
+
+

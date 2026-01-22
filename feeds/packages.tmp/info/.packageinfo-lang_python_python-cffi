@@ -1,0 +1,50 @@
+Source-Makefile: feeds/packages/lang/python/python-cffi/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host python-pycparser/host
+Build-Types: host
+
+Package: python3-cffi
+Submenu: Python
+Version: 1.16.0-r1
+Depends: +libc +libffi +python3-light +python3-ctypes +python3-pycparser
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: C Foreign Function Interface
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: cffi-1.16.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://cffi.readthedocs.org/
+Type: ipkg
+Description: Foreign Function Interface for Python calling C code.
+@@
+
+Package: python3-cffi-src
+Submenu: Python
+Version: 1.16.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: C Foreign Function Interface (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: cffi-1.16.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://cffi.readthedocs.org/
+Type: ipkg
+Description:     Foreign Function Interface for Python calling C code.
+
+    This package contains the Python source files for python3-cffi.
+@@
+Config:
+    depends on PACKAGE_python3-cffi
+@@
+
+

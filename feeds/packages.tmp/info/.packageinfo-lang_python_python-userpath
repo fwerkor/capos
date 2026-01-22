@@ -1,0 +1,49 @@
+Source-Makefile: feeds/packages/lang/python/python-userpath/Makefile
+Build-Depends: python-hatchling/host
+
+Package: python3-userpath
+Submenu: Python
+Version: 1.9.1-r1
+Depends: +libc +python3-light +python3-click +python3-psutil
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Cross-platform tool for modifying a user's PATH
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: userpath-1.9.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE.txt
+URL: https://github.com/ofek/userpath
+Type: ipkg
+Description: This is a tool for modifying a user's PATH.
+@@
+
+Package: python3-userpath-src
+Submenu: Python
+Version: 1.9.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Cross-platform tool for modifying a user's PATH (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: userpath-1.9.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE.txt
+URL: https://github.com/ofek/userpath
+Type: ipkg
+Description:     This is a tool for modifying a user's PATH.
+
+    This package contains the Python source files for python3-userpath.
+@@
+Config:
+    depends on PACKAGE_python3-userpath
+@@
+
+

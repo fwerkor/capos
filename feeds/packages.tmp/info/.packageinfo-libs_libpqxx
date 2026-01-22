@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/libs/libpqxx/Makefile
+
+Package: libpqxx
+Submenu: Database
+Version: 7.9.2-r1
+Depends: +libc +libpq +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: PostgreSQL client library (C++ interface)
+Maintainer: Igor Bezzubchenko <garikello@gmail.com>
+Source: libpqxx-7.9.2.tar.zst
+URL: http://pqxx.org/development/libpqxx
+Type: ipkg
+Description: PostgreSQL client library (C++ interface)
+@@
+Config:
+	source "feeds/packages/libs/libpqxx/Config.in"
+@@
+
+

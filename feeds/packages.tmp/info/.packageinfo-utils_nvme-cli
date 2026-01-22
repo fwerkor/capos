@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/utils/nvme-cli/Makefile
+
+Package: nvme-cli
+Submenu: Disc
+Version: 2.9.1-r1
+Depends: +libc +libnvme
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: NVMe management command line interface
+Maintainer: Luca Barbato <lu_zero@luminem.org>
+Source: nvme-cli-2.9.1.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE
+URL: https://nvmexpress.org/
+Type: ipkg
+Description:   NVM-Express user space tooling for Linux.
+@@
+
+

@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/utils/ctop/Makefile
+Build-Depends: golang/host
+
+Package: ctop
+Version: 0.7.7-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Top-like interface for container metrics
+Maintainer: Javier Marcet <javier@marcet.info>
+Source: v0.7.7.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://ctop.sh/
+Type: ipkg
+Description:   Top-like interface for container metrics
+@@
+
+

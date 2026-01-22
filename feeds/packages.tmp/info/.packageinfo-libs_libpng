@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/libs/libpng/Makefile
+
+Package: libpng
+Version: 1.6.44-r2
+Depends: +libc +zlib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: A PNG format files handling library
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: libpng-1.6.44.tar.xz
+License: Libpng GPL-2.0-or-later BSD-3-Clause
+LicenseFiles: LICENSE contrib/gregbook/COPYING contrib/gregbook/LICENSE
+CPE-ID: cpe:/a:libpng:libpng
+URL: http://www.libpng.org/pub/png/libpng.html
+Type: ipkg
+Description: A PNG format files handling library
+@@
+
+

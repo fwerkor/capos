@@ -1,0 +1,46 @@
+Source-Makefile: feeds/packages/net/geoip-shell/Makefile
+
+Package: geoip-shell
+Version: 0.5.2-r1
+Depends: +libc +ca-bundle +kmod-nft-core +nftables +firewall4
+Conflicts: 
+Menu-Depends: 
+Provides: geoip-shell
+Build-Variant: nftables
+Default-Variant: nftables
+Section: opt
+Category: Network
+Repository: base
+Title: Flexible geoip blocker with nftables support
+Maintainer: antonk <antonk.d3v@gmail.com>
+Source: geoip-shell-0.5.2.tar.zst
+License: GPL-3.0-or-later
+URL: https://github.com/friendly-bits/geoip-shell
+Type: ipkg
+Description: 	Flexible geoip blocker with a user-friendly command line interface (currently no LuCi interface).
+	For readme, please see
+	https://github.com/openwrt/packages/blob/master/net/geoip-shell/OpenWrt-README.md
+@@
+
+Package: geoip-shell-iptables
+Version: 0.5.2-r1
+Depends: +libc +ca-bundle +kmod-ipt-ipset +IPV6:ip6tables +iptables +ipset
+Conflicts: geoip-shell firewall4
+Menu-Depends: 
+Provides: geoip-shell
+Build-Variant: iptables
+Section: opt
+Category: Network
+Repository: base
+Title: Flexible geoip blocker with iptables support
+Maintainer: antonk <antonk.d3v@gmail.com>
+Source: geoip-shell-0.5.2.tar.zst
+License: GPL-3.0-or-later
+URL: https://github.com/friendly-bits/geoip-shell
+Type: ipkg
+Description: 	Flexible geoip blocker with a user-friendly command line interface (currently no LuCi interface).
+	For readme, please see
+	https://github.com/openwrt/packages/blob/master/net/geoip-shell/OpenWrt-README.md
+@@
+
+

@@ -1,0 +1,30 @@
+Source-Makefile: feeds/packages/utils/btrfs-progs/Makefile
+Build-Depends: acl
+
+Package: btrfs-progs
+Submenu: Filesystem
+Version: 6.11-r1
+Depends: +libc +libattr +libuuid +libmount +zlib +libblkid +liblzo +libpthread +kmod-fs-btrfs +BTRFS_PROGS_ZSTD:libzstd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Btrfs filesystems utilities
+Maintainer: Karel Kočí <karel.koci@nic.cz>
+Source: btrfs-progs-v6.11.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+URL: https://btrfs.readthedocs.io
+Type: ipkg
+Description:  Btrfs is a new copy on write filesystem for Linux aimed at implementing
+ advanced features while focusing on fault tolerance, repair and easy
+ administration. Initially developed by Oracle, Btrfs is licensed under the
+ GPL and open for contribution from anyone.
+@@
+Config:
+	source "feeds/packages/utils/btrfs-progs/Config.in"
+@@
+
+

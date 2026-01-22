@@ -1,0 +1,28 @@
+Source-Makefile: feeds/packages/net/crowdsec/Makefile
+Build-Depends: golang/host
+
+Package: crowdsec
+Version: 1.6.2-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Crowdsec detection engine
+Maintainer: Gerald Kerma <gandalf@gk2.net>
+Source: crowdsec-1.6.2.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://crowdsec.net/
+Type: ipkg
+Description:   Crowdsec - An open-source, lightweight agent to detect
+  and respond to bad behaviours.
+  It also automatically benefits from a global
+  community-wide IP reputation database.
+
+  This package contains the main program.
+@@
+
+

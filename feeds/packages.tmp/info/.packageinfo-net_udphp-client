@@ -1,0 +1,21 @@
+Source-Makefile: feeds/packages/net/udphp-client/Makefile
+
+Package: udphp-client
+Version: 2023.01.13~7c0fc5fcf3b807b053c5906bdd8c2acb244c1cbd-r1
+Depends: +libc +libstdcpp +libuuid
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: UDP hole punching client
+Maintainer: Almaz Gaifullin <gargargar@yandex.com>
+Source: udphp-client-2023.01.13~7c0fc5fcf3b807b053c5906bdd8c2acb244c1cbd.tar.zst
+License: MIT
+URL: https://github.com/gargargar/udphp
+Type: ipkg
+Description:  UDP hole punching tool and client for signaling server udphp-server
+@@
+
+

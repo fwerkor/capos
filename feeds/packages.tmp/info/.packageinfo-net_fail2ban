@@ -1,0 +1,48 @@
+Source-Makefile: feeds/packages/net/fail2ban/Makefile
+
+Package: fail2ban
+Version: 1.1.0-r1
+Depends: +libc +nftables +python3-light +python3-ctypes +python3-distutils +python3-email +python3-logging +python3-sqlite3 +python3-urllib +python3-pkg-resources
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ban hosts that cause multiple authentication errors
+Maintainer: 
+Source: fail2ban-1.1.0.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:fail2ban:fail2ban
+URL: https://www.fail2ban.org/
+Type: ipkg
+Description:   Fail2Ban scans log files like /var/log/auth.log and bans IP addresses conducting too many failed login attempts.
+@@
+
+Package: fail2ban-src
+Version: 1.1.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ban hosts that cause multiple authentication errors (sources)
+Maintainer: 
+Source: fail2ban-1.1.0.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:fail2ban:fail2ban
+URL: https://www.fail2ban.org/
+Type: ipkg
+Description:       Fail2Ban scans log files like /var/log/auth.log and bans IP addresses conducting too many failed login attempts.
+
+    This package contains the Python source files for fail2ban.
+@@
+Config:
+    depends on PACKAGE_fail2ban
+@@
+
+

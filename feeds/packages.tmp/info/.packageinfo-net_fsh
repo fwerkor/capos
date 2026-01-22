@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/net/fsh/Makefile
+
+Package: fsh
+Version: 4.10.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Fsh helps you access local shell and TCP services behind a NAT or firewall
+Maintainer: Ray Wang <git@hev.cc>
+Source: fsh-4.10.0.tar.xz
+License: MIT
+LicenseFiles: License
+URL: https://github.com/heiher/hev-fsh
+Type: ipkg
+Description: Fsh helps you access local shell and TCP services behind a NAT or firewall
+@@
+
+

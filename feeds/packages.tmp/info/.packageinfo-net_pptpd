@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/net/pptpd/Makefile
+
+Package: pptpd
+Submenu: VPN
+Version: 1.5.0-r3
+Depends: +libc +kmod-ppp +kmod-gre +kmod-mppe +ppp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: PopTop pptp server
+Maintainer: 
+Source: pptpd-1.5.0.tar.gz
+CPE-ID: cpe:/a:poptop:pptp_server
+URL: http://poptop.sourceforge.net/
+Type: ipkg
+Description: PopTop pptp server
+@@
+
+

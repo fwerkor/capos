@@ -1,0 +1,48 @@
+Source-Makefile: feeds/packages/lang/python/python-contextlib2/Makefile
+
+Package: python3-contextlib2
+Submenu: Python
+Version: 21.6.0-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Backports and enhancements for the contextlib module
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com> 
+Source: contextlib2-21.6.0.tar.gz
+License: PSF-2.0 Apache-2.0
+LicenseFiles: LICENSE.txt
+URL: https://contextlib2.readthedocs.org
+Type: ipkg
+Description: Backports and enhancements for the contextlib module
+@@
+
+Package: python3-contextlib2-src
+Submenu: Python
+Version: 21.6.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Backports and enhancements for the contextlib module (sources)
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com> 
+Source: contextlib2-21.6.0.tar.gz
+License: PSF-2.0 Apache-2.0
+LicenseFiles: LICENSE.txt
+URL: https://contextlib2.readthedocs.org
+Type: ipkg
+Description:     	Backports and enhancements for the contextlib module
+
+    This package contains the Python source files for python3-contextlib2.
+@@
+Config:
+    depends on PACKAGE_python3-contextlib2
+@@
+
+

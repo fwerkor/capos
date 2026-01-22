@@ -1,0 +1,29 @@
+Source-Makefile: feeds/packages/net/iperf/Makefile
+
+Package: iperf
+Version: 2.1.9-r1
+Depends: +libc +libstdcpp +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Internet Protocol bandwidth measuring tool
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: iperf-2.1.9.tar.gz
+License: BSD-3-Clause
+CPE-ID: cpe:/a:iperf_project:iperf
+URL: http://sourceforge.net/projects/iperf2/
+Type: ipkg
+Description:  Iperf is a modern alternative for measuring TCP and UDP bandwidth
+ performance, allowing the tuning of various parameters and
+ characteristics.
+@@
+Config:
+	config IPERF_ENABLE_MULTICAST
+		depends on PACKAGE_iperf
+		bool "Enable multicast support"
+@@
+
+

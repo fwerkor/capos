@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/libs/ivykis/Makefile
+
+Package: ivykis
+Version: 0.43.2-r1
+Depends: +libc +KERNEL_IO_URING:liburing
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Async I/O library
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: ivykis-0.43.2.tar.gz
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+URL: https://libivykis.sourceforge.net/
+ABI-Version: 0
+Type: ipkg
+Description:   libivykis is a library for asynchronous I/O readiness notification.
+@@
+
+

@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/net/openlist/Makefile
+Build-Depends: golang/host fuse
+
+Package: openlist
+Version: 4.1.5-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) +ca-bundle
+Conflicts: 
+Menu-Depends: 
+Provides: alist
+Section: net
+Category: Network
+Repository: base
+Title: A file list program that supports multiple storage
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: openlist-4.1.5.tar.gz
+License: AGPL-3.0-only
+LicenseFiles: LICENSE
+URL: https://docs.oplist.org
+Type: ipkg
+Description:   A file list program that supports multiple storage, and supports
+  web browsing and webdav, powered by gin and Solidjs, fork of AList.
+@@
+
+

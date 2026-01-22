@@ -1,0 +1,21 @@
+Source-Makefile: feeds/packages/kernel/mtd-rw/Makefile
+
+Package: kmod-mtd-rw
+Submenu: Other modules
+Version: <LINUX_VERSION>.2021.02.28~e87767395a6d27380196702f5f7bf98e92774f3f-r1
+Depends: @!(TARGET_x86||TARGET_bcm27xx||TARGET_octeontx)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Write-enabler for MTD partitions
+Maintainer: Joseph C. Lehner <joseph.c.lehner@gmail.com>
+Source: mtd-rw-2021.02.28~e87767395a6d27380196702f5f7bf98e92774f3f.tar.zst
+License: GPL-2.0
+LicenseFiles: LICENSE
+Type: ipkg
+Description: 	A kernel module that temporarily makes all MTD partitions writeable.
+@@
+
+

@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/utils/sms-tool/Makefile
+
+Package: sms-tool
+Version: 2023.09.21~1b6ca03284fd65db8799dbf7c6224210093786b0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: SMS tool for 3G/4G modems
+Maintainer: Andrey Butirsky <butirsky@gmail.com>
+Source: sms-tool-2023.09.21~1b6ca03284fd65db8799dbf7c6224210093786b0.tar.zst
+License: Apache-2.0
+LicenseFiles: LICENSE-2.0.txt
+URL: https://github.com/obsy/sms_tool
+Type: ipkg
+Description:   SMS Tool for 3G/4G modem
+@@
+
+

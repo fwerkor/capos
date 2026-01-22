@@ -1,0 +1,59 @@
+Source-Makefile: feeds/packages/lang/python/python-trove-classifiers/Makefile
+Build-Depends: python-calver/host
+Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host python-calver/host
+Build-Types: host
+
+Package: python3-trove-classifiers
+Submenu: Python
+Version: 2025.9.11.17-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Canonical source for classifiers on PyPI (pypi.org).
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: trove_classifiers-2025.9.11.17.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/pypa/trove-classifiers
+Type: ipkg
+Build-Only: 1
+Description: Canonical source for classifiers on PyPI.
+
+Classifiers categorize projects per PEP 301. Use this package to
+validate classifiers in packages for PyPI upload or download.
+@@
+
+Package: python3-trove-classifiers-src
+Submenu: Python
+Version: 2025.9.11.17-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Canonical source for classifiers on PyPI (pypi.org). (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: trove_classifiers-2025.9.11.17.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/pypa/trove-classifiers
+Type: ipkg
+Build-Only: 1
+Description:     Canonical source for classifiers on PyPI.
+
+Classifiers categorize projects per PEP 301. Use this package to
+validate classifiers in packages for PyPI upload or download.
+
+    This package contains the Python source files for python3-trove-classifiers.
+@@
+Config:
+    depends on PACKAGE_python3-trove-classifiers
+@@
+
+

@@ -1,0 +1,21 @@
+Source-Makefile: feeds/packages/net/ratched/Makefile
+
+Package: ratched
+Version: 1.0.0-r1
+Depends: +libc +libopenssl +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ratched
+Maintainer: Toni Uhlig <matzeton@googlemail.com>
+Source: ratched-1.0.0.tar.zst
+License: GPL-3.0-only
+URL: https://github.com/johndoe31415/ratched
+Type: ipkg
+Description:   Ratched is a transparent Man-in-the-Middle TLS proxy intended for penetration testing.
+@@
+
+

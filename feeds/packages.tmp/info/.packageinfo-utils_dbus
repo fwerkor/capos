@@ -1,0 +1,63 @@
+Source-Makefile: feeds/packages/utils/dbus/Makefile
+
+Package: libdbus
+Version: 1.14.10-r1
+Depends: +libc +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Libraries
+Repository: base
+Title: Simple interprocess messaging system (library)
+Maintainer: Robert Marko <robimarko@gmail.com>
+Source: dbus-1.14.10.tar.xz
+License: AFL-2.1
+CPE-ID: cpe:/a:freedesktop:dbus
+URL: https://dbus.freedesktop.org/
+Type: ipkg
+Description: Simple interprocess messaging system (library)
+@@
+
+Package: dbus
+Version: 1.14.10-r1
+Depends: +libc +libexpat +libdbus
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Simple interprocess messaging system (daemon)
+Maintainer: Robert Marko <robimarko@gmail.com>
+Source: dbus-1.14.10.tar.xz
+License: AFL-2.1
+CPE-ID: cpe:/a:freedesktop:dbus
+URL: https://dbus.freedesktop.org/
+Type: ipkg
+Description: Simple interprocess messaging system (daemon)
+@@
+Config:
+  source "feeds/packages/utils/dbus/Config.in"
+@@
+
+Package: dbus-utils
+Version: 1.14.10-r1
+Depends: +libc +dbus
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Simple interprocess messaging system (utilities)
+Maintainer: Robert Marko <robimarko@gmail.com>
+Source: dbus-1.14.10.tar.xz
+License: AFL-2.1
+CPE-ID: cpe:/a:freedesktop:dbus
+URL: https://dbus.freedesktop.org/
+Type: ipkg
+Description: Simple interprocess messaging system (utilities)
+@@
+
+

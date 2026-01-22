@@ -1,0 +1,55 @@
+Source-Makefile: feeds/packages/utils/borgbackup/Makefile
+Build-Depends: python-cython/host python-pkgconfig/host python-setuptools-scm/host
+
+Package: borgbackup
+Version: 1.2.8-r1
+Depends: +libc +python3-light +python3-codecs +python3-email +python3-logging +python3-lzma +python3-msgpack +python3-packaging +python3-pyfuse3 +python3-readline +python3-unittest +python3-urllib +python3-uuid +libacl +libopenssl +liblz4 +libzstd +libxxhash
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Deduplicated, encrypted, authenticated and compressed backups
+Maintainer: Julien Malik <julien.malik@paraiso.me>
+Source: borgbackup-1.2.8.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://github.com/borgbackup/borg
+Type: ipkg
+Description:   BorgBackup (short: Borg) is a deduplicating backup program.
+  Optionally, it supports compression and authenticated encryption.
+
+  The main goal of Borg is to provide an efficient and secure way to backup data.
+  The data deduplication technique used makes Borg suitable for daily backups since only changes are stored. The authenticated encryption technique makes it suitable for backups to not fully trusted targets.
+@@
+
+Package: borgbackup-src
+Version: 1.2.8-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Deduplicated, encrypted, authenticated and compressed backups (sources)
+Maintainer: Julien Malik <julien.malik@paraiso.me>
+Source: borgbackup-1.2.8.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://github.com/borgbackup/borg
+Type: ipkg
+Description:       BorgBackup (short: Borg) is a deduplicating backup program.
+  Optionally, it supports compression and authenticated encryption.
+
+  The main goal of Borg is to provide an efficient and secure way to backup data.
+  The data deduplication technique used makes Borg suitable for daily backups since only changes are stored. The authenticated encryption technique makes it suitable for backups to not fully trusted targets.
+
+    This package contains the Python source files for borgbackup.
+@@
+Config:
+    depends on PACKAGE_borgbackup
+@@
+
+

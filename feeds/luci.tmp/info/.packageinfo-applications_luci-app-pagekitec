@@ -1,0 +1,707 @@
+Source-Makefile: feeds/luci/applications/luci-app-pagekitec/Makefile
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+
+Package: luci-app-pagekitec
+Submenu: 3. Applications
+Version: x
+Depends: +libc +luci-base +pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: LuCI Support for PageKite
+Maintainer: OpenWrt LuCI community
+Source: 
+License: Apache-2.0
+URL: https://github.com/openwrt/luci
+Type: ipkg
+Description: LuCI Support for PageKite
+@@
+
+Package: luci-i18n-pagekitec-ar
+Default: LUCI_LANG_ar||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - ar translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - العربية (Arabic)
+@@
+
+Package: luci-i18n-pagekitec-bg
+Default: LUCI_LANG_bg||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - bg translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - български (Bulgarian)
+@@
+
+Package: luci-i18n-pagekitec-bn
+Default: LUCI_LANG_bn_BD||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - bn translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - বাংলা (Bengali)
+@@
+
+Package: luci-i18n-pagekitec-ca
+Default: LUCI_LANG_ca||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - ca translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Català (Catalan)
+@@
+
+Package: luci-i18n-pagekitec-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - cs translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Čeština (Czech)
+@@
+
+Package: luci-i18n-pagekitec-da
+Default: LUCI_LANG_da||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - da translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Dansk (Danish)
+@@
+
+Package: luci-i18n-pagekitec-de
+Default: LUCI_LANG_de||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - de translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Deutsch (German)
+@@
+
+Package: luci-i18n-pagekitec-el
+Default: LUCI_LANG_el||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - el translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Ελληνικά (Greek)
+@@
+
+Package: luci-i18n-pagekitec-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - es translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Español (Spanish)
+@@
+
+Package: luci-i18n-pagekitec-fi
+Default: LUCI_LANG_fi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - fi translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Suomi (Finnish)
+@@
+
+Package: luci-i18n-pagekitec-fr
+Default: LUCI_LANG_fr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - fr translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Français (French)
+@@
+
+Package: luci-i18n-pagekitec-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - ga translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-pagekitec-he
+Default: LUCI_LANG_he||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - he translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - עִבְרִית (Hebrew)
+@@
+
+Package: luci-i18n-pagekitec-hi
+Default: LUCI_LANG_hi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - hi translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - हिंदी (Hindi)
+@@
+
+Package: luci-i18n-pagekitec-hu
+Default: LUCI_LANG_hu||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - hu translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Magyar (Hungarian)
+@@
+
+Package: luci-i18n-pagekitec-it
+Default: LUCI_LANG_it||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - it translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Italiano (Italian)
+@@
+
+Package: luci-i18n-pagekitec-ja
+Default: LUCI_LANG_ja||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - ja translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - 日本語 (Japanese)
+@@
+
+Package: luci-i18n-pagekitec-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - ko translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - 한국어 (Korean)
+@@
+
+Package: luci-i18n-pagekitec-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - lt translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-pagekitec-mr
+Default: LUCI_LANG_mr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - mr translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Marāṭhī (Marathi)
+@@
+
+Package: luci-i18n-pagekitec-ms
+Default: LUCI_LANG_ms||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - ms translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Bahasa Melayu (Malay)
+@@
+
+Package: luci-i18n-pagekitec-no
+Default: LUCI_LANG_nb_NO||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - no translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Norsk (Norwegian)
+@@
+
+Package: luci-i18n-pagekitec-nl
+Default: LUCI_LANG_nl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - nl translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Nederlands (Dutch)
+@@
+
+Package: luci-i18n-pagekitec-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - pl translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Polski (Polish)
+@@
+
+Package: luci-i18n-pagekitec-pt
+Default: LUCI_LANG_pt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - pt translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Português (Portuguese)
+@@
+
+Package: luci-i18n-pagekitec-pt-br
+Default: LUCI_LANG_pt_BR||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - pt-br translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Português do Brasil (Brazilian Portuguese)
+@@
+
+Package: luci-i18n-pagekitec-ro
+Default: LUCI_LANG_ro||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - ro translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Română (Romanian)
+@@
+
+Package: luci-i18n-pagekitec-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - ru translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Русский (Russian)
+@@
+
+Package: luci-i18n-pagekitec-sk
+Default: LUCI_LANG_sk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - sk translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Slovenčina (Slovak)
+@@
+
+Package: luci-i18n-pagekitec-sv
+Default: LUCI_LANG_sv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - sv translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Svenska (Swedish)
+@@
+
+Package: luci-i18n-pagekitec-tr
+Default: LUCI_LANG_tr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - tr translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Türkçe (Turkish)
+@@
+
+Package: luci-i18n-pagekitec-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - uk translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-pagekitec-vi
+Default: LUCI_LANG_vi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - vi translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Tiếng Việt (Vietnamese)
+@@
+
+Package: luci-i18n-pagekitec-yua
+Default: LUCI_LANG_yua||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - yua translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - Yucateco (Yucatec Maya)
+@@
+
+Package: luci-i18n-pagekitec-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - zh-cn translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-pagekitec-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pagekitec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pagekitec - zh-tw translation
+Maintainer: Karl Palsson <karlp@tweak.net.au>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pagekitec - 正體中文 (Traditional Chinese)
+@@
+
+

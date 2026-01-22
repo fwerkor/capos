@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/net/bmon/Makefile
+
+Package: bmon
+Version: 4.0-r1
+Depends: +libc +libncursesw +libnl-core +libnl-route +confuse +terminfo
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: bmon is a portable bandwidth monitor
+Maintainer: Baptiste Jonglez <openwrt-pkg@bitsofnetworks.org>
+Source: bmon-4.0.tar.gz
+License: MIT
+URL: https://github.com/tgraf/bmon/
+Type: ipkg
+Description: 	bmon is a portable bandwidth monitor
+	and rate estimator running on various
+	operating systems. It supports various
+	input methods for different architectures.
+@@
+
+

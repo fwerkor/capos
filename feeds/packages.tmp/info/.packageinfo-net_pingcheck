@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/net/pingcheck/Makefile
+
+Package: pingcheck
+Version: 2023.09.25~000a799fe88ce232cc537305f9c25d646f9a10c5-r1
+Depends: +libc +libubus +libuci
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Check Internet and interface connectivity
+Maintainer: Bruno Randolf <br1@einfach.org>
+Source: pingcheck-2023.09.25~000a799fe88ce232cc537305f9c25d646f9a10c5.tar.zst
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE
+URL: https://github.com/br101/pingcheck
+Type: ipkg
+Description: Checks by using "ping" (ICMP echo) or by opening connections to TCP port 80
+whether a configured host (normally on the internet) can be reached via a
+specific interface. Then makes this information available via ubus and triggers
+"online" and "offline" scripts.
+@@
+
+

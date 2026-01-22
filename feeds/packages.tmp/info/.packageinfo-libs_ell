@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/libs/ell/Makefile
+
+Package: ell
+Version: 0.70-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Embedded Linux Library
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: ell-0.70.tar.zst
+License: GPL-2.0-only
+LicenseFiles: COPYING
+URL: https://patchwork.kernel.org/project/ell/
+Type: ipkg
+Description: 	ELL (Embedded Linux Library) provides core, low-level functionality for system daemons.
+	It integrates with standard libc functionality and replaces some parts of it with more optimal implementations.
+@@
+
+

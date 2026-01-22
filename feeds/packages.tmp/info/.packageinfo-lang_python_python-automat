@@ -1,0 +1,53 @@
+Source-Makefile: feeds/packages/lang/python/python-automat/Makefile
+Build-Depends: python-setuptools-scm/host
+
+Package: python3-automat
+Submenu: Python
+Version: 25.4.16-r1
+Depends: +libc +python3-light +python3-attrs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Concise, idiomatic finite-state automata
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: automat-25.4.16.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/glyph/Automat
+Type: ipkg
+Description: Automat is a library for concise, idiomatic Python expression of
+finite-state automata (particularly deterministic finite-state
+transducers).
+@@
+
+Package: python3-automat-src
+Submenu: Python
+Version: 25.4.16-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Concise, idiomatic finite-state automata (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: automat-25.4.16.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/glyph/Automat
+Type: ipkg
+Description:     Automat is a library for concise, idiomatic Python expression of
+finite-state automata (particularly deterministic finite-state
+transducers).
+
+    This package contains the Python source files for python3-automat.
+@@
+Config:
+    depends on PACKAGE_python3-automat
+@@
+
+

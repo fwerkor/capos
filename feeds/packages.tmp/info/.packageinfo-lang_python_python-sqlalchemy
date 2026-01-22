@@ -1,0 +1,59 @@
+Source-Makefile: feeds/packages/lang/python/python-sqlalchemy/Makefile
+Build-Depends: python-cython/host
+
+Package: python3-sqlalchemy
+Submenu: Python
+Version: 2.0.23-r1
+Depends: +libc +python3 +python3-typing-extensions
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Database Abstraction Library
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: SQLAlchemy-2.0.23.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:sqlalchemy:sqlalchemy
+URL: https://www.sqlalchemy.org
+Type: ipkg
+Description: SQLAlchemy is the Python SQL toolkit and Object Relational Mapper that
+gives application developers the full power and flexibility of SQL.
+SQLAlchemy provides a full suite of well known enterprise-level
+persistence patterns, designed for efficient and high-performing
+database access, adapted into a simple and Pythonic domain language.
+@@
+
+Package: python3-sqlalchemy-src
+Submenu: Python
+Version: 2.0.23-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Database Abstraction Library (sources)
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: SQLAlchemy-2.0.23.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:sqlalchemy:sqlalchemy
+URL: https://www.sqlalchemy.org
+Type: ipkg
+Description:     SQLAlchemy is the Python SQL toolkit and Object Relational Mapper that
+gives application developers the full power and flexibility of SQL.
+SQLAlchemy provides a full suite of well known enterprise-level
+persistence patterns, designed for efficient and high-performing
+database access, adapted into a simple and Pythonic domain language.
+
+    This package contains the Python source files for python3-sqlalchemy.
+@@
+Config:
+    depends on PACKAGE_python3-sqlalchemy
+@@
+
+

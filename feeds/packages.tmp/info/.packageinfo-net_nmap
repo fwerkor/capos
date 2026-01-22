@@ -1,0 +1,226 @@
+Source-Makefile: feeds/packages/net/nmap/Makefile
+
+Package: nmap
+Submenu: NMAP Suite
+Version: 7.95-r1
+Depends: +libc +libpcap +libstdcpp +zlib +libpcre2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: nossl
+Section: net
+Category: Network
+Repository: base
+Title: Utility for network exploration or security auditing
+Maintainer: Nuno Gonçalves <nunojpg@gmail.com>
+Source: nmap-7.95.tar.bz2
+License: NPSL-0.94-or-NPSL-0.95
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:nmap:nmap
+URL: https://nmap.org/
+Type: ipkg
+Description: Utility for network exploration or security auditing
+@@
+
+Package: nmap-ssl
+Submenu: NMAP Suite
+Version: 7.95-r1
+Depends: +libc +libpcap +libstdcpp +zlib +libpcre2 +libopenssl +ca-certs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: ssl
+Section: net
+Category: Network
+Repository: base
+Title: Nmap (with OpenSSL support)
+Maintainer: Nuno Gonçalves <nunojpg@gmail.com>
+Source: nmap-7.95.tar.bz2
+License: NPSL-0.94-or-NPSL-0.95
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:nmap:nmap
+URL: https://nmap.org/
+Type: ipkg
+Description: Nmap (with OpenSSL support)
+@@
+
+Package: nmap-full
+Submenu: NMAP Suite
+Version: 7.95-r1
+Depends: +libc +libpcap +libstdcpp +zlib +libpcre2 +libopenssl +ca-certs +liblua5.4 +libssh2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: full
+Section: net
+Category: Network
+Repository: base
+Title: Nmap (with OpenSSL and scripting support)
+Maintainer: Nuno Gonçalves <nunojpg@gmail.com>
+Source: nmap-7.95.tar.bz2
+License: NPSL-0.94-or-NPSL-0.95
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:nmap:nmap
+URL: https://nmap.org/
+Type: ipkg
+Description: Nmap (with OpenSSL and scripting support)
+@@
+
+Package: ncat
+Submenu: NMAP Suite
+Version: 7.95-r1
+Depends: +libc +libpcap
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: nossl
+Section: net
+Category: Network
+Repository: base
+Title: Much-improved reimplementation of Netcat
+Maintainer: Nuno Gonçalves <nunojpg@gmail.com>
+Source: nmap-7.95.tar.bz2
+License: NPSL-0.94-or-NPSL-0.95
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:nmap:nmap
+URL: https://nmap.org/
+Type: ipkg
+Description: Much-improved reimplementation of Netcat
+@@
+
+Package: ncat-ssl
+Submenu: NMAP Suite
+Version: 7.95-r1
+Depends: +libc +libpcap +libopenssl +ca-certs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: ssl
+Section: net
+Category: Network
+Repository: base
+Title: Ncat (with OpenSSL support)
+Maintainer: Nuno Gonçalves <nunojpg@gmail.com>
+Source: nmap-7.95.tar.bz2
+License: NPSL-0.94-or-NPSL-0.95
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:nmap:nmap
+URL: https://nmap.org/
+Type: ipkg
+Description: Ncat (with OpenSSL support)
+@@
+
+Package: ncat-full
+Submenu: NMAP Suite
+Version: 7.95-r1
+Depends: +libc +libpcap +libopenssl +ca-certs +liblua5.4
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: full
+Section: net
+Category: Network
+Repository: base
+Title: Ncat (with OpenSSL and scripting support)
+Maintainer: Nuno Gonçalves <nunojpg@gmail.com>
+Source: nmap-7.95.tar.bz2
+License: NPSL-0.94-or-NPSL-0.95
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:nmap:nmap
+URL: https://nmap.org/
+Type: ipkg
+Description: Ncat (with OpenSSL and scripting support)
+@@
+
+Package: nping
+Submenu: NMAP Suite
+Version: 7.95-r1
+Depends: +libc +libpcap +libpthread +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: nossl
+Section: net
+Category: Network
+Repository: base
+Title: Network packet generation tool / ping utility
+Maintainer: Nuno Gonçalves <nunojpg@gmail.com>
+Source: nmap-7.95.tar.bz2
+License: NPSL-0.94-or-NPSL-0.95
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:nmap:nmap
+URL: https://nmap.org/
+Type: ipkg
+Description: Network packet generation tool / ping utility
+@@
+
+Package: nping-ssl
+Submenu: NMAP Suite
+Version: 7.95-r1
+Depends: +libc +libpcap +libpthread +libstdcpp +libopenssl +ca-certs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: ssl
+Section: net
+Category: Network
+Repository: base
+Title: Nping (with OpenSSL support)
+Maintainer: Nuno Gonçalves <nunojpg@gmail.com>
+Source: nmap-7.95.tar.bz2
+License: NPSL-0.94-or-NPSL-0.95
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:nmap:nmap
+URL: https://nmap.org/
+Type: ipkg
+Description: Nping (with OpenSSL support)
+@@
+
+Package: ndiff
+Submenu: NMAP Suite
+Version: 7.95-r1
+Depends: +libc +python3-light +python3-xml
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Utility to compare the results of Nmap scans
+Maintainer: Nuno Gonçalves <nunojpg@gmail.com>
+Source: nmap-7.95.tar.bz2
+License: NPSL-0.94-or-NPSL-0.95
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:nmap:nmap
+URL: https://nmap.org/
+Type: ipkg
+Description: Utility to compare the results of Nmap scans
+@@
+
+Package: ndiff-src
+Submenu: NMAP Suite
+Version: 7.95-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Utility to compare the results of Nmap scans (sources)
+Maintainer: Nuno Gonçalves <nunojpg@gmail.com>
+Source: nmap-7.95.tar.bz2
+License: NPSL-0.94-or-NPSL-0.95
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:nmap:nmap
+URL: https://nmap.org/
+Type: ipkg
+Description:     	Utility to compare the results of Nmap scans
+
+    This package contains the Python source files for ndiff.
+@@
+Config:
+    depends on PACKAGE_ndiff
+@@
+
+

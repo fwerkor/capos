@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/libs/p11-kit/Makefile
+
+Package: p11-kit
+Version: 0.25.3-r1
+Depends: +libc +libtasn1 +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: A library that provides a way to load and enumerate PKCS11 modules.
+Maintainer: Nikos Mavrogiannopoulos <n.mavrogiannopoulos@gmail.com>
+Source: p11-kit-0.25.3.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:p11-kit_project:p11-kit
+URL: https://p11-glue.github.io/p11-glue/p11-kit.html
+Type: ipkg
+Description:   Provides a way to load and enumerate PKCS11 modules. Provides a
+  standard configuration setup for installing PKCS11 modules in such a
+  way that they are discoverable.
+@@
+
+

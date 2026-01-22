@@ -1,0 +1,47 @@
+Source-Makefile: feeds/packages/libs/libseccomp/Makefile
+Build-Depends: gperf/host
+
+Package: libseccomp
+Version: 2.5.5-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: seccomp (library)
+Maintainer: Nikos Mavrogiannopoulos <nmav@gnutls.org>
+Source: libseccomp-2.5.5.tar.gz
+License: LGPL-2.1-or-later
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:libseccomp_project:libseccomp
+URL: https://github.com/seccomp/libseccomp/wiki
+Type: ipkg
+Description:  This package contains the seccomp library.
+@@
+Config:
+  depends on !arc
+@@
+
+Package: scmp_sys_resolver
+Version: 2.5.5-r1
+Depends: +libc libseccomp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: seccomp scmp_sys_resolver
+Maintainer: Nikos Mavrogiannopoulos <nmav@gnutls.org>
+Source: libseccomp-2.5.5.tar.gz
+License: LGPL-2.1-or-later
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:libseccomp_project:libseccomp
+URL: https://github.com/seccomp/libseccomp/wiki
+Type: ipkg
+Description: seccomp scmp_sys_resolver
+@@
+
+

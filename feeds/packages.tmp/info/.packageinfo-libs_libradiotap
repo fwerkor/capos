@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/libs/libradiotap/Makefile
+
+Package: libradiotap
+Version: 2023.10.09~ee71d224e0faeb9ec4e198d587d4e5aac60d4afe-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Radiotap Parser Library
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: libradiotap-2023.10.09~ee71d224e0faeb9ec4e198d587d4e5aac60d4afe.tar.zst
+License: ISC
+LicenseFiles: COPYING
+URL: https://www.radiotap.org/
+Type: ipkg
+Description: 	Library that supplies additional information about frames from the driver to userspace applications.
+@@
+
+

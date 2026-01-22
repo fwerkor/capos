@@ -1,0 +1,41 @@
+Source-Makefile: feeds/packages/net/libndp/Makefile
+
+Package: libndp
+Version: 1.8-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: NDP Library
+Maintainer: Thomas Guyot-Sionnest <tguyot@gmail.com>
+Source: libndp-1.8.tar.gz
+License: LGPL-2.1-or-later
+CPE-ID: cpe:/a:libndp:libndp
+URL: https://github.com/jpirko/libndp/
+Type: ipkg
+Description:     Library for Neighbor Discovery Protocol
+@@
+
+Package: ndptool
+Version: 1.8-r1
+Depends: +libc +libndp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: NDP Tool
+Maintainer: Thomas Guyot-Sionnest <tguyot@gmail.com>
+Source: libndp-1.8.tar.gz
+License: LGPL-2.1-or-later
+CPE-ID: cpe:/a:libndp:libndp
+URL: https://github.com/jpirko/libndp/
+Type: ipkg
+Description:     Tool for Neighbor Discovery Protocol
+@@
+
+

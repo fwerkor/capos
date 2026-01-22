@@ -1,0 +1,49 @@
+Source-Makefile: feeds/packages/lang/python/python-jsonschema/Makefile
+Build-Depends: python-hatchling/host python-hatch-vcs/host python-hatch-fancy-pypi-readme/host
+
+Package: python3-jsonschema
+Submenu: Python
+Version: 4.22.0-r1
+Depends: +libc +python3-light +python3-decimal +python3-urllib +python3-uuid +python3-attrs +python3-jsonschema-specifications +python3-referencing +python3-rpds-py
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: An implementation of JSON Schema validation
+Maintainer: Javier Marcet <javier@marcet.info>
+Source: jsonschema-4.22.0.tar.gz
+License: MIT
+LicenseFiles: COPYING
+URL: https://github.com/python-jsonschema/jsonschema
+Type: ipkg
+Description:   jsonschema is an implementation of JSON Schema validation for Python.
+@@
+
+Package: python3-jsonschema-src
+Submenu: Python
+Version: 4.22.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: An implementation of JSON Schema validation (sources)
+Maintainer: Javier Marcet <javier@marcet.info>
+Source: jsonschema-4.22.0.tar.gz
+License: MIT
+LicenseFiles: COPYING
+URL: https://github.com/python-jsonschema/jsonschema
+Type: ipkg
+Description:       jsonschema is an implementation of JSON Schema validation for Python.
+
+    This package contains the Python source files for python3-jsonschema.
+@@
+Config:
+    depends on PACKAGE_python3-jsonschema
+@@
+
+

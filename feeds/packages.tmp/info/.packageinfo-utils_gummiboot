@@ -1,0 +1,26 @@
+Source-Makefile: feeds/packages/utils/gummiboot/Makefile
+Build-Depends: gnu-efi
+
+Package: gummiboot
+Version: 48.1-r2
+Depends: +libc @TARGET_x86_64 +libblkid
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: boot
+Category: Boot Loaders
+Repository: base
+Title: Simple UEFI boot manager
+Maintainer: 
+Source: gummiboot-48.1.tar.gz
+License: LGPL-2.1-or-later
+LicenseFiles: LICENSE
+URL: https://github.com/rzr/gummiboot
+Type: ipkg
+Description:   gummiboot Simple UEFI boot manager
+
+  gummiboot executes EFI images. The default entry is selected by a configured
+  pattern (glob) or an on-screen menu.
+@@
+
+

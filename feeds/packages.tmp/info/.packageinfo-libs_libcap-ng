@@ -1,0 +1,45 @@
+Source-Makefile: feeds/packages/libs/libcap-ng/Makefile
+
+Package: libcap-ng
+Version: 0.8.4-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: POSIX capabilities library library
+Maintainer: Lucian CRISTIAN <lucian.cristian@gmail.com>
+Source: libcap-ng-0.8.4.tar.gz
+License: GPL-2.0-or-later LGPL-2.1-or-later
+LicenseFiles: License
+CPE-ID: cpe:/a:libcap-ng_project:libcap-ng
+URL: https://people.redhat.com/sgrubb/libcap-ng/index.html
+Type: ipkg
+Description: POSIX capabilities library library
+@@
+
+Package: libcap-ng-bin
+Version: 0.8.4-r1
+Depends: +libc libcap-ng
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: POSIX capabilities library binaries
+Maintainer: Lucian CRISTIAN <lucian.cristian@gmail.com>
+Source: libcap-ng-0.8.4.tar.gz
+License: GPL-2.0-or-later LGPL-2.1-or-later
+LicenseFiles: License
+CPE-ID: cpe:/a:libcap-ng_project:libcap-ng
+URL: https://people.redhat.com/sgrubb/libcap-ng/index.html
+Type: ipkg
+Description:     POSIX capabilities library
+  .
+  This package contains the libcap-ng utilities.
+@@
+
+

@@ -1,0 +1,48 @@
+Source-Makefile: feeds/packages/net/openelp/Makefile
+
+Package: libopenelp
+Version: 0.9.2-r1
+Depends: +libc +libpcre2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Open Source EchoLink Proxy Library
+Maintainer: Scott K Logan <logans@cottsay.net>
+Source: openelp-0.9.2.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://github.com/cottsay/openelp
+ABI-Version: 0
+Type: ipkg
+Description:   Library backing OpenELP - an open source EchoLink proxy.
+@@
+
+Package: openelp
+Version: 0.9.2-r1
+Depends: +libc +libopenelp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Open Source EchoLink Proxy
+Maintainer: Scott K Logan <logans@cottsay.net>
+Source: openelp-0.9.2.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://github.com/cottsay/openelp
+Type: ipkg
+Description:   OpenELP is an open source EchoLink proxy for Linux and Windows. It aims
+  to be efficient and maintain a small footprint, while still implementing
+  all of the features present in the official EchoLink proxy.
+
+  OpenELP also has the ability to bind to multiple network interfaces
+  which are routed to unique external IP addresses, and therefore is
+  capable of accepting connections from multiple clients simultaneously.
+@@
+
+

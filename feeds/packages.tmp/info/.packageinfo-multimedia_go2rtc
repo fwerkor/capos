@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/multimedia/go2rtc/Makefile
+Build-Depends: golang/host
+
+Package: go2rtc
+Version: 1.9.4-r2
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) +ffmpeg
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: multimedia
+Category: Multimedia
+Repository: base
+Title: go2rtc camera streaming
+Maintainer: Vladimir Ermakov <vooon341@gmail.com>
+Require-User: go2rtc:go2rtc
+Source: go2rtc-1.9.4.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/AlexxIT/go2rtc
+Type: ipkg
+Description:   Ultimate camera streaming application with support RTSP, WebRTC, HomeKit, FFmpeg, RTMP, etc.
+@@
+
+

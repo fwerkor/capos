@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/libs/iniparser/Makefile
+
+Package: iniparser
+Version: 4.2.6-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: a library to handle ini files
+Maintainer: Antonio Pastor <antonio.pastor@gmail.com>
+Source: iniparser-v4.2.6.tar.gz
+License: MIT
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:iniparser:iniparser
+URL: https://gitlab.com/iniparser/iniparser
+Type: ipkg
+Description:   Small and fully re-entrant module for parsing of ini files in C
+@@
+
+

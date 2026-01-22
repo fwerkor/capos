@@ -1,0 +1,48 @@
+Source-Makefile: feeds/packages/lang/python/python3-iperf3/Makefile
+
+Package: python3-iperf3
+Submenu: Python
+Version: 0.1.11-r1
+Depends: +libc +python3-light +python3-ctypes +libiperf3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python wrapper around iperf3.
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: iperf3-0.1.11.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/thiezn/iperf3-python
+Type: ipkg
+Description:   iperf3 for python provides a wrapper around the iperf3 utility.
+@@
+
+Package: python3-iperf3-src
+Submenu: Python
+Version: 0.1.11-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python wrapper around iperf3. (sources)
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: iperf3-0.1.11.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/thiezn/iperf3-python
+Type: ipkg
+Description:       iperf3 for python provides a wrapper around the iperf3 utility.
+
+    This package contains the Python source files for python3-iperf3.
+@@
+Config:
+    depends on PACKAGE_python3-iperf3
+@@
+
+

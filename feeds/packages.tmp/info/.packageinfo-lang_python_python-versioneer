@@ -1,0 +1,60 @@
+Source-Makefile: feeds/packages/lang/python/python-versioneer/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host
+Build-Types: host
+
+Package: python3-versioneer
+Submenu: Python
+Version: 0.29-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Easy VCS-based management of project version strings
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: versioneer-0.29.tar.gz
+License: Unlicense
+LicenseFiles: LICENSE
+URL: https://github.com/python-versioneer/python-versioneer
+Type: ipkg
+Build-Only: 1
+Description: This is a tool for managing a recorded version number in
+setuptools-based python projects. The goal is to remove the tedious and
+error-prone "update the embedded version string" step from your release
+process. Making a new release should be as easy as recording a new tag
+in your version-control system, and maybe making new tarballs.
+@@
+
+Package: python3-versioneer-src
+Submenu: Python
+Version: 0.29-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Easy VCS-based management of project version strings (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: versioneer-0.29.tar.gz
+License: Unlicense
+LicenseFiles: LICENSE
+URL: https://github.com/python-versioneer/python-versioneer
+Type: ipkg
+Build-Only: 1
+Description:     This is a tool for managing a recorded version number in
+setuptools-based python projects. The goal is to remove the tedious and
+error-prone "update the embedded version string" step from your release
+process. Making a new release should be as easy as recording a new tag
+in your version-control system, and maybe making new tarballs.
+
+    This package contains the Python source files for python3-versioneer.
+@@
+Config:
+    depends on PACKAGE_python3-versioneer
+@@
+
+

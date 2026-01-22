@@ -1,0 +1,62 @@
+Source-Makefile: feeds/packages/libs/libideviceactivation/Makefile
+
+Package: libideviceactivation
+Submenu: libimobiledevice
+Version: 2024.04.16~6925d58ef7994168fb9585aa6f48421149982329-r2
+Depends: +libc +libcurl +libimobiledevice +usbmuxd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Manage the activation of Apple iOS devices
+Maintainer: Rosen Penev <rosenp@gmail.com>
+Source: libideviceactivation-2024.04.16~6925d58ef7994168fb9585aa6f48421149982329.tar.zst
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING.LESSER
+CPE-ID: cpe:/a:libimobiledevice:libideviceactivation
+URL: https://www.libimobiledevice.org/
+Type: ipkg
+Description:     A library to manage the activation process of Apple iOS devices.
+  This project provides an interface to activate and deactivate iOS devices
+  by talking to Apple's webservice alongside a command-line utility named
+  ideviceactivation.
+  - Status: Implements complete activation and deactivation process
+  - Compatibility: Supports legacy and latest activation webservice APIs
+  - Utility: Provides ideviceactivation utility for command-line usage
+  - Interactive: Requests user input if the activation process uses forms
+  - Cross-Platform: Tested on Linux, macOS, Windows and Android platforms
+@@
+
+Package: libideviceactivation-utils
+Submenu: libimobiledevice
+Version: 2024.04.16~6925d58ef7994168fb9585aa6f48421149982329-r2
+Depends: +libc +libideviceactivation
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Manage the activation of Apple iOS devices
+Maintainer: Rosen Penev <rosenp@gmail.com>
+Source: libideviceactivation-2024.04.16~6925d58ef7994168fb9585aa6f48421149982329.tar.zst
+License: GPL-3.0-or-later
+LicenseFiles: COPYING.LESSER
+CPE-ID: cpe:/a:libimobiledevice:libideviceactivation
+URL: https://www.libimobiledevice.org/
+Type: ipkg
+Description:     A library to manage the activation process of Apple iOS devices.
+  This project provides an interface to activate and deactivate iOS devices
+  by talking to Apple's webservice alongside a command-line utility named
+  ideviceactivation.
+  - Status: Implements complete activation and deactivation process
+  - Compatibility: Supports legacy and latest activation webservice APIs
+  - Utility: Provides ideviceactivation utility for command-line usage
+  - Interactive: Requests user input if the activation process uses forms
+  - Cross-Platform: Tested on Linux, macOS, Windows and Android platforms
+  This package contains the libideviceactivation utilities.
+@@
+
+

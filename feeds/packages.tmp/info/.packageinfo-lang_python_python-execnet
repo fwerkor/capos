@@ -1,0 +1,51 @@
+Source-Makefile: feeds/packages/lang/python/python-execnet/Makefile
+Build-Depends: python-hatchling/host python-hatch-vcs/host
+
+Package: python3-execnet
+Submenu: Python
+Version: 2.0.2-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Rapid multi-Python deployment
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Source: execnet-2.0.2.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://execnet.readthedocs.io
+Type: ipkg
+Description: execnet provides carefully tested means to ad-hoc interact with Python
+interpreters across version, platform and network barriers.
+@@
+
+Package: python3-execnet-src
+Submenu: Python
+Version: 2.0.2-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Rapid multi-Python deployment (sources)
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Source: execnet-2.0.2.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://execnet.readthedocs.io
+Type: ipkg
+Description:     execnet provides carefully tested means to ad-hoc interact with Python
+interpreters across version, platform and network barriers.
+
+    This package contains the Python source files for python3-execnet.
+@@
+Config:
+    depends on PACKAGE_python3-execnet
+@@
+
+

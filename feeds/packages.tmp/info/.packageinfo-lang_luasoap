@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/lang/luasoap/Makefile
+
+Package: luasoap
+Submenu: Lua
+Version: 4.0.2-r1
+Depends: +libc +lua +luaexpat +luasec +luasocket
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: LuaSOAP
+Maintainer: Liu Peng <pengliu@credosemi.com>
+Source: luasoap-4.0.2.tar.zst
+License: MIT
+URL: https://github.com/tomasguisasola/luasoap
+Type: ipkg
+Description:   LuaSOAP is a library of functions to deal with SOAP.
+@@
+
+

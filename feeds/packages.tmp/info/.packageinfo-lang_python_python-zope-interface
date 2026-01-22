@@ -1,0 +1,55 @@
+Source-Makefile: feeds/packages/lang/python/python-zope-interface/Makefile
+Build-Depends: python3/host python-setuptools/host
+
+Package: python3-zope-interface
+Submenu: Python
+Version: 8.0.1-r1
+Depends: +libc +python3-light +python3-logging
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Interfaces for Python
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: zope_interface-8.0.1.tar.gz
+License: ZPL-2.1
+LicenseFiles: LICENSE.txt
+URL: https://github.com/zopefoundation/zope.interface
+Type: ipkg
+Description: This package provides an implementation of "object interfaces" for
+Python. Interfaces are a mechanism for labeling objects as conforming to
+a given API or contract. So, this package can be considered as
+implementation of the Design By Contract methodology support in Python.
+@@
+
+Package: python3-zope-interface-src
+Submenu: Python
+Version: 8.0.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Interfaces for Python (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: zope_interface-8.0.1.tar.gz
+License: ZPL-2.1
+LicenseFiles: LICENSE.txt
+URL: https://github.com/zopefoundation/zope.interface
+Type: ipkg
+Description:     This package provides an implementation of "object interfaces" for
+Python. Interfaces are a mechanism for labeling objects as conforming to
+a given API or contract. So, this package can be considered as
+implementation of the Design By Contract methodology support in Python.
+
+    This package contains the Python source files for python3-zope-interface.
+@@
+Config:
+    depends on PACKAGE_python3-zope-interface
+@@
+
+

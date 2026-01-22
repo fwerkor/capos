@@ -1,0 +1,201 @@
+Source-Makefile: feeds/packages/net/openssh/Makefile
+Build-Depends: OPENSSH_LIBFIDO2:libfido2
+
+Package: openssh-client
+Submenu: SSH
+Version: 9.9_p2-r1
+Depends: +libc +libopenssl +zlib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: OpenSSH client
+Maintainer: Peter Wagner <tripolar@gmx.at>
+Source: openssh-9.9p2.tar.gz
+License: BSD ISC
+LicenseFiles: LICENCE
+CPE-ID: cpe:/a:openbsd:openssh
+URL: https://www.openssh.com/
+Type: ipkg
+Description: OpenSSH client.
+@@
+
+Package: openssh-moduli
+Submenu: SSH
+Version: 9.9_p2-r1
+Depends: +libc +openssh-keygen
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: OpenSSH moduli file
+Maintainer: Peter Wagner <tripolar@gmx.at>
+Source: openssh-9.9p2.tar.gz
+License: BSD ISC
+LicenseFiles: LICENCE
+CPE-ID: cpe:/a:openbsd:openssh
+URL: https://www.openssh.com/
+Type: ipkg
+Description: OpenSSH server moduli file.
+@@
+
+Package: openssh-client-utils
+Submenu: SSH
+Version: 9.9_p2-r1
+Depends: +libc +libopenssl +zlib +openssh-client +openssh-keygen
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: OpenSSH client utilities
+Maintainer: Peter Wagner <tripolar@gmx.at>
+Source: openssh-9.9p2.tar.gz
+License: BSD ISC
+LicenseFiles: LICENCE
+CPE-ID: cpe:/a:openbsd:openssh
+URL: https://www.openssh.com/
+Type: ipkg
+Description: OpenSSH client utilities.
+@@
+
+Package: openssh-keygen
+Submenu: SSH
+Version: 9.9_p2-r1
+Depends: +libc +libopenssl +zlib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: OpenSSH keygen
+Maintainer: Peter Wagner <tripolar@gmx.at>
+Source: openssh-9.9p2.tar.gz
+License: BSD ISC
+LicenseFiles: LICENCE
+CPE-ID: cpe:/a:openbsd:openssh
+URL: https://www.openssh.com/
+Type: ipkg
+Description: OpenSSH keygen.
+@@
+
+Package: openssh-server
+Submenu: SSH
+Version: 9.9_p2-r1
+Depends: +libc +libopenssl +zlib +openssh-keygen +OPENSSH_LIBFIDO2:libfido2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: without-pam
+Section: net
+Category: Network
+Repository: base
+Title: OpenSSH server
+Maintainer: Peter Wagner <tripolar@gmx.at>
+Require-User: sshd=22:sshd=22
+Source: openssh-9.9p2.tar.gz
+License: BSD ISC
+LicenseFiles: LICENCE
+CPE-ID: cpe:/a:openbsd:openssh
+URL: https://www.openssh.com/
+Type: ipkg
+Description: OpenSSH server.
+@@
+Config:
+	source "feeds/packages/net/openssh/Config.in"
+@@
+
+Package: openssh-server-pam
+Submenu: SSH
+Version: 9.9_p2-r1
+Depends: +libc +libopenssl +zlib +libpthread +openssh-keygen +libpam
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: with-pam
+Section: net
+Category: Network
+Repository: base
+Title: OpenSSH server (with PAM support)
+Maintainer: Peter Wagner <tripolar@gmx.at>
+Require-User: sshd=22:sshd=22
+Source: openssh-9.9p2.tar.gz
+License: BSD ISC
+LicenseFiles: LICENCE
+CPE-ID: cpe:/a:openbsd:openssh
+URL: https://www.openssh.com/
+Type: ipkg
+Description: OpenSSH server (with PAM support).
+@@
+
+Package: openssh-sftp-client
+Submenu: SSH
+Version: 9.9_p2-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: OpenSSH SFTP client
+Maintainer: Peter Wagner <tripolar@gmx.at>
+Source: openssh-9.9p2.tar.gz
+License: BSD ISC
+LicenseFiles: LICENCE
+CPE-ID: cpe:/a:openbsd:openssh
+URL: https://www.openssh.com/
+Type: ipkg
+Description: OpenSSH SFTP client.
+@@
+
+Package: openssh-sftp-server
+Submenu: SSH
+Version: 9.9_p2-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: OpenSSH SFTP server
+Maintainer: Peter Wagner <tripolar@gmx.at>
+Source: openssh-9.9p2.tar.gz
+License: BSD ISC
+LicenseFiles: LICENCE
+CPE-ID: cpe:/a:openbsd:openssh
+URL: https://www.openssh.com/
+Type: ipkg
+Description: OpenSSH SFTP server.
+@@
+
+Package: openssh-sftp-avahi-service
+Submenu: SSH
+Version: 9.9_p2-r1
+Depends: +libc +openssh-sftp-server +avahi-daemon
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: OpenSSH (SFTP Avahi service)
+Maintainer: Peter Wagner <tripolar@gmx.at>
+Source: openssh-9.9p2.tar.gz
+License: BSD ISC
+LicenseFiles: LICENCE
+CPE-ID: cpe:/a:openbsd:openssh
+URL: https://www.openssh.com/
+Type: ipkg
+Description:  This package contains the service definition for announcing
+ SFTP support via mDNS/DNS-SD.
+@@
+
+

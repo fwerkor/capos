@@ -1,0 +1,48 @@
+Source-Makefile: feeds/packages/net/rclone/Makefile
+Build-Depends: golang/host
+
+Package: rclone
+Submenu: File Transfer
+Version: 1.70.3-r2
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) +ca-bundle +fuse3-utils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: rsync for cloud storage
+Maintainer: Elon Huang <elonhhuang@gmail.com> Tianling Shen <cnsztl@immortalwrt.org>
+Require-User: rclone:rclone
+Source: rclone-1.70.3.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:rclone:rclone
+URL: https://rclone.org
+Type: ipkg
+Description:   Rclone ("rsync for cloud storage") is a command line program to sync
+  files and directories to and from different cloud storage providers.
+@@
+
+Package: rclone-config
+Submenu: File Transfer
+Version: 1.70.3-r2
+Depends: +libc +rclone
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: rsync for cloud storage (Config Scripts)
+Maintainer: Elon Huang <elonhhuang@gmail.com> Tianling Shen <cnsztl@immortalwrt.org>
+Source: rclone-1.70.3.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:rclone:rclone
+URL: https://rclone.org
+Type: ipkg
+Description: rsync for cloud storage (Config Scripts)
+@@
+
+

@@ -1,0 +1,26 @@
+Source-Makefile: feeds/packages/libs/hidapi/Makefile
+
+Package: hidapi
+Version: 0.14.0-r1
+Depends: +libc +libusb-1.0 +libudev +BUILD_NLS:libiconv-full
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Library to talk to HID devices
+Maintainer: Paul Fertser <fercerpav@gmail.com>
+Source: hidapi-0.14.0.tar.zst
+License: BSD-3-Clause
+LicenseFiles: LICENSE-bsd.txt
+URL: https://github.com/libusb/hidapi
+Type: ipkg
+Description: HIDAPI is a multi-platform library which allows an application to interface
+with USB and Bluetooth HID-Class devices on Windows, Linux, FreeBSD, and Mac
+OS X.  HIDAPI can be either built as a shared library (.so or .dll) or
+can be embedded directly into a target application by adding a single source
+file (per platform) and a single header.
+@@
+
+

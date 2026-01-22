@@ -1,0 +1,56 @@
+Source-Makefile: feeds/packages/lang/python/python-click/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host
+Build-Types: host
+
+Package: python3-click
+Submenu: Python
+Version: 8.1.7-r2
+Depends: +libc +python3-light +python3-urllib +python3-uuid
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Composable command line interface toolkit
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: click-8.1.7.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE.rst
+URL: https://palletsprojects.com/p/click/
+Type: ipkg
+Description: Click is a Python package for creating beautiful command line interfaces
+in a composable way with as little code as necessary. It's the "Command
+Line Interface Creation Kit". It's highly configurable but comes with
+sensible defaults out of the box.
+@@
+
+Package: python3-click-src
+Submenu: Python
+Version: 8.1.7-r2
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Composable command line interface toolkit (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: click-8.1.7.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE.rst
+URL: https://palletsprojects.com/p/click/
+Type: ipkg
+Description:     Click is a Python package for creating beautiful command line interfaces
+in a composable way with as little code as necessary. It's the "Command
+Line Interface Creation Kit". It's highly configurable but comes with
+sensible defaults out of the box.
+
+    This package contains the Python source files for python3-click.
+@@
+Config:
+    depends on PACKAGE_python3-click
+@@
+
+

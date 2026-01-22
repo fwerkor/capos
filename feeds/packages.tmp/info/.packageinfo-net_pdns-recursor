@@ -1,0 +1,27 @@
+Source-Makefile: feeds/packages/net/pdns-recursor/Makefile
+Build-Depends: rust/host
+
+Package: pdns-recursor
+Submenu: IP Addresses and Names
+Version: 5.1.8-r1
+Depends: +libc +boost +boost-context +boost-filesystem +libatomic +liblua +libopenssl +libfstrm +libcurl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: PowerDNS Recursor
+Maintainer: Peter van Dijk <peter.van.dijk@powerdns.com>, Remi Gacogne <remi.gacogne@powerdns.com>
+Require-User: pdns:pdns
+Source: pdns-recursor-5.1.8.tar.bz2
+License: GPL-2.0-only
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:powerdns:recursor
+URL: https://www.powerdns.com/recursor.html
+Type: ipkg
+Description:   High-performance resolving name server, utilizing multiple
+  processor and including Lua scripting capabilities.
+@@
+
+

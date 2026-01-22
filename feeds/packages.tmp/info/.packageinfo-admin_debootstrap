@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/admin/debootstrap/Makefile
+
+Package: debootstrap
+Version: 1.0.128.2~deb121-r2
+Depends: +libc +coreutils +coreutils-chroot +coreutils-sha1sum +ar +xz-utils +xz
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: admin
+Category: Administration
+Repository: base
+Title: Bootstrap a basic Debian system
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: debootstrap-udeb_1.0.128+nmu2+deb12u1_all.udeb
+License: Unique
+LicenseFiles: debian/copyright
+URL: https://wiki.debian.org/Debootstrap
+Type: ipkg
+Description:  debootstrap is used to create a Debian base system from scratch, without
+ requiring the availability of dpkg or apt. It does this by downloading .deb
+ files from a mirror site, and carefully unpacking them into a directory which
+ can eventually be chrooted into.
+@@
+
+

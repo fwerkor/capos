@@ -1,0 +1,2126 @@
+Source-Makefile: feeds/packages/utils/coreutils/Makefile
+
+Package: coreutils
+Menu: 1
+Version: 9.7-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: The GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:  Full versions of standard GNU utilities. If an equivalent Busybox applet is
+ available, you should consider compiling that instead as Busybox applets are
+ usually smaller, at the expense of reduced functionality.
+@@
+
+Package: coreutils-base32
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility base32 from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU base32 utility.
+@@
+
+Package: coreutils-base64
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility base64 from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU base64 utility.
+@@
+
+Package: coreutils-basename
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility basename from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU basename utility.
+@@
+
+Package: coreutils-basenc
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility basenc from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU basenc utility.
+@@
+
+Package: coreutils-b2sum
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility b2sum from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU b2sum utility.
+@@
+
+Package: coreutils-cat
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility cat from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU cat utility.
+@@
+
+Package: coreutils-chcon
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility chcon from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU chcon utility.
+@@
+
+Package: coreutils-chgrp
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility chgrp from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU chgrp utility.
+@@
+
+Package: coreutils-chmod
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility chmod from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU chmod utility.
+@@
+
+Package: coreutils-chown
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility chown from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU chown utility.
+@@
+
+Package: coreutils-chroot
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility chroot from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU chroot utility.
+@@
+
+Package: coreutils-cksum
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility cksum from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU cksum utility.
+@@
+
+Package: coreutils-comm
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility comm from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU comm utility.
+@@
+
+Package: coreutils-cp
+Version: 9.7-r1
+Depends: +libc +coreutils +libacl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility cp from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU cp utility.
+@@
+
+Package: coreutils-csplit
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility csplit from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU csplit utility.
+@@
+
+Package: coreutils-cut
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility cut from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU cut utility.
+@@
+
+Package: coreutils-date
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility date from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU date utility.
+@@
+
+Package: coreutils-dd
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility dd from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU dd utility.
+@@
+
+Package: coreutils-df
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility df from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU df utility.
+@@
+
+Package: coreutils-dir
+Version: 9.7-r1
+Depends: +libc +coreutils +libacl +libcap
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility dir from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU dir utility.
+@@
+
+Package: coreutils-dircolors
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility dircolors from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU dircolors utility.
+@@
+
+Package: coreutils-dirname
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility dirname from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU dirname utility.
+@@
+
+Package: coreutils-du
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility du from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU du utility.
+@@
+
+Package: coreutils-echo
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility echo from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU echo utility.
+@@
+
+Package: coreutils-env
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility env from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU env utility.
+@@
+
+Package: coreutils-expand
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility expand from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU expand utility.
+@@
+
+Package: coreutils-expr
+Version: 9.7-r1
+Depends: +libc +coreutils +libgmp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility expr from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU expr utility.
+@@
+
+Package: coreutils-factor
+Version: 9.7-r1
+Depends: +libc +coreutils +libgmp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility factor from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU factor utility.
+@@
+
+Package: coreutils-false
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility false from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU false utility.
+@@
+
+Package: coreutils-fmt
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility fmt from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU fmt utility.
+@@
+
+Package: coreutils-fold
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility fold from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU fold utility.
+@@
+
+Package: coreutils-groups
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility groups from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU groups utility.
+@@
+
+Package: coreutils-head
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility head from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU head utility.
+@@
+
+Package: coreutils-hostid
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility hostid from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU hostid utility.
+@@
+
+Package: coreutils-id
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility id from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU id utility.
+@@
+
+Package: coreutils-install
+Version: 9.7-r1
+Depends: +libc +coreutils +libacl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility install from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU install utility.
+@@
+
+Package: coreutils-join
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility join from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU join utility.
+@@
+
+Package: coreutils-kill
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility kill from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU kill utility.
+@@
+
+Package: coreutils-link
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility link from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU link utility.
+@@
+
+Package: coreutils-ln
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility ln from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU ln utility.
+@@
+
+Package: coreutils-logname
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility logname from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU logname utility.
+@@
+
+Package: coreutils-ls
+Version: 9.7-r1
+Depends: +libc +coreutils +libacl +libcap
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility ls from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU ls utility.
+@@
+
+Package: coreutils-md5sum
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility md5sum from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU md5sum utility.
+@@
+
+Package: coreutils-mkdir
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility mkdir from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU mkdir utility.
+@@
+
+Package: coreutils-mkfifo
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility mkfifo from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU mkfifo utility.
+@@
+
+Package: coreutils-mknod
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility mknod from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU mknod utility.
+@@
+
+Package: coreutils-mktemp
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility mktemp from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU mktemp utility.
+@@
+
+Package: coreutils-mv
+Version: 9.7-r1
+Depends: +libc +coreutils +libacl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility mv from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU mv utility.
+@@
+
+Package: coreutils-nice
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility nice from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU nice utility.
+@@
+
+Package: coreutils-nl
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility nl from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU nl utility.
+@@
+
+Package: coreutils-nohup
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility nohup from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU nohup utility.
+@@
+
+Package: coreutils-nproc
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility nproc from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU nproc utility.
+@@
+
+Package: coreutils-numfmt
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility numfmt from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU numfmt utility.
+@@
+
+Package: coreutils-od
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility od from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU od utility.
+@@
+
+Package: coreutils-paste
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility paste from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU paste utility.
+@@
+
+Package: coreutils-pathchk
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility pathchk from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU pathchk utility.
+@@
+
+Package: coreutils-pinky
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility pinky from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU pinky utility.
+@@
+
+Package: coreutils-pr
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility pr from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU pr utility.
+@@
+
+Package: coreutils-printenv
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility printenv from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU printenv utility.
+@@
+
+Package: coreutils-printf
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility printf from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU printf utility.
+@@
+
+Package: coreutils-ptx
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility ptx from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU ptx utility.
+@@
+
+Package: coreutils-pwd
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility pwd from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU pwd utility.
+@@
+
+Package: coreutils-readlink
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility readlink from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU readlink utility.
+@@
+
+Package: coreutils-realpath
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility realpath from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU realpath utility.
+@@
+
+Package: coreutils-rm
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility rm from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU rm utility.
+@@
+
+Package: coreutils-rmdir
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility rmdir from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU rmdir utility.
+@@
+
+Package: coreutils-runcon
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility runcon from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU runcon utility.
+@@
+
+Package: coreutils-seq
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility seq from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU seq utility.
+@@
+
+Package: coreutils-sha1sum
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility sha1sum from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU sha1sum utility.
+@@
+
+Package: coreutils-sha224sum
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility sha224sum from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU sha224sum utility.
+@@
+
+Package: coreutils-sha256sum
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility sha256sum from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU sha256sum utility.
+@@
+
+Package: coreutils-sha384sum
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility sha384sum from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU sha384sum utility.
+@@
+
+Package: coreutils-sha512sum
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility sha512sum from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU sha512sum utility.
+@@
+
+Package: coreutils-shred
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility shred from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU shred utility.
+@@
+
+Package: coreutils-shuf
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility shuf from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU shuf utility.
+@@
+
+Package: coreutils-sleep
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility sleep from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU sleep utility.
+@@
+
+Package: coreutils-sort
+Version: 9.7-r1
+Depends: +libc +coreutils +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility sort from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU sort utility.
+@@
+
+Package: coreutils-split
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility split from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU split utility.
+@@
+
+Package: coreutils-stat
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility stat from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU stat utility.
+@@
+
+Package: coreutils-stdbuf
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility stdbuf from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU stdbuf utility.
+@@
+
+Package: coreutils-stty
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility stty from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU stty utility.
+@@
+
+Package: coreutils-sum
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility sum from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU sum utility.
+@@
+
+Package: coreutils-sync
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility sync from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU sync utility.
+@@
+
+Package: coreutils-tac
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility tac from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU tac utility.
+@@
+
+Package: coreutils-tail
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility tail from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU tail utility.
+@@
+
+Package: coreutils-tee
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility tee from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU tee utility.
+@@
+
+Package: coreutils-test
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility test from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU test utility.
+@@
+
+Package: coreutils-timeout
+Version: 9.7-r1
+Depends: +libc +coreutils +librt
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility timeout from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU timeout utility.
+@@
+
+Package: coreutils-touch
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility touch from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU touch utility.
+@@
+
+Package: coreutils-tr
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility tr from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU tr utility.
+@@
+
+Package: coreutils-true
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility true from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU true utility.
+@@
+
+Package: coreutils-truncate
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility truncate from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU truncate utility.
+@@
+
+Package: coreutils-tsort
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility tsort from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU tsort utility.
+@@
+
+Package: coreutils-tty
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility tty from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU tty utility.
+@@
+
+Package: coreutils-uname
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility uname from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU uname utility.
+@@
+
+Package: coreutils-unexpand
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility unexpand from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU unexpand utility.
+@@
+
+Package: coreutils-uniq
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility uniq from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU uniq utility.
+@@
+
+Package: coreutils-unlink
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility unlink from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU unlink utility.
+@@
+
+Package: coreutils-uptime
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility uptime from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU uptime utility.
+@@
+
+Package: coreutils-users
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility users from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU users utility.
+@@
+
+Package: coreutils-vdir
+Version: 9.7-r1
+Depends: +libc +coreutils +libacl +libcap
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility vdir from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU vdir utility.
+@@
+
+Package: coreutils-wc
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility wc from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU wc utility.
+@@
+
+Package: coreutils-who
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility who from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU who utility.
+@@
+
+Package: coreutils-whoami
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility whoami from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU whoami utility.
+@@
+
+Package: coreutils-yes
+Version: 9.7-r1
+Depends: +libc +coreutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility yes from the GNU core utilities
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: coreutils-9.7.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:coreutils
+URL: http://www.gnu.org/software/coreutils/
+Type: ipkg
+Description:   Full version of standard GNU yes utility.
+@@
+
+

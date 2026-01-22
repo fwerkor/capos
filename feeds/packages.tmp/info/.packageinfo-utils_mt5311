@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/utils/mt5311/Makefile
+
+Package: mt5311
+Version: 0~2cb13045cd82474416e7f454b36f3a07b0de49d7-r1
+Depends: +libc +lua +luaposix +lua-struct
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utilities for working with Metanoia/Proscend VDSL2 SFP Modems
+Maintainer: jasle <jasle@riseup.net>
+Source: mt5311-0~2cb13045cd82474416e7f454b36f3a07b0de49d7.tar.zst
+License: AGPL-3.0-or-later
+LicenseFiles: LICENSE
+URL: https://github.com/jimdigriz/mt5311
+Type: ipkg
+Description: 	mt5311 is a tool to read status informationen from Metanoia/Proscend 
+	VDSL2/Proscend VDSL2 SFP Modems.
+@@
+
+

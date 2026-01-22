@@ -1,0 +1,54 @@
+Source-Makefile: feeds/packages/lang/python/python-charset-normalizer/Makefile
+
+Package: python3-charset-normalizer
+Submenu: Python
+Version: 3.3.2-r1
+Depends: +libc +python3-light +python3-codecs +python3-logging
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Real First Universal Charset Detector
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: charset-normalizer-3.3.2.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/Ousret/charset_normalizer
+Type: ipkg
+Description: A library that helps you read text from an unknown charset encoding.
+Motivated by chardet, I'm trying to resolve the issue by taking a new
+approach. All IANA character set names for which the Python core library
+provides codecs are supported.
+@@
+
+Package: python3-charset-normalizer-src
+Submenu: Python
+Version: 3.3.2-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Real First Universal Charset Detector (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: charset-normalizer-3.3.2.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/Ousret/charset_normalizer
+Type: ipkg
+Description:     A library that helps you read text from an unknown charset encoding.
+Motivated by chardet, I'm trying to resolve the issue by taking a new
+approach. All IANA character set names for which the Python core library
+provides codecs are supported.
+
+    This package contains the Python source files for python3-charset-normalizer.
+@@
+Config:
+    depends on PACKAGE_python3-charset-normalizer
+@@
+
+

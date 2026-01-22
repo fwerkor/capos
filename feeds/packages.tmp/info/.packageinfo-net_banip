@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/net/banip/Makefile
+
+Package: banip
+Version: 1.5.6-r7
+Depends: +libc +jshn +jsonfilter +firewall4 +ca-bundle +rpcd +rpcd-mod-rpcsys
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: banIP blocks IPs via named nftables Sets
+Maintainer: Dirk Brenken <dev@brenken.org>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Description: banIP blocks IPs via named nftables Sets.
+banIP supports many IP blocklist feeds and provides a log service to block suspicious IPs in realtime.
+Please see https://github.com/openwrt/packages/blob/master/net/banip/files/README.md for further information.
+
+@@
+
+

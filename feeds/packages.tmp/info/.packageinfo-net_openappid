@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/net/openappid/Makefile
+
+Package: openappid
+Submenu: Firewall
+Version: 20220617-r1
+Depends: +libc +snort3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Detection language and processing module for Snort
+Maintainer: John Audia <thereadgraysky@proton.me>
+Source: openappid-20220617.tar.gz
+License: GPL-2.0-only
+LicenseFiles: LICENSE
+URL: https://www.snort.org/
+Type: ipkg
+Description:   OpenAppId is an open, application-focused detection language and processing
+  module for Snort that enables users to create, share, and implement
+  application and service detection.
+@@
+
+

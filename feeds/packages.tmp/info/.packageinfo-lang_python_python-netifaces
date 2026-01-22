@@ -1,0 +1,48 @@
+Source-Makefile: feeds/packages/lang/python/python-netifaces/Makefile
+
+Package: python3-netifaces
+Submenu: Python
+Version: 0.11.0-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Portable network interface information
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: netifaces-0.11.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/al45tair/netifaces
+Type: ipkg
+Description:   Portable network interface information.
+@@
+
+Package: python3-netifaces-src
+Submenu: Python
+Version: 0.11.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Portable network interface information (sources)
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: netifaces-0.11.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/al45tair/netifaces
+Type: ipkg
+Description:       Portable network interface information.
+
+    This package contains the Python source files for python3-netifaces.
+@@
+Config:
+    depends on PACKAGE_python3-netifaces
+@@
+
+

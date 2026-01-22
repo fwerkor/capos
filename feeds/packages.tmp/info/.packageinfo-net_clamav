@@ -1,0 +1,47 @@
+Source-Makefile: feeds/packages/net/clamav/Makefile
+Build-Depends: ncurses rust/host
+
+Package: clamav
+Submenu: Web Servers/Proxies
+Version: 1.4.1-r2
+Depends: +libc +check +libstdcpp +libpthread +zlib +libbz2 +libxml2 +libcurl +libjson-c +libmilter-sendmail +libopenssl +libltdl +libpcre2 +BUILD_NLS:libiconv-full @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ClamAV
+Maintainer: Marko Ratkaj <markoratkaj@gmail.com> Lucian Cristian <lucian.cristian@gmail.com>
+Source: clamav-1.4.1.tar.gz
+License: GPL-2.0-only
+LicenseFiles: COPYING*
+CPE-ID: cpe:/a:clamav:clamav
+URL: https://www.clamav.net/
+Type: ipkg
+Description:  ClamAV is an open source antivirus engine for detecting trojans,
+ viruses, malware & other malicious threats.
+@@
+
+Package: freshclam
+Submenu: Web Servers/Proxies
+Version: 1.4.1-r2
+Depends: +libc +check +libstdcpp +libpthread +zlib +libbz2 +libxml2 +libcurl +libjson-c +libmilter-sendmail +libopenssl +libltdl +libpcre2 +BUILD_NLS:libiconv-full @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64) +clamav
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ClamAV database updater
+Maintainer: Marko Ratkaj <markoratkaj@gmail.com> Lucian Cristian <lucian.cristian@gmail.com>
+Source: clamav-1.4.1.tar.gz
+License: GPL-2.0-only
+LicenseFiles: COPYING*
+CPE-ID: cpe:/a:clamav:clamav
+URL: https://www.clamav.net/
+Type: ipkg
+Description:  Database updater for ClamAV
+@@
+
+

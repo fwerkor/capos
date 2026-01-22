@@ -1,0 +1,48 @@
+Source-Makefile: feeds/packages/lang/python/python-fnvhash/Makefile
+
+Package: python3-fnvhash
+Submenu: Python
+Version: 0.1.0-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Pure Python FNV hash implementation
+Maintainer: Timothy Ace <openwrt@timothyace.com>
+Source: fnvhash-0.1.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/znerol/py-fnvhash
+Type: ipkg
+Description: Pure Python implementation of the FNV hash family with 100% test coverage.
+@@
+
+Package: python3-fnvhash-src
+Submenu: Python
+Version: 0.1.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Pure Python FNV hash implementation (sources)
+Maintainer: Timothy Ace <openwrt@timothyace.com>
+Source: fnvhash-0.1.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/znerol/py-fnvhash
+Type: ipkg
+Description:     Pure Python implementation of the FNV hash family with 100% test coverage.
+
+    This package contains the Python source files for python3-fnvhash.
+@@
+Config:
+    depends on PACKAGE_python3-fnvhash
+@@
+
+

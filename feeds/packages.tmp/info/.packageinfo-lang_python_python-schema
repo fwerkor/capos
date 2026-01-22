@@ -1,0 +1,54 @@
+Source-Makefile: feeds/packages/lang/python/python-schema/Makefile
+
+Package: python3-schema
+Submenu: Python
+Version: 0.7.5-r1
+Depends: +libc +python3-light +python3-contextlib2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Simple data validation library
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com> 
+Source: schema-0.7.5.tar.gz
+License: MIT
+LicenseFiles: LICENSE-MIT
+URL: https://github.com/keleshev/schema
+Type: ipkg
+Description: schema is a library for validating Python data structures, such as those
+obtained from config-files, forms, external services or command-line
+parsing, converted from JSON/YAML (or something else) to Python
+data-types.
+@@
+
+Package: python3-schema-src
+Submenu: Python
+Version: 0.7.5-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Simple data validation library (sources)
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com> 
+Source: schema-0.7.5.tar.gz
+License: MIT
+LicenseFiles: LICENSE-MIT
+URL: https://github.com/keleshev/schema
+Type: ipkg
+Description:     schema is a library for validating Python data structures, such as those
+obtained from config-files, forms, external services or command-line
+parsing, converted from JSON/YAML (or something else) to Python
+data-types.
+
+    This package contains the Python source files for python3-schema.
+@@
+Config:
+    depends on PACKAGE_python3-schema
+@@
+
+

@@ -1,0 +1,52 @@
+Source-Makefile: feeds/packages/lang/python/python-psutil/Makefile
+
+Package: python3-psutil
+Submenu: Python
+Version: 5.9.5-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Process and system monitoring
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Source: psutil-5.9.5.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:psutil_project:psutil
+URL: https://github.com/giampaolo/psutil
+Type: ipkg
+Description:   psutil is a cross-platform library for retrieving information
+  on running processes and system utilization.
+@@
+
+Package: python3-psutil-src
+Submenu: Python
+Version: 5.9.5-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Process and system monitoring (sources)
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Source: psutil-5.9.5.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:psutil_project:psutil
+URL: https://github.com/giampaolo/psutil
+Type: ipkg
+Description:       psutil is a cross-platform library for retrieving information
+  on running processes and system utilization.
+
+    This package contains the Python source files for python3-psutil.
+@@
+Config:
+    depends on PACKAGE_python3-psutil
+@@
+
+

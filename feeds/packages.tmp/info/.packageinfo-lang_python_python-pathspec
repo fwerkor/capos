@@ -1,0 +1,58 @@
+Source-Makefile: feeds/packages/lang/python/python-pathspec/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-flit-core/host
+Build-Types: host
+
+Package: python3-pathspec
+Submenu: Python
+Version: 0.12.1-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: gitignore style pattern matching of file paths
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: pathspec-0.12.1.tar.gz
+License: MPL-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/cpburnz/python-pathspec
+Type: ipkg
+Build-Only: 1
+Description: pathspec is a utility library for pattern matching of file paths. So far
+this only includes Git's wildmatch pattern matching which itself is
+derived from Rsync's wildmatch. Git uses wildmatch for its gitignore
+files.
+@@
+
+Package: python3-pathspec-src
+Submenu: Python
+Version: 0.12.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: gitignore style pattern matching of file paths (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: pathspec-0.12.1.tar.gz
+License: MPL-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/cpburnz/python-pathspec
+Type: ipkg
+Build-Only: 1
+Description:     pathspec is a utility library for pattern matching of file paths. So far
+this only includes Git's wildmatch pattern matching which itself is
+derived from Rsync's wildmatch. Git uses wildmatch for its gitignore
+files.
+
+    This package contains the Python source files for python3-pathspec.
+@@
+Config:
+    depends on PACKAGE_python3-pathspec
+@@
+
+

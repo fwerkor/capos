@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/lang/perl-file-next/Makefile
+
+Package: perl-file-next
+Submenu: Perl
+Version: 1.18.5.40-r1
+Depends: +libc perl +perlbase-file
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: File finding module
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: File-Next-1.18.tar.gz
+License: Artistic-2.0
+URL: http://search.cpan.org/dist/File-Next/
+Type: ipkg
+Description: File finding module
+@@
+
+

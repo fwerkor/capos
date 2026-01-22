@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/libs/libassuan/Makefile
+
+Package: libassuan
+Version: 2.5.6-r1
+Depends: +libc +libgpg-error
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: GnuPG IPC library
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: libassuan-2.5.6.tar.bz2
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING COPYING.LIB
+URL: https://gnupg.org/software/libassuan/index.html
+Type: ipkg
+Description: Libassuan is a small library implementing the so-called Assuan
+protocol. This protocol is used for IPC between most newer GnuPG
+components. Both, server and client side functions are provided. 
+@@
+
+

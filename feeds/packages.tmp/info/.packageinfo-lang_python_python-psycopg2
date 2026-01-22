@@ -1,0 +1,50 @@
+Source-Makefile: feeds/packages/lang/python/python-psycopg2/Makefile
+
+Package: python3-psycopg2
+Submenu: Python
+Version: 2.9.7-r1
+Depends: +libc +python3-light +python3-decimal +python3-logging +python3-uuid +libpq
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: PostgreSQL database adapter
+Maintainer: Daniel Danzberger <daniel@dd-wrt.com>
+Source: psycopg2-2.9.7.tar.gz
+License: LGPL-3.0-or-later
+LicenseFiles: LICENSE
+URL: https://www.psycopg.org/
+Type: ipkg
+Description: Psycopg is the most popular PostgreSQL adapter for the Python
+programming language
+@@
+
+Package: python3-psycopg2-src
+Submenu: Python
+Version: 2.9.7-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: PostgreSQL database adapter (sources)
+Maintainer: Daniel Danzberger <daniel@dd-wrt.com>
+Source: psycopg2-2.9.7.tar.gz
+License: LGPL-3.0-or-later
+LicenseFiles: LICENSE
+URL: https://www.psycopg.org/
+Type: ipkg
+Description:     Psycopg is the most popular PostgreSQL adapter for the Python
+programming language
+
+    This package contains the Python source files for python3-psycopg2.
+@@
+Config:
+    depends on PACKAGE_python3-psycopg2
+@@
+
+

@@ -1,0 +1,369 @@
+Source-Makefile: feeds/packages/utils/procps-ng/Makefile
+
+Package: procps-ng-free
+Version: 4.0.4-r1
+Depends: +libc procps-ng
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Applet free from the procps-ng package
+Maintainer: 
+Source: procps-ng-4.0.4.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING COPYING.LIB
+CPE-ID: cpe:/a:procps-ng_project:procps-ng
+URL: https://gitlab.com/procps-ng/procps
+Type: ipkg
+Description:   Installs the applet free.
+@@
+
+Package: procps-ng-kill
+Version: 4.0.4-r1
+Depends: +libc procps-ng
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Applet kill from the procps-ng package
+Maintainer: 
+Source: procps-ng-4.0.4.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING COPYING.LIB
+CPE-ID: cpe:/a:procps-ng_project:procps-ng
+URL: https://gitlab.com/procps-ng/procps
+Type: ipkg
+Description:   Installs the applet kill.
+@@
+
+Package: procps-ng-pgrep
+Version: 4.0.4-r1
+Depends: +libc procps-ng
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Applet pgrep from the procps-ng package
+Maintainer: 
+Source: procps-ng-4.0.4.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING COPYING.LIB
+CPE-ID: cpe:/a:procps-ng_project:procps-ng
+URL: https://gitlab.com/procps-ng/procps
+Type: ipkg
+Description:   Installs the applet pgrep.
+@@
+
+Package: procps-ng-pkill
+Version: 4.0.4-r1
+Depends: +libc procps-ng
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Applet pkill from the procps-ng package
+Maintainer: 
+Source: procps-ng-4.0.4.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING COPYING.LIB
+CPE-ID: cpe:/a:procps-ng_project:procps-ng
+URL: https://gitlab.com/procps-ng/procps
+Type: ipkg
+Description:   Installs the applet pkill.
+@@
+
+Package: procps-ng-pmap
+Version: 4.0.4-r1
+Depends: +libc procps-ng
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Applet pmap from the procps-ng package
+Maintainer: 
+Source: procps-ng-4.0.4.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING COPYING.LIB
+CPE-ID: cpe:/a:procps-ng_project:procps-ng
+URL: https://gitlab.com/procps-ng/procps
+Type: ipkg
+Description:   Installs the applet pmap.
+@@
+
+Package: procps-ng-ps
+Version: 4.0.4-r1
+Depends: +libc procps-ng
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Applet ps from the procps-ng package
+Maintainer: 
+Source: procps-ng-4.0.4.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING COPYING.LIB
+CPE-ID: cpe:/a:procps-ng_project:procps-ng
+URL: https://gitlab.com/procps-ng/procps
+Type: ipkg
+Description:   Installs the applet ps.
+@@
+
+Package: procps-ng-pwdx
+Version: 4.0.4-r1
+Depends: +libc procps-ng
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Applet pwdx from the procps-ng package
+Maintainer: 
+Source: procps-ng-4.0.4.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING COPYING.LIB
+CPE-ID: cpe:/a:procps-ng_project:procps-ng
+URL: https://gitlab.com/procps-ng/procps
+Type: ipkg
+Description:   Installs the applet pwdx.
+@@
+
+Package: procps-ng-skill
+Version: 4.0.4-r1
+Depends: +libc procps-ng
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Applet skill from the procps-ng package
+Maintainer: 
+Source: procps-ng-4.0.4.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING COPYING.LIB
+CPE-ID: cpe:/a:procps-ng_project:procps-ng
+URL: https://gitlab.com/procps-ng/procps
+Type: ipkg
+Description:   Installs the applet skill.
+@@
+
+Package: procps-ng-slabtop
+Version: 4.0.4-r1
+Depends: +libc procps-ng
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Applet slabtop from the procps-ng package
+Maintainer: 
+Source: procps-ng-4.0.4.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING COPYING.LIB
+CPE-ID: cpe:/a:procps-ng_project:procps-ng
+URL: https://gitlab.com/procps-ng/procps
+Type: ipkg
+Description:   Installs the applet slabtop.
+@@
+
+Package: procps-ng-snice
+Version: 4.0.4-r1
+Depends: +libc procps-ng
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Applet snice from the procps-ng package
+Maintainer: 
+Source: procps-ng-4.0.4.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING COPYING.LIB
+CPE-ID: cpe:/a:procps-ng_project:procps-ng
+URL: https://gitlab.com/procps-ng/procps
+Type: ipkg
+Description:   Installs the applet snice.
+@@
+
+Package: procps-ng-sysctl
+Version: 4.0.4-r1
+Depends: +libc procps-ng
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Applet sysctl from the procps-ng package
+Maintainer: 
+Source: procps-ng-4.0.4.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING COPYING.LIB
+CPE-ID: cpe:/a:procps-ng_project:procps-ng
+URL: https://gitlab.com/procps-ng/procps
+Type: ipkg
+Description:   Installs the applet sysctl.
+@@
+
+Package: procps-ng-tload
+Version: 4.0.4-r1
+Depends: +libc procps-ng
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Applet tload from the procps-ng package
+Maintainer: 
+Source: procps-ng-4.0.4.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING COPYING.LIB
+CPE-ID: cpe:/a:procps-ng_project:procps-ng
+URL: https://gitlab.com/procps-ng/procps
+Type: ipkg
+Description:   Installs the applet tload.
+@@
+
+Package: procps-ng-top
+Version: 4.0.4-r1
+Depends: +libc procps-ng
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Applet top from the procps-ng package
+Maintainer: 
+Source: procps-ng-4.0.4.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING COPYING.LIB
+CPE-ID: cpe:/a:procps-ng_project:procps-ng
+URL: https://gitlab.com/procps-ng/procps
+Type: ipkg
+Description:   Installs the applet top.
+@@
+
+Package: procps-ng-uptime
+Version: 4.0.4-r1
+Depends: +libc procps-ng
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Applet uptime from the procps-ng package
+Maintainer: 
+Source: procps-ng-4.0.4.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING COPYING.LIB
+CPE-ID: cpe:/a:procps-ng_project:procps-ng
+URL: https://gitlab.com/procps-ng/procps
+Type: ipkg
+Description:   Installs the applet uptime.
+@@
+
+Package: procps-ng-vmstat
+Version: 4.0.4-r1
+Depends: +libc procps-ng
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Applet vmstat from the procps-ng package
+Maintainer: 
+Source: procps-ng-4.0.4.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING COPYING.LIB
+CPE-ID: cpe:/a:procps-ng_project:procps-ng
+URL: https://gitlab.com/procps-ng/procps
+Type: ipkg
+Description:   Installs the applet vmstat.
+@@
+
+Package: procps-ng-w
+Version: 4.0.4-r1
+Depends: +libc procps-ng
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Applet w from the procps-ng package
+Maintainer: 
+Source: procps-ng-4.0.4.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING COPYING.LIB
+CPE-ID: cpe:/a:procps-ng_project:procps-ng
+URL: https://gitlab.com/procps-ng/procps
+Type: ipkg
+Description:   Installs the applet w.
+@@
+
+Package: procps-ng-watch
+Version: 4.0.4-r1
+Depends: +libc procps-ng
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Applet watch from the procps-ng package
+Maintainer: 
+Source: procps-ng-4.0.4.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING COPYING.LIB
+CPE-ID: cpe:/a:procps-ng_project:procps-ng
+URL: https://gitlab.com/procps-ng/procps
+Type: ipkg
+Description:   Installs the applet watch.
+@@
+
+Package: procps-ng
+Menu: 1
+Version: 4.0.4-r1
+Depends: +libc +libncurses
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: procps-ng utilities
+Maintainer: 
+Source: procps-ng-4.0.4.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING COPYING.LIB
+CPE-ID: cpe:/a:procps-ng_project:procps-ng
+URL: https://gitlab.com/procps-ng/procps
+Type: ipkg
+Description:   procps is a set of command line and full-screen utilities that provide information out of the pseudo-filesystem
+  most commonly located at /proc. This filesystem provides a simple interface to the kernel data structures.
+  The programs of procps generally concentrate on the structures that describe the processess running on the system.
+
+  NOTE: some utilities provided by procps-ng packages (ps, uptime, kill, ...) are installed as busybox applets, by default.
+  Conflicting applets should be removed from the build to avoid file conflicts.
+@@
+
+

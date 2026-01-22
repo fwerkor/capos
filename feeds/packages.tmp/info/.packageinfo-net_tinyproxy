@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/net/tinyproxy/Makefile
+
+Package: tinyproxy
+Submenu: Web Servers/Proxies
+Version: 1.11.1-r3
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Tinyproxy is a lightweight HTTP and HTTPS proxy
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: tinyproxy-1.11.1.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:tinyproxy_project:tinyproxy
+URL: https://tinyproxy.github.io/
+Type: ipkg
+Description: Tinyproxy is a lightweight HTTP and HTTPS proxy
+@@
+
+

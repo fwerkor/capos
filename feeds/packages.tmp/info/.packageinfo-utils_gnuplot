@@ -1,0 +1,21 @@
+Source-Makefile: feeds/packages/utils/gnuplot/Makefile
+
+Package: gnuplot
+Version: 6.0.1-r1
+Depends: +libc +zlib +libgd +libncursesw +libreadline
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: A portable command-line driven graphing utility
+Maintainer: Matteo Cicuttin <datafl4sh@toxicnet.eu>
+Source: gnuplot-6.0.1.tar.gz
+CPE-ID: cpe:/a:gnuplot_project:gnuplot
+URL: http://www.gnuplot.info/
+Type: ipkg
+Description: A portable command-line driven graphing utility
+@@
+
+

@@ -1,0 +1,688 @@
+Source-Makefile: feeds/luci/applications/luci-app-sshtunnel/Makefile
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+
+Package: luci-app-sshtunnel
+Submenu: 3. Applications
+Version: 1.1.0-r1
+Depends: +libc +luci-base +sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: LuCI support for SSH Tunnels (sshtunnel package)
+Maintainer: OpenWrt LuCI community
+Source: 
+License: Apache-2.0
+URL: https://github.com/openwrt/luci
+Type: ipkg
+Description: LuCI support for SSH Tunnels (sshtunnel package)
+@@
+
+Package: luci-i18n-sshtunnel-ar
+Default: LUCI_LANG_ar||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - ar translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - العربية (Arabic)
+@@
+
+Package: luci-i18n-sshtunnel-bg
+Default: LUCI_LANG_bg||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - bg translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - български (Bulgarian)
+@@
+
+Package: luci-i18n-sshtunnel-bn
+Default: LUCI_LANG_bn_BD||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - bn translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - বাংলা (Bengali)
+@@
+
+Package: luci-i18n-sshtunnel-ca
+Default: LUCI_LANG_ca||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - ca translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Català (Catalan)
+@@
+
+Package: luci-i18n-sshtunnel-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - cs translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Čeština (Czech)
+@@
+
+Package: luci-i18n-sshtunnel-da
+Default: LUCI_LANG_da||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - da translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Dansk (Danish)
+@@
+
+Package: luci-i18n-sshtunnel-de
+Default: LUCI_LANG_de||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - de translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Deutsch (German)
+@@
+
+Package: luci-i18n-sshtunnel-el
+Default: LUCI_LANG_el||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - el translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Ελληνικά (Greek)
+@@
+
+Package: luci-i18n-sshtunnel-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - es translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Español (Spanish)
+@@
+
+Package: luci-i18n-sshtunnel-fi
+Default: LUCI_LANG_fi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - fi translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Suomi (Finnish)
+@@
+
+Package: luci-i18n-sshtunnel-fr
+Default: LUCI_LANG_fr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - fr translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Français (French)
+@@
+
+Package: luci-i18n-sshtunnel-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - ga translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-sshtunnel-he
+Default: LUCI_LANG_he||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - he translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - עִבְרִית (Hebrew)
+@@
+
+Package: luci-i18n-sshtunnel-hi
+Default: LUCI_LANG_hi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - hi translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - हिंदी (Hindi)
+@@
+
+Package: luci-i18n-sshtunnel-hu
+Default: LUCI_LANG_hu||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - hu translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Magyar (Hungarian)
+@@
+
+Package: luci-i18n-sshtunnel-it
+Default: LUCI_LANG_it||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - it translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Italiano (Italian)
+@@
+
+Package: luci-i18n-sshtunnel-ja
+Default: LUCI_LANG_ja||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - ja translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - 日本語 (Japanese)
+@@
+
+Package: luci-i18n-sshtunnel-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - ko translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - 한국어 (Korean)
+@@
+
+Package: luci-i18n-sshtunnel-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - lt translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-sshtunnel-mr
+Default: LUCI_LANG_mr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - mr translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Marāṭhī (Marathi)
+@@
+
+Package: luci-i18n-sshtunnel-ms
+Default: LUCI_LANG_ms||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - ms translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Bahasa Melayu (Malay)
+@@
+
+Package: luci-i18n-sshtunnel-no
+Default: LUCI_LANG_nb_NO||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - no translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Norsk (Norwegian)
+@@
+
+Package: luci-i18n-sshtunnel-nl
+Default: LUCI_LANG_nl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - nl translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Nederlands (Dutch)
+@@
+
+Package: luci-i18n-sshtunnel-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - pl translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Polski (Polish)
+@@
+
+Package: luci-i18n-sshtunnel-pt
+Default: LUCI_LANG_pt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - pt translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Português (Portuguese)
+@@
+
+Package: luci-i18n-sshtunnel-pt-br
+Default: LUCI_LANG_pt_BR||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - pt-br translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Português do Brasil (Brazilian Portuguese)
+@@
+
+Package: luci-i18n-sshtunnel-ro
+Default: LUCI_LANG_ro||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - ro translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Română (Romanian)
+@@
+
+Package: luci-i18n-sshtunnel-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - ru translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Русский (Russian)
+@@
+
+Package: luci-i18n-sshtunnel-sk
+Default: LUCI_LANG_sk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - sk translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Slovenčina (Slovak)
+@@
+
+Package: luci-i18n-sshtunnel-sv
+Default: LUCI_LANG_sv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - sv translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Svenska (Swedish)
+@@
+
+Package: luci-i18n-sshtunnel-tr
+Default: LUCI_LANG_tr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - tr translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Türkçe (Turkish)
+@@
+
+Package: luci-i18n-sshtunnel-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - uk translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-sshtunnel-vi
+Default: LUCI_LANG_vi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - vi translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - Tiếng Việt (Vietnamese)
+@@
+
+Package: luci-i18n-sshtunnel-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - zh-cn translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-sshtunnel-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-sshtunnel
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-sshtunnel - zh-tw translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-sshtunnel - 正體中文 (Traditional Chinese)
+@@
+
+

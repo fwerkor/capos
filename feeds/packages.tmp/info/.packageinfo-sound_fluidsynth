@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/sound/fluidsynth/Makefile
+
+Package: libfluidsynth
+Version: 2.4.5-r1
+Depends: +libc +alsa-lib +glib2 +libsndfile +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: sound
+Category: Sound
+Repository: base
+Title: A SoundFont Synthesizer
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: fluidsynth-2.4.5.tar.gz
+License: LGPL-2.1
+LicenseFiles: LICENSE
+URL: https://www.fluidsynth.org
+Type: ipkg
+Description: FluidSynth is a cross-platform, real-time software synthesizer based on the Soundfont 2 specification.
+@@
+
+

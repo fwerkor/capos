@@ -1,0 +1,57 @@
+Source-Makefile: feeds/packages/lang/python/python-pyparsing/Makefile
+Build-Depends: python-flit-core/host
+
+Package: python3-pyparsing
+Submenu: Python
+Version: 3.1.1-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Define and execute parsing grammars
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Source: pyparsing-3.1.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/pyparsing/pyparsing/
+Type: ipkg
+Description:   The pyparsing module is an alternative approach to creating
+  and executing simple grammars, vs. the traditional lex/yacc
+  approach, or the use of regular expressions.
+  The pyparsing module provides a library of classes that
+  client code uses to construct the grammar directly in Python code.
+@@
+
+Package: python3-pyparsing-src
+Submenu: Python
+Version: 3.1.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Define and execute parsing grammars (sources)
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Source: pyparsing-3.1.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/pyparsing/pyparsing/
+Type: ipkg
+Description:       The pyparsing module is an alternative approach to creating
+  and executing simple grammars, vs. the traditional lex/yacc
+  approach, or the use of regular expressions.
+  The pyparsing module provides a library of classes that
+  client code uses to construct the grammar directly in Python code.
+
+    This package contains the Python source files for python3-pyparsing.
+@@
+Config:
+    depends on PACKAGE_python3-pyparsing
+@@
+
+

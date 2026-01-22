@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/net/etherwake-nfqueue/Makefile
+
+Package: etherwake-nfqueue
+Version: 2019.09.28~f71c269b58585e93575fa3e9fcc1793806fb3080-r3
+Depends: +libc +libnetfilter-queue +nftables +kmod-nft-queue
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Wake up computers on netfilter match
+Maintainer: Mister Benjamin <144dbspl@gmail.com>
+Source: etherwake-nfqueue-2019.09.28~f71c269b58585e93575fa3e9fcc1793806fb3080.tar.zst
+License: GPL-2.0-or-later
+URL: https://github.com/mister-benjamin/etherwake-nfqueue
+Type: ipkg
+Description:  Fork of etherwake with additional support for sending WOL packets
+ when a router added a filtered packet to an NFQUEUE.
+@@
+
+

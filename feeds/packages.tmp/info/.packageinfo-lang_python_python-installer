@@ -1,0 +1,56 @@
+Source-Makefile: feeds/packages/lang/python/python-installer/Makefile
+Build-Depends/host: python3/host python-flit-core/host
+Build-Types: host
+
+Package: python3-installer
+Submenu: Python
+Version: 0.7.0-r1
+Depends: +libc +python3-light +python3-email
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: A library for installing Python wheels
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: installer-0.7.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/pypa/installer
+Type: ipkg
+Build-Only: 1
+Description: This is a low-level library for installing a Python package from a wheel
+distribution. It provides basic functionality and abstractions for
+handling wheels and installing packages from wheels.
+@@
+
+Package: python3-installer-src
+Submenu: Python
+Version: 0.7.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: A library for installing Python wheels (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: installer-0.7.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/pypa/installer
+Type: ipkg
+Build-Only: 1
+Description:     This is a low-level library for installing a Python package from a wheel
+distribution. It provides basic functionality and abstractions for
+handling wheels and installing packages from wheels.
+
+    This package contains the Python source files for python3-installer.
+@@
+Config:
+    depends on PACKAGE_python3-installer
+@@
+
+

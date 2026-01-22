@@ -1,0 +1,49 @@
+Source-Makefile: feeds/packages/net/httping/Makefile
+
+Package: httping
+Version: 3.5-r3
+Depends: +libc +BUILD_NLS:libintl-full +libopenssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: ssl
+Section: net
+Category: Network
+Repository: base
+Title: Httping is like 'ping' but for http-requests (with SSL support)
+Maintainer: Marcin Jurkowski <marcin1j@gmail.com>
+Source: httping-3.5.tar.zst
+License: GPL-3.0-or-later
+LicenseFiles: LICENSE
+URL: https://www.vanheusden.com/httping/
+Type: ipkg
+Description: 		Give it an url, and it'll show you how long it takes to connect, send a
+	request and retrieve the reply (only the headers). Be aware that the
+	transmission across the network also takes time!
+	This package is built with SSL support.
+@@
+
+Package: httping-nossl
+Version: 3.5-r3
+Depends: +libc +BUILD_NLS:libintl-full
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: nossl
+Section: net
+Category: Network
+Repository: base
+Title: Httping is like 'ping' but for http-requests (without SSL support)
+Maintainer: Marcin Jurkowski <marcin1j@gmail.com>
+Source: httping-3.5.tar.zst
+License: GPL-3.0-or-later
+LicenseFiles: LICENSE
+URL: https://www.vanheusden.com/httping/
+Type: ipkg
+Description: 		Give it an url, and it'll show you how long it takes to connect, send a
+	request and retrieve the reply (only the headers). Be aware that the
+	transmission across the network also takes time!
+	This package is built without SSL support.
+@@
+
+

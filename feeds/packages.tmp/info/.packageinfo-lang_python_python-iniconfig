@@ -1,0 +1,49 @@
+Source-Makefile: feeds/packages/lang/python/python-iniconfig/Makefile
+Build-Depends: python-hatchling/host python-hatch-vcs/host
+
+Package: python3-iniconfig
+Submenu: Python
+Version: 2.0.0-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Simple config-ini parser
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Source: iniconfig-2.0.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/pytest-dev/iniconfig
+Type: ipkg
+Description:   iniconfig is a small and simple INI-file parser module.
+@@
+
+Package: python3-iniconfig-src
+Submenu: Python
+Version: 2.0.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Simple config-ini parser (sources)
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Source: iniconfig-2.0.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/pytest-dev/iniconfig
+Type: ipkg
+Description:       iniconfig is a small and simple INI-file parser module.
+
+    This package contains the Python source files for python3-iniconfig.
+@@
+Config:
+    depends on PACKAGE_python3-iniconfig
+@@
+
+

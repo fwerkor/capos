@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/net/ser2net/Makefile
+
+Package: ser2net
+Version: 4.6.2-r1
+Depends: +libc +libgensio +libyaml +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Serial to Network Proxy
+Maintainer: Michael Heimpold <mhei@heimpold.de>
+Source: ser2net-4.6.2.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://sourceforge.net/projects/ser2net/
+Type: ipkg
+Description:   This project provides a proxy that allows telnet/tcp connections to be made to
+  serial ports on a machine.
+@@
+
+

@@ -1,0 +1,48 @@
+Source-Makefile: feeds/packages/lang/python/python-sentry-sdk/Makefile
+
+Package: python3-sentry-sdk
+Submenu: Python
+Version: 1.29.2-r1
+Depends: +libc +python3 +python3-certifi +python3-urllib3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Client for Sentry
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: sentry-sdk-1.29.2.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/getsentry/sentry-python
+Type: ipkg
+Description: This is the official Python SDK for Sentry.
+@@
+
+Package: python3-sentry-sdk-src
+Submenu: Python
+Version: 1.29.2-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Client for Sentry (sources)
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: sentry-sdk-1.29.2.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/getsentry/sentry-python
+Type: ipkg
+Description:     This is the official Python SDK for Sentry.
+
+    This package contains the Python source files for python3-sentry-sdk.
+@@
+Config:
+    depends on PACKAGE_python3-sentry-sdk
+@@
+
+

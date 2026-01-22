@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/net/dhtd/Makefile
+
+Package: dhtd
+Submenu: IP Addresses and Names
+Version: 1.0.2-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: DHT Daemon
+Maintainer: Moritz Warning <moritzwarning@web.de>
+Source: dhtd-1.0.2.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/mwarning/dhtd
+Type: ipkg
+Description:   Standalone BitTorrent DHT daemon. Lookup and announce
+  hash identifiers via command line interface.
+@@
+
+

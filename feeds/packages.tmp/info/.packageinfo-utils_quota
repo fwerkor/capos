@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/utils/quota/Makefile
+
+Package: quota
+Version: 4.09-r2
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: quota
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: quota-4.09.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:jan_kara:linux_diskquota
+URL: https://sourceforge.net/projects/linuxquota/
+Type: ipkg
+Description:   Utility for managing Linux filesystem quotas
+@@
+
+

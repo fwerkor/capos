@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/lang/lzmq/Makefile
+
+Package: lzmq
+Submenu: Lua
+Version: 0.4.4-r2
+Depends: +libc +lua +libzmq
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Lua ZeroMQ binding
+Maintainer: Dirk Chang <dirk@kooiot.com>
+Source: lzmq-0.4.4.tar.gz
+License: MIT
+URL: https://github.com/zeromq/lzmq
+Type: ipkg
+Description:  LZMQ is a Lua binding to ZeroMQ.
+@@
+
+

@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/net/tunneldigger/Makefile
+
+Package: tunneldigger
+Version: 2021.03.08~4f72b30578ac3dbc5482f4a54054bf870355bdf5-r2
+Depends: +libc +kmod-l2tp +kmod-l2tp-ip +kmod-l2tp-eth +libnl-tiny +libpthread +librt
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: L2TPv3 tunneling via UDP
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: tunneldigger-2021.03.08~4f72b30578ac3dbc5482f4a54054bf870355bdf5.tar.zst
+License: AGPL-3.0
+LicenseFiles: COPYING
+URL: https://github.com/wlanslovenija/tunneldigger
+Type: ipkg
+Description: Tunneldigger is a simple VPN tunneling solution based on the Linux kernel
+support for L2TPv3 tunnels over UDP.
+@@
+
+

@@ -1,0 +1,29 @@
+Source-Makefile: feeds/packages/net/net-mtools/Makefile
+
+Package: net-mtools
+Version: 2.3-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Debug multicast setups with mtools (msend and mreceive)
+Maintainer: 
+Source: net-mtools-2.3.tar.zst
+URL: https://github.com/troglobit/mtools
+Type: ipkg
+Description:   The tools msend and mreceive can be particulary useful
+  when debugging multicast setups.
+
+  msend continuously sends UDP packets to the multicast
+  group specified by the -g and -p options.
+
+  mreceive joins a multicast group specified by the -g and
+  -p options, then receives and displays the multicast
+  packets sent to this group:port combination by the msend
+  command.
+@@
+
+

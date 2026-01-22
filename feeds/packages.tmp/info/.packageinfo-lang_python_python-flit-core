@@ -1,0 +1,54 @@
+Source-Makefile: feeds/packages/lang/python/python-flit-core/Makefile
+Build-Depends/host: python3/host
+Build-Types: host
+
+Package: python3-flit-core
+Submenu: Python
+Version: 3.12.0-r1
+Depends: +libc +python3-light +python3-email +python3-logging
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Distribution-building parts of Flit
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: flit_core-3.12.0.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://github.com/pypa/flit
+Type: ipkg
+Build-Only: 1
+Description: This provides a PEP 517 build backend for packages using Flit. The only
+public interface is the API specified by PEP 517, at flit_core.buildapi.
+@@
+
+Package: python3-flit-core-src
+Submenu: Python
+Version: 3.12.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Distribution-building parts of Flit (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: flit_core-3.12.0.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://github.com/pypa/flit
+Type: ipkg
+Build-Only: 1
+Description:     This provides a PEP 517 build backend for packages using Flit. The only
+public interface is the API specified by PEP 517, at flit_core.buildapi.
+
+    This package contains the Python source files for python3-flit-core.
+@@
+Config:
+    depends on PACKAGE_python3-flit-core
+@@
+
+

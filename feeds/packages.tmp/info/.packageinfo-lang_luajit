@@ -1,0 +1,30 @@
+Source-Makefile: feeds/packages/lang/luajit/Makefile
+Build-Types: host
+
+Package: luajit
+Submenu: Lua
+Version: 2.1.0-beta3-r7
+Depends: +libc @HAS_LUAJIT_ARCH
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: LuaJIT
+Maintainer: Morteza Milani <milani@pichak.co>
+Source: LuaJIT-2.1.0-beta3.tar.gz
+License: MIT
+LicenseFiles: COPYRIGHT
+CPE-ID: cpe:/a:luajit:luajit
+URL: https://www.luajit.org
+Type: ipkg
+Description:  LuaJIT is a Just-In-Time (JIT) compiler for the Lua programming language. *** Requires GCC Multilib on host system to build! ***
+@@
+Config:
+config HAS_LUAJIT_ARCH
+	bool
+	default y if i386||x86_64||arm||armeb||aarch64||powerpc||mips||mipsel||mips64
+@@
+
+

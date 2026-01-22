@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/admin/btop/Makefile
+
+Package: btop
+Version: 1.4.5-r1
+Depends: +libc +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: admin
+Category: Administration
+Repository: base
+Title: A monitor of resources
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: btop-1.4.5.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/aristocratos/btop
+Type: ipkg
+Description:   Resource monitor that shows usage and stats for processor, memory,
+  disks, network and processes.
+
+  C++ version and continuation of bashtop and bpytop.
+@@
+
+

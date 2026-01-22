@@ -1,0 +1,40 @@
+Source-Makefile: feeds/packages/libs/gnu-efi/Makefile
+
+Package: gnu-efi
+Version: 3.0.17-r1
+Depends: +libc @TARGET_x86_64
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: GNU's EFI library
+Maintainer: Oskari Rauta <oskari.rauta@gmail.com>
+Source: gnu-efi-3.0.17.tar.zst
+LicenseFiles: README.efilib
+URL: https://github.com/vathpela/gnu-efi
+Type: ipkg
+Hidden: 1
+Description:   GNU's EFI library
+@@
+
+Package: gnu-efi-programs
+Version: 3.0.17-r1
+Depends: +libc @TARGET_x86_64 +gnu-efi
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: boot
+Category: Boot Loaders
+Repository: base
+Title: Various EFI programs
+Maintainer: Oskari Rauta <oskari.rauta@gmail.com>
+Source: gnu-efi-3.0.17.tar.zst
+LicenseFiles: README.efilib
+URL: https://github.com/vathpela/gnu-efi
+Type: ipkg
+Description:   Various EFI programs from GNU's EFI library
+@@
+
+

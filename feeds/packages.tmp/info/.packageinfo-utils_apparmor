@@ -1,0 +1,84 @@
+Source-Makefile: feeds/packages/utils/apparmor/Makefile
+Build-Depends: swig/host python-setuptools-scm/host
+
+Package: libapparmor
+Version: 3.0.13-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: AppArmor library
+Maintainer: Oskari Rauta <oskari.rauta@gmail.com>
+Source: apparmor-3.0.13.tar.zst
+License: GPL-2.0-only
+LicenseFiles: LICENSE
+URL: https://apparmor.net
+Type: ipkg
+Description:   Library to support AppArmor userspace utilities
+@@
+
+Package: python3-apparmor
+Submenu: Python
+Version: 3.0.13-r1
+Depends: +libc +libapparmor +python3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: AppArmor Python bindings
+Maintainer: Oskari Rauta <oskari.rauta@gmail.com>
+Source: apparmor-3.0.13.tar.zst
+License: GPL-2.0-only
+LicenseFiles: LICENSE
+URL: https://apparmor.net
+Type: ipkg
+Description: AppArmor Python bindings
+@@
+
+Package: apparmor-utils
+Submenu: AppArmor
+Version: 3.0.13-r1
+Depends: +libc +BUILD_NLS:libintl-full +libapparmor +python3-apparmor +python3 +python3-readline +python3-psutil +ss +findutils-xargs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: AppArmor utils
+Maintainer: Oskari Rauta <oskari.rauta@gmail.com>
+Source: apparmor-3.0.13.tar.zst
+License: GPL-2.0-only
+LicenseFiles: LICENSE
+URL: https://apparmor.net
+Type: ipkg
+Description:   AppArmor application security system init script and
+  userspace utils to assist with AppArmor profile management
+@@
+
+Package: apparmor-profiles
+Submenu: AppArmor
+Version: 3.0.13-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: AppArmor default profiles
+Maintainer: Oskari Rauta <oskari.rauta@gmail.com>
+Source: apparmor-3.0.13.tar.zst
+License: GPL-2.0-only
+LicenseFiles: LICENSE
+URL: https://apparmor.net
+Type: ipkg
+Description:   A collection of profiles for the AppArmor application security system
+@@
+
+

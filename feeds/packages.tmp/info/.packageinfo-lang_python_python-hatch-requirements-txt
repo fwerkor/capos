@@ -1,0 +1,52 @@
+Source-Makefile: feeds/packages/lang/python/python-hatch-requirements-txt/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-hatchling/host python-packaging/host
+Build-Types: host
+
+Package: python3-hatch-requirements-txt
+Submenu: Python
+Version: 0.4.1-r1
+Depends: +libc +python3-light +python3-hatchling +python3-packaging
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Read project dependencies from requirements.txt
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: hatch_requirements_txt-0.4.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/repo-helper/hatch-requirements-txt
+Type: ipkg
+Build-Only: 1
+Description: Hatchling plugin to read project dependencies from requirements.txt
+@@
+
+Package: python3-hatch-requirements-txt-src
+Submenu: Python
+Version: 0.4.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Read project dependencies from requirements.txt (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: hatch_requirements_txt-0.4.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/repo-helper/hatch-requirements-txt
+Type: ipkg
+Build-Only: 1
+Description:     Hatchling plugin to read project dependencies from requirements.txt
+
+    This package contains the Python source files for python3-hatch-requirements-txt.
+@@
+Config:
+    depends on PACKAGE_python3-hatch-requirements-txt
+@@
+
+

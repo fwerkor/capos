@@ -1,0 +1,22 @@
+Source-Makefile: feeds/routing/batmand/Makefile
+
+Package: batmand
+Submenu: Routing and Redirection
+Version: 2022.12.31~2f62b17d4132f82c4716b672101eb7faa916192a-r1
+Depends: +libc +libpthread +kmod-tun
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: B.A.T.M.A.N. layer 3 routing daemon
+Maintainer: Corinna Aichele <onelektra@gmx.net>
+Source: batmand-2022.12.31~2f62b17d4132f82c4716b672101eb7faa916192a.tar.zst
+License: GPL-2.0-only
+URL: https://www.open-mesh.org/
+Type: ipkg
+Description: B.A.T.M.A.N. layer 3 routing daemon
+@@
+
+

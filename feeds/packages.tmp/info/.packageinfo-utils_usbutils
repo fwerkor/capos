@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/utils/usbutils/Makefile
+
+Package: usbutils
+Version: 017-r1
+Depends: +libc +libusb-1.0 +libudev +librt +libpthread +usbids
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: USB devices listing utilities
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: usbutils-017.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+URL: http://www.linux-usb.org/
+Type: ipkg
+Description: USB devices listing utilities
+@@
+
+

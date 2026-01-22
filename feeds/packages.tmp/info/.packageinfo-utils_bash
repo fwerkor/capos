@@ -1,0 +1,26 @@
+Source-Makefile: feeds/packages/utils/bash/Makefile
+
+Package: bash
+Submenu: Shells
+Version: 5.2.37-r1
+Depends: +libc +libncurses +libreadline
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: The GNU Bourne Again SHell
+Maintainer: Marcel Denia <naoir@gmx.net>
+Source: bash-5.2.37.tar.gz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:bash
+URL: https://www.gnu.org/software/bash/
+Type: ipkg
+Description:   Bash is an sh-compatible command language interpreter that executes
+  commands read from the standard input or from a file. Bash also
+  incorporates useful features from the Korn and C shells (ksh and csh).
+@@
+
+

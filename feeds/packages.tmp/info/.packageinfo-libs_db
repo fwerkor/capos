@@ -1,0 +1,44 @@
+Source-Makefile: feeds/packages/libs/db/Makefile
+Build-Depends: libxml2
+
+Package: libdb47
+Version: 5.3.28-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: libdb47-full
+Section: libs
+Category: Libraries
+Repository: base
+Title: Berkeley DB library
+Maintainer: Marcel Denia <naoir@gmx.net>
+Source: db-5.3.28.tar.gz
+License: Sleepycat
+LicenseFiles: LICENSE
+URL: http://www.oracle.com/us/products/database/berkeley-db
+ABI-Version: 5
+Type: ipkg
+Description:   Berkeley DB library.
+@@
+
+Package: libdb47xx
+Version: 5.3.28-r1
+Depends: +libc +libdb47 +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: libdb47xx-full
+Section: libs
+Category: Libraries
+Repository: base
+Title: Berkeley DB library for C++
+Maintainer: Marcel Denia <naoir@gmx.net>
+Source: db-5.3.28.tar.gz
+License: Sleepycat
+LicenseFiles: LICENSE
+URL: http://www.oracle.com/us/products/database/berkeley-db
+ABI-Version: 5
+Type: ipkg
+Description:   Berkeley DB library C++ wrapper.
+@@
+
+

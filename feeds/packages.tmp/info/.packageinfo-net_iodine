@@ -1,0 +1,45 @@
+Source-Makefile: feeds/packages/net/iodine/Makefile
+
+Package: iodine
+Submenu: Firewall Tunnel
+Version: 0.8.0-r4
+Depends: +libc +kmod-tun +zlib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: IP over DNS tunneling client version
+Maintainer: Uwe Kleine-König <uwe+openwrt@kleine-koenig.org>
+Source: iodine-0.8.0.tar.gz
+License: ISC
+LicenseFiles: README
+CPE-ID: cpe:/a:kryo:iodine
+URL: http://code.kryo.se/iodine/
+Type: ipkg
+Description:  iodine client version
+@@
+
+Package: iodined
+Submenu: Firewall Tunnel
+Version: 0.8.0-r4
+Depends: +libc +kmod-tun +zlib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: IP over DNS tunneling server version
+Maintainer: Uwe Kleine-König <uwe+openwrt@kleine-koenig.org>
+Source: iodine-0.8.0.tar.gz
+License: ISC
+LicenseFiles: README
+CPE-ID: cpe:/a:kryo:iodine
+URL: http://code.kryo.se/iodine/
+Type: ipkg
+Description:  iodine server version
+@@
+
+

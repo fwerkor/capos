@@ -1,0 +1,1875 @@
+Source-Makefile: feeds/packages/lang/python/python3/Makefile
+Build-Depends: bluez python3/host python-build/host python-installer/host python-wheel/host
+Build-Depends/host: bzip2/host libffi/host readline/host
+Build-Types: host
+
+Package: libpython3
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 core library
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+ABI-Version: 3.11
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains only core Python library.
+@@
+
+Package: python3
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3-light +python3-asyncio +python3-cgi +python3-cgitb +python3-codecs +python3-ctypes +python3-dbm +python3-decimal +python3-distutils +python3-email +python3-logging +python3-lzma +python3-multiprocessing +python3-ncurses +python3-openssl +python3-pydoc +python3-readline +python3-sqlite3 +python3-unittest +python3-urllib +python3-uuid +python3-xml
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 programming language
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package installs almost all parts of the standard Python
+installation.
+@@
+
+Package: python3-base
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +libpython3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 base interpreter
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains only the interpreter and the bare minimum for the
+interpreter to start.
+@@
+
+Package: python3-light
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3-base +libbz2 +zlib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 light installation
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package installs the base interpreter package and contains the most
+commonly used parts of the standard library.
+@@
+Config:
+  source "feeds/packages/lang/python/python3/Config-python3-light.in"
+@@
+
+Package: python3-base-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 base interpreter (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains only the interpreter and the bare minimum for the
+interpreter to start.
+
+    This package contains the Python source files for python3-base.
+@@
+Config:
+    depends on PACKAGE_python3-base
+@@
+
+Package: python3-light-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 light installation (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package installs the base interpreter package and contains the most
+commonly used parts of the standard library.
+
+    This package contains the Python source files for python3-light.
+@@
+Config:
+    depends on PACKAGE_python3-light
+@@
+
+Package: python3-asyncio
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 asyncio module
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the asyncio module.
+@@
+
+Package: python3-asyncio-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 asyncio module (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the asyncio module.
+
+    This package contains the Python source files for python3-asyncio.
+@@
+Config:
+    depends on PACKAGE_python3-asyncio
+@@
+
+Package: python3-cgi
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3-light +python3-email
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 cgi module
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the cgi module.
+@@
+
+Package: python3-cgi-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 cgi module (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the cgi module.
+
+    This package contains the Python source files for python3-cgi.
+@@
+Config:
+    depends on PACKAGE_python3-cgi
+@@
+
+Package: python3-cgitb
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3-light +python3-cgi +python3-pydoc
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 cgitb module
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the cgitb module.
+@@
+
+Package: python3-cgitb-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 cgitb module (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the cgitb module.
+
+    This package contains the Python source files for python3-cgitb.
+@@
+Config:
+    depends on PACKAGE_python3-cgitb
+@@
+
+Package: python3-codecs
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 codecs/Unicode support
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains codecs and Unicode support.
+@@
+
+Package: python3-codecs-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 codecs/Unicode support (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains codecs and Unicode support.
+
+    This package contains the Python source files for python3-codecs.
+@@
+Config:
+    depends on PACKAGE_python3-codecs
+@@
+
+Package: python3-ctypes
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3-light +libffi
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 ctypes module
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the ctypes module.
+@@
+
+Package: python3-ctypes-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 ctypes module (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the ctypes module.
+
+    This package contains the Python source files for python3-ctypes.
+@@
+Config:
+    depends on PACKAGE_python3-ctypes
+@@
+
+Package: python3-dbm
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3-light +libgdbm
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 dbm module
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the dbm module.
+@@
+
+Package: python3-dbm-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 dbm module (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the dbm module.
+
+    This package contains the Python source files for python3-dbm.
+@@
+Config:
+    depends on PACKAGE_python3-dbm
+@@
+
+Package: python3-decimal
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 decimal module
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the decimal module.
+@@
+
+Package: python3-decimal-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 decimal module (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the decimal module.
+
+    This package contains the Python source files for python3-decimal.
+@@
+Config:
+    depends on PACKAGE_python3-decimal
+@@
+
+Package: python3-dev
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3 +python3-lib2to3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 development files
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains files for building Python modules, extending the
+Python interpreter, or embedded Python in applications.
+@@
+
+Package: python3-dev-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 development files (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains files for building Python modules, extending the
+Python interpreter, or embedded Python in applications.
+
+    This package contains the Python source files for python3-dev.
+@@
+Config:
+    depends on PACKAGE_python3-dev
+@@
+
+Package: python3-distutils
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3-light +python3-email
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 distutils module
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the distutils module.
+@@
+
+Package: python3-distutils-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 distutils module (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the distutils module.
+
+    This package contains the Python source files for python3-distutils.
+@@
+Config:
+    depends on PACKAGE_python3-distutils
+@@
+
+Package: python3-email
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 email module
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the email module.
+@@
+
+Package: python3-email-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 email module (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the email module.
+
+    This package contains the Python source files for python3-email.
+@@
+Config:
+    depends on PACKAGE_python3-email
+@@
+
+Package: python3-lib2to3
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 lib2to3 module
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the lib2to3 module.
+@@
+
+Package: python3-lib2to3-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 lib2to3 module (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the lib2to3 module.
+
+    This package contains the Python source files for python3-lib2to3.
+@@
+Config:
+    depends on PACKAGE_python3-lib2to3
+@@
+
+Package: python3-logging
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 logging module
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the logging module.
+@@
+
+Package: python3-logging-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 logging module (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the logging module.
+
+    This package contains the Python source files for python3-logging.
+@@
+Config:
+    depends on PACKAGE_python3-logging
+@@
+
+Package: python3-lzma
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3-light +liblzma
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 lzma module
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the lzma module.
+@@
+
+Package: python3-lzma-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 lzma module (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the lzma module.
+
+    This package contains the Python source files for python3-lzma.
+@@
+Config:
+    depends on PACKAGE_python3-lzma
+@@
+
+Package: python3-multiprocessing
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 multiprocessing module
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the multiprocessing module.
+@@
+
+Package: python3-multiprocessing-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 multiprocessing module (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the multiprocessing module.
+
+    This package contains the Python source files for python3-multiprocessing.
+@@
+Config:
+    depends on PACKAGE_python3-multiprocessing
+@@
+
+Package: python3-ncurses
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3-light +libncursesw
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 ncurses module
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the ncurses module.
+@@
+
+Package: python3-ncurses-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 ncurses module (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the ncurses module.
+
+    This package contains the Python source files for python3-ncurses.
+@@
+Config:
+    depends on PACKAGE_python3-ncurses
+@@
+
+Package: python3-openssl
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3-light +libopenssl +ca-certs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 ssl module
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the ssl module.
+@@
+
+Package: python3-openssl-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 ssl module (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the ssl module.
+
+    This package contains the Python source files for python3-openssl.
+@@
+Config:
+    depends on PACKAGE_python3-openssl
+@@
+
+Package: python3-pydoc
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 pydoc module
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the pydoc module.
+@@
+
+Package: python3-pydoc-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 pydoc module (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the pydoc module.
+
+    This package contains the Python source files for python3-pydoc.
+@@
+Config:
+    depends on PACKAGE_python3-pydoc
+@@
+
+Package: python3-readline
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3-light +libreadline
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 readline module
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the readline module.
+@@
+
+Package: python3-readline-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 readline module (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the readline module.
+
+    This package contains the Python source files for python3-readline.
+@@
+Config:
+    depends on PACKAGE_python3-readline
+@@
+
+Package: python3-sqlite3
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3-light +libsqlite3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 sqlite3 module
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the sqlite3 module.
+@@
+
+Package: python3-sqlite3-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 sqlite3 module (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the sqlite3 module.
+
+    This package contains the Python source files for python3-sqlite3.
+@@
+Config:
+    depends on PACKAGE_python3-sqlite3
+@@
+
+Package: python3-unittest
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 unittest module
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the unittest module.
+@@
+
+Package: python3-unittest-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 unittest module (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the unittest module.
+
+    This package contains the Python source files for python3-unittest.
+@@
+Config:
+    depends on PACKAGE_python3-unittest
+@@
+
+Package: python3-urllib
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3-light +python3-email
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 URL handling modules
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the URL handling modules.
+@@
+
+Package: python3-urllib-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 URL handling modules (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the URL handling modules.
+
+    This package contains the Python source files for python3-urllib.
+@@
+Config:
+    depends on PACKAGE_python3-urllib
+@@
+
+Package: python3-uuid
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3-light +libuuid
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 uuid module
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the uuid module.
+@@
+
+Package: python3-uuid-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 uuid module (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the uuid module.
+
+    This package contains the Python source files for python3-uuid.
+@@
+Config:
+    depends on PACKAGE_python3-uuid
+@@
+
+Package: python3-venv
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 venv module
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the venv module.
+@@
+
+Package: python3-venv-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 venv module (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the venv module.
+
+    This package contains the Python source files for python3-venv.
+@@
+Config:
+    depends on PACKAGE_python3-venv
+@@
+
+Package: python3-xml
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc +python3-light +python3-urllib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 XML modules
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description: Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the XML modules.
+@@
+
+Package: python3-xml-src
+Submenu: Python
+Version: 3.11.14-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python 3.11 XML modules (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: Python-3.11.14.tar.xz
+License: Python-2.0.1 0BSD
+LicenseFiles: LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
+CPE-ID: cpe:/a:python:python
+URL: https://www.python.org/
+Type: ipkg
+Description:     Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. It supports multiple programming
+paradigms beyond object-oriented programming, such as procedural and
+functional programming. Python combines remarkable power with very clear
+syntax. It has interfaces to many system calls and libraries, as well as
+to various window systems, and is extensible in C or C++. It is also
+usable as an extension language for applications that need a
+programmable interface. Finally, Python is portable: it runs on many
+Unix variants including Linux and macOS, and on Windows.
+
+This package contains the XML modules.
+
+    This package contains the Python source files for python3-xml.
+@@
+Config:
+    depends on PACKAGE_python3-xml
+@@
+
+

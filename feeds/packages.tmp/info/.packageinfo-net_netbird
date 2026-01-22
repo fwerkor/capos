@@ -1,0 +1,28 @@
+Source-Makefile: feeds/packages/net/netbird/Makefile
+Build-Depends: golang/host
+
+Package: netbird
+Submenu: VPN
+Version: 0.59.12-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) +kmod-wireguard
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Connect your devices into a single secure private WireGuard®-based mesh network
+Maintainer: Wesley Gimenes <wehagy@proton.me>
+Source: netbird-0.59.12.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://netbird.io
+Type: ipkg
+Description:   NetBird is an open-source VPN management platform built on top of WireGuard® making it easy to create
+  secure private networks for your organization or home.
+
+  It requires zero configuration effort leaving behind the hassle of opening ports, complex firewall rules, VPN
+  gateways, and so forth.
+@@
+
+

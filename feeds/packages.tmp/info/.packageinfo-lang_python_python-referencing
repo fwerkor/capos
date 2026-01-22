@@ -1,0 +1,49 @@
+Source-Makefile: feeds/packages/lang/python/python-referencing/Makefile
+Build-Depends: python-hatchling/host python-hatch-vcs/host
+
+Package: python3-referencing
+Submenu: Python
+Version: 0.32.0-r1
+Depends: +libc +python3-light +python3-email +python3-urllib +python3-attrs +python3-rpds-py
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: JSON Referencing + Python
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: referencing-0.32.0.tar.gz
+License: MIT
+LicenseFiles: COPYING
+URL: https://github.com/python-jsonschema/referencing
+Type: ipkg
+Description: An implementation-agnostic implementation of JSON reference resolution.
+@@
+
+Package: python3-referencing-src
+Submenu: Python
+Version: 0.32.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: JSON Referencing + Python (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: referencing-0.32.0.tar.gz
+License: MIT
+LicenseFiles: COPYING
+URL: https://github.com/python-jsonschema/referencing
+Type: ipkg
+Description:     An implementation-agnostic implementation of JSON reference resolution.
+
+    This package contains the Python source files for python3-referencing.
+@@
+Config:
+    depends on PACKAGE_python3-referencing
+@@
+
+

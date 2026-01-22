@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/libs/libsoup3/Makefile
+Build-Depends: glib2/host
+
+Package: libsoup3
+Version: 3.4.4-r1
+Depends: +libc +glib2 +libxml2 +libgnutls +libsqlite3 +libpsl +libnghttp2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: libsoup3
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: libsoup-3.4.4.tar.xz
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnome:libsoup
+URL: https://wiki.gnome.org/Projects/libsoup
+Type: ipkg
+Description: libsoup3
+@@
+
+

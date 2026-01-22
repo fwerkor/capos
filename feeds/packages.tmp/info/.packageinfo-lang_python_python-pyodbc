@@ -1,0 +1,26 @@
+Source-Makefile: feeds/packages/lang/python/python-pyodbc/Makefile
+Build-Depends: unixodbc/host
+
+Package: python3-pyodbc
+Submenu: Python
+Version: 5.0.1-r1
+Depends: +libc +python3-light +python3-decimal +python3-uuid +libodbc +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: DB API module for ODBC
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: pyodbc-5.0.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE.txt
+URL: https://github.com/mkleehammer/pyodbc
+Type: ipkg
+Description: pyodbc is an open source Python module that makes accessing ODBC
+databases simple. It implements the DB API 2.0 specification but is
+packed with even more Pythonic convenience.
+@@
+
+

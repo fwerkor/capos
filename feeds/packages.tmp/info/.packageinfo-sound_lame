@@ -1,0 +1,47 @@
+Source-Makefile: feeds/packages/sound/lame/Makefile
+
+Package: lame-lib
+Version: 3.100-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: sound
+Category: Sound
+Repository: base
+Title: lame-lib
+Maintainer: Ted Hess <thess@kitschensync.net>
+Source: lame-3.100.tar.gz
+License: LGPL-2.0
+LicenseFiles: COPYING LICENSE
+CPE-ID: cpe:/a:lame_project:lame
+URL: http://sourceforge.net/projects/lame
+Type: ipkg
+Description: lame mp3 encoder libs
+@@
+Config:
+	source "feeds/packages/sound/lame/Config.in"
+@@
+
+Package: lame
+Menu: 1
+Version: 3.100-r1
+Depends: +libc +libncurses +lame-lib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: sound
+Category: Sound
+Repository: base
+Title: lame
+Maintainer: Ted Hess <thess@kitschensync.net>
+Source: lame-3.100.tar.gz
+License: LGPL-2.0
+LicenseFiles: COPYING LICENSE
+CPE-ID: cpe:/a:lame_project:lame
+URL: http://sourceforge.net/projects/lame
+Type: ipkg
+Description: lame mp3 encoder
+@@
+
+

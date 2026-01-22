@@ -1,0 +1,48 @@
+Source-Makefile: feeds/packages/lang/python/python-chardet/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host
+Build-Types: host
+
+Package: python3-chardet
+Submenu: Python
+Version: 5.2.0-r2
+Depends: +libc +python3-light +python3-logging
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Universal encoding detector
+Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
+Source: chardet-5.2.0.tar.gz
+License: LGPL-2.1
+URL: https://github.com/chardet/chardet
+Type: ipkg
+Description:   Universal encoding detector for Python
+@@
+
+Package: python3-chardet-src
+Submenu: Python
+Version: 5.2.0-r2
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Universal encoding detector (sources)
+Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
+Source: chardet-5.2.0.tar.gz
+License: LGPL-2.1
+URL: https://github.com/chardet/chardet
+Type: ipkg
+Description:       Universal encoding detector for Python
+
+    This package contains the Python source files for python3-chardet.
+@@
+Config:
+    depends on PACKAGE_python3-chardet
+@@
+
+

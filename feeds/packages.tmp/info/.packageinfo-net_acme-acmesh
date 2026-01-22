@@ -1,0 +1,40 @@
+Source-Makefile: feeds/packages/net/acme-acmesh/Makefile
+
+Package: acme-acmesh
+Version: 3.1.1-r1
+Depends: +libc +acme-common +wget-ssl +ca-bundle +openssl-util +socat
+Conflicts: 
+Menu-Depends: 
+Provides: acme-client
+Section: net
+Category: Network
+Repository: base
+Title: ACME client acme.sh wrapper script
+Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
+Source: acme-acmesh-3.1.1.tar.gz
+License: GPL-3.0-only
+LicenseFiles: LICENSE.md
+URL: https://acme.sh
+Type: ipkg
+Description: A client for issuing ACME (e.g, Letsencrypt) certificates.
+@@
+
+Package: acme-acmesh-dnsapi
+Version: 3.1.1-r1
+Depends: +libc +acme-acmesh
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: DNS API integration for ACME (Letsencrypt) client
+Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
+Source: acme-acmesh-3.1.1.tar.gz
+License: GPL-3.0-only
+LicenseFiles: LICENSE.md
+Type: ipkg
+Description:  This package provides DNS API integration for ACME (Letsencrypt) client.
+@@
+
+

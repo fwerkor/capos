@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/admin/fluent-bit/Makefile
+
+Package: fluent-bit
+Version: 3.1.3-r1
+Depends: +libc +libyaml +libopenssl +libcurl +libatomic +musl-fts +flex +bison
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: admin
+Category: Administration
+Repository: base
+Title: Fast and Lightweight Logs and Metrics processor
+Maintainer: 
+Source: fluent-bit-3.1.3.tar.zst
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://fluentbit.io/
+Type: ipkg
+Description:   Fluent Bit is a super fast, lightweight, and highly scalable logging
+  and metrics processor and forwarder.
+@@
+
+

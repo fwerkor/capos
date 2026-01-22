@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/libs/flac/Makefile
+
+Package: libflac
+Version: 1.4.3-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Free Lossless Audio Codec library
+Maintainer: Ted Hess <thess@kitschensync.net>
+Source: flac-1.4.3.tar.xz
+License: GFDL-1.2 GPL-2 LGPL-2.1 BSD-3-Clause
+LicenseFiles: README COPYING.FDL COPYING.GPL COPYING.LGPL COPYING.Xiph
+CPE-ID: cpe:/a:flac_project:flac
+URL: https://xiph.org/flac
+Type: ipkg
+Description: Free Lossless Audio Codec library
+@@
+
+

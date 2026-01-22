@@ -1,0 +1,54 @@
+Source-Makefile: feeds/packages/lang/python/python-calver/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host
+Build-Types: host
+
+Package: python3-calver
+Submenu: Python
+Version: 2025.10.20-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Setuptools extension for CalVer package versions
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: calver-2025.10.20.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/di/calver
+Type: ipkg
+Build-Only: 1
+Description: The calver package is a setuptools extension for automatically defining
+your Python package version as a calendar version.
+@@
+
+Package: python3-calver-src
+Submenu: Python
+Version: 2025.10.20-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Setuptools extension for CalVer package versions (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: calver-2025.10.20.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/di/calver
+Type: ipkg
+Build-Only: 1
+Description:     The calver package is a setuptools extension for automatically defining
+your Python package version as a calendar version.
+
+    This package contains the Python source files for python3-calver.
+@@
+Config:
+    depends on PACKAGE_python3-calver
+@@
+
+

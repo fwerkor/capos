@@ -1,0 +1,251 @@
+Source-Makefile: feeds/packages/net/kea/Makefile
+
+Package: kea-libs
+Submenu: IP Addresses and Names
+Version: 2.6.4-r1
+Depends: +libc +libopenssl +log4cplus +boost +boost-system
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ISC Kea Libraries
+Maintainer: Philip Prindeville <philipp@redfish-solutions.com>, Noah Meyerhans <frodo@morgul.net>
+Source: kea-2.6.4.tar.gz
+License: MPL-2.0
+LicenseFiles: COPYING
+URL: https://www.isc.org/kea
+Type: ipkg
+Description: 		Kea required Libraries.
+@@
+
+Package: kea-ctrl
+Submenu: IP Addresses and Names
+Version: 2.6.4-r1
+Depends: +libc +procps-ng +procps-ng-ps +kea-dhcp4 +IPV6:kea-dhcp6 +kea-dhcp-ddns
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ISC Kea Control
+Maintainer: Philip Prindeville <philipp@redfish-solutions.com>, Noah Meyerhans <frodo@morgul.net>
+Source: kea-2.6.4.tar.gz
+License: MPL-2.0
+LicenseFiles: COPYING
+URL: https://www.isc.org/kea
+Type: ipkg
+Description: 	Tool to start, stop, reconfigure, and report status for the Kea servers.
+@@
+
+Package: kea-dhcp4
+Submenu: IP Addresses and Names
+Version: 2.6.4-r1
+Depends: +libc +kea-libs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ISC Kea DHCP Server v4
+Maintainer: Philip Prindeville <philipp@redfish-solutions.com>, Noah Meyerhans <frodo@morgul.net>
+Source: kea-2.6.4.tar.gz
+License: MPL-2.0
+LicenseFiles: COPYING
+URL: https://www.isc.org/kea
+Type: ipkg
+Description:     The DHCPv4 server process. This process responds to DHCPv4 queries from clients.
+@@
+
+Package: kea-dhcp6
+Submenu: IP Addresses and Names
+Version: 2.6.4-r1
+Depends: +libc @IPV6 +kea-libs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ISC Kea DHCP Server v6
+Maintainer: Philip Prindeville <philipp@redfish-solutions.com>, Noah Meyerhans <frodo@morgul.net>
+Source: kea-2.6.4.tar.gz
+License: MPL-2.0
+LicenseFiles: COPYING
+URL: https://www.isc.org/kea
+Type: ipkg
+Description:     The DHCPv6 server process. This process responds to DHCPv6 queries from clients.
+@@
+
+Package: kea-dhcp-ddns
+Submenu: IP Addresses and Names
+Version: 2.6.4-r1
+Depends: +libc +kea-libs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ISC Kea DHCP Dynamic DNS
+Maintainer: Philip Prindeville <philipp@redfish-solutions.com>, Noah Meyerhans <frodo@morgul.net>
+Source: kea-2.6.4.tar.gz
+License: MPL-2.0
+LicenseFiles: COPYING
+URL: https://www.isc.org/kea
+Type: ipkg
+Description: 		The DHCP Dynamic DNS process. This process acts as an intermediary between
+the DHCP servers and DNS servers. It receives name update requests from the
+DHCP servers and sends DNS Update messages to the DNS servers.
+@@
+
+Package: kea-admin
+Submenu: IP Addresses and Names
+Version: 2.6.4-r1
+Depends: +libc +kea-libs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ISC Kea Admin
+Maintainer: Philip Prindeville <philipp@redfish-solutions.com>, Noah Meyerhans <frodo@morgul.net>
+Source: kea-2.6.4.tar.gz
+License: MPL-2.0
+LicenseFiles: COPYING
+URL: https://www.isc.org/kea
+Type: ipkg
+Description:    	A useful tool for database backend maintenance (creating a new database,
+checking versions, upgrading etc.).
+@@
+
+Package: kea-hook-ha
+Submenu: IP Addresses and Names
+Version: 2.6.4-r1
+Depends: +libc +kea-libs +kea-hook-lease-cmds
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ISC Kea High Availability hook library
+Maintainer: Philip Prindeville <philipp@redfish-solutions.com>, Noah Meyerhans <frodo@morgul.net>
+Source: kea-2.6.4.tar.gz
+License: MPL-2.0
+LicenseFiles: COPYING
+URL: https://www.isc.org/kea
+Type: ipkg
+Description: 	The high availability hook library.
+@@
+
+Package: kea-hook-lease-cmds
+Submenu: IP Addresses and Names
+Version: 2.6.4-r1
+Depends: +libc +kea-libs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ISC Kea Lease Commands hook library
+Maintainer: Philip Prindeville <philipp@redfish-solutions.com>, Noah Meyerhans <frodo@morgul.net>
+Source: kea-2.6.4.tar.gz
+License: MPL-2.0
+LicenseFiles: COPYING
+URL: https://www.isc.org/kea
+Type: ipkg
+Description: 	The lease commands hook library.
+@@
+
+Package: kea-lfc
+Submenu: IP Addresses and Names
+Version: 2.6.4-r1
+Depends: +libc +kea-libs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ISC Kea lfc
+Maintainer: Philip Prindeville <philipp@redfish-solutions.com>, Noah Meyerhans <frodo@morgul.net>
+Source: kea-2.6.4.tar.gz
+License: MPL-2.0
+LicenseFiles: COPYING
+URL: https://www.isc.org/kea
+Type: ipkg
+Description:     This process removes redundant information from the files used to provide
+persistent storage for the memfile data base backend. While it can be run
+standalone, it is normally run as and when required by the Kea DHCP servers.
+@@
+
+Package: kea-perfdhcp
+Submenu: IP Addresses and Names
+Version: 2.6.4-r1
+Depends: +libc +kea-libs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ISC Kea perfdhcp (Benchmarking)
+Maintainer: Philip Prindeville <philipp@redfish-solutions.com>, Noah Meyerhans <frodo@morgul.net>
+Source: kea-2.6.4.tar.gz
+License: MPL-2.0
+LicenseFiles: COPYING
+URL: https://www.isc.org/kea
+Type: ipkg
+Description:      A DHCP benchmarking tool which simulates multiple clients to test both
+DHCPv4 and DHCPv6 server performance.
+@@
+
+Package: kea-shell
+Submenu: IP Addresses and Names
+Version: 2.6.4-r1
+Depends: +libc +kea-libs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ISC Kea shell
+Maintainer: Philip Prindeville <philipp@redfish-solutions.com>, Noah Meyerhans <frodo@morgul.net>
+Source: kea-2.6.4.tar.gz
+License: MPL-2.0
+LicenseFiles: COPYING
+URL: https://www.isc.org/kea
+Type: ipkg
+Description:      This simple text client uses the REST interface to connect to the Kea
+Control Agent.
+@@
+
+Package: kea-uci
+Submenu: IP Addresses and Names
+Version: 2.6.4-r1
+Depends: +libc @(PACKAGE_kea-ctrl||PACKAGE_kea-dhcp4||PACKAGE_kea-dhcp6||PACKAGE_kea-dhcp-ddns)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ISC Kea UCI support
+Maintainer: Philip Prindeville <philipp@redfish-solutions.com>, Noah Meyerhans <frodo@morgul.net>
+Source: kea-2.6.4.tar.gz
+License: MPL-2.0
+LicenseFiles: COPYING
+URL: https://www.isc.org/kea
+Type: ipkg
+Description: 	Kea PROCD/UCI support. This package installs a UCI config file and
+	a PROCD service file.
+@@
+
+

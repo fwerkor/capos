@@ -1,0 +1,26 @@
+Source-Makefile: feeds/packages/libs/libmpc/Makefile
+
+Package: libmpc
+Version: 1.3.1-r1
+Depends: +libc +libgmp +libmpfr
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: GNU MPC library
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: mpc-1.3.1.tar.gz
+License: LGPL-3.0-or-later
+LicenseFiles: COPYING.LESSER
+URL: https://www.multiprecision.org/mpc/
+ABI-Version: 3
+Type: ipkg
+Description: GNU MPC is a portable library written in C for arbitrary precision
+arithmetic on complex numbers providing correct rounding. It implements
+a multiprecision equivalent of the C99 standard. It builds upon the GNU
+MP and the GNU MPFR libraries.
+@@
+
+

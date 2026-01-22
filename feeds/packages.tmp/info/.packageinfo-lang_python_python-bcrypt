@@ -1,0 +1,51 @@
+Source-Makefile: feeds/packages/lang/python/python-bcrypt/Makefile
+Build-Depends: python-setuptools-rust/host
+
+Package: python3-bcrypt
+Submenu: Python
+Version: 4.1.3-r1
+Depends: +libc +python3-light @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Modern password hashing
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: bcrypt-4.1.3.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/pyca/bcrypt/
+Type: ipkg
+Description: Acceptable password hashing for your software and your servers (but you
+should really use argon2id or scrypt)
+@@
+
+Package: python3-bcrypt-src
+Submenu: Python
+Version: 4.1.3-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Modern password hashing (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: bcrypt-4.1.3.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/pyca/bcrypt/
+Type: ipkg
+Description:     Acceptable password hashing for your software and your servers (but you
+should really use argon2id or scrypt)
+
+    This package contains the Python source files for python3-bcrypt.
+@@
+Config:
+    depends on PACKAGE_python3-bcrypt
+@@
+
+

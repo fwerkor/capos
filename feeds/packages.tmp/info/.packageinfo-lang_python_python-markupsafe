@@ -1,0 +1,58 @@
+Source-Makefile: feeds/packages/lang/python/python-markupsafe/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host
+Build-Types: host
+
+Package: python3-markupsafe
+Submenu: Python
+Version: 3.0.3-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Safely add untrusted strings to HTML/XML markup
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: markupsafe-3.0.3.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE.rst
+URL: https://palletsprojects.com/p/markupsafe/
+Type: ipkg
+Description: MarkupSafe implements a text object that escapes characters so it is
+safe to use in HTML and XML. Characters that have special meanings are
+replaced so that they display as the actual characters. This mitigates
+injection attacks, meaning untrusted user input can safely be displayed
+on a page.
+@@
+
+Package: python3-markupsafe-src
+Submenu: Python
+Version: 3.0.3-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Safely add untrusted strings to HTML/XML markup (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: markupsafe-3.0.3.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE.rst
+URL: https://palletsprojects.com/p/markupsafe/
+Type: ipkg
+Description:     MarkupSafe implements a text object that escapes characters so it is
+safe to use in HTML and XML. Characters that have special meanings are
+replaced so that they display as the actual characters. This mitigates
+injection attacks, meaning untrusted user input can safely be displayed
+on a page.
+
+    This package contains the Python source files for python3-markupsafe.
+@@
+Config:
+    depends on PACKAGE_python3-markupsafe
+@@
+
+

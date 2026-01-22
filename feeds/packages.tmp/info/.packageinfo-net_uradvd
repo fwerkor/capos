@@ -1,0 +1,21 @@
+Source-Makefile: feeds/packages/net/uradvd/Makefile
+
+Package: uradvd
+Version: 2025.08.16~b37524dfb0292c425fd61f5bffb3101fb1979264-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: A tiny radvd
+Maintainer: Moritz Warning <moritzwarning@web.de>
+Source: uradvd-2025.08.16~b37524dfb0292c425fd61f5bffb3101fb1979264.tar.zst
+License: BSD-2-Clause
+LicenseFiles: LICENSE
+Type: ipkg
+Description: 	 Advertise an IPv6 prefix/route via SLAAC.
+@@
+
+

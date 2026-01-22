@@ -1,0 +1,67 @@
+Source-Makefile: feeds/packages/lang/python/python-semanage/Makefile
+Build-Depends: swig/host
+
+Package: python3-semanage
+Submenu: Python
+Version: 3.5-r1
+Depends: +libc +python3-light +libsemanage
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: SELinux policy management library bindings
+Maintainer: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+Source: libsemanage-3.5.tar.gz
+License: LGPL-2.1-or-later
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:selinuxproject:libsemanage
+URL: http://selinuxproject.org/page/Main_Page
+Type: ipkg
+Description: 	libsemanage is the policy management library. It uses
+	libsepol for binary policy manipulation and libselinux for
+	interacting with the SELinux system. It also exec's helper
+	programs for loading policy and for checking whether the
+	file_contexts configuration is valid (load_policy and
+	setfiles from policycoreutils) presently, although this may
+	change at least for the bootstrapping case (for rpm).
+
+	This package provides the Python bindings for libsemanage.
+@@
+
+Package: python3-semanage-src
+Submenu: Python
+Version: 3.5-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: SELinux policy management library bindings (sources)
+Maintainer: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+Source: libsemanage-3.5.tar.gz
+License: LGPL-2.1-or-later
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:selinuxproject:libsemanage
+URL: http://selinuxproject.org/page/Main_Page
+Type: ipkg
+Description:     	libsemanage is the policy management library. It uses
+	libsepol for binary policy manipulation and libselinux for
+	interacting with the SELinux system. It also exec's helper
+	programs for loading policy and for checking whether the
+	file_contexts configuration is valid (load_policy and
+	setfiles from policycoreutils) presently, although this may
+	change at least for the bootstrapping case (for rpm).
+
+	This package provides the Python bindings for libsemanage.
+
+    This package contains the Python source files for python3-semanage.
+@@
+Config:
+    depends on PACKAGE_python3-semanage
+@@
+
+

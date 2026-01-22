@@ -1,0 +1,54 @@
+Source-Makefile: feeds/packages/lang/python/python-pkgconfig/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-poetry-core/host
+Build-Types: host
+
+Package: python3-pkgconfig
+Submenu: Python
+Version: 1.5.5-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Interface Python with pkg-config
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: pkgconfig-1.5.5.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/matze/pkgconfig
+Type: ipkg
+Build-Only: 1
+Description: pkgconfig is a Python module to interface with the pkg-config command
+line tool for Python 3.3+.
+@@
+
+Package: python3-pkgconfig-src
+Submenu: Python
+Version: 1.5.5-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Interface Python with pkg-config (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: pkgconfig-1.5.5.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/matze/pkgconfig
+Type: ipkg
+Build-Only: 1
+Description:     pkgconfig is a Python module to interface with the pkg-config command
+line tool for Python 3.3+.
+
+    This package contains the Python source files for python3-pkgconfig.
+@@
+Config:
+    depends on PACKAGE_python3-pkgconfig
+@@
+
+

@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/libs/libyaml-cpp/Makefile
+
+Package: libyaml-cpp
+Version: 0.7.0-r1
+Depends: +libc +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: development
+Category: Libraries
+Repository: base
+Title: libyaml-cpp
+Maintainer: Steven Hessing <steven.hessing@gmail.com>
+Source: yaml-cpp-0.7.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:yaml-cpp_project:yaml-cpp
+URL: https://github.com/jbeder/yaml-cpp
+ABI-Version: 0.7
+Type: ipkg
+Description:   yaml-cpp is a YAML parser and emitter in C++ matching the YAML 1.2 spec.
+@@
+
+

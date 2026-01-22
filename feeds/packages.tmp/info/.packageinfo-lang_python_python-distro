@@ -1,0 +1,50 @@
+Source-Makefile: feeds/packages/lang/python/python-distro/Makefile
+
+Package: python3-distro
+Submenu: Python
+Version: 1.9.0-r1
+Depends: +libc +python3-light +python3-logging
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: OS platform information API
+Maintainer: Javier Marcet <javier@marcet.info>
+Source: distro-1.9.0.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/python-distro/distro
+Type: ipkg
+Description: distro provides information about the OS distribution it runs on, such
+as a reliable machine-readable ID, or version information.
+@@
+
+Package: python3-distro-src
+Submenu: Python
+Version: 1.9.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: OS platform information API (sources)
+Maintainer: Javier Marcet <javier@marcet.info>
+Source: distro-1.9.0.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/python-distro/distro
+Type: ipkg
+Description:     distro provides information about the OS distribution it runs on, such
+as a reliable machine-readable ID, or version information.
+
+    This package contains the Python source files for python3-distro.
+@@
+Config:
+    depends on PACKAGE_python3-distro
+@@
+
+

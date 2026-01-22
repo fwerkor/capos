@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/utils/procps-ng3/Makefile
+
+Package: procps-ng3
+Version: 3.3.17-r1
+Depends: +libc +libncurses
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: procps-ng old compatibility library
+Maintainer: 
+Source: procps-ng-3.3.17.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING COPYING.LIB
+CPE-ID: cpe:/a:procps-ng_project:procps-ng
+URL: https://gitlab.com/procps-ng/procps
+Type: ipkg
+Description: 	Compatibility library of old 3.x version of procps-ng utilities.
+@@
+
+

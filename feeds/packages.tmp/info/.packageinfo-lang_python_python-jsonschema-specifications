@@ -1,0 +1,53 @@
+Source-Makefile: feeds/packages/lang/python/python-jsonschema-specifications/Makefile
+Build-Depends: python-hatchling/host python-hatch-vcs/host
+
+Package: python3-jsonschema-specifications
+Submenu: Python
+Version: 2023.11.2-r1
+Depends: +libc +python3-light +python3-referencing
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: JSON Schema meta-schemas and vocabularies
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: jsonschema_specifications-2023.11.2.tar.gz
+License: MIT
+LicenseFiles: COPYING
+URL: https://github.com/python-jsonschema/jsonschema-specifications
+Type: ipkg
+Description: JSON support files from the JSON Schema Specifications (metaschemas,
+vocabularies, etc.), packaged for runtime access from Python as a
+referencing-based Schema Registry.
+@@
+
+Package: python3-jsonschema-specifications-src
+Submenu: Python
+Version: 2023.11.2-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: JSON Schema meta-schemas and vocabularies (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: jsonschema_specifications-2023.11.2.tar.gz
+License: MIT
+LicenseFiles: COPYING
+URL: https://github.com/python-jsonschema/jsonschema-specifications
+Type: ipkg
+Description:     JSON support files from the JSON Schema Specifications (metaschemas,
+vocabularies, etc.), packaged for runtime access from Python as a
+referencing-based Schema Registry.
+
+    This package contains the Python source files for python3-jsonschema-specifications.
+@@
+Config:
+    depends on PACKAGE_python3-jsonschema-specifications
+@@
+
+

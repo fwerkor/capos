@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/devel/bison/Makefile
+
+Package: bison
+Version: 3.8.2-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: devel
+Category: Development
+Repository: base
+Title: bison
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: bison-3.8.2.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:bison
+URL: http://www.gnu.org/software/bison/
+Type: ipkg
+Description:   Bison is a general-purpose parser generator
+@@
+
+

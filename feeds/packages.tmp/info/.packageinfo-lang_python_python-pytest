@@ -1,0 +1,51 @@
+Source-Makefile: feeds/packages/lang/python/python-pytest/Makefile
+Build-Depends: python-setuptools-scm/host
+
+Package: python3-pytest
+Submenu: Python
+Version: 7.4.0-r1
+Depends: +libc +python3 +python3-iniconfig +python3-packaging +python3-pluggy
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python testing framework
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Source: pytest-7.4.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://pytest.org/
+Type: ipkg
+Description: The pytest framework makes it easy to write small tests, yet scales to
+support complex functional testing for applications and libraries.
+@@
+
+Package: python3-pytest-src
+Submenu: Python
+Version: 7.4.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python testing framework (sources)
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Source: pytest-7.4.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://pytest.org/
+Type: ipkg
+Description:     The pytest framework makes it easy to write small tests, yet scales to
+support complex functional testing for applications and libraries.
+
+    This package contains the Python source files for python3-pytest.
+@@
+Config:
+    depends on PACKAGE_python3-pytest
+@@
+
+

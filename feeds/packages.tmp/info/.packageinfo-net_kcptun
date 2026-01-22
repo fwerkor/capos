@@ -1,0 +1,66 @@
+Source-Makefile: feeds/packages/net/kcptun/Makefile
+Build-Depends: golang/host
+
+Package: kcptun-config
+Submenu: Web Servers/Proxies
+Version: 20230207-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Kcptun Config Scripts
+Maintainer: Dengfeng Liu <liudf0716@gmail.com>, Chao Liu <expiron18@gmail.com>
+Source: kcptun-20230207.tar.gz
+License: MIT
+LicenseFiles: LICENSE.md
+URL: https://github.com/xtaci/kcptun
+Type: ipkg
+Description: Kcptun Config Scripts
+@@
+
+Package: kcptun-server
+Submenu: Web Servers/Proxies
+Version: 20230207-r1
+Depends: +libc +kcptun-config
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: KCP-based Secure Tunnel server
+Maintainer: Dengfeng Liu <liudf0716@gmail.com>, Chao Liu <expiron18@gmail.com>
+Source: kcptun-20230207.tar.gz
+License: MIT
+LicenseFiles: LICENSE.md
+URL: https://github.com/xtaci/kcptun
+Type: ipkg
+Description:     kcptun is a Stable & Secure Tunnel Based On KCP with N:M Multiplexing.
+This package only contains kcptun server.
+@@
+
+Package: kcptun-client
+Submenu: Web Servers/Proxies
+Version: 20230207-r1
+Depends: +libc +kcptun-config
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: KCP-based Secure Tunnel client
+Maintainer: Dengfeng Liu <liudf0716@gmail.com>, Chao Liu <expiron18@gmail.com>
+Source: kcptun-20230207.tar.gz
+License: MIT
+LicenseFiles: LICENSE.md
+URL: https://github.com/xtaci/kcptun
+Type: ipkg
+Description:     kcptun is a Stable & Secure Tunnel Based On KCP with N:M Multiplexing.
+This package only contains kcptun client.
+@@
+
+

@@ -1,0 +1,88 @@
+Source-Makefile: feeds/packages/net/netatalk/Makefile
+
+Package: netatalk-small
+Submenu: Filesystem
+Version: 4.3.2-r2
+Depends: +libc +libevent2 +libdb47 +libgcrypt +iniparser
+Conflicts: 
+Menu-Depends: 
+Provides: netatalk
+Build-Variant: small
+Section: net
+Category: Network
+Repository: base
+Title: Apple Filing Protocol (afpd only)
+Maintainer: Antonio Pastor <antonio.pastor@gmail.com>
+Source: netatalk-4.3.2.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:netatalk:netatalk
+URL: http://netatalk.sourceforge.net
+Type: ipkg
+Description:     Netatalk is an Open Source Apple Filing Protocol (AFP) fileserver.
+  Implements a service that allows Macintosh file sharing
+  and Time Machine backups. Modern MacOS prefers Samba network shares
+  but AFP has shown superior throughput. High Sierra and older MacOS
+  only support AFP for Time Machine backups.
+  This package includes only the AFPD service.
+@@
+
+Package: netatalk
+Submenu: Filesystem
+Version: 4.3.2-r2
+Depends: +libc +libevent2 +libdb47 +libgcrypt +iniparser +kmod-appletalk
+Conflicts: 
+Menu-Depends: 
+Provides: netatalk
+Build-Variant: appletalk
+Section: net
+Category: Network
+Repository: base
+Title: Apple Filing Protocol with AppleTalk support
+Maintainer: Antonio Pastor <antonio.pastor@gmail.com>
+Source: netatalk-4.3.2.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:netatalk:netatalk
+URL: http://netatalk.sourceforge.net
+Type: ipkg
+Description:     Netatalk is an Open Source Apple Filing Protocol (AFP) fileserver.
+  Implements a service that allows Macintosh file sharing
+  and Time Machine backups. Modern MacOS prefers Samba network shares
+  but AFP has shown superior throughput. High Sierra and older MacOS
+  only support AFP for Time Machine backups.
+  This package includes the AFPD service and AppleTalk binaries.
+@@
+
+Package: netatalk-full
+Menu: 1
+Submenu: Filesystem
+Version: 4.3.2-r2
+Depends: +libc +libevent2 +libdb47 +libgcrypt +iniparser +PACKAGE_NETATALK_APPLETALK:kmod-appletalk +PACKAGE_NETATALK_ZEROCONF:libavahi-client +PACKAGE_NETATALK_ACLS:libacl +PACKAGE_NETATALK_PAM:libpam +PACKAGE_NETATALK_LDAP:libopenldap +PACKAGE_NETATALK_ICONV:libiconv-full +PACKAGE_NETATALK_KERBEROS:krb5-libs +PACKAGE_NETATALK_LIBWRAP:libwrap +PACKAGE_NETATALK_SQLITEBACK:libsqlite3 +PACKAGE_NETATALK_BOTHBACK:libsqlite3
+Conflicts: 
+Menu-Depends: 
+Provides: netatalk
+Build-Variant: full
+Section: net
+Category: Network
+Repository: base
+Title: Apple Filing Protocol (configurable)
+Maintainer: Antonio Pastor <antonio.pastor@gmail.com>
+Source: netatalk-4.3.2.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:netatalk:netatalk
+URL: http://netatalk.sourceforge.net
+Type: ipkg
+Description:     Netatalk is an Open Source Apple Filing Protocol (AFP) fileserver.
+  Implements a service that allows Macintosh file sharing
+  and Time Machine backups. Modern MacOS prefers Samba network shares
+  but AFP has shown superior throughput. High Sierra and older MacOS
+  only support AFP for Time Machine backups.
+  This package includes all OpenWrt supported features (customizable).
+@@
+Config:
+	source "feeds/packages/net/netatalk/Config.in"
+@@
+
+

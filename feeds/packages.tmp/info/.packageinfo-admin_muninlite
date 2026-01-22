@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/admin/muninlite/Makefile
+
+Package: muninlite
+Version: 2.1.2-r1
+Depends: +libc +xinetd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: admin
+Category: Administration
+Repository: base
+Title: Munin node implemented in shell
+Maintainer: Jonathan McCrohan <jmccrohan@gmail.com>
+Source: muninlite-2.1.2.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE
+URL: https://github.com/munin-monitoring/muninlite
+Type: ipkg
+Description: Munin node implemented in shell
+@@
+
+

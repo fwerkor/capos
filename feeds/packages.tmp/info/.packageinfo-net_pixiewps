@@ -1,0 +1,26 @@
+Source-Makefile: feeds/packages/net/pixiewps/Makefile
+
+Package: pixiewps
+Submenu: Wireless
+Version: 1.4.2-r2
+Depends: +libc +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: An offline WPS bruteforce utility
+Maintainer: Yousong Zhou <yszhou4tech@gmail.com>
+Source: pixiewps-1.4.2.tar.xz
+License: GPL-3.0
+LicenseFiles: LICENSE.md
+URL: https://github.com/wiire-a/pixiewps
+Type: ipkg
+Description:   Pixiewps is a tool written in C used to bruteforce offline the WPS PIN
+  exploiting the low or non-existing entropy of some Access Points, the so-called
+  "pixie-dust attack" discovered by Dominique Bongard in summer 2014.  It is
+  meant for educational purposes only.
+@@
+
+

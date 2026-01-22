@@ -1,0 +1,45 @@
+Source-Makefile: feeds/packages/net/netsniff-ng/Makefile
+
+Package: netsniff-ng
+Version: 0.6.8-r3
+Depends: +libc +libpthread +libpcap +libncurses +libnetfilter-conntrack +libsodium +liburcu +zlib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: netsniff-ng
+Maintainer: Toni Uhlig <matzeton@googlemail.com>
+Source: netsniff-ng-0.6.8.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://github.com/netsniff-ng/netsniff-ng
+Type: ipkg
+Description: 	netsniff-ng is a free, performant Linux network analyzer and
+	networking toolkit. If you will, the Swiss army knife for network
+	packets.
+@@
+
+Package: mausezahn
+Version: 0.6.8-r3
+Depends: +libc +libpthread +libpcap +libcli +libnet-1.2.x
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: mausezahn
+Maintainer: Toni Uhlig <matzeton@googlemail.com>
+Source: netsniff-ng-0.6.8.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://github.com/netsniff-ng/netsniff-ng
+Type: ipkg
+Description: 	Mausezahn is a traffic generator written which allows sending
+	nearly every possible and impossible packet. It is mainly used
+	to test VoIP or multicast networks.
+@@
+
+

@@ -1,0 +1,458 @@
+Source-Makefile: feeds/packages/net/frr/Makefile
+Build-Depends: frr/host protobuf-c/host
+Build-Depends/host: python3/host
+Build-Types: host
+
+Package: frr
+Menu: 1
+Submenu: Routing and Redirection
+Version: 10.2.1-r2
+Depends: +libc +librt +libatomic +libcap +libncurses +libjson-c +libreadline +libyang +libprotobuf-c +FRR_OPENSSL:libopenssl +FRR_SNMP:libnetsnmp +more
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: The FRRouting (FRR) Software Routing Suite
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: frr-2025-01-29.tar.gz
+License: GPL-2.0-only LGPL-2.1-only
+CPE-ID: cpe:/a:ffrouting:ffrouting
+URL: https://www.frrouting.org/
+Type: ipkg
+Description:   FRRouting is free software that implements and manages various IPv4 and IPv6
+  routing protocols.
+
+  Currently FRRouting supports BGP4, BGP4+, OSPFv2, OSPFv3, RIPv1, RIPv2, RIPng,
+  IS-IS, PIM-SM/MSDP, LDP, VRRP and Babel as well as very early support for EIGRP and
+  NHRP.
+@@
+Config:
+  source "feeds/packages/net/frr/Config.in"
+@@
+
+Package: frr-pythontools
+Submenu: Routing and Redirection
+Version: 10.2.1-r2
+Depends: +libc frr +python3-base +python3-light +python3-logging
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Python reload tool
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: frr-2025-01-29.tar.gz
+License: GPL-2.0-only LGPL-2.1-only
+CPE-ID: cpe:/a:ffrouting:ffrouting
+URL: https://www.frrouting.org/
+Type: ipkg
+Description: Python reload tool
+@@
+
+Package: frr-watchfrr
+Submenu: Routing and Redirection
+Default: y if PACKAGE_frr
+Version: 10.2.1-r2
+Depends: +libc frr
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: frr watchdog
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: frr-2025-01-29.tar.gz
+License: GPL-2.0-only LGPL-2.1-only
+CPE-ID: cpe:/a:ffrouting:ffrouting
+URL: https://www.frrouting.org/
+Type: ipkg
+Description: frr watchdog
+@@
+
+Package: frr-zebra
+Submenu: Routing and Redirection
+Default: y if PACKAGE_frr
+Version: 10.2.1-r2
+Depends: +libc frr
+Conflicts: quagga-zebra
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Zebra daemon
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: frr-2025-01-29.tar.gz
+License: GPL-2.0-only LGPL-2.1-only
+CPE-ID: cpe:/a:ffrouting:ffrouting
+URL: https://www.frrouting.org/
+Type: ipkg
+Description: Zebra daemon
+@@
+
+Package: frr-babeld
+Submenu: Routing and Redirection
+Version: 10.2.1-r2
+Depends: +libc frr
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: babeld routing engine
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: frr-2025-01-29.tar.gz
+License: GPL-2.0-only LGPL-2.1-only
+CPE-ID: cpe:/a:ffrouting:ffrouting
+URL: https://www.frrouting.org/
+Type: ipkg
+Description: babeld routing engine
+@@
+
+Package: frr-bfdd
+Submenu: Routing and Redirection
+Version: 10.2.1-r2
+Depends: +libc frr
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: bfdd routing engine
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: frr-2025-01-29.tar.gz
+License: GPL-2.0-only LGPL-2.1-only
+CPE-ID: cpe:/a:ffrouting:ffrouting
+URL: https://www.frrouting.org/
+Type: ipkg
+Description: bfdd routing engine
+@@
+
+Package: frr-bgpd
+Submenu: Routing and Redirection
+Version: 10.2.1-r2
+Depends: +libc frr
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: bgpd routing engine
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: frr-2025-01-29.tar.gz
+License: GPL-2.0-only LGPL-2.1-only
+CPE-ID: cpe:/a:ffrouting:ffrouting
+URL: https://www.frrouting.org/
+Type: ipkg
+Kernel-Config: CONFIG_TCP_MD5SIG=y
+Description: bgpd routing engine
+@@
+
+Package: frr-eigrpd
+Submenu: Routing and Redirection
+Version: 10.2.1-r2
+Depends: +libc frr
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: eigrpd routing engine
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: frr-2025-01-29.tar.gz
+License: GPL-2.0-only LGPL-2.1-only
+CPE-ID: cpe:/a:ffrouting:ffrouting
+URL: https://www.frrouting.org/
+Type: ipkg
+Description: eigrpd routing engine
+@@
+
+Package: frr-fabricd
+Submenu: Routing and Redirection
+Version: 10.2.1-r2
+Depends: +libc frr
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: fabricd routing engine
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: frr-2025-01-29.tar.gz
+License: GPL-2.0-only LGPL-2.1-only
+CPE-ID: cpe:/a:ffrouting:ffrouting
+URL: https://www.frrouting.org/
+Type: ipkg
+Description: fabricd routing engine
+@@
+
+Package: frr-isisd
+Submenu: Routing and Redirection
+Version: 10.2.1-r2
+Depends: +libc frr
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: isisd routing engine
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: frr-2025-01-29.tar.gz
+License: GPL-2.0-only LGPL-2.1-only
+CPE-ID: cpe:/a:ffrouting:ffrouting
+URL: https://www.frrouting.org/
+Type: ipkg
+Description: isisd routing engine
+@@
+
+Package: frr-ldpd
+Submenu: Routing and Redirection
+Version: 10.2.1-r2
+Depends: +libc frr
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ldpd routing engine
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: frr-2025-01-29.tar.gz
+License: GPL-2.0-only LGPL-2.1-only
+CPE-ID: cpe:/a:ffrouting:ffrouting
+URL: https://www.frrouting.org/
+Type: ipkg
+Description: ldpd routing engine
+@@
+
+Package: frr-nhrpd
+Submenu: Routing and Redirection
+Version: 10.2.1-r2
+Depends: +libc frr +libcares
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: nhrpd routing engine
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: frr-2025-01-29.tar.gz
+License: GPL-2.0-only LGPL-2.1-only
+CPE-ID: cpe:/a:ffrouting:ffrouting
+URL: https://www.frrouting.org/
+Type: ipkg
+Description: nhrpd routing engine
+@@
+
+Package: frr-ospfd
+Submenu: Routing and Redirection
+Version: 10.2.1-r2
+Depends: +libc frr
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ospfd routing engine
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: frr-2025-01-29.tar.gz
+License: GPL-2.0-only LGPL-2.1-only
+CPE-ID: cpe:/a:ffrouting:ffrouting
+URL: https://www.frrouting.org/
+Type: ipkg
+Description: ospfd routing engine
+@@
+
+Package: frr-ospf6d
+Submenu: Routing and Redirection
+Version: 10.2.1-r2
+Depends: +libc frr @IPV6
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ospf6d routing engine
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: frr-2025-01-29.tar.gz
+License: GPL-2.0-only LGPL-2.1-only
+CPE-ID: cpe:/a:ffrouting:ffrouting
+URL: https://www.frrouting.org/
+Type: ipkg
+Description: ospf6d routing engine
+@@
+
+Package: frr-pathd
+Submenu: Routing and Redirection
+Version: 10.2.1-r2
+Depends: +libc frr
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: pathd routing engine
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: frr-2025-01-29.tar.gz
+License: GPL-2.0-only LGPL-2.1-only
+CPE-ID: cpe:/a:ffrouting:ffrouting
+URL: https://www.frrouting.org/
+Type: ipkg
+Description: pathd routing engine
+@@
+
+Package: frr-pbrd
+Submenu: Routing and Redirection
+Version: 10.2.1-r2
+Depends: +libc frr
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: pbrd routing engine
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: frr-2025-01-29.tar.gz
+License: GPL-2.0-only LGPL-2.1-only
+CPE-ID: cpe:/a:ffrouting:ffrouting
+URL: https://www.frrouting.org/
+Type: ipkg
+Description: pbrd routing engine
+@@
+
+Package: frr-pimd
+Submenu: Routing and Redirection
+Version: 10.2.1-r2
+Depends: +libc frr
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: pimd routing engine
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: frr-2025-01-29.tar.gz
+License: GPL-2.0-only LGPL-2.1-only
+CPE-ID: cpe:/a:ffrouting:ffrouting
+URL: https://www.frrouting.org/
+Type: ipkg
+Description: pimd routing engine
+@@
+
+Package: frr-pim6d
+Submenu: Routing and Redirection
+Version: 10.2.1-r2
+Depends: +libc frr
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: pim6d routing engine
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: frr-2025-01-29.tar.gz
+License: GPL-2.0-only LGPL-2.1-only
+CPE-ID: cpe:/a:ffrouting:ffrouting
+URL: https://www.frrouting.org/
+Type: ipkg
+Description: pim6d routing engine
+@@
+
+Package: frr-ripd
+Submenu: Routing and Redirection
+Version: 10.2.1-r2
+Depends: +libc frr
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ripd routing engine
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: frr-2025-01-29.tar.gz
+License: GPL-2.0-only LGPL-2.1-only
+CPE-ID: cpe:/a:ffrouting:ffrouting
+URL: https://www.frrouting.org/
+Type: ipkg
+Description: ripd routing engine
+@@
+
+Package: frr-ripngd
+Submenu: Routing and Redirection
+Version: 10.2.1-r2
+Depends: +libc frr @IPV6
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ripngd routing engine
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: frr-2025-01-29.tar.gz
+License: GPL-2.0-only LGPL-2.1-only
+CPE-ID: cpe:/a:ffrouting:ffrouting
+URL: https://www.frrouting.org/
+Type: ipkg
+Description: ripngd routing engine
+@@
+
+Package: frr-staticd
+Submenu: Routing and Redirection
+Version: 10.2.1-r2
+Depends: +libc frr
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: staticd routing engine
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: frr-2025-01-29.tar.gz
+License: GPL-2.0-only LGPL-2.1-only
+CPE-ID: cpe:/a:ffrouting:ffrouting
+URL: https://www.frrouting.org/
+Type: ipkg
+Description: staticd routing engine
+@@
+
+Package: frr-vrrpd
+Submenu: Routing and Redirection
+Version: 10.2.1-r2
+Depends: +libc frr
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: vrrpd routing engine
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: frr-2025-01-29.tar.gz
+License: GPL-2.0-only LGPL-2.1-only
+CPE-ID: cpe:/a:ffrouting:ffrouting
+URL: https://www.frrouting.org/
+Type: ipkg
+Description: vrrpd routing engine
+@@
+
+

@@ -1,0 +1,20 @@
+Source-Makefile: feeds/packages/utils/poemgr/Makefile
+
+Package: poemgr
+Version: 2025.05.28~87550e1349c3c010a7ed0e306589c6398238d374-r3
+Depends: +libc +libuci +libjson-c
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility to control PoE ports on the UniFi Flex switch
+Maintainer: David Bauer <mail@david-bauer.net>
+Source: poemgr-2025.05.28~87550e1349c3c010a7ed0e306589c6398238d374.tar.zst
+License: GPL-2.0-only
+Type: ipkg
+Description: Utility to control PoE ports on the UniFi Flex switch
+@@
+
+

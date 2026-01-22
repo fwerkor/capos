@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/net/evilginx2/Makefile
+Build-Depends: golang/host
+
+Package: evilginx2
+Version: 3.2.0-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Man-in-the-middle reverse-proxy attack framework
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: evilginx2-3.2.0.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://help.evilginx.com/
+Type: ipkg
+Description: Man-in-the-middle reverse-proxy attack framework
+@@
+
+

@@ -1,0 +1,51 @@
+Source-Makefile: feeds/packages/lang/python/python-more-itertools/Makefile
+Build-Depends: python-flit-core/host
+
+Package: python3-more-itertools
+Submenu: Python
+Version: 10.1.0-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: More routines for operating on iterables, beyond itertools
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Source: more-itertools-10.1.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/more-itertools/more-itertools
+Type: ipkg
+Description:   more-itertools library collects additional building blocks,
+  recipes, and routines for working with Python iterables.
+@@
+
+Package: python3-more-itertools-src
+Submenu: Python
+Version: 10.1.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: More routines for operating on iterables, beyond itertools (sources)
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Source: more-itertools-10.1.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/more-itertools/more-itertools
+Type: ipkg
+Description:       more-itertools library collects additional building blocks,
+  recipes, and routines for working with Python iterables.
+
+    This package contains the Python source files for python3-more-itertools.
+@@
+Config:
+    depends on PACKAGE_python3-more-itertools
+@@
+
+

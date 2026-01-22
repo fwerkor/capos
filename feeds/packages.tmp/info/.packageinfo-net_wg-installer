@@ -1,0 +1,74 @@
+Source-Makefile: feeds/packages/net/wg-installer/Makefile
+
+Package: wg-installer-server
+Menu: 1
+Version: 28
+Depends: +libc +kmod-wireguard +wireguard-tools +owipcalc +rpcd +uhttpd +uhttpd-mod-ubus +coreutils-dirname
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: WireGuard Installer (server)
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+URL: https://github.com/Freifunk-Spalter/
+Type: ipkg
+Description: WireGuard Installer (server)
+@@
+
+Package: wg-installer-server-hotplug-babeld
+Menu: 1
+Version: 28
+Depends: +libc wg-installer-server
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: WireGuard Installer (server)
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+URL: https://github.com/Freifunk-Spalter/
+Type: ipkg
+Description: WireGuard Installer (server)
+@@
+
+Package: wg-installer-server-hotplug-olsrd
+Menu: 1
+Version: 28
+Depends: +libc wg-installer-server
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: WireGuard Installer (server)
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+URL: https://github.com/Freifunk-Spalter/
+Type: ipkg
+Description: WireGuard Installer (server)
+@@
+
+Package: wg-installer-client
+Version: 28
+Depends: +libc +kmod-wireguard +wireguard-tools +owipcalc +curl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: WireGuard Installer (client)
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: 
+URL: https://github.com/Freifunk-Spalter/
+Type: ipkg
+Description: WireGuard Installer (client)
+@@
+
+

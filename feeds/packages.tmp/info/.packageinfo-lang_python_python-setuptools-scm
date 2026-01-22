@@ -1,0 +1,66 @@
+Source-Makefile: feeds/packages/lang/python/python-setuptools-scm/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host python-packaging/host python-typing-extensions/host
+Build-Types: host
+
+Package: python3-setuptools-scm
+Submenu: Python
+Version: 8.1.0-r1
+Depends: +libc +python3-light +python3-logging +python3-packaging +python3-setuptools +python3-typing-extensions
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: the blessed package to manage your versions by scm tags
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: setuptools_scm-8.1.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/pypa/setuptools_scm
+Type: ipkg
+Build-Only: 1
+Description: setuptools_scm extracts Python package versions from git or hg metadata
+instead of declaring them as the version argument or in a SCM managed
+file.
+
+Additionally setuptools_scm provides setuptools with a list of files
+that are managed by the SCM (i.e. it automatically adds all of the
+SCM-managed files to the sdist). Unwanted files must be excluded by
+discarding them via MANIFEST.in.
+@@
+
+Package: python3-setuptools-scm-src
+Submenu: Python
+Version: 8.1.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: the blessed package to manage your versions by scm tags (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: setuptools_scm-8.1.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/pypa/setuptools_scm
+Type: ipkg
+Build-Only: 1
+Description:     setuptools_scm extracts Python package versions from git or hg metadata
+instead of declaring them as the version argument or in a SCM managed
+file.
+
+Additionally setuptools_scm provides setuptools with a list of files
+that are managed by the SCM (i.e. it automatically adds all of the
+SCM-managed files to the sdist). Unwanted files must be excluded by
+discarding them via MANIFEST.in.
+
+    This package contains the Python source files for python3-setuptools-scm.
+@@
+Config:
+    depends on PACKAGE_python3-setuptools-scm
+@@
+
+

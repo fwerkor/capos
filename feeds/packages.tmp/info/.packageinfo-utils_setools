@@ -1,0 +1,218 @@
+Source-Makefile: feeds/packages/utils/setools/Makefile
+Build-Depends: python-cython/host 
+
+Package: python3-setools
+Submenu: Python
+Version: 4.4.4-r1
+Depends: +libc +python3-light +python3-logging +python3-pkg-resources +libselinux +libsepol
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: SETools Python bindings
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: setools-4.4.4.tar.bz2
+License: GPL-2.0-only LGPL-2.1-only
+LicenseFiles: COPYING COPYING.GPL COPYING.LGPL
+CPE-ID: cpe:/a:selinuxproject:setools
+URL: http://selinuxproject.org/page/Main_Page
+Type: ipkg
+Description: SETools is a collection of tools and libraries designed to facilitate
+SELinux policy analysis.
+
+This contains the SETools Python binding.
+@@
+
+Package: python3-setools-src
+Submenu: Python
+Version: 4.4.4-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: SETools Python bindings (sources)
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: setools-4.4.4.tar.bz2
+License: GPL-2.0-only LGPL-2.1-only
+LicenseFiles: COPYING COPYING.GPL COPYING.LGPL
+CPE-ID: cpe:/a:selinuxproject:setools
+URL: http://selinuxproject.org/page/Main_Page
+Type: ipkg
+Description:     SETools is a collection of tools and libraries designed to facilitate
+SELinux policy analysis.
+
+This contains the SETools Python binding.
+
+    This package contains the Python source files for python3-setools.
+@@
+Config:
+    depends on PACKAGE_python3-setools
+@@
+
+Package: setools
+Version: 4.4.4-r1
+Depends: +libc setools-sechecker setools-sediff setools-sedta setools-seinfo setools-seinfoflow setools-sesearch
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: SELinux policy analysis tool meta-package
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: setools-4.4.4.tar.bz2
+License: GPL-2.0-only LGPL-2.1-only
+LicenseFiles: COPYING COPYING.GPL COPYING.LGPL
+CPE-ID: cpe:/a:selinuxproject:setools
+URL: http://selinuxproject.org/page/Main_Page
+Type: ipkg
+Description: SETools is a collection of tools and libraries designed to facilitate
+SELinux policy analysis.
+
+This is a meta-package that installs all of the SETools tools.
+@@
+
+Package: setools-sechecker
+Version: 4.4.4-r1
+Depends: +libc +python3-light +python3-logging +python3-setools
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: SELinux policy analysis tool sechecker
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: setools-4.4.4.tar.bz2
+License: GPL-2.0-only LGPL-2.1-only
+LicenseFiles: COPYING COPYING.GPL COPYING.LGPL
+CPE-ID: cpe:/a:selinuxproject:setools
+URL: http://selinuxproject.org/page/Main_Page
+Type: ipkg
+Description: SETools is a collection of tools and libraries designed to facilitate
+SELinux policy analysis.
+
+This contains the sechecker tool.
+@@
+
+Package: setools-sediff
+Version: 4.4.4-r1
+Depends: +libc +python3-light +python3-logging +python3-setools
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: SELinux policy analysis tool sediff
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: setools-4.4.4.tar.bz2
+License: GPL-2.0-only LGPL-2.1-only
+LicenseFiles: COPYING COPYING.GPL COPYING.LGPL
+CPE-ID: cpe:/a:selinuxproject:setools
+URL: http://selinuxproject.org/page/Main_Page
+Type: ipkg
+Description: SETools is a collection of tools and libraries designed to facilitate
+SELinux policy analysis.
+
+This contains the sediff tool.
+@@
+
+Package: setools-sedta
+Version: 4.4.4-r1
+Depends: +libc +python3-light +python3-logging +python3-setools +python3-networkx
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: SELinux policy analysis tool sedta
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: setools-4.4.4.tar.bz2
+License: GPL-2.0-only LGPL-2.1-only
+LicenseFiles: COPYING COPYING.GPL COPYING.LGPL
+CPE-ID: cpe:/a:selinuxproject:setools
+URL: http://selinuxproject.org/page/Main_Page
+Type: ipkg
+Description: SETools is a collection of tools and libraries designed to facilitate
+SELinux policy analysis.
+
+This contains the sedta tool.
+@@
+
+Package: setools-seinfo
+Version: 4.4.4-r1
+Depends: +libc +python3-light +python3-logging +python3-setools
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: SELinux policy analysis tool seinfo
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: setools-4.4.4.tar.bz2
+License: GPL-2.0-only LGPL-2.1-only
+LicenseFiles: COPYING COPYING.GPL COPYING.LGPL
+CPE-ID: cpe:/a:selinuxproject:setools
+URL: http://selinuxproject.org/page/Main_Page
+Type: ipkg
+Description: SETools is a collection of tools and libraries designed to facilitate
+SELinux policy analysis.
+
+This contains the seinfo tool.
+@@
+
+Package: setools-seinfoflow
+Version: 4.4.4-r1
+Depends: +libc +python3-light +python3-logging +python3-setools +python3-networkx
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: SELinux policy analysis tool seinfoflow
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: setools-4.4.4.tar.bz2
+License: GPL-2.0-only LGPL-2.1-only
+LicenseFiles: COPYING COPYING.GPL COPYING.LGPL
+CPE-ID: cpe:/a:selinuxproject:setools
+URL: http://selinuxproject.org/page/Main_Page
+Type: ipkg
+Description: SETools is a collection of tools and libraries designed to facilitate
+SELinux policy analysis.
+
+This contains the seinfoflow tool.
+@@
+
+Package: setools-sesearch
+Version: 4.4.4-r1
+Depends: +libc +python3-light +python3-logging +python3-setools
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: SELinux policy analysis tool sesearch
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: setools-4.4.4.tar.bz2
+License: GPL-2.0-only LGPL-2.1-only
+LicenseFiles: COPYING COPYING.GPL COPYING.LGPL
+CPE-ID: cpe:/a:selinuxproject:setools
+URL: http://selinuxproject.org/page/Main_Page
+Type: ipkg
+Description: SETools is a collection of tools and libraries designed to facilitate
+SELinux policy analysis.
+
+This contains the sesearch tool.
+@@
+
+

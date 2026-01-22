@@ -1,0 +1,98 @@
+Source-Makefile: feeds/packages/utils/rtklib/Makefile
+
+Package: convbin
+Submenu: RTKLIB Suite for GNSS Positioning
+Version: 2.4.3.34-r1
+Depends: +libc +libpthread +librt
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: RINEX Converter
+Maintainer: Nuno Goncalves <nunojpg@gmail.com>
+Source: rtklib-2.4.3.34.tar.zst
+License: BSD-2-Clause
+URL: http://www.rtklib.com/
+Type: ipkg
+Description: RINEX Converter
+@@
+
+Package: pos2kml
+Submenu: RTKLIB Suite for GNSS Positioning
+Version: 2.4.3.34-r1
+Depends: +libc +libpthread +librt
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Solution to KML converter
+Maintainer: Nuno Goncalves <nunojpg@gmail.com>
+Source: rtklib-2.4.3.34.tar.zst
+License: BSD-2-Clause
+URL: http://www.rtklib.com/
+Type: ipkg
+Description: Solution to KML converter
+@@
+
+Package: rnx2rtkp
+Submenu: RTKLIB Suite for GNSS Positioning
+Version: 2.4.3.34-r1
+Depends: +libc +libpthread +librt
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Post-Processing Analysis
+Maintainer: Nuno Goncalves <nunojpg@gmail.com>
+Source: rtklib-2.4.3.34.tar.zst
+License: BSD-2-Clause
+URL: http://www.rtklib.com/
+Type: ipkg
+Description: Post-Processing Analysis
+@@
+
+Package: rtkrcv
+Submenu: RTKLIB Suite for GNSS Positioning
+Version: 2.4.3.34-r1
+Depends: +libc +libpthread +librt
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Real-Time Positioning
+Maintainer: Nuno Goncalves <nunojpg@gmail.com>
+Source: rtklib-2.4.3.34.tar.zst
+License: BSD-2-Clause
+URL: http://www.rtklib.com/
+Type: ipkg
+Description: Real-Time Positioning
+@@
+
+Package: str2str
+Submenu: RTKLIB Suite for GNSS Positioning
+Version: 2.4.3.34-r1
+Depends: +libc +libpthread +librt
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Communication Server
+Maintainer: Nuno Goncalves <nunojpg@gmail.com>
+Source: rtklib-2.4.3.34.tar.zst
+License: BSD-2-Clause
+URL: http://www.rtklib.com/
+Type: ipkg
+Description: Communication Server
+@@
+
+

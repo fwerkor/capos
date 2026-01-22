@@ -1,0 +1,29 @@
+Source-Makefile: feeds/packages/utils/procs/Makefile
+Build-Depends: rust/host
+
+Package: procs
+Version: 0.14.3-r1
+Depends: +libc @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Procs is feature-rich alternative to the 'ps'
+Maintainer: Facundo Acevedo <facevedo@disroot.org>
+Source: procs-0.14.3.tar.gz
+License: MIT
+LicenseFiles: LICENCE
+URL: https://github.com/dalance/procs/
+Type: ipkg
+Description:   Procs is a 'ps' command replacement written in Rust, offering 
+  enhanced usability and information display. 
+  Features include color-coded output, theme auto-detection, advanced
+  search, and extended process details
+  (TCP/UDP ports, Docker names, I/O throughput).
+  It also supports pager functionality, a 'top'-like watch mode, and
+  a process tree view​​.
+@@
+
+

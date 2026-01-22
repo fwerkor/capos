@@ -1,0 +1,50 @@
+Source-Makefile: feeds/packages/lang/python/python-xmltodict/Makefile
+
+Package: python3-xmltodict
+Submenu: Python
+Version: 0.13.0-r1
+Depends: +libc +python3-light +python3-xml
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Work with XML like JSON
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: xmltodict-0.13.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/martinblech/xmltodict
+Type: ipkg
+Description: xmltodict is a Python module that makes working with XML feel like you
+are working with JSON.
+@@
+
+Package: python3-xmltodict-src
+Submenu: Python
+Version: 0.13.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Work with XML like JSON (sources)
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: xmltodict-0.13.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/martinblech/xmltodict
+Type: ipkg
+Description:     xmltodict is a Python module that makes working with XML feel like you
+are working with JSON.
+
+    This package contains the Python source files for python3-xmltodict.
+@@
+Config:
+    depends on PACKAGE_python3-xmltodict
+@@
+
+

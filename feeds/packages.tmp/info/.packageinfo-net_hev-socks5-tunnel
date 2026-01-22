@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/net/hev-socks5-tunnel/Makefile
+
+Package: hev-socks5-tunnel
+Version: 2.14.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: A high-performance tun2socks for Unix
+Maintainer: Ray Wang <git@hev.cc>
+Source: hev-socks5-tunnel-2.14.0.tar.xz
+License: MIT
+LicenseFiles: License
+URL: https://github.com/heiher/hev-socks5-tunnel
+Type: ipkg
+Description: hev-socks5-tunnel is a fast and lightweight tool that routes internet traffic
+through a SOCKS5 proxy, enhancing privacy and bypassing restrictions. It’s known
+for its efficiency, simplicity, and low resource usage, making it ideal for secure
+and optimized online connections.
+@@
+
+

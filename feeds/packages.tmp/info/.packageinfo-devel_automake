@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/devel/automake/Makefile
+
+Package: automake
+Version: 1.16.5-r1
+Depends: +libc +autoconf +perlbase-thread +perlbase-attributes
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: devel
+Category: Development
+Repository: base
+Title: automake
+Maintainer: Heinrich Schuchardt <xypron.glpk@gmx.de>
+Source: automake-1.16.5.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnu:automake
+URL: https://www.gnu.org/software/automake/
+Type: ipkg
+Description:   Automake is a tool for automatically generating Makefile.in files compliant
+  with the GNU Coding Standards.
+@@
+
+

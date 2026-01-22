@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/utils/bluez-tools/Makefile
+
+Package: bluez-tools
+Version: 2020.10.25~f65321736475429316f07ee94ec0deac8e46ec4a-r1
+Depends: +libc +bluez-daemon +glib2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Bluetooth tools
+Maintainer: Karl Osterseher <karli_o@gmx.at>
+Source: bluez-tools-2020.10.25~f65321736475429316f07ee94ec0deac8e46ec4a.tar.zst
+License: GPL-2.0-only
+LicenseFiles: COPYING
+URL: https://github.com/khvzak/bluez-tools
+Type: ipkg
+Description:   Bluetooth tools for bluez daemon. This will install bt-agent only!
+@@
+
+

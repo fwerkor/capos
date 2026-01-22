@@ -1,0 +1,48 @@
+Source-Makefile: feeds/packages/net/tunneldigger-broker/Makefile
+
+Package: tunneldigger-broker
+Version: 0.4.0-r1
+Depends: +libc +ip +kmod-l2tp +kmod-l2tp-eth +kmod-sched +libnfnetlink +libnl-tiny +libpthread +librt +python3-ctypes +python3-light +python3-logging +tc-tiny
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Broker for L2TPv3 tunnels using tunneldigger
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: tunneldigger-broker-0.4.0.tar.zst
+License: AGPL-3.0
+LicenseFiles: COPYING
+URL: https://github.com/wlanslovenija/tunneldigger
+Type: ipkg
+Description: Tunneldigger is a simple VPN tunneling solution based on the Linux kernel
+support for L2TPv3 tunnels over UDP. This package contains the broker.
+@@
+
+Package: tunneldigger-broker-src
+Version: 0.4.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Broker for L2TPv3 tunnels using tunneldigger (sources)
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: tunneldigger-broker-0.4.0.tar.zst
+License: AGPL-3.0
+LicenseFiles: COPYING
+URL: https://github.com/wlanslovenija/tunneldigger
+Type: ipkg
+Description:     Tunneldigger is a simple VPN tunneling solution based on the Linux kernel
+support for L2TPv3 tunnels over UDP. This package contains the broker.
+
+    This package contains the Python source files for tunneldigger-broker.
+@@
+Config:
+    depends on PACKAGE_tunneldigger-broker
+@@
+
+

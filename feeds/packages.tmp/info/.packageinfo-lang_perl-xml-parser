@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/perl-xml-parser/Makefile
+Build-Depends/host: perl/host
+Build-Types: host
+
+Package: perl-xml-parser
+Submenu: Perl
+Version: 2.46.5.40-r1
+Depends: +libc perl +libexpat +perlbase-dynaloader +perlbase-essential
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Perl XML Parser
+Maintainer: Marcel Denia <naoir@gmx.net>
+Source: XML-Parser-2.46.tar.gz
+License: GPL-1.0-or-later Artistic-1.0-Perl
+URL: http://search.cpan.org/dist/XML-Parser/
+Type: ipkg
+Description: Perl XML Parser
+@@
+
+

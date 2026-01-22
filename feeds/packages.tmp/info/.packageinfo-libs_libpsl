@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/libs/libpsl/Makefile
+
+Package: libpsl
+Version: 0.21.5-r1
+Depends: +libc +libidn2 +libunistring +BUILD_NLS:libintl-full
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: C library to handle the Public Suffix List
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: libpsl-0.21.5.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/rockdaboot/libpsl
+ABI-Version: 5
+Type: ipkg
+Description:   C library to handle the Public Suffix List
+@@
+
+

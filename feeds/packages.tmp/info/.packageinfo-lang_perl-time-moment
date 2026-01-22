@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/perl-time-moment/Makefile
+Build-Depends/host: perl/host
+Build-Types: host
+
+Package: perl-time-moment
+Submenu: Perl
+Version: 0.44.5.40-r1
+Depends: +libc perl +perlbase-essential +perlbase-time +perlbase-xsloader
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Time::Moment Represents a date and time of day with an offset from UTC
+Maintainer: Timothy Ace <openwrt@timothyace.com>
+Source: Time-Moment-0.44.tar.gz
+License: GPL-1.0-or-later Artistic-1.0-Perl
+URL: https://github.com/chansen/p5-time-moment
+Type: ipkg
+Description: Time::Moment Represents a date and time of day with an offset from UTC
+@@
+
+

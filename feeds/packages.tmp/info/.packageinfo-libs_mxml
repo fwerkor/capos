@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/libs/mxml/Makefile
+
+Package: mxml
+Version: 3.3.1-r1
+Depends: +libc +zlib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mini-XML
+Maintainer: Espen Jürgensen <espenjurgensen+openwrt@gmail.com>
+Source: mxml-3.3.1.tar.gz
+License: GPL-2.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:mini-xml_project:mini-xml
+URL: http://www.minixml.org/
+Type: ipkg
+Description:   A small xml library.
+@@
+
+

@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/libs/libcli/Makefile
+
+Package: libcli
+Version: 1.10.7
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: libcli
+Maintainer: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Source: libcli-1.10.7.tar.zst
+License: LGPL-2.1
+LicenseFiles: COPYING
+URL: https://dparrish.com/link/libcli
+Type: ipkg
+Description:   Libcli provides a shared library for including a Cisco-like
+  command-line interface into other software.
+@@
+
+

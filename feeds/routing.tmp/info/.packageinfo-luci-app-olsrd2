@@ -1,0 +1,20 @@
+Source-Makefile: feeds/routing/luci-app-olsrd2/Makefile
+
+Package: luci-app-olsrd2
+Submenu: 3. Applications
+Version: 0.2.6-r16
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: OLSR2 configuration and status module
+Maintainer: Patrick Grimm <patrick@lunatiki.de>
+Source: 
+Type: ipkg
+Description: OLSR2 configuration and status module
+@@
+
+

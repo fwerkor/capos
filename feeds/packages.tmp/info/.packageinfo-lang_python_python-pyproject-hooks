@@ -1,0 +1,58 @@
+Source-Makefile: feeds/packages/lang/python/python-pyproject-hooks/Makefile
+Build-Depends/host: python3/host python-flit-core/host python-installer/host
+Build-Types: host
+
+Package: python3-pyproject-hooks
+Submenu: Python
+Version: 1.0.0-r2
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Wrappers to call pyproject.toml-based build backend hooks
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: pyproject_hooks-1.0.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/pypa/pyproject-hooks
+Type: ipkg
+Build-Only: 1
+Description: This is a low-level library for calling build-backends in
+pyproject.toml-based project. It provides the basic functionality to
+help write tooling that generates distribution files from Python
+projects.
+@@
+
+Package: python3-pyproject-hooks-src
+Submenu: Python
+Version: 1.0.0-r2
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Wrappers to call pyproject.toml-based build backend hooks (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: pyproject_hooks-1.0.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/pypa/pyproject-hooks
+Type: ipkg
+Build-Only: 1
+Description:     This is a low-level library for calling build-backends in
+pyproject.toml-based project. It provides the basic functionality to
+help write tooling that generates distribution files from Python
+projects.
+
+    This package contains the Python source files for python3-pyproject-hooks.
+@@
+Config:
+    depends on PACKAGE_python3-pyproject-hooks
+@@
+
+

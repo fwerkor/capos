@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/admin/qbee-agent/Makefile
+Build-Depends: golang/host
+
+Package: qbee-agent
+Version: 2024.36-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: admin
+Category: Administration
+Repository: base
+Title: qbee.io fleet management agent
+Maintainer: Jon Henrik Bjørnstad <jonhenrik@qbee.io>
+Source: qbee-agent-2024.36.tar.zst
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://qbee.io
+Type: ipkg
+Description:   qbee.io is a SaaS provided fleet management solution. This package
+  provides the agent that runs on the device and communicates with
+  the qbee.io server.
+@@
+
+

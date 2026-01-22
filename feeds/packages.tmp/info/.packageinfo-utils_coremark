@@ -1,0 +1,44 @@
+Source-Makefile: feeds/packages/utils/coremark/Makefile
+
+Package: coremark
+Version: 2023.01.25~d5fad6bd094899101a4e5fd53af7298160ced6ab-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: CoreMark Embedded Microprocessor Benchmark
+Maintainer: Lim Guo Wei <limguowei@gmail.com> Aleksander Jan Bajkowski <olek2@wp.pl>
+Source: coremark-2023-01-25.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE.md
+URL: https://github.com/eembc/coremark
+Type: ipkg
+Description:   Embedded Microprocessor Benchmark
+@@
+Config:
+	config COREMARK_OPTIMIZE_O3
+		bool "Use all optimizations (-O3)"
+		depends on PACKAGE_coremark
+		default y
+		help
+			This enables additional optmizations using the -O3 compilation flag.
+
+	config COREMARK_ENABLE_MULTITHREADING
+		bool "Enable multithreading support"
+		depends on PACKAGE_coremark
+		default n
+		help
+			This enables multithreading support
+
+	config COREMARK_NUMBER_OF_THREADS
+		int "Number of threads"
+		depends on COREMARK_ENABLE_MULTITHREADING
+		default 2
+		help
+			Number of threads to run in parallel
+@@
+
+

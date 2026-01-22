@@ -1,0 +1,88 @@
+Source-Makefile: feeds/packages/utils/cryptsetup/Makefile
+Build-Depends: !USE_GLIBC:argp-standalone
+
+Package: cryptsetup
+Submenu: Encryption
+Version: 2.8.0-r1
+Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +libblkid +libuuid +libpopt +lvm2 +libdevmapper +libjson-c +@KERNEL_DIRECT_IO +kmod-crypto-user
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Cryptsetup
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: cryptsetup-2.8.0.tar.xz
+License: GPL-2.0-or-later LGPL-2.1-or-later
+LicenseFiles: COPYING COPYING.LGPL
+CPE-ID: cpe:/a:cryptsetup_project:cryptsetup
+URL: https://gitlab.com/cryptsetup/cryptsetup/
+Type: ipkg
+Description:   Cryptsetup is utility used to conveniently setup disk encryption based on DMCrypt kernel module.
+@@
+
+Package: cryptsetup-ssh
+Submenu: Encryption
+Version: 2.8.0-r1
+Depends: +libc +cryptsetup +PACKAGE_cryptsetup-ssh:libssh
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Cryptsetup SSH token
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: cryptsetup-2.8.0.tar.xz
+License: GPL-2.0-or-later LGPL-2.1-or-later
+LicenseFiles: COPYING COPYING.LGPL
+CPE-ID: cpe:/a:cryptsetup_project:cryptsetup
+URL: https://gitlab.com/cryptsetup/cryptsetup/
+Type: ipkg
+Description:   Experimental SSH token support for cryptsetup.
+@@
+
+Package: integritysetup
+Submenu: Encryption
+Version: 2.8.0-r1
+Depends: +libc +cryptsetup
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: integritysetup
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: cryptsetup-2.8.0.tar.xz
+License: GPL-2.0-or-later LGPL-2.1-or-later
+LicenseFiles: COPYING COPYING.LGPL
+CPE-ID: cpe:/a:cryptsetup_project:cryptsetup
+URL: https://gitlab.com/cryptsetup/cryptsetup/
+Type: ipkg
+Description:   Manage dm-integrity (block level integrity) volumes
+@@
+
+Package: veritysetup
+Submenu: Encryption
+Version: 2.8.0-r1
+Depends: +libc +cryptsetup
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: veritysetup
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: cryptsetup-2.8.0.tar.xz
+License: GPL-2.0-or-later LGPL-2.1-or-later
+LicenseFiles: COPYING COPYING.LGPL
+CPE-ID: cpe:/a:cryptsetup_project:cryptsetup
+URL: https://gitlab.com/cryptsetup/cryptsetup/
+Type: ipkg
+Description:   Manage dm-verity (block level verification) volumes
+@@
+
+

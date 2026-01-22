@@ -1,0 +1,50 @@
+Source-Makefile: feeds/packages/lang/python/python-pyelftools/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host
+Build-Types: host
+
+Package: python3-pyelftools
+Submenu: Python
+Version: 0.32-r1
+Depends: +libc +python3-light +python3-logging
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Library for analyzing ELF files and DWARF debugging information
+Maintainer: Austin Lane <vidplace7@gmail.com>
+Source: pyelftools-0.32.tar.gz
+License: Unlicense
+LicenseFiles: LICENSE
+URL: https://pypi.org/project/pyelftools
+Type: ipkg
+Description: Library for analyzing ELF files and DWARF debugging information
+@@
+
+Package: python3-pyelftools-src
+Submenu: Python
+Version: 0.32-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Library for analyzing ELF files and DWARF debugging information (sources)
+Maintainer: Austin Lane <vidplace7@gmail.com>
+Source: pyelftools-0.32.tar.gz
+License: Unlicense
+LicenseFiles: LICENSE
+URL: https://pypi.org/project/pyelftools
+Type: ipkg
+Description:     Library for analyzing ELF files and DWARF debugging information
+
+    This package contains the Python source files for python3-pyelftools.
+@@
+Config:
+    depends on PACKAGE_python3-pyelftools
+@@
+
+

@@ -1,0 +1,49 @@
+Source-Makefile: feeds/packages/net/curl/Makefile
+
+Package: libcurl
+Menu: 1
+Version: 8.12.1-r1
+Depends: +libc +LIBCURL_WOLFSSL:libwolfssl +LIBCURL_OPENSSL:libopenssl +LIBCURL_GNUTLS:libgnutls +LIBCURL_MBEDTLS:libmbedtls +LIBCURL_ZLIB:zlib +LIBCURL_ZSTD:libzstd +LIBCURL_THREADED_RESOLVER:libpthread +LIBCURL_LDAP:libopenldap +LIBCURL_LIBIDN2:libidn2 +LIBCURL_SSH2:libssh2 +LIBCURL_NGHTTP2:libnghttp2 +LIBCURL_NGHTTP3:libnghttp3 +LIBCURL_NGTCP2:libngtcp2 +ca-bundle
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: A client-side URL transfer library
+Maintainer: Aleksey Vasilenko <aleksey.vasilenko@gmail.com>
+Source: curl-8.12.1.tar.xz
+License: MIT
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:haxx:libcurl
+URL: https://curl.se/
+ABI-Version: 4
+Type: ipkg
+Description: A client-side URL transfer library
+@@
+Config:
+  source "feeds/packages/net/curl/Config.in"
+@@
+
+Package: curl
+Submenu: File Transfer
+Version: 8.12.1-r1
+Depends: +libc +libcurl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: A client-side URL transfer utility
+Maintainer: Aleksey Vasilenko <aleksey.vasilenko@gmail.com>
+Source: curl-8.12.1.tar.xz
+License: MIT
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:haxx:libcurl
+URL: https://curl.se/
+Type: ipkg
+Description: A client-side URL transfer utility
+@@
+
+

@@ -1,0 +1,63 @@
+Source-Makefile: feeds/packages/libs/glib-networking/Makefile
+
+Package: libgio-gnutls
+Version: 2.80.1-r1
+Depends: +libc +glib2 +libgnutls
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: GLib2 GIO GNUTLS module
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: glib-networking-2.80.1.tar.xz
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnome:glib-networking
+URL: http://www.gnome.org/
+Type: ipkg
+Description:   GNUTLS backend for GLib2 GIO.
+@@
+
+Package: libgio-openssl
+Version: 2.80.1-r1
+Depends: +libc +glib2 +libopenssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: GLib2 GIO OpenSSL module
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: glib-networking-2.80.1.tar.xz
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnome:glib-networking
+URL: http://www.gnome.org/
+Type: ipkg
+Description:   OpenSSL backend for GLib2 GIO.
+@@
+
+Package: libgio-environmentproxy
+Version: 2.80.1-r1
+Depends: +libc +glib2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: GLib2 GIO environmentproxy module
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: glib-networking-2.80.1.tar.xz
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnome:glib-networking
+URL: http://www.gnome.org/
+Type: ipkg
+Description:   Proxy environment variables module GLib2 GIO.
+@@
+
+

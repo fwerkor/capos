@@ -1,0 +1,49 @@
+Source-Makefile: feeds/packages/lang/python/python-rpds-py/Makefile
+Build-Depends: python-maturin/host
+
+Package: python3-rpds-py
+Submenu: Python
+Version: 0.10.6-r1
+Depends: +libc +python3-light @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Bindings to Rust's persistent data structures
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: rpds_py-0.10.6.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/crate-py/rpds
+Type: ipkg
+Description: Python bindings to the Rust rpds crate for persistent data structures.
+@@
+
+Package: python3-rpds-py-src
+Submenu: Python
+Version: 0.10.6-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Bindings to Rust's persistent data structures (sources)
+Maintainer: Jeffery To <jeffery.to@gmail.com>
+Source: rpds_py-0.10.6.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/crate-py/rpds
+Type: ipkg
+Description:     Python bindings to the Rust rpds crate for persistent data structures.
+
+    This package contains the Python source files for python3-rpds-py.
+@@
+Config:
+    depends on PACKAGE_python3-rpds-py
+@@
+
+

@@ -1,0 +1,25 @@
+Source-Makefile: feeds/routing/oonf-olsrd2/Makefile
+
+Package: oonf-olsrd2
+Menu: 1
+Submenu: OLSR.org network framework
+Version: 2022.08.25~1cec9b21086fb52ab4262c69aabd087e4d2d3a44
+Depends: +libc +librt +libnl-tiny +libuci +oonf-init-scripts
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Build Olsrd V2 Routing Agent
+Maintainer: Henning Rogge <hrogge@gmail.com>
+Source: oonf-olsrd2-2022.08.25~1cec9b21086fb52ab4262c69aabd087e4d2d3a44.tar.zst
+URL: http://www.olsr.org/
+Type: ipkg
+Description: Build Olsrd V2 Routing Agent
+@@
+Config:
+	source "feeds/routing/oonf-olsrd2/Config.in"
+@@
+
+

@@ -1,0 +1,54 @@
+Source-Makefile: feeds/packages/lang/python/python-babel/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host
+Build-Types: host
+
+Package: python3-babel
+Submenu: Python
+Version: 2.12.1-r1
+Depends: +libc +python3-decimal +python3-distutils +python3-email +python3-light +python3-logging +python3-urllib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Internationalization utilities
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: Babel-2.12.1.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://babel.pocoo.org/
+Type: ipkg
+Description:   Babel is an integrated collection of utilities that assist in
+  internationalizing and localizing Python applications
+  with an emphasis on web-based applications.
+@@
+
+Package: python3-babel-src
+Submenu: Python
+Version: 2.12.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Internationalization utilities (sources)
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: Babel-2.12.1.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://babel.pocoo.org/
+Type: ipkg
+Description:       Babel is an integrated collection of utilities that assist in
+  internationalizing and localizing Python applications
+  with an emphasis on web-based applications.
+
+    This package contains the Python source files for python3-babel.
+@@
+Config:
+    depends on PACKAGE_python3-babel
+@@
+
+

@@ -1,0 +1,52 @@
+Source-Makefile: feeds/packages/lang/python/pyproject-metadata/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host
+Build-Types: host
+
+Package: python3-pyproject-metadata
+Submenu: Python
+Version: 0.7.1-r1
+Depends: +libc +python3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: PEP 621 metadata parsing
+Maintainer: Andy Syam <privasisource@gmail.com>
+Source: pyproject-metadata-0.7.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/FFY00/python-pyproject-metadata
+Type: ipkg
+Description: This project does not implement the parsing of pyproject.toml containing PEP 621 metadata.
+Instead, given a Python data structure representing PEP 621 metadata (already parsed), it will validate this input and generate a PEP 643-compliant metadata file (e.g. PKG-INFO).
+@@
+
+Package: python3-pyproject-metadata-src
+Submenu: Python
+Version: 0.7.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: PEP 621 metadata parsing (sources)
+Maintainer: Andy Syam <privasisource@gmail.com>
+Source: pyproject-metadata-0.7.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/FFY00/python-pyproject-metadata
+Type: ipkg
+Description:     This project does not implement the parsing of pyproject.toml containing PEP 621 metadata.
+Instead, given a Python data structure representing PEP 621 metadata (already parsed), it will validate this input and generate a PEP 643-compliant metadata file (e.g. PKG-INFO).
+
+    This package contains the Python source files for python3-pyproject-metadata.
+@@
+Config:
+    depends on PACKAGE_python3-pyproject-metadata
+@@
+
+

@@ -1,0 +1,29 @@
+Source-Makefile: feeds/packages/net/hping3/Makefile
+
+Package: hping3
+Version: 2014.12.26~3547c7691742c6eaa31f8402e0ccbb81387c1b99-r1
+Depends: +libc +libpcap
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Active Network Smashing Tool
+Maintainer: Alexander E. Patrakov <patrakov@gmail.com>
+Source: hping3-2014.12.26~3547c7691742c6eaa31f8402e0ccbb81387c1b99.tar.zst
+License: GPL-2.0-only
+URL: https://github.com/antirez/hping
+Type: ipkg
+Description: 	hping3 is a network tool able to send custom ICMP/UDP/TCP packets
+	and to display target replies like ping does with ICMP replies. It
+	handles fragmentation and arbitrary packet body and size, and can
+	be used to transfer files under supported protocols. Using hping3,
+	you can test firewall rules, perform (spoofed) port scanning, test
+	network performance using different protocols, do path MTU
+	discovery, perform traceroute-like actions under different
+	protocols, fingerprint remote operating systems, audit TCP/IP
+	stacks, etc. Tcl support is not included.
+@@
+
+

@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/libs/libsocketcan/Makefile
+
+Package: libsocketcan
+Version: 0.0.12-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Library to control SocketCAN interfaces
+Maintainer: Yegor Yefremov <yegorslists@googlemail.com>
+Source: libsocketcan-0.0.12.tar.bz2
+License: LGPL-2.1-or-later
+LicenseFiles: LICENSE
+URL: https://git.pengutronix.de/cgit/tools/libsocketcan
+Type: ipkg
+Description:   This userspace library allows one to do common configure/control tasks
+on a SocketCAN interface.
+@@
+
+

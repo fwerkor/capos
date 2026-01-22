@@ -1,0 +1,52 @@
+Source-Makefile: feeds/packages/lang/python/python-cachetools/Makefile
+
+Package: python3-cachetools
+Submenu: Python
+Version: 5.3.1-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Extensible memoizing collections and decorators
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: cachetools-5.3.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/tkem/cachetools
+Type: ipkg
+Description: This module provides various memoizing collections and decorators,
+including variants of the Python 3 Standard Library's @lru_cache
+function decorator.
+@@
+
+Package: python3-cachetools-src
+Submenu: Python
+Version: 5.3.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Extensible memoizing collections and decorators (sources)
+Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Source: cachetools-5.3.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/tkem/cachetools
+Type: ipkg
+Description:     This module provides various memoizing collections and decorators,
+including variants of the Python 3 Standard Library's @lru_cache
+function decorator.
+
+    This package contains the Python source files for python3-cachetools.
+@@
+Config:
+    depends on PACKAGE_python3-cachetools
+@@
+
+

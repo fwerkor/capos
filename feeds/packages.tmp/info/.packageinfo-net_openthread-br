@@ -1,0 +1,40 @@
+Source-Makefile: feeds/packages/net/openthread-br/Makefile
+
+Package: luci-app-openthread
+Submenu: 3. Applications
+Version: 2023.08.01~1738d8cd8b42106c2ef1262fbbac2f06beab83ba-r1
+Depends: +libc +luci-base
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: LuCI Support for OpenThread Border Router
+Maintainer: Stijn Tintel <stijn@linux-ipv6.be>
+Source: openthread-br-2023.08.01~1738d8cd8b42106c2ef1262fbbac2f06beab83ba.tar.zst
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+Type: ipkg
+Description: LuCI Support for OpenThread Border Router
+@@
+
+Package: openthread-br
+Version: 2023.08.01~1738d8cd8b42106c2ef1262fbbac2f06beab83ba-r1
+Depends: +libc +libblobmsg-json +libjson-c +libncurses +libnetfilter-queue +libreadline +libstdcpp +libubox +libubus +mdnsd +mdnsresponder
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: OpenThread Border Router
+Maintainer: Stijn Tintel <stijn@linux-ipv6.be>
+Source: openthread-br-2023.08.01~1738d8cd8b42106c2ef1262fbbac2f06beab83ba.tar.zst
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+Type: ipkg
+Description:   A Thread border router for POSIX-based platforms.
+@@
+
+

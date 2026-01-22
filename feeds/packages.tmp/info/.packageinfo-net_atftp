@@ -1,0 +1,43 @@
+Source-Makefile: feeds/packages/net/atftp/Makefile
+
+Package: atftp
+Submenu: File Transfer
+Version: 0.8.0-r3
+Depends: +libc +libreadline +libncurses
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: TFTP client
+Maintainer: Daniel Danzberger <daniel@dd-wrt.com>
+Source: atftp-0.8.0.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:atftp_project:atftp
+Type: ipkg
+Description: TFTP client
+@@
+
+Package: atftpd
+Submenu: File Transfer
+Version: 0.8.0-r3
+Depends: +libc +libpcre2 +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: TFTP server
+Maintainer: Daniel Danzberger <daniel@dd-wrt.com>
+Source: atftp-0.8.0.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:atftp_project:atftp
+Type: ipkg
+Description: TFTP server
+@@
+
+

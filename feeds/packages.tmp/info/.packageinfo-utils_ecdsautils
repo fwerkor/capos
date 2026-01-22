@@ -1,0 +1,43 @@
+Source-Makefile: feeds/packages/utils/ecdsautils/Makefile
+
+Package: libecdsautil
+Version: 0.4.2-r1
+Depends: +libc +libuecc
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: ECDSA library
+Maintainer: Matthias Schiffer <mschiffer@universe-factory.net>
+Source: ecdsautils-0.4.2.tar.zst
+License: MIT
+LicenseFiles: COPYRIGHT
+CPE-ID: cpe:/a:ecdsautils_project:ecdsautils
+URL: https://github.com/freifunk-gluon/ecdsautils
+Type: ipkg
+Description:  Library to sign and verify checksums using ECDSA.
+@@
+
+Package: ecdsautils
+Version: 0.4.2-r1
+Depends: +libc +libecdsautil +libuecc
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: ECDSA Utilities
+Maintainer: Matthias Schiffer <mschiffer@universe-factory.net>
+Source: ecdsautils-0.4.2.tar.zst
+License: BSD-2-Clause
+LicenseFiles: COPYRIGHT
+CPE-ID: cpe:/a:ecdsautils_project:ecdsautils
+URL: https://github.com/freifunk-gluon/ecdsautils
+Type: ipkg
+Description:  Utilities to sign and verify checksums using ECDSA.
+@@
+
+

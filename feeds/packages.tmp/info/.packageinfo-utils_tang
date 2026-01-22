@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/utils/tang/Makefile
+
+Package: tang
+Version: 15-r1
+Depends: +libc +libhttp-parser +jose
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Extra packages
+Repository: base
+Title: tang v15 - daemon for binding data to the presence of a third party
+Maintainer: Nikos Mavrogiannopoulos <n.mavrogiannopoulos@gmail.com>
+Require-User: tang:tang
+Source: tang-15.tar.xz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:tang_project:tang
+URL: https://github.com/latchset/tang
+Type: ipkg
+Description: 	Tang is a small daemon for binding data to the presence of a third party.
+@@
+
+

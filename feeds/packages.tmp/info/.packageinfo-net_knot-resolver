@@ -1,0 +1,29 @@
+Source-Makefile: feeds/packages/net/knot-resolver/Makefile
+
+Package: knot-resolver
+Submenu: IP Addresses and Names
+Version: 5.7.6-r1
+Depends: +libc +knot-libs +knot-libzscanner +libuv @HAS_LUAJIT_ARCH +luajit +luasec +luasocket +libstdcpp +libnghttp2 +lmdb PACKAGE_knot-resolver_dnstap:libfstrm PACKAGE_knot-resolver_dnstap:libprotobuf-c
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Knot Resolver
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Require-User: kresd=3536:kresd=3536
+Source: knot-resolver-5.7.6.tar.xz
+License: GPL-3.0-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:nic:knot_resolver
+URL: https://www.knot-resolver.cz
+Type: ipkg
+Description:   The Knot Resolver is a caching full resolver
+  implementation, including both a resolver library and a daemon.
+@@
+Config:
+	source "feeds/packages/net/knot-resolver/Config.in"
+@@
+
+

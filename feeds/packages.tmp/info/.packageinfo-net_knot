@@ -1,0 +1,183 @@
+Source-Makefile: feeds/packages/net/knot/Makefile
+
+Package: knot-libs
+Version: 3.5.1-r1
+Depends: +libc +libpthread +libgnutls +lmdb @!arc
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Knot DNS common DNS and DNSSEC libraries
+Maintainer: Daniel Salzman <daniel.salzman@nic.cz>
+Source: knot-3.5.1.tar.xz
+License: GPL-2.0-or-later LGPL-2.0-or-later MIT ISC BSD-3-Clause
+CPE-ID: cpe:/a:knot-dns:knot_dns
+URL: https://www.knot-dns.cz
+Type: ipkg
+Description: 	Knot DNS common DNS and DNSSEC libraries.
+@@
+
+Package: knot-libzscanner
+Version: 3.5.1-r1
+Depends: +libc +libpthread @!arc
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Knot DNS zone parser library
+Maintainer: Daniel Salzman <daniel.salzman@nic.cz>
+Source: knot-3.5.1.tar.xz
+License: GPL-2.0-or-later LGPL-2.0-or-later MIT ISC BSD-3-Clause
+CPE-ID: cpe:/a:knot-dns:knot_dns
+URL: https://www.knot-dns.cz
+Type: ipkg
+Description: 	Knot DNS zone parser library.
+@@
+
+Package: knot
+Submenu: IP Addresses and Names
+Version: 3.5.1-r1
+Depends: +libc +libatomic +libedit +liburcu +libdbus +knot-libs +knot-libzscanner
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Knot DNS server with control utility
+Maintainer: Daniel Salzman <daniel.salzman@nic.cz>
+Require-User: knot=5353:knot=5353
+Source: knot-3.5.1.tar.xz
+License: GPL-2.0-or-later LGPL-2.0-or-later MIT ISC BSD-3-Clause
+CPE-ID: cpe:/a:knot-dns:knot_dns
+URL: https://www.knot-dns.cz
+Type: ipkg
+Description: 	High-performance authoritative-only DNS server.
+@@
+
+Package: knot-dig
+Submenu: IP Addresses and Names
+Version: 3.5.1-r1
+Depends: +libc +libatomic +libedit +knot-libs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Knot DNS advanced DNS lookup utility
+Maintainer: Daniel Salzman <daniel.salzman@nic.cz>
+Source: knot-3.5.1.tar.xz
+License: GPL-2.0-or-later LGPL-2.0-or-later MIT ISC BSD-3-Clause
+CPE-ID: cpe:/a:knot-dns:knot_dns
+URL: https://www.knot-dns.cz
+Type: ipkg
+Description: 	Knot DNS advanced DNS lookup utility.
+@@
+
+Package: knot-host
+Submenu: IP Addresses and Names
+Version: 3.5.1-r1
+Depends: +libc +libatomic +libedit +knot-libs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Knot DNS simple DNS lookup utility
+Maintainer: Daniel Salzman <daniel.salzman@nic.cz>
+Source: knot-3.5.1.tar.xz
+License: GPL-2.0-or-later LGPL-2.0-or-later MIT ISC BSD-3-Clause
+CPE-ID: cpe:/a:knot-dns:knot_dns
+URL: https://www.knot-dns.cz
+Type: ipkg
+Description: 	Knot DNS simple DNS lookup utility.
+@@
+
+Package: knot-nsupdate
+Submenu: IP Addresses and Names
+Version: 3.5.1-r1
+Depends: +libc +libatomic +libedit +knot-libs +knot-libzscanner
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Knot DNS dynamic DNS update utility
+Maintainer: Daniel Salzman <daniel.salzman@nic.cz>
+Source: knot-3.5.1.tar.xz
+License: GPL-2.0-or-later LGPL-2.0-or-later MIT ISC BSD-3-Clause
+CPE-ID: cpe:/a:knot-dns:knot_dns
+URL: https://www.knot-dns.cz
+Type: ipkg
+Description: 	Knot DNS dynamic DNS update utility.
+@@
+
+Package: knot-zonecheck
+Submenu: IP Addresses and Names
+Version: 3.5.1-r1
+Depends: +libc +libatomic +libedit +liburcu +libdbus +knot-libs +knot-libzscanner
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Knot DNS zonefile check utility
+Maintainer: Daniel Salzman <daniel.salzman@nic.cz>
+Source: knot-3.5.1.tar.xz
+License: GPL-2.0-or-later LGPL-2.0-or-later MIT ISC BSD-3-Clause
+CPE-ID: cpe:/a:knot-dns:knot_dns
+URL: https://www.knot-dns.cz
+Type: ipkg
+Description: 	Knot DNS zonefile check utility.
+@@
+
+Package: knot-keymgr
+Submenu: IP Addresses and Names
+Version: 3.5.1-r1
+Depends: +libc +libatomic +libedit +liburcu +libdbus +knot-libs +knot-libzscanner
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Knot DNS DNSSEC key management utility
+Maintainer: Daniel Salzman <daniel.salzman@nic.cz>
+Source: knot-3.5.1.tar.xz
+License: GPL-2.0-or-later LGPL-2.0-or-later MIT ISC BSD-3-Clause
+CPE-ID: cpe:/a:knot-dns:knot_dns
+URL: https://www.knot-dns.cz
+Type: ipkg
+Description: 	Knot DNS DNSSEC key management utility.
+@@
+
+Package: knot-tests
+Submenu: IP Addresses and Names
+Version: 3.5.1-r1
+Depends: +libc +libatomic +libedit +liburcu +libdbus +knot-libs +knot-libzscanner
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Knot DNS tests
+Maintainer: Daniel Salzman <daniel.salzman@nic.cz>
+Source: knot-3.5.1.tar.xz
+License: GPL-2.0-or-later LGPL-2.0-or-later MIT ISC BSD-3-Clause
+CPE-ID: cpe:/a:knot-dns:knot_dns
+URL: https://www.knot-dns.cz
+Type: ipkg
+Description: 	Unit tests for the Knot DNS server and libraries.
+	Usage: /usr/share/knot/runtests.sh
+@@
+
+

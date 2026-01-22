@@ -1,0 +1,28 @@
+Source-Makefile: feeds/packages/utils/pax-utils/Makefile
+
+Package: pax-utils
+Version: 1.3.7-r1
+Depends: +libc +libcap
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: ELF utils for security relevant property checking
+Maintainer: Oskari Rauta <oskari.rauta@gmail.com>
+Source: pax-utils-1.3.7.tar.xz
+License: GPL-2.0-only
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:gentoo:pax-utils
+URL: https://wiki.gentoo.org/wiki/Hardened/PaX_Utilities
+Type: ipkg
+Description:   A suite of ELF tools to aid auditing systems. Contains various
+  ELF related utils for ELF32, ELF64 binaries useful for displaying
+  PaX and security info on a large groups of binary files.
+@@
+Config:
+  source "feeds/packages/utils/pax-utils/Config.in"
+@@
+
+

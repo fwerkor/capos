@@ -1,0 +1,51 @@
+Source-Makefile: feeds/packages/lang/python/python-py/Makefile
+Build-Depends: python-setuptools-scm/host
+
+Package: python3-py
+Submenu: Python
+Version: 1.11.0-r1
+Depends: +libc +python3-light +python3-xml +python3-urllib +python3-uuid
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python development support library
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Source: py-1.11.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:pytest:py
+URL: https://github.com/pytest-dev/py
+Type: ipkg
+Description:   Library with cross-python path, ini-parsing, io, code, log facilities
+@@
+
+Package: python3-py-src
+Submenu: Python
+Version: 1.11.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Python development support library (sources)
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Source: py-1.11.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:pytest:py
+URL: https://github.com/pytest-dev/py
+Type: ipkg
+Description:       Library with cross-python path, ini-parsing, io, code, log facilities
+
+    This package contains the Python source files for python3-py.
+@@
+Config:
+    depends on PACKAGE_python3-py
+@@
+
+

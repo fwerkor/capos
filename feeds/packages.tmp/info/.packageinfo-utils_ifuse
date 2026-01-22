@@ -1,0 +1,30 @@
+Source-Makefile: feeds/packages/utils/ifuse/Makefile
+
+Package: ifuse
+Submenu: libimobiledevice
+Version: 2023.01.06~814a0e38050850937debd697fcfe6eca3de1b66f-r1
+Depends: +libc +fuse-utils +libimobiledevice
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Fuse filesystem access to iOS devices
+Maintainer: Rosen Penev <rosenp@gmail.com>
+Source: ifuse-2023.01.06~814a0e38050850937debd697fcfe6eca3de1b66f.tar.zst
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:libimobiledevice:ifuse
+URL: https://www.libimobiledevice.org/
+Type: ipkg
+Description:   A fuse filesystem implementation to access the contents of iOS devices.
+  This project allows mounting various directories of an iOS device locally
+  using the FUSE file system interface.
+  - Media: Mount media directory of an iOS device locally
+  - Apps: Mount sandbox container or document directory of an app
+  - Jailbreak: Mount root filesystem on jailbroken devices (requires AFC2 service)
+  - Browse: Allows to retrieve a list of installed file-sharing enabled apps
+@@
+
+

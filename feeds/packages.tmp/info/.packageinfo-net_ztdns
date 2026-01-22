@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/net/ztdns/Makefile
+Build-Depends: golang/host
+
+Package: ztdns
+Version: 0.0.2-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ZerotierDNS
+Maintainer: Oskari Rauta <oskari.rauta@gmail.com>
+Source: ztdns-0.0.2.tar.zst
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/uxbh/ztdns
+Type: ipkg
+Description:   ztDNS is a dedicated DNS server for a ZeroTier virtual network.
+  It is alternative to Zerotier's own zeronsd.
+@@
+
+

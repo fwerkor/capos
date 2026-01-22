@@ -1,0 +1,21 @@
+Source-Makefile: feeds/packages/utils/mhz/Makefile
+
+Package: mhz
+Version: 2025.07.26~512f63021f6f0cec8e5e13be744dba0b4704cfae-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: CPU frequency measurement utility
+Maintainer: Robert Marko <robimarko@gmail.com>
+Source: mhz-2025.07.26~512f63021f6f0cec8e5e13be744dba0b4704cfae.tar.zst
+License: MIT
+LicenseFiles: LICENSE
+Type: ipkg
+Description:   Tool to mathematically calculate the current CPU frequency.
+@@
+
+

@@ -1,0 +1,19 @@
+Source-Makefile: feeds/packages/utils/tree/Makefile
+
+Package: tree
+Version: 2.2.1-r1
+Depends: +libc +libgcc
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: List contents of directories in a tree-like format
+Maintainer: Banglang Huang <banglang.huang@foxmail.com>
+Source: tree-2.2.1.tar.gz
+Type: ipkg
+Description: List contents of directories in a tree-like format
+@@
+
+

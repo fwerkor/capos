@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/libs/vips/Makefile
+Build-Depends: glib2/host
+
+Package: vips
+Version: 8.15.2-r1
+Depends: +libc +glib2 +libexif +libexpat +libjpeg +libpng +giflib +libxml2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: multimedia
+Category: Multimedia
+Repository: base
+Title: An image manipulation library
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: vips-8.15.2.tar.xz
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:libvips:libvips
+URL: https://libvips.github.io/libvips/
+Type: ipkg
+Description: An image manipulation library
+@@
+
+

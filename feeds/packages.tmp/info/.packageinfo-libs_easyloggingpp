@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/libs/easyloggingpp/Makefile
+
+Package: easyloggingpp
+Version: 9.97.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lib
+Category: Libraries
+Repository: base
+Title: A single header C++ Logging Library
+Maintainer: Volker Christian <me@vchrist.at>
+Source: easyloggingpp-9.97.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/abumq/easyloggingpp
+Type: ipkg
+Build-Only: 1
+Description:   Easylogging++ is single header efficient logging library for C++
+  applications. It is extremely powerful, highly extendable and
+  configurable to user's requirements.
+@@
+
+

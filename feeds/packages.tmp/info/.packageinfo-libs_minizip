@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/libs/minizip/Makefile
+
+Package: minizip
+Version: 4.0.7-r1
+Depends: +libc +zlib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Fork of the popular zip manipulation library found in the zlib distribution
+Maintainer: David Woodhouse <dwmw2@infradead.org>
+Source: minizip-ng-4.0.7.tar.gz
+License: Zlib
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:zlib-ng:minizip-ng
+URL: https://github.com/zlib-ng/minizip-ng
+Type: ipkg
+Description:   minizip is a zip manipulation library written in C that is supported on Windows, macOS, and Linux
+@@
+
+

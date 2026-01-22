@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/libs/libfmt/Makefile
+
+Package: libfmt
+Version: 11.0.2-r1
+Depends: +libc +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Small, safe and fast formatting library
+Maintainer: Othmar Truniger <github@truniger.ch>
+Source: fmt-11.0.2.tar.gz
+License: MIT
+LicenseFiles: LICENSE.rst
+CPE-ID: cpe:/a:fmt:fmt
+URL: https://github.com/fmtlib/fmt
+Type: ipkg
+Description:   fmt is an open-source formatting library for C++.
+  It can be used as a safe alternative to printf or as a fast alternative to IOStreams.
+@@
+
+

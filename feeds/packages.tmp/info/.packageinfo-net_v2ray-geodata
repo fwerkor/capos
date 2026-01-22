@@ -1,0 +1,63 @@
+Source-Makefile: feeds/packages/net/v2ray-geodata/Makefile
+
+Package: v2ray-geoip
+Submenu: IP Addresses and Names
+Version: 202510050144-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: v2ray-geodata xray-geodata xray-geoip
+Section: net
+Category: Network
+Repository: base
+Title: GeoIP List for V2Ray
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: 
+License: CC-BY-SA-4.0
+LicenseFiles: LICENSE
+URL: https://www.v2fly.org
+Type: ipkg
+Description: GeoIP List for V2Ray
+@@
+
+Package: v2ray-geosite
+Submenu: IP Addresses and Names
+Version: 20250916122507-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: v2ray-geodata xray-geodata xray-geosite
+Section: net
+Category: Network
+Repository: base
+Title: Geosite List for V2Ray
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: 
+License: MIT
+LicenseFiles: LICENSE
+URL: https://www.v2fly.org
+Type: ipkg
+Description: Geosite List for V2Ray
+@@
+
+Package: v2ray-geosite-ir
+Submenu: IP Addresses and Names
+Version: 202510130040-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: xray-geosite-ir
+Section: net
+Category: Network
+Repository: base
+Title: Iran Geosite List for V2Ray
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: 
+License: MIT
+LicenseFiles: LICENSE
+URL: https://www.v2fly.org
+Type: ipkg
+Description: Iran Geosite List for V2Ray
+@@
+
+

@@ -1,0 +1,73 @@
+Source-Makefile: feeds/packages/net/mosh/Makefile
+Build-Depends: protobuf/host
+
+Package: mosh-client
+Submenu: SSH
+Version: 1.4.0-r1
+Depends: +libc +libncursesw +libopenssl +protobuf
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Mosh mobile shell (client)
+Maintainer: Rosen Penev <rosenp@gmail.com>
+Source: mosh-1.4.0.tar.gz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+URL: https://mosh.org/
+Type: ipkg
+Description:  Mosh is a remote terminal application that allows roaming, supports
+ intermittent connectivity, and provides intelligent local echo and line
+ editing of user keystrokes.
+ This is a mosh client.
+@@
+
+Package: mosh-server
+Submenu: SSH
+Version: 1.4.0-r1
+Depends: +libc +libncursesw +libopenssl +protobuf
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Mosh mobile shell (server)
+Maintainer: Rosen Penev <rosenp@gmail.com>
+Source: mosh-1.4.0.tar.gz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+URL: https://mosh.org/
+Type: ipkg
+Description:  Mosh is a remote terminal application that allows roaming, supports
+ intermittent connectivity, and provides intelligent local echo and line
+ editing of user keystrokes.
+ This is a mosh server.
+@@
+
+Package: mosh-full
+Submenu: SSH
+Version: 1.4.0-r1
+Depends: +libc +mosh-client +mosh-server +perlbase-autoloader +perlbase-config +perlbase-errno +perlbase-essential +perlbase-fcntl +perlbase-getopt +perlbase-io +perlbase-posix +perlbase-selectsaver +perlbase-socket +perlbase-symbol +perlbase-text +perlbase-tie +perlbase-xsloader
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Mosh mobile shell (full)
+Maintainer: Rosen Penev <rosenp@gmail.com>
+Source: mosh-1.4.0.tar.gz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+URL: https://mosh.org/
+Type: ipkg
+Description:  Mosh is a remote terminal application that allows roaming, supports
+ intermittent connectivity, and provides intelligent local echo and line
+ editing of user keystrokes.
+ This is a full package with perl wrapper script
+@@
+
+

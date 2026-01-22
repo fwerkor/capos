@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/net/inadyn/Makefile
+
+Package: inadyn
+Submenu: IP Addresses and Names
+Version: 2.11.0-r1
+Depends: +libc +confuse +libopenssl +ca-certificates
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: A Dynamic DNS client with SSL/TLS support
+Maintainer: 
+Source: inadyn-2.11.0.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: http://troglobit.com/project/inadyn/
+Type: ipkg
+Description:   Inadyn is a small and simple Dynamic DNS, DDNS, client with HTTPS support
+@@
+
+

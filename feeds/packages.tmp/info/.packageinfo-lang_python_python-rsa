@@ -1,0 +1,57 @@
+Source-Makefile: feeds/packages/lang/python/python-rsa/Makefile
+Build-Depends: python-poetry-core/host
+
+Package: python3-rsa
+Submenu: Python
+Version: 4.9-r1
+Depends: +libc +python3-light +python3-multiprocessing +python3-pydoc +python3-pyasn1
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Pure-Python RSA implementation
+Maintainer: Daniel Danzberger <daniel@dd-wrt.com>
+Source: rsa-4.9.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:python-rsa_project:python-rsa
+URL: https://stuvel.eu/rsa
+Type: ipkg
+Description: Python-RSA is a pure-Python RSA implementation. It supports encryption
+and decryption, signing and verifying signatures, and key generation
+according to PKCS#1 version 1.5. It can be used as a Python library as
+well as on the commandline.
+@@
+
+Package: python3-rsa-src
+Submenu: Python
+Version: 4.9-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Pure-Python RSA implementation (sources)
+Maintainer: Daniel Danzberger <daniel@dd-wrt.com>
+Source: rsa-4.9.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:python-rsa_project:python-rsa
+URL: https://stuvel.eu/rsa
+Type: ipkg
+Description:     Python-RSA is a pure-Python RSA implementation. It supports encryption
+and decryption, signing and verifying signatures, and key generation
+according to PKCS#1 version 1.5. It can be used as a Python library as
+well as on the commandline.
+
+    This package contains the Python source files for python3-rsa.
+@@
+Config:
+    depends on PACKAGE_python3-rsa
+@@
+
+

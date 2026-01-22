@@ -1,0 +1,20 @@
+Source-Makefile: feeds/packages/utils/sockread/Makefile
+
+Package: sockread
+Version: 1.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Unix domain sockets utility
+Maintainer: Moritz Warning <moritzwarning@web.de>
+Source: 
+License: CC0-1.0
+Type: ipkg
+Description: 	Command line utility to read and write to Unix domain sockets.
+@@
+
+

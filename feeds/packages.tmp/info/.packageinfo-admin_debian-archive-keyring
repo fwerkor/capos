@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/admin/debian-archive-keyring/Makefile
+
+Package: debian-archive-keyring
+Version: 2023.4-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: admin
+Category: Administration
+Repository: base
+Title: Debian Archive keyring
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: debian-archive-keyring_2023.4_all.deb
+License: Unique
+LicenseFiles: usr/share/doc/debian-archive-keyring/copyright
+URL: https://salsa.debian.org/release-team/debian-archive-keyring
+Type: ipkg
+Description: Debian Archive keyring
+@@
+
+

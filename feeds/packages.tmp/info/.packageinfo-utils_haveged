@@ -1,0 +1,39 @@
+Source-Makefile: feeds/packages/utils/haveged/Makefile
+
+Package: haveged
+Version: 1.9.19-r1
+Depends: +libc +libhavege
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Feeds the kernel entropy pool by timing CPU loops.
+Maintainer: Hannu Nyman <hannu.nyman@iki.fi>
+Source: haveged-1.9.19.tar.gz
+License: GPLv3
+URL: http://www.issihosts.com/haveged/
+Type: ipkg
+Description: Feeds the kernel entropy pool by timing CPU loops.
+@@
+
+Package: libhavege
+Version: 1.9.19-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: opt
+Category: Libraries
+Repository: base
+Title: Library for haveged
+Maintainer: Hannu Nyman <hannu.nyman@iki.fi>
+Source: haveged-1.9.19.tar.gz
+License: GPLv3
+URL: http://www.issihosts.com/haveged/
+Type: ipkg
+Description: Library for haveged
+@@
+
+

@@ -1,0 +1,28 @@
+Source-Makefile: feeds/packages/libs/oniguruma/Makefile
+
+Package: oniguruma
+Version: 6.9.9-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Regular expression library for different character encodings
+Maintainer: Eneas U de Queiroz <cotequeiroz@gmail.com>
+Source: onig-v6.9.9.tar.gz
+License: BSD-2-Clause
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:oniguruma_project:oniguruma
+URL: https://github.com/kkos/oniguruma
+ABI-Version: 5
+Type: ipkg
+Description:    Oniguruma is a modern and flexible regular expressions library.
+   It encompasses features from different regular expression implementations that
+   traditionally exist in different languages.
+
+   Character encoding can be specified per regular expression object.
+@@
+
+

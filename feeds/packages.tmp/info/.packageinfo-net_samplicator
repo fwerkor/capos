@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/net/samplicator/Makefile
+
+Package: samplicator
+Version: 2021.10.11~ceeb1d280188c155b71d819282490be86190f6f6-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: UDP Samplicator
+Maintainer: Nick Hainke <vincent@systemli.org>
+Source: samplicator-2021.10.11~ceeb1d280188c155b71d819282490be86190f6f6.tar.zst
+License: GPL-2.0-only
+LicenseFiles: COPYING
+URL: https://github.com/sleinen/samplicator
+Type: ipkg
+Description:   Send copies of (UDP) datagrams to multiple receivers,
+  with optional sampling and spoofing.
+@@
+
+

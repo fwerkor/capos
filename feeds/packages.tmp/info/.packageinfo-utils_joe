@@ -1,0 +1,44 @@
+Source-Makefile: feeds/packages/utils/joe/Makefile
+
+Package: joe
+Submenu: Editors
+Version: 4.6-r2
+Depends: +libc +libncurses
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: JOE - Joes own editor
+Maintainer: Vitaly Protsko <villy@sft.ru>
+Source: joe-4.6.tar.gz
+License: GPL-2.0
+CPE-ID: cpe:/a:joseph_allen:joe
+URL: https://sourceforge.net/projects/joe-editor/
+Type: ipkg
+Description: Joe is world-famous Wordstar like text editor, that also features
+Emacs and Pico emulation
+@@
+
+Package: joe-extras
+Submenu: Editors
+Version: 4.6-r2
+Depends: +libc +joe
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Extra data for JOE - Joes own editor
+Maintainer: Vitaly Protsko <villy@sft.ru>
+Source: joe-4.6.tar.gz
+License: GPL-2.0
+CPE-ID: cpe:/a:joseph_allen:joe
+URL: https://sourceforge.net/projects/joe-editor/
+Type: ipkg
+Description: Additional data for full Joe editor functionality
+@@
+
+

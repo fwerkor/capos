@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/libs/libvorbisidec/Makefile
+
+Package: libvorbisidec
+Version: 2024.06.11~9b78f57f4335f7158dbb82df00645d2ba57e0d33-r1
+Depends: +libc +libogg
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: A fixed-point Ogg/Vorbis decoder library
+Maintainer: Ted Hess <thess@kitschensync.net>
+Source: libvorbisidec-2024.06.11~9b78f57f4335f7158dbb82df00645d2ba57e0d33.tar.zst
+License: BSD-3-Clause
+LicenseFiles: COPYING
+URL: http://wiki.xiph.org/index.php/Tremor
+Type: ipkg
+Description:   libvorbisidec is "tremor", a fixed-point implementation of libvorbis.
+  It is suitable as a replacement for libvorbis in tremor-aware applications.
+  Tremor is a decoder only.
+@@
+
+
