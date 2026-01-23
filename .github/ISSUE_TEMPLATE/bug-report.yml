@@ -83,12 +83,4 @@ body:
         In case of a self-built image, please attach diffconfig.
         ```./scripts/diffconfig.sh```
       render: text
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Terms
-      description: By submitting this issue, you agree to the terms below.
-      options:
-        - label: I am reporting an issue for CapOS, not an unsupported fork.
-        - label: I am certain that there are no other issues with content that highly overlaps with this one.
-          required: true
+
