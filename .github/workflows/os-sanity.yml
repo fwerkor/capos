@@ -1,0 +1,69 @@
+name: OS Sanity Check
+
+on:
+  pull_request:
+    branches: ["main"]
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+concurrency:
+  group: os-sanity-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  offline-sanity:
+    name: OS Sanity
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install minimal prerequisites
+        shell: bash
+        run: |
+          set -euxo pipefail
+          sudo apt-get update
+          # 只装 menuconfig/metadata 所需的最小集合（不做编译的话不需要一堆工具链依赖）
+          sudo apt-get install -y \
+            bash coreutils findutils grep sed gawk make \
+            git perl python3 \
+            file rsync \
+            libncurses-dev
+
+      - name: Assert vendored feeds exist
+        shell: bash
+        run: |
+          set -euxo pipefail
+
+          # 你们既然 vendor 了 feeds，就检查关键目录存在
+          test -d feeds || (echo "ERROR: ./feeds not found (expected vendored feeds)"; exit 1)
+          test -d feeds/packages || (echo "ERROR: feeds/packages not found"; exit 1)
+          test -d feeds/luci || (echo "ERROR: feeds/luci not found"; exit 1)
+
+          # 确保 feeds 配置文件存在（scripts/feeds 至少能读）
+          if [ ! -f feeds.conf ] && [ -f feeds.conf.default ]; then
+            cp feeds.conf.default feeds.conf
+          fi
+          test -f feeds.conf || (echo "ERROR: feeds.conf missing"; exit 1)
+
+          # 只做可读性检查，不 update/install（不触网）
+          ./scripts/feeds list >/dev/null
+
+      - name: Kconfig sanity (defconfig)
+        shell: bash
+        run: |
+          set -euxo pipefail
+          # 不跑交互 menuconfig，只验证 Kconfig/配置生成链路
+          make defconfig
+
+      - name: Package metadata sanity (prepare-tmpinfo)
+        shell: bash
+        run: |
+          set -euxo pipefail
+          # 这是 menuconfig/依赖扫描的核心阶段之一，能暴露大量“基本功能被破坏”的问题
+          make -j"$(nproc)" prepare-tmpinfo V=s
