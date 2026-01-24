@@ -4,7 +4,7 @@
 # Copyright (C) 2016 LEDE project
 # Copyright (C) 2026 CapOS project
 
-PROJECT_GIT = https://github.com/fwerkor/capos
+PROJECT_GIT = https://git.openwrt.org
 
 OPENWRT_GIT = $(PROJECT_GIT)
 LEDE_GIT = $(PROJECT_GIT)
