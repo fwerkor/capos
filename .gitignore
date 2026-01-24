@@ -30,3 +30,4 @@ git-src
 .cproject
 .ccache
 .vscode*
+/feeds/*/.tmp
