@@ -49,6 +49,8 @@ make4.1+ perl python3.7+ rsync subversion unzip which
 
 Now, you can simply follow these steps to build CapOS.
 
+Note that do not use root user.
+
 1. Run `bash ./scripts/auto_install_dependencies.sh` to install dependencies on your system.
 
 2. Run `make menuconfig` to select your preferred configuration for the toolchain, target system & firmware packages. 
