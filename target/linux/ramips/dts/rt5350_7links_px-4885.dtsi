@@ -14,8 +14,7 @@
 	};
 
 	keys {
-		compatible = "gpio-keys-polled";
-		poll-interval = <20>;
+		compatible = "gpio-keys";
 
 		reset {
 			label = "reset";
@@ -66,7 +65,7 @@
 				read-only;
 			};
 
-			devconf: partition@40000 {
+			partition@40000 {
 				label = "devconf";
 				reg = <0x40000 0x10000>;
 				read-only;

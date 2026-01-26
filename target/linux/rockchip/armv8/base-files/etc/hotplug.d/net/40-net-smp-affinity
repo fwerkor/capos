@@ -29,25 +29,41 @@ set_interface_core() {
 }
 
 case "$(board_name)" in
+armsom,sige7|\
+friendlyarm,nanopi-r3s|\
+friendlyarm,nanopi-r5c|\
+linkease,easepi-r1|\
+lunzn,fastrhino-r66s|\
+radxa,e25|\
+sinovoip,rk3568-bpi-r2pro)
+	set_interface_core 2 "eth0"
+	set_interface_core 4 "eth1"
+	;;
 friendlyarm,nanopi-r2c|\
+friendlyarm,nanopi-r2c-plus|\
 friendlyarm,nanopi-r2s|\
+radxa,cm3-io|\
 xunlong,orangepi-r1-plus|\
 xunlong,orangepi-r1-plus-lts)
 	set_interface_core 2 "eth0"
 	set_interface_core 4 "eth1" "xhci-hcd:usb[0-9]+"
 	;;
-friendlyarm,nanopi-r4s)
+friendlyarm,nanopi-r4s|\
+friendlyarm,nanopi-r4s-enterprise|\
+friendlyarm,nanopi-r6c|\
+friendlyarm,nanopc-t6)
 	set_interface_core 10 "eth0"
 	set_interface_core 20 "eth1"
-	;;
-friendlyarm,nanopi-r5c)
-	set_interface_core 2 "eth0"
-	set_interface_core 4 "eth1"
 	;;
 friendlyarm,nanopi-r5s)
 	set_interface_core 2 "eth0"
 	set_interface_core 4 "eth1"
 	set_interface_core 8 "eth2"
+	;;
+friendlyarm,nanopi-r6s)
+	set_interface_core 10 "eth0"
+	set_interface_core 20 "eth1"
+	set_interface_core 40 "eth2"
 	;;
 esac
 
