@@ -190,7 +190,8 @@ define Package/base-files/install
 		$(1)/etc/device_info \
 		$(1)/etc/capos_release \
 		$(1)/etc/capos_version \
-		$(1)/usr/lib/os-release
+		$(1)/usr/lib/os-release \
+		$(1)/etc/openwrt_version
 
 
 	$(SED) "s#%PATH%#$(TARGET_INIT_PATH)#g" \
