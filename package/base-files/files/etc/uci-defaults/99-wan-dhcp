@@ -1,62 +1,47 @@
 #!/bin/sh
-# Enable WAN IPv4 DHCP + WAN6 DHCPv6 (with prefix delegation) by default.
-# Safe policy: only modify existing sections; do not create new wan/wan6; do not touch device/ifname.
+# CapOS default network: server-style (all NICs = WAN DHCP)
 
 changed=0
 
-# IPv4: wan -> dhcp
-if uci -q get network.wan >/dev/null; then
-    cur="$(uci -q get network.wan.proto)"
-    if [ "$cur" != "dhcp" ]; then
-        uci set network.wan.proto='dhcp'
-        changed=1
-    fi
-fi
+# 确保 network 配置存在
+[ -f /etc/config/network ] || touch /etc/config/network
 
-# IPv6: wan6 -> dhcpv6, bind to wan, request PD
-if uci -q get network.wan6 >/dev/null; then
-    cur6="$(uci -q get network.wan6.proto)"
-    if [ "$cur6" != "dhcpv6" ]; then
-        uci set network.wan6.proto='dhcpv6'
-        changed=1
-    fi
+# 删除 OpenWrt 路由器默认的 lan / br-lan
+uci -q delete network.lan && changed=1
+uci -q delete network.globals && changed=1
 
-    # make sure wan6 uses wan as its base interface (common practice)
-    cur_if="$(uci -q get network.wan6.device)"
-    cur_if2="$(uci -q get network.wan6.ifname)"  # for older configs
-    if [ -n "$cur_if" ]; then
-        if [ "$cur_if" != "@wan" ]; then
-            uci set network.wan6.device='@wan'
+# 删除 bridge 设备（如果存在）
+for dev in $(uci show network | grep "=device" | cut -d. -f2 | cut -d= -f1); do
+    name="$(uci -q get network.$dev.name)"
+    case "$name" in
+        br-*)
+            uci delete network.$dev
             changed=1
-        fi
-    elif [ -n "$cur_if2" ]; then
-        # legacy ifname style
-        if [ "$cur_if2" != "@wan" ]; then
-            uci set network.wan6.ifname='@wan'
-            changed=1
-        fi
-    else
-        # if neither exists, set device (newer style). This doesn't change wan's device.
-        uci set network.wan6.device='@wan'
-        changed=1
-    fi
+            ;;
+    esac
+done
 
-    # request a delegated prefix for LAN
-    pd="$(uci -q get network.wan6.reqprefix)"
-    if [ -z "$pd" ] || [ "$pd" = "no" ] || [ "$pd" = "0" ]; then
-        uci set network.wan6.reqprefix='auto'
-        changed=1
-    fi
-fi
+# 为所有物理以太网口创建 DHCP 接口
+for iface in $(ip -o link show | awk -F': ' '{print $2}' | grep -E '^e(th|n|m)[0-9]+'); do
+    # 跳过已存在的接口
+    uci -q get network.$iface >/dev/null && continue
 
-# LAN: accept delegated prefix (many targets already have this)
-if uci -q get network.lan >/dev/null; then
-    ip6assign="$(uci -q get network.lan.ip6assign)"
-    if [ -z "$ip6assign" ] || [ "$ip6assign" = "0" ]; then
-        uci set network.lan.ip6assign='64'
-        changed=1
-    fi
-fi
+    uci set network.$iface=interface
+    uci set network.$iface.device="$iface"
+    uci set network.$iface.proto='dhcp'
+    changed=1
+done
+
+# IPv6：DHCPv6 client（无 PD 假设）
+for iface in $(uci show network | grep "=interface" | cut -d. -f2 | cut -d= -f1); do
+    proto="$(uci -q get network.$iface.proto)"
+    [ "$proto" = "dhcp" ] || continue
+
+    uci set network.${iface}6=interface
+    uci set network.${iface}6.device="@${iface}"
+    uci set network.${iface}6.proto='dhcpv6'
+    changed=1
+done
 
 [ "$changed" -eq 1 ] && uci commit network
 
