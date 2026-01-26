@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# 如果已经有 wan 接口，只改 proto，不碰 device / ifname
+if uci -q get network.wan >/dev/null; then
+    uci set network.wan.proto='dhcp'
+    uci commit network
+fi
+
+exit 0
