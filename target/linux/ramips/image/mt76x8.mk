@@ -21,6 +21,12 @@ define Build/elecom-header
 	mv $@.new $@
 endef
 
+define Build/qding-header
+  $(STAGING_DIR_HOST)/bin/mkqdimg \
+    -B $(1) -f $@ -o $@.new
+  mv $@.new $@
+endef
+
 define Build/ravpower-wd009-factory
 	mkimage -A mips -T standalone -C none -a 0x80010000 -e 0x80010000 \
 		-n "OpenWrt Bootloader" -d $(UBOOT_PATH) $@.new
@@ -28,6 +34,26 @@ define Build/ravpower-wd009-factory
 	@mv $@.new $@
 endef
 
+
+define Device/7links_wlr-12xx
+  IMAGE_SIZE := 7872k
+  DEVICE_VENDOR := 7Links
+  DEVICE_PACKAGES := kmod-mt7615e kmod-mt7663-firmware-ap
+  IMAGE/sysupgrade.bin := append-kernel | pad-to $$$$(BLOCKSIZE) | \
+	append-rootfs | pad-rootfs | check-size | append-metadata
+endef
+
+define Device/7links_wlr-1230
+  $(Device/7links_wlr-12xx)
+  DEVICE_MODEL := WLR-1230
+endef
+TARGET_DEVICES += 7links_wlr-1230
+
+define Device/7links_wlr-1240
+  $(Device/7links_wlr-12xx)
+  DEVICE_MODEL := WLR-1240
+endef
+TARGET_DEVICES += 7links_wlr-1240
 
 define Device/alfa-network_awusfree1
   IMAGE_SIZE := 7872k
@@ -115,7 +141,7 @@ TARGET_DEVICES += buffalo_wcr-1166ds
 define Device/comfast_cf-wr617ac
   IMAGE_SIZE := 7872k
   DTS := CF-WR617AC
-  DEVICE_VENDOR := Comfast
+  DEVICE_VENDOR := COMFAST
   DEVICE_MODEL := CF-WR617AC
   DEVICE_PACKAGES := kmod-mt76x2 kmod-rt2800-pci
 endef
@@ -146,6 +172,39 @@ define Device/comfast_cf-wr758ac-v2
   SUPPORTED_DEVICES += joowin,jw-wr758ac-v2
 endef
 TARGET_DEVICES += comfast_cf-wr758ac-v2
+
+define Device/cudy_m1200-v1
+  IMAGE_SIZE := 15872k
+  DEVICE_VENDOR := Cudy
+  DEVICE_MODEL := M1200
+  DEVICE_VARIANT := v1
+  DEVICE_PACKAGES := kmod-mt7615e kmod-mt7663-firmware-ap
+  UIMAGE_NAME := R22
+  SUPPORTED_DEVICES += R22
+endef
+TARGET_DEVICES += cudy_m1200-v1
+
+define Device/cudy_re1200-outdoor-v1
+  IMAGE_SIZE := 7808k
+  DEVICE_VENDOR := Cudy
+  DEVICE_MODEL := RE1200 Outdoor
+  DEVICE_VARIANT := v1
+  DEVICE_PACKAGES := kmod-mt7615e kmod-mt7663-firmware-ap
+  UIMAGE_NAME := R56
+  SUPPORTED_DEVICES += R56
+endef
+TARGET_DEVICES += cudy_re1200-outdoor-v1
+
+define Device/cudy_tr1200-v1
+  IMAGE_SIZE := 15872k
+  DEVICE_VENDOR := Cudy
+  DEVICE_MODEL := TR1200
+  DEVICE_VARIANT := v1
+  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci kmod-usb-ledtrig-usbport \
+	kmod-mt7615e kmod-mt7663-firmware-ap
+  SUPPORTED_DEVICES += R46
+endef
+TARGET_DEVICES += cudy_tr1200-v1
 
 define Device/cudy_wr1000
   IMAGE_SIZE := 7872k
@@ -258,6 +317,7 @@ define Device/hiwifi_hc5661a
   IMAGE_SIZE := 15808k
   DEVICE_VENDOR := HiWiFi
   DEVICE_MODEL := HC5661A
+  DEVICE_PACKAGES := kmod-mmc-mtk
   SUPPORTED_DEVICES += hc5661a
 endef
 TARGET_DEVICES += hiwifi_hc5661a
@@ -266,7 +326,7 @@ define Device/hiwifi_hc5761a
   IMAGE_SIZE := 15808k
   DEVICE_VENDOR := HiWiFi
   DEVICE_MODEL := HC5761A
-  DEVICE_PACKAGES := kmod-mt76x0e kmod-usb2 kmod-usb-ohci
+  DEVICE_PACKAGES := kmod-mmc-mtk kmod-mt76x0e kmod-usb2 kmod-usb-ohci
 endef
 TARGET_DEVICES += hiwifi_hc5761a
 
@@ -277,6 +337,24 @@ define Device/hiwifi_hc5861b
   DEVICE_PACKAGES := kmod-mt76x2
 endef
 TARGET_DEVICES += hiwifi_hc5861b
+
+define Device/hongdian_h7920-v40
+  IMAGE_SIZE := 16064k
+  DEVICE_VENDOR := Hongdian
+  DEVICE_MODEL := H7920
+  DEVICE_VARIANT := v40
+  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci kmod-usb-net-qmi-wwan kmod-usb-serial-option uqmi
+endef
+TARGET_DEVICES += hongdian_h7920-v40
+
+define Device/hongdian_h8850-v20
+  IMAGE_SIZE := 16064k
+  DEVICE_VENDOR := Hongdian
+  DEVICE_MODEL := H8850
+  DEVICE_VARIANT := v20
+  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci kmod-usb-net-qmi-wwan kmod-usb-serial-option uqmi
+endef
+TARGET_DEVICES += hongdian_h8850-v20
 
 define Device/iptime_a3
   IMAGE_SIZE := 7936k
@@ -375,7 +453,7 @@ define Device/mediatek_linkit-smart-7688
   IMAGE_SIZE := 32448k
   DEVICE_VENDOR := MediaTek
   DEVICE_MODEL := LinkIt Smart 7688
-  DEVICE_PACKAGES:= kmod-usb2 kmod-usb-ohci uboot-envtools kmod-sdhci-mt7620
+  DEVICE_PACKAGES:= kmod-usb2 kmod-usb-ohci uboot-envtools kmod-mmc-mtk
   SUPPORTED_DEVICES += linkits7688 linkits7688d
 endef
 TARGET_DEVICES += mediatek_linkit-smart-7688
@@ -468,7 +546,7 @@ define Device/onion_omega2p
   IMAGE_SIZE := 32448k
   DEVICE_VENDOR := Onion
   DEVICE_MODEL := Omega2+
-  DEVICE_PACKAGES:= kmod-usb2 kmod-usb-ohci uboot-envtools kmod-sdhci-mt7620
+  DEVICE_PACKAGES:= kmod-usb2 kmod-usb-ohci uboot-envtools kmod-mmc-mtk
   SUPPORTED_DEVICES += omega2p
 endef
 TARGET_DEVICES += onion_omega2p
@@ -480,6 +558,16 @@ define Device/oraybox_x1
   DEVICE_PACKAGES:= kmod-usb2 kmod-usb-ohci
 endef
 TARGET_DEVICES += oraybox_x1
+
+define Device/qding_qc202
+  IMAGE_SIZE := 7872k
+  DEVICE_VENDOR := Qding
+  DEVICE_MODEL := QC202
+  DEVICE_PACKAGES := kmod-i2c-mt7628 kmod-gpio-beeper kmod-input-matrix-keypad kmod-input-evdev uboot-envtools
+  IMAGES += factory.bin
+  IMAGE/factory.bin := $$(sysupgrade_bin) | qding-header qc202
+endef
+TARGET_DEVICES += qding_qc202
 
 define Device/rakwireless_rak633
   IMAGE_SIZE := 7872k
@@ -493,9 +581,9 @@ define Device/ravpower_rp-wd009
   IMAGE_SIZE := 14272k
   DEVICE_VENDOR := RAVPower
   DEVICE_MODEL := RP-WD009
-  UBOOT_PATH := $(STAGING_DIR_IMAGE)/ravpower_rp-wd009-u-boot.bin
+  UBOOT_PATH := $(STAGING_DIR_IMAGE)/mt7628_ravpower_rp-wd009-u-boot.bin
   DEVICE_PACKAGES := kmod-mt76x0e kmod-usb2 kmod-usb-ohci \
-	kmod-sdhci-mt7620 kmod-i2c-mt7628 ravpower-mcu
+	kmod-mmc-mtk kmod-i2c-mt7628 ravpower-mcu
   IMAGES += factory.bin
   IMAGE/factory.bin := $$(sysupgrade_bin) | ravpower-wd009-factory
 endef
@@ -606,6 +694,21 @@ define Device/tplink_archer-c50-v6
 endef
 TARGET_DEVICES += tplink_archer-c50-v6
 
+define Device/tplink_archer-mr200-v5
+  $(Device/tplink-v2)
+  IMAGE_SIZE := 7872k
+  DEVICE_MODEL := Archer MR200
+  DEVICE_VARIANT := v5
+  TPLINK_FLASHLAYOUT := 8MLmtk
+  TPLINK_HWID := 0x20000005
+  TPLINK_HWREV := 0x5
+  TPLINK_HWREVADD := 0x5
+  DEVICE_PACKAGES := kmod-mt76x0e uqmi kmod-usb2 kmod-usb-serial-option
+  IMAGES := sysupgrade.bin tftp-recovery.bin
+  IMAGE/tftp-recovery.bin := pad-extra 128k | $$(IMAGE/factory.bin)
+endef
+TARGET_DEVICES += tplink_archer-mr200-v5
+
 define Device/tplink_re200-v2
   $(Device/tplink-safeloader)
   IMAGE_SIZE := 7808k
@@ -635,6 +738,16 @@ define Device/tplink_re200-v4
   TPLINK_BOARD_ID := RE200-V4
 endef
 TARGET_DEVICES += tplink_re200-v4
+
+define Device/tplink_re205-v3
+  $(Device/tplink-safeloader)
+  IMAGE_SIZE := 7808k
+  DEVICE_MODEL := RE205
+  DEVICE_VARIANT := v3
+  DEVICE_PACKAGES := kmod-mt76x0e
+  TPLINK_BOARD_ID := RE205-V3
+endef
+TARGET_DEVICES += tplink_re205-v3
 
 define Device/tplink_re220-v2
   $(Device/tplink-safeloader)
@@ -898,7 +1011,7 @@ define Device/vocore_vocore2
   DEVICE_VENDOR := VoCore
   DEVICE_MODEL := VoCore2
   DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci kmod-usb-ledtrig-usbport \
-	kmod-sdhci-mt7620
+	kmod-mmc-mtk
   SUPPORTED_DEVICES += vocore2
 endef
 TARGET_DEVICES += vocore_vocore2
@@ -908,7 +1021,7 @@ define Device/vocore_vocore2-lite
   DEVICE_VENDOR := VoCore
   DEVICE_MODEL := VoCore2-Lite
   DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci kmod-usb-ledtrig-usbport \
-	kmod-sdhci-mt7620
+	kmod-mmc-mtk
   SUPPORTED_DEVICES += vocore2lite
 endef
 TARGET_DEVICES += vocore_vocore2-lite
@@ -1036,6 +1149,15 @@ define Device/xiaomi_mi-router-4a-100m-intl
 endef
 TARGET_DEVICES += xiaomi_mi-router-4a-100m-intl
 
+define Device/xiaomi_mi-router-4a-100m-intl-v2
+  IMAGE_SIZE := 14976k
+  DEVICE_VENDOR := Xiaomi
+  DEVICE_MODEL := Mi Router 4A
+  DEVICE_VARIANT := 100M International Edition V2
+  DEVICE_PACKAGES := kmod-mt7615e kmod-mt7663-firmware-ap
+endef
+TARGET_DEVICES += xiaomi_mi-router-4a-100m-intl-v2
+
 define Device/xiaomi_mi-router-4c
   IMAGE_SIZE := 14976k
   DEVICE_VENDOR := Xiaomi
@@ -1043,6 +1165,14 @@ define Device/xiaomi_mi-router-4c
   DEVICE_PACKAGES := uboot-envtools
 endef
 TARGET_DEVICES += xiaomi_mi-router-4c
+
+define Device/xiaomi_miwifi-3a
+  IMAGE_SIZE := 16064k
+  DEVICE_VENDOR := Xiaomi
+  DEVICE_MODEL := MiWiFi 3A
+  DEVICE_PACKAGES := kmod-mt76x2
+endef
+TARGET_DEVICES += xiaomi_miwifi-3a
 
 define Device/xiaomi_miwifi-3c
   IMAGE_SIZE := 15104k
@@ -1071,6 +1201,21 @@ define Device/xiaomi_mi-ra75
 endef
 TARGET_DEVICES += xiaomi_mi-ra75
 
+define Device/yuncore_cpe200
+  IMAGE_SIZE := 7872k
+  DEVICE_VENDOR := Yuncore
+  DEVICE_MODEL := CPE200
+  DEVICE_PACKAGES := -kmod-mt7603 kmod-mt7615e kmod-mt7663-firmware-ap kmod-mt7663-firmware-sta
+endef
+TARGET_DEVICES += yuncore_cpe200
+
+define Device/yuncore_m300
+  IMAGE_SIZE := 7872k
+  DEVICE_VENDOR := Yuncore
+  DEVICE_MODEL := M300
+endef
+TARGET_DEVICES += yuncore_m300
+
 define Device/zbtlink_zbt-we1226
   IMAGE_SIZE := 7872k
   DEVICE_VENDOR := Zbtlink
@@ -1078,9 +1223,17 @@ define Device/zbtlink_zbt-we1226
 endef
 TARGET_DEVICES += zbtlink_zbt-we1226
 
+define Device/zbtlink_zbt-we2426-b
+  IMAGE_SIZE := 7872k
+  DEVICE_VENDOR := Zbtlink
+  DEVICE_MODEL := ZBT-WE2426-B
+  DEVICE_PACKAGES := kmod-mt76x2 kmod-usb2 kmod-usb-ohci
+endef
+TARGET_DEVICES += zbtlink_zbt-we2426-b
+
 define Device/zyxel_keenetic-extra-ii
   IMAGE_SIZE := 29824k
-  DEVICE_VENDOR := ZyXEL
+  DEVICE_VENDOR := Zyxel
   DEVICE_MODEL := Keenetic Extra II
   DEVICE_PACKAGES := kmod-mt76x2 kmod-usb2 kmod-usb-ohci \
 	kmod-usb-ledtrig-usbport

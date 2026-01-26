@@ -15,6 +15,9 @@ boot() {
 			$((0xff)) ]] || printf '\xff' | dd of=/dev/mtdblock3 \
 			count=1 bs=1 seek=$((0x20001))
 		;;
+	jdcloud,re-cp-02)
+		echo -e "bootcount 0\nbootlimit 5\nupgrade_available 1"  | /usr/sbin/fw_setenv -s -
+		;;
 	linksys,e5600|\
 	linksys,ea6350-v4|\
 	linksys,ea7300-v1|\
@@ -28,6 +31,11 @@ boot() {
 	linksys,e7350|\
 	samknows,whitebox-v8)
 		fw_setenv bootcount 0
+		;;
+	dna,valokuitu-plus-ex400|\
+	genexis,pulse-ex400)
+		fw_setenv boot_cnt_primary 0
+		fw_setenv boot_cnt_alt 0
 		;;
 	zyxel,lte3301-plus)
 		[ $(printf %d $(fw_printenv -n DebugFlag)) -gt 0 ] || fw_setenv DebugFlag 1

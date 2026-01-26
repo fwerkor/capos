@@ -1,4 +1,3 @@
-
 . /lib/functions.sh
 . /lib/functions/uci-defaults.sh
 . /lib/functions/system.sh
@@ -11,6 +10,9 @@ ramips_setup_interfaces()
 	alfa-network,ax1800rm|\
 	ampedwireless,ally-r1900k|\
 	asus,rt-ax53u|\
+	buffalo,wsr-2533dhpl2|\
+	buffalo,wsr-2533dhpls|\
+	confiabits,mt7621-v1|\
 	gehua,ghl-r-001|\
 	h3c,tx1800-plus|\
 	h3c,tx1801-plus|\
@@ -20,12 +22,14 @@ ramips_setup_interfaces()
 	mercusys,mr70x-v1|\
 	netgear,wax202|\
 	sim,simax1800t|\
+	tplink,mr600-v2-eu|\
 	xiaomi,mi-router-3-pro|\
 	xiaomi,mi-router-ac2100|\
 	xiaomi,mi-router-cr6606|\
 	xiaomi,mi-router-cr6608|\
 	xiaomi,mi-router-cr6609|\
 	xiaomi,redmi-router-ac2100|\
+	z-router,zr-2660|\
 	zyxel,wsm20)
 		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3" "wan"
 		;;
@@ -33,8 +37,10 @@ ramips_setup_interfaces()
 		ucidef_set_interface_lan "swp0 swp1"
 		;;
 	ampedwireless,ally-00x19k|\
+	arcadyan,we410443|\
 	asus,rp-ac56|\
 	asus,rp-ac87|\
+	cudy,ap1300-outdoor-v1|\
 	dlink,dap-1620-b1|\
 	dlink,dap-x1860-a1|\
 	dlink,dra-1360-a1|\
@@ -44,6 +50,7 @@ ramips_setup_interfaces()
 	mikrotik,routerboard-m11g|\
 	netgear,eax12|\
 	netgear,ex6150|\
+	netgear,wax214v2|\
 	sercomm,na502|\
 	sercomm,na502s|\
 	thunder,timecloud|\
@@ -57,19 +64,34 @@ ramips_setup_interfaces()
 	ubnt,unifi-nanohd|\
 	yuncore,fap690|\
 	wavlink,wl-wn573hx1|\
+	wodesys,wd-r1802u|\
 	zyxel,nwa50ax|\
 	zyxel,nwa55axe)
 		ucidef_set_interface_lan "lan"
 		;;
 	asiarf,ap7621-001|\
+	comfast,cf-e390ax|\
+	comfast,cf-ew72-v2|\
+	cudy,m1300-v2|\
+	cudy,m1800|\
+	dna,valokuitu-plus-ex400|\
+	genexis,pulse-ex400|\
 	humax,e10|\
+	keenetic,kn-3510|\
+	meig,slt866|\
+	openfi,5pro|\
 	wavlink,ws-wn572hp3-4g|\
-	winstars,ws-wn583a6)
+	winstars,ws-wn583a6|\
+	yuncore,ax820|\
+	zyxel,nr7101)
 		ucidef_set_interfaces_lan_wan "lan" "wan"
 		;;
 	asiarf,ap7621-nv1|\
 	beeline,smartbox-flash|\
 	beeline,smartbox-giga|\
+	elecom,wmc-x1800gst|\
+	elecom,wrc-x1800gs|\
+	gemtek,wvrtm-127acn|\
 	glinet,gl-mt1300|\
 	iodata,wn-deax1800gr|\
 	iptime,a3002mesh|\
@@ -93,27 +115,28 @@ ramips_setup_interfaces()
 		uci add_list firewall.@zone[1].network='eth_data'
 		uci add_list firewall.@zone[1].network='eth_om'
 		;;
-	cudy,m1800|\
-	yuncore,ax820|\
-	zyxel,nr7101)
-		ucidef_set_interfaces_lan_wan "lan" "wan"
+	cudy,c200p|\
+	cudy,r700|\
+	mikrotik,routerboard-750gr3)
+		ucidef_set_interfaces_lan_wan "lan2 lan3 lan4 lan5" "wan"
 		;;
 	dlink,covr-x1860-a1)
 		ucidef_set_interfaces_lan_wan "ethernet" "internet"
+		;;
+	elecom,wmc-s1267gs2|\
+	linksys,re6500|\
+	netgear,wac104|\
+	zyxel,lte3301-plus)
+		ucidef_set_interface_lan "lan1 lan2 lan3 lan4"
+		;;
+	elecom,wsc-x1800gs)
+		ucidef_set_interface_lan "lan1 lan2"
 		;;
 	gnubee,gb-pc1)
 		ucidef_set_interface_lan "ethblack ethblue"
 		;;
 	gnubee,gb-pc2)
 		ucidef_set_interface_lan "ethblack ethblue ethyellow"
-		;;
-	linksys,re6500|\
-	netgear,wac104|\
-	zyxel,lte3301-plus)
-		ucidef_set_interface_lan "lan1 lan2 lan3 lan4"
-		;;
-	mikrotik,routerboard-750gr3)
-		ucidef_set_interfaces_lan_wan "lan2 lan3 lan4 lan5" "wan"
 		;;
 	mikrotik,routerboard-760igs)
 		ucidef_set_interfaces_lan_wan "lan2 lan3 lan4 lan5" "wan sfp"
@@ -134,13 +157,10 @@ ramips_setup_interfaces()
 		ucidef_set_interface_lan "lan0 lan1 lan2 lan3"
 		;;
 	tplink,er605-v2)
-		ucidef_set_interfaces_lan_wan "eth1 eth2 eth3 eth4" "eth0"
+		ucidef_set_interfaces_lan_wan "lan2 lan3 lan4 lan5" "wan1"
 		;;
 	tplink,tl-wpa8631p-v3)
 		ucidef_set_interface_lan "lan1 lan2 lan3 plc0"
-		;;
-	tplink,mr600-v2-eu)
-		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3" "wan"
 		;;
 	ubnt,edgerouter-x)
 		ucidef_set_interfaces_lan_wan "eth1 eth2 eth3 eth4" "eth0"
@@ -159,10 +179,8 @@ ramips_setup_interfaces()
 		ucidef_set_interface_lan "lan1 lan2 lan3 lan4"
 		ucidef_set_interface "qtn" ifname "eth1" protocol "static" ipaddr "1.1.1.1" netmask "255.255.255.0"
 		;;
-	comfast,cf-e390ax|\
-	comfast,cf-ew72-v2|\
-	meig,slt866)
-		ucidef_set_interfaces_lan_wan "lan" "wan"
+	ruijie,rg-ew1200g-pro-v1.1)
+		ucidef_set_interfaces_lan_wan "lan3 lan2 lan1" "wan"
 		;;
 	*)
 		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3 lan4" "wan"
@@ -184,6 +202,7 @@ ramips_setup_macs()
 	wavlink,wl-wn533a8|\
 	winstars,ws-wn583a6|\
 	zbtlink,zbt-we1326|\
+	zbtlink,zbt-wg108|\
 	zbtlink,zbt-wg3526-16m|\
 	zbtlink,zbt-wg3526-32m)
 		label_mac=$(mtd_get_mac_binary factory 0x4)
@@ -196,6 +215,10 @@ ramips_setup_macs()
 		lan_mac=$(mtd_get_mac_ascii hwconfig HW.LAN.MAC.Address)
 		wan_mac=$(mtd_get_mac_ascii hwconfig HW.WAN.MAC.Address)
 		label_mac=$lan_mac
+		;;
+	arcadyan,we410443)
+		label_mac=$(mtd_get_mac_ascii config mac)
+		lan_mac=$label_mac
 		;;
 	arcadyan,we420223-99)
 		label_mac=$(mtd_get_mac_ascii board_data mac)
@@ -212,7 +235,9 @@ ramips_setup_macs()
 		label_mac=$(macaddr_add "$wan_mac" 3)
 		lan_mac=$label_mac
 		;;
-	buffalo,wsr-1166dhp)
+	buffalo,wsr-1166dhp|\
+	buffalo,wsr-2533dhpl2|\
+	buffalo,wsr-2533dhpls)
 		wan_mac=$(mtd_get_mac_ascii board_data "mac")
 		lan_mac=$wan_mac
 		label_mac=$wan_mac
@@ -250,7 +275,7 @@ ramips_setup_macs()
 		wan_mac=$label_mac
 		;;
 	hiwifi,hc5962)
-		lan_mac=$(mtd_get_mac_ascii bdinfo "Vfac_mac ")
+		lan_mac=$(mtd_get_mac_ascii bdinfo "Vfac_mac")
 		label_mac=$lan_mac
 		[ -n "$lan_mac" ] || lan_mac=$(cat /sys/class/net/eth0/address)
 		wan_mac=$(macaddr_add "$lan_mac" 1)
@@ -260,7 +285,7 @@ ramips_setup_macs()
 		label_mac=$wan_mac
 		;;
 	iptime,t5004)
-		lan_mac=$(mtd_get_mac_ascii config ethaddr)
+		lan_mac=$(mtd_get_mac_ascii u-boot-env ethaddr)
 		wan_mac=$(macaddr_add "$lan_mac" 1)
 		;;
 	linksys,e5600|\
@@ -280,10 +305,6 @@ ramips_setup_macs()
 		wan_mac=$(mtd_get_mac_ascii Config wan_hwaddr)
 		label_mac=$lan_mac
 		;;
-	mikrotik,ltap-2hnd)
-		label_mac=$(cat "/sys/firmware/mikrotik/hard_config/mac_base")
-		lan_mac=$label_mac
-		;;
 	tplink,er605-v2)
 		CI_UBIPART="firmware"
 		label_mac=$(mtd_get_mac_uci_config_ubi "tddp")
@@ -295,13 +316,10 @@ ramips_setup_macs()
 		wwan_mac=$(macaddr_add $label_mac 1)
 		ucidef_set_interface "wwan0" device "/dev/cdc-wdm0" protocol "qmi" macaddr "$wwan_mac"
 		;;
-	mikrotik,routerboard-750gr3|\
-	mikrotik,routerboard-760igs|\
-	mikrotik,routerboard-m11g|\
-	mikrotik,routerboard-m33g)
-		label_mac=$(cat "/sys/firmware/mikrotik/hard_config/mac_base")
-		wan_mac=$label_mac
-		lan_mac=$(macaddr_add $label_mac 1)
+	ruijie,rg-ew1200g-pro-v1.1)
+		lan_mac=$(mtd_get_mac_ascii product_info ethaddr)
+		wan_mac=$(macaddr_add "$lan_mac" 8)
+		label_mac=$lan_mac
 		;;
 	mts,wg430223)
 		wan_mac=$(mtd_get_mac_encrypted_arcadyan "board_data")
@@ -315,6 +333,10 @@ ramips_setup_macs()
 	netgear,wax202)
 		lan_mac=$(mtd_get_mac_ascii Config mac)
 		wan_mac=$(macaddr_add "$lan_mac" 1)
+		label_mac=$lan_mac
+		;;
+	netgear,wax214v2)
+		lan_mac=$(mtd_get_mac_ascii Config ethaddr)
 		label_mac=$lan_mac
 		;;
 	yuncore,ax820)
