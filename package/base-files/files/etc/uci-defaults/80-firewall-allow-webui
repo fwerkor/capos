@@ -1,0 +1,36 @@
+#!/bin/sh
+# uci-defaults: add WebUI firewall rules (first boot)
+
+add_rule() {
+  local name="$1"
+  local port="$2"
+  local family="$3"
+
+  # idempotent: skip if rule with same name already exists
+  if uci show firewall 2>/dev/null | grep -q "name='$name'"; then
+    return 0
+  fi
+
+  uci add firewall rule >/dev/null
+  uci set firewall.@rule[-1].name="$name"
+  uci set firewall.@rule[-1].src="*"
+  uci set firewall.@rule[-1].proto="tcp"
+  uci set firewall.@rule[-1].dest_port="$port"
+  uci set firewall.@rule[-1].target="ACCEPT"
+  uci set firewall.@rule[-1].family="$family"
+}
+
+# Allow WebUI
+add_rule "Allow-WebUI-http-ipv4"  "2000" "ipv4"
+add_rule "Allow-WebUI-http-ipv6"  "2000" "ipv6"
+add_rule "Allow-WebUI-https-ipv4" "2020" "ipv4"
+add_rule "Allow-WebUI-https-ipv6" "2020" "ipv6"
+
+uci commit firewall
+
+# Optional: apply immediately (ignore errors during early boot)
+if [ -x /etc/init.d/firewall ]; then
+  /etc/init.d/firewall restart >/dev/null 2>&1 || true
+fi
+
+exit 0
