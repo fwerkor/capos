@@ -3,6 +3,7 @@
 		"https://downloads.sourceforge.net"
 	],
 	"@DEBIAN": [
+		"https://mirrors.nju.edu.cn/debian",
 		"https://ftp.debian.org/debian",
 		"https://mirror.leaseweb.com/debian",
 		"https://mirror.netcologne.de/debian",
@@ -10,6 +11,7 @@
 		"https://mirrors.ustc.edu.cn/debian"
 	],
 	"@APACHE": [
+		"https://mirrors.nju.edu.cn/apache",
 		"https://dlcdn.apache.org",
 		"https://mirror.aarnet.edu.au/pub/apache",
 		"https://mirror.csclub.uwaterloo.ca/apache",
@@ -26,6 +28,7 @@
                 "https://raw.githubusercontent.com"
         ],
 	"@GNU": [
+		"https://mirrors.nju.edu.cn/gnu",
 		"https://ftpmirror.gnu.org",
 		"https://mirror.csclub.uwaterloo.ca/gnu",
 		"https://mirror.netcologne.de/gnu",
@@ -46,6 +49,7 @@
 		"https://cdimage.debian.org/mirror/gnu.org/savannah"
 	],
 	"@KERNEL": [
+		"https://mirrors.nju.edu.cn/kernel.org/linux/kernel",
 		"https://cdn.kernel.org/pub",
 		"https://mirrors.mit.edu/kernel",
 		"http://ftp.nara.wide.ad.jp/pub/kernel.org",
@@ -55,6 +59,7 @@
 		"https://mirrors.ustc.edu.cn/kernel.org"
 	],
 	"@GNOME": [
+		"https://mirrors.nju.edu.cn/gnome",
 		"https://download.gnome.org/sources",
 		"https://mirror.csclub.uwaterloo.ca/gnome/sources",
 		"https://ftp.acc.umu.se/pub/GNOME/sources",
