@@ -4,6 +4,7 @@
 	],
 	"@DEBIAN": [
 		"https://ftp.debian.org/debian",
+		"https://mirrors.nju.edu.cn/debian",
 		"https://mirror.leaseweb.com/debian",
 		"https://mirror.netcologne.de/debian",
 		"https://mirrors.tuna.tsinghua.edu.cn/debian",
@@ -11,6 +12,7 @@
 	],
 	"@APACHE": [
 		"https://dlcdn.apache.org",
+		"https://mirrors.nju.edu.cn/apache",
 		"https://mirror.aarnet.edu.au/pub/apache",
 		"https://mirror.csclub.uwaterloo.ca/apache",
 		"https://archive.apache.org/dist",
@@ -27,6 +29,7 @@
         ],
 	"@GNU": [
 		"https://ftpmirror.gnu.org",
+		"https://mirrors.nju.edu.cn/gnu",
 		"https://mirror.csclub.uwaterloo.ca/gnu",
 		"https://mirror.netcologne.de/gnu",
 		"https://ftp.kddilabs.jp/GNU/gnu",
@@ -56,6 +59,7 @@
 	],
 	"@GNOME": [
 		"https://download.gnome.org/sources",
+		"https://mirrors.nju.edu.cn/gnome",
 		"https://mirror.csclub.uwaterloo.ca/gnome/sources",
 		"https://ftp.acc.umu.se/pub/GNOME/sources",
 		"http://ftp.cse.buffalo.edu/pub/Gnome/sources",
