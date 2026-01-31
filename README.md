@@ -35,7 +35,7 @@ The compiled version we provide may not include support for the user's hardware 
 
 Web panel is on `2000/tcp` (http) and `2020/tcp` (https). 
 
-Telnet is running on `23/tcp` before root password is set, while SSH will run on `22/tcp` after root password is set. 
+Telnet is running on `23/tcp` before root password is set, and SSH runs on `22/tcp`.  
 
 Unlike OpenWRT, CapOS defaults to setting the network interface protocol to `DHCP` and `DHCPv6`.
 
