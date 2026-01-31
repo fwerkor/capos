@@ -24,13 +24,22 @@ Maintained by FWERKOR Team, especially by Castronaut.
 
 CapOS aims to provide an easy-to-use and practical Linux server operating system for learning and experimentation. The simplified web UI and CLI make getting started with CapOS easy. If you are looking for a lightweight yet scalable Linux server solution, try CapOS! The CapOS Community Edition is open and free for everyone. Your feedback and suggestions will help us improve CapOS.
 
-## Download
+## Downloads
 
 * [Github Releases](https://github.com/fwerkor/capos/releases)
 * [FWERKOR Repository](https://repo.fwerkor.com/capos)
 
 The compiled version we provide may not include support for the user's hardware architecture, so users with relevant professional knowledge can compile CapOS by themselves. 
 
+## Useage
+
+Web panel is on `2000/tcp` (http) and `2020/tcp` (https). 
+
+Telnet is running on `23/tcp` before root password is set, while SSH will run on `22/tcp` after root password is set. 
+
+Unlike OpenWRT, CapOS defaults to setting the network interface protocol to `DHCP` and `DHCPv6`.
+
+The firewall by default accepts inbound requests from the `LAN` and rejects inbound requests from the `WAN` except for `2000/tcp` and `2020/tcp`.
 
 ## Development
 
@@ -64,16 +73,6 @@ We are committed to simplifying the CapOS application development process as muc
 We have provided some simple examples to help you quickly get started with CapOS application development.
 
 * [HelloWorld](https://github.com/fwerkor/capp-helloworld): A minimal example of building a web service from scratch using the Go programming language.
-
-## Useage
-
-Web panel is on `2000/tcp` (http) and `2020/tcp` (https). 
-
-Telnet is running on `23/tcp` before root password is set, while SSH will run on `22/tcp` after root password is set. 
-
-Unlike OpenWRT, CapOS defaults to setting the network interface protocol to `DHCP` and `DHCPv6`.
-
-The firewall by default accepts inbound requests from the `LAN` and rejects inbound requests from the `WAN` except for `2000/tcp` and `2020/tcp`.
 
 ## About
 
