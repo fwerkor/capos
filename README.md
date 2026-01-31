@@ -34,9 +34,11 @@ The compiled version we provide may not include support for the user's hardware 
 
 ## Development
 
-To build your own firmware you need a GNU/Linux, BSD or MacOSX system (case sensitive filesystem required). Cygwin is unsupported because of the lack of a case sensitive file system.
+As an open-source project, CapOS encourages professional developers to contribute to its improvement and to develop applications for it.
 
-### Requirements
+### Compile CapOS
+
+To build your own firmware you need a GNU/Linux, BSD or MacOSX system (case sensitive filesystem required). Cygwin is unsupported because of the lack of a case sensitive file system.
 
 You need the following tools to compile CapOS, the package names vary between distributions. A complete list with distribution specific packages can be found in OpenWrt's [Build System Setup](https://openwrt.org/docs/guide-developer/build-system/install-buildsystem) documentation. CapOS has provided a script that can automatically install dependencies on some system, but it is unstable so do it yourself if error occurs. 
 
@@ -44,8 +46,6 @@ You need the following tools to compile CapOS, the package names vary between di
 binutils bzip2 diff find flex gawk gcc-6+ getopt grep install libc-dev libz-dev
 make4.1+ perl python3.7+ rsync subversion unzip which
 ```
-
-### Build
 
 Now, you can simply follow these steps to build CapOS.
 
@@ -57,13 +57,23 @@ Note that do not use root user.
 
 3. Run `make` to build your firmware. This will download all sources, build the cross-compile toolchain and then cross-compile the GNU/Linux kernel & all chosen applications for your target system.
 
+### Develop Apps
+
+We are committed to simplifying the CapOS application development process as much as possible. You can read our [CAPP Development Guide](https://blog.fwerkor.com/archives/1123)
+
+We have provided some simple examples to help you quickly get started with CapOS application development.
+
+* [HelloWorld](https://github.com/fwerkor/capp-helloworld): A minimal example of building a web service from scratch using the Go programming language.
+
 ## Useage
 
-Web panel is on 2000/tcp (http) and 2020/tcp (https). 
+Web panel is on `2000/tcp` (http) and `2020/tcp` (https). 
 
-Telnet is running on 23/tcp before root password is set. 
+Telnet is running on `23/tcp` before root password is set, while SSH will run on `22/tcp` after root password is set. 
 
-SSH will run on 22/tcp after root password is set. 
+Unlike OpenWRT, CapOS defaults to setting the network interface protocol to `DHCP` and `DHCPv6`.
+
+The firewall by default accepts inbound requests from the `LAN` and rejects inbound requests from the `WAN` except for `2000/tcp` and `2020/tcp`.
 
 ## About
 
