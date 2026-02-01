@@ -45,7 +45,7 @@ define Package/base-files
 	+NAND_SUPPORT:ubi-utils +fstools +fwtool \
 	+SELINUX:procd-selinux +!SELINUX:procd +USE_SECCOMP:procd-seccomp \
 	+SELINUX:busybox-selinux +!SELINUX:busybox \
-	+luci +uhttpd
+	+capos-core
   TITLE:=Base filesystem for CapOS
   URL:=https://github.com/fwerkor/capos
   VERSION:=$(PKG_RELEASE)~$(lastword $(subst -, ,$(REVISION)))
