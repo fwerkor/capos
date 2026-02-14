@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get CapOS | 下载与部署</title>
+  <meta name="description" content="CapOS 下载、安装与快速部署指南。" />
+  <link rel="icon" href="./favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="./index.html"><span class="brand-dot"></span>CapOS</a>
+      <nav class="menu">
+        <a href="./index.html">首页</a>
+        <a class="active" href="./get-capos.html">Get CapOS</a>
+        <a href="./docs.html">文档</a>
+        <a href="./community.html">社区</a>
+        <a href="./about.html">关于</a>
+      </nav>
+      <a class="btn btn-ghost" href="https://github.com/fwerkor/capos" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <span class="badge">GET CAPOS</span>
+      <h1>下载、刷写、启动你的 <span class="gradient">CapOS 节点</span></h1>
+      <p class="lead">你可以直接使用官方编译版本，也可以根据硬件架构自行构建镜像。建议先在测试环境验证，再迁移到正式 NAS 或边缘节点。</p>
+      <div class="row">
+        <a class="btn btn-primary" href="https://github.com/fwerkor/capos/releases" target="_blank" rel="noreferrer">GitHub Releases</a>
+        <a class="btn btn-ghost" href="https://repo.fwerkor.com/capos" target="_blank" rel="noreferrer">FWERKOR Repo</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>部署方式</h2>
+      <div class="grid grid-3">
+        <article class="card"><h3>路由器 / ARM 设备</h3><p>适用于低功耗 NAS、网关与家庭边缘服务。充分利用轻量设计与高可用网络能力。</p></article>
+        <article class="card"><h3>x86 小主机 / 旧电脑</h3><p>可构建个人数据中心，运行文件管理、媒体服务与自动化任务，兼顾性能与成本。</p></article>
+        <article class="card"><h3>虚拟机环境</h3><p>推荐用于学习、测试与 CI 验证，便于快照回滚和多版本对比。</p></article>
+      </div>
+    </section>
+
+    <section class="section split">
+      <div class="card">
+        <h3>默认访问端口（README 同步）</h3>
+        <div class="table-like">
+          <div><strong>Web Panel</strong><span>http: 2000/tcp · https: 2020/tcp</span></div>
+          <div><strong>SSH</strong><span>22/tcp（设置 root 密码后）</span></div>
+          <div><strong>Telnet</strong><span>23/tcp（仅初始阶段）</span></div>
+          <div><strong>网络默认</strong><span>DHCP + DHCPv6</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>快速验证</h3>
+<pre># 首次登录后建议立即修改凭据
+passwd
+
+# 查看服务状态
+service status
+
+# 按需安装扩展包（示意）
+opkg update
+opkg list | head -n 20</pre>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="cta">
+        <h3>下一步：阅读构建与开发文档</h3>
+        <div class="row">
+          <a class="btn btn-primary" href="./docs.html">前往文档页</a>
+          <a class="btn btn-ghost" href="https://github.com/fwerkor/capos" target="_blank" rel="noreferrer">项目仓库</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>Get CapOS · Deploy anywhere</span>
+      <a href="https://github.com/fwerkor/capos/releases" target="_blank" rel="noreferrer">Release Channel</a>
+    </div>
+  </footer>
+  <button id="top" aria-label="Back to top">↑</button>
+  <script src="./script.js"></script>
+</body>
+</html>

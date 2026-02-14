@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CapOS Community | 社区与贡献</title>
+  <meta name="description" content="CapOS 社区支持、反馈与贡献入口。" />
+  <link rel="icon" href="./favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="./index.html"><span class="brand-dot"></span>CapOS</a>
+      <nav class="menu">
+        <a href="./index.html">首页</a>
+        <a href="./get-capos.html">Get CapOS</a>
+        <a href="./docs.html">文档</a>
+        <a class="active" href="./community.html">社区</a>
+        <a href="./about.html">关于</a>
+      </nav>
+      <a class="btn btn-ghost" href="https://github.com/fwerkor/capos" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <span class="badge">COMMUNITY</span>
+      <h1>把 CapOS 做成更好的 <span class="gradient">开源 NAS 系统</span></h1>
+      <p class="lead">CapOS 欢迎任何形式的贡献：问题反馈、功能建议、代码优化、文档改进、应用生态建设。只要你愿意参与，就能让项目更快进化。</p>
+    </section>
+
+    <section class="section">
+      <h2>参与方式</h2>
+      <div class="grid grid-3">
+        <article class="card"><h3>Issues</h3><p>提交 bug、兼容性问题和需求建议，帮助维护者快速定位优先级。</p><p><a href="https://github.com/fwerkor/capos/issues" target="_blank" rel="noreferrer">打开 Issues</a></p></article>
+        <article class="card"><h3>Discussions</h3><p>发起方案讨论、部署经验交流和新特性 brainstorm，沉淀社区共识。</p><p><a href="https://github.com/fwerkor/capos/discussions" target="_blank" rel="noreferrer">进入 Discussions</a></p></article>
+        <article class="card"><h3>Pull Requests</h3><p>提交代码与文档改进，建议附带可复现步骤和测试结果，便于评审合并。</p><p><a href="https://github.com/fwerkor/capos/pulls" target="_blank" rel="noreferrer">查看 PR</a></p></article>
+      </div>
+    </section>
+
+    <section class="section split">
+      <div class="card">
+        <h3>我们最期待的贡献</h3>
+        <ul>
+          <li>不同硬件架构的镜像测试与适配反馈。</li>
+          <li>WebDesktop 交互优化与可用性改进。</li>
+          <li>应用模板、部署脚本和最佳实践文档。</li>
+          <li>安全策略审查与性能压测数据。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>协作建议</h3>
+        <p>建议在提交 PR 前先开 Issue 讨论方向，减少重复开发；同时保持提交颗粒度清晰，便于 review 与回滚。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>Community-driven, open to everyone.</span>
+      <a href="https://github.com/fwerkor/capos" target="_blank" rel="noreferrer">Join on GitHub</a>
+    </div>
+  </footer>
+  <button id="top" aria-label="Back to top">↑</button>
+  <script src="./script.js"></script>
+</body>
+</html>

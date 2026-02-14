@@ -1,166 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CapOS - FWERKOR 科研项目</title>
-    <!-- 引入Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 引入Inter字体 -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- 引入Font Awesome图标 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Tailwind配置（与首页保持一致的配色体系） -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#0F172A', // 深蓝主色
-                        accent: '#06B6D4', // 青蓝色强调色
-                        secondary: '#1E293B', // 次深色
-                        code: '#111827',
-                    },
-                    fontFamily: {
-                        inter: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    
-    <!-- 自定义样式 -->
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .content-auto {
-                content-visibility: auto;
-            }
-            .text-shadow {
-                text-shadow: 0 2px 15px rgba(6, 182, 212, 0.3);
-            }
-            .bg-noise {
-                background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
-            }
-            .bg-gradient-tech {
-                background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
-            }
-            .hover-lift {
-                @apply transition-all duration-300 hover:translate-y-[-4px] hover:shadow-lg hover:shadow-accent/20;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CapOS | 开源 NAS 与轻量服务器操作系统</title>
+  <meta name="description" content="CapOS 是基于 OpenWrt 的开源 NAS / 轻量服务器操作系统，拥有强生态、高扩展、轻量化与 WebDesktop 管理体验。" />
+  <link rel="icon" href="./favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="./index.html"><span class="brand-dot"></span>CapOS</a>
+      <nav class="menu">
+        <a class="active" href="./index.html">首页</a>
+        <a href="./get-capos.html">Get CapOS</a>
+        <a href="./docs.html">文档</a>
+        <a href="./community.html">社区</a>
+        <a href="./about.html">关于</a>
+      </nav>
+      <a class="btn btn-ghost" href="https://github.com/fwerkor/capos" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </div>
+  </header>
 
-<body class="font-inter bg-primary text-white bg-noise min-h-screen">
-    <!-- 导航栏 -->
-    <nav class="fixed top-0 left-0 w-full z-50 py-4 px-6 md:px-12 bg-primary/90 backdrop-blur-md shadow-lg">
-        <div class="container mx-auto flex justify-between items-center">
-            <!-- 团队Logo + 返回首页 -->
-            <a href="/" class="text-2xl font-bold text-accent flex items-center gap-2">
-                <i class="fa-solid fa-microchip"></i>
-                <span>FWERKOR</span>
-                <span class="text-white text-sm font-normal ml-2">/ CapOS</span>
-            </a>
-            
-            <!-- GitHub链接 -->
-            <a href="https://github.com/fwerkor/capos" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-accent transition-colors hover-lift">
-                <i class="fa-brands fa-github text-xl"></i>
-                <span class="hidden md:inline">GitHub</span>
-            </a>
-        </div>
-    </nav>
-
-    <!-- 英雄区 -->
-    <section class="h-screen flex items-center justify-center px-6 md:px-12 pt-20">
-        <div class="container mx-auto max-w-5xl">
-            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                <!-- 左侧标题区 -->
-                <div class="w-full md:w-1/2">
-                    <span class="inline-block text-accent text-sm font-medium px-3 py-1 rounded-full bg-accent/10 mb-4">
-                        <i class="fa-solid fa-code mr-2"></i>操作系统
-                    </span>
-                    <h1 class="text-[clamp(2.8rem,8vw,5rem)] font-extrabold leading-tight text-shadow mb-6">
-                        Cap<span class="text-accent">OS</span>
-                    </h1>
-                    <p class="text-gray-300 text-lg md:text-xl mb-8">
-                        轻量、稳定、兼容、安全、易用的新一代操作系统
-                    </p>
-                    <!-- GitHub按钮 -->
-                    <a href="https://github.com/fwerkor/capos" target="_blank" class="inline-flex items-center justify-center gap-2 bg-code border border-gray-700 rounded-lg px-6 py-3 hover-lift">
-                        <i class="fa-brands fa-github text-xl"></i>
-                        <span>访问项目仓库</span>
-                    </a>
-                </div>
-                
-                <!-- 右侧代码风格装饰块 -->
-                <div class="w-full md:w-1/2 bg-code border border-gray-700 rounded-xl p-6 shadow-xl shadow-accent/10">
-                    <div class="flex items-center gap-2 mb-4">
-                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                        <span class="text-gray-400 text-sm ml-2">capos/kernel/main.c</span>
-                    </div>
-                    <pre class="text-sm md:text-base text-gray-300 font-mono leading-relaxed overflow-x-auto">
-<span class="text-accent">// CapOS 核心初始化入口</span>
-int capos_kernel_init(void) {
-    <span class="text-purple-400">// 初始化内存管理</span>
-    mem_manager_init();
-    <span class="text-purple-400">// 初始化进程调度</span>
-    scheduler_init();
-    <span class="text-purple-400">// 初始化设备驱动</span>
-    driver_manager_init();
-    
-    <span class="text-green-400">return CAPOS_SUCCESS</span>;
-}</pre>
-                </div>
-            </div>
-        </div>
+  <main class="container">
+    <section class="hero">
+      <span class="badge">OPEN SOURCE · NAS · EDGE SERVER</span>
+      <h1>把 <span class="gradient">OpenWrt 的稳定内核</span> 带到现代 NAS 与家庭实验室体验里</h1>
+      <p class="lead">CapOS 本质是一个开源 NAS / 轻量服务器操作系统：继承 OpenWrt 生态优势，强调轻量与可扩展；同时提供 WebDesktop 管理体验，让非专业用户也能完成服务部署、系统运维与资源管理。</p>
+      <div class="row">
+        <a class="btn btn-primary" href="./get-capos.html">立即开始</a>
+        <a class="btn btn-ghost" href="https://github.com/fwerkor/capos" target="_blank" rel="noreferrer">查看源码</a>
+        <a class="btn btn-ghost" href="./docs.html">阅读文档</a>
+      </div>
+      <div class="panel">
+        <div class="term-head"><span></span><span></span><span></span><code>capos boot / service profile</code></div>
+<pre>[ OK ] init: lightweight core modules loaded
+[ OK ] webdesktop: ready at :2000 / :2020
+[ OK ] package manager: community feeds online
+[ OK ] security baseline: firewall + user isolation
+[ RUN] caposctl app install file-manager media-stack</pre>
+      </div>
     </section>
 
-    <!-- 项目介绍区 -->
-    <section class="py-20 px-6 md:px-12 bg-secondary/30">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">
-                <span class="text-accent">#</span> 项目介绍
-            </h2>
-            <div class="bg-code/50 border border-gray-700 rounded-xl p-8 md:p-10 shadow-lg">
-                <p class="text-gray-200 leading-relaxed text-lg">
-                    物联网技术的蓬勃发展推动轻量化运算设施需求激增，而现有NAS系统普遍面临闭源封闭、兼容性受限、应用集成松散、非专业用户操作门槛高等痛点，难以适配多场景使用需求。为填补这一空白，本课题拟研发一个开源轻量化服务器操作系统，并基于开源技术体系构建兼顾易用性、安全性与扩展性的新型系统生态。核心目标是突破现有系统的应用隔离与权限管控局限，实现多用户安全共享与资源精细化管理，让专业用户高效完成扩展配置，非专业用户无需技术积累即可轻松使用各类功能，同时为商业运营场景提供灵活的部署方案，达成“轻量化设备，全场景赋能”的应用效果。核心创新在于采用开源内核与分层架构设计，实现开源兼容性与商业化增值服务的有机平衡，兼顾技术开放性与可持续发展；创新多维度隔离机制，构建用户、应用、资源的全链路隔离体系，保障系统安全与运行稳定；打造一体化应用生态与可视化操作界面，整合全场景功能模块，实现应用一键部署与智能适配，降低操作复杂度；建立跨架构适配体系，兼容多硬件平台，突破现有系统的硬件绑定限制，拓展应用边界。本课题成果可覆盖个人用户、专业玩家与商业运营等多类场景，既能满足私人存储、智能家居管理等个人需求，又能为专业用户提供高效扩展能力，同时助力商业场景实现设备资源的集约化管理。
-                </p>
-            </div>
-        </div>
+    <section class="section">
+      <div class="kicker">WHY CAPOS</div>
+      <h2>围绕“生态、扩展、轻量、易用”打造</h2>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>生态强大</h3>
+          <p>CapOS 基于 OpenWrt 技术体系，天然具备成熟包生态与多架构兼容基础，既适合老硬件再利用，也利于持续演进。</p>
+        </article>
+        <article class="card">
+          <h3>扩展性强</h3>
+          <p>你可以按需叠加服务与模块，构建个人 NAS、下载中心、家庭自动化中枢，或作为边缘节点运行专业应用。</p>
+        </article>
+        <article class="card">
+          <h3>轻量而实用</h3>
+          <p>延续 OpenWrt 的小体积与低资源占用特性，在路由器、x86 主机、虚拟机等环境都能平稳运行。</p>
+        </article>
+        <article class="card">
+          <h3>WebDesktop 管理</h3>
+          <p>通过浏览器即可完成配置、监控和软件安装；相比纯命令行方案，对新手更友好，对老手更高效。</p>
+        </article>
+        <article class="card">
+          <h3>安全与稳定</h3>
+          <p>遵循稳健系统基线，默认防火墙策略清晰，并持续跟进内核与软件包更新，兼顾长期可维护性。</p>
+        </article>
+        <article class="card">
+          <h3>真正开源</h3>
+          <p>GPL-2.0 许可，欢迎社区通过 Issue、Discussion、PR 参与建设，让 CapOS 持续变得更完整。</p>
+        </article>
+      </div>
     </section>
 
-    <!-- 底部行动区 -->
-    <section class="py-16 px-6 md:px-12">
-        <div class="container mx-auto max-w-3xl text-center">
-            <h3 class="text-2xl font-bold mb-6">探索CapOS的更多可能性</h3>
-            <a href="https://github.com/fwerkor/capos" target="_blank" class="inline-flex items-center justify-center gap-2 bg-accent text-primary font-medium rounded-lg px-8 py-4 text-lg hover-lift">
-                <i class="fa-brands fa-github mr-2"></i>
-                前往GitHub查看源码
-            </a>
+    <section class="section split">
+      <div class="card">
+        <div class="kicker">ROADMAP</div>
+        <h3>开发路线（示例）</h3>
+        <div class="timeline">
+          <div><b>2026 H1</b><p>强化基础镜像构建能力，优化多架构启动和驱动兼容策略。</p></div>
+          <div><b>2026 H2</b><p>完善 WebDesktop 的应用管理与资源可视化，提升新手开箱体验。</p></div>
+          <div><b>2027</b><p>增强插件化与应用交付规范，形成更健康的 CapOS 应用生态。</p></div>
         </div>
+      </div>
+      <div class="card">
+        <div class="kicker">QUICK LINKS</div>
+        <h3>快速访问</h3>
+        <ul>
+          <li><a href="./get-capos.html">下载与安装入口（Get CapOS）</a></li>
+          <li><a href="./docs.html">构建、部署与运维文档</a></li>
+          <li><a href="./community.html">社区支持与贡献方式</a></li>
+          <li><a href="https://github.com/fwerkor/capos/releases" target="_blank" rel="noreferrer">GitHub Releases</a></li>
+        </ul>
+      </div>
     </section>
 
-    <!-- 页脚 -->
-    <footer class="bg-secondary py-10 px-6 md:px-12 border-t border-gray-700">
-        <div class="container mx-auto text-center text-gray-400">
-            <p>© 2026 FWERKOR 烽尔科技有限公司</p>
-            <p class="text-sm mt-2">CapOS - 嵌入式与边缘计算操作系统内核</p>
+    <section class="section">
+      <div class="cta">
+        <h3>准备部署到 www.capos.org？</h3>
+        <p class="desc">该站点为纯静态多页面结构（HTML/CSS/JS），便于低成本托管与长期维护，也方便后续接入文档系统或下载镜像索引。</p>
+        <div class="row">
+          <a class="btn btn-primary" href="./get-capos.html">查看部署入口</a>
+          <a class="btn btn-ghost" href="https://github.com/fwerkor/capos" target="_blank" rel="noreferrer">github.com/fwerkor/capos</a>
         </div>
-    </footer>
+      </div>
+    </section>
+  </main>
 
-    <!-- 平滑滚动脚本 -->
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 CapOS Community · Open-source NAS & Server OS</span>
+      <a href="https://github.com/fwerkor/capos" target="_blank" rel="noreferrer">github.com/fwerkor/capos</a>
+    </div>
+  </footer>
+  <button id="top" aria-label="Back to top">↑</button>
+  <script src="./script.js"></script>
 </body>
 </html>

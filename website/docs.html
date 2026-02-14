@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CapOS Docs | 构建与开发</title>
+  <meta name="description" content="CapOS 构建、开发与运维文档索引。" />
+  <link rel="icon" href="./favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="./index.html"><span class="brand-dot"></span>CapOS</a>
+      <nav class="menu">
+        <a href="./index.html">首页</a>
+        <a href="./get-capos.html">Get CapOS</a>
+        <a class="active" href="./docs.html">文档</a>
+        <a href="./community.html">社区</a>
+        <a href="./about.html">关于</a>
+      </nav>
+      <a class="btn btn-ghost" href="https://github.com/fwerkor/capos" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <span class="badge">DOCUMENTATION</span>
+      <h1>从编译到部署，<span class="gradient">一条线打通</span></h1>
+      <p class="lead">CapOS 鼓励开发者和高级用户自行构建镜像，并在统一规范下扩展应用。以下内容基于项目 README 提炼，适用于学习、实验与工程化落地。</p>
+    </section>
+
+    <section class="section">
+      <h2>构建 CapOS（概要）</h2>
+      <div class="grid grid-2">
+        <article class="card">
+          <h3>环境要求</h3>
+          <p>推荐 GNU/Linux、BSD 或 macOS（需要区分大小写文件系统）。避免使用 root 用户执行构建流程。</p>
+        </article>
+        <article class="card">
+          <h3>依赖工具</h3>
+          <p>需要 binutils、gcc、make、python3、subversion、rsync 等标准编译工具链。</p>
+        </article>
+      </div>
+      <div class="panel" style="margin-top:14px;">
+        <div class="term-head"><span></span><span></span><span></span><code>build workflow</code></div>
+<pre>bash ./scripts/auto_install_dependencies.sh
+make menuconfig
+make -j$(nproc)</pre>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>能力模型</h2>
+      <div class="grid grid-3">
+        <article class="card"><h3>WebDesktop</h3><p>通过浏览器图形化操作系统，降低学习门槛，帮助非 Linux 专业用户也能稳定管理服务。</p></article>
+        <article class="card"><h3>CLI 友好</h3><p>保留标准 Linux 命令体验，支持自动化脚本与批量运维，兼顾高阶用户习惯。</p></article>
+        <article class="card"><h3>应用扩展</h3><p>可结合社区 package 与 CapOS 应用能力持续扩展，构建面向家庭和专业场景的服务组合。</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="cta">
+        <h3>更多参考入口</h3>
+        <div class="row">
+          <a class="btn btn-primary" href="https://blog.fwerkor.com/category/capos" target="_blank" rel="noreferrer">FWERKOR Blog</a>
+          <a class="btn btn-ghost" href="https://github.com/fwerkor/capp-helloworld" target="_blank" rel="noreferrer">CAPP HelloWorld</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>Docs · Build · Develop · Operate</span>
+      <a href="https://github.com/fwerkor/capos" target="_blank" rel="noreferrer">Source Code</a>
+    </div>
+  </footer>
+  <button id="top" aria-label="Back to top">↑</button>
+  <script src="./script.js"></script>
+</body>
+</html>
