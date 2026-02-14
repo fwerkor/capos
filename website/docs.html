@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CapOS Docs | Build, Deploy, Develop</title>
+  <meta name="description" content="Documentation overview for building, deploying, and developing on CapOS." />
+  <link rel="icon" href="./favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="./index.html"><span class="brand-dot"></span>CapOS</a>
+      <nav class="menu">
+        <a href="./index.html">Home</a>
+        <a href="./get-capos.html">Get CapOS</a>
+        <a class="active" href="./docs.html">Docs</a>
+        <a href="./community.html">Community</a>
+        <a href="./about.html">About</a>
+      </nav>
+      <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobileNav">Menu ☰</button>
+      <a class="btn btn-ghost header-github" href="https://github.com/fwerkor/capos" target="_blank" rel="noreferrer">GitHub ↗</a>
+      <div id="mobileNav" class="mobile-nav" hidden>
+        <nav class="mobile-menu">
+          <a href="./index.html">Home</a>
+          <a href="./get-capos.html">Get CapOS</a>
+          <a class="active" href="./docs.html">Docs</a>
+          <a href="./community.html">Community</a>
+          <a href="./about.html">About</a>
+        </nav>
+        <a class="btn btn-ghost" href="https://github.com/fwerkor/capos" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <span class="badge">DOCUMENTATION</span>
+      <h1>Build, deploy, and customize <span class="gradient">CapOS</span></h1>
+      <p class="lead">CapOS supports both quick deployment and full source-based workflows. Use this page as an entry point to system setup, firmware builds, and app development resources.</p>
+    </section>
+
+    <section class="section">
+      <h2>Build from source</h2>
+      <div class="grid grid-2">
+        <article class="card"><h3>Recommended host systems</h3><p>GNU/Linux, BSD, or macOS with a case-sensitive filesystem. Use a non-root user for all build steps.</p></article>
+        <article class="card"><h3>Core toolchain requirements</h3><p>Use standard build tools including gcc, make, python3, rsync, subversion, and related utilities.</p></article>
+      </div>
+      <div class="panel" style="margin-top:14px;">
+        <div class="term-head"><span></span><span></span><span></span><code>build workflow</code></div>
+<pre>bash ./scripts/auto_install_dependencies.sh
+make menuconfig
+make -j$(nproc)</pre>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Platform capabilities</h2>
+      <div class="grid grid-3">
+        <article class="card"><h3>WebDesktop Operations</h3><p>Operate core server workflows through a browser-based desktop interface that lowers the entry barrier.</p></article>
+        <article class="card"><h3>CLI Automation</h3><p>Use shell scripts and standard Linux commands for reproducible operations and advanced administration.</p></article>
+        <article class="card"><h3>App Extensibility</h3><p>Expand your system with packages and custom application stacks to match home and professional scenarios.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>Docs · Build · Operate · Extend</span>
+      <a href="https://github.com/fwerkor/capos" target="_blank" rel="noreferrer">Source Code</a>
+    </div>
+  </footer>
+  <button id="top" aria-label="Back to top">↑</button>
+  <script src="./script.js"></script>
+</body>
+</html>

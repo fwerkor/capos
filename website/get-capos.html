@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get CapOS | Download & Install</title>
+  <meta name="description" content="Download CapOS builds and deploy them on your hardware or virtual environments." />
+  <link rel="icon" href="./favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="./index.html"><span class="brand-dot"></span>CapOS</a>
+      <nav class="menu">
+        <a href="./index.html">Home</a>
+        <a class="active" href="./get-capos.html">Get CapOS</a>
+        <a href="./docs.html">Docs</a>
+        <a href="./community.html">Community</a>
+        <a href="./about.html">About</a>
+      </nav>
+      <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobileNav">Menu ☰</button>
+      <a class="btn btn-ghost header-github" href="https://github.com/fwerkor/capos" target="_blank" rel="noreferrer">GitHub ↗</a>
+      <div id="mobileNav" class="mobile-nav" hidden>
+        <nav class="mobile-menu">
+          <a href="./index.html">Home</a>
+          <a class="active" href="./get-capos.html">Get CapOS</a>
+          <a href="./docs.html">Docs</a>
+          <a href="./community.html">Community</a>
+          <a href="./about.html">About</a>
+        </nav>
+        <a class="btn btn-ghost" href="https://github.com/fwerkor/capos" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <span class="badge">GET CAPOS</span>
+      <h1>Download and boot your <span class="gradient">CapOS node</span></h1>
+      <p class="lead">Use official builds for a fast start, or compile your own firmware for architecture-specific optimization and advanced customization.</p>
+      <div class="row">
+        <a class="btn btn-primary" href="https://github.com/fwerkor/capos/releases" target="_blank" rel="noreferrer">GitHub Releases</a>
+        <a class="btn btn-ghost" href="https://repo.fwerkor.com/capos" target="_blank" rel="noreferrer">FWERKOR Repository</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Deployment targets</h2>
+      <div class="grid grid-3">
+        <article class="card"><h3>ARM devices</h3><p>Great for low-power NAS nodes, network appliances, and always-on home edge services.</p></article>
+        <article class="card"><h3>x86 mini PCs</h3><p>Perfect for file servers, media platforms, and automation workloads with stronger compute needs.</p></article>
+        <article class="card"><h3>Virtual machines</h3><p>Best for evaluation, CI testing, and staging before deployment to physical hardware.</p></article>
+      </div>
+    </section>
+
+    <section class="section split">
+      <div class="card">
+        <h3>Default access points</h3>
+        <div class="table-like">
+          <div><strong>Web Panel</strong><span>HTTP 2000/tcp · HTTPS 2020/tcp</span></div>
+          <div><strong>SSH</strong><span>22/tcp (after root password is set)</span></div>
+          <div><strong>Telnet</strong><span>23/tcp (initial bootstrap stage)</span></div>
+          <div><strong>Network defaults</strong><span>DHCP + DHCPv6</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>First-run checklist</h3>
+<pre># Secure credentials
+passwd
+
+# Verify system services
+service status
+
+# Inspect package availability
+opkg update
+opkg list | head -n 20</pre>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>Get CapOS · Download, deploy, scale</span>
+      <a href="https://github.com/fwerkor/capos/releases" target="_blank" rel="noreferrer">Release Channel</a>
+    </div>
+  </footer>
+  <button id="top" aria-label="Back to top">↑</button>
+  <script src="./script.js"></script>
+</body>
+</html>

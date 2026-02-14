@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About CapOS | Mission and Direction</title>
+  <meta name="description" content="Learn what CapOS is, why it exists, and how the project is maintained." />
+  <link rel="icon" href="./favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="./index.html"><span class="brand-dot"></span>CapOS</a>
+      <nav class="menu">
+        <a href="./index.html">Home</a>
+        <a href="./get-capos.html">Get CapOS</a>
+        <a href="./docs.html">Docs</a>
+        <a href="./community.html">Community</a>
+        <a class="active" href="./about.html">About</a>
+      </nav>
+      <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobileNav">Menu ☰</button>
+      <a class="btn btn-ghost header-github" href="https://github.com/fwerkor/capos" target="_blank" rel="noreferrer">GitHub ↗</a>
+      <div id="mobileNav" class="mobile-nav" hidden>
+        <nav class="mobile-menu">
+          <a href="./index.html">Home</a>
+          <a href="./get-capos.html">Get CapOS</a>
+          <a href="./docs.html">Docs</a>
+          <a href="./community.html">Community</a>
+          <a class="active" href="./about.html">About</a>
+        </nav>
+        <a class="btn btn-ghost" href="https://github.com/fwerkor/capos" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <span class="badge">ABOUT CAPOS</span>
+      <h1>An open platform for <span class="gradient">NAS and edge computing</span></h1>
+      <p class="lead">CapOS is maintained by the FWERKOR Team as an open-source operating system focused on practical server workflows, extensible architecture, and approachable system management.</p>
+    </section>
+
+    <section class="section">
+      <h2>Project goals</h2>
+      <div class="grid grid-2">
+        <article class="card"><h3>For makers and home labs</h3><p>Provide an easy path to deploy storage, media, automation, and self-hosted services on affordable hardware.</p></article>
+        <article class="card"><h3>For advanced users and teams</h3><p>Preserve low-level control, scriptability, and modular expansion for professional and semi-professional environments.</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Core principles</h2>
+      <div class="grid grid-3">
+        <article class="card"><h3>Open First</h3><p>Transparent development and community collaboration are fundamental to the project.</p></article>
+        <article class="card"><h3>Practical First</h3><p>Design decisions prioritize reliability, maintainability, and real deployment value.</p></article>
+        <article class="card"><h3>User First</h3><p>Balance a smooth WebDesktop experience with strong CLI workflows for advanced operation.</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h3>License</h3>
+        <p>CapOS is released under GPL-2.0. Contributions and derivative work are welcome under license terms.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>FWERKOR Team · Maintained with community</span>
+      <a href="https://github.com/fwerkor/capos" target="_blank" rel="noreferrer">github.com/fwerkor/capos</a>
+    </div>
+  </footer>
+  <button id="top" aria-label="Back to top">↑</button>
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CapOS Community | Contribute and Connect</title>
+  <meta name="description" content="Join the CapOS community through issues, discussions, and pull requests." />
+  <link rel="icon" href="./favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="./index.html"><span class="brand-dot"></span>CapOS</a>
+      <nav class="menu">
+        <a href="./index.html">Home</a>
+        <a href="./get-capos.html">Get CapOS</a>
+        <a href="./docs.html">Docs</a>
+        <a class="active" href="./community.html">Community</a>
+        <a href="./about.html">About</a>
+      </nav>
+      <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobileNav">Menu ☰</button>
+      <a class="btn btn-ghost header-github" href="https://github.com/fwerkor/capos" target="_blank" rel="noreferrer">GitHub ↗</a>
+      <div id="mobileNav" class="mobile-nav" hidden>
+        <nav class="mobile-menu">
+          <a href="./index.html">Home</a>
+          <a href="./get-capos.html">Get CapOS</a>
+          <a href="./docs.html">Docs</a>
+          <a class="active" href="./community.html">Community</a>
+          <a href="./about.html">About</a>
+        </nav>
+        <a class="btn btn-ghost" href="https://github.com/fwerkor/capos" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <span class="badge">COMMUNITY</span>
+      <h1>Help shape the future of <span class="gradient">CapOS</span></h1>
+      <p class="lead">CapOS is developed in the open. Whether you report bugs, improve docs, test builds, or submit code, your contribution directly improves the platform for everyone.</p>
+    </section>
+
+    <section class="section">
+      <h2>Where to contribute</h2>
+      <div class="grid grid-3">
+        <article class="card"><h3>Issues</h3><p>Report bugs, request features, and share compatibility findings.</p><p><a href="https://github.com/fwerkor/capos/issues" target="_blank" rel="noreferrer">Open Issues</a></p></article>
+        <article class="card"><h3>Discussions</h3><p>Share ideas, deployment experiences, and architecture proposals.</p><p><a href="https://github.com/fwerkor/capos/discussions" target="_blank" rel="noreferrer">Join Discussions</a></p></article>
+        <article class="card"><h3>Pull Requests</h3><p>Submit improvements to code, docs, and workflows.</p><p><a href="https://github.com/fwerkor/capos/pulls" target="_blank" rel="noreferrer">Browse PRs</a></p></article>
+      </div>
+    </section>
+
+    <section class="section split">
+      <div class="card">
+        <h3>High-impact contribution areas</h3>
+        <ul>
+          <li>Hardware compatibility and boot validation</li>
+          <li>WebDesktop UX and management workflows</li>
+          <li>Documentation quality and onboarding paths</li>
+          <li>Security hardening and performance tuning</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Collaboration tip</h3>
+        <p>Open a discussion or issue before major implementation work so direction and scope are clear before coding begins.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>Community-driven and open to everyone.</span>
+      <a href="https://github.com/fwerkor/capos" target="_blank" rel="noreferrer">Join on GitHub</a>
+    </div>
+  </footer>
+  <button id="top" aria-label="Back to top">↑</button>
+  <script src="./script.js"></script>
+</body>
+</html>
