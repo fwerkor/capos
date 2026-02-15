@@ -96,3 +96,15 @@ We have provided some simple examples to help you quickly get started with CapOS
 ### License
 
 CapOS is licensed under GPL-2.0. 
+
+### Status
+
+<a href="https://www.star-history.com/#fwerkor/capos&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=fwerkor/capos&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=fwerkor/capos&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=fwerkor/capos&type=date&legend=top-left" />
+ </picture>
+</a>
+
+![Alt](https://repobeats.axiom.co/api/embed/ed4a081fa92fc9600b18e5a14aaa4a6092da655c.svg "Repobeats analytics image")
