@@ -1,5 +1,13 @@
 # FWERKOR CapOS
 
+![Build Status](https://github.com/fwerkor/capos/actions/workflows/os-sanity.yml/badge.svg)
+![Release](https://img.shields.io/github/v/release/fwerkor/capos?display_name=tag)
+![Stars](https://img.shields.io/github/stars/fwerkor/capos?style=flat)
+![Forks](https://img.shields.io/github/forks/fwerkor/capos?style=flat)
+![Issues](https://img.shields.io/github/issues/fwerkor/capos)
+![PRs](https://img.shields.io/github/issues-pr/fwerkor/capos)
+![Last Commit](https://img.shields.io/github/last-commit/fwerkor/capos)
+
 ![OpenWrt logo](include/logo.png)
 
 CapOS is an open-source server operating system based on OpenWrt. It aims to provide an easy-to-use Linux server operating system that is more suitable for both home and professional deployments. We leverage the advantages of OpenWrt and incorporate a Webdesktop management interface, customizing CapOS into a full-featured server operating system.
