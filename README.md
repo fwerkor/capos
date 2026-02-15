@@ -39,7 +39,7 @@ CapOS aims to provide an easy-to-use and practical Linux server operating system
 * [Github Releases](https://github.com/fwerkor/capos/releases)
 * [FWERKOR Repository](https://repo.fwerkor.com/capos)
 
-The compiled version we provide may not include support for the user's hardware architecture, so users with relevant professional knowledge can compile CapOS by themselves. 
+You can learn more at our [Wiki](https://github.com/fwerkor/capos/wiki/Quick-start-guide).
 
 ## Useage
 
@@ -92,6 +92,7 @@ We have provided some simple examples to help you quickly get started with CapOS
 
 ### Documentation
 
+* [GitHub Wiki](https://github.com/fwerkor/capos/wiki)
 * [FWERKOR Blog (For CapOS)](https://blog.fwerkor.com/category/capos)
 
 ### Community
@@ -105,8 +106,8 @@ CapOS is licensed under GPL-2.0.
 
 ### Status
 
-![Alt](https://repobeats.axiom.co/api/embed/ed4a081fa92fc9600b18e5a14aaa4a6092da655c.svg "Repobeats analytics image")
-
+<p align="center">
+<img src="https://repobeats.axiom.co/api/embed/ed4a081fa92fc9600b18e5a14aaa4a6092da655c.svg" alt="Repobeats analytics image">
 <a href="https://www.star-history.com/#fwerkor/capos&type=date&legend=top-left">
  <picture>
    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=fwerkor/capos&type=date&theme=dark&legend=top-left" />
@@ -114,4 +115,4 @@ CapOS is licensed under GPL-2.0.
    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=fwerkor/capos&type=date&legend=top-left" />
  </picture>
 </a>
-
+</p>
