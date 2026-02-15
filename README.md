@@ -1,18 +1,20 @@
-# FWERKOR CapOS
+<h1 align="center">FWERKOR CapOS Project</h1>
 
-![Build Status](https://github.com/fwerkor/capos/actions/workflows/os-sanity.yml/badge.svg)
-![Release](https://img.shields.io/github/v/release/fwerkor/capos?display_name=tag)
-![Stars](https://img.shields.io/github/stars/fwerkor/capos?style=flat)
-![Forks](https://img.shields.io/github/forks/fwerkor/capos?style=flat)
-![Issues](https://img.shields.io/github/issues/fwerkor/capos)
-![PRs](https://img.shields.io/github/issues-pr/fwerkor/capos)
-![Last Commit](https://img.shields.io/github/last-commit/fwerkor/capos)
+<p align="center">
+  <a href="https://github.com/fwerkor/capos/actions/workflows/os-sanity.yml"><img src="https://img.shields.io/github/actions/workflow/status/fwerkor/capos/os-sanity.yml?branch=main&style=for-the-badge" alt="OS Sanity"></a>
+  <a href="https://github.com/fwerkor/capos/releases"><img src="https://img.shields.io/github/v/release/fwerkor/capos?include_prereleases&style=for-the-badge" alt="Releases"></a>
+  <a href="https://github.com/fwerkor/capos/stargazers"><img src="https://img.shields.io/github/stars/fwerkor/capos?style=for-the-badge" alt="Stars"></a>
+  <a href="https://github.com/fwerkor/capos?tab=License-1-ov-file"><img src="https://img.shields.io/badge/License-GPL2.0-blue.svg?style=for-the-badge" alt="License"></a>
+  <a href="https://github.com/fwerkor/capos/commits/main/"><img src="https://img.shields.io/github/last-commit/fwerkor/capos?style=for-the-badge" alt="Last Commit"></a>
+</p>
 
 ![OpenWrt logo](include/logo.png)
 
-CapOS is an open-source server operating system based on OpenWrt. It aims to provide an easy-to-use Linux server operating system that is more suitable for both home and professional deployments. We leverage the advantages of OpenWrt and incorporate a Webdesktop management interface, customizing CapOS into a full-featured server operating system.
+**CapOS** is an open-source server operating system based on OpenWrt. 
+It aims to provide an easy-to-use Linux server operating system that is more suitable for both home and professional deployments. 
+We leverage the advantages of OpenWrt and incorporate a Webdesktop management interface, customizing CapOS into a full-featured server operating system.
 
-Maintained by FWERKOR Team, especially by Castronaut. 
+Maintained by **FWERKOR Team**, especially by **Castronaut**. 
 
 ## Features
 
@@ -49,9 +51,13 @@ Unlike OpenWRT, CapOS defaults to setting the network interface protocol to `DHC
 
 The firewall by default accepts inbound requests from the `LAN` and rejects inbound requests from the `WAN` except for `2000/tcp` and `2020/tcp`.
 
+Learn more at our [Wiki](https://github.com/fwerkor/capos/wiki/User-guide).
+
 ## Development
 
 As an open-source project, CapOS encourages professional developers to contribute to its improvement and to develop applications for it.
+
+Learn more at our [Wiki](https://github.com/fwerkor/capos/wiki/Developer-guide).
 
 ### Compile CapOS
 
@@ -99,6 +105,8 @@ CapOS is licensed under GPL-2.0.
 
 ### Status
 
+![Alt](https://repobeats.axiom.co/api/embed/ed4a081fa92fc9600b18e5a14aaa4a6092da655c.svg "Repobeats analytics image")
+
 <a href="https://www.star-history.com/#fwerkor/capos&type=date&legend=top-left">
  <picture>
    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=fwerkor/capos&type=date&theme=dark&legend=top-left" />
@@ -107,4 +115,3 @@ CapOS is licensed under GPL-2.0.
  </picture>
 </a>
 
-![Alt](https://repobeats.axiom.co/api/embed/ed4a081fa92fc9600b18e5a14aaa4a6092da655c.svg "Repobeats analytics image")
