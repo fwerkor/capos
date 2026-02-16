@@ -1,3 +1,60 @@
 #!/bin/bash  
 
-echo "Hello World"
+declare -A MAP_PIDS
+
+# 用法：reload_portmap 'JSON_STRING'
+reload_portmap() {
+    local json="$1"
+
+    # 解析成 key -> rule 的关联数组（用临时文件保存）
+    local tmp
+    tmp=$(mktemp)
+    echo "$json" > "$tmp"
+
+    # 生成目标集合 key 列表
+    local keys
+    keys=$(jq -r '.[] | "\(.proto):\(.listen)->\(.container):\(.target_port)"' "$tmp")
+
+    # 停掉不存在的
+    for k in "${!MAP_PIDS[@]}"; do
+        if ! grep -qx "$k" <<< "$keys"; then
+            kill "${MAP_PIDS[$k]}" 2>/dev/null
+            unset "MAP_PIDS[$k]"
+        fi
+    done
+
+    # 启动新增的
+    while IFS= read -r key; do
+        [[ -z "$key" ]] && continue
+        if [[ -z "${MAP_PIDS[$key]:-}" ]]; then
+            # 取规则字段
+            local proto listen name tport
+            proto=$(jq -r ".[] | select((.proto+\":\"+(.listen|tostring)+\"->\"+.container+\":\"+(.target_port|tostring))==\"$key\") | .proto" "$tmp")
+            listen=$(jq -r ".[] | select((.proto+\":\"+(.listen|tostring)+\"->\"+.container+\":\"+(.target_port|tostring))==\"$key\") | .listen" "$tmp")
+            name=$(jq -r ".[] | select((.proto+\":\"+(.listen|tostring)+\"->\"+.container+\":\"+(.target_port|tostring))==\"$key\") | .container" "$tmp")
+            tport=$(jq -r ".[] | select((.proto+\":\"+(.listen|tostring)+\"->\"+.container+\":\"+(.target_port|tostring))==\"$key\") | .target_port" "$tmp")
+
+            local pid
+            pid=$(podman inspect -f '{{.State.Pid}}' "$name")
+            if [[ -z "$pid" || "$pid" == "0" ]]; then
+                echo "container not running: $name" >&2
+                continue
+            fi
+
+            local listen_arg target_arg
+            if [[ "$proto" == "tcp" ]]; then
+                listen_arg="TCP-LISTEN:${listen},fork,reuseaddr"
+                target_arg="TCP:${name}:${tport}"
+            else
+                listen_arg="UDP-LISTEN:${listen},fork,reuseaddr"
+                target_arg="UDP:${name}:${tport}"
+            fi
+
+        socat "$listen_arg" EXEC:"nsenter -t $pid -n socat STDIO $target_arg" &
+        MAP_PIDS["$key"]=$!
+        echo "started $key pid=${MAP_PIDS[$key]}"
+        fi
+    done <<< "$keys"
+
+    rm -f "$tmp"
+}

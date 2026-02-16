@@ -10,7 +10,7 @@ define Package/capbox
   SECTION:=capos
   CATEGORY:=CapOS
   TITLE:=Capbox Scripts
-  DEPENDS:=+bash +coreutils
+  DEPENDS:=+bash +coreutils +jq
 endef
 
 define Package/capbox/description
@@ -24,7 +24,6 @@ define Build/Compile
 endef
 
 define Package/capbox/install
-	# 安装到 /usr/bin，用户终端可直接执行 capbox
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) ./files/capbox $(1)/usr/bin/capbox
 endef
