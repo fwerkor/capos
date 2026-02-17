@@ -82,6 +82,30 @@ pre { margin: 0; padding: 14px; overflow-x: auto; color: var(--ok); font-size: .
 .card h3 { margin: 0 0 8px; font-size: 1.06rem; }
 .card p, .card li { color: var(--muted); line-height: 1.7; margin: 0; }
 .card ul { margin: 0; padding-left: 1.05rem; }
+.contribute-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .32rem;
+  margin-top: .78rem;
+  padding: .42rem .72rem;
+  border: 1px solid rgba(78, 199, 255, .35);
+  border-radius: 999px;
+  color: #cfe9ff;
+  text-decoration: none;
+  font-weight: 600;
+  background: linear-gradient(120deg, rgba(78, 199, 255, .13), rgba(143, 107, 255, .12));
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease, color .2s ease;
+}
+.contribute-link:hover {
+  color: #ffffff;
+  border-color: rgba(141, 248, 201, .55);
+  box-shadow: 0 8px 22px rgba(78, 199, 255, .2);
+  transform: translateY(-1px);
+}
+.contribute-link:focus-visible {
+  outline: 2px solid rgba(141, 248, 201, .85);
+  outline-offset: 2px;
+}
 .split { display: grid; gap: 14px; grid-template-columns: 1.2fr .8fr; }
 .timeline { display: grid; gap: 12px; }
 .timeline div { border-left: 2px solid #39508b; padding: 4px 0 4px 13px; }
