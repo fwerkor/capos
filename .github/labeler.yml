@@ -230,6 +230,11 @@
 - changed-files:
   - any-glob-to-any-file:
     - "package/**"
+# website pages
+"website":
+- changed-files:
+  - any-glob-to-any-file:
+    - "website/**"
 # build/scripts/tools
 "build/scripts/tools":
 - changed-files:
