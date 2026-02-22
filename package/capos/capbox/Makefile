@@ -10,7 +10,7 @@ define Package/capbox
   SECTION:=capos
   CATEGORY:=CapOS
   TITLE:=Capbox Scripts
-  DEPENDS:=+bash +coreutils +jq
+  DEPENDS:=+bash +coreutils +jq +podman +nsenter +socat
 endef
 
 define Package/capbox/description
