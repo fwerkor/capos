@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Block crawling of common temporary/system paths if they appear in future
+Disallow: /cgi-bin/
+Disallow: /tmp/
