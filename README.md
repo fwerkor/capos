@@ -57,6 +57,8 @@ Learn more at our [Wiki](https://github.com/fwerkor/capos/wiki/User-guide).
 
 As an open-source project, CapOS encourages professional developers to contribute to its improvement and to develop applications for it.
 
+Learn more at our [Wiki](https://github.com/fwerkor/capos/wiki/Developer-guide).
+
 ### Source Code Access
 
 To make repository access more convenient for users in different regions, CapOS provides the following source code repository endpoints:
@@ -65,8 +67,6 @@ To make repository access more convenient for users in different regions, CapOS 
 * **Read-only mirror (for users in Mainland China):** https://gitcode.com/fwerkor/capos
 
 Please submit issues, discussions, and pull requests through the GitHub primary repository.
-
-Learn more at our [Wiki](https://github.com/fwerkor/capos/wiki/Developer-guide).
 
 ### Compile CapOS
 
