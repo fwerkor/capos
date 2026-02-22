@@ -1,3 +1,137 @@
-#!/bin/bash  
+#!/bin/bash
 
-echo "Hello World"
+declare -A MAP_PIDS
+
+# 用法：reload_portmap 'JSON_STRING'
+reload_portmap() {
+    local json="${1:-[]}"
+    local dep
+    for dep in jq podman nsenter socat; do
+        if ! command -v "$dep" >/dev/null 2>&1; then
+            echo "missing dependency: $dep" >&2
+            return 1
+        fi
+    done
+
+    local tmp
+    if ! tmp=$(mktemp); then
+        echo "mktemp failed" >&2
+        return 1
+    fi
+
+    if ! printf '%s\n' "$json" > "$tmp"; then
+        echo "failed to write portmap payload" >&2
+        rm -f "$tmp"
+        return 1
+    fi
+
+    if ! jq -e 'type == "array"' "$tmp" >/dev/null 2>&1; then
+        echo "invalid portmap payload: expected a JSON array" >&2
+        rm -f "$tmp"
+        return 1
+    fi
+
+    local lines
+    if ! lines=$(jq -r '.[] | [(.proto // ""), (.listen // ""), (.container // ""), (.target_port // "")] | @tsv' "$tmp" 2>/dev/null); then
+        echo "invalid portmap payload: jq parse failed" >&2
+        rm -f "$tmp"
+        return 1
+    fi
+
+    # 清理已退出的旧映射进程，避免保留脏 PID。
+    local k pid
+    for k in "${!MAP_PIDS[@]}"; do
+        pid="${MAP_PIDS[$k]}"
+        if [[ -z "$pid" ]] || ! kill -0 "$pid" 2>/dev/null; then
+            unset "MAP_PIDS[$k]"
+        fi
+    done
+
+    local -A desired=()
+    local -a rules=()
+    local proto listen name tport key
+    while IFS=$'\t' read -r proto listen name tport; do
+        [[ -z "$proto$listen$name$tport" ]] && continue
+
+        if [[ "$proto" != "tcp" && "$proto" != "udp" ]]; then
+            echo "skip invalid proto: $proto" >&2
+            continue
+        fi
+        if [[ ! "$listen" =~ ^[0-9]+$ ]] || ((listen < 1 || listen > 65535)); then
+            echo "skip invalid listen port: $listen" >&2
+            continue
+        fi
+        if [[ ! "$tport" =~ ^[0-9]+$ ]] || ((tport < 1 || tport > 65535)); then
+            echo "skip invalid target port: $tport" >&2
+            continue
+        fi
+        if [[ -z "$name" || "$name" == "null" ]]; then
+            echo "skip invalid container name" >&2
+            continue
+        fi
+
+        key="${proto}:${listen}->${name}:${tport}"
+        desired["$key"]=1
+        rules+=("${proto}"$'\t'"${listen}"$'\t'"${name}"$'\t'"${tport}"$'\t'"${key}")
+    done <<< "$lines"
+
+    # 停掉配置里已不存在的映射。
+    for k in "${!MAP_PIDS[@]}"; do
+        if [[ -z "${desired[$k]:-}" ]]; then
+            pid="${MAP_PIDS[$k]}"
+            if [[ -n "$pid" ]]; then
+                kill "$pid" 2>/dev/null || true
+                wait "$pid" 2>/dev/null || true
+            fi
+            unset "MAP_PIDS[$k]"
+            echo "stopped $k"
+        fi
+    done
+
+    # 启动新增的映射。
+    local rule inspect running listen_arg target_arg nsenter_cmd spid
+    for rule in "${rules[@]}"; do
+        IFS=$'\t' read -r proto listen name tport key <<< "$rule"
+
+        pid="${MAP_PIDS[$key]:-}"
+        if [[ -n "$pid" ]] && kill -0 "$pid" 2>/dev/null; then
+            continue
+        fi
+        unset "MAP_PIDS[$key]"
+
+        if ! inspect=$(podman inspect -f '{{.State.Running}} {{.State.Pid}}' -- "$name" 2>/dev/null); then
+            echo "container inspect failed: $name" >&2
+            continue
+        fi
+        read -r running pid <<< "$inspect"
+        if [[ "$running" != "true" || ! "$pid" =~ ^[0-9]+$ || "$pid" == "0" ]]; then
+            echo "container not running: $name" >&2
+            continue
+        fi
+
+        if [[ "$proto" == "tcp" ]]; then
+            listen_arg="TCP-LISTEN:${listen},fork,reuseaddr"
+            target_arg="TCP:127.0.0.1:${tport}"
+        else
+            listen_arg="UDP-LISTEN:${listen},fork,reuseaddr"
+            target_arg="UDP:127.0.0.1:${tport}"
+        fi
+
+        printf -v nsenter_cmd 'nsenter -t %q -n socat STDIO %q' "$pid" "$target_arg"
+        socat "$listen_arg" EXEC:"$nsenter_cmd" &
+        spid=$!
+
+        # socat 可能因端口冲突等原因立即退出，检测后再记录 PID。
+        sleep 0.05
+        if ! kill -0 "$spid" 2>/dev/null; then
+            wait "$spid" 2>/dev/null || true
+            echo "failed to start portmap: $key" >&2
+            continue
+        fi
+
+        MAP_PIDS["$key"]=$spid
+        echo "started $key pid=$spid"
+    done
+
+    rm -f "$tmp"
+}
