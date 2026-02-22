@@ -78,6 +78,7 @@ pre { margin: 0; padding: 14px; overflow-x: auto; color: var(--ok); font-size: .
   .feature-grid { grid-template-columns: repeat(2, minmax(240px, 1fr)); }
 }
 .grid-2 { grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); }
+.grid-4 { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
 .card { border: 1px solid var(--line); border-radius: 12px; padding: 16px; background: linear-gradient(180deg, #0e1a34, #0b1429); }
 .card h3 { margin: 0 0 8px; font-size: 1.06rem; }
 .card p, .card li { color: var(--muted); line-height: 1.7; margin: 0; }

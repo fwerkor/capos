@@ -66,6 +66,42 @@ make -j$(nproc)</pre>
         <article class="card"><h3>App Extensibility</h3><p>Expand your system with packages and custom application stacks to match home and professional scenarios.</p></article>
       </div>
     </section>
+
+    <section class="section">
+      <h2>Learning paths</h2>
+      <div class="grid grid-3">
+        <article class="card"><h3>Beginner path</h3><p>Start from official image deployment, initialize network, secure access, and complete your first application installation.</p></article>
+        <article class="card"><h3>Operator path</h3><p>Focus on service management, backup strategies, update windows, and observability for long-running nodes.</p></article>
+        <article class="card"><h3>Developer path</h3><p>Build custom firmware, tune package selections, and validate integrations for reproducible delivery workflows.</p></article>
+      </div>
+    </section>
+
+    <section class="section split">
+      <div class="card">
+        <h3>Suggested documentation structure</h3>
+        <ul>
+          <li>Installation and hardware compatibility</li>
+          <li>Networking, security, and access control</li>
+          <li>Storage management and backup recovery</li>
+          <li>Application deployment and lifecycle operations</li>
+          <li>Troubleshooting and performance optimization</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Maintenance checklist</h3>
+<pre># Refresh package metadata
+opkg update
+
+# Review upgradable components
+opkg list-upgradable
+
+# Verify resource status
+uptime && free -h && df -h
+
+# Check key service logs
+logread | tail -n 50</pre>
+      </div>
+    </section>
   </main>
 
   <footer>
