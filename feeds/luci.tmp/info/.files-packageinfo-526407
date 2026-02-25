@@ -94,7 +94,6 @@ applications/luci-app-uhttpd
 applications/luci-app-unbound
 applications/luci-app-upnp
 applications/luci-app-usteer
-applications/luci-app-v2raya
 applications/luci-app-vnstat2
 applications/luci-app-watchcat
 applications/luci-app-wifischedule
