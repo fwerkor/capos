@@ -59,6 +59,15 @@ As an open-source project, CapOS encourages professional developers to contribut
 
 Learn more at our [Wiki](https://github.com/fwerkor/capos/wiki/Developer-guide).
 
+### Source Code Access
+
+To make repository access more convenient for users in different regions, CapOS provides the following source code repository endpoints:
+
+* **Primary repository:** https://github.com/fwerkor/capos
+* **Read-only mirror (for users in Mainland China):** https://gitcode.com/fwerkor/capos
+
+Please submit issues, discussions, and pull requests through the GitHub primary repository.
+
 ### Compile CapOS
 
 To build your own firmware you need a GNU/Linux, BSD or MacOSX system (case sensitive filesystem required). Cygwin is unsupported because of the lack of a case sensitive file system.
