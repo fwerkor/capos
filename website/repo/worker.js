@@ -1,13 +1,3 @@
-/**
- * Secure R2 directory browser for Cloudflare Workers
- * Features:
- * - Hierarchical directory listing (APT-style)
- * - XSS protection
- * - Safe URI decoding
- * - Correct parent navigation
- * - CSP headers
- */
-
 function escapeHtml(str) {
   return str.replace(/[&<>"']/g, c => ({
     "&": "&amp;",
@@ -40,6 +30,27 @@ function getParentPath(prefix) {
   return parts.length ? parts.join("/") + "/" : "";
 }
 
+// 🔥 NEW: Fetch all paginated results
+async function listAll(env, options) {
+  let objects = [];
+  let prefixes = [];
+  let cursor;
+
+  do {
+    const res = await env.BUCKET.list({
+      ...options,
+      cursor
+    });
+
+    objects.push(...res.objects);
+    prefixes.push(...(res.delimitedPrefixes || []));
+
+    cursor = res.truncated ? res.cursor : undefined;
+  } while (cursor);
+
+  return { objects, delimitedPrefixes: prefixes };
+}
+
 function renderDirectoryIndex(prefix, list) {
   let html = `<!DOCTYPE html>
 <html>
@@ -56,19 +67,20 @@ li { margin: 4px 0; }
 <h1>Index of /${escapeHtml(prefix)}</h1>
 <ul>`;
 
-  // Parent directory
   const parent = getParentPath(prefix);
   if (parent !== null) {
     html += `<li>📁 <a href="/${encodePath(parent)}">../</a></li>`;
   }
 
-  // Subdirectories
-  for (const dir of list.delimitedPrefixes || []) {
+  // sort directories
+  list.delimitedPrefixes.sort();
+  for (const dir of list.delimitedPrefixes) {
     const name = dir.replace(prefix, "");
     html += `<li>📁 <a href="/${encodePath(dir)}">${escapeHtml(name)}</a></li>`;
   }
 
-  // Files
+  // sort files
+  list.objects.sort((a, b) => a.key.localeCompare(b.key));
   for (const obj of list.objects) {
     const name = obj.key.replace(prefix, "");
     if (!name) continue;
@@ -84,26 +96,23 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    // 🔐 Safe path decoding
     const rawPath = url.pathname.slice(1);
     const decoded = safeDecodeURIComponent(rawPath);
-
     if (decoded === null) {
       return new Response("Bad Request", { status: 400 });
     }
 
     const path = decoded;
 
-    // 🔒 Prevent path traversal attempts
     if (path.includes("..")) {
       return new Response("Forbidden", { status: 403 });
     }
 
-    // 📂 Directory listing
+    // 📂 Directory
     if (path === "" || path.endsWith("/")) {
       const prefix = path;
 
-      const list = await env.BUCKET.list({
+      const list = await listAll(env, {
         prefix,
         delimiter: "/"
       });
@@ -118,11 +127,9 @@ export default {
       });
     }
 
-    // 📄 File download
+    // 📄 File
     const object = await env.BUCKET.get(path);
-    if (!object) {
-      return new Response("Not Found", { status: 404 });
-    }
+    if (!object) return new Response("Not Found", { status: 404 });
 
     return new Response(object.body, {
       headers: {
