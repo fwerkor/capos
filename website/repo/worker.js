@@ -23,8 +23,6 @@ function safeDecodeURIComponent(input) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
-
-    // 🔐 安全解码路径
     const rawPath = url.pathname.slice(1);
     const decoded = safeDecodeURIComponent(rawPath);
 
@@ -32,25 +30,37 @@ export default {
       return new Response("Bad Request", { status: 400 });
     }
 
-    const path = decoded;
+    let path = decoded;
 
-    // 📂 Directory listing
+    // 📂 DIRECTORY VIEW
     if (path === "" || path.endsWith("/")) {
       const prefix = path;
-      const list = await env.BUCKET.list({ prefix });
+
+      const list = await env.BUCKET.list({
+        prefix,
+        delimiter: "/"
+      });
 
       let html = `<h1>Index of /${escapeHtml(prefix)}</h1><ul>`;
 
+      // 🔙 parent directory
       if (prefix !== "") {
         const parent = prefix.split("/").slice(0, -2).join("/") + "/";
         html += `<li><a href="/${encodePath(parent)}">../</a></li>`;
       }
 
+      // 📁 subdirectories
+      for (const dir of list.delimitedPrefixes || []) {
+        const name = dir.replace(prefix, "");
+        html += `<li>📁 <a href="/${encodePath(dir)}">${escapeHtml(name)}</a></li>`;
+      }
+
+      // 📄 files
       for (const obj of list.objects) {
         const name = obj.key.replace(prefix, "");
         if (!name) continue;
 
-        html += `<li><a href="/${encodePath(obj.key)}">${escapeHtml(name)}</a></li>`;
+        html += `<li>📄 <a href="/${encodePath(obj.key)}">${escapeHtml(name)}</a></li>`;
       }
 
       html += "</ul>";
@@ -63,7 +73,7 @@ export default {
       });
     }
 
-    // 📄 File download
+    // 📄 FILE DOWNLOAD
     const object = await env.BUCKET.get(path);
     if (!object) return new Response("Not Found", { status: 404 });
 
