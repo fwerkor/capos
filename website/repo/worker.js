@@ -1,25 +1,41 @@
+function escapeHtml(str) {
+  return str.replace(/[&<>"']/g, c => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  }[c]));
+}
+
+function encodePath(path) {
+  return path.split("/").map(encodeURIComponent).join("/");
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     let path = decodeURIComponent(url.pathname.slice(1));
 
-    // 目录浏览
+    // 📂 Directory listing
     if (path === "" || path.endsWith("/")) {
       const prefix = path;
       const list = await env.BUCKET.list({ prefix });
 
-      let html = `<h1>Index of /${prefix}</h1><ul>`;
+      let html = `<h1>Index of /${escapeHtml(prefix)}</h1><ul>`;
+
       if (prefix !== "") {
         const parent = prefix.split("/").slice(0, -2).join("/") + "/";
-        html += `<li><a href="/${parent}">../</a></li>`;
+        html += `<li><a href="/${encodePath(parent)}">../</a></li>`;
       }
 
       for (const obj of list.objects) {
         const name = obj.key.replace(prefix, "");
-        if (name) {
-          html += `<li><a href="/${obj.key}">${name}</a></li>`;
-        }
+        if (!name) continue;
+
+        html += `<li><a href="/${encodePath(obj.key)}">${escapeHtml(name)}</a></li>`;
       }
+
       html += "</ul>";
 
       return new Response(html, {
@@ -27,7 +43,7 @@ export default {
       });
     }
 
-    // 文件下载
+    // 📄 File download
     const object = await env.BUCKET.get(path);
     if (!object) return new Response("Not Found", { status: 404 });
 
