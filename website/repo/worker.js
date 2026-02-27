@@ -210,6 +210,14 @@ footer {
   font-size: 0.82rem;
   color: var(--muted);
 }
+.footer-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 65%, transparent);
+}
+.footer-link:hover {
+  text-decoration-color: currentColor;
+}
 @media (max-width: 640px) {
   th.col-size,
   td.col-size,
@@ -256,7 +264,7 @@ footer {
   html += `</tbody>
     </table>
   </section>
-  <footer>Served by CapOS Team（capos.top）</footer>
+  <footer>Served by <a class="footer-link" href="https://capos.top">CapOS Project</a></footer>
 </main>
 </body>
 </html>`;
