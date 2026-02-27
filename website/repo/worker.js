@@ -256,7 +256,7 @@ footer {
   html += `</tbody>
     </table>
   </section>
-  <footer>Served by Cloudflare Worker</footer>
+  <footer>Served by CapOS Team（capos.top）</footer>
 </main>
 </body>
 </html>`;
