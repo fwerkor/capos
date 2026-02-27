@@ -12,10 +12,27 @@ function encodePath(path) {
   return path.split("/").map(encodeURIComponent).join("/");
 }
 
+function safeDecodeURIComponent(input) {
+  try {
+    return decodeURIComponent(input);
+  } catch {
+    return null;
+  }
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
-    let path = decodeURIComponent(url.pathname.slice(1));
+
+    // 🔐 安全解码路径
+    const rawPath = url.pathname.slice(1);
+    const decoded = safeDecodeURIComponent(rawPath);
+
+    if (decoded === null) {
+      return new Response("Bad Request", { status: 400 });
+    }
+
+    const path = decoded;
 
     // 📂 Directory listing
     if (path === "" || path.endsWith("/")) {
@@ -39,7 +56,10 @@ export default {
       html += "</ul>";
 
       return new Response(html, {
-        headers: { "content-type": "text/html;charset=UTF-8" },
+        headers: {
+          "content-type": "text/html;charset=UTF-8",
+          "Content-Security-Policy": "default-src 'self'; script-src 'none';"
+        },
       });
     }
 
