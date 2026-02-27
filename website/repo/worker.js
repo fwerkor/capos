@@ -30,7 +30,32 @@ function getParentPath(prefix) {
   return parts.length ? parts.join("/") + "/" : "";
 }
 
-// 🔥 NEW: Fetch all paginated results
+function formatBytes(bytes) {
+  if (typeof bytes !== "number" || Number.isNaN(bytes) || bytes < 0) return "-";
+  if (bytes < 1024) return `${bytes} B`;
+
+  const units = ["KB", "MB", "GB", "TB"];
+  let value = bytes / 1024;
+  let unitIndex = 0;
+
+  while (value >= 1024 && unitIndex < units.length - 1) {
+    value /= 1024;
+    unitIndex += 1;
+  }
+
+  return `${value.toFixed(value >= 10 ? 0 : 1)} ${units[unitIndex]}`;
+}
+
+function formatDate(dateString) {
+  if (!dateString) return "-";
+
+  const date = new Date(dateString);
+  if (Number.isNaN(date.getTime())) return "-";
+
+  return date.toISOString().replace("T", " ").slice(0, 19) + " UTC";
+}
+
+// Fetch all paginated results
 async function listAll(env, options) {
   let objects = [];
   let prefixes = [];
@@ -52,43 +77,189 @@ async function listAll(env, options) {
 }
 
 function renderDirectoryIndex(prefix, list) {
+  const safePrefix = escapeHtml(prefix);
+  const parent = getParentPath(prefix);
+
+  const directories = [...list.delimitedPrefixes].sort().map((dir) => {
+    const name = dir.replace(prefix, "");
+    return {
+      name,
+      href: `/${encodePath(dir)}`,
+    };
+  });
+
+  const files = [...list.objects]
+    .sort((a, b) => a.key.localeCompare(b.key))
+    .map((obj) => {
+      const name = obj.key.replace(prefix, "");
+      return {
+        name,
+        href: `/${encodePath(obj.key)}`,
+        size: formatBytes(obj.size),
+        modified: formatDate(obj.uploaded),
+      };
+    })
+    .filter((file) => file.name);
+
+  const totalEntries = directories.length + files.length;
+
   let html = `<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Index of /${escapeHtml(prefix)}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Index of /${safePrefix}</title>
 <style>
-body { font-family: monospace; padding: 20px; }
-a { text-decoration: none; }
-li { margin: 4px 0; }
+:root {
+  color-scheme: light dark;
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --accent: #2563eb;
+  --accent-soft: rgba(37, 99, 235, 0.1);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1020;
+    --surface: #11162a;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --line: #232b45;
+    --accent: #7aa2ff;
+    --accent-soft: rgba(122, 162, 255, 0.16);
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  background: radial-gradient(circle at 20% -10%, var(--accent-soft), transparent 42%), var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 32px 20px 40px;
+}
+header {
+  margin-bottom: 16px;
+}
+h1 {
+  margin: 0;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+}
+.meta {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+}
+th {
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+tr:last-child td {
+  border-bottom: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.name-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent);
+}
+.name-link:hover {
+  text-decoration: underline;
+}
+.col-size,
+.col-modified {
+  color: var(--muted);
+  white-space: nowrap;
+}
+.empty {
+  text-align: center;
+  padding: 36px;
+  color: var(--muted);
+}
+footer {
+  margin-top: 12px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+@media (max-width: 640px) {
+  th.col-size,
+  td.col-size,
+  th.col-modified,
+  td.col-modified {
+    display: none;
+  }
+}
 </style>
 </head>
 <body>
-<h1>Index of /${escapeHtml(prefix)}</h1>
-<ul>`;
+<main>
+  <header>
+    <h1>Index of /${safePrefix}</h1>
+    <div class="meta">${totalEntries} item${totalEntries === 1 ? "" : "s"}</div>
+  </header>
+  <section class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th class="col-size">Size</th>
+          <th class="col-modified">Last Modified</th>
+        </tr>
+      </thead>
+      <tbody>`;
 
-  const parent = getParentPath(prefix);
   if (parent !== null) {
-    html += `<li>📁 <a href="/${encodePath(parent)}">../</a></li>`;
+    html += `<tr><td><a class="name-link" href="/${encodePath(parent)}">📁 ../</a></td><td class="col-size">-</td><td class="col-modified">-</td></tr>`;
   }
 
-  // sort directories
-  list.delimitedPrefixes.sort();
-  for (const dir of list.delimitedPrefixes) {
-    const name = dir.replace(prefix, "");
-    html += `<li>📁 <a href="/${encodePath(dir)}">${escapeHtml(name)}</a></li>`;
+  for (const dir of directories) {
+    html += `<tr><td><a class="name-link" href="${dir.href}">📁 ${escapeHtml(dir.name)}</a></td><td class="col-size">-</td><td class="col-modified">-</td></tr>`;
   }
 
-  // sort files
-  list.objects.sort((a, b) => a.key.localeCompare(b.key));
-  for (const obj of list.objects) {
-    const name = obj.key.replace(prefix, "");
-    if (!name) continue;
-
-    html += `<li>📄 <a href="/${encodePath(obj.key)}">${escapeHtml(name)}</a></li>`;
+  for (const file of files) {
+    html += `<tr><td><a class="name-link" href="${file.href}">📄 ${escapeHtml(file.name)}</a></td><td class="col-size">${file.size}</td><td class="col-modified">${file.modified}</td></tr>`;
   }
 
-  html += `</ul></body></html>`;
+  if (totalEntries === 0) {
+    html += `<tr><td class="empty" colspan="3">This directory is empty.</td></tr>`;
+  }
+
+  html += `</tbody>
+    </table>
+  </section>
+  <footer>Served by Cloudflare Worker</footer>
+</main>
+</body>
+</html>`;
   return html;
 }
 
@@ -108,7 +279,7 @@ export default {
       return new Response("Forbidden", { status: 403 });
     }
 
-    // 📂 Directory
+    // Directory
     if (path === "" || path.endsWith("/")) {
       const prefix = path;
 
@@ -122,12 +293,12 @@ export default {
       return new Response(html, {
         headers: {
           "content-type": "text/html;charset=UTF-8",
-          "Content-Security-Policy": "default-src 'self'; script-src 'none';"
+          "Content-Security-Policy": "default-src 'self'; style-src 'unsafe-inline'; script-src 'none';"
         },
       });
     }
 
-    // 📄 File
+    // File
     const object = await env.BUCKET.get(path);
     if (!object) return new Response("Not Found", { status: 404 });
 
@@ -139,3 +310,5 @@ export default {
     });
   },
 };
+
+export { renderDirectoryIndex };
