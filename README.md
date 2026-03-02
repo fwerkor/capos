@@ -28,8 +28,6 @@ Maintained by **FWERKOR Team**, especially by **Castronaut**.
 
 * **Stable and Secure:** CapOS is developed based on the secure and stable Linux system OpenWrt, utilizing the latest kernel and software packages to maximize security and stability.
 
-* **Runs on various hardware:** CapOS can run on popular hardware ranging from routers and PCs to virtual machines. Its lightweight design allows it to run even on resource-constrained devices.
-
 * **Open Source:** CapOS is released under the GPL license. Contributions from the open-source community are welcome to make CapOS even more lightweight, scalable, and user-friendly.
 
 CapOS aims to provide an easy-to-use and practical Linux server operating system for learning and experimentation. The simplified web UI and CLI make getting started with CapOS easy. If you are looking for a lightweight yet scalable Linux server solution, try CapOS! The CapOS Community Edition is open and free for everyone. Your feedback and suggestions will help us improve CapOS.
@@ -37,7 +35,7 @@ CapOS aims to provide an easy-to-use and practical Linux server operating system
 ## Downloads
 
 * [Github Releases](https://github.com/fwerkor/capos/releases)
-* [FWERKOR Repository](https://repo.fwerkor.com/capos)
+* [Repository](https://repo.capos.org)
 
 You can learn more at our [Wiki](https://github.com/fwerkor/capos/wiki/Quick-start-guide).
 
