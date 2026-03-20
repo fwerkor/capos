@@ -1,0 +1,28 @@
+Source-Makefile: feeds/packages/utils/fscrypt/Makefile
+Build-Depends: golang/host
+
+Package: fscrypt
+Submenu: Encryption
+Version: 0.3.5-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) +libpam +@KERNEL_FS_ENCRYPTION
+Conflicts: 
+Menu-Depends: 
+Provides: @fscrypt-any
+Section: utils
+Category: Utilities
+Repository: base
+Title: A tool for managing Linux filesystem encryption
+Maintainer: John Audia <therealgraysky@proton.me>
+Source: fscrypt-0.3.5.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:google:fscrypt
+URL: https://github.com/google/fscrypt
+Type: ipkg
+Kernel-Config: CONFIG_FS_ENCRYPTION=y
+Description:   Fscrypt is a high-level tool for the management of Linux native filesystem
+  encryption. Fscrypt manages metadata, key generation, key wrapping, PAM integration,
+  and provides a uniform interface for creating and modifying encrypted directories.
+@@
+
+

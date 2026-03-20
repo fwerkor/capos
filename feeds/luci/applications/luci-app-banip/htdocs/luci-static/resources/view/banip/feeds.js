@@ -14,6 +14,26 @@ document.querySelector('head').appendChild(E('link', {
 }));
 
 /*
+	module-level file size set during render, read by observer
+*/
+let fileSize = 0;
+
+/*
+	button state helper
+*/
+function updateButtons() {
+	const buttons = document.querySelectorAll('#btnClear, #btnCreate, #btnSave, #btnUpload, #btnDownload');
+	if (fileSize === 0) {
+		if (buttons[1]) buttons[1].removeAttribute('disabled');
+		if (buttons[2]) buttons[2].removeAttribute('disabled');
+	} else {
+		if (buttons[0]) buttons[0].removeAttribute('disabled');
+		if (buttons[3]) buttons[3].removeAttribute('disabled');
+		if (buttons[4]) buttons[4].removeAttribute('disabled');
+	}
+}
+
+/*
 	observe DOM changes
 */
 const observer = new MutationObserver(function (mutations) {
@@ -29,17 +49,7 @@ const observer = new MutationObserver(function (mutations) {
 		labels.forEach(function (label) {
 			label.setAttribute("style", "font-weight: bold !important; color: #595 !important;");
 		})
-		L.resolveDefault(fs.stat('/etc/banip/banip.custom.feeds'), '').then(function (stat) {
-			const buttons = document.querySelectorAll('#btnClear, #btnCreate, #btnSave, #btnUpload, #btnDownload');
-			if (buttons[1] && buttons[2] && stat.size === 0) {
-				buttons[1].removeAttribute('disabled');
-				buttons[2].removeAttribute('disabled');
-			} else if (buttons[0] && buttons[3] && buttons[4] && stat.size > 0) {
-				buttons[0].removeAttribute('disabled');
-				buttons[3].removeAttribute('disabled');
-				buttons[4].removeAttribute('disabled');
-			}
-		});
+		updateButtons();
 	}
 });
 
@@ -59,29 +69,20 @@ function handleEdit(ev) {
 	if (ev === 'upload') {
 		return ui.uploadFile('/etc/banip/banip.custom.feeds').then(function () {
 			L.resolveDefault(fs.read_direct('/etc/banip/banip.custom.feeds', 'json'), "").then(function (data) {
-				if (data) {
-					let dataLength = Object.keys(data).length || 0;
-					if (dataLength > 0) {
-						for (let i = 0; i < dataLength; i++) {
-							let feed = Object.keys(data)[i];
-							let descr = data[feed].descr;
-							if (feed && descr) {
-								continue;
-							}
-							fs.write('/etc/banip/banip.custom.feeds', null).then(function () {
-								ui.addNotification(null, E('p', _('Upload of the custom feed file failed.')), 'error');
-							});
-							return;
+				if (data && Object.keys(data).length > 0) {
+					for (let i = 0; i < Object.keys(data).length; i++) {
+						let feed = Object.keys(data)[i];
+						let descr = data[feed].descr;
+						if (feed && descr) {
+							continue;
 						}
-					} else {
-						fs.write('/etc/banip/banip.custom.feeds', null).then(function () {
+						return fs.write('/etc/banip/banip.custom.feeds', null).then(function () {
 							ui.addNotification(null, E('p', _('Upload of the custom feed file failed.')), 'error');
 						});
-						return;
 					}
 					location.reload();
 				} else {
-					fs.write('/etc/banip/banip.custom.feeds', null).then(function () {
+					return fs.write('/etc/banip/banip.custom.feeds', null).then(function () {
 						ui.addNotification(null, E('p', _('Upload of the custom feed file failed.')), 'error');
 					});
 				}
@@ -119,74 +120,64 @@ function handleEdit(ev) {
 			return ui.addNotification(null, E('p', _('Invalid input values, unable to save modifications.')), 'error');
 		}
 	}
-	let sumSubElements = [], exportJson;
+	/*
+		gather all input data and fall through from 'save'
+	*/
+	const exportObj = {};
 	const nodeKeys = document.querySelectorAll('[id^="widget.cbid.json"][id$="name"]');
-	for (let i = 0; i < nodeKeys.length; i++) {
-		let subElements = {};
-		const elements = document.querySelectorAll('[id^="widget.cbid.json.' + nodeKeys[i].id.split('.')[3] + '\."], \
-			[id^="cbid.json.' + nodeKeys[i].id.split('.')[3] + '\.rule_4"], \
-			[id^="cbid.json.' + nodeKeys[i].id.split('.')[3] + '\.rule_6"]');
-		for (const element of elements) {
-			let key;
-			const value = element.value || "";
-			const parts = element.id.split('.');
-			if (parts.length === 5) {
-				key = element.id.split('.')[4];
-			} else if (parts.length === 4) {
-				key = element.id.split('.')[3];
-			}
-			if (!key || value === "") {
-				continue;
-			}
-			switch (key) {
-				case 'url_4':
-					subElements.url_4 = value;
-					break;
-				case 'rule_4':
-					subElements.rule_4 = value;
-					break;
-				case 'url_6':
-					subElements.url_6 = value;
-					break;
-				case 'rule_6':
-					subElements.rule_6 = value;
-					break;
-				case 'chain':
-					subElements.chain = value;
-					break;
-				case 'descr':
-					subElements.descr = value;
-					break;
-				case 'flag':
-					subElements.flag = value;
-					break;
+	for (const keyNode of nodeKeys) {
+		const keyValue = keyNode.value?.trim();
+		if (!keyValue) continue;
+		const idParts = keyNode.id.split(".");
+		const ruleId = idParts[3];
+		if (!ruleId) continue;
+		const selector =
+			`[id^="widget.cbid.json.${ruleId}."], ` +
+			`[id^="cbid.json.${ruleId}.rule"]`;
+		const elements = document.querySelectorAll(selector);
+		const sub = {};
+		for (const el of elements) {
+			const parts = el.id.split(".");
+			const key = parts[parts.length - 1];
+			const value = el.value?.trim();
+			if (!value) continue;
+			if (["url_4", "url_6", "rule", "chain", "descr", "flag"].includes(key)) {
+				sub[key] = value;
 			}
 		}
-		if (nodeKeys[i].value !== "" && subElements.descr !== "") {
-			sumSubElements.push(nodeKeys[i].value, subElements);
+		/* require at least descr and rule to produce a valid feed entry */
+		if (sub.descr && sub.rule && (sub.url_4 || sub.url_6)) {
+			exportObj[keyValue] = sub;
 		}
 	}
-	if (sumSubElements.length > 0) {
-		exportJson = JSON.stringify(sumSubElements).replace(/^\[/, '{\n').replace(/\}]$/, '\n\t}\n}\n').replace(/,{"/g, ':{\n\t"').replace(/"},"/g, '"\n\t},\n"').replace(/","/g, '",\n\t"');
-	}
-	return fs.write('/etc/banip/banip.custom.feeds', exportJson).then(function () {
-		location.reload();
-	});
+	/*
+		save to file and reload
+	*/
+	const exportJson = JSON.stringify(exportObj, null, 4);
+	return fs.write('/etc/banip/banip.custom.feeds', exportJson)
+		.then(() => location.reload());
 }
 
 return view.extend({
 	load: function () {
-		return L.resolveDefault(fs.stat('/etc/banip/banip.custom.feeds'), "")
+		return L.resolveDefault(fs.stat('/etc/banip/banip.custom.feeds'), null)
 			.then(function (stat) {
 				if (!stat) {
-					return fs.write('/etc/banip/banip.custom.feeds', "");
+					return fs.write('/etc/banip/banip.custom.feeds', "").then(function () {
+						return { size: 0, data: null };
+					});
 				}
-				return L.resolveDefault(fs.read_direct('/etc/banip/banip.custom.feeds', 'json'), "");
-			})
+				return L.resolveDefault(fs.read_direct('/etc/banip/banip.custom.feeds', 'json'), "")
+					.then(function (data) {
+						return { size: stat.size, data: data };
+					});
+			});
 	},
 
-	render: function (data) {
-		let m, s, o, feed, url_4, url_6, rule_4, rule_6, chain, descr, flag;
+	render: function (result) {
+		let m, s, o, feed, url_4, url_6, rule, chain, descr, flag;
+		const data = result.data;
+		fileSize = result.size;
 
 		m = new form.JSONMap(data, null, _('With this editor you can upload your local custom feed file or fill up an initial one (a 1:1 copy of the version shipped with the package). \
 			The file is located at \'/etc/banip/banip.custom.feeds\'. \
@@ -194,9 +185,8 @@ return view.extend({
 		for (let i = 0; i < Object.keys(m.data.data).length; i++) {
 			feed = Object.keys(m.data.data)[i];
 			url_4 = m.data.data[feed].url_4;
-			rule_4 = m.data.data[feed].rule_4;
 			url_6 = m.data.data[feed].url_6;
-			rule_6 = m.data.data[feed].rule_6;
+			rule = m.data.data[feed].rule;
 			chain = m.data.data[feed].chain;
 			descr = m.data.data[feed].descr;
 			flag = m.data.data[feed].flag;
@@ -223,41 +213,28 @@ return view.extend({
 				if (!value) {
 					return true;
 				}
-				if (!value.match(/^(http:\/\/|https:\/\/)[A-Za-z0-9\/\.\-\?\&\+_@%=:~#]+$/)) {
+				if (!value.match(/^https?:\/\/[A-Za-z0-9[\]/.?&+_@%=:~#-]+$/)) {
 					return _('Protocol/URL format not supported');
 				}
 				return true;
 			}
-
-			o = s.option(form.Value, 'rule_4', _('Rulev4'));
-			o.value('/^127\\./{next}/^(([1-9][0-9]{0,2}\\.){1}([0-9]{1,3}\\.){2}(1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])(\\/(1?[0-9]|2?[0-9]|3?[0-2]))?)[[:space:]]/{printf \"%s,\\n\",$1}', _('<IPv4><SPACE>'));
-			o.value('/^127\\./{next}/^(([1-9][0-9]{0,2}\\.){1}([0-9]{1,3}\\.){2}(1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])(\\/(1?[0-9]|2?[0-9]|3?[0-2]))?)$/{printf \"%s,\\n\",$1}', _('<IPv4><END>'));
-			o.value('/^127\\./{next}/^(([1-9][0-9]{0,2}\\.){1}([0-9]{1,3}\\.){2}(1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])(\\/(1?[0-9]|2?[0-9]|3?[0-2]))?)[[:space:]]/{printf \"%s/%s,\\n\",$1,$3}', _('<IPv4><SPACE>, concatinated'));
-			o.value('/^127\\./{next}/^(([1-9][0-9]{0,2}\\.){1}([0-9]{1,3}\\.){2}(1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])(\\/(1?[0-9]|2?[0-9]|3?[0-2]))?)$/{if(!seen[$1]++)printf \"%s,\\n\",$1}', _('<IPv4><END>, nodups'));
-			o.value('/^127\\./{next}/^(([1-9][0-9]{0,2}\\.){1}([0-9]{1,3}\\.){2}(1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])(\\/(1?[0-9]|2?[0-9]|3?[0-2]))?)[-[:space:]]?/{printf \"%s,\\n\",$1}', _('<IPv4>[<SPACE>|<HYPHEN>]'));
-			o.value('/127\\./{next}/(([1-9][0-9]{0,2}\\.){1}([0-9]{1,3}\\.){2}(1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])(\\/(1?[0-9]|2?[0-9]|3?[0-2]))?)[[:space:]]/{printf \"%s,\\n\",$2}', _('<DATE><IPv4><SPACE>'));
-			o.value('BEGIN{FS=\",\"}/^127\\./{next}/^(([1-9][0-9]{0,2}\\.){1}([0-9]{1,3}\\.){2}(1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])(\\/(1?[0-9]|2?[0-9]|3?[0-2]))?)/{printf \"%s,\\n\",$1}', _('<IPv4>, csv'));
-			o.value('BEGIN{IGNORECASE=1}/^127\\./{next}/^(([1-9][0-9]{0,2}\\.){1}([0-9]{1,3}\\.){2}(1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])(\\/(1?[0-9]|2?[0-9]|3?[0-2]))?)([[:space:]]NET)/{printf \"%s,\\n\",$1}', _('<IPv4><SPACE>NET'));
-			o.value('BEGIN{IGNORECASE=1}/^127\\./{next}/^(([1-9][0-9]{0,2}\\.){1}([0-9]{1,3}\\.){2}(1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])(\\/(1?[0-9]|2?[0-9]|3?[0-2]))?)([[:space:]]YOUR)/{printf \"%s,\\n\",$1}', _('<IPv4><SPACE>YOUR'));
-			o.value('BEGIN{FS=\";\"}/content:\"127\\./{next}/(content:\"([1-9][0-9]{0,2}\\.){1}([0-9]{1,3}\\.){2}(1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])\")/{printf \"%s,\\n\",substr($10,11,length($10)-11)}', _('<IPv4>, substring'));
-			o.optional = true;
-			o.rmempty = true;
 
 			o = s.option(form.Value, 'url_6', _('URLv6'));
 			o.validate = function (section_id, value) {
 				if (!value) {
 					return true;
 				}
-				if (!value.match(/^(http:\/\/|https:\/\/)[A-Za-z0-9\/\.\-\?\&\+_@%=:~#]+$/)) {
+				if (!value.match(/^https?:\/\/[A-Za-z0-9[\]/.?&+_@%=:~#-]+$/)) {
 					return _('Protocol/URL format not supported');
 				}
 				return true;
 			}
 
-			o = s.option(form.Value, 'rule_6', _('Rulev6'));
-			o.value('/^(([0-9A-f]{0,4}:){1,7}[0-9A-f]{0,4}:?(\\/(1?[0-2][0-8]|[0-9][0-9]))?)[[:space:]]/{printf \"%s,\\n\",$1}', _('<IPv6><SPACE>'));
-			o.value('/^(([0-9A-f]{0,4}:){1,7}[0-9A-f]{0,4}:?(\\/(1?[0-2][0-8]|[0-9][0-9]))?)$/{printf \"%s,\\n\",$1}', _('<IPv6><END>'));
-			o.value('BEGIN{FS=\",\"}/^(([0-9A-f]{0,4}:){1,7}[0-9A-f]{0,4}:?(\\/(1?[0-2][0-8]|[0-9][0-9]))?)/{printf \"%s,\\n\",$1}', _('<IPv6>, csv'));
+			o = s.option(form.Value, 'rule', _('Rule'));
+			o.value('feed 1', _('<IP-Address>'));
+			o.value('feed 1 ,', _('<IP-Address><CSV-Seperator>'));
+			o.value('feed 13', _('<IP-Address> <Netmask>'));
+			o.value('suricata 1', _('<Suricata Syntax>'));
 			o.optional = true;
 			o.rmempty = true;
 
@@ -281,7 +258,7 @@ return view.extend({
 				if (!value) {
 					return true;
 				}
-				if (!value.match(/^(\bgz\b|\btcp\b|\budp\b|\b[0-9\-]+\b| )*$/)) {
+				if (!value.match(/^(\bgz\b|\btcp\b|\budp\b|\b[0-9-]+\b| )*$/)) {
 					return _('Flag not supported');
 				}
 				return true;

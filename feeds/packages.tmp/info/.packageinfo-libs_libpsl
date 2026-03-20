@@ -5,7 +5,7 @@ Version: 0.21.5-r1
 Depends: +libc +libidn2 +libunistring +BUILD_NLS:libintl-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libpsl-any
 Section: libs
 Category: Libraries
 Repository: base

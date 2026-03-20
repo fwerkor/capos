@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-19 19:36+0200\n"
-"PO-Revision-Date: 2025-08-09 17:23+0000\n"
-"Last-Translator: 안정언 <me@jeongeon.net>\n"
+"PO-Revision-Date: 2026-03-08 17:30+0000\n"
+"Last-Translator: Hyeonjeong Lee <h9101654@gmail.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationscoovachilli/ko/>\n"
 "Language: ko\n"
@@ -12,21 +12,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:168
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:173
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:178
 msgid "0 means unlimited"
-msgstr ""
+msgstr "0 설정 시 제한 없음"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:372
 msgid "802.1Q"
-msgstr ""
+msgstr "802.1Q"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:373
 msgid "802.1Q only"
-msgstr ""
+msgstr "802.1Q 전용"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:165
 msgid "A specific URL to be given in WISPr XML LoginURL"
@@ -34,7 +34,7 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:403
 msgid "Accounting port"
-msgstr ""
+msgstr "과금 포트"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:451
 msgid "Accounting update"
@@ -42,15 +42,15 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:443
 msgid "Admin password"
-msgstr "Admin password"
+msgstr "관리자 암호"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:441
 msgid "Admin user"
-msgstr "Admin user"
+msgstr "관리자 계정"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:236
 msgid "Allow Local MAC"
-msgstr ""
+msgstr "로컬 MAC 허용"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:452
 msgid "Allow all sessions when RADIUS is not available"
@@ -66,7 +66,7 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:123
 msgid "Allow unauthenticated users access to any DNS"
-msgstr ""
+msgstr "인증되지 않은 사용자가 모든 DNS 서버에 접근할 수 있도록 허용합니다"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:161
 msgid "Allowed"
@@ -74,7 +74,7 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:237
 msgid "Allowed MACs"
-msgstr ""
+msgstr "허용된 MAC"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:371
 msgid "Always respond to DHCP to the broadcast IP, when no relay."
@@ -90,11 +90,11 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:398
 msgid "Authentication port"
-msgstr ""
+msgstr "인증 포트"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:391
 msgid "Auxiliary server"
-msgstr ""
+msgstr "보조 서버"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:233
 msgid "Be strict about MAC Auth (no DHCP reply until we get RADIUS reply)"
@@ -106,7 +106,7 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:454
 msgid "COA Port"
-msgstr ""
+msgstr "CoA 포트"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:458
 msgid "COA no IP check"
@@ -114,7 +114,7 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:128
 msgid "Chilli XML"
-msgstr ""
+msgstr "Chilli XML"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:232
 msgid ""
@@ -133,7 +133,7 @@ msgstr ""
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:59
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:60
 msgid "Coova Chilli"
-msgstr ""
+msgstr "Coova Chilli"
 
 #: applications/luci-app-coovachilli/root/usr/share/luci/menu.d/luci-app-coovachilli.json:3
 msgid "CoovaChilli"
@@ -141,35 +141,35 @@ msgstr "CoovaChilli"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:355
 msgid "DHCP End"
-msgstr ""
+msgstr "DHCP 종료"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:360
 msgid "DHCP Gateway IP"
-msgstr ""
+msgstr "DHCP 게이트웨이 IP"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:365
 msgid "DHCP Gateway Port"
-msgstr ""
+msgstr "DHCP 게이트웨이 포트"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:350
 msgid "DHCP Start"
-msgstr ""
+msgstr "DHCP 시작"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:338
 msgid "DHCP interface"
-msgstr "DHCP interface"
+msgstr "DHCP 인터페이스"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:306
 msgid "DNS Auxiliary"
-msgstr ""
+msgstr "보조 DNS"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:301
 msgid "DNS Primary"
-msgstr ""
+msgstr "기본 DNS"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:83
 msgid "Debug"
-msgstr ""
+msgstr "디버그"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:183
 msgid ""
@@ -182,15 +182,15 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:173
 msgid "Default idle timeout"
-msgstr "Default idle timeout"
+msgstr "기본 유휴 제한 시간"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:178
 msgid "Default interim interval"
-msgstr "Default interim interval"
+msgstr "기본 중간 보고 주기"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:168
 msgid "Default session timeout"
-msgstr "Default session timeout"
+msgstr "기본 세션 만료 시간"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:234
 msgid "Deny MAC authentication"
@@ -202,7 +202,7 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:205
 msgid "Directory where embedded local web content is placed"
-msgstr "Directory where embedded local web content is placed"
+msgstr "로컬 웹 콘텐츠가 저장된 디렉터리 경로를 지정합니다"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:458
 msgid "Do not check the source IP address of RADIUS disconnect requests"
@@ -210,25 +210,26 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:125
 msgid "Do not do any WISPr XML, assume the back-end is doing this instead"
-msgstr "Do not do any WISPr XML, assume the back-end is doing this instead"
+msgstr ""
+"장비에서 WISPr XML 처리를 수행하지 않습니다. 처리를 백엔드에 위임합니다"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:126
 msgid "Do not offer WISPr 1.0 XML"
-msgstr ""
+msgstr "WISPr 1.0 XML 규격을 제공하지 않습니다"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:127
 msgid "Do not offer WISPr 2.0 XML"
-msgstr ""
+msgstr "WISPr 2.0 XML 규격을 제공하지 않습니다"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:124
 msgid ""
 "Do not return to UAM server on login success, just redirect to original URL"
 msgstr ""
-"Do not return to UAM server on login success, just redirect to original URL"
+"로그인 성공 시 UAM 서버로 돌아가지 않고, 원래 URL로 즉시 리다이렉트합니다"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:311
 msgid "Domain"
-msgstr ""
+msgstr "도메인"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:152
 msgid "Domain suffixes"
@@ -236,15 +237,15 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:292
 msgid "Dynamic IP"
-msgstr ""
+msgstr "동적 IP"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:370
 msgid "Enable EAPOL"
-msgstr ""
+msgstr "EAPOL 활성화"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:75
 msgid "Enabled"
-msgstr "활성화됨"
+msgstr "활성화"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:207
 msgid "Executable to run as a CGI type program"
@@ -269,19 +270,19 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:65
 msgid "General"
-msgstr ""
+msgstr "일반"
 
 #: applications/luci-app-coovachilli/root/usr/share/rpcd/acl.d/luci-app-coovachilli.json:3
 msgid "Grant UCI access for luci-app-coovachilli"
-msgstr "luci-app-coovachilli에 UCI 접근 권한 허용"
+msgstr "luci-app-coovachilli의 UCI 접근 권한 부여"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:136
 msgid "Homepage"
-msgstr ""
+msgstr "홈페이지"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:370
 msgid "IEEE 802.1x authentication"
-msgstr ""
+msgstr "IEEE 802.1x 인증"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:477
 msgid "IP address from which RADIUS requests are accepted"
@@ -297,11 +298,11 @@ msgstr "IP up script"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:261
 msgid "IPv6 mode"
-msgstr ""
+msgstr "IPv6 모드"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:124
 msgid "Ignore Success"
-msgstr ""
+msgstr "성공 페이지 생략"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:131
 msgid ""
@@ -311,15 +312,15 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:345
 msgid "Lease time"
-msgstr ""
+msgstr "임대 시간"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:140
 msgid "Listen"
-msgstr ""
+msgstr "수신 대기(Listen)"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:213
 msgid "Local users"
-msgstr ""
+msgstr "로컬 사용자"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:223
 msgid "Location Name"
@@ -331,31 +332,31 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:232
 msgid "MAC authentication"
-msgstr ""
+msgstr "MAC 인증 사용"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:241
 msgid "MAC password"
-msgstr ""
+msgstr "MAC 인증 암호"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:235
 msgid "MAC re-authentication"
-msgstr ""
+msgstr "MAC 재인증"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:245
 msgid "MAC suffix"
-msgstr ""
+msgstr "MAC 접미사"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:279
 msgid "Max clients"
-msgstr ""
+msgstr "최대 클라이언트 수"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:183
 msgid "Max download bandwidth"
-msgstr ""
+msgstr "최대 다운로드 대역폭"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:188
 msgid "Max upload bandwidth"
-msgstr ""
+msgstr "최대 업로드 대역폭"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:423
 msgid "NAS ID"
@@ -371,11 +372,11 @@ msgstr "NAS MAC"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:423
 msgid "NAS-Identifier"
-msgstr ""
+msgstr "NAS 식별자"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:436
 msgid "NAS-Port-Type"
-msgstr ""
+msgstr "NAS 포트 유형"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:287
 msgid "Net"
@@ -391,15 +392,15 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:125
 msgid "No WISPr"
-msgstr ""
+msgstr "WISPr 처리 비활성화"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:126
 msgid "No WISPr 1 XML"
-msgstr ""
+msgstr "WISPr 1 XML 지원 비활성화"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:127
 msgid "No WISPr 2 XML"
-msgstr ""
+msgstr "WISPr 2 XML 지원 비활성화"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:449
 msgid "Open ID Auth"
@@ -407,11 +408,11 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:462
 msgid "Options for RADIUS proxy"
-msgstr ""
+msgstr "RADIUS 프록시 설정"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:253
 msgid "Options for TUN"
-msgstr ""
+msgstr "TUN 설정"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:447
 msgid "Original URL"
@@ -419,20 +420,20 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:241
 msgid "Password used when performing MAC authentication"
-msgstr "Password used when performing MAC authentication"
+msgstr "MAC 인증을 수행할 때 사용할 암호를 지정합니다"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:144
 msgid "Port"
-msgstr ""
+msgstr "포트"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:215
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:219
 msgid "Post authentication proxy"
-msgstr ""
+msgstr "인증 후 프록시"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:387
 msgid "Primary server"
-msgstr ""
+msgstr "기본 서버"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:210
 msgid "Program in inetd style to handle all uam requests"
@@ -440,7 +441,7 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:477
 msgid "Proxy Client"
-msgstr ""
+msgstr "프록시 클라이언트"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:466
 msgid "Proxy Listen"
@@ -448,7 +449,7 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:472
 msgid "Proxy Port"
-msgstr ""
+msgstr "프록시 포트"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:482
 msgid "Proxy Secret"
@@ -456,7 +457,7 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:68
 msgid "RADIUS"
-msgstr ""
+msgstr "RADIUS"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:378
 msgid "RADIUS configuration"
@@ -476,7 +477,7 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:413
 msgid "Retries"
-msgstr ""
+msgstr "재시도 횟수"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:418
 msgid "Retry seconds"
@@ -488,12 +489,12 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:193
 msgid "SSID"
-msgstr ""
+msgstr "SSID"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:120
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:395
 msgid "Secret"
-msgstr ""
+msgstr "공유 암호(Secret)"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:447
 msgid "Send CoovaChilli-OriginalURL in Access-Request"
@@ -505,19 +506,19 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:117
 msgid "Server"
-msgstr ""
+msgstr "서버"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:62
 msgid "Settings"
-msgstr ""
+msgstr "설정"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:334
 msgid "Special options for DHCP"
-msgstr ""
+msgstr "DHCP 상세 설정"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:228
 msgid "Special options for MAC authentication"
-msgstr ""
+msgstr "MAC 인증 상세 설정"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:292
 msgid ""
@@ -533,11 +534,11 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:107
 msgid "State directory"
-msgstr "State directory"
+msgstr "상태 디렉터리"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:297
 msgid "Static IP"
-msgstr ""
+msgstr "정적 IP"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:131
 msgid "Strict DNS"
@@ -545,7 +546,7 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:233
 msgid "Strict MAC authentication"
-msgstr ""
+msgstr "엄격한 MAC 인증"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:373
 msgid "Support 802.1Q VLAN tagged traffic only"
@@ -565,11 +566,11 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:88
 msgid "Syslog facility"
-msgstr ""
+msgstr "시스로그 시설"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:274
 msgid "TCP MSS"
-msgstr ""
+msgstr "TCP MSS"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:269
 msgid "TCP Window"
@@ -581,11 +582,11 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:148
 msgid "TCP port to bind to for only serving embedded content"
-msgstr "TCP port to bind to for only serving embedded content"
+msgstr "내부 콘텐츠 전용 TCP 포트를 지정합니다"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:266
 msgid "TUN device"
-msgstr ""
+msgstr "TUN 장치"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:284
 msgid "TX Q length"
@@ -593,7 +594,7 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:408
 msgid "Timeout"
-msgstr ""
+msgstr "대기 시간"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:66
 msgid "UAM and MAC Authentication"
@@ -609,15 +610,15 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:210
 msgid "UI"
-msgstr ""
+msgstr "UI"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:136
 msgid "URL of homepage to redirect unauthenticated users to"
-msgstr "URL of homepage to redirect unauthenticated users to"
+msgstr "인증되지 않은 사용자를 리다이렉트할 홈페이지 URL을 지정합니다"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:117
 msgid "URL of web server to use for authenticating clients"
-msgstr "URL of web server to use for authenticating clients"
+msgstr "클라이언트 인증 처리를 위한 웹 서버 URL을 지정합니다"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:197
 msgid "Unique IP address of the NAS (nas-ip-address)"
@@ -629,28 +630,28 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:113
 msgid "Universal access method"
-msgstr ""
+msgstr "범용 접속 제어(UAM)"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:259
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:260
 msgid "Use IPv6"
-msgstr ""
+msgstr "IPv6 사용"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:133
 msgid "Use status file"
-msgstr "Use status file"
+msgstr "상태 파일 사용"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:195
 msgid "VLAN"
-msgstr ""
+msgstr "VLAN"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:428
 msgid "WISPr Location ID"
-msgstr "WISPr Location ID"
+msgstr "WISPr 위치 ID"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:432
 msgid "WISPr Location Name"
-msgstr "WISPr Location Name"
+msgstr "WISPr 위치 이름"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:165
 msgid "WISPr Login"
@@ -666,7 +667,7 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:345
 msgid "in seconds"
-msgstr ""
+msgstr "초 단위"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:148
 msgid "iport"
@@ -674,7 +675,7 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:260
 msgid "only"
-msgstr ""
+msgstr "(전용)"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:193
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:195
@@ -683,12 +684,12 @@ msgstr ""
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:219
 msgid "port"
-msgstr ""
+msgstr "포트"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:207
 msgid "www binary"
-msgstr ""
+msgstr "www 바이너리"
 
 #: applications/luci-app-coovachilli/htdocs/luci-static/resources/view/coovachilli/coovachilli.js:205
 msgid "www directory"
-msgstr ""
+msgstr "www 디렉터리"

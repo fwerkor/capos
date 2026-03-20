@@ -6,7 +6,7 @@ Version: 0.3.0-r1
 Depends: +libc +netjson-monitoring +openwisp-config
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @openwisp-monitoring-any
 Section: admin
 Category: Administration
 Repository: base
@@ -26,7 +26,7 @@ Version: 0.3.0-r1
 Depends: +libc +libubus-lua +lua-cjson +rpcd +NETJSON_MONITORING_IWINFO:rpcd-mod-iwinfo
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @netjson-monitoring-any
 Section: admin
 Category: Administration
 Repository: base

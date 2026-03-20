@@ -6,7 +6,7 @@ Version: 3.9.13-r1
 Depends: +libc +libsoup3 +mdnsresponder +gstreamer1-plugins-base +gst1-mod-app
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libdmapsharing-any
 Section: libs
 Category: Libraries
 Repository: base

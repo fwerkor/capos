@@ -257,11 +257,11 @@ msgstr ""
 
 #: modules/luci-mod-dsl/htdocs/luci-static/resources/view/status/dsl/spectrum.js:45
 msgid ""
-"The graph shows th amount of bits actually allocated per subcarrier in the "
+"The graph shows the amount of bits actually allocated per subcarrier in the "
 "uplink and downlink direction"
 msgstr ""
-"График показывает количество битов, фактически выделенных на поднесущую в "
-"восходящем и нисходящем направлениях"
+"График показывает количество бит, фактически выделенных на каждую поднесущую "
+"в восходящем и нисходящем направлениях"
 
 #: modules/luci-mod-dsl/htdocs/luci-static/resources/view/status/dsl/spectrum.js:35
 msgid ""

@@ -1,16 +1,18 @@
+# SPDX-License-Identifier: GPL-2.0-only
+
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=yt-dlp
-PKG_VERSION:=2025.9.26
+PKG_VERSION:=2026.3.3
 PKG_RELEASE:=1
 
 PYPI_NAME:=yt-dlp
-PKG_HASH:=c148ae8233ac4ce6c5fbf6f70fcc390f13a00f59da3776d373cf88c5370bda86
+PKG_HASH:=3db7969e3a8964dc786bdebcffa2653f31123bf2a630f04a17bdafb7bbd39952
 PYPI_SOURCE_NAME:=yt_dlp
 
 PKG_MAINTAINER:=George Sapkin <george@sapk.in>
 PKG_LICENSE:=Unlicense
-PKG_LICENSE_FILES:=LICENSE
+PKG_LICENSE_FILES:=LICENSE THIRD_PARTY_LICENSES.txt
 PKG_CPE_ID:=cpe:/a:yt-dlp_project:yt-dlp
 
 PKG_BUILD_DEPENDS:=python-hatchling/host
@@ -36,12 +38,27 @@ define Package/yt-dlp
     +python3-sqlite3 \
     +python3-urllib \
     +python3-uuid \
-    +python3-xml
+    +python3-xml \
+    +quickjs
 endef
 
 define Package/yt-dlp/description
   yt-dlp is a feature-rich command-line audio/video downloader with support for
   thousands of sites.
+endef
+
+define Package/yt-dlp/conffiles
+/etc/yt-dlp.conf
+endef
+
+define Py3Package/yt-dlp/install
+	if [ -d $(PKG_INSTALL_DIR)/usr/bin ]; then \
+		$(INSTALL_DIR) $(1)/usr/bin ; \
+		$(CP) $(PKG_INSTALL_DIR)/usr/bin/* $(1)/usr/bin/ ; \
+	fi
+
+	$(INSTALL_DIR) $(1)/etc
+	$(INSTALL_CONF) ./files/yt-dlp.conf $(1)/etc/yt-dlp.conf
 endef
 
 $(eval $(call Py3Package,yt-dlp))

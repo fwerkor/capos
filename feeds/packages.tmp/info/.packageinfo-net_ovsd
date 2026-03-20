@@ -6,7 +6,7 @@ Version: 2020.12.08~3a03476e2fececed3752ba4e68c92e71160c7db1-r1
 Depends: +libc +openvswitch +libubox +libubus +netifd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ovsd-any
 Section: net
 Category: Network
 Repository: base

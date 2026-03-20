@@ -6,7 +6,7 @@
 #include <dt-bindings/leds/common.h>
 #include <dt-bindings/pinctrl/mt65xx.h>
 
-#include "mt7981.dtsi"
+#include "mt7981b.dtsi"
 
 / {
 	model = "Konka KOMI A31";
@@ -142,8 +142,6 @@
 	status = "okay";
 
 	spi_nand: flash@0 {
-		#address-cells = <1>;
-		#size-cells = <1>;
 		compatible = "spi-nand";
 		reg = <0>;
 

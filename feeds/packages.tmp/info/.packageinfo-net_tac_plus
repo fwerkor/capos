@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/net/tac_plus/Makefile
 
 Package: tac_plus
-Version: 4.0.4.28-r3
-Depends: +libc 
+Version: 4.0.4.28-r4
+Depends: +libc +USE_GLIBC:libcrypt-compat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tac_plus-any
 Build-Variant: without-pam
 Section: net
 Category: Network
@@ -21,11 +21,11 @@ This package is built without PAM support.
 @@
 
 Package: tac_plus-pam
-Version: 4.0.4.28-r3
+Version: 4.0.4.28-r4
 Depends: +libc +libpam
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tac_plus-pam-any
 Build-Variant: with-pam
 Section: net
 Category: Network

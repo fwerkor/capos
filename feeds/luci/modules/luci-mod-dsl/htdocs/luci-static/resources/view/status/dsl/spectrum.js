@@ -4,23 +4,23 @@
 'require ui';
 'require rpc';
 
-var callDSLStatistics = rpc.declare({
+const callDSLStatistics = rpc.declare({
 	object: 'dsl',
 	method: 'statistics',
 	expect: { '': {} }
 });
 
 return view.extend({
-	load: function() {
+	load() {
 		return Promise.all([
 			callDSLStatistics()
 		]);
 	},
 
-	render: function(data) {
+	render(data) {
 		window.json = data[0];
 
-		var v = E('div', {'class': 'cbi-map'}, [
+		const v = E('div', {'class': 'cbi-map'}, [
 			E('h2', {'style': "height: 40px"}, [ _('DSL line spectrum') ]),
 			E('div', {'class': 'cbi-map-descr'}, _('The following diagrams show graphically prepared DSL characteristics that are important for evaluating the DSL connection.')),
 
@@ -42,7 +42,7 @@ return view.extend({
 						'width': 1024},
 						["chart2"])
 				),
-				E('div', {'class': 'cbi-section-descr', 'style': 'text-align:center'}, _('The graph shows th amount of bits actually allocated per subcarrier in the uplink and downlink direction')),
+				E('div', {'class': 'cbi-section-descr', 'style': 'text-align:center'}, _('The graph shows the amount of bits actually allocated per subcarrier in the uplink and downlink direction')),
 			]),
 			E('div', {'class': 'cbi-section'}, [
 				E('div', {'style': "height: 360px; width:1024px"},

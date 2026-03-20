@@ -6,7 +6,7 @@ Version: 0.7.9-r1
 Depends: +libc +python3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pyroute2-any
 Section: lang
 Category: Languages
 Repository: base
@@ -28,7 +28,7 @@ Version: 0.7.9-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pyroute2-src-any
 Section: lang
 Category: Languages
 Repository: base

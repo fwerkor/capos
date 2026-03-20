@@ -9,7 +9,7 @@ Version: 2025.9.11.17-r1
 Depends: +libc +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-trove-classifiers-any
 Section: lang
 Category: Languages
 Repository: base
@@ -33,7 +33,7 @@ Version: 2025.9.11.17-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-trove-classifiers-src-any
 Section: lang
 Category: Languages
 Repository: base

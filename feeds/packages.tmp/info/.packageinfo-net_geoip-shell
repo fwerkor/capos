@@ -5,7 +5,7 @@ Version: 0.5.2-r1
 Depends: +libc +ca-bundle +kmod-nft-core +nftables +firewall4
 Conflicts: 
 Menu-Depends: 
-Provides: geoip-shell
+Provides: @geoip-shell-any geoip-shell
 Build-Variant: nftables
 Default-Variant: nftables
 Section: opt
@@ -27,7 +27,7 @@ Version: 0.5.2-r1
 Depends: +libc +ca-bundle +kmod-ipt-ipset +IPV6:ip6tables +iptables +ipset
 Conflicts: geoip-shell firewall4
 Menu-Depends: 
-Provides: geoip-shell
+Provides: @geoip-shell-iptables-any geoip-shell
 Build-Variant: iptables
 Section: opt
 Category: Network

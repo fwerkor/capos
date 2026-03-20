@@ -1,10 +1,17 @@
 # Copyright (C) 2006-2012 OpenWrt.org
 # Copyright (C) 2010 Vertical Communications
-# Copyright (C) 2026 CapOS Project
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
 #
+
+config EXTRA_IMAGE_NAME
+	string
+	prompt "Extra image filename" if IMAGEOPT
+	default ""
+	help
+		Add this to the output image filenames, to distinguish between
+		different builds for the same hardware type.
 
 config TARGET_DEFAULT_LAN_IP_FROM_PREINIT
 	bool "Use preinit IP configuration as default LAN IP" if IMAGEOPT
@@ -26,11 +33,11 @@ config TARGET_PREINIT_SUPPRESS_STDERR
 	default y
 	help
 		Sends stderr to null during preinit.  This is the default behaviour
-		in previous versions of CapOS.  This also prevents init process
+		in previous versions of OpenWrt.  This also prevents init process
 		itself from displaying stderr, however processes launched by init
 		in multiuser through inittab will use the current terminal (e.g.
 		the ash shell launched by inittab will display stderr).  That's
-		the same behaviour as seen in previous version of CapOS.
+		the same behaviour as seen in previous version of OpenWrt.
 
 config TARGET_PREINIT_DISABLE_FAILSAFE
 	bool
@@ -147,7 +154,7 @@ menuconfig INITOPT
 		help
 			Prevents showing stderr messages for init command if not already
 			suppressed during preinit.  This is the default behaviour in
-			previous versions of CapOS.  Removing this does nothing if
+			previous versions of OpenWrt.  Removing this does nothing if
 			stderr is suppressed during preinit (which is the default).
 
 
@@ -156,9 +163,9 @@ menuconfig VERSIONOPT
 	default n
 	help
 		These options allow to override the version information embedded in
-		the /etc/capos_version, /etc/capos_release, /etc/banner,
+		the /etc/openwrt_version, /etc/openwrt_release, /etc/banner,
 		/etc/opkg.conf, and /etc/os-release files. Usually there is no need
-		to set these, but they're useful for release builds or custom CapOS
+		to set these, but they're useful for release builds or custom OpenWrt
 		redistributions that should carry custom version tags.
 
 if VERSIONOPT
@@ -166,10 +173,10 @@ if VERSIONOPT
 	config VERSION_DIST
 		string
 		prompt "Release distribution"
-		default "CapOS"
+		default "OpenWrt"
 		help
 			This is the name of the release distribution.
-			If unspecified, it defaults to CapOS.
+			If unspecified, it defaults to OpenWrt.
 
 	config VERSION_NUMBER
 		string
@@ -191,7 +198,7 @@ if VERSIONOPT
 	config VERSION_REPO
 		string
 		prompt "Release repository"
-		default "https://repository.fwerkor.com/capos/snapshots"
+		default "https://downloads.openwrt.org/releases/25.12.1"
 		help
 			This is the repository address embedded in the image, it defaults
 			to the trunk snapshot repo; the url may contain the following placeholders:
@@ -200,67 +207,67 @@ if VERSIONOPT
 			 %v .. Configured release version number or "snapshot", lowercase
 			 %C .. Configured release revision code or value of %R, uppercase
 			 %c .. Configured release revision code or value of %R, lowercase
-			 %D .. Distribution name or "CapOS", uppercase
-			 %d .. Distribution name or "capos", lowercase
+			 %D .. Distribution name or "OpenWrt", uppercase
+			 %d .. Distribution name or "openwrt", lowercase
 			 %T .. Target name
 			 %S .. Target/Subtarget name
 			 %A .. Package architecture
 			 %t .. Build taint flags, e.g. "no-all busybox"
-			 %M .. Manufacturer name or "FWERKOR"
+			 %M .. Manufacturer name or "OpenWrt"
 			 %P .. Product name or "Generic"
 			 %h .. Hardware revision or "v0"
 
 	config VERSION_HOME_URL
 		string
 		prompt "Release Homepage"
-		default "https://github.com/fwerkor/capos"
 		help
 			This is the release version homepage
 
 	config VERSION_MANUFACTURER
 		string
 		prompt "Manufacturer name"
-		default "FWERKOR"
 		help
 			This is the manufacturer name embedded in /etc/device_info
-			Useful for OEMs building CapOS based firmware
+			Useful for OEMs building OpenWrt based firmware
 
 	config VERSION_MANUFACTURER_URL
 		string
 		prompt "Manufacturer URL"
-		default "https://www.fwerkor.com"
 		help
 			This is an URL to the manufacturer's website embedded in /etc/device_info
-			Useful for OEMs building CapOS based firmware
+			Useful for OEMs building OpenWrt based firmware
 
 	config VERSION_BUG_URL
 		string
 		prompt "Bug reporting URL"
-		default "https://github.com/fwerkor/capos/issues"
 		help
 			This is an URL to provide users for providing bug reports
 
 	config VERSION_SUPPORT_URL
 		string
 		prompt "Support URL"
-		default "https://support.fwerkor.com"
 		help
 			This an URL to provide users seeking support
+
+	config VERSION_FIRMWARE_URL
+		string
+		prompt "Firmware URL"
+		help
+			This is an URL to provide users for downloading firmware
 
 	config VERSION_PRODUCT
 		string
 		prompt "Product name"
-		default "CapOS Device"
 		help
 			This is the product name embedded in /etc/device_info
-			Useful for OEMs building CapOS based firmware
+			Useful for OEMs building OpenWrt based firmware
 
 	config VERSION_HWREV
 		string
 		prompt "Hardware revision"
 		help
 			This is the hardware revision string embedded in /etc/device_info
-			Useful for OEMs building CapOS based firmware
+			Useful for OEMs building OpenWrt based firmware
 
 	config VERSION_FILENAMES
 		bool

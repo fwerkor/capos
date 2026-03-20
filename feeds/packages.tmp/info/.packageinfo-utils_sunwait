@@ -6,7 +6,7 @@ Version: 0.9.1-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @sunwait-any
 Section: util
 Category: Utilities
 Repository: base

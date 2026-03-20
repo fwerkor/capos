@@ -6,7 +6,7 @@ Version: 1.7.3-r2
 Depends: +libc +libopenssl +GETDNS_BUILD_LIBEVENT2:libevent2 +!GETDNS_ENABLE_STUB_ONLY:libunbound +GETDNS_ENABLE_IDN_LIBIDN2:libidn2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @getdns-any
 Section: libs
 Category: Libraries
 Repository: base

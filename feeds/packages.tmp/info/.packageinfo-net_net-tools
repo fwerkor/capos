@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/net/net-tools/Makefile
 
 Package: mii-tool
-Version: 2.10-r1
+Version: 2.10-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mii-tool-any
 Section: net
 Category: Network
 Repository: base
@@ -23,12 +23,35 @@ Description: 	The mii-tool command allows you to set or autodetect the media typ
 	optimized for embedded systems and fully automated cross/-sysroot-builds
 @@
 
-Package: net-tools-route
-Version: 2.10-r1
+Package: net-tools-netstat
+Version: 2.10-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: route
+Provides: @net-tools-netstat-any netstat
+Section: net
+Category: Network
+Repository: base
+Title: net-tools - netstat utility
+Maintainer: Stijn Segers <borromini.reg@protonmail.com>
+Source: net-tools-2.10.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:net-tools_project:net-tools
+URL: http://net-tools.sourceforge.net/
+Type: ipkg
+Description: 	Replace busybox version of the netstat command with the full net-tools
+	version. This is normally not needed as busybox is smaller and provides
+	sufficient functionality, but some users may want or need the full
+	functionality of the net-tools variant.
+@@
+
+Package: net-tools-route
+Version: 2.10-r2
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @net-tools-route-any route
 Section: net
 Category: Network
 Repository: base

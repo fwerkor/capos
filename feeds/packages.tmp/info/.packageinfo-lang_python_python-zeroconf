@@ -7,7 +7,7 @@ Version: 0.131.0-r1
 Depends: +libc +python3-light +python3-asyncio +python3-logging +python3-ifaddr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-zeroconf-any
 Section: lang
 Category: Languages
 Repository: base
@@ -27,7 +27,7 @@ Version: 0.131.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-zeroconf-src-any
 Section: lang
 Category: Languages
 Repository: base

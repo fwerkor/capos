@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/net/travelmate/Makefile
 
 Package: travelmate
-Version: 2.2.1-r6
-Depends: +libc +iw +ip +jshn +jsonfilter +curl +ca-bundle +rpcd +rpcd-mod-rpcsys
+Version: 2.4.0-r2
+Depends: +libc +iwinfo +jshn +jsonfilter +curl +ca-bundle +rpcd +rpcd-mod-rpcsys
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @travelmate-any
 Section: net
 Category: Network
 Repository: base

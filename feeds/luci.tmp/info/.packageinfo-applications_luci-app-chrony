@@ -4,10 +4,10 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 Package: luci-app-chrony
 Submenu: 3. Applications
 Version: x
-Depends: +libc +luci-base +chrony-nts
+Depends: +libc +luci-base +chrony
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-chrony-any
 Section: luci
 Category: LuCI
 Repository: base

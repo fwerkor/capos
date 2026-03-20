@@ -1,0 +1,42 @@
+Source-Makefile: feeds/video/libs/seatd/Makefile
+Build-Depends: wayland/host
+
+Package: libseat
+Submenu: Video
+Version: 0.9.1-r2
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @libseat-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: libseat
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: seatd-0.9.1.tar.zst
+License: MIT
+URL: https://git.sr.ht/~kennylevinsen/seatd
+Type: ipkg
+Description:   A universal seat management library.
+@@
+
+Package: seatd
+Submenu: Video
+Version: 0.9.1-r2
+Depends: +libc +libseat
+Conflicts: 
+Menu-Depends: 
+Provides: @seatd-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: seatd
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: seatd-0.9.1.tar.zst
+License: MIT
+URL: https://git.sr.ht/~kennylevinsen/seatd
+Type: ipkg
+Description:   A minimal seat management daemon.
+@@
+
+

@@ -5,7 +5,7 @@ Version: 0.3.113-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libaio-any
 Section: libs
 Category: Libraries
 Repository: base

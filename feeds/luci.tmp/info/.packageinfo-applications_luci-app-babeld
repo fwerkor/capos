@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base +babeld
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-babeld-any
 Section: luci
 Category: LuCI
 Repository: base

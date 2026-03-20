@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/utils/mbpoll/Makefile
+
+Package: mbpoll
+Version: 1.5.2-r1
+Depends: +libc +libmodbus
+Conflicts: 
+Menu-Depends: 
+Provides: @mbpoll-any
+Section: utils
+Category: Utilities
+Repository: base
+Title: Command line utility to communicate with Modbus slaves (RTU/TCP)
+Maintainer: Jens Wagner <jens@wagner2013.de>
+Source: mbpoll-1.5.2.tar.gz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING
+URL: https://epsilonrt.fr/
+Type: ipkg
+Description:   mbpoll is a command line utility to communicate with Modbus slaves
+  (RTU/TCP). It can handle discrete inputs, binary outputs (coils),
+  input registers and write output registers (holding registers)
+@@
+
+

@@ -1,0 +1,24 @@
+Source-Makefile: feeds/video/libs/assimp/Makefile
+
+Package: libassimp
+Submenu: Video
+Version: 6.0.2-r1
+Depends: +libc +libstdcpp +minizip +zlib
+Conflicts: 
+Menu-Depends: 
+Provides: @libassimp-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: Open Asset Importer Library
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: assimp-6.0.2.tar.gz
+License: BSD-3-Clause
+URL: https://github.com/assimp/assimp
+Type: ipkg
+Description: Open Asset Import Library is a library that loads various 3D file formats
+into a shared, in-memory format. It supports more than 40 file formats
+for import and a growing selection of file formats for export.
+@@
+
+

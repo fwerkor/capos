@@ -2,11 +2,11 @@ Source-Makefile: feeds/packages/net/libreswan/Makefile
 
 Package: libreswan
 Submenu: VPN
-Version: 4.12-r2
-Depends: +libc +kmod-ip-vti +IPV6:kmod-ip6-vti +kmod-ipsec +kmod-ipsec4 +IPV6:kmod-ipsec6 +ip-full +kmod-xfrm-interface +libevent2 +libevent2-pthreads +libldns +librt +libunbound +nss-utils +nspr +libcap-ng +kmod-crypto-acompress +kmod-crypto-aead +kmod-crypto-authenc +kmod-crypto-arc4 +kmod-crypto-cbc +kmod-crypto-ccm +kmod-crypto-chacha20poly1305 +kmod-crypto-cmac +kmod-crypto-ctr +kmod-crypto-cts +kmod-crypto-des +kmod-crypto-ecb +kmod-crypto-ecdh +kmod-crypto-gcm +kmod-crypto-ghash +kmod-crypto-hash +kmod-crypto-hmac +kmod-crypto-md4 +kmod-crypto-md5 +kmod-crypto-null +kmod-crypto-pcbc +kmod-crypto-sha1 +kmod-crypto-sha256 +kmod-crypto-sha512 +kmod-crypto-xcbc +kmod-crypto-rng
+Version: 4.12-r4
+Depends: +libc +USE_GLIBC:libcrypt-compat +kmod-ip-vti +IPV6:kmod-ip6-vti +kmod-ipsec +kmod-ipsec4 +IPV6:kmod-ipsec6 +ip-full +kmod-xfrm-interface +libevent2 +libevent2-pthreads +libldns +librt +libunbound +nss-utils +nspr +libcap-ng +kmod-crypto-acompress +kmod-crypto-aead +kmod-crypto-authenc +kmod-crypto-arc4 +kmod-crypto-cbc +kmod-crypto-ccm +kmod-crypto-chacha20poly1305 +kmod-crypto-cmac +kmod-crypto-ctr +kmod-crypto-cts +kmod-crypto-des +kmod-crypto-ecb +kmod-crypto-ecdh +kmod-crypto-gcm +kmod-crypto-ghash +kmod-crypto-hash +kmod-crypto-hmac +kmod-crypto-md4 +kmod-crypto-md5 +kmod-crypto-null +kmod-crypto-pcbc +kmod-crypto-sha1 +kmod-crypto-sha256 +kmod-crypto-sha512 +kmod-crypto-xcbc +kmod-crypto-rng
 Conflicts: strongswan
 Menu-Depends: 
-Provides: openswan
+Provides: @libreswan-any openswan
 Section: net
 Category: Network
 Repository: base
@@ -26,11 +26,11 @@ Description: 	Libreswan is a free software implementation of the most widely sup
 
 Package: libreswan-nftables
 Submenu: VPN
-Version: 4.12-r2
+Version: 4.12-r4
 Depends: +libc firewall4 +libreswan +kmod-nft-xfrm +nftables +kmod-nfnetlink-log
 Conflicts: strongswan
 Menu-Depends: 
-Provides: openswan
+Provides: @libreswan-nftables-any openswan
 Section: net
 Category: Network
 Repository: base
@@ -47,11 +47,11 @@ Description: 	Provides Libreswan nftables plugin for adding firewall rules
 
 Package: libreswan-iptables
 Submenu: VPN
-Version: 4.12-r2
+Version: 4.12-r4
 Depends: +libc firewall +libreswan +iptables-mod-ipsec +kmod-ipt-ipsec +iptables-zz-legacy +IPV6:ip6tables-zz-legacy +kmod-ipt-nflog +iptables-mod-nflog
 Conflicts: strongswan
 Menu-Depends: 
-Provides: openswan
+Provides: @libreswan-iptables-any openswan
 Section: net
 Category: Network
 Repository: base

@@ -3,11 +3,11 @@ Build-Depends: ncurses
 
 Package: tmate
 Submenu: SSH
-Version: 2.4.0-r2
+Version: 2.4.0-r3
 Depends: +libc +libevent2 +libncurses +libpthread +libssh +msgpack-c +terminfo
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tmate-any
 Section: net
 Category: Network
 Repository: base

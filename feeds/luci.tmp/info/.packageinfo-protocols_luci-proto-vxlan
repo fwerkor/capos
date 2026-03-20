@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +vxlan +ip-bridge
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-proto-vxlan-any
 Section: luci
 Category: LuCI
 Repository: base

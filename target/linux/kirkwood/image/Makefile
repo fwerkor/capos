@@ -132,7 +132,8 @@ define Device/checkpoint_l-50
   DEVICE_VENDOR := Check Point
   DEVICE_MODEL := L-50
   DEVICE_PACKAGES := kmod-ath9k kmod-gpio-button-hotplug kmod-mvsdio \
-	kmod-rtc-s35390a kmod-usb-ledtrig-usbport wpad-basic-mbedtls
+	kmod-rtc-s35390a kmod-usb-ledtrig-usbport wpad-basic-mbedtls \
+	kmod-dsa-mv88e6xxx
   IMAGES := sysupgrade.bin
 endef
 TARGET_DEVICES += checkpoint_l-50
@@ -188,12 +189,25 @@ define Device/dlink_dns320l
 endef
 TARGET_DEVICES += dlink_dns320l
 
+define Device/dlink_dns-325-a1
+  DEVICE_VENDOR := D-Link
+  DEVICE_MODEL := DNS-325
+  DEVICE_VARIANT := A1
+  DEVICE_DTS := kirkwood-dns325
+  DEVICE_PACKAGES := kmod-ata-marvell-sata kmod-hwmon-lm75 kmod-hwmon-gpiofan \
+	kmod-thermal kmod-usb-ledtrig-usbport kmod-gpio-button-hotplug block-mount \
+  mdadm kmod-md-linear kmod-usb-storage kmod-fs-ext4 e2fsprogs partx-utils \
+  fdisk kmod-rtc-mv
+endef
+TARGET_DEVICES += dlink_dns-325-a1
+
 define Device/endian_4i-edge-200
   DEVICE_VENDOR := Endian
   DEVICE_MODEL := 4i Edge 200
   DEVICE_ALT0_VENDOR := Endian
   DEVICE_ALT0_MODEL := UTM Mini Firewall
-  DEVICE_PACKAGES := kmod-ath9k kmod-mvsdio wpad-basic-mbedtls kmod-rtc-mv
+  DEVICE_PACKAGES := kmod-ath9k kmod-mvsdio wpad-basic-mbedtls kmod-rtc-mv \
+	kmod-dsa-mv88e6xxx
   KERNEL_SIZE := 4096k
   IMAGES := sysupgrade.bin
 endef
@@ -238,7 +252,7 @@ define Device/iom_ix4-200d
   $(Device/kernel-size-migration-iomega)
   DEVICE_VENDOR := Iomega
   DEVICE_MODEL := StorCenter ix4-200d
-  DEVICE_PACKAGES := kmod-ata-marvell-sata kmod-fs-ext4 \
+  DEVICE_PACKAGES := kmod-ata-ahci kmod-ata-marvell-sata kmod-fs-ext4 \
 	kmod-gpio-button-hotplug kmod-gpio-nxp-74hc164 \
 	kmod-hwmon-adt7475 kmod-mvsdio kmod-spi-gpio kmod-rtc-mv
   PAGESIZE := 512
@@ -273,7 +287,7 @@ define Device/linksys
   $(Device/kernel-size-migration-linksys)
   DEVICE_VENDOR := Linksys
   DEVICE_PACKAGES := kmod-mwl8k wpad-basic-mbedtls kmod-gpio-button-hotplug \
-	kmod-rtc-mv
+	kmod-rtc-mv kmod-dsa-mv88e6xxx
   KERNEL_IN_UBI :=
   KERNEL_SIZE := 4096k
   UBINIZE_OPTS := -E 5

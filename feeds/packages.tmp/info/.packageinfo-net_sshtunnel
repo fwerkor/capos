@@ -6,7 +6,7 @@ Version: 5-r2
 Depends: +libc @(DROPBEAR_DBCLIENT||PACKAGE_openssh-client)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @sshtunnel-any
 Section: net
 Category: Network
 Repository: base

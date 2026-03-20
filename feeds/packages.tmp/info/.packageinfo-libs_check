@@ -5,7 +5,7 @@ Version: 0.15.2-r2
 Depends: +libc +libpthread +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @check-any
 Section: libs
 Category: Libraries
 Repository: base

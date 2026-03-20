@@ -1,17 +1,18 @@
 Source-Makefile: feeds/packages/net/dante/Makefile
+Build-Depends: USE_MUSL:libtirpc
 
 Package: libsocks
-Version: 1.4.3-r3
-Depends: +libc 
+Version: 1.4.4-r2
+Depends: +libc +USE_GLIBC:libcrypt-compat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libsocks-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Dante SOCKS Library
 Maintainer: David Yang <mmyangfl@gmail.com>
-Source: dante-1.4.3.tar.gz
+Source: dante-1.4.4.tar.gz
 License: BSD-4-Clause
 URL: http://www.inet.no/dante/
 ABI-Version: 0
@@ -26,17 +27,17 @@ This package provides the shared libsocks library.
 
 Package: sockd
 Submenu: Web Servers/Proxies
-Version: 1.4.3-r3
-Depends: +libc 
+Version: 1.4.4-r2
+Depends: +libc +USE_GLIBC:libcrypt-compat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @sockd-any
 Section: net
 Category: Network
 Repository: base
 Title: Dante SOCKS Daemon
 Maintainer: David Yang <mmyangfl@gmail.com>
-Source: dante-1.4.3.tar.gz
+Source: dante-1.4.4.tar.gz
 License: BSD-4-Clause
 URL: http://www.inet.no/dante/
 Type: ipkg
@@ -50,17 +51,17 @@ This package provides the Dante sockd daemon.
 
 Package: socksify
 Submenu: Web Servers/Proxies
-Version: 1.4.3-r3
-Depends: +libc 
+Version: 1.4.4-r2
+Depends: +libc +USE_GLIBC:libcrypt-compat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @socksify-any
 Section: net
 Category: Network
 Repository: base
 Title: Dante SOCKS Client
 Maintainer: David Yang <mmyangfl@gmail.com>
-Source: dante-1.4.3.tar.gz
+Source: dante-1.4.4.tar.gz
 License: BSD-4-Clause
 URL: http://www.inet.no/dante/
 Type: ipkg

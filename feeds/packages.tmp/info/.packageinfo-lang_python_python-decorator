@@ -6,7 +6,7 @@ Version: 4.4.2-r1
 Depends: +libc +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-decorator-any
 Section: lang
 Category: Languages
 Repository: base
@@ -25,7 +25,7 @@ Version: 4.4.2-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-decorator-src-any
 Section: lang
 Category: Languages
 Repository: base

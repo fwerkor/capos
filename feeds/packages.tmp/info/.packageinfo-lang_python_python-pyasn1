@@ -6,7 +6,7 @@ Version: 0.5.1-r1
 Depends: +libc +python3-light +python3-logging
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pyasn1-any
 Section: lang
 Category: Languages
 Repository: base
@@ -29,7 +29,7 @@ Version: 0.5.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pyasn1-src-any
 Section: lang
 Category: Languages
 Repository: base

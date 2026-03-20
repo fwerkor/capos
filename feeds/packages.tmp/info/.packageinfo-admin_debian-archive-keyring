@@ -5,7 +5,7 @@ Version: 2023.4-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @debian-archive-keyring-any
 Section: admin
 Category: Administration
 Repository: base

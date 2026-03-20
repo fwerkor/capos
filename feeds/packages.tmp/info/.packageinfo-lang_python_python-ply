@@ -1,14 +1,15 @@
 Source-Makefile: feeds/packages/lang/python/python-ply/Makefile
-Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host
+Build-Depends: python3/host python-setuptools/host python-wheel/host
+Build-Depends/host: python3/host python-setuptools/host python-build/host python-installer/host python-wheel/host
 Build-Types: host
 
 Package: python3-ply
 Submenu: Python
-Version: 3.11-r2
+Version: 3.11-r3
 Depends: +libc +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-ply-any
 Section: lang
 Category: Languages
 Repository: base
@@ -25,11 +26,11 @@ and yacc.
 
 Package: python3-ply-src
 Submenu: Python
-Version: 3.11-r2
+Version: 3.11-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-ply-src-any
 Section: lang
 Category: Languages
 Repository: base

@@ -19,10 +19,10 @@ return view.extend({
 
 					files.forEach((v) => {
 						if (v.name.substr(0, 6) === 'olsrd_') {
-							var pluginname = v.name.match(/^(olsrd_.*)\.so\..*/)[1];
+							const pluginname = v.name.match(/^(olsrd_.*)\.so\..*/)[1];
 
 							if (!libsArr.includes(pluginname)) {
-								var sid = uci.add('olsrd6', 'LoadPlugin');
+								const sid = uci.add('olsrd6', 'LoadPlugin');
 								uci.set('olsrd6', sid, 'ignore', '1');
 								uci.set('olsrd6', sid, 'library', pluginname);
 							}
@@ -33,19 +33,19 @@ return view.extend({
 		]);
 	},
 	render: function () {
-		var pathname = window.location.pathname;
-		var segments = pathname.split('/');
-		var sidIndex = segments.lastIndexOf('plugins') + 1;
-		var sid = null;
+		const pathname = window.location.pathname;
+		const segments = pathname.split('/');
+		const sidIndex = segments.lastIndexOf('plugins') + 1;
+		let sid = null;
 		if (sidIndex !== -1 && sidIndex < segments.length) {
 			sid = segments[sidIndex];
 		}
 		if (sid) {
-			var mp = new form.Map('olsrd6', _('OLSR - Plugins'));
-			var p = mp.section(form.NamedSection, sid, 'LoadPlugin', _('Plugin configuration'));
+			let mp = new form.Map('olsrd6', _('OLSR - Plugins'));
+			let p = mp.section(form.NamedSection, sid, 'LoadPlugin', _('Plugin configuration'));
 			p.anonymous = true;
-			var plname = uci.get('olsrd6', sid, 'library');
-			var ign = p.option(form.Flag, 'ignore', _('Enable'));
+			let plname = uci.get('olsrd6', sid, 'library');
+			let ign = p.option(form.Flag, 'ignore', _('Enable'));
 			ign.enabled = '0';
 			ign.disabled = '1';
 			ign.rmempty = false;
@@ -53,12 +53,12 @@ return view.extend({
 				return uci.get('olsrd6', section_id, 'ignore') || '0';
 			};
 
-			var lib = p.option(form.DummyValue, 'library', _('Library'));
+			let lib = p.option(form.DummyValue, 'library', _('Library'));
 			lib.default = plname;
 
 			function Range(x, y) {
-				var t = [];
-				for (var i = x; i <= y; i++) {
+				const t = [];
+				for (let i = x; i <= y; i++) {
 					t.push(i);
 				}
 				return t;
@@ -69,10 +69,11 @@ return view.extend({
 					return isIPv6 ? network.prefixToMask(prefix, true) : network.prefixToMask(prefix, false);
 				}
 
+				let newVal
 				if (val) {
-					var newVal = val.map(cidr => {
-						var [ip, prefix] = cidr.split('/');
-						var networkip, mask;
+					newVal = val.map(cidr => {
+						const [ip, prefix] = cidr.split('/');
+						let networkip, mask;
 				
 						if (validation.parseIPv6(ip)) {
 								networkip = ip;
@@ -92,25 +93,25 @@ return view.extend({
 			function IpMask2Cidr(val) {
 				if (val) {
 					for (let i = 0; i < val.length; i++) {
-						var [ip, mask] = val[i].match(/([^ ]+)%s+([^ ]+)/) || [];
-						var cidr;
+						const [ip, mask] = val[i].match(/([^ ]+)%s+([^ ]+)/) || [];
+						let cidr;
 
 						if (ip && mask) {
 							if (validation.parseIPv6(ip)) {
 								cidr = ip + '/' + mask;
 							} else if (validation.parseIPv4(ip)) {
-								var ipParts = ip.split('.');
-								var maskParts = mask.split('.');
-								var cidrParts = [];
+								const ipParts = ip.split('.');
+								const maskParts = mask.split('.');
+								const cidrParts = [];
 
 								for (let j = 0; j < 4; j++) {
-									var ipPart = parseInt(ipParts[j]);
-									var maskPart = parseInt(maskParts[j]);
-									var cidrPart = ipPart & maskPart;
+									const ipPart = parseInt(ipParts[j]);
+									const maskPart = parseInt(maskParts[j]);
+									const cidrPart = ipPart & maskPart;
 									cidrParts.push(cidrPart);
 								}
 
-								var cidrPrefix = network.maskToPrefix(maskParts.join('.'));
+								const cidrPrefix = network.maskToPrefix(maskParts.join('.'));
 								cidr = cidrParts.join('.') + '/' + cidrPrefix;
 							}
 						}
@@ -201,21 +202,22 @@ return view.extend({
 				for (const option of knownPlParams[plname]) {
 					const [otype, name, defaultVal, uci2cbi, cbi2uci] = option;
 					let values;
+					let actualDefault = defaultVal; // new variable instead of reassigning defaultVal
 
 					if (Array.isArray(defaultVal)) {
 						values = defaultVal;
-						defaultVal = defaultVal[0];
+						actualDefault = defaultVal[0];
 					}
 
 					if (otype === form.Flag) {
 						const bool = p.option(form.Flag, name, name);
-						if (defaultVal === 'yes' || defaultVal === 'no') {
+						if (actualDefault === 'yes' || actualDefault === 'no') {
 							bool.enabled = 'yes';
 							bool.disabled = 'no';
-						} else if (defaultVal === 'on' || defaultVal === 'off') {
+						} else if (actualDefault === 'on' || actualDefault === 'off') {
 							bool.enabled = 'on';
 							bool.disabled = 'off';
-						} else if (defaultVal === '1' || defaultVal === '0') {
+						} else if (actualDefault === '1' || actualDefault === '0') {
 							bool.enabled = '1';
 							bool.disabled = '0';
 						} else {
@@ -223,7 +225,7 @@ return view.extend({
 							bool.disabled = 'false';
 						}
 						bool.optional = true;
-						bool.placeholder = defaultVal;
+						bool.placeholder = actualDefault;
 						bool.cfgvalue = function (section_id) {
 							return uci.get('olsrd6', section_id, name);
 						};
@@ -244,27 +246,27 @@ return view.extend({
 						}
 						if (typeof cbi2uci === 'function') {
 							field.write = function (section_id, formvalue) {
-								var saveval=cbi2uci(formvalue);
+								const saveval=cbi2uci(formvalue);
 								uci.set('olsrd6', section_id, name, saveval);
 							};
 						}
 						field.optional = true;
-						field.placeholder = defaultVal;
+						field.placeholder = actualDefault;
 					}
 				}
 			}
 
 			return mp.render();
 		} else {
-			var mpi = new form.Map('olsrd6', _('OLSR - Plugins'));
+			let mpi = new form.Map('olsrd6', _('OLSR - Plugins'));
 
-			var t = mpi.section(form.TableSection, 'LoadPlugin', _('Plugins'));
+			let t = mpi.section(form.TableSection, 'LoadPlugin', _('Plugins'));
 			t.anonymous = true;
 
 			t.extedit = function (eve) {
-				var editButton = eve.target;
-				var sid;
-				var row = editButton.closest('.cbi-section-table-row');
+				const editButton = eve.target;
+				let sid;
+				const row = editButton.closest('.cbi-section-table-row');
 
 				if (row) {
 					sid = row.getAttribute('data-sid');
@@ -273,12 +275,11 @@ return view.extend({
 				window.location.href = `plugins/${sid}`;
 			};
 
-			var ign = t.option(form.Flag, 'ignore', _('Enabled'));
+			let ign = t.option(form.Flag, 'ignore', _('Enabled'));
 			ign.enabled = '0';
 			ign.disabled = '1';
 			ign.rmempty = false;
-
-			function ign_cfgvalue(section_id) {
+			ign.cfgvalue = function(section_id) {
 				return uci.get(section_id, 'ignore') || '0';
 			}
 

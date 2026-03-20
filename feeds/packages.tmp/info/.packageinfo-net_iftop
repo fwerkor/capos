@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/net/iftop/Makefile
 
 Package: iftop
-Version: 2018.10.03~77901c8c53e01359d83b8090aacfe62214658183-r2
+Version: 2025.06.21~75d1818129cbb8ff1bb7ca4915b95046f3ed0666-r1
 Depends: +libc +libpcap +libncurses +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @iftop-any
 Section: net
 Category: Network
 Repository: base
 Title: display bandwith usage on an interface
 Maintainer: Paul Spooren <mail@aparcar.org>
-Source: iftop-2018.10.03~77901c8c53e01359d83b8090aacfe62214658183.tar.zst
+Source: iftop-2025.06.21~75d1818129cbb8ff1bb7ca4915b95046f3ed0666.tar.zst
 License: GPL-2.0
 URL: http://www.ex-parrot.com/~pdw/iftop/
 Type: ipkg

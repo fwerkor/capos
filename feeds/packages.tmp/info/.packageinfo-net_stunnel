@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/net/stunnel/Makefile
 
 Package: stunnel
-Version: 5.72-r1
+Version: 5.75-r1
 Depends: +libc +libopenssl +zlib +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @stunnel-any
 Section: net
 Category: Network
 Repository: base
 Title: SSL TCP Wrapper
 Maintainer: Florian Eckert <fe@dev.tdt.de>
-Source: stunnel-5.72.tar.gz
+Source: stunnel-5.75.tar.gz
 License: GPL-2.0-or-later
 LicenseFiles: COPYING.md COPYRIGHT.md
 CPE-ID: cpe:/a:stunnel:stunnel

@@ -5,7 +5,7 @@ Version: 2.1.2-r2
 Depends: +libc +libcurl +libpcap
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @antiblock-any
 Section: net
 Category: Network
 Repository: base

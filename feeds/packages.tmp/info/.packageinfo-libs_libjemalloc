@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/libs/libjemalloc/Makefile
+
+Package: libjemalloc
+Version: 5.3.0-r1
+Depends: +libc +libunwind +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: @libjemalloc-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: Jemalloc general purpose allocator
+Maintainer: Philip Prindeville <philipp@redfish-solutions.com>
+Source: jemalloc-5.3.0.tar.gz
+License: BSD-2-Clause
+LicenseFiles: COPYING
+URL: https://github.com/jemalloc/jemalloc
+ABI-Version: 2
+Type: ipkg
+Description: Jemalloc general purpose allocator
+@@
+
+

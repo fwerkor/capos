@@ -6,7 +6,7 @@ Version: 0.22.2-r1
 Depends: +libc +python3-light +python3-attrs +python3-idna +python3-outcome +python3-sniffio +python3-sortedcontainers
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-trio-any
 Section: lang
 Category: Languages
 Repository: base
@@ -27,7 +27,7 @@ Version: 0.22.2-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-trio-src-any
 Section: lang
 Category: Languages
 Repository: base

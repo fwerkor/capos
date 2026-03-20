@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/utils/rrdtool1/Makefile
 
 Package: librrd1
-Version: 1.0.50-r6
+Version: 1.0.50-r7
 Depends: +libc +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @librrd1-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -32,11 +32,11 @@ Description:  RRD is the Acronym for Round Robin Database. RRD is a system to st
 
 Package: rrdcgi1
 Submenu: Database
-Version: 1.0.50-r6
+Version: 1.0.50-r7
 Depends: +libc +librrd1
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rrdcgi1-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -64,11 +64,11 @@ Description:  RRD is the Acronym for Round Robin Database. RRD is a system to st
 
 Package: rrdtool1
 Submenu: Database
-Version: 1.0.50-r6
+Version: 1.0.50-r7
 Depends: +libc +librrd1
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rrdtool1-any
 Section: utils
 Category: Utilities
 Repository: base

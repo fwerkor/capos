@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2025-10-31 07:04+0000\n"
+"PO-Revision-Date: 2026-03-06 07:15+0000\n"
 "Last-Translator: nKsyn <e.nksyn@gmail.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
 "projects/openwrt/luciapplicationsxinetd/zh_Hans/>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: applications/luci-app-xinetd/htdocs/luci-static/resources/view/xinetd/xinetd.js:73
 msgid "Access Control"
@@ -65,7 +65,7 @@ msgstr "启用或禁用此服务"
 #: applications/luci-app-xinetd/htdocs/luci-static/resources/view/xinetd/xinetd.js:65
 #: applications/luci-app-xinetd/htdocs/luci-static/resources/view/xinetd/xinetd.js:88
 msgid "Enabled"
-msgstr "启用"
+msgstr "已启用"
 
 #: applications/luci-app-xinetd/htdocs/luci-static/resources/view/xinetd/xinetd.js:252
 msgid "Expected '[Number] [Number]'"
@@ -168,7 +168,7 @@ msgstr "重定向"
 
 #: applications/luci-app-xinetd/htdocs/luci-static/resources/view/xinetd/xinetd.js:171
 msgid "Redirect incoming TCP requests to this IP address:port."
-msgstr "将传入的 TCP 请求重定向到此 IP 地址：端口。"
+msgstr "将传入的 TCP 请求重定向到此 IP 地址: 端口。"
 
 #: applications/luci-app-xinetd/htdocs/luci-static/resources/view/xinetd/xinetd.js:216
 #: applications/luci-app-xinetd/htdocs/luci-static/resources/view/xinetd/xinetd.js:224
@@ -253,7 +253,7 @@ msgstr "线程行为"
 
 #: applications/luci-app-xinetd/htdocs/luci-static/resources/view/xinetd/xinetd.js:255
 msgid "Time intervals within service is available (Format hh:mm-hh:mm)"
-msgstr "服务可用的时间间隔（格式为 hh:mm-hh:mm）"
+msgstr "服务可用的时间间隔（格式为 hh：mm-hh：mm）"
 
 #: applications/luci-app-xinetd/htdocs/luci-static/resources/view/xinetd/xinetd.js:109
 msgid "To which address to bind"

@@ -1,0 +1,25 @@
+Source-Makefile: feeds/video/libs/libwpe/Makefile
+Build-Depends: mesa
+
+Package: libwpe
+Version: 1.16.3-r1
+Depends: +libc +libstdcpp +libxkbcommon
+Conflicts: 
+Menu-Depends: 
+Provides: @libwpe-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: WPE backend abstraction library
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: libwpe-1.16.3.tar.xz
+License: BSD-2-clause
+LicenseFiles: COPYING
+URL: https://wpewebkit.org/
+Type: ipkg
+Description:  An Open Source WebKit port for Linux-based embedded devices designed
+ with flexibility and hardware acceleration in mind, leveraging common 3D
+ graphics APIs for best performance.
+@@
+
+

@@ -1,0 +1,27 @@
+Source-Makefile: feeds/packages/libs/libwacom/Makefile
+
+Package: libwacom
+Version: 2.16.1-r1
+Depends: +libc +glib2 +libevdev +libgudev
+Conflicts: 
+Menu-Depends: 
+Provides: @libwacom-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: a tablet description library
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: libwacom-2.16.1.tar.xz
+License: MIT
+LicenseFiles: COPYING
+URL: https://github.com/linuxwacom/libwacom
+Type: ipkg
+Description: libwacom is a library to identify graphics tablets and their model-specific
+features. It provides easy access to information such as "is this a built-in
+on-screen tablet", "what is the size of this model", etc.
+
+The name libwacom is historical - it was originally developed for Wacom devices
+only but now supports any graphics tablet from any vendor.
+@@
+
+

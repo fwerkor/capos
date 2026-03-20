@@ -5,7 +5,7 @@ Version: 0.35-r1
 Depends: +libc +libmpdclient
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mpc-any
 Section: sound
 Category: Sound
 Repository: base

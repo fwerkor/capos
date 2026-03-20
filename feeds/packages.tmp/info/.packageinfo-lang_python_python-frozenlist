@@ -6,7 +6,7 @@ Version: 1.4.0-r1
 Depends: +libc +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-frozenlist-any
 Section: lang
 Category: Languages
 Repository: base
@@ -29,7 +29,7 @@ Version: 1.4.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-frozenlist-src-any
 Section: lang
 Category: Languages
 Repository: base

@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/libs/apr/Makefile
 
 Package: libapr
-Version: 1.7.5-r1
-Depends: +libc +libpthread +librt +libuuid
+Version: 1.7.6-r1
+Depends: +libc +USE_GLIBC:libcrypt-compat +libpthread +librt +libuuid
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libapr-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Apache Portable Runtime Library
 Maintainer: Thomas Heil <heil@terminal-consulting.de>
-Source: apr-1.7.5.tar.bz2
+Source: apr-1.7.6.tar.bz2
 License: Apache-2.0
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:apache:portable_runtime

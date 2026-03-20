@@ -5,7 +5,7 @@ Version: 2.11.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @hev-socks5-server-any
 Section: net
 Category: Network
 Repository: base

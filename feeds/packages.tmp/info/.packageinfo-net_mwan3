@@ -2,11 +2,11 @@ Source-Makefile: feeds/packages/net/mwan3/Makefile
 
 Package: mwan3
 Submenu: Routing and Redirection
-Version: 2.11.16-r5
-Depends: +libc +ip +ipset +iptables +IPV6:ip6tables +iptables-mod-conntrack-extra +iptables-mod-ipopt +jshn
+Version: 2.12.0-r3
+Depends: +libc +ip +ipset +iptables +IPV6:ip6tables +iptables-mod-conntrack-extra +iptables-mod-ipopt +rpcd-mod-ucode +jshn
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mwan3-any
 Section: net
 Category: Network
 Repository: base

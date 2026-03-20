@@ -5,7 +5,7 @@ Version: 2024.05.13~4613ac3c15fd75cebc4b9f65b7fb95e70a3acce1-r1
 Depends: +libc +libpthread @BUILD_PATENTED
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libx264-any
 Section: libs
 Category: Libraries
 Repository: base

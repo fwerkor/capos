@@ -5,7 +5,7 @@ Version: 1.7.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bridge-any
 Section: net
 Category: Base system
 Repository: base

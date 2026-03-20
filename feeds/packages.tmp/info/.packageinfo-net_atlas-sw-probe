@@ -5,7 +5,7 @@ Version: 5080-r2
 Depends: +libc +atlas-probe +PACKAGE_dropbear:dropbearconvert
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @atlas-sw-probe-any
 Section: net
 Category: Network
 Repository: base
@@ -27,7 +27,7 @@ Version: 5080-r2
 Depends: +libc +atlas-probe +bind-dig +rpcd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @atlas-sw-probe-rpc-any
 Section: net
 Category: Network
 Repository: base

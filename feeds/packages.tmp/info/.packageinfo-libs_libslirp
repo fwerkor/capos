@@ -6,7 +6,7 @@ Version: 4.7.0-r2
 Depends: +libc +glib2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libslirp-any
 Section: libs
 Category: Libraries
 Repository: base

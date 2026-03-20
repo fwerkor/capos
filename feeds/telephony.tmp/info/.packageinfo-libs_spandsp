@@ -6,7 +6,7 @@ Version: 0.0.6-r4
 Depends: +libc +libtiff
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libspandsp-any
 Section: libs
 Category: Libraries
 Repository: base

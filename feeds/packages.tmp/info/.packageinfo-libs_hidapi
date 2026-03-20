@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/libs/hidapi/Makefile
 
 Package: hidapi
-Version: 0.14.0-r1
+Version: 0.15.0-r1
 Depends: +libc +libusb-1.0 +libudev +BUILD_NLS:libiconv-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @hidapi-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Library to talk to HID devices
 Maintainer: Paul Fertser <fercerpav@gmail.com>
-Source: hidapi-0.14.0.tar.zst
+Source: hidapi-0.15.0.tar.zst
 License: BSD-3-Clause
 LicenseFiles: LICENSE-bsd.txt
 URL: https://github.com/libusb/hidapi

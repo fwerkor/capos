@@ -3,13 +3,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=openwrt-keyring
-PKG_RELEASE:=2
+PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL=$(PROJECT_GIT)/keyring.git
-PKG_SOURCE_DATE:=2024-11-01
-PKG_SOURCE_VERSION:=fbae29d730f81c892f52e0ff00fe867444aeeae6
-PKG_MIRROR_HASH:=9a314756ddb61dde084f810ef056835addd9097ad26cb5e66efc6b38debc8aa0
+PKG_SOURCE_DATE:=2025-12-10
+PKG_SOURCE_VERSION:=f0670054fd3aa9616bcd8d0d0357a1a15c65b758
+PKG_MIRROR_HASH:=a8e0c09678109c576a54ed5101ac83131015533da899c10d9e276c200cf97b1b
 
 PKG_MAINTAINER:=John Crispin <john@phrozen.org>
 PKG_LICENSE:=GPL-2.0
@@ -33,13 +33,13 @@ Build/Compile=
 ifneq ($(CONFIG_USE_APK),)
 define Package/openwrt-keyring/install
 	$(INSTALL_DIR) $(1)/etc/apk/keys/
-	$(INSTALL_DATA) $(PKG_BUILD_DIR)/apk/*.pem $(1)/etc/apk/keys/
+	$(INSTALL_DATA) $(PKG_BUILD_DIR)/apk/openwrt-25.12.pem $(1)/etc/apk/keys/
 endef
 else
 define Package/openwrt-keyring/install
 	$(INSTALL_DIR) $(1)/etc/opkg/keys/
-	# Public usign key for 24.10 release builds
-	$(INSTALL_DATA) $(PKG_BUILD_DIR)/usign/d310c6f2833e97f7 $(1)/etc/opkg/keys/
+	# Public usign key for unattended snapshot builds
+	$(INSTALL_DATA) $(PKG_BUILD_DIR)/usign/b5043e70f9a75cde $(1)/etc/opkg/keys/
 endef
 endif
 

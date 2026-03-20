@@ -115,6 +115,9 @@
 	--disabled-opacity: .7;
 
 	color-scheme: light;
+
+	--font-sans: Helvetica Neue, Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
+	--font-mono: Monaco, Andale Mono, Courier New, ui-monospace, monospace;
 }
 
 :root[data-darkmode="true"] {
@@ -224,11 +227,6 @@ textarea {
 	line-height: 2em;
 }
 
-button::-moz-focus-inner, input::-moz-focus-inner {
-	border: 0;
-	padding: 0;
-}
-
 button,
 input[type="button"],
 input[type="reset"],
@@ -278,7 +276,7 @@ textarea {
  * ------------------------------------------------------------------------------------------- */
 body {
 	background-color: var(--background-color-high);
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: var(--font-sans);
 	font-size: 13px;
 	font-weight: normal;
 	line-height: 18px;
@@ -292,7 +290,7 @@ body {
 
 .container {
 	width: 100%;
-	max-width: 940px;
+	max-width: 1180px;
 	margin-left: auto;
 	margin-right: auto;
 	zoom: 1;
@@ -318,7 +316,9 @@ a:hover {
 	float: left;
 }
 
-.nowrap {
+.nowrap:not(span) {
+/*	Sometimes you need to wrap: badges on narrow screens look weird 
+	and nowrap defeats other width constraints, so exclude span */
 	white-space: nowrap;
 }
 
@@ -483,7 +483,7 @@ address {
 
 code, pre {
 	padding: 0 3px 2px;
-	font-family: Monaco, Andale Mono, Courier New, monospace;
+	font-family: var(--font-mono);
 	font-size: 12px;
 	border-radius: 3px;
 }
@@ -535,7 +535,7 @@ label,
 input,
 button,
 select {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: var(--font-sans);
 	font-size: 13px;
 	font-weight: normal;
 	line-height: normal;
@@ -545,6 +545,7 @@ select {
 	display: flex;
 	flex-wrap: wrap;
 	margin-bottom: 18px;
+	align-items: baseline;
 }
 
 .cbi-value-field {
@@ -590,6 +591,12 @@ select,
 	line-height: 18px;
 	border: 1px solid var(--border-color-high);
 	border-radius: 3px;
+}
+
+@media screen and (min-width: 768px) {
+	#localtime {
+		width: 300px;
+	}
 }
 
 input,
@@ -1062,8 +1069,8 @@ header {
 	box-shadow: 0 1px 3px hsla(var(--border-color-low-hsl), .25), inset 0 -1px 0 hsla(var(--border-color-low-hsl), .01);
 	padding: 0;
 	/* the redundant properties below work around a csstidy bug */
-	padding-left: calc((100% - 940px) / 2);
-	padding-right: calc((100% - 940px) / 2);
+	padding-left: calc((100% - 1180px) / 2);
+	padding-right: calc((100% - 1180px) / 2);
 }
 
 .nav {
@@ -1421,6 +1428,7 @@ footer ul.breadcrumb {
 .modal > .button-row {
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .modal > .button-row > button:not(:last-of-type) {
@@ -1444,7 +1452,7 @@ body.modal-overlay-active #modal_overlay {
 }
 
 .btn .close, .alert-message .close {
-	font-family: Arial, sans-serif;
+	font-family: var(--font-sans);
 	line-height: 18px;
 }
 
@@ -1903,11 +1911,6 @@ body.modal-overlay-active #modal_overlay {
 	font-size: 11px;
 }
 
-button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
-	padding: 0;
-	border: 0;
-}
-
 .close {
 	float: right;
 	color: #000;
@@ -2031,15 +2034,13 @@ form.inline { display: inline; margin-bottom: 0; }
 	font-weight: normal;
 }
 
-.cbi-section-table-titles.named::before,
+.cbi-section-table-titles {
+	font-weight: bold;
+}
+
 .cbi-section-table-descr.named::before,
 .cbi-section-table-row[data-title]::before {
-	content: attr(data-title) " ";
-	display: table-cell;
-	padding: 10px 10px 9px;
-	line-height: 18px;
-	font-weight: bold;
-	vertical-align: middle;
+	content: none;
 }
 
 .cbi-section-table-titles.named::before,
@@ -2195,10 +2196,14 @@ th[data-sort-direction="desc"]::after { content: "\a0\25bc"; }
 	white-space: normal;
 }
 
+#cbi-network-interface .ifacebox img {
+	width: 24px;
+	height: 24px;
+}
+
 .ifacebadge {
 	display: inline-block;
 	flex-direction: row;
-	white-space: nowrap;
 	border: 1px solid var(--border-color-high);
 	padding: 2px;
 	background: linear-gradient(var(--background-color-high), var(--background-color-high) 25%, var(--background-color-medium));
@@ -2611,18 +2616,10 @@ div.cbi-value var.cbi-tooltip-container,
 	max-width: none;
 }
 
-[data-darkmode="true"] [data-page="admin-status-channel_analysis"] #view> div > div > div > div > div[style],
-[data-darkmode="true"] [data-page="admin-status-realtime-load"] #view > div > div > div[style],
-[data-darkmode="true"] [data-page="admin-status-realtime-bandwidth"] #view > div > div > div > div[style],
-[data-darkmode="true"] [data-page="admin-status-realtime-wireless"] #view > div > div > div > div[style],
-[data-darkmode="true"] [data-page="admin-status-realtime-connections"] #view > div > div > div[style] {
+#view div[style] > svg {
 	background-color: var(--background-color-high)!important;
 }
 
-[data-darkmode="true"] [data-page="admin-status-channel_analysis"] #view> div > div > div > div > div > svg > line[style],
-[data-darkmode="true"] [data-page="admin-status-realtime-load"] #view > div > div > div > svg > line[style],
-[data-darkmode="true"] [data-page="admin-status-realtime-bandwidth"] #view > div > div > div > div > svg > line[style],
-[data-darkmode="true"] [data-page="admin-status-realtime-wireless"] #view > div > div > div > div > svg > line[style],
-[data-darkmode="true"] [data-page="admin-status-realtime-connections"] #view > div > div > div > svg > line[style] {
-	stroke: #fff!important;
+#view div[style] > svg line[style] {
+	stroke: var(--text-color-highest)!important;
 }

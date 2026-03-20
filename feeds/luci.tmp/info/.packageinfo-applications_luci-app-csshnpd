@@ -1,0 +1,23 @@
+Source-Makefile: feeds/luci/applications/luci-app-csshnpd/Makefile
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+
+Package: luci-app-csshnpd
+Submenu: 3. Applications
+Version: x
+Depends: +libc +luci-base +csshnpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-app-csshnpd-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: NoPorts Web UI
+Maintainer: OpenWrt LuCI community
+Source: 
+License: GPL-2.0
+URL: https://github.com/openwrt/luci
+Type: ipkg
+Description:    LuCI config app for NoPorts daemon (csshnpd)
+@@
+
+

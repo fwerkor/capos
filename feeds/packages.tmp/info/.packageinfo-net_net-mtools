@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/net/net-mtools/Makefile
 
 Package: net-mtools
-Version: 2.3-r1
+Version: 3.2-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @net-mtools-any
 Section: net
 Category: Network
 Repository: base
 Title: Debug multicast setups with mtools (msend and mreceive)
 Maintainer: 
-Source: net-mtools-2.3.tar.zst
+Source: net-mtools-3.2.tar.zst
 URL: https://github.com/troglobit/mtools
 Type: ipkg
 Description:   The tools msend and mreceive can be particulary useful

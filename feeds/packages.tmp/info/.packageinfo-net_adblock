@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/net/adblock/Makefile
 
 Package: adblock
-Version: 4.4.2-r4
-Depends: +libc +jshn +jsonfilter +coreutils +coreutils-sort +gawk +ca-bundle +rpcd +rpcd-mod-rpcsys
+Version: 4.5.3-r1
+Depends: +libc +jshn +jsonfilter +firewall4 +coreutils +coreutils-sort +gawk +ca-bundle +rpcd +rpcd-mod-rpcsys
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @adblock-any
 Section: net
 Category: Network
 Repository: base

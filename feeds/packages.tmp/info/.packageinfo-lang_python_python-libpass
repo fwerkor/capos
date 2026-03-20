@@ -1,0 +1,61 @@
+Source-Makefile: feeds/packages/lang/python/python-libpass/Makefile
+Build-Depends: python-hatchling/host
+
+Package: python3-libpass
+Submenu: Python
+Version: 1.9.3-r1
+Depends: +libc +python3
+Conflicts: 
+Menu-Depends: 
+Provides: @python3-libpass-any python3-passlib
+Section: lang
+Category: Languages
+Repository: base
+Title: Comprehensive password hashing framework
+Maintainer: 
+Source: libpass-1.9.3.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://github.com/notypecheck/passlib
+Type: ipkg
+Description: Libpass is a maintained fork of the now defunct Passlib package. Passlib
+is a password hashing library for Python 2 & 3, which provides
+cross-platform implementations of over 30 password hashing algorithms,
+as well as a framework for managing existing password hashes. It’s
+designed to be useful for a wide range of tasks, from verifying a hash
+found in /etc/shadow, to providing full-strength password hashing for
+multi-user applications.
+@@
+
+Package: python3-libpass-src
+Submenu: Python
+Version: 1.9.3-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @python3-libpass-src-any
+Section: lang
+Category: Languages
+Repository: base
+Title: Comprehensive password hashing framework (sources)
+Maintainer: 
+Source: libpass-1.9.3.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://github.com/notypecheck/passlib
+Type: ipkg
+Description:     Libpass is a maintained fork of the now defunct Passlib package. Passlib
+is a password hashing library for Python 2 & 3, which provides
+cross-platform implementations of over 30 password hashing algorithms,
+as well as a framework for managing existing password hashes. It’s
+designed to be useful for a wide range of tasks, from verifying a hash
+found in /etc/shadow, to providing full-strength password hashing for
+multi-user applications.
+
+    This package contains the Python source files for python3-libpass.
+@@
+Config:
+    depends on PACKAGE_python3-libpass
+@@
+
+

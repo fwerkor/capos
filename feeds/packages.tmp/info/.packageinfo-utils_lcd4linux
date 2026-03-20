@@ -6,7 +6,7 @@ Version: 2019.07.19~0b83bb3a81e7e7f5c0aa1daa6f5b9abca538fd47-r10
 Depends: +libc +LCD4LINUX_CUSTOM_NEEDS_libdbus:libdbus +LCD4LINUX_CUSTOM_NEEDS_libgd:libgd +LCD4LINUX_CUSTOM_NEEDS_libjpeg:libjpeg +LCD4LINUX_CUSTOM_NEEDS_libmpdclient:libmpdclient +LCD4LINUX_CUSTOM_NEEDS_libmysqlclient:libmysqlclient +LCD4LINUX_CUSTOM_NEEDS_libncurses:libncurses +LCD4LINUX_CUSTOM_NEEDS_libsqlite3:libsqlite3 +LCD4LINUX_CUSTOM_NEEDS_libusb:libusb-compat
 Conflicts: 
 Menu-Depends: 
-Provides: lcd4linux
+Provides: @lcd4linux-custom-any lcd4linux
 Build-Variant: custom
 Section: utils
 Category: Utilities
@@ -32,7 +32,7 @@ Version: 2019.07.19~0b83bb3a81e7e7f5c0aa1daa6f5b9abca538fd47-r10
 Depends: +libc @DEVEL +libdbus +libgd +libmpdclient +libmysqlclient +libncurses +libsqlite3 +libusb-compat
 Conflicts: 
 Menu-Depends: 
-Provides: lcd4linux
+Provides: @lcd4linux-full-any lcd4linux
 Build-Variant: full
 Section: utils
 Category: Utilities

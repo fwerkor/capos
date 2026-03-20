@@ -3,17 +3,17 @@ Build-Depends: gettext-full/host
 
 Package: certtool
 Submenu: Encryption
-Version: 3.8.5-r1
+Version: 3.8.10-r1
 Depends: +libc +libgnutls
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @certtool-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: GNU TLS (certool utility)
 Maintainer: Nikos Mavrogiannopoulos <nmav@gnutls.org>
-Source: gnutls-3.8.5.tar.xz
+Source: gnutls-3.8.10.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:gnu:gnutls
@@ -30,17 +30,17 @@ Description:  GnuTLS is a secure communications library implementing the SSL, TL
 
 Package: gnutls-utils
 Submenu: Encryption
-Version: 3.8.5-r1
+Version: 3.8.10-r1
 Depends: +libc +libgnutls +PACKAGE_libgnutls-dane:libgnutls-dane
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @gnutls-utils-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: GNU TLS (utilities)
 Maintainer: Nikos Mavrogiannopoulos <nmav@gnutls.org>
-Source: gnutls-3.8.5.tar.xz
+Source: gnutls-3.8.10.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:gnu:gnutls
@@ -58,17 +58,17 @@ Description:  GnuTLS is a secure communications library implementing the SSL, TL
 
 Package: libgnutls
 Submenu: SSL
-Version: 3.8.5-r1
+Version: 3.8.10-r1
 Depends: +libc +libnettle +!LIBNETTLE_MINI:libgmp +GNUTLS_EXT_LIBTASN1:libtasn1 +GNUTLS_PKCS11:p11-kit +GNUTLS_CRYPTODEV:kmod-cryptodev +libatomic
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libgnutls-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: GNU TLS (library)
 Maintainer: Nikos Mavrogiannopoulos <nmav@gnutls.org>
-Source: gnutls-3.8.5.tar.xz
+Source: gnutls-3.8.10.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:gnu:gnutls
@@ -88,17 +88,17 @@ Config:
 
 Package: libgnutls-dane
 Submenu: SSL
-Version: 3.8.5-r1
+Version: 3.8.10-r1
 Depends: +libc +libgnutls +PACKAGE_libgnutls-dane:libunbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libgnutls-dane-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: GNU TLS (libgnutls-dane library)
 Maintainer: Nikos Mavrogiannopoulos <nmav@gnutls.org>
-Source: gnutls-3.8.5.tar.xz
+Source: gnutls-3.8.10.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:gnu:gnutls

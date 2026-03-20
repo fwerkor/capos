@@ -6,7 +6,7 @@ Version: 0.1.2-r2
 Depends: +libc @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @arp-whisper-any
 Section: utils
 Category: Utilities
 Repository: base

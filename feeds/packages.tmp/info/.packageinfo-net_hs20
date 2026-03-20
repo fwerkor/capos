@@ -6,7 +6,7 @@ Version: 2020.06.08~5a8b366233f5585e68a4ffbb604fbb4a848eb325-r10
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @hs20-common-any
 Section: net
 Category: Network
 Repository: base
@@ -28,7 +28,7 @@ Version: 2020.06.08~5a8b366233f5585e68a4ffbb604fbb4a848eb325-r10
 Depends: +libc +hs20-common +libopenssl +libcurl +libxml2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @hs20-client-any
 Section: net
 Category: Network
 Repository: base
@@ -49,7 +49,7 @@ Version: 2020.06.08~5a8b366233f5585e68a4ffbb604fbb4a848eb325-r10
 Depends: +libc +hs20-common +libopenssl +libsqlite3 +libxml2 +php8 +php8-cgi +php8-mod-xml +php8-mod-pdo-sqlite +openssl-util +sqlite3-cli +uhttpd +xxd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @hs20-server-any
 Section: net
 Category: Network
 Repository: base

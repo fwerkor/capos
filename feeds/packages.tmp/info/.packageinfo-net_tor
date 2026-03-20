@@ -5,7 +5,7 @@ Version: 0.4.8.21-r1
 Depends: +libc +libevent2 +libopenssl +libpthread +librt +zlib +libcap
 Conflicts: tor-basic
 Menu-Depends: 
-Provides: tor-basic
+Provides: @tor-any tor-basic
 Build-Variant: full
 Section: net
 Category: Network
@@ -34,7 +34,7 @@ Version: 0.4.8.21-r1
 Depends: +libc +libevent2 +libopenssl +libpthread +librt +zlib +libcap
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tor-basic-any
 Build-Variant: basic
 Section: net
 Category: Network
@@ -63,7 +63,7 @@ Version: 0.4.8.21-r1
 Depends: +libc tor
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tor-gencert-any
 Section: net
 Category: Network
 Repository: base
@@ -91,7 +91,7 @@ Version: 0.4.8.21-r1
 Depends: +libc tor-basic
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tor-resolve-any
 Section: net
 Category: Network
 Repository: base
@@ -119,7 +119,7 @@ Version: 0.4.8.21-r1
 Depends: +libc tor-basic
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tor-geoip-any
 Section: net
 Category: Network
 Repository: base

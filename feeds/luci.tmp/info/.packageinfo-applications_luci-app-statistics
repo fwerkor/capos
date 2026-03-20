@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base +collectd +rrdtool1 +collectd-mod-rrdtool +collectd-mod-iwinfo +collectd-mod-cpu +collectd-mod-memory +collectd-mod-interface +collectd-mod-load +collectd-mod-network
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-statistics-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -26,7 +26,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-ar-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -45,7 +45,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-bg-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -64,7 +64,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-bn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -83,7 +83,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-ca-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -102,7 +102,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-cs-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -121,7 +121,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-da-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -140,7 +140,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-de-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -159,7 +159,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-el-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -178,7 +178,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-es-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -197,7 +197,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-fa-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -216,7 +216,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-fi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -235,7 +235,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-fr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -254,7 +254,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-ga-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -273,7 +273,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-he-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -292,7 +292,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-hi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -311,7 +311,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-hu-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -330,7 +330,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-it-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -349,7 +349,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-ja-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -368,7 +368,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-ko-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -387,7 +387,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-lt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -406,7 +406,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-mr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -425,7 +425,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-ms-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -444,7 +444,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-no-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -463,7 +463,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-nl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -482,7 +482,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-pl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -501,7 +501,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-pt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -520,7 +520,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -539,7 +539,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-ro-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -558,7 +558,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-ru-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -577,7 +577,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-sk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -596,7 +596,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-sv-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -609,13 +609,32 @@ Hidden: 1
 Description:     Translation for luci-app-statistics - Svenska (Swedish)
 @@
 
+Package: luci-i18n-statistics-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-statistics
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-statistics-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-statistics - ta translation
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-statistics - Tamil (Tamil)
+@@
+
 Package: luci-i18n-statistics-tr
 Default: LUCI_LANG_tr||(ALL&&m)
 Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-tr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -634,7 +653,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-uk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -653,7 +672,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-vi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -672,7 +691,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-yua-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -691,7 +710,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -710,7 +729,7 @@ Version: x
 Depends: +libc luci-app-statistics
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-statistics-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base

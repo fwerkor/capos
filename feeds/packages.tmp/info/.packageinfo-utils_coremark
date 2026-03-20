@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/utils/coremark/Makefile
 
 Package: coremark
-Version: 2023.01.25~d5fad6bd094899101a4e5fd53af7298160ced6ab-r1
+Version: 2025.05.01~1f483d5b8316753a742cbf5590caf5bd0a4e4777-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @coremark-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: CoreMark Embedded Microprocessor Benchmark
 Maintainer: Lim Guo Wei <limguowei@gmail.com> Aleksander Jan Bajkowski <olek2@wp.pl>
-Source: coremark-2023-01-25.tar.gz
+Source: coremark-2025-05-01.tar.gz
 License: Apache-2.0
 LicenseFiles: LICENSE.md
 URL: https://github.com/eembc/coremark

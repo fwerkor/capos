@@ -1,0 +1,22 @@
+Source-Makefile: feeds/video/frameworks/qt5/qt5quick-controls/Makefile
+
+Package: qt5quick-controls2
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-controls2-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: qt5quick-controls2
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtquickcontrols2-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: qt5quick-controls2
+@@
+
+

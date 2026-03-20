@@ -11,6 +11,7 @@ ramips_setup_interfaces()
 	7links,wlr-1230|\
 	7links,wlr-1240|\
 	alfa-network,awusfree1|\
+	creality,wb-01|\
 	d-team,pbr-d1|\
 	dlink,dap-1325-a1|\
 	glinet,microuter-n300|\
@@ -46,6 +47,7 @@ ramips_setup_interfaces()
 	hilink,hlk-7628n|\
 	hilink,hlk-7688a|\
 	hiwifi,hc5861b|\
+	keenetic,kn-1711|\
 	kroks,kndrt31r16|\
 	skylab,skw92a|\
 	tplink,archer-c20-v4|\
@@ -109,7 +111,9 @@ ramips_setup_interfaces()
 		;;
 	duzun,dm06|\
 	glinet,gl-mt300n-v2|\
-	hongdian,h7920-v40)
+	hongdian,h7920-v40|\
+	teltonika,rut200|\
+	teltonika,rut241)
 		ucidef_add_switch "switch0" \
 			"1:lan" "0:wan" "6@eth0"
 		;;
@@ -118,7 +122,10 @@ ramips_setup_interfaces()
 			"0:lan" "1:lan" "4:wan" "6@eth0"
 		;;
 	hongdian,h8850-v20|\
+	keenetic,kn-1112|\
+	keenetic,kn-1212|\
 	keenetic,kn-1613|\
+	keenetic,kn-1713|\
 	motorola,mwr03)
 		ucidef_add_switch "switch0" \
 			"1:lan" "2:lan" "3:lan" "0:wan" "6@eth0"
@@ -138,6 +145,14 @@ ramips_setup_interfaces()
 		ucidef_add_switch "switch0" \
 			"0:lan" "1:lan" "2:lan" "6@eth0"
 		;;
+	keenetic,kn-1221)
+		ucidef_add_switch "switch0" \
+			"1:lan" "2:lan" "0:wan" "6@eth0"
+		;;
+	keenetic,kn-3211)
+		ucidef_add_switch "switch0" \
+			"2:lan" "6@eth0"
+		;;
 	kroks,kndrt31r19)
 		ucidef_add_switch "switch0" \
 			"0:lan" "6@eth0"
@@ -148,6 +163,11 @@ ramips_setup_interfaces()
 	linksys,e5400)
 		ucidef_add_switch "switch0" \
 			"0:lan:1" "1:lan:2" "2:lan:3" "3:lan:4" "4:wan" "6@eth0"
+		;;
+	mercusys,mb130-4g-v1)
+		ucidef_add_switch "switch0" \
+			"2:lan" "3:lan" "6@eth0"
+		ucidef_set_interface_wan "eth1"
 		;;
 	netgear,r6020|\
 	netgear,r6080|\
@@ -165,7 +185,14 @@ ramips_setup_interfaces()
 		ucidef_add_switch "switch0" \
 			"0:wan" "1:lan" "2:lan" "3:lan" "4:lan" "6t@eth0"
 		;;
-	tplink,archer-mr200-v5)
+	teltonika,rut976|\
+	teltonika,rut9x1|\
+	teltonika,rut9x6)
+		ucidef_add_switch "switch0" \
+			"0:lan" "1:lan" "2:lan" "4:wan" "6t@eth0"
+		;;
+	tplink,archer-mr200-v5|\
+	tplink,archer-mr200-v6)
 		ucidef_add_switch "switch0" \
 			"0:lan" "1:lan" "2:lan" "3:lan" "6t@eth0"
 		ucidef_set_interface "wan" device "/dev/cdc-wdm0" protocol "qmi"
@@ -273,10 +300,7 @@ ramips_setup_macs()
 	hiwifi,hc5661a|\
 	hiwifi,hc5761a|\
 	hiwifi,hc5861b)
-		lan_mac=$(mtd_get_mac_ascii bdinfo "Vfac_mac ")
-		label_mac=$lan_mac
-		[ -n "$lan_mac" ] || lan_mac=$(cat /sys/class/net/eth0/address)
-		wan_mac=$(macaddr_add "$lan_mac" 1)
+		wan_mac=$(macaddr_add "$(cat /sys/class/net/eth0/address)" 1)
 		;;
 	iptime,a3|\
 	iptime,a604m|\
@@ -290,7 +314,9 @@ ramips_setup_macs()
 	totolink,lr1200)
 		wan_mac=$(mtd_get_mac_binary factory 0x2e)
 		;;
+	keenetic,kn-1221|\
 	keenetic,kn-1613|\
+	keenetic,kn-3211|\
 	zyxel,keenetic-extra-ii)
 		wan_mac=$(mtd_get_mac_binary rf-eeprom 0x28)
 		;;

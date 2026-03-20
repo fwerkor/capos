@@ -5,7 +5,7 @@ Version: 0.4.2-r1
 Depends: +libc +libuecc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libecdsautil-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -25,7 +25,7 @@ Version: 0.4.2-r1
 Depends: +libc +libecdsautil +libuecc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ecdsautils-any
 Section: utils
 Category: Utilities
 Repository: base

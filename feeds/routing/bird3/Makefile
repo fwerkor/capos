@@ -3,12 +3,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=bird3
-PKG_VERSION:=3.0.1
+PKG_VERSION:=3.2.0
 PKG_RELEASE:=1
 
 PKG_SOURCE:=bird-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://bird.network.cz/download/
-PKG_HASH:=8868403caa84e2554bb6e60adbe7c657e7bb7c4ac41910e398f35e236ba90fa1
+PKG_SOURCE_URL:=https://bird.nic.cz/download/
+PKG_HASH:=5e6ff6a22cf92ba73ebf2e4bbcd9360328b52c7497ef70e4cf11089fa5a216b2
 
 PKG_MAINTAINER:=Toke Høiland-Jørgensen <toke@toke.dk>, Nick Hainke <vincent@systemli.org>
 PKG_LICENSE:=GPL-2.0-or-later
@@ -18,17 +18,9 @@ PKG_BUILD_DIR:=$(BUILD_DIR)/bird-$(PKG_VERSION)
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/bird3/Default/description
-BIRD is an internet routing daemon which manages TCP/IP routing tables
-with support of modern routing protocols, easy to use configuration
-interface and powerful route filtering language. It is lightweight and
-efficient and therefore appropriate for small embedded routers.
-
-endef
-
 define Package/bird3
   TITLE:=The BIRD Internet Routing Daemon (v3)
-  URL:=http://bird.network.cz/
+  URL:=https://bird.nic.cz/
   SECTION:=net
   CATEGORY:=Network
   SUBMENU:=Routing and Redirection
@@ -38,7 +30,7 @@ endef
 
 define Package/bird3c
   TITLE:=The BIRD command-line client (v3)
-  URL:=http://bird.network.cz/
+  URL:=https://bird.nic.cz/
   SECTION:=net
   CATEGORY:=Network
   SUBMENU:=Routing and Redirection
@@ -48,12 +40,19 @@ endef
 
 define Package/bird3cl
   TITLE:=The BIRD lightweight command-line client (v2)
-  URL:=http://bird.network.cz/
+  URL:=https://bird.nic.cz/
   SECTION:=net
   CATEGORY:=Network
   SUBMENU:=Routing and Redirection
   DEPENDS:=+bird3
   CONFLICTS:=bird2
+endef
+
+define Package/bird3/Default/description
+BIRD is an internet routing daemon which manages TCP/IP routing tables
+with support of modern routing protocols, easy to use configuration
+interface and powerful route filtering language. It is lightweight and
+efficient and therefore appropriate for small embedded routers.
 endef
 
 define Package/bird3/description

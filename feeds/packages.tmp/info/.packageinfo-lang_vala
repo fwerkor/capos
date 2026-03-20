@@ -3,17 +3,17 @@ Build-Depends/host: glib2/host
 Build-Types: host
 
 Package: vala
-Version: 0.56.14-r3
+Version: 0.56.18-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @vala-any
 Section: lang
 Category: Languages
 Repository: base
 Title: C-sharp like language for the GObject system
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: vala-0.56.14.tar.xz
+Source: vala-0.56.18.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:gnome:vala

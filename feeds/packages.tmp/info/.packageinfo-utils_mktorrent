@@ -6,7 +6,7 @@ Version: 1.1-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mktorrent-any
 Section: net
 Category: Network
 Repository: base

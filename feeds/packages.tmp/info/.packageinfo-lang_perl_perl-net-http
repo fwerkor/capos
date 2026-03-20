@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/lang/perl/perl-net-http/Makefile
+
+Package: perl-net-http
+Submenu: Perl
+Version: 6.23.5.40-r1
+Depends: +libc perl +perlbase-compress +perlbase-essential +perlbase-io +perl-uri
+Conflicts: 
+Menu-Depends: 
+Provides: @perl-net-http-any
+Section: lang
+Category: Languages
+Repository: base
+Title: Low-level HTTP connection (client)
+Maintainer: Jens Wagner <jens@wagner2013.de>
+Source: Net-HTTP-6.23.tar.gz
+License: GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE
+URL: https://metacpan.org/pod/Net::HTTP
+Type: ipkg
+Description:   The Net::HTTP class is a low-level HTTP client.
+@@
+
+

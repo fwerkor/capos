@@ -4,7 +4,7 @@
 
 #include <dt-bindings/leds/common.h>
 
-#include "mt7981.dtsi"
+#include "mt7981b.dtsi"
 
 / {
 	model = "TOTOLINK X6000R";
@@ -160,9 +160,6 @@
 	status = "okay";
 
 	flash@0 {
-		#address-cells = <1>;
-		#size-cells = <1>;
-
 		compatible = "jedec,spi-nor";
 		reg = <0>;
 

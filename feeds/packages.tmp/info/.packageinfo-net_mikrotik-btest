@@ -5,7 +5,7 @@ Version: 0.5.1-r1
 Depends: +libc +libpthread +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mikrotik-btest-any
 Section: net
 Category: Network
 Repository: base

@@ -8,7 +8,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc +libpthread +libstdcpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-any
 Section: net
 Category: Network
 Repository: base
@@ -28,7 +28,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate +PACKAGE_yate-scripts-perl:yate-mod-extmodule +PACKAGE_yate-scripts-perl:perlbase-data @!arc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-scripts-perl-any
 Section: net
 Category: Network
 Repository: base
@@ -48,7 +48,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-sounds-any
 Section: net
 Category: Network
 Repository: base
@@ -68,7 +68,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-accfile-any
 Section: net
 Category: Network
 Repository: base
@@ -88,7 +88,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate +PACKAGE_yate-mod-alsachan:alsa-lib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-alsachan-any
 Section: net
 Category: Network
 Repository: base
@@ -108,7 +108,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate @BROKEN
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-amrnbcodec-any
 Section: net
 Category: Network
 Repository: base
@@ -128,7 +128,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-analog-any
 Section: net
 Category: Network
 Repository: base
@@ -148,7 +148,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-analogdetect-any
 Section: net
 Category: Network
 Repository: base
@@ -168,7 +168,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-analyzer-any
 Section: net
 Category: Network
 Repository: base
@@ -188,7 +188,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-cache-any
 Section: net
 Category: Network
 Repository: base
@@ -208,7 +208,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-callcounters-any
 Section: net
 Category: Network
 Repository: base
@@ -228,7 +228,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-callfork-any
 Section: net
 Category: Network
 Repository: base
@@ -248,7 +248,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-callgen-any
 Section: net
 Category: Network
 Repository: base
@@ -268,7 +268,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-camel-map-any
 Section: net
 Category: Network
 Repository: base
@@ -288,7 +288,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-ccongestion-any
 Section: net
 Category: Network
 Repository: base
@@ -308,7 +308,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-cdrbuild-any
 Section: net
 Category: Network
 Repository: base
@@ -328,7 +328,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-cdrcombine-any
 Section: net
 Category: Network
 Repository: base
@@ -348,7 +348,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-cdrfile-any
 Section: net
 Category: Network
 Repository: base
@@ -368,7 +368,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-ciscosm-any
 Section: net
 Category: Network
 Repository: base
@@ -388,7 +388,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-clustering-any
 Section: net
 Category: Network
 Repository: base
@@ -408,7 +408,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-conference-any
 Section: net
 Category: Network
 Repository: base
@@ -428,7 +428,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-cpuload-any
 Section: net
 Category: Network
 Repository: base
@@ -448,7 +448,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-dbpbx-any
 Section: net
 Category: Network
 Repository: base
@@ -468,7 +468,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate +PACKAGE_yate-mod-dbwave:yate-mod-wavefile
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-dbwave-any
 Section: net
 Category: Network
 Repository: base
@@ -488,7 +488,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-dumbchan-any
 Section: net
 Category: Network
 Repository: base
@@ -508,7 +508,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-enumroute-any
 Section: net
 Category: Network
 Repository: base
@@ -528,7 +528,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-eventlogs-any
 Section: net
 Category: Network
 Repository: base
@@ -548,7 +548,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-extmodule-any
 Section: net
 Category: Network
 Repository: base
@@ -568,7 +568,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate +PACKAGE_yate-mod-faxchan:libspandsp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-faxchan-any
 Section: net
 Category: Network
 Repository: base
@@ -588,7 +588,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-fileinfo-any
 Section: net
 Category: Network
 Repository: base
@@ -608,7 +608,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-filetransfer-any
 Section: net
 Category: Network
 Repository: base
@@ -628,7 +628,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-g722webrtc-any
 Section: net
 Category: Network
 Repository: base
@@ -648,7 +648,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-gvoice-any
 Section: net
 Category: Network
 Repository: base
@@ -668,7 +668,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-heartbeat-any
 Section: net
 Category: Network
 Repository: base
@@ -688,7 +688,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-ilbccodec-any
 Section: net
 Category: Network
 Repository: base
@@ -708,7 +708,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-ilbcwebrtc-any
 Section: net
 Category: Network
 Repository: base
@@ -728,7 +728,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-isaccodec-any
 Section: net
 Category: Network
 Repository: base
@@ -748,7 +748,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-isupmangler-any
 Section: net
 Category: Network
 Repository: base
@@ -768,7 +768,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-jabberclient-any
 Section: net
 Category: Network
 Repository: base
@@ -788,7 +788,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-jabberserver-any
 Section: net
 Category: Network
 Repository: base
@@ -808,7 +808,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-javascript-any
 Section: net
 Category: Network
 Repository: base
@@ -828,7 +828,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-jbfeatures-any
 Section: net
 Category: Network
 Repository: base
@@ -848,7 +848,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-lateroute-any
 Section: net
 Category: Network
 Repository: base
@@ -868,7 +868,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-mgcpca-any
 Section: net
 Category: Network
 Repository: base
@@ -888,7 +888,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-mgcpgw-any
 Section: net
 Category: Network
 Repository: base
@@ -908,7 +908,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-moh-any
 Section: net
 Category: Network
 Repository: base
@@ -928,7 +928,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-monitoring-any
 Section: net
 Category: Network
 Repository: base
@@ -948,7 +948,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-mrcpspeech-any
 Section: net
 Category: Network
 Repository: base
@@ -968,7 +968,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-msgsniff-any
 Section: net
 Category: Network
 Repository: base
@@ -988,7 +988,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-mux-any
 Section: net
 Category: Network
 Repository: base
@@ -1008,7 +1008,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate +PACKAGE_yate-mod-mysqldb:libmysqlclient-r
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-mysqldb-any
 Section: net
 Category: Network
 Repository: base
@@ -1028,7 +1028,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate +PACKAGE_yate-mod-openssl:libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-openssl-any
 Section: net
 Category: Network
 Repository: base
@@ -1048,7 +1048,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-osschan-any
 Section: net
 Category: Network
 Repository: base
@@ -1068,7 +1068,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-park-any
 Section: net
 Category: Network
 Repository: base
@@ -1088,7 +1088,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-pbx-any
 Section: net
 Category: Network
 Repository: base
@@ -1108,7 +1108,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-pbxassist-any
 Section: net
 Category: Network
 Repository: base
@@ -1128,7 +1128,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate +PACKAGE_yate-mod-pgsqldb:libpq
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-pgsqldb-any
 Section: net
 Category: Network
 Repository: base
@@ -1148,7 +1148,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-presence-any
 Section: net
 Category: Network
 Repository: base
@@ -1168,7 +1168,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-queues-any
 Section: net
 Category: Network
 Repository: base
@@ -1188,7 +1188,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-queuesnotify-any
 Section: net
 Category: Network
 Repository: base
@@ -1208,7 +1208,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-regexroute-any
 Section: net
 Category: Network
 Repository: base
@@ -1228,7 +1228,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-regfile-any
 Section: net
 Category: Network
 Repository: base
@@ -1248,7 +1248,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-register-any
 Section: net
 Category: Network
 Repository: base
@@ -1268,7 +1268,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-rmanager-any
 Section: net
 Category: Network
 Repository: base
@@ -1288,7 +1288,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-sigtransport-any
 Section: net
 Category: Network
 Repository: base
@@ -1308,7 +1308,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-sip-cnam-lnp-any
 Section: net
 Category: Network
 Repository: base
@@ -1328,7 +1328,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-sipfeatures-any
 Section: net
 Category: Network
 Repository: base
@@ -1348,7 +1348,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate +PACKAGE_yate-mod-speexcodec:libspeex
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-speexcodec-any
 Section: net
 Category: Network
 Repository: base
@@ -1368,7 +1368,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate +PACKAGE_yate-mod-sqlitedb:libsqlite3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-sqlitedb-any
 Section: net
 Category: Network
 Repository: base
@@ -1388,7 +1388,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-ss7-lnp-ansi-any
 Section: net
 Category: Network
 Repository: base
@@ -1408,7 +1408,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-subscription-any
 Section: net
 Category: Network
 Repository: base
@@ -1428,7 +1428,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate @BROKEN
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-tdmcard-any
 Section: net
 Category: Network
 Repository: base
@@ -1448,7 +1448,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-tonedetect-any
 Section: net
 Category: Network
 Repository: base
@@ -1468,7 +1468,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-tonegen-any
 Section: net
 Category: Network
 Repository: base
@@ -1488,7 +1488,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-users-any
 Section: net
 Category: Network
 Repository: base
@@ -1508,7 +1508,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-wavefile-any
 Section: net
 Category: Network
 Repository: base
@@ -1528,7 +1528,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-wiresniff-any
 Section: net
 Category: Network
 Repository: base
@@ -1548,7 +1548,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate @BROKEN
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-wpcard-any
 Section: net
 Category: Network
 Repository: base
@@ -1568,7 +1568,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-yiaxchan-any
 Section: net
 Category: Network
 Repository: base
@@ -1588,7 +1588,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-yjinglechan-any
 Section: net
 Category: Network
 Repository: base
@@ -1608,7 +1608,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-yradius-any
 Section: net
 Category: Network
 Repository: base
@@ -1628,7 +1628,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-yrtpchan-any
 Section: net
 Category: Network
 Repository: base
@@ -1648,7 +1648,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-ysigchan-any
 Section: net
 Category: Network
 Repository: base
@@ -1668,7 +1668,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-ysipchan-any
 Section: net
 Category: Network
 Repository: base
@@ -1688,7 +1688,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-ysnmpagent-any
 Section: net
 Category: Network
 Repository: base
@@ -1708,7 +1708,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-ysockschan-any
 Section: net
 Category: Network
 Repository: base
@@ -1728,7 +1728,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-ystunchan-any
 Section: net
 Category: Network
 Repository: base
@@ -1748,7 +1748,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate @!aarch64 +PACKAGE_yate-mod-zapcard:kmod-dahdi
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-zapcard-any
 Section: net
 Category: Network
 Repository: base
@@ -1768,7 +1768,7 @@ Version: 2024.09.03~d009381e4920e608dc2aae847c56469d471a8c48-r1
 Depends: +libc yate +PACKAGE_yate-mod-zlibcompress:zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yate-mod-zlibcompress-any
 Section: net
 Category: Network
 Repository: base

@@ -1286,8 +1286,7 @@ IFX_MEI_RunAdslModem (DSL_DEV_Device_t *pDev)
 //	DSL_DEV_WinHost_Message_t m;
 
 	if (mei_arc_swap_buff == NULL) {
-		mei_arc_swap_buff =
-			(u32 *) kmalloc (MAXSWAPSIZE * 4, GFP_KERNEL);
+		mei_arc_swap_buff = kmalloc (MAXSWAPSIZE * 4, GFP_KERNEL);
 		if (mei_arc_swap_buff == NULL) {
 			IFX_MEI_EMSG (">>> malloc fail for codeswap buff!!! <<<\n");
 			return DSL_DEV_MEI_ERR_FAILURE;
@@ -1489,14 +1488,14 @@ IFX_MEI_DFEMemoryAlloc (DSL_DEV_Device_t * pDev, long size)
                         allocate_size = size;
                 else
                         allocate_size = SDRAM_SEGMENT_SIZE;
-        
+
 		org_mem_ptr = kmalloc (allocate_size, GFP_KERNEL);
 		if (org_mem_ptr == NULL) {
                         IFX_MEI_EMSG ("%d: kmalloc %d bytes memory fail!\n", idx, allocate_size);
 			err = -ENOMEM;
 			goto allocate_error;
 		}
-		
+
 		if (((unsigned long)org_mem_ptr) & (1023)) {
 			/* Pointer not 1k aligned, so free it and allocate a larger chunk
 			 * for further alignment.
@@ -1637,7 +1636,7 @@ DSL_BSP_FWDownload (DSL_DEV_Device_t * pDev, const char *buf,
 			retval = -ENOMEM;
 			goto error;
 		}
-		
+
 		if (((unsigned long)org_mem_ptr) & (1023)) {
 			/* Pointer not 1k aligned, so free it and allocate a larger chunk
 			 * for further alignment.
@@ -1654,7 +1653,7 @@ DSL_BSP_FWDownload (DSL_DEV_Device_t * pDev, const char *buf,
 		} else {
 			adsl_mem_info[XDATA_REGISTER].address = org_mem_ptr;
 		}
-		
+
 		adsl_mem_info[XDATA_REGISTER].org_address = org_mem_ptr;
 		adsl_mem_info[XDATA_REGISTER].size = SDRAM_SEGMENT_SIZE;
 
@@ -1770,7 +1769,7 @@ int DSL_BSP_EventCBUnregister(DSL_BSP_EventCallBack_t *p)
     IFX_MEI_EMSG("Dying Gasp! Shutting Down... (Work around for Amazon-S Venus emulator)\n");
 #else
 	IFX_MEI_EMSG("Dying Gasp! Shutting Down...\n");
-//	kill_proc (1, SIGINT, 1);   
+//	kill_proc (1, SIGINT, 1);
 #endif
         return IRQ_HANDLED;
 }
@@ -2787,7 +2786,7 @@ static int ltq_mei_probe(struct platform_device *pdev)
 	return 0;
 }
 
-static int ltq_mei_remove(struct platform_device *pdev)
+static void ltq_mei_remove(struct platform_device *pdev)
 {
 	int i = 0;
 	int num;
@@ -2801,7 +2800,6 @@ static int ltq_mei_remove(struct platform_device *pdev)
 			IFX_MEI_ExitDevice (i);
 		}
 	}
-	return 0;
 }
 
 static const struct of_device_id ltq_mei_match[] = {
@@ -2811,7 +2809,7 @@ static const struct of_device_id ltq_mei_match[] = {
 
 static struct platform_driver ltq_mei_driver = {
 	.probe = ltq_mei_probe,
-	.remove = ltq_mei_remove,
+	.remove_new = ltq_mei_remove,
 	.driver = {
 		.name = "lantiq,mei-xway",
 		.of_match_table = ltq_mei_match,

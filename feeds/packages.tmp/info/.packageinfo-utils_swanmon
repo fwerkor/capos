@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/utils/swanmon/Makefile
 
 Package: swanmon
-Version: 0.1-r1
+Version: 0.1-r2
 Depends: +libc +davici +glib2 +libjson-c
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @swanmon-any
 Section: utils
 Category: Utilities
 Repository: base

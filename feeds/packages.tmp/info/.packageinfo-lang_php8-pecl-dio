@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/lang/php8-pecl-dio/Makefile
 
 Package: php8-pecl-dio
 Submenu: PHP8
-Version: 0.2.0-r2
+Version: 0.3.0-r1
 Depends: +libc php8
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @php8-pecl-dio-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Direct I/O functions
 Maintainer: Michael Heimpold <mhei@heimpold.de>
-Source: dio-0.2.0.tgz
+Source: dio-0.3.0.tgz
 License: PHP-3.01
 LicenseFiles: LICENSE
 URL: http://pecl.php.net/

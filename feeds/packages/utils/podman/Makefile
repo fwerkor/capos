@@ -39,7 +39,7 @@ define Package/podman
   CATEGORY:=Utilities
   TITLE:=Podman
   URL:=https://podman.io
-  DEPENDS:=$(GO_ARCH_DEPENDS) +conmon +libgpgme +libseccomp +nsenter \
+  DEPENDS:=@ARCH_64BIT @!SMALL_FLASH $(GO_ARCH_DEPENDS) +conmon +libgpgme +libseccomp +nsenter \
 	+zoneinfo-simple +kmod-veth +slirp4netns +netavark +aardvark-dns \
 	+catatonit +crun +PODMAN_SELINUX_SUPPORT:libselinux
 endef

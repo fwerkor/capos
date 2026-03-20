@@ -5,7 +5,7 @@ Version: 1.9.19-r1
 Depends: +libc +libhavege
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @haveged-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -23,7 +23,7 @@ Version: 1.9.19-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libhavege-any
 Section: opt
 Category: Libraries
 Repository: base

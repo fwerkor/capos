@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/net/acme-common/Makefile
 
 Package: acme-common
-Version: 1.4.3
+Version: 1.5.1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @acme-common-any
 Section: net
 Category: Network
 Repository: base

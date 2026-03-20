@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/net/openappid/Makefile
 
 Package: openappid
 Submenu: Firewall
-Version: 20220617-r1
+Version: 20230609-r1
 Depends: +libc +snort3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @openappid-any
 Section: net
 Category: Network
 Repository: base
 Title: Detection language and processing module for Snort
 Maintainer: John Audia <thereadgraysky@proton.me>
-Source: openappid-20220617.tar.gz
+Source: openappid-20230609.tar.gz
 License: GPL-2.0-only
 LicenseFiles: LICENSE
 URL: https://www.snort.org/

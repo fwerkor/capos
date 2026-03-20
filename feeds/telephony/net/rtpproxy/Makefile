@@ -12,10 +12,10 @@ PKG_NAME:=rtpproxy
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/sippy/rtpproxy.git
-PKG_SOURCE_DATE=2019-10-02
-PKG_SOURCE_VERSION:=aa1f179e09097f467bc4726e3300014c1e35246f
-PKG_RELEASE:=4
-PKG_MIRROR_HASH:=36ecff6b69b580db5fe7e34e1d6764f111aa26ce81999743cea1f3c80ffa545c
+PKG_SOURCE_DATE=2025-11-04
+PKG_SOURCE_VERSION:=4909e7b75a9c33265cecd39d082240b26a43f075
+PKG_RELEASE:=1
+PKG_MIRROR_HASH:=cd7f184e485ea9ca1ad6dc0b3f2ebd8562cb6276fdc099caeb473d9f73910669
 
 PKG_BUILD_PARALLEL:=1
 PKG_INSTALL:=1
@@ -24,6 +24,7 @@ PKG_FIXUP:=autoreconf
 
 PKG_LICENSE:=BSD-2-Clause
 PKG_LICENSE_FILES:=LICENSE
+PKG_CPE_ID:=cpe:/a:rtpproxy:rtpproxy
 PKG_MAINTAINER:=Jiri Slachta <jiri@slachta.eu>
 
 include $(INCLUDE_DIR)/package.mk
@@ -37,7 +38,7 @@ endef
 
 define Package/rtpproxy
 $(call Package/rtpproxy/Default)
-  DEPENDS:=+libatomic +libpthread +librt
+  DEPENDS:=+libsrtp2 +libatomic +libpthread +librt
   TITLE:=RTP (Realtime Transport Protocol) proxy
   MENU:=1
 endef
@@ -60,7 +61,8 @@ $(call Package/rtpproxy/Default)
 endef
 
 CONFIGURE_ARGS += \
-	--without-xsltproc
+	--without-xsltproc \
+	--disable-debug
 
 # Otherwise OpenWrt's CPPFLAGS are ignored
 TARGET_CFLAGS+=$(TARGET_CPPFLAGS)

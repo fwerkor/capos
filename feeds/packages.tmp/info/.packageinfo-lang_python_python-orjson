@@ -3,17 +3,17 @@ Build-Depends: python-maturin/host
 
 Package: python3-orjson
 Submenu: Python
-Version: 3.10.0-r1
+Version: 3.10.12-r1
 Depends: +libc +python3-light @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-orjson-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Fast, correct Python JSON library
 Maintainer: Timothy Ace <openwrt@timothyace.com>
-Source: orjson-3.10.0.tar.gz
+Source: orjson-3.10.12.tar.gz
 License: Apache-2.0 MIT
 LicenseFiles: LICENSE-APACHE LICENSE-MIT
 URL: https://github.com/ijl/orjson
@@ -23,17 +23,17 @@ Description: Fast, correct Python JSON library supporting dataclasses, datetimes
 
 Package: python3-orjson-src
 Submenu: Python
-Version: 3.10.0-r1
+Version: 3.10.12-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-orjson-src-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Fast, correct Python JSON library (sources)
 Maintainer: Timothy Ace <openwrt@timothyace.com>
-Source: orjson-3.10.0.tar.gz
+Source: orjson-3.10.12.tar.gz
 License: Apache-2.0 MIT
 LicenseFiles: LICENSE-APACHE LICENSE-MIT
 URL: https://github.com/ijl/orjson

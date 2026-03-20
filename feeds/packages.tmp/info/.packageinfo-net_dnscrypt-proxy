@@ -6,7 +6,7 @@ Version: 2019.08.20~07ac3825b5069adc28e2547c16b1d983a8ed8d80-r3
 Depends: +libc +libsodium +dnscrypt-proxy-resolvers +DNSCRYPT_ENABLE_PLUGINS:libltdl +DNSCRYPT_ENABLE_PLUGINS:libldns
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dnscrypt-proxy-any
 Section: net
 Category: Network
 Repository: base
@@ -34,7 +34,7 @@ Version: 2019.08.20~07ac3825b5069adc28e2547c16b1d983a8ed8d80-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dnscrypt-proxy-resolvers-any
 Section: net
 Category: Network
 Repository: base
@@ -54,7 +54,7 @@ Version: 2019.08.20~07ac3825b5069adc28e2547c16b1d983a8ed8d80-r3
 Depends: +libc +libsodium
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @hostip-any
 Section: net
 Category: Network
 Repository: base

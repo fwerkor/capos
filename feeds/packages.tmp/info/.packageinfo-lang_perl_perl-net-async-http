@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/perl/perl-net-async-http/Makefile
+
+Package: perl-net-async-http
+Submenu: Perl
+Version: 0.50.5.40-r1
+Depends: +libc perl +perlbase-list +perlbase-socket +perlbase-time +perl-future +perl-http-message +perl-io-async +perl-metrics-any +perl-struct-dumb +perl-uri
+Conflicts: 
+Menu-Depends: 
+Provides: @perl-net-async-http-any
+Section: lang
+Category: Languages
+Repository: base
+Title: HTTP with IO::Async
+Maintainer: Jens Wagner <jens@wagner2013.de>
+Source: Net-Async-HTTP-0.50.tar.gz
+License: GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE
+URL: https://metacpan.org/pod/Net::Async::HTTP
+Type: ipkg
+Description:   This object class implements an asynchronous HTTP user agent.
+  Similar to LWP::UserAgent, but for IO::Async.
+@@
+
+

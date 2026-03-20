@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/net/radius-mac/Makefile
+
+Package: radius-mac
+Version: 0.1-r1
+Depends: +libc +libuci
+Conflicts: 
+Menu-Depends: 
+Provides: @radius-mac-any
+Section: net
+Category: Network
+Repository: base
+Title: RADIUS server providing MAC address authentication
+Maintainer: Brian 'redbeard' Harrington <redbeard@dead-city.org>
+Source: radius-mac-0.1.tar.zst
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/carlanton/radius-mac
+Type: ipkg
+Description:   A simple RADIUS server for MAC address authentication.
+@@
+
+

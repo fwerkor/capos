@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/net/xinetd/Makefile
 
 Package: xinetd
-Version: 2.3.15-r16
-Depends: +libc 
+Version: 2.3.15-r18
+Depends: +libc +USE_GLIBC:libcrypt-compat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @xinetd-any
 Section: net
 Category: Network
 Repository: base

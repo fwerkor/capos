@@ -6,7 +6,7 @@ Version: 23.3.0-r1
 Depends: +libc +python3-light +python3-openssl +python3-cryptography
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pyopenssl-any
 Section: lang
 Category: Languages
 Repository: base
@@ -27,7 +27,7 @@ Version: 23.3.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pyopenssl-src-any
 Section: lang
 Category: Languages
 Repository: base

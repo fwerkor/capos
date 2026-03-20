@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-08-09 17:23+0000\n"
-"Last-Translator: 안정언 <me@jeongeon.net>\n"
+"PO-Revision-Date: 2026-02-08 18:11+0000\n"
+"Last-Translator: Hyeonjeong Lee <h9101654@gmail.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsdump1090/ko/>\n"
 "Language: ko\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #: applications/luci-app-dump1090/htdocs/luci-static/resources/view/dump1090/dump1090.js:117
 msgid "Absolute maximum range for position decoding"
@@ -49,7 +49,7 @@ msgstr ""
 #: applications/luci-app-dump1090/htdocs/luci-static/resources/view/dump1090/dump1090.js:40
 #: applications/luci-app-dump1090/htdocs/luci-static/resources/view/dump1090/dump1090.js:171
 msgid "Default"
-msgstr ""
+msgstr "기본값"
 
 #: applications/luci-app-dump1090/htdocs/luci-static/resources/view/dump1090/dump1090.js:125
 msgid "Disable messages with broken CRC"
@@ -93,7 +93,7 @@ msgstr ""
 
 #: applications/luci-app-dump1090/htdocs/luci-static/resources/view/dump1090/dump1090.js:15
 msgid "Enabled"
-msgstr "활성화됨"
+msgstr "활성화"
 
 #: applications/luci-app-dump1090/htdocs/luci-static/resources/view/dump1090/dump1090.js:174
 msgid "Exact"
@@ -105,7 +105,7 @@ msgstr ""
 
 #: applications/luci-app-dump1090/htdocs/luci-static/resources/view/dump1090/dump1090.js:31
 msgid "Frequency"
-msgstr ""
+msgstr "주파수"
 
 #: applications/luci-app-dump1090/htdocs/luci-static/resources/view/dump1090/dump1090.js:25
 msgid "Gain (-10 for auto-gain)"
@@ -113,11 +113,11 @@ msgstr ""
 
 #: applications/luci-app-dump1090/root/usr/share/rpcd/acl.d/luci-app-dump1090.json:3
 msgid "Grant UCI access for luci-app-dump1090"
-msgstr ""
+msgstr "luci-app-dump1090의 UCI 접근 권한 부여"
 
 #: applications/luci-app-dump1090/htdocs/luci-static/resources/view/dump1090/dump1090.js:61
 msgid "HTTP server port"
-msgstr ""
+msgstr "HTTP 서버 포트"
 
 #: applications/luci-app-dump1090/htdocs/luci-static/resources/view/dump1090/dump1090.js:57
 msgid "IP address to bind to"
@@ -242,10 +242,12 @@ msgstr ""
 #: applications/luci-app-dump1090/htdocs/luci-static/resources/view/dump1090/dump1090.js:8
 #: applications/luci-app-dump1090/root/usr/share/luci/menu.d/luci-app-dump1090.json:3
 msgid "dump1090"
-msgstr ""
+msgstr "dump1090"
 
 #: applications/luci-app-dump1090/htdocs/luci-static/resources/view/dump1090/dump1090.js:9
 msgid ""
 "dump1090 is a Mode S decoder specifically designed for RTLSDR devices. Here "
 "you can configure the settings."
 msgstr ""
+"dump1090은 RTL-SDR 장치 전용으로 설계된 Mode S 디코더입니다. 이곳에서 관련 설"
+"정을 구성할 수 있습니다."

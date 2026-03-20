@@ -1,0 +1,168 @@
+Source-Makefile: feeds/packages/lang/golang/golang1.26/Makefile
+Build-Depends: golang1.26/host
+Build-Depends/host: golang-bootstrap/host
+Build-Types: host
+
+Package: golang1.26
+Submenu: Go
+Version: 1.26.1-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) +golang1.26-src
+Conflicts: 
+Menu-Depends: +golang-bootstrap
+Provides: @golang1.26-any @golang
+Section: lang
+Category: Languages
+Repository: base
+Title: Go programming language (compiler)
+Maintainer: George Sapkin <george@sapk.in>
+Source: go1.26.1.src.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:golang:go
+URL: https://go.dev/
+Type: ipkg
+Description:     The Go programming language is an open source project to make programmers more
+  productive.
+
+  Go is expressive, concise, clean, and efficient. Its concurrency mechanisms
+  make it easy to write programs that get the most out of multi-core and
+  networked machines, while its novel type system enables flexible and modular
+  program construction. Go compiles quickly to machine code yet has the
+  convenience of garbage collection and the power of run-time reflection. It's
+  a fast, statically typed, compiled language that feels like a dynamically
+  typed, interpreted language.
+
+  This package provides an assembler, compiler, linker, and compiled libraries
+  for the Go programming language.
+@@
+
+Package: golang1.26-doc
+Submenu: Go
+Version: 1.26.1-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: @golang1.26-doc-any @golang-doc
+Section: lang
+Category: Languages
+Repository: base
+Title: Go programming language (documentation)
+Maintainer: George Sapkin <george@sapk.in>
+Source: go1.26.1.src.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:golang:go
+URL: https://go.dev/
+Type: ipkg
+Description:     The Go programming language is an open source project to make programmers more
+  productive.
+
+  Go is expressive, concise, clean, and efficient. Its concurrency mechanisms
+  make it easy to write programs that get the most out of multi-core and
+  networked machines, while its novel type system enables flexible and modular
+  program construction. Go compiles quickly to machine code yet has the
+  convenience of garbage collection and the power of run-time reflection. It's
+  a fast, statically typed, compiled language that feels like a dynamically
+  typed, interpreted language.
+
+  This package provides the documentation for the Go programming language.
+@@
+
+Package: golang1.26-misc
+Submenu: Go
+Version: 1.26.1-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: @golang1.26-misc-any @golang-misc
+Section: lang
+Category: Languages
+Repository: base
+Title: Go programming language (misc source files)
+Maintainer: George Sapkin <george@sapk.in>
+Source: go1.26.1.src.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:golang:go
+URL: https://go.dev/
+Type: ipkg
+Description:     The Go programming language is an open source project to make programmers more
+  productive.
+
+  Go is expressive, concise, clean, and efficient. Its concurrency mechanisms
+  make it easy to write programs that get the most out of multi-core and
+  networked machines, while its novel type system enables flexible and modular
+  program construction. Go compiles quickly to machine code yet has the
+  convenience of garbage collection and the power of run-time reflection. It's
+  a fast, statically typed, compiled language that feels like a dynamically
+  typed, interpreted language.
+
+  This package provides the Go compiler miscellaneous sources.
+@@
+
+Package: golang1.26-src
+Submenu: Go
+Version: 1.26.1-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: @golang1.26-src-any @golang-src
+Section: lang
+Category: Languages
+Repository: base
+Title: Go programming language (source files)
+Maintainer: George Sapkin <george@sapk.in>
+Source: go1.26.1.src.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:golang:go
+URL: https://go.dev/
+Type: ipkg
+Description:     The Go programming language is an open source project to make programmers more
+  productive.
+
+  Go is expressive, concise, clean, and efficient. Its concurrency mechanisms
+  make it easy to write programs that get the most out of multi-core and
+  networked machines, while its novel type system enables flexible and modular
+  program construction. Go compiles quickly to machine code yet has the
+  convenience of garbage collection and the power of run-time reflection. It's
+  a fast, statically typed, compiled language that feels like a dynamically
+  typed, interpreted language.
+
+  This package provides the Go programming language source files needed for
+  cross-compilation.
+@@
+
+Package: golang1.26-tests
+Submenu: Go
+Version: 1.26.1-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) +golang1.26-src
+Conflicts: 
+Menu-Depends: 
+Provides: @golang1.26-tests-any @golang-tests
+Section: lang
+Category: Languages
+Repository: base
+Title: Go programming language (compiler tests)
+Maintainer: George Sapkin <george@sapk.in>
+Source: go1.26.1.src.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:golang:go
+URL: https://go.dev/
+Type: ipkg
+Description:     The Go programming language is an open source project to make programmers more
+  productive.
+
+  Go is expressive, concise, clean, and efficient. Its concurrency mechanisms
+  make it easy to write programs that get the most out of multi-core and
+  networked machines, while its novel type system enables flexible and modular
+  program construction. Go compiles quickly to machine code yet has the
+  convenience of garbage collection and the power of run-time reflection. It's
+  a fast, statically typed, compiled language that feels like a dynamically
+  typed, interpreted language.
+
+  This package provides the Go compiler tests for stdlib.
+@@
+
+

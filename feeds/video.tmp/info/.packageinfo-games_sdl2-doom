@@ -1,0 +1,25 @@
+Source-Makefile: feeds/video/games/sdl2-doom/Makefile
+
+Package: sdl2-doom
+Version: 2024.05.31~fbbfb86b34af2cf267a9287cd91a5d1575fcfe58-r1
+Depends: +libc +libstdcpp +libsdl2 +libsdl2-mixer
+Conflicts: 
+Menu-Depends: 
+Provides: @sdl2-doom-any
+Section: games
+Category: Games
+Repository: base
+Title: SDL2 Doom
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: sdl2-doom-2024.05.31~fbbfb86b34af2cf267a9287cd91a5d1575fcfe58.tar.zst
+License: GPL-2.0-or-later
+LicenseFiles: License.md
+URL: https://github.com/AlexOberhofer/sdl2-doom
+Type: ipkg
+Description:   This is a source port of the ID Software source release of DOOM.
+  Using low-resolution software rendering designed in 1993 by idSoftware
+  for (from today's perspective) very slow CPUs it runs with good
+  performance even on low-end devices.
+@@
+
+

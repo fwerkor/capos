@@ -1,0 +1,421 @@
+Source-Makefile: feeds/video/frameworks/qt5/qt5quick/Makefile
+
+Package: qt5quick-qml
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-network
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 Qml
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 Qml
+@@
+
+Package: qt5quick-qml-models
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-qml
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-models-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QmlModels
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QmlModels
+@@
+
+Package: qt5quick-qml-worker-script
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-qml
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-worker-script-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QmlWorkerScript
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QmlWorkerScript
+@@
+
+Package: qt5quick-quick
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-gui +qt5quick-qml-models
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-quick-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 Quick
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 Quick
+@@
+
+Package: qt5quick-quick-test
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick +qt5base-widgets +qt5base-test
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-quick-test-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QuickTest
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QuickTest
+@@
+
+Package: qt5quick-quick-widgets
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick +qt5base-widgets
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-quick-widgets-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QuickWidgets
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QuickWidgets
+@@
+
+Package: qt5quick-quick-shapes
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-quick-shapes-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QuickShapes
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QuickShapes
+@@
+
+Package: qt5quick-qml-module-qtqml-models2
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-qml-models
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtqml-models2-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtQml models
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtQml models
+@@
+
+Package: qt5quick-qml-module-qtqml-statemachine
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-qml
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtqml-statemachine-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML StateMachine
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML StateMachine
+@@
+
+Package: qt5quick-qml-module-qtqml-workerscript2
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-qml-worker-script
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtqml-workerscript2-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML WorkerScript
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML WorkerScript
+@@
+
+Package: qt5quick-qml-module-qtlabs-models
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-qml-models
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtlabs-models-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtLabs qmlmodels
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtLabs qmlmodels
+@@
+
+Package: qt5quick-qml-module-qtlabs-folderlistmodel
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-qml
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtlabs-folderlistmodel-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtLabs folderlistmodel
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtLabs folderlistmodel
+@@
+
+Package: qt5quick-qml-module-qtlabs-settings
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-qml
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtlabs-settings-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtLabs settings
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtLabs settings
+@@
+
+Package: qt5quick-qml-module-qtlabs-animation
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-qml +qt5quick-quick
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtlabs-animation-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtLabs animation
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtLabs animation
+@@
+
+Package: qt5quick-qml-module-qtlabs-sharedimage
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtlabs-sharedimage-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtLabs sharedimage
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtLabs sharedimage
+@@
+
+Package: qt5quick-qml-module-qtlabs-wavefrontmesh
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtlabs-wavefrontmesh-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtLabs wavefrontmesh
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtLabs wavefrontmesh
+@@
+
+Package: qt5quick-qml-module-qtquick
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick +qt5quick-qml-worker-script
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtquick-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtQuick.2
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtQuick.2
+@@
+
+Package: qt5quick-qml-module-qtquick-layouts
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtquick-layouts-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtQuick Layouts
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtQuick Layouts
+@@
+
+Package: qt5quick-qml-module-qtquick-localstorage
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-qml +qt5base-sql
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtquick-localstorage-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtQuick LocalStorage
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtQuick LocalStorage
+@@
+
+Package: qt5quick-qml-module-qtquick-shapes
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick-shapes
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtquick-shapes-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtQuick Shapes
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtQuick Shapes
+@@
+
+Package: qt5quick-qml-module-qtquick-window2
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtquick-window2-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtQuick Window.2
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtQuick Window.2
+@@
+
+Package: qt5quick-qml-module-qttest
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick +qt5quick-quick-test
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qttest-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtTest
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtTest
+@@
+
+

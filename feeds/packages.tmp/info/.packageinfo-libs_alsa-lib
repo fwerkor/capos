@@ -5,7 +5,7 @@ Version: 1.2.11-r1
 Depends: +libc @AUDIO_SUPPORT +kmod-sound-core +libpthread +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @alsa-lib-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -25,7 +25,7 @@ Version: 1.2.11-r1
 Depends: +libc +alsa-lib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @aserver-any
 Section: sound
 Category: Sound
 Repository: base

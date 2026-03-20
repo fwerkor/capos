@@ -3,11 +3,11 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 
 Package: luci-app-adblock
 Submenu: 3. Applications
-Version: x
-Depends: +libc +luci-base +adblock
+Version: 4.5.3-r2
+Depends: +libc +luci-base +luci-lib-uqr +adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-adblock-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -26,12 +26,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-ar-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - ar translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -45,12 +45,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-bg-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - bg translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -64,12 +64,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-bn-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - bn translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -83,12 +83,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-ca-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - ca translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -102,12 +102,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-cs-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - cs translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -121,12 +121,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-da-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - da translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -140,12 +140,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-de-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - de translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -159,12 +159,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-el-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - el translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -178,17 +178,36 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-es-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - es translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock - Español (Spanish)
+@@
+
+Package: luci-i18n-adblock-fa
+Default: LUCI_LANG_fa||(ALL&&m)
+Version: x
+Depends: +libc luci-app-adblock
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-adblock-fa-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-adblock - fa translation
+Maintainer: Dirk Brenken <dev@brenken.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-adblock - Farsi (Persian)
 @@
 
 Package: luci-i18n-adblock-fi
@@ -197,12 +216,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fi-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - fi translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -216,12 +235,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fr-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - fr translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -235,12 +254,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-ga-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - ga translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -254,12 +273,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-he-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - he translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -273,12 +292,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-hi-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - hi translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -292,12 +311,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-hu-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - hu translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -311,12 +330,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-it-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - it translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -330,12 +349,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-ja-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - ja translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -349,12 +368,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-ko-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - ko translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -368,12 +387,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-lt-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - lt translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -387,12 +406,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-mr-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - mr translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -406,12 +425,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-ms-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - ms translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -425,12 +444,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-no-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - no translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -444,12 +463,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-nl-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - nl translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -463,12 +482,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-pl-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - pl translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -482,12 +501,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-pt-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - pt translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -501,12 +520,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - pt-br translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -520,12 +539,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-ro-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - ro translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -539,12 +558,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-ru-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - ru translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -558,12 +577,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-sk-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - sk translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -577,17 +596,36 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-sv-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - sv translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-adblock - Svenska (Swedish)
+@@
+
+Package: luci-i18n-adblock-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-adblock
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-adblock-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-adblock - ta translation
+Maintainer: Dirk Brenken <dev@brenken.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-adblock - Tamil (Tamil)
 @@
 
 Package: luci-i18n-adblock-tr
@@ -596,12 +634,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-tr-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - tr translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -615,12 +653,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-uk-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - uk translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -634,12 +672,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-vi-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - vi translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -653,12 +691,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-yua-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - yua translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -672,12 +710,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - zh-cn translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -691,12 +729,12 @@ Version: x
 Depends: +libc luci-app-adblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-adblock - zh-tw translation
-Maintainer: Hannu Nyman <hannu.nyman@iki.fi>, Dirk Brenken <dev@brenken.org>
+Maintainer: Dirk Brenken <dev@brenken.org>
 Source: 
 License: Apache-2.0
 Type: ipkg

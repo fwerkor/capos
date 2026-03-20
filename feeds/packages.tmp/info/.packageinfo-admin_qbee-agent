@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/admin/qbee-agent/Makefile
 Build-Depends: golang/host
 
 Package: qbee-agent
-Version: 2024.36-r1
+Version: 2025.49-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @qbee-agent-any
 Section: admin
 Category: Administration
 Repository: base
 Title: qbee.io fleet management agent
 Maintainer: Jon Henrik Bjørnstad <jonhenrik@qbee.io>
-Source: qbee-agent-2024.36.tar.zst
+Source: qbee-agent-2025.49.tar.zst
 License: Apache-2.0
 LicenseFiles: LICENSE
 URL: https://qbee.io

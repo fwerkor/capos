@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/perl/perl-lwp-protocol-https/Makefile
+
+Package: perl-lwp-protocol-https
+Submenu: Perl
+Version: 6.14.5.40-r1
+Depends: +libc perl +perlbase-essential +perl-io-socket-ssl +perl-www +perl-net-http
+Conflicts: 
+Menu-Depends: 
+Provides: @perl-lwp-protocol-https-any
+Section: lang
+Category: Languages
+Repository: base
+Title: https support for LWP::UserAgent
+Maintainer: Jens Wagner <jens@wagner2013.de>
+Source: LWP-Protocol-https-6.14.tar.gz
+License: GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE
+URL: https://metacpan.org/pod/LWP::Protocol::https
+Type: ipkg
+Description:   The LWP::Protocol::https module provides support for using
+  https schemed URLs with LWP::UserAgent
+@@
+
+

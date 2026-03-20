@@ -7,7 +7,7 @@ Version: 2.15.0-r1
 Depends: +libc +libpthread +libexpat +libfreetype
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @fontconfig-any
 Section: xorg-util
 Category: Xorg
 Repository: base

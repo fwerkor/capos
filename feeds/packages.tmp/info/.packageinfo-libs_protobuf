@@ -2,16 +2,16 @@ Source-Makefile: feeds/packages/libs/protobuf/Makefile
 Build-Types: host
 
 Package: protobuf
-Version: 3.17.3-r2
+Version: 3.17.3-r3
 Depends: +libc +zlib +libpthread +libatomic +libstdcpp +protobuf-lite
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @protobuf-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: A structured data encoding library
-Maintainer: Ken Keys <kkeys@caida.org>
+Maintainer: 
 Source: protobuf-cpp-3.17.3.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
@@ -28,16 +28,16 @@ libraries.  For a much smaller protobuf package, see "protobuf-lite".
 @@
 
 Package: protobuf-lite
-Version: 3.17.3-r2
+Version: 3.17.3-r3
 Depends: +libc +zlib +libpthread +libatomic +libstdcpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @protobuf-lite-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: A structured data encoding library
-Maintainer: Ken Keys <kkeys@caida.org>
+Maintainer: 
 Source: protobuf-cpp-3.17.3.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE

@@ -5,7 +5,7 @@ Version: 1.2-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mblaze-any
 Section: mail
 Category: Mail
 Repository: base

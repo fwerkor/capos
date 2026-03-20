@@ -5,15 +5,15 @@
 'require uci';
 
 return view.extend({
-	load: function() {
+	load() {
 		return Promise.all([
 			uci.load('keepalived'),
 		]);
 	},
 
-	renderTrackScript: function(m) {
-		var s, o;
-		var vrrp_scripts;
+	renderTrackScript(m) {
+		let s, o;
+		let vrrp_scripts;
 
 		vrrp_scripts = uci.sections('keepalived', 'vrrp_script');
 		if (vrrp_scripts == '') {
@@ -50,11 +50,13 @@ return view.extend({
 		o.value('noreverse', _('No Reverse'));
 	},
 
-	renderVRRPScript: function(m) {
-		var s, o;
+	renderVRRPScript(m) {
+		let s, o;
 
 		s = m.section(form.GridSection, 'vrrp_script', _('VRRP Script'),
-			_('Adds a script to be executed periodically. Its exit code will be recorded for all VRRP instances and sync groups which are monitoring it'));
+			_('Adds a script to be executed periodically.') + ' ' +
+			_('Its exit code will be recorded for all VRRP ' +
+			  'instances and sync groups which are monitoring it'));
 		s.anonymous = true;
 		s.addremove = true;
 		s.nodescriptions = true;
@@ -92,8 +94,8 @@ return view.extend({
 		o.datatype = 'uinteger';
 	},
 
-	render: function() {
-		var m;
+	render() {
+		let m;
 
 		m = new form.Map('keepalived');
 

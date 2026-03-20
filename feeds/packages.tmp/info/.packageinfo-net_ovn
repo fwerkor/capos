@@ -7,7 +7,7 @@ Version: 22.03.5-r1
 Depends: +libc +libatomic +openvswitch-libopenvswitch
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @openvswitch-libovn-any
 Section: net
 Category: Network
 Repository: base
@@ -29,7 +29,7 @@ Version: 22.03.5-r1
 Depends: +libc +openvswitch-common +openvswitch-libopenvswitch +openvswitch-libovn +openvswitch-libovsdb +libatomic
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @openvswitch-ovn-common-any
 Section: net
 Category: Network
 Repository: base
@@ -51,7 +51,7 @@ Version: 22.03.5-r1
 Depends: +libc +openvswitch-ovsdb +openvswitch-ovn-common +libatomic
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @openvswitch-ovn-north-any
 Section: net
 Category: Network
 Repository: base
@@ -72,7 +72,7 @@ Version: 22.03.5-r1
 Depends: +libc +openvswitch +openvswitch-ovn-common +libatomic
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @openvswitch-ovn-host-any
 Section: net
 Category: Network
 Repository: base

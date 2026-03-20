@@ -1,17 +1,18 @@
 Source-Makefile: feeds/packages/net/dawn/Makefile
 
 Package: dawn
-Version: 2023.05.14~e036905ae3a5d079f899bbe46461fc78b4566349-r1
+Submenu: Wireless
+Version: 2025.11.07~7414c34a08c7cbbd5f292e0e25e53f1edbfc751a-r1
 Depends: +libc +libubus +libubox +libblobmsg-json +libuci +libgcrypt +libiwinfo +umdns
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dawn-any
 Section: net
 Category: Network
 Repository: base
 Title: Decentralized wifi controller
 Maintainer: Nick Hainke <vincent@systemli.org>
-Source: dawn-2023.05.14~e036905ae3a5d079f899bbe46461fc78b4566349.tar.zst
+Source: dawn-2025.11.07~7414c34a08c7cbbd5f292e0e25e53f1edbfc751a.tar.zst
 License: GPL-2.0-only
 LicenseFiles: LICENSE
 URL: https://github.com/berlin-open-wireless-lab/DAWN.git

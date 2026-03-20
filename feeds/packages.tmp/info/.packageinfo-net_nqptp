@@ -5,7 +5,7 @@ Version: 1.2.4-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nqptp-any
 Section: net
 Category: Network
 Repository: base

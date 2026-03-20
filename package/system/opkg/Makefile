@@ -12,9 +12,9 @@ PKG_FLAGS:=essential
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL=$(PROJECT_GIT)/project/opkg-lede.git
-PKG_SOURCE_DATE:=2024-10-16
-PKG_SOURCE_VERSION:=38eccbb1fd694d4798ac1baf88f9ba83d1eac616
-PKG_MIRROR_HASH:=de58ff1c99c14789f9ba8946623c8c1e58d022e7e2a659d6f97c6fde54f2c4f4
+PKG_SOURCE_DATE:=2025-11-05
+PKG_SOURCE_VERSION:=80503d94e356476250adaf1f669ee955ec26de76
+PKG_MIRROR_HASH:=41fb2c79ce6014e28f7dd0cd8c65efe803986278f2587d1d4681883d8847d87c
 
 PKG_LICENSE:=GPL-2.0
 PKG_LICENSE_FILES:=COPYING
@@ -85,7 +85,7 @@ define Package/opkg/install
 	$(INSTALL_BIN) ./files/20_migrate-feeds $(1)/etc/uci-defaults/
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/opkg-cl $(1)/bin/opkg
   ifneq ($(CONFIG_SIGNATURE_CHECK),)
-	echo "# option check_signature" >> $(1)/etc/opkg.conf
+	echo "option check_signature" >> $(1)/etc/opkg.conf
   endif
 	$(INSTALL_DIR) $(1)/usr/sbin
 	$(INSTALL_BIN) ./files/opkg-key $(1)/usr/sbin/

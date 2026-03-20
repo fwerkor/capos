@@ -1,13 +1,13 @@
 Source-Makefile: feeds/packages/libs/libmraa/Makefile
-Build-Depends: swig/host
+Build-Depends: python-setuptools/host swig/host
 
 Package: libmraa
 Submenu: IoT
-Version: 2.2.0-r3
+Version: 2.2.0-r4
 Depends: +libc +libstdcpp +libjson-c @!arc @!armeb @!powerpc @!riscv64
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libmraa-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -29,11 +29,11 @@ This package contains the C/C++ libraries.
 
 Package: libmraa-python3
 Submenu: IoT
-Version: 2.2.0-r3
+Version: 2.2.0-r4
 Depends: +libc +libmraa +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libmraa-python3-any
 Section: libs
 Category: Libraries
 Repository: base

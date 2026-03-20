@@ -5,7 +5,7 @@ Version: 3
 Depends: +libc @(PACKAGE_wpa-supplicant||PACKAGE_wpad)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ieee8021xclient-any
 Section: net
 Category: Network
 Repository: base

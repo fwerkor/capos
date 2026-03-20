@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base +transmission-daemon
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-transmission-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -26,7 +26,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-ar-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -45,7 +45,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-bg-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -64,7 +64,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-bn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -83,7 +83,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-ca-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -102,7 +102,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-cs-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -121,7 +121,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-da-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -140,7 +140,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-de-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -159,7 +159,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-el-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -178,7 +178,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-es-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -197,7 +197,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-fi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -216,7 +216,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-fr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -235,7 +235,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-ga-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -254,7 +254,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-he-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -273,7 +273,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-hi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -292,7 +292,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-hu-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -311,7 +311,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-it-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -330,7 +330,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-ja-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -349,7 +349,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-ko-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -368,7 +368,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-lt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -387,7 +387,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-mr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -406,7 +406,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-ms-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -425,7 +425,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-no-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -444,7 +444,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-nl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -463,7 +463,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-pl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -482,7 +482,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-pt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -501,7 +501,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -520,7 +520,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-ro-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -539,7 +539,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-ru-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -558,7 +558,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-sk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -577,7 +577,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-sv-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -590,13 +590,32 @@ Hidden: 1
 Description:     Translation for luci-app-transmission - Svenska (Swedish)
 @@
 
+Package: luci-i18n-transmission-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-transmission
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-transmission-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-transmission - ta translation
+Maintainer: Richard Yu <yurichard3839@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-transmission - Tamil (Tamil)
+@@
+
 Package: luci-i18n-transmission-tr
 Default: LUCI_LANG_tr||(ALL&&m)
 Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-tr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -615,7 +634,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-uk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -634,7 +653,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-vi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -653,7 +672,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-yua-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -672,7 +691,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -691,7 +710,7 @@ Version: x
 Depends: +libc luci-app-transmission
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-transmission-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base

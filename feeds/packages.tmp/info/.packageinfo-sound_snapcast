@@ -1,0 +1,69 @@
+Source-Makefile: feeds/packages/sound/snapcast/Makefile
+
+Package: snapserver
+Version: 0.34.0-r1
+Depends: +libc +alsa-lib +libexpat +libatomic +libogg +libflac +libopus +boost +libsoxr +libvorbis
+Conflicts: 
+Menu-Depends: 
+Provides: @snapserver-any
+Section: sound
+Category: Sound
+Repository: base
+Title: Synchronous multiroom audio player (server)
+Maintainer: Szabolcs Hubai <szab.hu@gmail.com>, David Andreoletti <david@andreoletti.net>
+Source: snapcast-0.34.0.tar.zst
+License: GPL-3.0-or-later
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:badaix:snapcast
+URL: https://github.com/snapcast/snapcast
+Type: ipkg
+Description:     Synchronous audio player - Snapcast
+
+  Snapcast is a multi-room client-server audio player,
+  where all clients are time synchronized with the server
+  to play perfectly synced audio.
+  It's not a standalone player, but an extension that turns
+  your existing audio player into a Sonos-like multiroom solution.
+  Audio is captured by the server and routed to the connected clients.
+  Several players can feed audio to the server in parallel
+  and clients can be grouped to play the same audio stream.
+  One of the most generic ways to use Snapcast is in conjunction
+  with the Music Player Daemon (MPD) or Mopidy.
+
+  This package contains the Snapcast server.
+@@
+
+Package: snapclient
+Version: 0.34.0-r1
+Depends: +libc +alsa-lib +libexpat +libatomic +libogg +libflac +libopus +boost +libsoxr +libvorbisidec
+Conflicts: 
+Menu-Depends: 
+Provides: @snapclient-any
+Section: sound
+Category: Sound
+Repository: base
+Title: Synchronous multiroom audio player (client)
+Maintainer: Szabolcs Hubai <szab.hu@gmail.com>, David Andreoletti <david@andreoletti.net>
+Source: snapcast-0.34.0.tar.zst
+License: GPL-3.0-or-later
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:badaix:snapcast
+URL: https://github.com/snapcast/snapcast
+Type: ipkg
+Description:     Synchronous audio player - Snapcast
+
+  Snapcast is a multi-room client-server audio player,
+  where all clients are time synchronized with the server
+  to play perfectly synced audio.
+  It's not a standalone player, but an extension that turns
+  your existing audio player into a Sonos-like multiroom solution.
+  Audio is captured by the server and routed to the connected clients.
+  Several players can feed audio to the server in parallel
+  and clients can be grouped to play the same audio stream.
+  One of the most generic ways to use Snapcast is in conjunction
+  with the Music Player Daemon (MPD) or Mopidy.
+
+  This package contains the Snapcast client.
+@@
+
+

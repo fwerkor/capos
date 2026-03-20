@@ -2,6 +2,12 @@
 'require rpc';
 'require baseclass';
 
+/**
+ * Determine whether an object is empty.
+ * @param {object} object object to enumerate.
+ * @param {string} ignore property to ignore.
+ * @returns {boolean}
+ */
 function isEmpty(object, ignore) {
 	for (const property in object)
 		if (object.hasOwnProperty(property) && property != ignore)
@@ -376,6 +382,7 @@ return baseclass.extend(/** @lends LuCI.uci.prototype */ {
 		}
 	},
 
+	/* eslint-disable jsdoc/check-property-names */
 	/**
 	 * A section object represents the options and their corresponding values
 	 * enclosed within a configuration section, as well as some additional
@@ -387,19 +394,19 @@ return baseclass.extend(/** @lends LuCI.uci.prototype */ {
 	 * @typedef {Object<string, boolean|number|string|string[]>} SectionObject
 	 * @memberof LuCI.uci
 	 *
-	 * @property {boolean} .anonymous
+	 * @property {boolean} ".anonymous"
 	 * The `.anonymous` property specifies whether the configuration is
 	 * anonymous (`true`) or named (`false`).
 	 *
-	 * @property {number} .index
+	 * @property {number} ".index"
 	 * The `.index` property specifies the sort order of the section.
 	 *
-	 * @property {string} .name
+	 * @property {string} ".name"
 	 * The `.name` property holds the name of the section object. It may be
 	 * either an anonymous ID in the form `cfgXXXXXX` or `newXXXXXX` with `X`
 	 * being a hexadecimal digit or a string holding the name of the section.
 	 *
-	 * @property {string} .type
+	 * @property {string} ".type"
 	 * The `.type` property contains the type of the corresponding uci
 	 * section.
 	 *
@@ -411,13 +418,14 @@ return baseclass.extend(/** @lends LuCI.uci.prototype */ {
 	 * either contain a string value or an array of strings, in case the
 	 * underlying option is an UCI list.
 	 */
+	/* eslint-enable jsdoc/check-property-names */
 
 	/**
 	 * The sections callback is invoked for each section found within
 	 * the given configuration and receives the section object and its
 	 * associated name as arguments.
 	 *
-	 * @callback LuCI.uci~sectionsFn
+	 * @callback LuCI.uci.sections
 	 *
 	 * @param {LuCI.uci.SectionObject} section
 	 * The section object.
@@ -437,7 +445,7 @@ return baseclass.extend(/** @lends LuCI.uci.prototype */ {
 	 * Enumerate only sections of the given type. If omitted, enumerate
 	 * all sections.
 	 *
-	 * @param {LuCI.uci~sectionsFn} [cb]
+	 * @param {LuCI.uci.sections} [cb]
 	 * An optional callback to invoke for each enumerated section.
 	 *
 	 * @returns {Array<LuCI.uci.SectionObject>}
@@ -662,6 +670,7 @@ return baseclass.extend(/** @lends LuCI.uci.prototype */ {
 	 *
 	 * @param {string} opt
 	 * The name of the option to remove.
+	 * @returns {null}
 	 */
 	unset(conf, sid, opt) {
 		return this.set(conf, sid, opt, null);
@@ -711,8 +720,9 @@ return baseclass.extend(/** @lends LuCI.uci.prototype */ {
 	 * Many configuration files contain boolean settings, such as
 	 * `enabled` or `advanced_mode`, where there is no consistent
 	 * definition for the values.  This function allows users to
-	 * enter any of the values `"yes"`, `"on"`, `"true"` or `1` in
-	 * their config files and we return the expected boolean result.
+	 * enter any of the values `"yes"`, `"on"`, `"true"`, `"enabled"`
+	 * or `1` in their config files and we return the expected boolean
+	 * result.
 	 *
 	 * Character case is not significant, so for example, any of
 	 * "YES", "Yes" or "yes" will be interpreted as a `true` value.
@@ -720,8 +730,8 @@ return baseclass.extend(/** @lends LuCI.uci.prototype */ {
 	 * @param {string} conf
 	 * The name of the configuration to read.
 	 *
-	 * @param {string} sid
-	 * The name or ID of the section to read.
+	 * @param {string} type
+	 * The section type to read.
 	 *
 	 * @param {string} [opt]
 	 * The option name from which to read the value. If the option
@@ -730,6 +740,10 @@ return baseclass.extend(/** @lends LuCI.uci.prototype */ {
 	 * @returns {boolean}
 	 * - Returns boolean `true` if the configuration value is defined
 	 *   and looks like a true value, otherwise returns `false`.
+	 *
+	 * See the
+	 * {@link https://openwrt.org/docs/guide-developer/config-scripting#reading_booleans|Developers Guide}
+	 * for more.
 	 */
 	get_bool(conf, type, opt) {
 		let value = this.get(conf, type, opt);
@@ -761,6 +775,7 @@ return baseclass.extend(/** @lends LuCI.uci.prototype */ {
 	 * The option value to set. If the value is `null` or an empty string,
 	 * the option will be removed, otherwise it will be set or overwritten
 	 * with the given value.
+	 * @returns {null}
 	 */
 	set_first(conf, type, opt, val) {
 		let sid = null;
@@ -790,6 +805,8 @@ return baseclass.extend(/** @lends LuCI.uci.prototype */ {
 	 *
 	 * @param {string} opt
 	 * The option name to set the value for.
+	 *
+	 * @returns {null}
 	 */
 	unset_first(conf, type, opt) {
 		return this.set_first(conf, type, opt, null);
@@ -866,7 +883,8 @@ return baseclass.extend(/** @lends LuCI.uci.prototype */ {
 		for (let i = 0; i < sa.length; i++)
 			this.get(conf, sa[i]['.name'])['.index'] = i;
 
-		this.state.reorder[conf] = true;
+		if (this.state)
+			this.state.reorder[conf] = true;
 
 		return true;
 	},
@@ -882,7 +900,6 @@ return baseclass.extend(/** @lends LuCI.uci.prototype */ {
 	 * have been reloaded by the save operation.
 	 */
 	save() {
-		const v = this.state.values;
 		const n = this.state.creates;
 		const c = this.state.changes;
 		const d = this.state.deletes;
@@ -1009,14 +1026,14 @@ return baseclass.extend(/** @lends LuCI.uci.prototype */ {
 	 * @typedef {string[]} ChangeRecord
 	 * @memberof LuCI.uci
 	 *
-	 * @property {string} 0
+	 * @property {string} operation
 	 * The operation name - may be one of `add`, `set`, `remove`, `order`,
 	 * `list-add`, `list-del` or `rename`.
 	 *
-	 * @property {string} 1
+	 * @property {string} section_id
 	 * The section ID targeted by the operation.
 	 *
-	 * @property {string} 2
+	 * @property {string} parameter
 	 * The meaning of the third element depends on the operation.
 	 * - For `add` it is type of the section that has been added
 	 * - For `set` it either is the option name if a fourth element exists,
@@ -1034,7 +1051,7 @@ return baseclass.extend(/** @lends LuCI.uci.prototype */ {
 	 *   a section has been renamed to if the change entry only contains
 	 *   three elements.
 	 *
-	 * @property {string} 4
+	 * @property {string=} value
 	 * The meaning of the fourth element depends on the operation.
 	 * - For `set` it is the value an option has been set to.
 	 * - For `list-add` it is the new value that has been added to a
@@ -1046,7 +1063,7 @@ return baseclass.extend(/** @lends LuCI.uci.prototype */ {
 	/**
 	 * Fetches uncommitted UCI changes from the remote `ubus` RPC api.
 	 *
-	 * @method
+	 * @function
 	 * @returns {Promise<Object<string, Array<LuCI.uci.ChangeRecord>>>}
 	 * Returns a promise resolving to an object containing the configuration
 	 * names as keys and arrays of related change records as values.

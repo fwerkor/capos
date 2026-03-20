@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2024-02-28 14:29+0000\n"
-"Last-Translator: Boyan Alexiev <nneauu@gmail.com>\n"
+"PO-Revision-Date: 2026-03-15 08:27+0000\n"
+"Last-Translator: Daniel Konstantinov <bgshadow2010@gmail.com>\n"
 "Language-Team: Bulgarian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationswatchcat/bg/>\n"
 "Language: bg\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: applications/luci-app-watchcat/htdocs/luci-static/resources/view/watchcat.js:94
 msgid ""
@@ -20,6 +20,12 @@ msgid ""
 "to fail. Enter the number of seconds to wait for the soft reboot to fail or "
 "use 0 to disable the forced reboot delay."
 msgstr ""
+"<i>Прилага се за режимите Ping Reboot и Periodic Reboot</i> <br /> При "
+"рестартиране на рутера услугата ще задейства мек рестарт. Въвеждането на "
+"ненулева стойност тук ще задейства отложен твърд рестарт, ако мекият рестарт "
+"не успее. Въведете броя секунди за изчакване, преди мекият рестарт да се "
+"счита за неуспешен, или използвайте 0, за да изключите принудителното "
+"забавяне на рестарта."
 
 #: applications/luci-app-watchcat/htdocs/luci-static/resources/view/watchcat.js:111
 msgid ""
@@ -27,12 +33,18 @@ msgid ""
 "ModemManager, you can have Watchcat restart your ModemManager interface by "
 "specifying its name."
 msgstr ""
+"<i>Прилага се за режимите Ping Reboot и Restart Interface</i> <br /> Ако "
+"използвате ModemManager, можете да накарате Watchcat да рестартира вашия "
+"ModemManager интерфейс, като посочите името му."
 
 #: applications/luci-app-watchcat/htdocs/luci-static/resources/view/watchcat.js:104
 msgid ""
 "<i>Applies to Ping Reboot, Restart Interface, and Run Script modes</i> <br /"
 "> Specify the interface to monitor and react if a ping over it fails."
 msgstr ""
+"<i>Прилага се за режимите Ping Reboot, Restart Interface и Run Script</i> "
+"<br /> Посочете интерфейса за наблюдение и реагиране, ако ping през него се "
+"провали."
 
 #: applications/luci-app-watchcat/htdocs/luci-static/resources/view/watchcat.js:60
 msgid "Address family for pinging the host"
@@ -70,7 +82,7 @@ msgid ""
 msgstr ""
 
 #: applications/luci-app-watchcat/htdocs/luci-static/resources/view/watchcat.js:52
-msgid "Host To Check"
+msgid "Hosts To Check"
 msgstr ""
 
 #: applications/luci-app-watchcat/htdocs/luci-static/resources/view/watchcat.js:71
@@ -88,7 +100,7 @@ msgid "Huge: 1492 bytes"
 msgstr ""
 
 #: applications/luci-app-watchcat/htdocs/luci-static/resources/view/watchcat.js:52
-msgid "IP address or hostname to ping."
+msgid "IP addresses or hostnames to ping."
 msgstr ""
 
 #: applications/luci-app-watchcat/htdocs/luci-static/resources/view/watchcat.js:118

@@ -7,7 +7,7 @@ Version: 5.0.1-r1
 Depends: +libc +python3-light +python3-decimal +python3-uuid +libodbc +libstdcpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pyodbc-any
 Section: lang
 Category: Languages
 Repository: base

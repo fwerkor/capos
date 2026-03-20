@@ -6,7 +6,7 @@ Version: 0.4-r1
 Depends: +libc +USE_GLIBC:librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @igmpproxy-any
 Section: net
 Category: Network
 Repository: base

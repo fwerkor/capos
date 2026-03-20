@@ -5,7 +5,7 @@ Version: 2019.09.28~f71c269b58585e93575fa3e9fcc1793806fb3080-r3
 Depends: +libc +libnetfilter-queue +nftables +kmod-nft-queue
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @etherwake-nfqueue-any
 Section: net
 Category: Network
 Repository: base

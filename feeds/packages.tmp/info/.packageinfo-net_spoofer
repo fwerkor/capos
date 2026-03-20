@@ -6,7 +6,7 @@ Version: 1.4.8-r1
 Depends: +libc +protobuf-lite +libpcap +libpthread +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @spoofer-any
 Section: net
 Category: Network
 Repository: base

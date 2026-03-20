@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +unetd +unet-cli
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-proto-unet-any
 Section: luci
 Category: LuCI
 Repository: base

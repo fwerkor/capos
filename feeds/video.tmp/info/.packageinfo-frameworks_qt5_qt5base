@@ -1,0 +1,464 @@
+Source-Makefile: feeds/video/frameworks/qt5/qt5base/Makefile
+Build-Depends/host: qt5base
+Build-Types: host
+
+Package: qt5base-core
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +libpthread +zlib +libzstd +libstdcpp +librt +libpcre2-16 +libdouble-conversion +BUILD_NLS:libiconv-full +PACKAGE_icu:icu
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-core-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base core
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base core
+@@
+Config:
+        source "feeds/video/frameworks/qt5/qt5base/Config.in"
+@@
+
+Package: qt5base-concurrent
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-concurrent-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base concurrent
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base concurrent
+@@
+
+Package: qt5base-gui
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +libpng +libfreetype +BUILD_qt5base-gui_OPENGL_OPENGLES2:libmesa
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-gui-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base gui
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base gui
+@@
+
+Package: qt5base-network
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +BUILD_qt5base-network_SSL:libopenssl
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-network-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base network
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base network
+@@
+
+Package: qt5base-printSupport
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui +qt5base-widgets
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-printSupport-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base print support
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base print support
+@@
+
+Package: qt5base-sql
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-sql-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base sql
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base sql
+@@
+
+Package: qt5base-test
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-test-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base test
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base test
+@@
+
+Package: qt5base-widgets
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-widgets-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base widgets
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base widgets
+@@
+
+Package: qt5base-xml
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-xml-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base xml
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base xml
+@@
+
+Package: qt5base-plugin-bearer-generic
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-network
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-bearer-generic-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base bearer (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base bearer (plugin)
+@@
+
+Package: qt5base-plugin-input-libinput
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui +libinput
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-input-libinput-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base libinput (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base libinput (plugin)
+@@
+
+Package: qt5base-plugin-input-evdevkeyboard
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui +PACKAGE_qt5base-input-autodiscovery:libudev +PACKAGE_qt5base-plugin-input-libinput:libinput
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-input-evdevkeyboard-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base evdev keyboard (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base evdev keyboard (plugin)
+@@
+
+Package: qt5base-plugin-input-evdevmouse
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui +PACKAGE_qt5base-input-autodiscovery:libudev +PACKAGE_qt5base-plugin-input-libinput:libinput
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-input-evdevmouse-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base evdev mouse (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base evdev mouse (plugin)
+@@
+
+Package: qt5base-plugin-input-evdevtablet
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui +PACKAGE_qt5base-input-autodiscovery:libudev +PACKAGE_qt5base-plugin-input-libinput:libinput
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-input-evdevtablet-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base evdev tablet (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base evdev tablet (plugin)
+@@
+
+Package: qt5base-plugin-input-evdevtouch
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui +PACKAGE_qt5base-input-autodiscovery:libudev +PACKAGE_qt5base-plugin-input-libinput:libinput
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-input-evdevtouch-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base evdev touch (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base evdev touch (plugin)
+@@
+
+Package: qt5base-plugin-imageformats-ico
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-imageformats-ico-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base imageformat ico (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base imageformat ico (plugin)
+@@
+
+Package: qt5base-plugin-imageformats-jpeg
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui +libjpeg
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-imageformats-jpeg-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base imageformat jpeg (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base imageformat jpeg (plugin)
+@@
+
+Package: qt5base-plugin-platforms-linuxfb
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui +libfreetype +PACKAGE_qt5base-input-autodiscovery:libudev +PACKAGE_qt5base-plugin-input-libinput:libinput
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-platforms-linuxfb-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base platform linuxfb (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base platform linuxfb (plugin)
+@@
+
+Package: qt5base-plugin-platforms-eglfs
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui +libfreetype +fontconfig +libmesa
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-platforms-eglfs-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base platform eglfs (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base platform eglfs (plugin)
+@@
+
+Package: qt5base-plugin-platforms-minimalegl
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-platforms-minimalegl-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base platform minimalegl (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base platform minimalegl (plugin)
+@@
+
+Package: qt5base-plugin-platforms-minimal
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-platforms-minimal-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base platform minimal (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base platform minimal (plugin)
+@@
+
+Package: qt5base-plugin-platforms-offscreen
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-platforms-offscreen-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base platform offscreen (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base platform offscreen (plugin)
+@@
+
+Package: qt5base-plugin-platforms-vnc
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui +qt5base-network +libfreetype +fontconfig +PACKAGE_qt5base-input-autodiscovery:libudev +PACKAGE_qt5base-plugin-input-libinput:libinput
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-platforms-vnc-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base platform vnc (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base platform vnc (plugin)
+@@
+
+Package: qt5base-examples
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui +qt5base-widgets +qt5base-network +qt5base-sql +qt5base-xml +qt5base-printSupport +qt5base-concurrent +qt5base-test
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-examples-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base examples
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base examples
+@@
+
+

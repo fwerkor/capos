@@ -5,7 +5,7 @@ Version: 3.11.2-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nlohmannjson-any
 Section: libs
 Category: Libraries
 Repository: base

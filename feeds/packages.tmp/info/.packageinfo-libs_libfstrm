@@ -5,7 +5,7 @@ Version: 0.6.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libfstrm-any
 Section: libs
 Category: Libraries
 Repository: base

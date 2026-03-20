@@ -1,0 +1,42 @@
+Source-Makefile: feeds/video/libs/cog/Makefile
+
+Package: libcogcore
+Version: 0.18.5-r1
+Depends: +libc +libdbus +libmanette +libwpewebkit +wpebackend-fdo
+Conflicts: 
+Menu-Depends: 
+Provides: @libcogcore-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: WPE WebKit API library
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: cog-0.18.5.tar.xz
+License: BSD-2-clause
+LicenseFiles: COPYING
+URL: https://wpewebkit.org/
+Type: ipkg
+Description: WPE WebKit API library
+@@
+
+Package: cog
+Version: 0.18.5-r1
+Depends: +libc +libcogcore
+Conflicts: 
+Menu-Depends: 
+Provides: @cog-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: launcher for WPE WebKit
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Require-User: cog:video=40
+Source: cog-0.18.5.tar.xz
+License: BSD-2-clause
+LicenseFiles: COPYING
+URL: https://wpewebkit.org/
+Type: ipkg
+Description: launcher for WPE WebKit
+@@
+
+

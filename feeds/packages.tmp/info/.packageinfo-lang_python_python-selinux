@@ -3,17 +3,17 @@ Build-Depends: swig/host
 
 Package: python3-selinux
 Submenu: Python
-Version: 3.6-r1
+Version: 3.8.1-r1
 Depends: +libc +python3-light +libselinux
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-selinux-any
 Section: lang
 Category: Languages
 Repository: base
 Title: SELinux runtime library bindings
 Maintainer: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Source: libselinux-3.6.tar.gz
+Source: libselinux-3.8.1.tar.gz
 License: libselinux-1.0
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:selinuxproject:libselinux
@@ -32,17 +32,17 @@ Description: 	libselinux is the runtime SELinux library that provides
 
 Package: python3-selinux-src
 Submenu: Python
-Version: 3.6-r1
+Version: 3.8.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-selinux-src-any
 Section: lang
 Category: Languages
 Repository: base
 Title: SELinux runtime library bindings (sources)
 Maintainer: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Source: libselinux-3.6.tar.gz
+Source: libselinux-3.8.1.tar.gz
 License: libselinux-1.0
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:selinuxproject:libselinux

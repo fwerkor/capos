@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/libs/libmpeg2/Makefile
 
 Package: libmpeg2
-Version: 0.5.1-r1
+Version: 0.5.1-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libmpeg2-any
 Section: libs
 Category: Libraries
 Repository: base

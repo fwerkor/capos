@@ -5,7 +5,7 @@ Version: 2023.01.20~510cc944e4d4c28b5cc30d9808ab14e80486b437-r1
 Depends: +libc +libcurl +libnl-tiny +libjson-c
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @clocate-any
 Section: utils
 Category: Utilities
 Repository: base

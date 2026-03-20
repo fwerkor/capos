@@ -2,11 +2,11 @@ Source-Makefile: feeds/packages/utils/acsccid/Makefile
 Build-Depends: libtool
 
 Package: acsccid
-Version: 1.1.8-r2
+Version: 1.1.8-r3
 Depends: +libc +BUILD_NLS:libiconv-full +libusb-1.0 +libpcsclite
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @acsccid-any
 Section: libs
 Category: Libraries
 Repository: base

@@ -10,6 +10,7 @@
 'require network';
 'require firewall';
 'require tools.widgets as widgets';
+'require uqr';
 
 const isReadonlyView = !L.hasViewPermission();
 
@@ -26,6 +27,23 @@ function render_radio_badge(radioDev) {
 		' ',
 		radioDev.getName()
 	]);
+}
+
+function buildSVGQRCode(data, code, options, dummy=false) {
+	const opts = {
+		pixelSize: 4,
+		whiteColor: 'white',
+		blackColor: 'black',
+		ecc: 'M',
+		...options
+	};
+	const svg = uqr.renderSVG(data, opts);
+	if (dummy)
+		return svg;
+	else {
+		code.style.opacity = '';
+		dom.content(code, Object.assign(E(svg), { style: 'width:100%;height:auto' }));
+	}
 }
 
 function render_signal_badge(signalPercent, signalValue, noiseValue, wrap, mode) {
@@ -189,37 +207,26 @@ function render_modal_status(node, radioNet) {
 
 function format_wifirate(rate) {
 	let s = `${rate.rate / 1000}\xa0${_('Mbit/s')}, ${rate.mhz}\xa0${_('MHz')}`;
-	const ht = rate.ht;
-	const vht = rate.vht;
-	const nss = rate.nss;
-	const mcs = rate.mcs;
-	const sgi = rate.short_gi;
-	const he = rate.he;
-	const he_gi = rate.he_gi;
-	const he_dcm = rate.he_dcm;
-	const eht = rate?.eht ?? false;
-	const eht_gi = rate?.eht_gi ?? 0;
-	const eht_dcm = rate?.eht_dcm ?? 0;
 
-	if (ht || vht) s += [
-		vht && `, VHT-MCS\xa0${mcs}`,
-		nss && `, VHT-NSS\xa0${nss}`,
-		ht  && `, MCS\xa0${mcs}`,
-		sgi && ', ' + _('Short GI').replace(/ /g, '\xa0')
+	if (rate?.ht || rate?.vht) s += [
+		rate?.vht && `, VHT-MCS\xa0${rate?.mcs}`,
+		rate?.nss && `, VHT-NSS\xa0${rate?.nss}`,
+		rate?.ht  && `, MCS\xa0${rate?.mcs}`,
+		rate?.short_gi && ', ' + _('Short GI').replace(/ /g, '\xa0')
 	].filter(Boolean).join('');
 
-	if (he) s += [
-		`, HE-MCS\xa0${mcs}`,
-		nss    && `, HE-NSS\xa0${nss}`,
-		he_gi  && `, HE-GI\xa0${he_gi}`,
-		he_dcm && `, HE-DCM\xa0${he_dcm}`
+	if (rate?.he) s += [
+		`, HE-MCS\xa0${rate?.mcs}`,
+		rate?.nss    && `, HE-NSS\xa0${rate?.nss}`,
+		rate?.he_gi  && `, HE-GI\xa0${rate?.he_gi}`,
+		rate?.he_dcm && `, HE-DCM\xa0${rate?.he_dcm}`
 	].filter(Boolean).join('');
 
-	if (eht) s += [
-		`, EHT-MCS\xa0${mcs}`,
-		nss    && `, EHT-NSS\xa0${nss}`,
-		he_gi  && `, EHT-GI\xa0${eht_gi}`,
-		he_dcm && `, EHT-DCM\xa0${eht_dcm}`
+	if (rate?.eht) s += [
+		`, EHT-MCS\xa0${rate?.mcs}`,
+		rate?.nss    && `, EHT-NSS\xa0${rate?.nss}`,
+		rate?.eht_gi  && `, EHT-GI\xa0${rate?.eht_gi}`,
+		rate?.eht_dcm && `, EHT-DCM\xa0${rate?.eht_dcm}`
 	].filter(Boolean).join('');
 
 	return s;
@@ -1044,7 +1051,8 @@ return view.extend({
 				ss.tab('advanced', _('Advanced Settings'));
 				ss.tab('roaming', _('WLAN roaming'), _('Settings for assisting wireless clients in roaming between multiple APs: 802.11r, 802.11k and 802.11v'));
 
-				o = ss.taboption('general', form.ListValue, 'mode', _('Mode'));
+				o = ss.taboption('general', form.ListValue, 'mode', _('Mode') , !have_mesh ? '<a id="installmesh" href="%s" target="_blank" rel="noreferrer">%s</a>'
+						.format(L.url('admin/system/package-manager') + '?query=wpad-mesh', _('802.11s? Install mesh wpad') ) : '');
 				o.value('ap', _('Access Point'));
 				o.value('sta', _('Client'));
 				o.value('adhoc', _('Ad-Hoc'));
@@ -1213,6 +1221,8 @@ return view.extend({
 					o = ss.taboption('advanced', form.Flag, 'isolate', _('Isolate Clients'), _('Prevents client-to-client communication'));
 					o.depends('mode', 'ap');
 					o.depends('mode', 'ap-wds');
+
+					o = ss.taboption('advanced', form.Flag, 'bridge_isolate', _('Isolate Bridge Port'), _('Prevents communication only with targets on isolated bridge ports (while allowing it with targets on non-isolated ones). This also prevents client-to-client communication on the same interface when the WiFi device is in AP mode.'));
 
 					o = ss.taboption('advanced', form.Value, 'ifname', _('Interface name'), _('Override default interface name'));
 					o.optional = true;
@@ -1472,6 +1482,202 @@ return view.extend({
 					encr.value(crypto_mode[0], '%s (%s)'.format(crypto_mode[1], security_level));
 				});
 
+				// QR Code
+				o = ss.taboption('encryption', form.DummyValue, '_qrops', _('QR Code'),
+					_('SSID and passwords with URIencoded sequences (e.g. %20) may not work.'));
+				o.modalonly = true;
+
+				o.createWiFiPassword = function(section_id) {
+					// https://www.wi-fi.org/system/files/WPA3%20Specification%20v3.5.pdf#page=33
+					/*
+					WIFI:T:WPA;S:mynetwork;P:mypass;;
+
+					WIFI-qr = "WIFI:" [type ";"] [trdisable ";"] ssid ";" [hidden ";"] [id ";"] [password ";"] [public-key ";"] ";"
+
+					Param 		Description
+					type		"T:" *(unreserved) ; security type
+					trdisable	"R:" *(HEXDIG) ; Transition Disable value
+					ssid		"S:" *(printable / pct-encoded) ; SSID of the network
+					hidden		"H:true" ; when present, indicates a hidden (stealth) SSID is used
+					id			"I:" *(printable / pct-encoded) ; UTF-8 encoded password identifier, present if the password has an SAE password identifier
+					password	"P:" *(printable / pct-encoded) ; password, present for password-based authentication
+					public-key	"K:" *PKCHAR ; DER of ASN.1 SubjectPublicKeyInfo in compressed form and encoded in "base64" as per [6], present when the network supports SAE-PK, else absent
+
+					printable = %x20-3a / %x3c-7e ; semi-colon excluded
+					PKCHAR = ALPHA / DIGIT / %x2b / %x2f / %x3d
+					*/
+
+					function pctEncode(str) {
+						const bytes = new TextEncoder().encode(str);
+						let out = "";
+						for (const b of bytes) {
+							// printable = 0x20–0x3A and 0x3C–0x7E, but semicolon (0x3B) excluded
+							// anything *within* this range %encoded should be treated as printable literal(?)
+							// There seems to be a glaring bug in this WiFi spec. Ofc there are bugs. 
+							// By not encoding the "%" character, a string literal % with two successive
+							// digits is ambiguous. If the password contains "%20" which
+							// should be interpreted literally ['%', '2', '0'] and not " ", some
+							// clients interpret this as " ". YMMV.
+							const printable = (b >= 0x20 && b <= 0x3A && b !== 0x3B)
+								|| (b >= 0x3C && b <= 0x7E);
+
+							if (printable) {
+								out += String.fromCharCode(b);
+							} else {
+								out += "%" + b.toString(16).toUpperCase().padStart(2, "0");
+							}
+						}
+						return out;
+					}
+
+					const wifiSSID = this.section.formvalue(section_id, 'ssid'); // S
+					const wifiEncr = this.section.formvalue(section_id, 'encryption'); // T
+					const wifiKey  = this.section.formvalue(section_id, '_wpa_key'); // P
+					const wifiHide = this.section.formvalue(section_id, 'hidden') === '1'; // H
+
+					/* trdisable:
+					0 WPA3-Personal
+					1 SAE-PK
+					2 WPA3-Enterprise
+					3 WiFi-Enhanced Open */
+					let trdisable = ''; // R
+					switch (true) {
+					case (wifiEncr === 'sae'): trdisable = 0; break; // 'sae' i.e. WPA3-Personal
+					// case (???): trdisable = 1; break; // SAE-PK
+					case (wifiEncr.startsWith('wpa3')): trdisable = 2; break; // 'wpa3*' i.e. WPA3-Enterprise
+					case (wifiEncr === 'owe'): trdisable = 3; break; // 'open' i.e. WiFi-Enhanced Open
+					default: trdisable = ''; break;
+					}
+
+					return [
+						`WIFI:`,
+						(wifiKey) ? `T:WPA;`: null, // absent indicates [open || Wi-Fi Enhanced Open ]
+						(trdisable !== '') ? `R:${trdisable};` : null,
+						`S:${wifiSSID};`,
+						(wifiHide) ? `H:${wifiHide};` : null,
+						(wifiKey) ? `P:${pctEncode(wifiKey)};`: null,
+					].filter(Boolean).join('') + ';';
+				};
+
+				o.handleGenerateQR = function(section_id, ev) {
+					const parent = s.map;
+					const mapNode = document.querySelector('body.modal-overlay-active > #modal_overlay > .modal.cbi-modal > .cbi-map:not(.hidden)');
+					const headNode = mapNode.parentNode.querySelector('h4');
+					const wifiQRGenerator = this.createWiFiPassword.bind(this, section_id);
+
+					return Promise.all([
+						parent.save(null, true)
+					]).then(function(data) {
+						let qrm, qrs, qro;
+
+						qrm = new form.JSONMap({ qrcode: {  } },
+							null, _('Scan this QR code with the client device.'));
+						qrm.parent = parent;
+
+						qrs = qrm.section(form.NamedSection, 'qrcode');
+
+						function handleQRParamChange(ev, section_id, value) {
+							const code = this.map.findElement('.qr-code');
+							const conf = this.map.findElement('.wifi-qr-code-content');
+							const ecc = this.section.getUIElement(section_id, 'ecc');
+
+							if (this.isValid(section_id)) {
+								conf.firstChild.data = wifiQRGenerator(section_id);
+								code.style.opacity = '.5';
+
+								buildSVGQRCode(conf.firstChild.data, code, {ecc: ecc.getValue()});
+							}
+						};
+
+						qro = qrs.option(form.ListValue, 'ecc', _('QR Error Correction Code Level'));
+						qro.value('L', _('Low'));
+						qro.value('M', _('Medium'));
+						qro.value('Q', _('Quartile'));
+						qro.value('H', _('High'));
+						qro.onchange = handleQRParamChange;
+
+
+						qro = qrs.option(form.DummyValue, 'output');
+						qro.renderWidget = function() {
+							const wifi_qr = wifiQRGenerator(section_id);
+							const ecc = this.section.formvalue(section_id, 'ecc');
+
+							return E('div', {
+								'class': 'qr-code-display',
+								'style': 'display:flex; flex-wrap:wrap; align-items:center; gap:.5em',
+							}, [
+								E('div', {
+									'class': 'qr-code',
+									// any width and height should be ~360: enough for QR with K: field and High ECC.
+								}, [
+									// fill initial QR code
+									E(buildSVGQRCode(wifi_qr, null, {ecc: ecc || undefined}, true))
+								]),
+								E('pre', {
+									'class': 'wifi-qr-code-content',
+									'style': 'flex:1; overflow:auto; word-break:break-all; ',
+									'click': function(ev) {
+										const sel = window.getSelection();
+										const range = document.createRange();
+
+										range.selectNodeContents(ev.currentTarget);
+
+										sel.removeAllRanges();
+										sel.addRange(range);
+									}
+								}, [ wifi_qr ])
+							]);
+						};
+
+						return qrm.render().then(function(nodes) {
+							// stash the current dialogue style (visible)
+							const dStyle = mapNode.style;
+							// hide the current modal window
+							mapNode.style.display = 'none';
+							// stash the current button row style (visible)
+							const bRowStyle = mapNode.nextElementSibling.style;
+							// hide the [ Dismiss | Save ] button row
+							mapNode.nextElementSibling.style.display = 'none';
+
+							headNode.appendChild(E('span', [ ' » ', _('Generate WiFi QR…') ]));
+							mapNode.parentNode.appendChild(E([], [
+								nodes,
+								E('div', {
+									'class': 'right'
+								}, [
+									E('button', {
+										'class': 'btn',
+										'click': function() {
+											// Remove QR code button (row)
+											nodes.parentNode.removeChild(nodes.nextSibling);
+											// Remove QR code form
+											nodes.parentNode.removeChild(nodes);
+											// unhide the WiFi modal dialogue
+											mapNode.style = dStyle;
+											// Revert button row style to visible again
+											mapNode.nextSibling.style = bRowStyle;
+											// Remove the H4 span (») title
+											headNode.removeChild(headNode.lastChild);
+										}
+									}, [ _('Back to settings') ])
+								])
+							]));
+						});
+					});
+				};
+
+				o.cfgvalue = function(section_id, value) {
+					return E('button', {
+						'class': 'btn qr-code',
+						'style': 'display:inline-flex;align-items:center;gap:.5em',
+						'click': ui.createHandlerFn(this, 'handleGenerateQR', section_id),
+					}, [
+						// inject dummy QR code
+						E(buildSVGQRCode('openwrt.org', null, {pixelSize: 1, ecc: 'L'}, true)),
+						_('Generate QR…')
+					]);
+				};
+				// End QR Code
 
 				o = ss.taboption('encryption', form.Flag, 'ppsk', _('Enable Private PSK (PPSK)'), _('Private Pre-Shared Key (PPSK) allows the use of different Pre-Shared Key for each STA MAC address. Private MAC PSKs are stored on the RADIUS server.'));
 				add_dependency_permutations(o, { mode: ['ap', 'ap-wds'], encryption: ['psk', 'psk2', 'psk+psk2', 'psk-mixed'] });
@@ -1558,6 +1764,9 @@ return view.extend({
 				o = ss.taboption('encryption', form.Flag, 'vlan_naming', _('RADIUS VLAN Naming'), _('Off: <code>vlanXXX</code>, e.g., <code>vlan1</code>. On: <code>vlan_tagged_interface.XXX</code>, e.g. <code>eth0.1</code>.'));
 				add_dependency_permutations(o, { mode: ['ap', 'ap-wds'], encryption: ['wpa', 'wpa2', 'wpa3', 'wpa3-mixed', 'wpa3-192'] });
 				add_dependency_permutations(o, { mode: ['ap', 'ap-wds'], encryption: ['psk', 'psk2', 'psk+psk2', 'psk-mixed'], ppsk: ['1'] });
+				o.enabled = '1';
+				o.disabled = '0';
+				o.default = o.enabled;
 
 				o = ss.taboption('encryption', widgets.DeviceSelect, 'vlan_tagged_interface', _('RADIUS VLAN Tagged Interface'), _('E.g. eth0, eth1'));
 				add_dependency_permutations(o, { mode: ['ap', 'ap-wds'], encryption: ['wpa', 'wpa2', 'wpa3', 'wpa3-mixed', 'wpa3-192'] });
@@ -1658,7 +1867,7 @@ return view.extend({
 					const has_80211r = L.hasSystemFeature('hostapd', '11r') || L.hasSystemFeature('hostapd', 'eap');
 
 					o = ss.taboption('roaming', form.Flag, 'ieee80211r', _('802.11r Fast Transition'), _('Enables fast roaming among access points that belong to the same Mobility Domain'));
-					add_dependency_permutations(o, { mode: ['ap', 'ap-wds'], encryption: ['wpa2', 'wpa3', 'wpa3-mixed', , 'wpa3-192'] });
+					add_dependency_permutations(o, { mode: ['ap', 'ap-wds'], encryption: ['wpa2', 'wpa3', 'wpa3-mixed', 'wpa3-192'] });
 					if (has_80211r)
 						add_dependency_permutations(o, { mode: ['ap', 'ap-wds'], encryption: ['psk2', 'psk-mixed', 'sae', 'sae-mixed'] });
 					o.rmempty = true;
@@ -1670,13 +1879,13 @@ return view.extend({
 
 					o = ss.taboption('roaming', form.Value, 'mobility_domain', _('Mobility Domain'), _('4-character hexadecimal ID'));
 					o.depends({ ieee80211r: '1' });
-					o.placeholder = '4f57';
+					o.placeholder = _('automatically derived from SSID');
 					o.datatype = 'and(hexstring,length(4))';
 					o.rmempty = true;
 
 					o = ss.taboption('roaming', form.Value, 'reassociation_deadline', _('Reassociation Deadline'), _('time units (TUs / 1.024 ms) [1000-65535]'));
 					o.depends({ ieee80211r: '1' });
-					o.placeholder = '1000';
+					o.placeholder = '20000';
 					o.datatype = 'range(1000,65535)';
 					o.rmempty = true;
 
@@ -1699,7 +1908,7 @@ return view.extend({
 
 					o = ss.taboption('roaming', form.Value, 'r1_key_holder', _('R1 Key Holder'), _('6-octet identifier as a hex string - no colons'));
 					o.depends({ ieee80211r: '1' });
-					o.placeholder = '00004f577274';
+					o.placeholder = _('automatically derived from Mobility Domain and PSK');
 					o.datatype = 'and(hexstring,length(12))';
 					o.rmempty = true;
 
@@ -1805,10 +2014,10 @@ return view.extend({
 					o = ss.taboption('encryption', form.FileUpload, 'client_cert', _('Path to Client-Certificate'));
 					add_dependency_permutations(o, { mode: ['sta', 'sta-wds'], encryption: ['wpa', 'wpa2', 'wpa3', 'wpa3-mixed', 'wpa3-192'], eap_type: ['tls'] });
 
-					o = ss.taboption('encryption', form.FileUpload, 'priv_key', _('Path to Private Key'));
+					o = ss.taboption('encryption', form.FileUpload, 'private_key', _('Path to Private Key'));
 					add_dependency_permutations(o, { mode: ['sta', 'sta-wds'], encryption: ['wpa', 'wpa2', 'wpa3', 'wpa3-mixed', 'wpa3-192'], eap_type: ['tls'] });
 
-					o = ss.taboption('encryption', form.Value, 'priv_key_pwd', _('Password of Private Key'));
+					o = ss.taboption('encryption', form.Value, 'private_key_passwd', _('Password of Private Key'));
 					add_dependency_permutations(o, { mode: ['sta', 'sta-wds'], encryption: ['wpa', 'wpa2', 'wpa3', 'wpa3-mixed', 'wpa3-192'], eap_type: ['tls'] });
 					o.password = true;
 
@@ -1863,10 +2072,10 @@ return view.extend({
 					o = ss.taboption('encryption', form.FileUpload, 'client_cert2', _('Path to inner Client-Certificate'));
 					add_dependency_permutations(o, { mode: ['sta', 'sta-wds'], encryption: ['wpa', 'wpa2', 'wpa3', 'wpa3-mixed', 'wpa3-192'], auth: ['EAP-TLS'] });
 
-					o = ss.taboption('encryption', form.FileUpload, 'priv_key2', _('Path to inner Private Key'));
+					o = ss.taboption('encryption', form.FileUpload, 'private_key2', _('Path to inner Private Key'));
 					add_dependency_permutations(o, { mode: ['sta', 'sta-wds'], encryption: ['wpa', 'wpa2', 'wpa3', 'wpa3-mixed', 'wpa3-192'], auth: ['EAP-TLS'] });
 
-					o = ss.taboption('encryption', form.Value, 'priv_key2_pwd', _('Password of inner Private Key'));
+					o = ss.taboption('encryption', form.Value, 'private_key2_passwd', _('Password of inner Private Key'));
 					add_dependency_permutations(o, { mode: ['sta', 'sta-wds'], encryption: ['wpa', 'wpa2', 'wpa3', 'wpa3-mixed', 'wpa3-192'], auth: ['EAP-TLS'] });
 					o.password = true;
 
@@ -2038,10 +2247,11 @@ return view.extend({
 					const qm = res?.quality_max ?? 0;
 					const q = (qv > 0 && qm > 0) ? Math.floor((100 / qm) * qv) : 0;
 					const s = res.stale ? 'opacity:0.5' : '';
+					const ssid = (typeof res.ssid === 'string' && res.ssid.length > 0) ? document.createTextNode(`${res?.ssid}`) : null;
 
 					rows.push([
 						E('span', { 'style': s }, render_signal_badge(q, res?.signal, res?.noise)),
-						E('span', { 'style': s }, (typeof res.ssid === 'string' && res.ssid.length > 0) ? `${res?.ssid}` : E('em', _('hidden'))),
+						E('span', { 'style': s }, ssid ?? E('em', _('hidden'))),
 						E('span', { 'style': s }, `${res?.channel}`),
 						E('span', { 'style': s }, `${res?.mode}`),
 						E('span', { 'style': s }, `${res?.bssid}`),
@@ -2108,8 +2318,8 @@ return view.extend({
 			const zoneval = zoneopt ? zoneopt.formvalue('_new_') : null;
 			const enc = L.isObject(bss.encryption) ? bss.encryption : null;
 			const is_wep = (enc && Array.isArray(enc.wep));
-			const is_psk = (enc && Array.isArray(enc.wpa) && L.toArray(enc.authentication).filter(function(a) { return a == 'psk'; }).length > 0);
-			const is_sae = (enc && Array.isArray(enc.wpa) && L.toArray(enc.authentication).filter(function(a) { return a == 'sae'; }).length > 0);
+			const is_psk = (enc && Array.isArray(enc.wpa) && L.toArray(enc.authentication).some(a => a == 'psk'));
+			const is_sae = (enc && Array.isArray(enc.wpa) && L.toArray(enc.authentication).some(a => a == 'sae'));
 
 			if (nameval == null || (passopt && passval == null))
 				return;
@@ -2226,7 +2436,7 @@ return view.extend({
 			const s2 = m2.section(form.NamedSection, '_new_');
 			const enc = L.isObject(bss.encryption) ? bss.encryption : null;
 			const is_wep = (enc && Array.isArray(enc.wep));
-			const is_psk = (enc && Array.isArray(enc.wpa) && L.toArray(enc.authentication).filter(function(a) { return a == 'psk' || a == 'sae'; }));
+			const is_psk = (enc && Array.isArray(enc.wpa) && L.toArray(enc.authentication).some(a => a == 'psk'  || a == 'sae'));
 			let replace, passphrase, name, bssid, zone;
 
 			function nameUsed(name) {

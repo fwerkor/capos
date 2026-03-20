@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/net/lksctp-tools/Makefile
 
 Package: libsctp
 Submenu: Networking
-Version: 1.0.19-r1
+Version: 1.0.21-r1
 Depends: +libc +kmod-sctp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libsctp-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: SCTP user-land library
 Maintainer: 
-Source: lksctp-tools-1.0.19.tar.gz
+Source: lksctp-tools-1.0.21.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING
 URL: https://github.com/sctp/lksctp-tools
@@ -21,17 +21,17 @@ Description: SCTP user-land library
 @@
 
 Package: sctp
-Version: 1.0.19-r1
+Version: 1.0.21-r1
 Depends: +libc +libsctp +sctp-tools
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @sctp-any
 Section: net
 Category: Network
 Repository: base
 Title: SCTP user-land (meta)
 Maintainer: 
-Source: lksctp-tools-1.0.19.tar.gz
+Source: lksctp-tools-1.0.21.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING
 URL: https://github.com/sctp/lksctp-tools
@@ -41,17 +41,17 @@ Description: SCTP user-land (meta)
 @@
 
 Package: sctp-tools
-Version: 1.0.19-r1
+Version: 1.0.21-r1
 Depends: +libc +libsctp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @sctp-tools-any
 Section: net
 Category: Network
 Repository: base
 Title: SCTP user-land tools
 Maintainer: 
-Source: lksctp-tools-1.0.19.tar.gz
+Source: lksctp-tools-1.0.21.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING
 URL: https://github.com/sctp/lksctp-tools

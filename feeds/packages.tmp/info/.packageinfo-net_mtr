@@ -5,7 +5,7 @@ Version: 0.95-r3
 Depends: +libc +libncurses
 Conflicts: 
 Menu-Depends: 
-Provides: mtr
+Provides: @mtr-nojson-any mtr
 Build-Variant: nojson
 Default-Variant: nojson
 Section: net
@@ -27,7 +27,7 @@ Version: 0.95-r3
 Depends: +libc +libncurses +jansson
 Conflicts: 
 Menu-Depends: 
-Provides: mtr
+Provides: @mtr-json-any mtr
 Build-Variant: json
 Section: net
 Category: Network

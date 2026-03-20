@@ -5,7 +5,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-afr-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -23,7 +23,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-amh-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -41,7 +41,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-ara-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -59,7 +59,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-asm-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -77,7 +77,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-aze-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -95,7 +95,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-aze_cyrl-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -113,7 +113,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-bel-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -131,7 +131,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-ben-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -149,7 +149,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-bod-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -167,7 +167,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-bos-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -185,7 +185,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-bre-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -203,7 +203,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-bul-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -221,7 +221,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-cat-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -239,7 +239,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-ceb-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -257,7 +257,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-ces-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -275,7 +275,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-chi_sim-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -293,7 +293,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-chi_sim_vert-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -311,7 +311,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-chi_tra-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -329,7 +329,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-chi_tra_vert-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -347,7 +347,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-chr-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -365,7 +365,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-cos-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -383,7 +383,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-cym-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -401,7 +401,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-dan-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -419,7 +419,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-dan_frak-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -437,7 +437,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-deu-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -455,7 +455,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-deu_frak-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -473,7 +473,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-div-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -491,7 +491,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-dzo-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -509,7 +509,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-ell-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -527,7 +527,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-eng-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -545,7 +545,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-enm-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -563,7 +563,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-epo-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -581,7 +581,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-equ-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -599,7 +599,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-est-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -617,7 +617,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-eus-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -635,7 +635,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-fao-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -653,7 +653,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-fas-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -671,7 +671,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-fil-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -689,7 +689,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-fin-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -707,7 +707,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-fra-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -725,7 +725,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-frk-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -743,7 +743,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-frm-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -761,7 +761,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-fry-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -779,7 +779,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-gla-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -797,7 +797,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-gle-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -815,7 +815,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-glg-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -833,7 +833,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-grc-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -851,7 +851,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-guj-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -869,7 +869,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-hat-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -887,7 +887,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-heb-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -905,7 +905,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-hin-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -923,7 +923,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-hrv-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -941,7 +941,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-hun-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -959,7 +959,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-hye-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -977,7 +977,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-iku-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -995,7 +995,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-ind-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1013,7 +1013,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-isl-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1031,7 +1031,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-ita-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1049,7 +1049,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-ita_old-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1067,7 +1067,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-jav-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1085,7 +1085,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-jpn-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1103,7 +1103,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-jpn_vert-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1121,7 +1121,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-kan-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1139,7 +1139,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-kat-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1157,7 +1157,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-kat_old-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1175,7 +1175,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-kaz-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1193,7 +1193,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-khm-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1211,7 +1211,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-kir-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1229,7 +1229,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-kmr-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1247,7 +1247,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-kor-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1265,7 +1265,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-kor_vert-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1283,7 +1283,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-lao-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1301,7 +1301,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-lat-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1319,7 +1319,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-lav-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1337,7 +1337,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-lit-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1355,7 +1355,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-ltz-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1373,7 +1373,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-mal-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1391,7 +1391,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-mar-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1409,7 +1409,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-mkd-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1427,7 +1427,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-mlt-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1445,7 +1445,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-mon-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1463,7 +1463,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-mri-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1481,7 +1481,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-msa-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1499,7 +1499,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-mya-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1517,7 +1517,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-nep-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1535,7 +1535,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-nld-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1553,7 +1553,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-nor-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1571,7 +1571,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-oci-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1589,7 +1589,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-ori-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1607,7 +1607,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-osd-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1625,7 +1625,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-pan-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1643,7 +1643,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-pol-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1661,7 +1661,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-por-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1679,7 +1679,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-pus-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1697,7 +1697,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-que-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1715,7 +1715,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-ron-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1733,7 +1733,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-rus-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1751,7 +1751,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-san-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1769,7 +1769,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-sin-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1787,7 +1787,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-slk-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1805,7 +1805,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-slk_frak-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1823,7 +1823,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-slv-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1841,7 +1841,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-snd-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1859,7 +1859,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-spa-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1877,7 +1877,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-spa_old-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1895,7 +1895,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-sqi-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1913,7 +1913,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-srp-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1931,7 +1931,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-srp_latn-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1949,7 +1949,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-sun-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1967,7 +1967,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-swa-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1985,7 +1985,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-swe-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -2003,7 +2003,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-syr-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -2021,7 +2021,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-tam-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -2039,7 +2039,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-tat-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -2057,7 +2057,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-tel-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -2075,7 +2075,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-tgk-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -2093,7 +2093,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-tgl-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -2111,7 +2111,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-tha-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -2129,7 +2129,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-tir-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -2147,7 +2147,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-ton-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -2165,7 +2165,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-tur-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -2183,7 +2183,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-uig-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -2201,7 +2201,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-ukr-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -2219,7 +2219,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-urd-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -2237,7 +2237,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-uzb-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -2255,7 +2255,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-uzb_cyrl-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -2273,7 +2273,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-vie-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -2291,7 +2291,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-yid-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -2309,7 +2309,7 @@ Version: 4.1.0-r2
 Depends: +libc tesseract
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tesseract-data-yor-any
 Section: utils
 Category: Utilities
 Repository: base

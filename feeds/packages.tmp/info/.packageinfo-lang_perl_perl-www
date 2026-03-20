@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/lang/perl/perl-www/Makefile
+
+Package: perl-www
+Submenu: Perl
+Version: 6.78.5.40-r2
+Depends: +libc perl +perlbase-base +perlbase-digest +perlbase-encode +perlbase-essential +perlbase-io +perlbase-mime +perlbase-module +perlbase-net +perl-encode-locale +perl-file-listing +perl-html-parser +perl-http-cookies +perl-http-daemon +perl-http-date +perl-http-message +perl-http-negotiate +perl-lwp-mediatypes +perl-net-http +perl-try-tiny +perl-uri +perl-www-robotrules
+Conflicts: 
+Menu-Depends: 
+Provides: @perl-www-any
+Section: lang
+Category: Languages
+Repository: base
+Title: The World-Wide Web library for Perl
+Maintainer: Jens Wagner <jens@wagner2013.de>
+Source: libwww-perl-6.78.tar.gz
+License: GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE
+URL: https://metacpan.org/pod/LWP
+Type: ipkg
+Description:   The libwww-perl collection is a set of Perl modules
+  which provides a simple and consistent application
+  programming interface (API) to the World-Wide Web.
+@@
+
+

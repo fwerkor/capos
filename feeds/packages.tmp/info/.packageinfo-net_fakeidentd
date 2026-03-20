@@ -5,7 +5,7 @@ Version: 2.6-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @fakeidentd-any
 Section: net
 Category: Network
 Repository: base

@@ -5,7 +5,7 @@ Version: 6.1.3-r1
 Depends: +libc +libatomic +libffmpeg-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ffmpeg-any
 Build-Variant: full
 Section: multimedia
 Category: Multimedia
@@ -33,7 +33,7 @@ Version: 6.1.3-r1
 Depends: +libc +libatomic +libffmpeg-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ffprobe-any
 Build-Variant: full
 Section: multimedia
 Category: Multimedia
@@ -61,7 +61,7 @@ Version: 6.1.3-r1
 Depends: +libc +libatomic @!ALL libffmpeg-custom
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ffmpeg-custom-any
 Build-Variant: custom
 Section: multimedia
 Category: Multimedia
@@ -89,7 +89,7 @@ Version: 6.1.3-r1
 Depends: +libc +libatomic @!ALL libffmpeg-custom
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ffprobe-custom-any
 Build-Variant: custom
 Section: multimedia
 Category: Multimedia
@@ -117,7 +117,7 @@ Version: 6.1.3-r1
 Depends: +libc +libatomic +libpthread +zlib +libbz2
 Conflicts: libffmpeg-full
 Menu-Depends: 
-Provides: libffmpeg
+Provides: @libffmpeg-audio-dec-any libffmpeg
 Build-Variant: audio-dec
 Section: libs
 Category: Libraries
@@ -145,7 +145,7 @@ Version: 6.1.3-r1
 Depends: +libc +libatomic +libpthread +zlib +libbz2 +alsa-lib +libgnutls +PACKAGE_libopus:libopus +PACKAGE_libv4l:libv4l +SOFT_FLOAT:shine +!SOFT_FLOAT:lame-lib +PACKAGE_libx264:libx264 +!PACKAGE_libx264:fdk-aac
 Conflicts: 
 Menu-Depends: 
-Provides: libffmpeg libffmpeg-mini libffmpeg-audio-dec
+Provides: @libffmpeg-full-any libffmpeg libffmpeg-mini libffmpeg-audio-dec
 Build-Variant: full
 Section: libs
 Category: Libraries
@@ -173,7 +173,7 @@ Version: 6.1.3-r1
 Depends: +libc +libatomic +libpthread +zlib +libbz2
 Conflicts: libffmpeg-full
 Menu-Depends: 
-Provides: libffmpeg
+Provides: @libffmpeg-mini-any libffmpeg
 Build-Variant: mini
 Section: libs
 Category: Libraries
@@ -202,7 +202,7 @@ Version: 6.1.3-r1
 Depends: +libc +libatomic +libpthread +zlib +libbz2 @!ALL +FFMPEG_CUSTOM_SELECT_libopus:libopus +PACKAGE_libx264:libx264 +PACKAGE_lame-lib:lame-lib +FFMPEG_CUSTOM_SELECT_libshine:shine +PACKAGE_fdk-aac:fdk-aac
 Conflicts: 
 Menu-Depends: 
-Provides: libffmpeg
+Provides: @libffmpeg-custom-any libffmpeg
 Build-Variant: custom
 Section: libs
 Category: Libraries

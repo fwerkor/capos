@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +lldpd +rpcd-mod-ucode
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-lldpd-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -20,18 +20,37 @@ Type: ipkg
 Description: LuCI support for LLDP daemon
 @@
 
+Package: luci-i18n-lldpd-ca
+Default: LUCI_LANG_ca||(ALL&&m)
+Version: x
+Depends: +libc luci-app-lldpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-lldpd-ca-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-lldpd - ca translation
+Maintainer: Paul Donald <newtwen+github@gmail.com>
+Source: 
+License: MIT
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-lldpd - Català (Catalan)
+@@
+
 Package: luci-i18n-lldpd-cs
 Default: LUCI_LANG_cs||(ALL&&m)
 Version: x
 Depends: +libc luci-app-lldpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-lldpd-cs-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-lldpd - cs translation
-Maintainer: 
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: MIT
 Type: ipkg
@@ -45,12 +64,12 @@ Version: x
 Depends: +libc luci-app-lldpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-lldpd-da-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-lldpd - da translation
-Maintainer: 
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: MIT
 Type: ipkg
@@ -64,12 +83,12 @@ Version: x
 Depends: +libc luci-app-lldpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-lldpd-de-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-lldpd - de translation
-Maintainer: 
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: MIT
 Type: ipkg
@@ -83,12 +102,12 @@ Version: x
 Depends: +libc luci-app-lldpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-lldpd-es-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-lldpd - es translation
-Maintainer: 
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: MIT
 Type: ipkg
@@ -102,12 +121,12 @@ Version: x
 Depends: +libc luci-app-lldpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-lldpd-fi-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-lldpd - fi translation
-Maintainer: 
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: MIT
 Type: ipkg
@@ -121,12 +140,12 @@ Version: x
 Depends: +libc luci-app-lldpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-lldpd-fr-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-lldpd - fr translation
-Maintainer: 
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: MIT
 Type: ipkg
@@ -140,12 +159,12 @@ Version: x
 Depends: +libc luci-app-lldpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-lldpd-ga-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-lldpd - ga translation
-Maintainer: 
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: MIT
 Type: ipkg
@@ -159,12 +178,12 @@ Version: x
 Depends: +libc luci-app-lldpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-lldpd-hu-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-lldpd - hu translation
-Maintainer: 
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: MIT
 Type: ipkg
@@ -178,12 +197,12 @@ Version: x
 Depends: +libc luci-app-lldpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-lldpd-it-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-lldpd - it translation
-Maintainer: 
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: MIT
 Type: ipkg
@@ -197,12 +216,12 @@ Version: x
 Depends: +libc luci-app-lldpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-lldpd-ja-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-lldpd - ja translation
-Maintainer: 
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: MIT
 Type: ipkg
@@ -216,12 +235,12 @@ Version: x
 Depends: +libc luci-app-lldpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-lldpd-lt-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-lldpd - lt translation
-Maintainer: 
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: MIT
 Type: ipkg
@@ -235,12 +254,12 @@ Version: x
 Depends: +libc luci-app-lldpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-lldpd-nl-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-lldpd - nl translation
-Maintainer: 
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: MIT
 Type: ipkg
@@ -254,12 +273,12 @@ Version: x
 Depends: +libc luci-app-lldpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-lldpd-pl-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-lldpd - pl translation
-Maintainer: 
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: MIT
 Type: ipkg
@@ -273,12 +292,12 @@ Version: x
 Depends: +libc luci-app-lldpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-lldpd-pt-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-lldpd - pt translation
-Maintainer: 
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: MIT
 Type: ipkg
@@ -292,12 +311,12 @@ Version: x
 Depends: +libc luci-app-lldpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-lldpd-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-lldpd - pt-br translation
-Maintainer: 
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: MIT
 Type: ipkg
@@ -311,12 +330,12 @@ Version: x
 Depends: +libc luci-app-lldpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-lldpd-ro-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-lldpd - ro translation
-Maintainer: 
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: MIT
 Type: ipkg
@@ -330,12 +349,12 @@ Version: x
 Depends: +libc luci-app-lldpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-lldpd-ru-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-lldpd - ru translation
-Maintainer: 
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: MIT
 Type: ipkg
@@ -349,17 +368,36 @@ Version: x
 Depends: +libc luci-app-lldpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-lldpd-sv-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-lldpd - sv translation
-Maintainer: 
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: MIT
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-lldpd - Svenska (Swedish)
+@@
+
+Package: luci-i18n-lldpd-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-lldpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-lldpd-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-lldpd - ta translation
+Maintainer: Paul Donald <newtwen+github@gmail.com>
+Source: 
+License: MIT
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-lldpd - Tamil (Tamil)
 @@
 
 Package: luci-i18n-lldpd-tr
@@ -368,12 +406,12 @@ Version: x
 Depends: +libc luci-app-lldpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-lldpd-tr-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-lldpd - tr translation
-Maintainer: 
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: MIT
 Type: ipkg
@@ -387,12 +425,12 @@ Version: x
 Depends: +libc luci-app-lldpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-lldpd-uk-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-lldpd - uk translation
-Maintainer: 
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: MIT
 Type: ipkg
@@ -406,12 +444,12 @@ Version: x
 Depends: +libc luci-app-lldpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-lldpd-vi-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-lldpd - vi translation
-Maintainer: 
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: MIT
 Type: ipkg
@@ -425,12 +463,12 @@ Version: x
 Depends: +libc luci-app-lldpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-lldpd-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-lldpd - zh-cn translation
-Maintainer: 
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: MIT
 Type: ipkg
@@ -444,12 +482,12 @@ Version: x
 Depends: +libc luci-app-lldpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-lldpd-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-lldpd - zh-tw translation
-Maintainer: 
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: MIT
 Type: ipkg

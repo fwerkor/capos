@@ -6,7 +6,7 @@ Version: 0.9.5-r1
 Depends: +libc +libncurses +libpthread +libnl-genl +libnl-cli
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @wavemon-any
 Section: net
 Category: Network
 Repository: base

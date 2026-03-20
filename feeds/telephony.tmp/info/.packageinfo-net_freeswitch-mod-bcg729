@@ -6,12 +6,12 @@ Version: 2017.06.29~686eb06d4a395d94c364efff4b63579af76ebec7-r1
 Depends: +libc freeswitch +bcg729
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @freeswitch-mod-bcg729-any
 Section: net
 Category: Network
 Repository: base
 Title: bcg729 module
-Maintainer: Sebastian Kemper <sebastian_ml@gmx.net>
+Maintainer: 
 Source: freeswitch-mod-bcg729-2017.06.29~686eb06d4a395d94c364efff4b63579af76ebec7.tar.zst
 License: MPL-1.1
 LicenseFiles: LICENSE

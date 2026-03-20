@@ -3,17 +3,17 @@ Source-Makefile: feeds/routing/bmx7/Makefile
 Package: bmx7
 Menu: 1
 Submenu: Routing and Redirection
-Version: r2024061001-r1
+Version: 2024.06.11-r2
 Depends: +libc +zlib +libmbedtls +libiwinfo
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bmx7-any
 Section: net
 Category: Network
 Repository: base
 Title: BMX7 layer 3 routing daemon
 Maintainer: Axel Neumann <axel@notmail.org>
-Source: bmx7-r2024061001.tar.gz
+Source: bmx7-2024.06.11.tar.gz
 License: GPL-2.0-or-later
 LicenseFiles: LICENSE
 URL: https://github.com/bmx-routing/bmx7
@@ -23,17 +23,17 @@ Description:   BMX7 routing daemon supporting securely-entrusted IPv6 (and IPv4i
 
 Package: bmx7-uci-config
 Submenu: Routing and Redirection
-Version: r2024061001-r1
+Version: 2024.06.11-r2
 Depends: +libc bmx7 +libuci
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bmx7-uci-config-any
 Section: net
 Category: Network
 Repository: base
 Title: configuration plugin based on uci (recommended!)
 Maintainer: Axel Neumann <axel@notmail.org>
-Source: bmx7-r2024061001.tar.gz
+Source: bmx7-2024.06.11.tar.gz
 License: GPL-2.0-or-later
 LicenseFiles: LICENSE
 URL: https://github.com/bmx-routing/bmx7
@@ -43,17 +43,17 @@ Description: configuration plugin based on uci (recommended!)
 
 Package: bmx7-iwinfo
 Submenu: Routing and Redirection
-Version: r2024061001-r1
+Version: 2024.06.11-r2
 Depends: +libc bmx7 +libiwinfo
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bmx7-iwinfo-any
 Section: net
 Category: Network
 Repository: base
 Title: link characteristics plugin via libiwinfo (recommended!)
 Maintainer: Axel Neumann <axel@notmail.org>
-Source: bmx7-r2024061001.tar.gz
+Source: bmx7-2024.06.11.tar.gz
 License: GPL-2.0-or-later
 LicenseFiles: LICENSE
 URL: https://github.com/bmx-routing/bmx7
@@ -63,17 +63,17 @@ Description: link characteristics plugin via libiwinfo (recommended!)
 
 Package: bmx7-topology
 Submenu: Routing and Redirection
-Version: r2024061001-r1
+Version: 2024.06.11-r2
 Depends: +libc bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bmx7-topology-any
 Section: net
 Category: Network
 Repository: base
 Title: topology plugin
 Maintainer: Axel Neumann <axel@notmail.org>
-Source: bmx7-r2024061001.tar.gz
+Source: bmx7-2024.06.11.tar.gz
 License: GPL-2.0-or-later
 LicenseFiles: LICENSE
 URL: https://github.com/bmx-routing/bmx7
@@ -83,17 +83,17 @@ Description: topology plugin
 
 Package: bmx7-json
 Submenu: Routing and Redirection
-Version: r2024061001-r1
+Version: 2024.06.11-r2
 Depends: +libc bmx7 +libjson-c
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bmx7-json-any
 Section: net
 Category: Network
 Repository: base
 Title: json plugin based on json-c
 Maintainer: Axel Neumann <axel@notmail.org>
-Source: bmx7-r2024061001.tar.gz
+Source: bmx7-2024.06.11.tar.gz
 License: GPL-2.0-or-later
 LicenseFiles: LICENSE
 URL: https://github.com/bmx-routing/bmx7
@@ -103,17 +103,17 @@ Description: json plugin based on json-c
 
 Package: bmx7-sms
 Submenu: Routing and Redirection
-Version: r2024061001-r1
+Version: 2024.06.11-r2
 Depends: +libc bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bmx7-sms-any
 Section: net
 Category: Network
 Repository: base
 Title: sms plugin
 Maintainer: Axel Neumann <axel@notmail.org>
-Source: bmx7-r2024061001.tar.gz
+Source: bmx7-2024.06.11.tar.gz
 License: GPL-2.0-or-later
 LicenseFiles: LICENSE
 URL: https://github.com/bmx-routing/bmx7
@@ -123,17 +123,17 @@ Description: sms plugin
 
 Package: bmx7-table
 Submenu: Routing and Redirection
-Version: r2024061001-r1
+Version: 2024.06.11-r2
 Depends: +libc bmx7 +bmx7-tun
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bmx7-table-any
 Section: net
 Category: Network
 Repository: base
 Title: plugin to announce routes from tables via tunnels
 Maintainer: Axel Neumann <axel@notmail.org>
-Source: bmx7-r2024061001.tar.gz
+Source: bmx7-2024.06.11.tar.gz
 License: GPL-2.0-or-later
 LicenseFiles: LICENSE
 URL: https://github.com/bmx-routing/bmx7
@@ -143,17 +143,17 @@ Description: plugin to announce routes from tables via tunnels
 
 Package: bmx7-tun
 Submenu: Routing and Redirection
-Version: r2024061001-r1
+Version: 2024.06.11-r2
 Depends: +libc bmx7 +kmod-ip6-tunnel +kmod-iptunnel6 +kmod-tun
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bmx7-tun-any
 Section: net
 Category: Network
 Repository: base
 Title: ipip-based tunnel plugin (recommended!)
 Maintainer: Axel Neumann <axel@notmail.org>
-Source: bmx7-r2024061001.tar.gz
+Source: bmx7-2024.06.11.tar.gz
 License: GPL-2.0-or-later
 LicenseFiles: LICENSE
 URL: https://github.com/bmx-routing/bmx7

@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/net/nbd/Makefile
 
 Package: nbd
-Version: 3.25-r1
+Version: 3.25-r2
 Depends: +libc +kmod-nbd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nbd-any
 Section: net
 Category: Network
 Repository: base
@@ -20,11 +20,11 @@ Description:   This package contains the network block device client.
 @@
 
 Package: nbd-server
-Version: 3.25-r1
+Version: 3.25-r2
 Depends: +libc +glib2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nbd-server-any
 Section: net
 Category: Network
 Repository: base

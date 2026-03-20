@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/perl/perl-authen-sasl-xs/Makefile
+
+Package: perl-authen-sasl-xs
+Submenu: Perl
+Version: 1.00.5.40-r3
+Depends: +libc perl +perlbase-dynaloader +perl-authen-sasl +libsasl2
+Conflicts: 
+Menu-Depends: 
+Provides: @perl-authen-sasl-xs-any
+Section: lang
+Category: Languages
+Repository: base
+Title: Authen::XS hooks into libsasl.
+Maintainer: Philip Prindeville <philipp@redfish-solutions.com>, Jens Wagner <jens@wagner2013.de>
+Source: Authen-SASL-XS-1.00.tar.gz
+License: GPL-1.0-or-later Artistic-1.0-Perl
+URL: http://search.cpan.org/dist/Authen-SASL-XS/
+Type: ipkg
+Description:   SASL is a generic mechanism for authentication used by several
+  network protocols. Authen::SASL::XS provides an implementation
+  framework that all protocols should be able to share.
+@@
+
+

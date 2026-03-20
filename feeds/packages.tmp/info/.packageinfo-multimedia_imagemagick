@@ -1,21 +1,21 @@
 Source-Makefile: feeds/packages/multimedia/imagemagick/Makefile
 
 Package: imagemagick
-Version: 7.1.1.38-r1
+Version: 7.1.2.1-r1
 Depends: +libc +libltdl +libpthread +zlib +libfreetype +libpng +libjpeg +libtiff +libzip
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @imagemagick-any
 Section: multimedia
 Category: Multimedia
 Repository: base
 Title: Image manipulation tools
-Maintainer: Aleksey Vasilenko <aleksey.vasilenko@gmail.com>
-Source: ImageMagick-7.1.1-38.tar.xz
+Maintainer: 
+Source: ImageMagick-7.1.2-1.tar.xz
 License: Apache-2.0
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:imagemagick:imagemagick
-URL: https://www.imagemagick.org/
+URL: https://imagemagick.org/
 Type: ipkg
 Description: ImageMagick is a free and open-source software suite for displaying,
 converting, and editing raster image and vector image files.

@@ -6,7 +6,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -25,7 +25,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-efbu-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -44,7 +44,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-efeu-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -63,7 +63,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-efru-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -82,7 +82,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-efsu-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -101,7 +101,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-edru-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -120,7 +120,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-edsu-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -139,7 +139,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-nics-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -158,7 +158,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-hpavkey-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -177,7 +177,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-hpavkeys-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -196,7 +196,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-rkey-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -215,7 +215,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-mac2pw-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -234,7 +234,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-mac2pwd-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -253,7 +253,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-mdioblock-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -272,7 +272,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-mdioblock2-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -291,7 +291,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-mdiodump-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -310,7 +310,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-mdiogen-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -329,7 +329,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-hpav-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -348,7 +348,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-mme-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -367,7 +367,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-chknvm-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -386,7 +386,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-chknvm2-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -405,7 +405,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-nvmsplit-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -424,7 +424,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-nvmmerge-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -443,7 +443,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-chkpib-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -462,7 +462,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-chkpib2-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -481,7 +481,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-setpib-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -500,7 +500,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-getpib-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -519,7 +519,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-modpib-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -538,7 +538,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-pib2xml-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -557,7 +557,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-pibcomp-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -576,7 +576,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-pibdump-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -595,7 +595,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-pibruin-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -614,7 +614,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-xml2pib-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -633,7 +633,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-psin-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -652,7 +652,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-psout-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -671,7 +671,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-pskey-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -690,7 +690,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-psgraph-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -709,7 +709,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-psnotch-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -728,7 +728,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-pibrump-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -747,7 +747,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-int6k-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -766,7 +766,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-int6kboot-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -785,7 +785,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-int6keth-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -804,7 +804,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-int6kf-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -823,7 +823,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-int6khost-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -842,7 +842,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-int64host-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -861,7 +861,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-int6kid-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -880,7 +880,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-int6klist-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -899,7 +899,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-int6klog-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -918,7 +918,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-int6kmdio-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -937,7 +937,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-int6kmdio2-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -956,7 +956,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-int6kmod-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -975,7 +975,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-int6kstat-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -994,7 +994,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-int6ktest-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1013,7 +1013,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-int6krate-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1032,7 +1032,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-int6krule-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1051,7 +1051,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-int6ktone-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1070,7 +1070,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-int6kwait-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1089,7 +1089,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-CMEncrypt-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1108,7 +1108,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-sada-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1127,7 +1127,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-coqos_add-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1146,7 +1146,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-coqos_info-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1165,7 +1165,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-coqos_man-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1184,7 +1184,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-coqos_mod-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1203,7 +1203,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-coqos_rel-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1222,7 +1222,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-mdustats-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1241,7 +1241,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-ampboot-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1260,7 +1260,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-amphost-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1279,7 +1279,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-ampID-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1298,7 +1298,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-amplist-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1317,7 +1317,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-amprate-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1336,7 +1336,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-amprule-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1355,7 +1355,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-ampstat-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1374,7 +1374,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-amptest-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1393,7 +1393,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-amptool-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1412,7 +1412,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-amptone-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1431,7 +1431,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-ampwait-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1450,7 +1450,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-plcboot-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1469,7 +1469,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-plchost-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1488,7 +1488,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-plcID-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1507,7 +1507,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-plclist-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1526,7 +1526,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-plcrate-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1545,7 +1545,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-plcrule-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1564,7 +1564,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-plcstat-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1583,7 +1583,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-plctest-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1602,7 +1602,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-plctool-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1621,7 +1621,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-plctone-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1640,7 +1640,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-plcwait-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1659,7 +1659,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-plchostd-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1678,7 +1678,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-plcget-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1697,7 +1697,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-plcset-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1716,7 +1716,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-plcotst-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1735,7 +1735,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-plcfwd-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1754,7 +1754,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-plcdevs-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1773,7 +1773,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-plclog-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1792,7 +1792,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-plcmdio16-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1811,7 +1811,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-plcmdio32-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1830,7 +1830,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-config2cfg-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1849,7 +1849,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-sdram-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1868,7 +1868,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-int6kuart-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1887,7 +1887,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-int6kbaud-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1906,7 +1906,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-ttysig-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1925,7 +1925,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-ptsctl-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1944,7 +1944,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-weeder-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1963,7 +1963,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-ttysend-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1982,7 +1982,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-ttyrecv-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -2001,7 +2001,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-ttycat-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -2020,7 +2020,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-int6kdetect-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -2039,7 +2039,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-pev-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -2058,7 +2058,7 @@ Version: 0~1ba7d5a042e4e8ff6858b08e113eec5dc4e89cf2-r6
 Depends: +libc open-plc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-plc-utils-evse-any
 Section: utils
 Category: Utilities
 Repository: base

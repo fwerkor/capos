@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/libs/gpgme/Makefile
 
 Package: libgpgme
-Version: 1.21.0-r1
+Version: 1.24.2-r1
 Depends: +libc +libassuan +libgpg-error
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libgpgme-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: GnuPG Made Easy (GPGME) library
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: gpgme-1.21.0.tar.bz2
+Source: gpgme-1.24.2.tar.bz2
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:gnu:gpgme
@@ -26,17 +26,17 @@ developed a backend for CMS (S/MIME).
 @@
 
 Package: libgpgmepp
-Version: 1.21.0-r1
+Version: 1.24.2-r1
 Depends: +libc +libgpgme +libstdcpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libgpgmepp-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: GnuPG Made Easy (GPGME) library (C++)
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: gpgme-1.21.0.tar.bz2
+Source: gpgme-1.24.2.tar.bz2
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:gnu:gpgme

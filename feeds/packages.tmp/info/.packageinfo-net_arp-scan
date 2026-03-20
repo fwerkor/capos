@@ -2,11 +2,11 @@ Source-Makefile: feeds/packages/net/arp-scan/Makefile
 
 Package: arp-scan
 Submenu: arp-scan
-Version: 1.10.0-r2
+Version: 1.10.0-r4
 Depends: +libc +libpcap
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @arp-scan-any
 Section: net
 Category: Network
 Repository: base
@@ -21,11 +21,11 @@ Description:     ARP scanner
 
 Package: arp-scan-database
 Submenu: arp-scan
-Version: 1.10.0-r2
+Version: 1.10.0-r4
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @arp-scan-database-any
 Section: net
 Category: Network
 Repository: base

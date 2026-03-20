@@ -3,11 +3,12 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 
 Package: luci-app-attendedsysupgrade
 Submenu: 3. Applications
+Default: y if (BUILDBOT && PACKAGE_luci)
 Version: x
 Depends: +libc +luci-base +attendedsysupgrade-common +cgi-io
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-attendedsysupgrade-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -26,12 +27,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-ar-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - ar translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -45,12 +46,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-bg-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - bg translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -64,12 +65,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-bn-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - bn translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -83,12 +84,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-ca-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - ca translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -102,12 +103,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-cs-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - cs translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -121,12 +122,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-da-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - da translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -140,12 +141,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-de-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - de translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -159,12 +160,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-el-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - el translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -178,12 +179,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-es-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - es translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -197,12 +198,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-fa-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - fa translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -216,12 +217,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-fi-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - fi translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -235,12 +236,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-fr-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - fr translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -254,12 +255,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-ga-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - ga translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -273,12 +274,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-he-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - he translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -292,12 +293,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-hi-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - hi translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -311,12 +312,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-hu-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - hu translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -330,12 +331,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-it-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - it translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -349,12 +350,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-ja-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - ja translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -368,12 +369,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-ko-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - ko translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -387,12 +388,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-lt-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - lt translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -406,12 +407,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-mr-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - mr translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -425,12 +426,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-ms-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - ms translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -444,12 +445,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-no-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - no translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -463,12 +464,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-nl-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - nl translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -482,12 +483,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-pl-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - pl translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -501,12 +502,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-pt-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - pt translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -520,12 +521,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - pt-br translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -539,12 +540,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-ro-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - ro translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -558,12 +559,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-ru-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - ru translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -577,12 +578,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-sk-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - sk translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -596,17 +597,36 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-sv-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - sv translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-attendedsysupgrade - Svenska (Swedish)
+@@
+
+Package: luci-i18n-attendedsysupgrade-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-attendedsysupgrade
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-attendedsysupgrade-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-attendedsysupgrade - ta translation
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
+Source: 
+License: GPL-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-attendedsysupgrade - Tamil (Tamil)
 @@
 
 Package: luci-i18n-attendedsysupgrade-tr
@@ -615,12 +635,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-tr-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - tr translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -634,12 +654,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-uk-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - uk translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -653,12 +673,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-vi-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - vi translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -672,12 +692,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - zh-cn translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg
@@ -691,12 +711,12 @@ Version: x
 Depends: +libc luci-app-attendedsysupgrade
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-attendedsysupgrade-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-attendedsysupgrade - zh-tw translation
-Maintainer: Paul Spooren <paul@spooren.de>
+Maintainer: Eric Fahlgren <ericfahlgren@gmail.com>, Paul Spooren <paul@spooren.de>
 Source: 
 License: GPL-2.0
 Type: ipkg

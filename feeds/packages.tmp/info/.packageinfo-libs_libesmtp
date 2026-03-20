@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/libs/libesmtp/Makefile
 
 Package: libesmtp
-Version: 1.1.0-r2
-Depends: +libc +libpthread +libopenssl
+Version: 1.1.0-r3
+Depends: +libc +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libesmtp-any
 Section: libs
 Category: Libraries
 Repository: base

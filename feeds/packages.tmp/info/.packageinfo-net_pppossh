@@ -5,7 +5,7 @@ Version: 4
 Depends: +libc +ppp +resolveip @(DROPBEAR_DBCLIENT||PACKAGE_openssh-client)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pppossh-any
 Section: net
 Category: Network
 Repository: base

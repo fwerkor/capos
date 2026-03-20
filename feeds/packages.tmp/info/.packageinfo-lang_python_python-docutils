@@ -6,7 +6,7 @@ Version: 0.20.1-r1
 Depends: +libc +python3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-docutils-any
 Section: lang
 Category: Languages
 Repository: base
@@ -29,7 +29,7 @@ Version: 0.20.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-docutils-src-any
 Section: lang
 Category: Languages
 Repository: base

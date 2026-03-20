@@ -7,7 +7,7 @@ Version: 4.2.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @swig-any
 Section: libs
 Category: Libraries
 Repository: base

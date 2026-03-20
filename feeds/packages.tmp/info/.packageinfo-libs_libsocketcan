@@ -5,7 +5,7 @@ Version: 0.0.12-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libsocketcan-any
 Section: libs
 Category: Libraries
 Repository: base

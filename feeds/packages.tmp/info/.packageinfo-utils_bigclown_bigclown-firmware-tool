@@ -6,7 +6,7 @@ Version: 1.5.2-r1
 Depends: +libc +python3-appdirs +python3-pyserial +python3-colorama +python3-yaml +python3-schema +python3-requests +python3-click +python3-intelhex
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bigclown-firmware-tool-any
 Section: utils
 Category: Utilities
 Repository: base

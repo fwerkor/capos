@@ -4,10 +4,10 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 Package: luci-app-bmx7
 Submenu: 3. Applications
 Version: x
-Depends: +libc +luci-compat +luci-lib-json +luci-base +bmx7 +bmx7-json
+Depends: +libc +luci-base +bmx7 +bmx7-uci-config +bmx7-json +bmx7-tun +bmx7-iwinfo
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-bmx7-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -26,7 +26,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-ar-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -45,7 +45,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-bg-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -64,7 +64,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-bn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -83,7 +83,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-ca-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -102,7 +102,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-cs-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -121,7 +121,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-da-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -140,7 +140,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-de-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -159,7 +159,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-el-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -178,7 +178,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-es-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -197,7 +197,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-fa-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -216,7 +216,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-fi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -235,7 +235,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-fr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -254,7 +254,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-ga-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -273,7 +273,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-he-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -292,7 +292,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-hi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -311,7 +311,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-hu-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -330,7 +330,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-it-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -349,7 +349,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-ja-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -368,7 +368,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-ko-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -387,7 +387,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-lt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -406,7 +406,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-mr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -425,7 +425,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-ms-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -444,7 +444,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-no-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -463,7 +463,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-nl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -482,7 +482,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-pl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -501,7 +501,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-pt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -520,7 +520,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -539,7 +539,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-ro-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -558,7 +558,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-ru-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -577,7 +577,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-sk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -596,7 +596,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-sv-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -609,13 +609,32 @@ Hidden: 1
 Description:     Translation for luci-app-bmx7 - Svenska (Swedish)
 @@
 
+Package: luci-i18n-bmx7-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-bmx7
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-bmx7-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-bmx7 - ta translation
+Maintainer: Roger Pueyo <roger.pueyo@guifi.net> Pau Escrich <p4u@dabax.net>
+Source: 
+License: GPL-2.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-bmx7 - Tamil (Tamil)
+@@
+
 Package: luci-i18n-bmx7-tr
 Default: LUCI_LANG_tr||(ALL&&m)
 Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-tr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -634,7 +653,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-uk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -653,7 +672,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-vi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -672,7 +691,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -691,7 +710,7 @@ Version: x
 Depends: +libc luci-app-bmx7
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bmx7-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base

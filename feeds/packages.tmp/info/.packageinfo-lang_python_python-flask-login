@@ -6,7 +6,7 @@ Version: 0.6.3-r1
 Depends: +libc +python3-light +python3-urllib +python3-flask +python3-werkzeug
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-flask-login-any
 Section: lang
 Category: Languages
 Repository: base
@@ -28,7 +28,7 @@ Version: 0.6.3-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-flask-login-src-any
 Section: lang
 Category: Languages
 Repository: base

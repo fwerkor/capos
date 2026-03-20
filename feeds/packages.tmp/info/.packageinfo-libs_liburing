@@ -5,7 +5,7 @@ Version: 2.7-r1
 Depends: +libc @KERNEL_IO_URING
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @liburing-any
 Section: libs
 Category: Libraries
 Repository: base

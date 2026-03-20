@@ -1,0 +1,69 @@
+Source-Makefile: feeds/packages/lang/lua/cqueues/Makefile
+
+Package: cqueues
+Submenu: Lua
+Version: 20200726-r2
+Depends: +libc +libopenssl +liblua
+Conflicts: 
+Menu-Depends: 
+Provides: @cqueues-any
+Build-Variant: lua51
+Section: lang
+Category: Languages
+Repository: base
+Title: cqueues for lua5.1
+Maintainer: Siger Yang <siger.yang@outlook.com>
+Source: cqueues-20200726.tar.zst
+License: MIT
+LicenseFiles: LICENSE
+URL: http://25thandclement.com/~william/projects/cqueues.html
+Type: ipkg
+Description:  Continuation Queues: Embeddable asynchronous networking, threading, and
+ notification framework for Lua on Unix. 
+@@
+
+Package: cqueues-lua5.3
+Submenu: Lua
+Version: 20200726-r2
+Depends: +libc +libopenssl +liblua5.3
+Conflicts: 
+Menu-Depends: 
+Provides: @cqueues-lua5.3-any
+Build-Variant: lua53
+Section: lang
+Category: Languages
+Repository: base
+Title: cqueues for lua5.3
+Maintainer: Siger Yang <siger.yang@outlook.com>
+Source: cqueues-20200726.tar.zst
+License: MIT
+LicenseFiles: LICENSE
+URL: http://25thandclement.com/~william/projects/cqueues.html
+Type: ipkg
+Description:  Continuation Queues: Embeddable asynchronous networking, threading, and
+ notification framework for Lua on Unix. 
+@@
+
+Package: cqueues-lua5.4
+Submenu: Lua
+Version: 20200726-r2
+Depends: +libc +libopenssl +liblua5.4
+Conflicts: 
+Menu-Depends: 
+Provides: @cqueues-lua5.4-any
+Build-Variant: lua54
+Section: lang
+Category: Languages
+Repository: base
+Title: cqueues for lua5.4
+Maintainer: Siger Yang <siger.yang@outlook.com>
+Source: cqueues-20200726.tar.zst
+License: MIT
+LicenseFiles: LICENSE
+URL: http://25thandclement.com/~william/projects/cqueues.html
+Type: ipkg
+Description:  Continuation Queues: Embeddable asynchronous networking, threading, and
+ notification framework for Lua on Unix. 
+@@
+
+

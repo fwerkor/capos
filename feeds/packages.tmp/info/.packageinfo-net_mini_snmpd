@@ -1,23 +1,66 @@
 Source-Makefile: feeds/packages/net/mini_snmpd/Makefile
 
 Package: mini_snmpd
-Version: 1.6-r3
-Depends: +libc +jsonfilter +ubus +procd +ubox
-Conflicts: 
+Version: 1.6-r5
+Depends: +libc +jsonfilter +ubus +procd +ubox +confuse
+Conflicts: mini_snmpd-16 mini_snmpd-52
 Menu-Depends: 
-Provides: 
+Provides: @mini_snmpd-any
+Build-Variant: default
 Section: net
 Category: Network
 Repository: base
 Title: A tiny SNMP server for embedded systems
 Maintainer: Marcin Jurkowski <marcin1j@gmail.com>
-Source: mini-snmpd-1.6.tar.gz
+Source: mini-snmpd-1.6.tar.zst
 License: GPL-2.0
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:minisnmpd_project:minisnmpd
 URL: http://troglobit.github.io/mini-snmpd.html
 Type: ipkg
 Description: A tiny SNMP server for embedded systems
+@@
+
+Package: mini_snmpd-16
+Version: 1.6-r5
+Depends: +libc +jsonfilter +ubus +procd +ubox +confuse
+Conflicts: mini_snmpd-52
+Menu-Depends: 
+Provides: @mini_snmpd-16-any mini_snmpd
+Build-Variant: 16
+Section: net
+Category: Network
+Repository: base
+Title: A tiny SNMP server for embedded systems (16 ports)
+Maintainer: Marcin Jurkowski <marcin1j@gmail.com>
+Source: mini-snmpd-1.6.tar.zst
+License: GPL-2.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:minisnmpd_project:minisnmpd
+URL: http://troglobit.github.io/mini-snmpd.html
+Type: ipkg
+Description: A tiny SNMP server for embedded systems (16 ports)
+@@
+
+Package: mini_snmpd-52
+Version: 1.6-r5
+Depends: +libc +jsonfilter +ubus +procd +ubox +confuse
+Conflicts: 
+Menu-Depends: 
+Provides: @mini_snmpd-52-any mini_snmpd
+Build-Variant: 52
+Section: net
+Category: Network
+Repository: base
+Title: A tiny SNMP server for embedded systems (52 ports)
+Maintainer: Marcin Jurkowski <marcin1j@gmail.com>
+Source: mini-snmpd-1.6.tar.zst
+License: GPL-2.0
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:minisnmpd_project:minisnmpd
+URL: http://troglobit.github.io/mini-snmpd.html
+Type: ipkg
+Description: A tiny SNMP server for embedded systems (52 ports)
 @@
 
 

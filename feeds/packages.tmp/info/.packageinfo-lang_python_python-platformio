@@ -1,0 +1,28 @@
+Source-Makefile: feeds/packages/lang/python/python-platformio/Makefile
+Build-Depends/host: python3/host python-build/host python-installer/host python-pyserial/host python-click/host python-semantic-version/host python-requests/host python-tabulate/host python-pyelftools/host
+Build-Types: host
+
+Package: python3-platformio
+Submenu: Python
+Version: 6.1.18-r1
+Depends: +libc +python3-light +python3-pyserial +python3-click +python3-semantic-version +python3-requests +python3-tabulate +python3-pyelftools
+Conflicts: 
+Menu-Depends: 
+Provides: @python3-platformio-any
+Section: lang
+Category: Languages
+Repository: base
+Title: PlatformIO Host Tools
+Maintainer: Austin Lane <vidplace7@gmail.com>
+Source: platformio-6.1.18.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/platformio/platformio-core
+Type: ipkg
+Build-Only: 1
+Description: PlatformIO is an open-source build system for embedded development,
+supporting multiple platforms, frameworks, and boards
+with features like dependency management and IDE integration.
+@@
+
+

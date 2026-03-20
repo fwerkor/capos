@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-03-11 16:30+0000\n"
-"Last-Translator: linxincheng <759459182@qq.com>\n"
+"PO-Revision-Date: 2026-03-06 07:51+0000\n"
+"Last-Translator: nKsyn <e.nksyn@gmail.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
 "projects/openwrt/luci_modules_luci-mod-dsl/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: modules/luci-mod-dsl/htdocs/luci-static/resources/view/status/dsl/stats.js:157
 msgid "ATM Header Error Control Errors (HEC-P)"
@@ -28,7 +28,7 @@ msgstr "Annex"
 
 #: modules/luci-mod-dsl/htdocs/luci-static/resources/view/status/dsl/stats.js:112
 msgid "Attainable Data Rate (ATTNDR)"
-msgstr "理论码率 （ATTNDR）"
+msgstr "可实现数据速率（ATTNDR）"
 
 #: modules/luci-mod-dsl/htdocs/luci-static/resources/view/status/dsl/stats.js:118
 msgid "Bitswap"
@@ -220,7 +220,7 @@ msgstr "频段"
 
 #: modules/luci-mod-dsl/root/usr/share/luci/menu.d/luci-mod-dsl.json:14
 msgid "Stats"
-msgstr "统计数据"
+msgstr "统计"
 
 #: modules/luci-mod-dsl/htdocs/luci-static/resources/view/status/dsl/graph.js:107
 #: modules/luci-mod-dsl/htdocs/luci-static/resources/view/status/dsl/graph.js:143
@@ -249,7 +249,7 @@ msgstr "以下图表以图形方式展示了对于评估DSL连接至关重要的
 
 #: modules/luci-mod-dsl/htdocs/luci-static/resources/view/status/dsl/spectrum.js:45
 msgid ""
-"The graph shows th amount of bits actually allocated per subcarrier in the "
+"The graph shows the amount of bits actually allocated per subcarrier in the "
 "uplink and downlink direction"
 msgstr "该图表显示了上行和下行方向上每个子载波实际分配的位数"
 

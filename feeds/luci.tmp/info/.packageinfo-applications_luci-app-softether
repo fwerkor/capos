@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base +softethervpn5-client
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-softether-any
 Section: luci
 Category: LuCI
 Repository: base

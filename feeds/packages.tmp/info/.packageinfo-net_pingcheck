@@ -5,7 +5,7 @@ Version: 2023.09.25~000a799fe88ce232cc537305f9c25d646f9a10c5-r1
 Depends: +libc +libubus +libuci
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pingcheck-any
 Section: net
 Category: Network
 Repository: base

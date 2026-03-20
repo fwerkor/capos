@@ -1,5 +1,5 @@
 Source-Makefile: feeds/packages/lang/python/python-semantic-version/Makefile
-Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host
+Build-Depends/host: python3/host python-setuptools/host python-build/host python-installer/host python-wheel/host
 Build-Types: host
 
 Package: python3-semantic-version
@@ -8,7 +8,7 @@ Version: 2.10.0-r1
 Depends: +libc +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-semantic-version-any
 Section: lang
 Category: Languages
 Repository: base
@@ -30,7 +30,7 @@ Version: 2.10.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-semantic-version-src-any
 Section: lang
 Category: Languages
 Repository: base

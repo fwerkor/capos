@@ -5,7 +5,7 @@ Version: 1.0.2-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pps-tools-any
 Section: utils
 Category: Utilities
 Repository: base

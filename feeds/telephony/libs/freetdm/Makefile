@@ -1,6 +1,4 @@
 #
-# Copyright (C) 2021 Sebastian Kemper <sebastian_ml@gmx.net>
-#
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
 #
@@ -9,7 +7,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=freetdm
 PKG_RELEASE:=3
-PKG_MAINTAINER:=Sebastian Kemper <sebastian_ml@gmx.net>
+PKG_MAINTAINER:=
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/freeswitch/freetdm.git
@@ -42,8 +40,8 @@ FS_PKGCONFIG_DIR:=$(FS_LIB_DIR)/pkgconfig
 PKG_CONFIG_DEPENDS:= \
 	CONFIG_FREETDM_WITH_DEBUG \
 	CONFIG_LIBC \
-	CONFIG_PACKAGE_libfreetdm-ftmod-libpri \
-	CONFIG_PACKAGE_libfreetdm-ftmod-pritap \
+	CONFIG_PACKAGE_libfreetdm-ftmod-libpri
+# 	CONFIG_PACKAGE_libfreetdm-ftmod-pritap
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -131,8 +129,8 @@ CONFIGURE_ARGS+= \
 	--disable-static \
 	--with-modinstdir=$(FS_MOD_DIR) \
 	$(call autoconf_bool,CONFIG_FREETDM_WITH_DEBUG,debug) \
-	$(if $(CONFIG_PACKAGE_libfreetdm-ftmod-libpri),--with-libpri="$(STAGING_DIR)/usr",--without-libpri) \
-	$(if $(CONFIG_PACKAGE_libfreetdm-ftmod-pritap),--with-pritap,--without-pritap)
+	$(if $(CONFIG_PACKAGE_libfreetdm-ftmod-libpri),--with-libpri="$(STAGING_DIR)/usr",--without-libpri)
+# 	$(if $(CONFIG_PACKAGE_libfreetdm-ftmod-pritap),--with-pritap,--without-pritap)
 
 $(eval $(call BuildPackage,libfreetdm))
 $(eval $(call BuildPackage,freeswitch-mod-freetdm))
@@ -149,6 +147,10 @@ $(eval $(call BuildPackage,freeswitch-mod-freetdm))
 $(eval $(call Package/libfreetdm/FTModule,analog,Analog,Offers generic FXO/FXS support for any type of card supported by FreeTDM.,))
 $(eval $(call Package/libfreetdm/FTModule,analog_em,Analog EM,Offers generic E&M signaling for any type of card supported by FreeTDM.,))
 $(eval $(call Package/libfreetdm/FTModule,libpri,LibPRI,Offers support for PRI lines using the open source libpri stack for any\ntype of card supported by FreeTDM. Supports both PRI and BRI signalling.,+libpri @!aarch64))
-$(eval $(call Package/libfreetdm/FTModule,pritap,PRI tapping,This module is used to tap PRI lines.,+libfreetdm-ftmod-libpri))
+# It seems pritap has always been broken and never worked.
+# This module is based on a FORK of libpri (https://github.com/ajpaul25/libpri) that have
+# all the extra symbol. So the module probably never worked on loading it with the wrong library.
+# Disable this to fix compilation of freetdm.
+# $(eval $(call Package/libfreetdm/FTModule,pritap,PRI tapping,This module is used to tap PRI lines.,+libfreetdm-ftmod-libpri))
 $(eval $(call Package/libfreetdm/FTModule,skel,Skeleton,ftmod_skel is an example module.,))
 $(eval $(call Package/libfreetdm/FTModule,zt,DAHDI I/O,This module supports the DAHDI interface. The DAHDI interface is used by\nseveral hardware vendors.,))

@@ -3,17 +3,17 @@ Build-Depends: libowfat/host
 Build-Types: host
 
 Package: libowfat
-Version: 0.33-r1
+Version: 0.34-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libowfat-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: reimplemented libdjb under GPL
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: libowfat-0.33.tar.xz
+Source: libowfat-0.34.tar.xz
 License: GPL-2.0
 LicenseFiles: COPYING
 URL: https://www.fefe.de/libowfat/

@@ -5,7 +5,7 @@ Version: 20200725-r1
 Depends: +libc +libgd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @fswebcam-any
 Section: multimedia
 Category: Multimedia
 Repository: base

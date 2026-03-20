@@ -1,19 +1,19 @@
 Source-Makefile: feeds/packages/lang/python/python-sqlalchemy/Makefile
-Build-Depends: python-cython/host
+Build-Depends: python3/host python-setuptools/host python-wheel/host python-cython/host
 
 Package: python3-sqlalchemy
 Submenu: Python
-Version: 2.0.23-r1
+Version: 2.0.44-r2
 Depends: +libc +python3 +python3-typing-extensions
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-sqlalchemy-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Database Abstraction Library
 Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
-Source: SQLAlchemy-2.0.23.tar.gz
+Source: sqlalchemy-2.0.44.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:sqlalchemy:sqlalchemy
@@ -28,17 +28,17 @@ database access, adapted into a simple and Pythonic domain language.
 
 Package: python3-sqlalchemy-src
 Submenu: Python
-Version: 2.0.23-r1
+Version: 2.0.44-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-sqlalchemy-src-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Database Abstraction Library (sources)
 Maintainer: Josef Schlehofer <pepe.schlehofer@gmail.com>
-Source: SQLAlchemy-2.0.23.tar.gz
+Source: sqlalchemy-2.0.44.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:sqlalchemy:sqlalchemy

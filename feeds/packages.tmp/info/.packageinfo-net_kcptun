@@ -7,7 +7,7 @@ Version: 20230207-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kcptun-config-any
 Section: net
 Category: Network
 Repository: base
@@ -27,7 +27,7 @@ Version: 20230207-r1
 Depends: +libc +kcptun-config
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kcptun-server-any
 Section: net
 Category: Network
 Repository: base
@@ -48,7 +48,7 @@ Version: 20230207-r1
 Depends: +libc +kcptun-config
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kcptun-client-any
 Section: net
 Category: Network
 Repository: base

@@ -1,0 +1,27 @@
+Source-Makefile: feeds/packages/lang/perl/perl-html-parser/Makefile
+Build-Depends/host: perl/host
+Build-Types: host
+
+Package: perl-html-parser
+Submenu: Perl
+Version: 3.83.5.40-r1
+Depends: +libc perl +perlbase-essential +perlbase-xsloader +perl-html-tagset +perl-http-message
+Conflicts: 
+Menu-Depends: 
+Provides: @perl-html-parser-any
+Section: lang
+Category: Languages
+Repository: base
+Title: HTML parser class
+Maintainer: Jens Wagner <jens@wagner2013.de>
+Source: HTML-Parser-3.83.tar.gz
+License: GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE
+URL: https://metacpan.org/pod/HTML::Parser
+Type: ipkg
+Description:   Objects of the HTML::Parser class will recognize markup
+  and separate it from plain text (alias data content) in
+  HTML documents.
+@@
+
+

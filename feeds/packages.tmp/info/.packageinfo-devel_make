@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/devel/make/Makefile
 
 Package: make
-Version: 4.4.1-r1
+Version: 4.4.1-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @make-any
 Section: devel
 Category: Development
 Repository: base

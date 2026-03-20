@@ -5,7 +5,7 @@ Version: 1.11.0-r2
 Depends: +libc +libstdcpp +libpthread +librt @!arc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @poco-any
 Build-Variant: minimal
 Section: libs
 Category: Libraries
@@ -28,7 +28,7 @@ Version: 1.11.0-r2
 Depends: +libc +libstdcpp +libpthread +librt @!arc +libopenssl +libmariadb +libpq +unixodbc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @poco-all-any
 Build-Variant: all
 Section: libs
 Category: Libraries

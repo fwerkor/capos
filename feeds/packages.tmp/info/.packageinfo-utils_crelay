@@ -5,7 +5,7 @@ Version: 0.14.1-r1
 Depends: +libc +libftdi1 +hidapi +libusb-1.0
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @crelay-any
 Section: utils
 Category: Utilities
 Repository: base

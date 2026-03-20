@@ -1,0 +1,23 @@
+Source-Makefile: feeds/luci/applications/luci-app-wifihistory/Makefile
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+
+Package: luci-app-wifihistory
+Submenu: 3. Applications
+Version: x
+Depends: +libc +luci-base +rpcd-mod-iwinfo +ucode +ucode-mod-fs +ucode-mod-ubus
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-app-wifihistory-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: LuCI support for WiFi Station History
+Maintainer: OpenWrt LuCI community
+Source: 
+License: Apache-2.0
+URL: https://github.com/openwrt/luci
+Type: ipkg
+Description:    Track and display history of WiFi associated stations
+@@
+
+

@@ -6,7 +6,7 @@ Version: 2.2-r1
 Depends: +libc +tdb +zlib +libopenssl +FDM_WITH_PCRE:libpcre2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @fdm-any
 Section: mail
 Category: Mail
 Repository: base

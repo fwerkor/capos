@@ -6,7 +6,7 @@ Version: 2.02-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @serdisplib-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -27,7 +27,7 @@ Version: 2.02-r2
 Depends: +libc +serdisplib +libgd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @serdisplib-tools-any
 Section: utils
 Category: Utilities
 Repository: base

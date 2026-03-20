@@ -6,7 +6,7 @@ Version: 0.7.5-r1
 Depends: +libc +python3-light +python3-contextlib2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-schema-any
 Section: lang
 Category: Languages
 Repository: base
@@ -29,7 +29,7 @@ Version: 0.7.5-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-schema-src-any
 Section: lang
 Category: Languages
 Repository: base

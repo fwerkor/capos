@@ -1,5 +1,5 @@
 Source-Makefile: feeds/packages/lang/python/python-cython/Makefile
-Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host
+Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host python-setuptools/host python-packaging/host
 Build-Types: host
 
 Package: python3-cython
@@ -8,7 +8,7 @@ Version: 3.1.5-r1
 Depends: +libc +python3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-cython-any
 Section: lang
 Category: Languages
 Repository: base
@@ -39,7 +39,7 @@ Version: 3.1.5-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-cython-src-any
 Section: lang
 Category: Languages
 Repository: base

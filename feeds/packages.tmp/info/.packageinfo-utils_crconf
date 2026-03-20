@@ -5,7 +5,7 @@ Version: 2018.03.02~8bd996400d087028ba56b724abc1f5b378eaa77f-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @crconf-any
 Section: utils
 Category: Utilities
 Repository: base

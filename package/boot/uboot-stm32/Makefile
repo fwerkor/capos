@@ -7,10 +7,10 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=2024.07
+PKG_VERSION:=2025.10
 PKG_RELEASE:=1
 
-PKG_HASH:=f591da9ab90ef3d6b3d173766d0ddff90c4ed7330680897486117df390d83c8f
+PKG_HASH:=b4f032848e56cc8f213ad59f9132c084dbbb632bc29176d024e58220e0efdf4a
 PKG_MAINTAINER:=Thomas Richard <thomas.richard@bootlin.com>
 
 UBOOT_USE_INTREE_DTC:=1
@@ -28,15 +28,38 @@ define U-Boot/stm32mp13
   UBOOT_CONFIG:=stm32mp13
 endef
 
+define U-Boot/stm32mp15
+  BUILD_SUBTARGET:=stm32mp1
+  UBOOT_CONFIG:=stm32mp15
+endef
+
 define U-Boot/stm32mp135f-dk
   $(call U-Boot/stm32mp13)
   NAME:=STM32MP135F-DK
   DEVICE_TREE:=stm32mp135f-dk
 endef
 
-UBOOT_TARGETS := stm32mp135f-dk
+define U-Boot/stm32mp157c-dk2
+  $(call U-Boot/stm32mp15)
+  NAME:=STM32MP157C-DK2
+  DEVICE_TREE:=stm32mp157c-dk2
+endef
 
-UBOOT_MAKE_FLAGS += DEVICE_TREE=$(DEVICE_TREE)
+define U-Boot/stm32mp157c-dk2-scmi
+  $(call U-Boot/stm32mp15)
+  NAME:=STM32MP157C-DK2 (SCMI)
+  DEVICE_TREE:=stm32mp157c-dk2-scmi
+endef
+
+UBOOT_TARGETS := \
+		 stm32mp135f-dk \
+		 stm32mp157c-dk2 \
+		 stm32mp157c-dk2-scmi
+
+UBOOT_MAKE_FLAGS += DEVICE_TREE=st/$(DEVICE_TREE)
+
+UBOOT_CUSTOMIZE_CONFIG := \
+	--disable TOOLS_MKEFICAPSULE
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(STAGING_DIR_IMAGE)

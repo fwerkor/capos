@@ -1,0 +1,24 @@
+Source-Makefile: feeds/video/frameworks/weston/Makefile
+Build-Depends: wayland/host
+
+Package: weston
+Submenu: Frameworks and Toolkits
+Version: 14.0.2-r2
+Depends: +libc +gstreamer1-plugins-base +libcairo +libevdev +libdisplay-info +libgst1allocators +libgst1app +libgst1video +libgstreamer1 +libinput +libmesa +libpango +libseat +libwayland +libwebp +libxkbcommon +pixman +seatd +wayland-protocols +xkeyboard-config
+Conflicts: 
+Menu-Depends: 
+Provides: @weston-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: weston
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: weston-14.0.2.tar.xz
+License: MIT
+LicenseFiles: COPYING
+URL: https://wayland.freedesktop.org/
+Type: ipkg
+Description: weston
+@@
+
+

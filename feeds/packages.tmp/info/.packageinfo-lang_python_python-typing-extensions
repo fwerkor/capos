@@ -9,7 +9,7 @@ Version: 4.9.0-r1
 Depends: +libc +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-typing-extensions-any
 Section: lang
 Category: Languages
 Repository: base
@@ -36,7 +36,7 @@ Version: 4.9.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-typing-extensions-src-any
 Section: lang
 Category: Languages
 Repository: base

@@ -5,7 +5,7 @@ Version: 2022.08.11-r2
 Depends: +libc +python3-light +python3-pyserial +python3-crcmod +python3-ctypes +python3-pycrate +python3-logging +python3-urllib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @qcsuper-any
 Section: net
 Category: Network
 Repository: base

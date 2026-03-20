@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/lang/perl/perl-xs-parse-keyword/Makefile
+
+Package: perl-xs-parse-keyword
+Submenu: Perl
+Version: 0.48.5.40-r1
+Depends: +libc perl +perlbase-essential +perlbase-xsloader
+Conflicts: 
+Menu-Depends: 
+Provides: @perl-xs-parse-keyword-any
+Section: lang
+Category: Languages
+Repository: base
+Title: XS functions to assist in parsing keyword syntax
+Maintainer: Jens Wagner <jens@wagner2013.de>
+Source: XS-Parse-Keyword-0.48.tar.gz
+License: GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE
+URL: https://metacpan.org/pod/XS::Parse::Keyword
+Type: ipkg
+Description:   This module provides some XS functions to assist in writing syntax
+  modules that provide new Perl-visible syntax, primarily for authors
+  of keyword plugins using the PL_keyword_plugin hook mechanism.
+@@
+
+

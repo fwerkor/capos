@@ -5,7 +5,7 @@ Version: 0.10.0-r1
 Depends: +libc @!(arc||mips||mipsel||mips64||mips64el)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @reptyr-any
 Section: utils
 Category: Utilities
 Repository: base

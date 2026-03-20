@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/net/hev-socks5-tunnel/Makefile
 
 Package: hev-socks5-tunnel
-Version: 2.14.0-r1
+Version: 2.14.3-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @hev-socks5-tunnel-any
 Section: net
 Category: Network
 Repository: base
 Title: A high-performance tun2socks for Unix
 Maintainer: Ray Wang <git@hev.cc>
-Source: hev-socks5-tunnel-2.14.0.tar.xz
+Source: hev-socks5-tunnel-2.14.3.tar.xz
 License: MIT
 LicenseFiles: License
 URL: https://github.com/heiher/hev-socks5-tunnel

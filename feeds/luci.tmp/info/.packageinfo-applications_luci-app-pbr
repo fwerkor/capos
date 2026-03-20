@@ -3,11 +3,11 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 
 Package: luci-app-pbr
 Submenu: 3. Applications
-Version: 1.2.0-r2
+Version: 1.2.2-r10
 Depends: +libc +luci-base +jsonfilter +pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-pbr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -15,7 +15,7 @@ Title: Policy Based Routing Service Web UI
 Maintainer: OpenWrt LuCI community
 Source: 
 License: AGPL-3.0-or-later
-URL: https://github.com/stangri/luci-app-pbr/
+URL: https://github.com/mossdef-org/luci-app-pbr/
 Type: ipkg
 Description:    Provides Web UI for Policy Based Routing Service.
 @@
@@ -24,7 +24,7 @@ Config:
 help
 	Policy Based Routing Service Web UI
 	.
-	Version: 1.2.0-2
+	Version: 1.2.2-10
 @@
 
 Package: luci-i18n-pbr-ar
@@ -33,7 +33,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-ar-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -52,7 +52,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-bg-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -71,7 +71,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-bn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -90,7 +90,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-ca-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -109,7 +109,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-cs-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -128,7 +128,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-da-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -147,7 +147,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-de-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -166,7 +166,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-el-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -185,7 +185,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-es-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -204,7 +204,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-fi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -223,7 +223,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-fr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -242,7 +242,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-ga-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -261,7 +261,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-he-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -280,7 +280,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-hi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -299,7 +299,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-hu-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -318,7 +318,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-it-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -337,7 +337,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-ja-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -356,7 +356,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-ko-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -375,7 +375,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-lt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -394,7 +394,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-mr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -413,7 +413,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-ms-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -432,7 +432,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-no-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -451,7 +451,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-nl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -470,7 +470,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-pl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -489,7 +489,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-pt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -508,7 +508,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -527,7 +527,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-ro-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -546,7 +546,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-ru-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -565,7 +565,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-sk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -584,7 +584,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-sv-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -597,13 +597,32 @@ Hidden: 1
 Description:     Translation for luci-app-pbr - Svenska (Swedish)
 @@
 
+Package: luci-i18n-pbr-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-pbr
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-pbr-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-pbr - ta translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-pbr - Tamil (Tamil)
+@@
+
 Package: luci-i18n-pbr-tr
 Default: LUCI_LANG_tr||(ALL&&m)
 Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-tr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -622,7 +641,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-uk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -641,7 +660,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-vi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -660,7 +679,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -679,7 +698,7 @@ Version: x
 Depends: +libc luci-app-pbr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-pbr-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base

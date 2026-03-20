@@ -1,0 +1,22 @@
+Source-Makefile: feeds/video/games/zmusic/Makefile
+
+Package: libzmusic
+Version: 1.1.14-r1
+Depends: +libc +libstdcpp +libsndfile +alsa-lib +glib2
+Conflicts: 
+Menu-Depends: 
+Provides: @libzmusic-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: ZMusic
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: zmusic-1.1.14.tar.zst
+License: GPL-3.0
+LicenseFiles: licenses/bsd.txt licenses/dumb.txt licenses/gplv3.txt licenses/legal.txt licenses/lgplv21.txt licenses/lgplv3.txt licenses/zmusic.txt
+URL: https://zdoom.org/
+Type: ipkg
+Description:   GZDoom's music system as a standalone library
+@@
+
+

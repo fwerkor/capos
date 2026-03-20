@@ -5,7 +5,7 @@ Version: 2.16.01-r1
 Depends: +libc @TARGET_x86
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nasm-any
 Section: devel
 Category: Development
 Repository: base

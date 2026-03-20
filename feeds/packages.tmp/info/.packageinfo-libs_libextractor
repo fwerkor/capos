@@ -2,11 +2,11 @@ Source-Makefile: feeds/packages/libs/libextractor/Makefile
 
 Package: libextractor
 Menu: 1
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc +libbz2 +libltdl +librt +zlib +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -25,11 +25,11 @@ Description:   GNU Libextractor is a library used to extract meta data from file
 @@
 
 Package: libextractor-plugin-archive
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc libextractor +libarchive-noopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-plugin-archive-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -44,11 +44,11 @@ Description: GNU Libextractor (archive plugin)
 @@
 
 Package: libextractor-plugin-deb
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc libextractor
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-plugin-deb-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -63,11 +63,11 @@ Description: GNU Libextractor (deb plugin)
 @@
 
 Package: libextractor-plugin-dvi
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc libextractor
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-plugin-dvi-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -82,11 +82,11 @@ Description: GNU Libextractor (dvi plugin)
 @@
 
 Package: libextractor-plugin-flac
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc libextractor +libflac
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-plugin-flac-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -101,11 +101,11 @@ Description: GNU Libextractor (flac plugin)
 @@
 
 Package: libextractor-plugin-gif
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc libextractor +giflib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-plugin-gif-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -120,11 +120,11 @@ Description: GNU Libextractor (gif plugin)
 @@
 
 Package: libextractor-plugin-gstreamer
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc libextractor +libgstreamer1 +gstreamer1-plugins-base +libgst1app +libgst1pbutils +libgst1tag
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-plugin-gstreamer-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -139,11 +139,11 @@ Description: GNU Libextractor (gstreamer plugin)
 @@
 
 Package: libextractor-plugin-it
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc libextractor
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-plugin-it-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -158,11 +158,11 @@ Description: GNU Libextractor (it plugin)
 @@
 
 Package: libextractor-plugin-jpeg
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc libextractor +libjpeg-turbo
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-plugin-jpeg-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -177,11 +177,11 @@ Description: GNU Libextractor (jpeg plugin)
 @@
 
 Package: libextractor-plugin-man
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc libextractor
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-plugin-man-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -196,11 +196,11 @@ Description: GNU Libextractor (man plugin)
 @@
 
 Package: libextractor-plugin-mime
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc libextractor +libmagic
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-plugin-mime-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -215,11 +215,11 @@ Description: GNU Libextractor (mime plugin)
 @@
 
 Package: libextractor-plugin-mpeg
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc libextractor +libmpeg2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-plugin-mpeg-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -234,11 +234,11 @@ Description: GNU Libextractor (mpeg plugin)
 @@
 
 Package: libextractor-plugin-nsf
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc libextractor
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-plugin-nsf-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -253,11 +253,11 @@ Description: GNU Libextractor (nsf plugin)
 @@
 
 Package: libextractor-plugin-nsfe
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc libextractor
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-plugin-nsfe-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -272,11 +272,11 @@ Description: GNU Libextractor (nsfe plugin)
 @@
 
 Package: libextractor-plugin-odf
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc libextractor
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-plugin-odf-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -291,11 +291,11 @@ Description: GNU Libextractor (odf plugin)
 @@
 
 Package: libextractor-plugin-ogg
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc libextractor +libvorbis
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-plugin-ogg-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -310,11 +310,11 @@ Description: GNU Libextractor (ogg plugin)
 @@
 
 Package: libextractor-plugin-png
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc libextractor
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-plugin-png-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -329,11 +329,11 @@ Description: GNU Libextractor (png plugin)
 @@
 
 Package: libextractor-plugin-ps
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc libextractor
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-plugin-ps-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -348,11 +348,11 @@ Description: GNU Libextractor (ps plugin)
 @@
 
 Package: libextractor-plugin-riff
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc libextractor
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-plugin-riff-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -367,11 +367,11 @@ Description: GNU Libextractor (riff plugin)
 @@
 
 Package: libextractor-plugin-s3m
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc libextractor
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-plugin-s3m-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -386,11 +386,11 @@ Description: GNU Libextractor (s3m plugin)
 @@
 
 Package: libextractor-plugin-sid
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc libextractor
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-plugin-sid-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -405,11 +405,11 @@ Description: GNU Libextractor (sid plugin)
 @@
 
 Package: libextractor-plugin-tiff
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc libextractor +libtiff
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-plugin-tiff-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -424,11 +424,11 @@ Description: GNU Libextractor (tiff plugin)
 @@
 
 Package: libextractor-plugin-wav
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc libextractor
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-plugin-wav-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -443,11 +443,11 @@ Description: GNU Libextractor (wav plugin)
 @@
 
 Package: libextractor-plugin-xm
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc libextractor
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-plugin-xm-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -462,11 +462,11 @@ Description: GNU Libextractor (xm plugin)
 @@
 
 Package: libextractor-plugin-zip
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc libextractor
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libextractor-plugin-zip-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -481,11 +481,11 @@ Description: GNU Libextractor (zip plugin)
 @@
 
 Package: extract
-Version: 1.13-r1
+Version: 1.13-r2
 Depends: +libc +libextractor
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @extract-any
 Section: utils
 Category: Utilities
 Repository: base

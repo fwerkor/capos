@@ -4,11 +4,11 @@ Build-Depends/host: protobuf/host
 Build-Types: host
 
 Package: ola
-Version: 0.10.9-r1
+Version: 0.10.9-r2
 Depends: +libc +protobuf +libftdi1 +libusb-1.0 +libuuid +libstdcpp +libpthread +librt +zlib +libncurses +liblo +libmicrohttpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ola-any
 Section: net
 Category: Network
 Repository: base

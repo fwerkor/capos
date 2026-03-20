@@ -6,7 +6,7 @@ Version: 3.0.0-r1
 Depends: +libc +python3-light +python3-logging +python3-urllib +python3-xml +python3-requests +python3-zeroconf
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-netdisco-any
 Section: lang
 Category: Languages
 Repository: base
@@ -28,7 +28,7 @@ Version: 3.0.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-netdisco-src-any
 Section: lang
 Category: Languages
 Repository: base

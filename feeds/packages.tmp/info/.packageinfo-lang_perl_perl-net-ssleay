@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/perl/perl-net-ssleay/Makefile
+
+Package: perl-net-ssleay
+Submenu: Perl
+Version: 1.94.5.40-r1
+Depends: +libc perl +perlbase-essential +perlbase-mime +libopenssl +zlib
+Conflicts: 
+Menu-Depends: 
+Provides: @perl-net-ssleay-any
+Section: lang
+Category: Languages
+Repository: base
+Title: Perl bindings for OpenSSL and LibreSSL
+Maintainer: Jens Wagner <jens@wagner2013.de>
+Source: Net-SSLeay-1.94.tar.gz
+License: GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE
+URL: https://metacpan.org/pod/Net::SSLeay
+Type: ipkg
+Description:   This module provides Perl bindings for libssl (an SSL/TLS API)
+  and libcrypto (a cryptography API).
+@@
+
+

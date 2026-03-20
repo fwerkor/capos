@@ -6,7 +6,7 @@ Version: 2.8-r1
 Depends: +libc +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pigz-any
 Section: utils
 Category: Utilities
 Repository: base

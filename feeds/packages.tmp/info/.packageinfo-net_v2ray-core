@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/net/v2ray-core/Makefile
 Build-Depends: golang/host
 
 Package: v2ray-core
-Version: 5.30.0-r1
+Version: 5.42.0-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) +ca-bundle
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @v2ray-core-any
 Section: net
 Category: Network
 Repository: base
 Title: A proxy platform to bypass network restrictions
 Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
-Source: v2ray-core-5.30.0.tar.gz
+Source: v2ray-core-5.42.0.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:v2fly:v2ray-core
@@ -23,17 +23,17 @@ Description:     Project V is a set of network tools that help you to build your
 @@
 
 Package: v2ray-example
-Version: 5.30.0-r1
+Version: 5.42.0-r1
 Depends: +libc v2ray-core
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @v2ray-example-any
 Section: net
 Category: Network
 Repository: base
 Title: A proxy platform to bypass network restrictions (example configs)
 Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
-Source: v2ray-core-5.30.0.tar.gz
+Source: v2ray-core-5.42.0.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:v2fly:v2ray-core
@@ -46,17 +46,17 @@ Description:     Project V is a set of network tools that help you to build your
 @@
 
 Package: v2ray-extra
-Version: 5.30.0-r1
+Version: 5.42.0-r1
 Depends: +libc v2ray-core
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @v2ray-extra-any
 Section: net
 Category: Network
 Repository: base
 Title: A proxy platform to bypass network restrictions (extra resources)
 Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
-Source: v2ray-core-5.30.0.tar.gz
+Source: v2ray-core-5.42.0.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:v2fly:v2ray-core

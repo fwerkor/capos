@@ -6,7 +6,7 @@ Version: 2.0.0-r1
 Depends: +libc +python3-flask +python3-light +python3-urllib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-flask-seasurf-any
 Section: lang
 Category: Languages
 Repository: base
@@ -27,7 +27,7 @@ Version: 2.0.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-flask-seasurf-src-any
 Section: lang
 Category: Languages
 Repository: base

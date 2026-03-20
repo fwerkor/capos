@@ -5,7 +5,7 @@ Version: 2024.03.05~e1281d4de9166b7254ba30bb58f9191fc2c9e7fb-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mmc-utils-any
 Section: utils
 Category: Utilities
 Repository: base

@@ -1,18 +1,18 @@
 Source-Makefile: feeds/packages/net/bind/Makefile
-Build-Depends: BIND_LIBXML2:libxml2 BIND_LIBJSON:libjson-c
+Build-Depends: BIND_LIBXML2:libxml2 BIND_LIBJSON:libjson-c BIND_JEMALLOC:libjemalloc
 
 Package: bind-libs
-Version: 9.20.15-r1
-Depends: +libc +libopenssl +zlib +libpthread +libatomic +libuv +liburcu +BIND_ENABLE_DOH:libnghttp2 +BIND_ENABLE_GSSAPI:krb5-libs +BIND_ENABLE_GSSAPI:libcomerr +BIND_LIBXML2:libxml2 +BIND_LIBJSON:libjson-c
+Version: 9.20.18-r1
+Depends: +libc +libopenssl +zlib +libpthread +libatomic +libuv +liburcu +BIND_ENABLE_DOH:libnghttp2 +BIND_ENABLE_GSSAPI:krb5-libs +BIND_ENABLE_GSSAPI:libcomerr +BIND_LIBXML2:libxml2 +BIND_LIBJSON:libjson-c +BIND_JEMALLOC:libjemalloc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bind-libs-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: bind shared libraries
 Maintainer: Noah Meyerhans <frodo@morgul.net>
-Source: bind-9.20.15.tar.xz
+Source: bind-9.20.18.tar.xz
 License: MPL-2.0
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:isc:bind
@@ -23,17 +23,17 @@ Description: bind shared libraries
 
 Package: bind-server
 Submenu: IP Addresses and Names
-Version: 9.20.15-r1
-Depends: +libc +bind-libs +@OPENSSL_WITH_EC +libcap
+Version: 9.20.18-r1
+Depends: +libc +bind-libs +@OPENSSL_WITH_EC +libcap +bind-rndc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bind-server-any
 Section: net
 Category: Network
 Repository: base
 Title: bind DNS server
 Maintainer: Noah Meyerhans <frodo@morgul.net>
-Source: bind-9.20.15.tar.xz
+Source: bind-9.20.18.tar.xz
 License: MPL-2.0
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:isc:bind
@@ -47,17 +47,17 @@ Config:
 
 Package: bind-server-filter-aaaa
 Submenu: IP Addresses and Names
-Version: 9.20.15-r1
+Version: 9.20.18-r1
 Depends: +libc bind-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bind-server-filter-aaaa-any
 Section: net
 Category: Network
 Repository: base
 Title: bind DNS server filter AAAA plugin
 Maintainer: Noah Meyerhans <frodo@morgul.net>
-Source: bind-9.20.15.tar.xz
+Source: bind-9.20.18.tar.xz
 License: MPL-2.0
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:isc:bind
@@ -68,17 +68,17 @@ Description: bind DNS server filter AAAA plugin
 
 Package: bind-client
 Submenu: IP Addresses and Names
-Version: 9.20.15-r1
+Version: 9.20.18-r1
 Depends: +libc +bind-libs +@OPENSSL_WITH_EC
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bind-client-any
 Section: net
 Category: Network
 Repository: base
 Title: bind dynamic DNS client
 Maintainer: Noah Meyerhans <frodo@morgul.net>
-Source: bind-9.20.15.tar.xz
+Source: bind-9.20.18.tar.xz
 License: MPL-2.0
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:isc:bind
@@ -89,17 +89,17 @@ Description: bind dynamic DNS client
 
 Package: bind-tools
 Submenu: IP Addresses and Names
-Version: 9.20.15-r1
+Version: 9.20.18-r1
 Depends: +libc +bind-check +bind-dig +bind-nslookup +bind-dnssec +bind-host +bind-rndc +bind-ddns-confgen
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bind-tools-any
 Section: net
 Category: Network
 Repository: base
 Title: bind administration tools (all)
 Maintainer: Noah Meyerhans <frodo@morgul.net>
-Source: bind-9.20.15.tar.xz
+Source: bind-9.20.18.tar.xz
 License: MPL-2.0
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:isc:bind
@@ -110,17 +110,17 @@ Description: bind administration tools (all)
 
 Package: bind-rndc
 Submenu: IP Addresses and Names
-Version: 9.20.15-r1
+Version: 9.20.18-r1
 Depends: +libc +bind-libs +@OPENSSL_WITH_EC
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bind-rndc-any
 Section: net
 Category: Network
 Repository: base
 Title: bind administration tools (rndc and rndc-confgen only)
 Maintainer: Noah Meyerhans <frodo@morgul.net>
-Source: bind-9.20.15.tar.xz
+Source: bind-9.20.18.tar.xz
 License: MPL-2.0
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:isc:bind
@@ -131,17 +131,17 @@ Description: bind administration tools (rndc and rndc-confgen only)
 
 Package: bind-check
 Submenu: IP Addresses and Names
-Version: 9.20.15-r1
+Version: 9.20.18-r1
 Depends: +libc +bind-libs +@OPENSSL_WITH_EC
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bind-check-any
 Section: net
 Category: Network
 Repository: base
 Title: bind administration tools (named-checkconf and named-checkzone only)
 Maintainer: Noah Meyerhans <frodo@morgul.net>
-Source: bind-9.20.15.tar.xz
+Source: bind-9.20.18.tar.xz
 License: MPL-2.0
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:isc:bind
@@ -152,17 +152,17 @@ Description: bind administration tools (named-checkconf and named-checkzone only
 
 Package: bind-dnssec
 Submenu: IP Addresses and Names
-Version: 9.20.15-r1
+Version: 9.20.18-r1
 Depends: +libc +bind-libs +@OPENSSL_WITH_EC
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bind-dnssec-any
 Section: net
 Category: Network
 Repository: base
 Title: bind administration tools (dnssec-keygen, dnssec-settime and dnssec-signzone only)
 Maintainer: Noah Meyerhans <frodo@morgul.net>
-Source: bind-9.20.15.tar.xz
+Source: bind-9.20.18.tar.xz
 License: MPL-2.0
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:isc:bind
@@ -173,17 +173,17 @@ Description: bind administration tools (dnssec-keygen, dnssec-settime and dnssec
 
 Package: bind-host
 Submenu: IP Addresses and Names
-Version: 9.20.15-r1
+Version: 9.20.18-r1
 Depends: +libc +bind-libs +@OPENSSL_WITH_EC
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bind-host-any
 Section: net
 Category: Network
 Repository: base
 Title: bind simple DNS client
 Maintainer: Noah Meyerhans <frodo@morgul.net>
-Source: bind-9.20.15.tar.xz
+Source: bind-9.20.18.tar.xz
 License: MPL-2.0
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:isc:bind
@@ -194,17 +194,17 @@ Description: bind simple DNS client
 
 Package: bind-dig
 Submenu: IP Addresses and Names
-Version: 9.20.15-r1
+Version: 9.20.18-r1
 Depends: +libc +bind-libs +@OPENSSL_WITH_EC
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bind-dig-any
 Section: net
 Category: Network
 Repository: base
 Title: bind DNS excavation tool
 Maintainer: Noah Meyerhans <frodo@morgul.net>
-Source: bind-9.20.15.tar.xz
+Source: bind-9.20.18.tar.xz
 License: MPL-2.0
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:isc:bind
@@ -215,17 +215,17 @@ Description: bind DNS excavation tool
 
 Package: bind-nslookup
 Submenu: IP Addresses and Names
-Version: 9.20.15-r1
+Version: 9.20.18-r1
 Depends: +libc +bind-libs +@OPENSSL_WITH_EC
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bind-nslookup-any
 Section: net
 Category: Network
 Repository: base
 Title: bind nslookup utility
 Maintainer: Noah Meyerhans <frodo@morgul.net>
-Source: bind-9.20.15.tar.xz
+Source: bind-9.20.18.tar.xz
 License: MPL-2.0
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:isc:bind
@@ -236,17 +236,17 @@ Description: bind nslookup utility
 
 Package: bind-ddns-confgen
 Submenu: IP Addresses and Names
-Version: 9.20.15-r1
+Version: 9.20.18-r1
 Depends: +libc +bind-libs +@OPENSSL_WITH_EC
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bind-ddns-confgen-any
 Section: net
 Category: Network
 Repository: base
 Title: bind administration tools (ddns-confgen and tsig-keygen only)
 Maintainer: Noah Meyerhans <frodo@morgul.net>
-Source: bind-9.20.15.tar.xz
+Source: bind-9.20.18.tar.xz
 License: MPL-2.0
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:isc:bind

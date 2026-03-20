@@ -6,7 +6,7 @@ Version: 2.12.0-r2
 Depends: +libc +python3-light +python3-logging +python3-bcrypt +python3-cryptography +python3-openssl +python3-pynacl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-paramiko-any
 Section: lang
 Category: Languages
 Repository: base
@@ -30,7 +30,7 @@ Version: 2.12.0-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-paramiko-src-any
 Section: lang
 Category: Languages
 Repository: base

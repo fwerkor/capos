@@ -5,7 +5,7 @@ Version: 8.0.4-r1
 Depends: +libc +curl +bzip2 +libstdcpp +libopenssl +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boinc-any
 Section: net
 Category: Network
 Repository: base
@@ -15,7 +15,7 @@ Require-User: boinc:boinc
 Source: boinc-8.0.4.tar.zst
 License: GPL-3.0-or-later
 LicenseFiles: COPYING
-CPE-ID: cpe:/a:rom_walton:boinc
+CPE-ID: cpe:/a:universityofcalifornia:boinc_client
 URL: https://github.com/BOINC/boinc/
 Type: ipkg
 Description:   The Berkeley Open Infrastructure for Network Computing (BOINC) is a

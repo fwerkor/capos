@@ -3,13 +3,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=poemgr
-PKG_SOURCE_DATE:=2025-05-28
-PKG_SOURCE_VERSION:=87550e1349c3c010a7ed0e306589c6398238d374
-PKG_RELEASE:=3
+PKG_SOURCE_DATE:=2025-09-27
+PKG_SOURCE_VERSION:=17771dd7b3a74a64c14351d1cbf8e61676934cbe
+PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL=https://github.com/blocktrron/poemgr.git
-PKG_MIRROR_HASH:=44d1e49e21fedf4446a56beabe7baa5a97a841f8514bcee656f0faff3d48c74f
+PKG_MIRROR_HASH:=4c49491037d3250f740a9420bff6f09ab0cd0f5ccead6bdf0fba33de03f1c7a2
 
 PKG_MAINTAINER:=David Bauer <mail@david-bauer.net>
 PKG_LICENSE:=GPL-2.0-only
@@ -20,7 +20,7 @@ define Package/poemgr
   SECTION:=utils
   CATEGORY:=Utilities
   DEPENDS:=+libuci +libjson-c
-  TITLE:=Utility to control PoE ports on the UniFi Flex switch
+  TITLE:=Utility to control PoE ports on UniFi Flex and Plasma Cloud switches
 endef
 
 define Package/poemgr/conffiles

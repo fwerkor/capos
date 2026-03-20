@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/net/openthread-br/Makefile
 
 Package: luci-app-openthread
 Submenu: 3. Applications
-Version: 2023.08.01~1738d8cd8b42106c2ef1262fbbac2f06beab83ba-r1
+Version: 2025.06.12~2f3c799c7463c8f674754e65c53f78bc0bbcbd58-r1
 Depends: +libc +luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-openthread-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: LuCI Support for OpenThread Border Router
 Maintainer: Stijn Tintel <stijn@linux-ipv6.be>
-Source: openthread-br-2023.08.01~1738d8cd8b42106c2ef1262fbbac2f06beab83ba.tar.zst
+Source: openthread-br-2025.06.12~2f3c799c7463c8f674754e65c53f78bc0bbcbd58.tar.zst
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 Type: ipkg
@@ -20,17 +20,17 @@ Description: LuCI Support for OpenThread Border Router
 @@
 
 Package: openthread-br
-Version: 2023.08.01~1738d8cd8b42106c2ef1262fbbac2f06beab83ba-r1
-Depends: +libc +libblobmsg-json +libjson-c +libncurses +libnetfilter-queue +libreadline +libstdcpp +libubox +libubus +mdnsd +mdnsresponder
+Version: 2025.06.12~2f3c799c7463c8f674754e65c53f78bc0bbcbd58-r1
+Depends: +libc +kmod-tun +libblobmsg-json +libjson-c +cJSON +libncurses +libnetfilter-queue +libreadline +libstdcpp +libubox +libubus +mdnsd +mdnsresponder
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @openthread-br-any
 Section: net
 Category: Network
 Repository: base
 Title: OpenThread Border Router
 Maintainer: Stijn Tintel <stijn@linux-ipv6.be>
-Source: openthread-br-2023.08.01~1738d8cd8b42106c2ef1262fbbac2f06beab83ba.tar.zst
+Source: openthread-br-2025.06.12~2f3c799c7463c8f674754e65c53f78bc0bbcbd58.tar.zst
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 Type: ipkg

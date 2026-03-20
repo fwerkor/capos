@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/libs/libpbc/Makefile
 
 Package: libpbc
-Version: 0.5.14-r2
+Version: 1.0.0-r1
 Depends: +libc +libgmp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libpbc-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: The Pairing-Based Cryptography Library
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: pbc-0.5.14.tar.gz
+Source: pbc-1.0.0.tar.gz
 License: LGPL-3.0-or-later
 LicenseFiles: COPYING
 URL: https://crypto.stanford.edu/pbc/

@@ -5,7 +5,7 @@ Version: 0.32.4-r1
 Depends: +libc +libopenssl +libexpat +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libneon-any
 Section: libs
 Category: Libraries
 Repository: base

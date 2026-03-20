@@ -5,9 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-09-08 07:50+0000\n"
-"Last-Translator: 大王叫我来巡山 "
-"<hamburger2048@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-03-06 06:52+0000\n"
+"Last-Translator: nKsyn <e.nksyn@gmail.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
 "projects/openwrt/luciapplicationsnut/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -15,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_monitor.js:16
 msgid "%s is mutually exclusive to other choices"
@@ -162,6 +161,10 @@ msgstr "授予UCI访问luci-app-nut的权限"
 msgid "Host"
 msgstr "主机"
 
+#: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_monitor.js:69
+msgid "Host Sync"
+msgstr "主机同步"
+
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_cgi.js:24
 msgid "Hostname or IP address"
 msgstr "主机名或 IP 地址"
@@ -170,10 +173,6 @@ msgstr "主机名或 IP 地址"
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_monitor.js:188
 msgid "Hostname or address of UPS"
 msgstr "UPS 的主机名或地址"
-
-#: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_monitor.js:69
-msgid "Hot Sync"
-msgstr "热同步"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:68
 msgid "IP Address"
@@ -239,7 +238,7 @@ msgstr "尝试启动驱动程序的最大次数。"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:130
 msgid "Maximum time in seconds between refresh of UPS status"
-msgstr "刷新 UPS 状态之间的最长时间（秒）"
+msgstr "刷新 UPS 状态的最长间隔时间（秒）"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_monitor.js:47
 msgid "Minimum required number or power supplies"
@@ -511,9 +510,18 @@ msgstr "同步通信"
 msgid "The name of this section will be used as UPS name elsewhere"
 msgstr "此部分的名称将在其他地方用作 UPS 名称"
 
+#: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:157
+#: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:193
+#: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:196
+#: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:247
+msgid ""
+"This is passed through to the driver, so make sure your driver supports this "
+"option"
+msgstr "这被传递到驱动程序，因此确保驱动程序支持此选项"
+
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:125
 msgid "Time in seconds between driver start retry attempts."
-msgstr "驱动程序重试之间的间隔（秒）。"
+msgstr "驱动程序重试启动的时间间隔（秒）。"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:188
 msgid "Time in seconds that upsdrvctl will wait for driver to finish starting"

@@ -5,7 +5,7 @@ Version: 0.2.0-r2
 Depends: +libc +libstdcpp +libjpeg +PACKAGE_libvpx:libvpx
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @v4l2tools-any
 Section: multimedia
 Category: Multimedia
 Repository: base

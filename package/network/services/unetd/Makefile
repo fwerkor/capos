@@ -10,9 +10,9 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=unetd
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL=$(PROJECT_GIT)/project/unetd.git
-PKG_SOURCE_DATE:=2025-03-09
-PKG_SOURCE_VERSION:=6c9c8fbd81285a2cba7dd1c2c1ac2bf25ca99e27
-PKG_MIRROR_HASH:=9dc06c945713a6a289ed0838ebe59e65b4fbb333e02d5159a8e87d29754808a6
+PKG_SOURCE_DATE:=2025-10-03
+PKG_SOURCE_VERSION:=2f67f6faa08aa4b20663d4cbaf063a79041947c1
+PKG_MIRROR_HASH:=df9b2500f5475775ae312ac2860435d7a56a713dab0a30c56d7292ad9ab20ae4
 
 PKG_LICENSE:=GPL-2.0
 PKG_MAINTAINER:=Felix Fietkau <nbd@nbd.name>
@@ -80,6 +80,7 @@ endef
 
 define Package/unetd/install
 	$(INSTALL_DIR) \
+		$(1)/usr/share/ucode/cli/modules \
 		$(1)/etc/unetd \
 		$(1)/lib/bpf \
 		$(1)/etc/init.d \
@@ -92,6 +93,7 @@ define Package/unetd/install
 		$(PKG_INSTALL_DIR)/usr/sbin/unet-tool \
 		$(1)/usr/sbin/
 	$(if $(CONFIG_UNETD_VXLAN_SUPPORT),$(INSTALL_DATA) $(PKG_BUILD_DIR)/mss-bpf.o $(1)/lib/bpf/mss.o)
+	$(INSTALL_DATA) ./files/unet.uc $(1)/usr/share/ucode/cli/modules
 	$(INSTALL_BIN) ./files/unetd.init $(1)/etc/init.d/unetd
 	$(INSTALL_BIN) ./files/unetd.sh $(1)/lib/netifd/proto
 endef

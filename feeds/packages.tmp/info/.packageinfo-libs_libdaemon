@@ -5,7 +5,7 @@ Version: 0.14-r5
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libdaemon-any
 Section: libs
 Category: Libraries
 Repository: base

@@ -5,7 +5,7 @@ Version: 0.26.5-r1
 Depends: +libc +libnpupnp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupnpp-any
 Section: libs
 Category: Libraries
 Repository: base

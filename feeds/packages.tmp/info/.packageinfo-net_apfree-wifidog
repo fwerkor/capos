@@ -6,7 +6,7 @@ Version: 7.10.2082-r1
 Depends: +libc +zlib +libjson-c +libevent2 +libevent2-openssl +libuci +openssl-util +libnetfilter-queue +conntrack +libmosquitto
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @apfree-wifidog-any
 Section: net
 Category: Network
 Repository: base

@@ -5,7 +5,7 @@ Version: 0.41-r1
 Depends: +libc +perl +perlbase-getopt +perlbase-net +perlbase-socket
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @wakeonlan-any
 Section: net
 Category: Network
 Repository: base

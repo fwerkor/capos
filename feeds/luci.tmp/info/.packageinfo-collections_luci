@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-light +luci-app-package-manager
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-any
 Section: luci
 Category: LuCI
 Repository: base

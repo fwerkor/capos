@@ -6,7 +6,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-chage-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -28,7 +28,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-chfn-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -50,7 +50,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-chgpasswd-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -72,7 +72,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-chpasswd-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -94,7 +94,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-chsh-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -116,7 +116,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-expiry-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -138,7 +138,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-faillog-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -160,7 +160,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-gpasswd-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -182,7 +182,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-groupadd-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -204,7 +204,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-groupdel-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -226,7 +226,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-groupmems-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -248,7 +248,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-groupmod-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -270,7 +270,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-groups-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -292,7 +292,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-grpck-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -314,7 +314,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-grpconv-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -336,7 +336,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-grpunconv-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -358,7 +358,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-lastlog-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -380,7 +380,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-login-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -402,7 +402,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-logoutd-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -424,7 +424,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-newgidmap-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -446,7 +446,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-newgrp-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -468,7 +468,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-newuidmap-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -490,7 +490,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-newusers-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -512,7 +512,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-nologin-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -534,7 +534,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-passwd-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -556,7 +556,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-pwck-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -578,7 +578,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-pwconv-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -600,7 +600,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-pwunconv-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -622,7 +622,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-su-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -644,7 +644,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-useradd-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -666,7 +666,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-userdel-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -688,7 +688,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-usermod-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -710,7 +710,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-vipw-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -732,7 +732,7 @@ Version: 4.8.1-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-utils-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -869,7 +869,7 @@ Version: 4.8.1-r3
 Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-common-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -890,7 +890,7 @@ Version: 4.8.1-r3
 Depends: +libc +shadow-chage +shadow-chfn +shadow-chgpasswd +shadow-chpasswd +shadow-chsh +shadow-expiry +shadow-faillog +shadow-gpasswd +shadow-groupadd +shadow-groupdel +shadow-groupmems +shadow-groupmod +shadow-groups +shadow-grpck +shadow-grpconv +shadow-grpunconv +shadow-lastlog +shadow-login +shadow-logoutd +shadow-newgidmap +shadow-newgrp +shadow-newuidmap +shadow-newusers +shadow-nologin +shadow-passwd +shadow-pwck +shadow-pwconv +shadow-pwunconv +shadow-su +shadow-useradd +shadow-userdel +shadow-usermod +shadow-vipw
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shadow-any
 Section: utils
 Category: Utilities
 Repository: base

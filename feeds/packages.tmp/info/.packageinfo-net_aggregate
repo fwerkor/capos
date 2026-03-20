@@ -6,7 +6,7 @@ Version: 1.6-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @aggregate-any
 Section: net
 Category: Network
 Repository: base

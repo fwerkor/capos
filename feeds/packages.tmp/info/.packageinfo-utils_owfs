@@ -6,7 +6,7 @@ Version: 3.2.4-r2
 Depends: +libc +libow +libfuse +fuse-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @owfs-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -40,7 +40,7 @@ Version: 3.2.4-r2
 Depends: +libc +libow
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @owshell-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -74,7 +74,7 @@ Version: 3.2.4-r2
 Depends: +libc +libow +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @owserver-any
 Section: net
 Category: Network
 Repository: base
@@ -108,7 +108,7 @@ Version: 3.2.4-r2
 Depends: +libc +libow +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @owhttpd-any
 Section: net
 Category: Network
 Repository: base
@@ -142,7 +142,7 @@ Version: 3.2.4-r2
 Depends: +libc +libow +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @owftpd-any
 Section: net
 Category: Network
 Repository: base
@@ -176,7 +176,7 @@ Version: 3.2.4-r2
 Depends: +libc +libpthread +LIBOW_MASTER_USB:libusb-compat +LIBOW_MASTER_W1:kmod-w1
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libow-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -213,7 +213,7 @@ Version: 3.2.4-r2
 Depends: +libc +libow
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libow-capi-any
 Section: libs
 Category: Libraries
 Repository: base

@@ -88,6 +88,14 @@ msgstr ""
 "завантажені з пакетного виконуваного файлу за допомогою statik.<br />За "
 "замовчуванням це значення дорівнює \"\"."
 
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:72
+msgid "Bind addr"
+msgstr "Прив’язана адреса"
+
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:73
+msgid "Bind port"
+msgstr "Порт прив'язки"
+
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:190
 msgid "Collecting data ..."
 msgstr "Збір даних..."
@@ -145,7 +153,7 @@ msgid "HTTP Settings"
 msgstr "Налаштування HTTP"
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:64
-#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:78
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:80
 msgid "HTTP password"
 msgstr "Пароль HTTP"
 
@@ -154,7 +162,7 @@ msgid "HTTP proxy"
 msgstr "Проксі HTTP"
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:63
-#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:77
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:79
 msgid "HTTP user"
 msgstr "Користувач HTTP"
 
@@ -291,15 +299,10 @@ msgid "NOT RUNNING"
 msgstr "НЕ ПРАЦЮЄ"
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:15
-msgid ""
-"OS environments pass to frp for config file template, see <a href=\"https://"
-"github.com/fatedier/frp#configuration-file-template\">frp README</a>"
+msgid "OS environments pass to frp for config file template, see %s."
 msgstr ""
-"Середовища ОС передають до frp для шаблону файлу конфігурації, див. <a "
-"href=\"https://github.com/fatedier/frp#configuration-file-template\">frp "
-"README</a>"
 
-#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:76
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:78
 msgid "Plugin"
 msgstr "Плагін"
 
@@ -314,12 +317,12 @@ msgstr "Протокол"
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:36
 msgid ""
 "Protocol specifies the protocol to use when interacting with the server. "
-"Valid values are \"tcp\", \"kcp\", and \"websocket\".<br />By default, this "
-"value is \"tcp\"."
+"Valid values are \"tcp\", \"kcp\", \"quic\" and \"websocket\".<br />By "
+"default, this value is \"tcp\"."
 msgstr ""
-"Protocol визначає протокол, який використовуватиметься під час взаємодії з "
-"сервером. Дійсні значення: «tcp», «kcp» і «websocket».<br />За умовчанням це "
-"значення «tcp».\"."
+"Протокол визначає протокол, який використовуватиметься під час взаємодії із "
+"сервером. Дійсні значення: \"tcp\", \"kcp\", \"quic\" та \"websocket\".<br /"
+">За замовчуванням це значення — \"tcp\"."
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:210
 msgid "Proxy Settings"
@@ -338,12 +341,12 @@ msgstr "Тип проксі"
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:45
 msgid ""
 "ProxyType specifies the type of this proxy. Valid values include \"tcp\", "
-"\"udp\", \"http\", \"https\", \"stcp\", and \"xtcp\".<br />By default, this "
+"\"udp\", \"http\", \"https\", \"stcp\" and \"xtcp\".<br />By default, this "
 "value is \"tcp\"."
 msgstr ""
-"ProxyType визначає тип цього проксі. Дійсні значення включають \"tcp\", "
-"\"udp\", \"http\", \"https\", \"stcp\" і \"xtcp\".<br />За умовчанням це "
-"значення \"tcp\"."
+"ProxyType визначає тип цього проксі-сервера. Допустимі значення: \"tcp\", "
+"\"udp\", \"http\", \"https\", \"stcp\" та \"xtcp\".<br />За замовчуванням це "
+"значення — \"tcp\"."
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:163
 msgid "RUNNING"
@@ -370,11 +373,11 @@ msgstr "Запустити демон від імені групи"
 msgid "Run daemon as user"
 msgstr "Запустіть демон як користувач"
 
-#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:80
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:82
 msgid "SOCKS5 password"
 msgstr "Пароль SOCKS5"
 
-#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:79
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:81
 msgid "SOCKS5 user"
 msgstr "Користувач SOCKS5"
 
@@ -406,7 +409,7 @@ msgstr ""
 "ServerPort визначає порт для підключення до сервера.<br />За замовчуванням "
 "це значення становить 7000."
 
-#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:72
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:74
 msgid "Sk"
 msgstr "ск"
 
@@ -429,10 +432,11 @@ msgstr "TLS"
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:37
 msgid ""
-"TLSEnable specifies whether or not TLS should be used when communicating "
+"TLS Enable specifies whether or not TLS should be used when communicating "
 "with the server."
 msgstr ""
-"TLSEnable визначає, чи слід використовувати TLS під час зв’язку із сервером."
+"Параметр «Увімкнути TLS» визначає, чи слід використовувати TLS під час "
+"зв’язку із сервером."
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:33
 msgid ""
@@ -468,7 +472,7 @@ msgstr ""
 "ключів для надсилання на сервер. Для успішної авторизації сервер повинен "
 "мати відповідний маркер. <br />За замовчуванням це значення \"\"."
 
-#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:81
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:83
 msgid "Unix domain socket path"
 msgstr "Шлях сокета домену Unix"
 

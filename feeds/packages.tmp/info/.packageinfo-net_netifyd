@@ -5,7 +5,7 @@ Version: 4.4.7-r2
 Depends: +libc +ca-bundle +libatomic +libcurl +libmnl +libnetfilter-conntrack +libpcap +zlib +libpthread +libstdcpp +NETIFYD_WITH_LOCAL_LIBGCRYPT:libgcrypt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @netifyd-any
 Section: net
 Category: Network
 Repository: base

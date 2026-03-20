@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base +xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-xfrpc-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -26,7 +26,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-ar-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -45,7 +45,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-bg-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -64,7 +64,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-bn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -83,7 +83,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-ca-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -102,7 +102,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-cs-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -121,7 +121,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-da-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -140,7 +140,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-de-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -159,7 +159,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-el-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -178,7 +178,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-es-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -197,7 +197,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-fi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -216,7 +216,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-fr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -235,7 +235,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-ga-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -254,7 +254,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-he-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -273,7 +273,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-hi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -292,7 +292,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-hu-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -311,7 +311,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-it-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -330,7 +330,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-ja-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -349,7 +349,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-ko-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -368,7 +368,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-lt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -387,7 +387,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-mr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -406,7 +406,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-ms-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -425,7 +425,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-no-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -444,7 +444,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-nl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -463,7 +463,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-pl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -482,7 +482,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-pt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -501,7 +501,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -520,7 +520,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-ro-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -539,7 +539,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-ru-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -558,7 +558,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-sk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -577,7 +577,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-sv-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -590,13 +590,32 @@ Hidden: 1
 Description:     Translation for luci-app-xfrpc - Svenska (Swedish)
 @@
 
+Package: luci-i18n-xfrpc-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-xfrpc
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-xfrpc-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-xfrpc - ta translation
+Maintainer: Dengfeng Liu <liu_df@qq.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-xfrpc - Tamil (Tamil)
+@@
+
 Package: luci-i18n-xfrpc-tr
 Default: LUCI_LANG_tr||(ALL&&m)
 Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-tr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -615,7 +634,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-uk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -634,7 +653,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-vi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -653,7 +672,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -672,7 +691,7 @@ Version: x
 Depends: +libc luci-app-xfrpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-xfrpc-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base

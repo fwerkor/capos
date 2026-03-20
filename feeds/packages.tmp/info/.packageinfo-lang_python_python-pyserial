@@ -8,7 +8,7 @@ Version: 3.5-r2
 Depends: +libc +python3-light +python3-logging +python3-urllib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pyserial-any
 Section: lang
 Category: Languages
 Repository: base
@@ -31,7 +31,7 @@ Version: 3.5-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pyserial-src-any
 Section: lang
 Category: Languages
 Repository: base

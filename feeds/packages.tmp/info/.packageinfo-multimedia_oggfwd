@@ -6,7 +6,7 @@ Version: 20150412-r2
 Depends: +libc +libpthread +libshout-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @oggfwd-any
 Section: multimedia
 Category: Multimedia
 Repository: base

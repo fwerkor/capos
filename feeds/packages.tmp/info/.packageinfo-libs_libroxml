@@ -5,7 +5,7 @@ Version: 3.0.2-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libroxml-any
 Section: libs
 Category: Libraries
 Repository: base

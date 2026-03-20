@@ -5,7 +5,7 @@ Version: 0.387-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pciids-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -19,12 +19,31 @@ Type: ipkg
 Description: PCI ID list
 @@
 
+Package: pnpids
+Version: 0.387-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @pnpids-any
+Section: utils
+Category: Utilities
+Repository: base
+Title: PnP ID list
+Maintainer: 
+Source: hwdata-0.387.tar.gz
+License: GPL-2.0-or-later  XFree86-1.0
+LicenseFiles: LICENSE
+URL: https://github.com/vcrhonek/hwdata
+Type: ipkg
+Description: PnP ID list
+@@
+
 Package: usbids
 Version: 0.387-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @usbids-any
 Section: utils
 Category: Utilities
 Repository: base

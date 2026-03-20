@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/utils/hplip/Makefile
 Build-Depends: libcups
 
 Package: hplip-common
-Version: 3.23.12-r1
+Version: 3.25.6-r1
 Depends: +libc +libusb-1.0
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @hplip-common-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: HP Linux Imaging and Printing (common files)
 Maintainer: Luiz Angelo Daros de Luca <luizluca@gmail.com>
-Source: hplip-3.23.12.tar.gz
+Source: hplip-3.25.6.tar.gz
 License: GPL-2.0 GPL-2.0-or-later
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:hp:linux_imaging_and_printing_project
@@ -24,17 +24,17 @@ These are common files shared between subpackages
 @@
 
 Package: hplip-sane
-Version: 3.23.12-r1
+Version: 3.25.6-r1
 Depends: +libc +libsane +hplip-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @hplip-sane-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: HP Linux Imaging and Printing (scanner drivers)
 Maintainer: Luiz Angelo Daros de Luca <luizluca@gmail.com>
-Source: hplip-3.23.12.tar.gz
+Source: hplip-3.25.6.tar.gz
 License: GPL-2.0 GPL-2.0-or-later
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:hp:linux_imaging_and_printing_project

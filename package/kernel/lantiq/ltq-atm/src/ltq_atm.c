@@ -1503,17 +1503,10 @@ static inline void clear_priv_data(void)
 		}
 	}
 
-	if ( g_atm_priv_data.tx_skb_base != NULL )
-		kfree(g_atm_priv_data.tx_skb_base);
-
-	if ( g_atm_priv_data.tx_desc_base != NULL )
-		kfree(g_atm_priv_data.tx_desc_base);
-
-	if ( g_atm_priv_data.oam_buf_base != NULL )
-		kfree(g_atm_priv_data.oam_buf_base);
-
-	if ( g_atm_priv_data.oam_desc_base != NULL )
-		kfree(g_atm_priv_data.oam_desc_base);
+	kfree(g_atm_priv_data.tx_skb_base);
+	kfree(g_atm_priv_data.tx_desc_base);
+	kfree(g_atm_priv_data.oam_buf_base);
+	kfree(g_atm_priv_data.oam_desc_base);
 
 	if ( g_atm_priv_data.aal_desc_base != NULL ) {
 		for ( i = 0; i < dma_rx_descriptor_length; i++ ) {
@@ -1522,8 +1515,9 @@ static inline void clear_priv_data(void)
 				dev_kfree_skb_any(skb);
 			}
 		}
-		kfree(g_atm_priv_data.aal_desc_base);
 	}
+
+	kfree(g_atm_priv_data.aal_desc_base);
 }
 
 static inline void init_rx_tables(void)
@@ -1867,7 +1861,7 @@ INIT_PRIV_DATA_FAIL:
 	return ret;
 }
 
-static int ltq_atm_remove(struct platform_device *pdev)
+static void ltq_atm_remove(struct platform_device *pdev)
 {
 	int port_num;
 	struct ltq_atm_ops *ops = platform_get_drvdata(pdev);
@@ -1887,13 +1881,11 @@ static int ltq_atm_remove(struct platform_device *pdev)
 	ops->shutdown();
 
 	clear_priv_data();
-
-	return 0;
 }
 
 static struct platform_driver ltq_atm_driver = {
 	.probe = ltq_atm_probe,
-	.remove = ltq_atm_remove,
+	.remove_new = ltq_atm_remove,
 	.driver = {
 		.name = "atm",
 		.of_match_table = ltq_atm_match,

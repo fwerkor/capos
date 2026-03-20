@@ -5,7 +5,7 @@ Version: 11-r6
 Depends: +libc +zlib +jansson +libopenssl +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libjose-any
 Section: libs
 Category: Extra packages
 Repository: base
@@ -26,7 +26,7 @@ Version: 11-r6
 Depends: +libc +libjose
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @jose-any
 Section: utils
 Category: Extra packages
 Repository: base

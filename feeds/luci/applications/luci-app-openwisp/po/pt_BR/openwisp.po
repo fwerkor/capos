@@ -1,8 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2025-06-25 14:52+0000\n"
-"Last-Translator: Douglas Garda <douglasgarda@gmail.com>\n"
+"PO-Revision-Date: 2026-03-08 17:31+0000\n"
+"Last-Translator: Hosted Weblate user 77007 "
+"<volenski@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "openwrt/luciapplicationsopenwisp/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -10,39 +11,37 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:17
 msgid "Advanced Settings"
-msgstr "Configurações Avançadas"
+msgstr "Configurações avançadas"
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:82
 msgid "Boot Delay"
-msgstr ""
+msgstr "Atraso na inicialização (boot)"
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:100
 msgid "CA Cert"
-msgstr ""
+msgstr "Certificados CA"
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:97
 msgid "CA Path"
-msgstr ""
+msgstr "Caminho CA"
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:12
 msgid ""
 "Configure, start and stop the OpenWISP agent on this device. Read more about "
-"configuration values: <a target='_blank' rel='noopener noreferrer' "
-"href='https://github.com/openwisp/openwisp-config'>https://github.com/"
-"openwisp/openwisp-config</a>"
+"configuration values: %s."
 msgstr ""
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:87
 msgid "Connect Timeout"
-msgstr ""
+msgstr "Tempo limite de conexão"
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:49
 msgid "Consistent Key"
-msgstr ""
+msgstr "Chave consistente (Consistent Key)"
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:29
 msgid "Disabled"
@@ -146,7 +145,7 @@ msgstr ""
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:64
 msgid "Tags"
-msgstr ""
+msgstr "Tags"
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:64
 msgid "Tags applied to this device."
@@ -165,8 +164,7 @@ msgid "The Key of this device in the OpenWISP server."
 msgstr ""
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:33
-msgid ""
-"The URL to the OpenWISP server. Example: https://openwisp2.mynetwork.com"
+msgid "The URL to the OpenWISP server. Example: %s"
 msgstr ""
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:20

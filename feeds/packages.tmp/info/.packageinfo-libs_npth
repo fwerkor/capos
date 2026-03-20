@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/libs/npth/Makefile
 
 Package: libnpth
-Version: 1.6-r1
+Version: 1.8-r1
 Depends: +libc +libgpg-error
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libnpth-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: The New GNU Portable Threads Library
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: npth-1.6.tar.bz2
+Source: npth-1.8.tar.bz2
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING.LIB
 URL: https://gnupg.org/software/npth/index.html

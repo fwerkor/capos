@@ -6,7 +6,7 @@ Version: 1.7-r1
 Depends: +libc +AIRCRACK_NG_HWLOC:libhwloc +libpcap +libpcre2 +libpthread +libstdcpp +AIRCRACK_NG_OPENSSL:libopenssl +AIRCRACK_NG_GCRYPT:libgcrypt +AIRCRACK_NG_SQLITE3:libsqlite3 +libnl-core +libnl-genl +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @aircrack-ng-any
 Section: net
 Category: Network
 Repository: base
@@ -30,7 +30,7 @@ Version: 1.7-r1
 Depends: +libc +wireless-tools +ethtool +procps-ng +CONFIG_PCI_SUPPORT:pciutils +CONFIG_USB_SUPPORT:usbutils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @airmon-ng-any
 Section: net
 Category: Network
 Repository: base

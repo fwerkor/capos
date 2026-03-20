@@ -6,12 +6,12 @@ Version: 1.8.0-r1
 Depends: +libc +glib2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @json-glib-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: JSON GLib Library
-Maintainer: Sebastian Kemper <sebastian_ml@gmx.net>
+Maintainer: 
 Source: json-glib-1.8.0.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING

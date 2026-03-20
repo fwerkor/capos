@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/net/lora-gateway-hal/Makefile
 
 Package: libloragw
-Version: 5.0.1-r2
+Version: 5.0.1-r3
 Depends: +libc +kmod-spi-dev @(!PACKAGE_lora-picogw-hal)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libloragw-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -24,11 +24,11 @@ Config:
 
 Package: libloragw-tests
 Submenu: LoRaWAN
-Version: 5.0.1-r2
+Version: 5.0.1-r3
 Depends: +libc +libloragw
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libloragw-tests-any
 Section: net
 Category: Network
 Repository: base
@@ -42,11 +42,11 @@ Description: Test programs for libloragw to check functionality
 
 Package: libloragw-utils
 Submenu: LoRaWAN
-Version: 5.0.1-r2
+Version: 5.0.1-r3
 Depends: +libc +libloragw
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libloragw-utils-any
 Section: net
 Category: Network
 Repository: base

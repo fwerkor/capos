@@ -5,7 +5,7 @@ Version: 17.0-r1
 Depends: +libc +libsndfile +libltdl +alsa-lib +libopenssl +libcap +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full
 Conflicts: pulseaudio-daemon-avahi
 Menu-Depends: 
-Provides: pulseaudio
+Provides: @pulseaudio-daemon-any pulseaudio
 Build-Variant: noavahi
 Section: sound
 Category: Sound
@@ -27,7 +27,7 @@ Version: 17.0-r1
 Depends: +libc +libsndfile +libltdl +alsa-lib +libopenssl +libcap +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +dbus +libavahi-client +sbc +bluez-daemon
 Conflicts: 
 Menu-Depends: 
-Provides: pulseaudio
+Provides: @pulseaudio-daemon-avahi-any pulseaudio
 Build-Variant: avahi
 Section: sound
 Category: Sound
@@ -50,7 +50,7 @@ Version: 17.0-r1
 Depends: +libc +libsndfile pulseaudio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pulseaudio-tools-any
 Build-Variant: noavahi
 Section: sound
 Category: Sound
@@ -71,7 +71,7 @@ Version: 17.0-r1
 Depends: +libc pulseaudio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pulseaudio-profiles-any
 Section: sound
 Category: Sound
 Repository: base

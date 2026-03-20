@@ -8,7 +8,7 @@ Version: 8.6.14-r1
 Depends: +libc +libpthread +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tcl-any
 Section: lang
 Category: Languages
 Repository: base

@@ -6,7 +6,7 @@ Version: 1.28.7-r1
 Depends: +libc +python3-light +python3-decimal +python3-logging +python3-botocore +python3-jmespath +python3-s3transfer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-boto3-any
 Section: lang
 Category: Languages
 Repository: base
@@ -28,7 +28,7 @@ Version: 1.28.7-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-boto3-src-any
 Section: lang
 Category: Languages
 Repository: base

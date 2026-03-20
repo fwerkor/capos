@@ -5,7 +5,7 @@ Version: 4.3.0-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libcoap-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -26,7 +26,7 @@ Version: 4.3.0-r2
 Depends: +libc +libcoap
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @coap-client-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -45,7 +45,7 @@ Version: 4.3.0-r2
 Depends: +libc +libcoap
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @coap-server-any
 Section: net
 Category: Network
 Repository: base

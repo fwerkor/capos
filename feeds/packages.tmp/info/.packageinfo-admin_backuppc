@@ -5,7 +5,7 @@ Version: 3.3.2-r3
 Depends: +libc +perl +perl-www +perl-cgi +perlbase-digest +perlbase-compress +perlbase-archive +perlbase-data +perlbase-storable +perlbase-getopt +perl-file-rsyncp +openssh-client +tar +bzip2 +samba4-client +rsync +iputils-ping
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @backuppc-any
 Section: admin
 Category: Administration
 Repository: base

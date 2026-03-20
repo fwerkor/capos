@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/net/knxd/Makefile
 Build-Depends: !USE_GLIBC:argp-standalone
 
 Package: knxd
-Version: 0.14.66-r1
-Depends: +libc +libusb-1.0 +libev +libfmt
+Version: 0.14.71-r2
+Depends: +libc +libusb-1.0 +libev +libfmt +libinih
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @knxd-any
 Section: net
 Category: Network
 Repository: base
 Title: EIB KNX daemon
 Maintainer: Othmar Truniger <github@truniger.ch>
-Source: knxd-0.14.66.tar.gz
+Source: knxd-0.14.71.tar.gz
 License: GPL-2.0-or-later
 LicenseFiles: LICENSE
 Type: ipkg

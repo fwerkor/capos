@@ -1,0 +1,27 @@
+Source-Makefile: feeds/packages/utils/micro/Makefile
+Build-Depends: golang/host
+
+Package: micro
+Submenu: Editors
+Version: 2.0.14-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: @micro-any
+Section: utils
+Category: Utilities
+Repository: base
+Title: Modern and intuitive terminal-based text editor
+Maintainer: Gregory Gullin <garuwex@gmail.com>
+Source: micro-2.0.14.tar.gz
+License: MIT
+LicenseFiles: LICENSE LICENSE-THIRD-PARTY
+URL: https://micro-editor.github.io/
+Type: ipkg
+Description:   micro is a terminal-based text editor that aims to be easy to use and intuitive,
+  while also taking advantage of the capabilities of modern terminals.
+  It comes as a single, batteries-included, static binary with no dependencies;
+  you can download and use it right now!
+@@
+
+

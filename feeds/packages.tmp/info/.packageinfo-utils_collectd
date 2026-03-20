@@ -7,7 +7,7 @@ Version: 5.12.0-r54
 Depends: +libc +libpthread +zlib +libltdl +jshn +PACKAGE_collectd-mod-lua:liblua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -44,7 +44,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-apache:libcurl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-apache-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -64,7 +64,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-apcups-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -84,7 +84,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-ascent:libcurl +PACKAGE_collectd-mod-ascent:libxml2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-ascent-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -104,7 +104,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-bind:libcurl +PACKAGE_collectd-mod-bind:libxml2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-bind-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -124,7 +124,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-chrony-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -144,7 +144,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-conntrack-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -164,7 +164,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-contextswitch-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -184,7 +184,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-cpu-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -204,7 +204,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-cpufreq-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -224,7 +224,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-csv-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -244,7 +244,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-curl:libcurl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-curl-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -264,7 +264,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-df-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -284,7 +284,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-dhcpleases-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -304,7 +304,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-disk:libudev
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-disk-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -324,7 +324,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-dns:libpcap
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-dns-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -344,7 +344,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-email-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -364,7 +364,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-entropy-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -384,7 +384,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-ethstat-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -404,7 +404,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-exec-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -424,7 +424,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-filecount-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -444,7 +444,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-fscache-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -464,7 +464,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-interface-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -484,7 +484,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-ipstatistics-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -504,7 +504,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-iptables:iptables +libip4tc +libip6tc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-iptables-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -524,7 +524,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-irq-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -544,7 +544,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-iwinfo:libiwinfo
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-iwinfo-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -564,7 +564,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-load-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -584,7 +584,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-logfile-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -604,7 +604,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-lua:liblua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-lua-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -624,7 +624,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-match-empty-counter-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -644,7 +644,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-match-hashed-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -664,7 +664,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-match-regex-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -684,7 +684,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-match-timediff-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -704,7 +704,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-match-value-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -724,7 +724,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-mysql:libmysqlclient-r
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-mysql-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -744,7 +744,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-memory-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -764,7 +764,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-modbus:libmodbus
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-modbus-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -784,7 +784,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-mqtt:libmosquitto
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-mqtt-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -804,7 +804,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-netlink:libmnl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-netlink-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -824,7 +824,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_COLLECTD_ENCRYPTED_NETWORK:libgcrypt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-network-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -844,7 +844,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-nginx:libcurl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-nginx-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -864,7 +864,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-ntpd-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -884,7 +884,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-nut:nut-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-nut-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -904,7 +904,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-olsrd-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -924,7 +924,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-openvpn-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -944,7 +944,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-ping:liboping
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-ping-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -964,7 +964,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-postgresql:libpq
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-postgresql-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -984,7 +984,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-powerdns-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1004,7 +1004,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-processes:libmnl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-processes-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1024,7 +1024,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-protocols-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1044,7 +1044,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-routeros:librouteros
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-routeros-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1064,7 +1064,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-rrdtool:librrd1
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-rrdtool-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1084,7 +1084,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-sensors:lm-sensors
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-sensors-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1104,7 +1104,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-smart:libatasmart
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-smart-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1124,7 +1124,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-snmp:libnetsnmp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-snmp-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1144,7 +1144,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-snmp6-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1164,7 +1164,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-statsd-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1184,7 +1184,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-swap-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1204,7 +1204,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-syslog-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1224,7 +1224,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-tail-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1244,7 +1244,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-tail-csv-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1264,7 +1264,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-table-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1284,7 +1284,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-teamspeak2-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1304,7 +1304,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-ted-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1324,7 +1324,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-tcpconns-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1344,7 +1344,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-thermal-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1364,7 +1364,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-threshold-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1384,7 +1384,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd @NAND_SUPPORT
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-ubi-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1404,7 +1404,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-unixsock-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1424,7 +1424,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-uptime-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1444,7 +1444,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-users-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1464,7 +1464,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-vmem-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1484,7 +1484,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-wireless-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1504,7 +1504,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-write-graphite:libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-write-graphite-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1524,7 +1524,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-write-http:libcurl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-write-http-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1544,7 +1544,7 @@ Version: 5.12.0-r54
 Depends: +libc collectd +PACKAGE_collectd-mod-write-prometheus:libprotobuf-c +PACKAGE_collectd-mod-write-prometheus:libmicrohttpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-write-prometheus-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1564,7 +1564,7 @@ Version: 5.12.0-r54
 Depends: +libc +PACKAGE_collectd-mod-sqm:collectd-mod-exec
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-sqm-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -1584,7 +1584,7 @@ Version: 5.12.0-r54
 Depends: +libc @ltq-dsl-app +PACKAGE_collectd-mod-ltq-dsl:collectd-mod-lua +libubus-lua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @collectd-mod-ltq-dsl-any
 Section: utils
 Category: Utilities
 Repository: base

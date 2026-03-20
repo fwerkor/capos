@@ -5,7 +5,7 @@ Version: 1.31-r2
 Depends: +libc +kmod-nf-ipvs +libnl-genl +libpopt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ipvsadm-any
 Section: net
 Category: Network
 Repository: base

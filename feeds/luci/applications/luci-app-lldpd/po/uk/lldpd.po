@@ -11,11 +11,11 @@ msgstr ""
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Weblate 5.12-dev\n"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:374
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:372
 msgid "1A"
 msgstr "1А"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:853
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:852
 msgctxt "lldpd Custom TLV"
 msgid "Add Custom TLV"
 msgstr "Додати спеціальний TLV"
@@ -37,7 +37,7 @@ msgstr "Вік"
 msgid "Ageout count"
 msgstr "Підрахунок старості"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:675
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:674
 msgid ""
 "Allows an agent to control the propagation of LLDPDUs. By default, the MAC "
 "address %s is used and limits the propagation of the LLDPDU to the nearest "
@@ -47,7 +47,7 @@ msgstr ""
 "використовується MAC-адреса %s і обмежує розповсюдження LLDPDU до "
 "найближчого мосту."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:291
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:289
 msgid "Altitude"
 msgstr "Висота"
 
@@ -59,11 +59,11 @@ msgstr "Основні налаштування"
 msgid "Behaviour"
 msgstr "Поведінка"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:358
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:356
 msgid "Building"
 msgstr "Будівля"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:717
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:716
 msgid ""
 "By default, LLDP packets are sent when there is a peer speaking LLDP "
 "detected or when there is no peer at all."
@@ -71,15 +71,15 @@ msgstr ""
 "За замовчуванням пакети LLDP надсилаються, коли виявлено одноранговий "
 "розмовний LLDP або коли однорангового вузла немає взагалі."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:728
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:727
 msgid "CDP"
 msgstr "CDP"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:738
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:737
 msgid "CDP version"
 msgstr "Версія CDP"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:740
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:739
 msgid "CDPv1 and CDPv2"
 msgstr "CDPv1 і CDPv2"
 
@@ -101,21 +101,21 @@ msgstr "Не може мати одночасно інтерфейс %s і йо�
 msgid "Capabilities"
 msgstr "Можливості"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:338
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:336
 msgid "City"
 msgstr "Місто"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:206
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:204
 msgid "Civic address"
 msgstr "Цивільна адреса"
 
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:46
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:65
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:613
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:614
 msgid "Collecting data..."
 msgstr "Збір даних..."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:588
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:587
 msgid "Communication Device Endpoints (Class III)"
 msgstr "Кінцеві точки комунікаційного пристрою (клас III)"
 
@@ -123,27 +123,27 @@ msgstr "Кінцеві точки комунікаційного пристро�
 msgid "Content"
 msgstr "Зміст"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:205
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:203
 msgid "Coordinate based"
 msgstr "На основі координат"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:321
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:319
 msgid "Country"
 msgstr "Країна"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:845
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:844
 msgid "Custom TLV"
 msgstr "Спеціальний TLV"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:307
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:305
 msgid "Datum"
 msgstr "Даум"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:847
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:846
 msgid "Default insert behaviour is add."
 msgstr "Типовою поведінкою вставки є додавання."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:439
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:437
 msgid ""
 "Defaults to the first IPv4 and IPv6. If an exact IP address is provided, it "
 "is used as a management address without any check. To blacklist IPv6 "
@@ -161,7 +161,7 @@ msgstr "Видалити підрахунок"
 msgid "Description"
 msgstr "Опис"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:483
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:482
 msgid ""
 "Determines the transmitted packet TTL (== this value * transmit delay). The "
 "default value is 4 &therefore; the default TTL is 120 seconds."
@@ -170,11 +170,11 @@ msgstr ""
 "Значення за замовчуванням — 4, отже; TTL за замовчуванням становить 120 "
 "секунд."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:638
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:637
 msgid "Disable LLDP-MED inventory TLV transmission"
 msgstr "Вимкнути передачу TLV інвентаризації LLDP-MED"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:647
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:646
 msgid "Disable advertising of kernel release, version and machine"
 msgstr "Вимкнути рекламу випуску ядра, версії та машини"
 
@@ -182,7 +182,7 @@ msgstr "Вимкнути рекламу випуску ядра, версії т
 msgid "Disabled"
 msgstr "Відключено"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:619
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:620
 msgid "Discovered Neighbors"
 msgstr "Виявлені сусіди"
 
@@ -194,47 +194,47 @@ msgstr "Виявлене шасі"
 msgid "Discovered port"
 msgstr "Відкритий порт"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:788
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:787
 msgid "EDP"
 msgstr "EDP"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:207
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:205
 msgid "ELIN"
 msgstr "ELIN"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:389
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:387
 msgid "ELIN Address"
 msgstr "ELIN Адреса"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:364
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:362
 msgid "Empire State Bldg"
 msgstr "Імперія Державна буд"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:730
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:729
 msgid "Enable CDP"
 msgstr "Увімкнути CDP"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:790
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:789
 msgid "Enable EDP"
 msgstr "Увімкнути EDP"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:770
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:769
 msgid "Enable FDP"
 msgstr "Увімкнути FDP"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:708
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:707
 msgid "Enable LLDP"
 msgstr "Увімкнути LLDP"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:816
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:815
 msgid "Enable SONMP"
 msgstr "Увімкніть SONMP"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:89
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:87
 msgid "Enable service"
 msgstr "Увімкнути службу"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:731
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:730
 msgid ""
 "Enable the support of CDP protocol to deal with Cisco routers that do not "
 "speak LLDP"
@@ -242,7 +242,7 @@ msgstr ""
 "Увімкніть підтримку протоколу CDP для роботи з маршрутизаторами Cisco, які "
 "не розмовляють LLDP"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:791
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:790
 msgid ""
 "Enable the support of EDP protocol to deal with Extreme routers and switches "
 "that do not speak LLDP."
@@ -250,7 +250,7 @@ msgstr ""
 "Увімкніть підтримку протоколу EDP для роботи з Extreme маршрутизаторами та "
 "комутаторами, які не розмовляють LLDP."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:771
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:770
 msgid ""
 "Enable the support of FDP protocol to deal with Foundry routers that do not "
 "speak LLDP"
@@ -258,7 +258,7 @@ msgstr ""
 "Увімкніть підтримку протоколу FDP для роботи з маршрутизаторами Foundry, які "
 "не розмовляють LLDP"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:817
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:816
 msgid ""
 "Enable the support of SONMP protocol to deal with Nortel routers and "
 "switches that do not speak LLDP."
@@ -266,7 +266,7 @@ msgstr ""
 "Увімкніть підтримку протоколу SONMP для роботи з маршрутизаторами та "
 "комутаторами Nortel, які не розмовляють LLDP."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:715
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:714
 msgid ""
 "Even when there is no LLDP peer detected but there is a peer speaking "
 "another protocol detected."
@@ -274,7 +274,7 @@ msgstr ""
 "Навіть якщо одноранговий вузол LLDP не виявлено, але є одноранговий вузол, "
 "який розмовляє з іншим виявленим протоколом."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:768
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:767
 msgid "FDP"
 msgstr "FDP"
 
@@ -282,23 +282,23 @@ msgstr "FDP"
 msgid "Filter"
 msgstr "Фільтр"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:663
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:662
 msgid "Force port ID subtype"
 msgstr "Примусовий підтип ідентифікатора порту"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:754
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:753
 msgid "Force sending CDPv2 packets"
 msgstr "Примусове надсилання пакетів CDPv2"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:714
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:713
 msgid "Force sending LLDP packets"
 msgstr "Примусове надсилання пакетів LLDP"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:586
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:585
 msgid "Generic Endpoint (Class I)"
 msgstr "Загальна кінцева точка (клас I)"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:344
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:342
 msgid "Gotham"
 msgstr "Готем"
 
@@ -310,7 +310,7 @@ msgstr "Надати доступ до конфігурації LLDP"
 msgid "Grant access for LLDP status information"
 msgstr "Надати доступ до інформації про статус LLDP"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:203
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:201
 msgid "Host location type"
 msgstr "Тип розташування хоста"
 
@@ -334,15 +334,15 @@ msgstr "Вхідні"
 msgid "Insert count"
 msgstr "Вставте кількість"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:667
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:666
 msgid "Interface MAC address"
 msgstr "MAC-адреса інтерфейсу"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:620
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:621
 msgid "Interface Statistics"
 msgstr "Статистика інтерфейсу"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:668
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:667
 #: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:112
 msgid "Interface name"
 msgstr "Назва інтерфейсу"
@@ -351,7 +351,7 @@ msgstr "Назва інтерфейсу"
 msgid "Invalid TLV string format"
 msgstr "Недійсний формат рядка TLV"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:648
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:647
 msgid ""
 "Kernel name (ie: Linux) will still be shared, and Inventory software version "
 "will be set to %s."
@@ -359,32 +359,32 @@ msgstr ""
 "Ім’я ядра (тобто: Linux) все одно буде надано спільний доступ, а версія "
 "програмного забезпечення інвентаризації буде встановлена на %s."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:706
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:705
 #: applications/luci-app-lldpd/root/usr/share/luci/menu.d/luci-app-lldpd.json:3
 msgid "LLDP"
 msgstr "LLDP"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:603
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:604
 msgid "LLDP Status"
 msgstr "Статус LLDP"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:584
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:583
 msgid "LLDP-MED device class"
 msgstr "Клас пристрою LLDP-MED"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:626
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:625
 msgid "LLDP-MED fast-start"
 msgstr "Швидкий старт LLDP-MED"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:630
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:629
 msgid "LLDP-MED fast-start tx-interval"
 msgstr "Інтервал передачі швидкого старту LLDP-MED"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:595
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:594
 msgid "LLDP-MED policy"
 msgstr "Політика LLDP-MED"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:674
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:673
 msgid "LLDPDU destination MAC"
 msgstr "MAC призначення LLDPDU"
 
@@ -396,7 +396,7 @@ msgstr "Налаштування LLDPd"
 msgid "LLDPd is an implementation of IEEE 802.1ab"
 msgstr "LLDPd є реалізацією IEEE 802.1ab"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:639
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:638
 msgid ""
 "LLDPd will still receive (and publish using SNMP if enabled) those LLDP-MED "
 "TLV but will not send them. Use this option if you do not want to transmit "
@@ -407,15 +407,15 @@ msgstr ""
 "параметр, якщо ви не хочете передавати конфіденційну інформацію, наприклад "
 "серійні номери."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:504
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:503
 msgid "LLDPd won't send any frames; only listen to neighbors."
 msgstr "LLDPd не надсилатиме жодних кадрів; слухати тільки сусідів."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:257
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:255
 msgid "Latitude"
 msgstr "Широта"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:608
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:609
 msgid "Local Chassis"
 msgstr "Місцеве шасі"
 
@@ -428,7 +428,7 @@ msgstr "Місцевий ID"
 msgid "Local interface"
 msgstr "Локальний інтерфейс"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:273
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:271
 msgid "Longitude"
 msgstr "Довгота"
 
@@ -440,7 +440,7 @@ msgstr "MAC-адреса"
 msgid "MFS"
 msgstr "MFS"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:354
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:352
 msgid "Main Street"
 msgstr "Головна вулиця"
 
@@ -448,23 +448,23 @@ msgstr "Головна вулиця"
 msgid "Management IP(s)"
 msgstr "IP-адреси керування"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:587
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:586
 msgid "Media Endpoint (Class II)"
 msgstr "Кінцева точка медіа (клас II)"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:476
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:475
 msgid "Must be a greater than zero number optionally suffixed with \"ms\""
 msgstr "Число має бути більше нуля з суфіксом \"ms\""
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:495
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:494
 msgid "Must be a number"
 msgstr "Має бути число"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:246
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:244
 msgid "Must contain: 'coordinate ...', 'address ...' or 'elin ...'"
 msgstr "Має містити: «координати ...», «адреса ...» або «elin ...»"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:620
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:619
 msgid "Must start: application ..."
 msgstr "Треба почати: додаток ..."
 
@@ -474,19 +474,19 @@ msgstr "Треба почати: додаток ..."
 msgid "Name"
 msgstr "Ім'я"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:589
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:588
 msgid "Network Connectivity Device (Class IV)"
 msgstr "Пристрій підключення до мережі (клас IV)"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:526
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:524
 msgid "Network IO"
 msgstr "Мережа IO"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:542
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:540
 msgid "Network IO for chassis ID"
 msgstr "Мережа IO для ідентифікатора шасі"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:855
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:854
 msgid "Network Interface(s)"
 msgstr "Мережеві інтерфейси"
 
@@ -494,13 +494,13 @@ msgstr "Мережеві інтерфейси"
 msgid "Network Interfaces"
 msgstr "Мережеві інтерфейси"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:562
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:592
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:596
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:563
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:593
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:597
 msgid "No data to display"
 msgstr "Немає даних для відображення"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:368
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:366
 msgid "Number"
 msgstr "Номер"
 
@@ -512,7 +512,7 @@ msgstr "OUI CSV"
 msgid "On this page you may configure LLDPd parameters."
 msgstr "На цій сторінці ви можете налаштувати параметри LLDPd."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:741
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:740
 msgid "Only CDPv2"
 msgstr "Тільки CDPv2"
 
@@ -520,14 +520,14 @@ msgstr "Тільки CDPv2"
 msgid "Outgoing"
 msgstr "Вихідний"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:117
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:124
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:401
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:413
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:115
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:122
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:399
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:411
 msgid "Override %s."
 msgstr "Перевизначити %s."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:204
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:202
 msgid "Override the announced location of the host."
 msgstr "Замінити оголошене місцезнаходження хоста."
 
@@ -543,7 +543,7 @@ msgstr "Тип ідентифікатора порту"
 msgid "Port description"
 msgstr "Опис порту"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:378
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:376
 msgid "Post-code"
 msgstr "Поштовий індекс"
 
@@ -560,17 +560,17 @@ msgstr "Підтримка протоколів"
 msgid "Raw"
 msgstr "Сирий"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:226
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:224
 msgid "Raw config string sent to lldpd, starting: [coordinate|address|elin]"
 msgstr ""
 "Необроблений рядок конфігурації, надісланий до lldpd, починаючи з: "
 "[координата|адреса|elin]"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:225
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:223
 msgid "Raw location config"
 msgstr "Необроблена конфігурація розташування"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:503
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:502
 msgid "Receive-only mode"
 msgstr "Режим лише отримання"
 
@@ -590,11 +590,11 @@ msgstr "Тільки Rx"
 msgid "Rx unrecognized"
 msgstr "Rx не розпізнано"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:573
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:572
 msgid "SNMP agentX socket path"
 msgstr "Шлях сокету SNMP agentX"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:814
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:813
 msgid "SONMP (NTDP, NDP, BNMP, BDP)"
 msgstr "SONMP (NTDP, NDP, BNMP, BDP)"
 
@@ -602,20 +602,20 @@ msgstr "SONMP (NTDP, NDP, BNMP, BDP)"
 msgid "See syntax <a %s>here</a>."
 msgstr "Перегляньте синтаксис <a %s>тут</a>."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:747
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:746
 msgid "Send CDP packets even if no CDP peer detected"
 msgstr "Надсилайте пакети CDP, навіть якщо одноранговий вузол CDP не виявлено"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:798
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:797
 msgid "Send EDP packets even if no EDP peer detected"
 msgstr ""
 "Надсилайте пакети EDP, навіть якщо одноранговий пристрій EDP не виявлено"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:778
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:777
 msgid "Send FDP packets even if no FDP peer detected"
 msgstr "Надсилайте пакети FDP, навіть якщо одноранговий FDP не виявлено"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:824
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:823
 msgid "Send SONMP packets even if no SONMP peer detected"
 msgstr ""
 "Надсилайте пакети SONMP, навіть якщо одноранговий вузол SONMP не виявлено"
@@ -624,11 +624,11 @@ msgstr ""
 msgid "Settings"
 msgstr "Налаштування"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:655
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:654
 msgid "Specify the behaviour when detecting multiple neighbors"
 msgstr "Укажіть поведінку під час виявлення кількох сусідів"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:527
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:525
 msgid ""
 "Specify which interface (not) to listen upon and send LLDPDU from. Absent "
 "any value, LLDPd uses all available physical interfaces."
@@ -636,7 +636,7 @@ msgstr ""
 "Укажіть, який інтерфейс (не) слухати та надсилати LLDPDU. За відсутності "
 "будь-якого значення LLDPd використовує всі доступні фізичні інтерфейси."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:543
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:541
 msgid ""
 "Specify which interfaces (not) to use for computing chassis ID. Absent any "
 "value, all interfaces are considered. LLDPd takes the first MAC address from "
@@ -650,7 +650,7 @@ msgstr ""
 msgid "Status"
 msgstr "Статус"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:348
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:346
 msgid "Street"
 msgstr "вул"
 
@@ -658,35 +658,35 @@ msgstr "вул"
 msgid "Subtype"
 msgstr "Підтип"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:468
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:467
 msgid "Suffix %s for millisecond values."
 msgstr "Суфікс %s для значень у мілісекундах."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:412
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:410
 msgid "System capabilities"
 msgstr "Можливості системи"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:406
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:404
 msgid "System capability advertisements"
 msgstr "Оголошення можливостей системи"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:116
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:114
 msgid "System description"
 msgstr "Опис системи"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:123
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:121
 msgid "System hostname"
 msgstr "Ім'я хоста системи"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:438
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:436
 msgid "System management IO"
 msgstr "Системне управління IO"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:431
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:429
 msgid "System management IO advertisements"
 msgstr "Оголошення IO керування системою"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:400
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:398
 msgid "System platform description"
 msgstr "Опис платформи системи"
 
@@ -694,7 +694,7 @@ msgstr "Опис платформи системи"
 msgid "TLV"
 msgstr "TLV"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:846
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:845
 msgid ""
 "TLV that lack network interfaces here are sent according to <code>interface "
 "pattern</code> (Network IO under Network Interfaces)."
@@ -706,27 +706,27 @@ msgstr ""
 msgid "TTL"
 msgstr "TTL"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:402
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:400
 msgid "The default description is the kernel name (Linux)."
 msgstr "Описом за замовчуванням є назва ядра (Linux)."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:656
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:655
 msgid "The default filter is 15. Refer to &quot;FILTERING NEIGHBORS&quot;."
 msgstr ""
 "Стандартним фільтром є 15. Зверніться до &quot;ФІЛЬТРУВАННЯ СУСІДІВ&quot;."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:414
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:412
 msgid "The default is derived from kernel information."
 msgstr "За замовчуванням отримано з інформації ядра."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:465
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:464
 msgid ""
 "The delay between transmissions of LLDP PDU. The default value is 30 seconds."
 msgstr ""
 "Затримка між передачами LLDP PDU. Значення за замовчуванням становить 30 "
 "секунд."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:604
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/status.js:605
 msgid ""
 "This page allows you to see discovered LLDP neighbors, local interfaces "
 "statistics and local chassis information."
@@ -734,19 +734,19 @@ msgstr ""
 "На цій сторінці можна переглянути виявлені сусіди LLDP, статистику локальних "
 "інтерфейсів та інформацію про локальне шасі."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:464
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:463
 msgid "Transmit delay"
 msgstr "Затримка передачі"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:482
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:481
 msgid "Transmit hold value"
 msgstr "Значення утримання передачі"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:497
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:496
 msgid "Transmit hold value must be greater than 0"
 msgstr "Значення утримання передачі має бути більше 0"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:327
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:325
 msgid "Two character CC required"
 msgstr "Потрібні два символи CC"
 
@@ -767,7 +767,7 @@ msgstr "Тільки Tx"
 msgid "Unknown"
 msgstr "Невідомий"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:574
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:573
 msgid ""
 "When set, LLDPd enables an SNMP subagent using AgentX protocol. This enables "
 "information about other systems through SNMP."
@@ -775,7 +775,7 @@ msgstr ""
 "Якщо встановлено, LLDPd вмикає субагент SNMP за допомогою протоколу AgentX. "
 "Це дозволяє отримати інформацію про інші системи через SNMP."
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:664
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:663
 msgid ""
 "With this option, you can force the port identifier to be the interface name "
 "or the MAC address."
@@ -815,14 +815,14 @@ msgstr "вести лише один протокол"
 msgid "replace"
 msgstr "замінити"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:296
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:294
 msgid "valid syntax: %f .. %f [mf]"
 msgstr "дійсний синтаксис: %f .. %f [mf]"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:278
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:276
 msgid "valid syntax: 0 .. 180.000[E|W]"
 msgstr "дійсний синтаксис: 0 .. 180.000[E|W]"
 
-#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:262
+#: applications/luci-app-lldpd/htdocs/luci-static/resources/view/lldpd/config.js:260
 msgid "valid syntax: 0 .. 90.000[N|S]"
 msgstr "дійсний синтаксис: 0 .. 90.000[N|S]"

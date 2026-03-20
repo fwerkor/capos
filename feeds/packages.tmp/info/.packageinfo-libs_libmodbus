@@ -5,7 +5,7 @@ Version: 3.1.8-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libmodbus-any
 Section: libs
 Category: Libraries
 Repository: base

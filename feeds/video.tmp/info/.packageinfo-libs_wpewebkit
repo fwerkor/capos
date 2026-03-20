@@ -1,0 +1,71 @@
+Source-Makefile: feeds/video/libs/wpewebkit/Makefile
+Build-Depends: unifdef/host ruby/host
+
+Package: libwpewebkit
+Version: 2.50.1-r1
+Depends: +libc +bubblewrap +glib2 +gst1-mod-opengl +harfbuzz +icu-full-data +libepoxy +libgcrypt +libgst1allocators +libgst1app +libgst1audio +libgst1fft +libgst1gl +libgst1pbutils +libgst1tag +libgst1transcoder +libgst1video +libinput +libmanette +libjpeg +libpng +libseccomp +libsoup3 +libsqlite3 +libtasn1 +libudev +libwayland +libwebp +libwpe +libxml2 +libxslt +zlib @(arm_v7||i386||i686||ARCH_64BIT)
+Conflicts: 
+Menu-Depends: 
+Provides: @libwpewebkit-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: WPEWebKit Library
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: wpewebkit-2.50.1.tar.xz
+License: LGPL-2.1-or-later BSD-2-Clause
+LicenseFiles: Source/WebCore/LICENSE-Apple Source/Webcore/LICENSE-LGPL-2.1
+URL: https://wpewebkit.org
+Type: ipkg
+Description:  WebKitGTK is a full-featured port of the WebKit rendering engine,
+ suitable for projects requiring any kind of web integration, from
+ hybrid HTML/CSS applications to full-fledged web browsers.
+@@
+
+Package: wpewebkit-driver
+Version: 2.50.1-r1
+Depends: +libc +libwpewebkit
+Conflicts: 
+Menu-Depends: 
+Provides: @wpewebkit-driver-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: WebDriver service implementation for WPE WebKit
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: wpewebkit-2.50.1.tar.xz
+License: LGPL-2.1-or-later BSD-2-Clause
+LicenseFiles: Source/WebCore/LICENSE-Apple Source/Webcore/LICENSE-LGPL-2.1
+URL: https://wpewebkit.org
+Type: ipkg
+Description:  WebDriver is an automation API to control a web browser. It allows the
+ user to create automated tests for web applications independently of the
+ browser and platform.
+
+ The WebKitWebDriver binary provides the WebDriver service implementation
+ for WebKitGTK. It works as a server, processing client requests to spawn
+ and control the web browser. This driver is not tied to any specific
+ browser and can be used with any WebKitGTK-based browser, but it uses
+ MiniBrowser as the default.
+@@
+
+Package: wpewebkit-minibrowser
+Version: 2.50.1-r1
+Depends: +libc +libwpewebkit +wpebackend-fdo
+Conflicts: 
+Menu-Depends: 
+Provides: @wpewebkit-minibrowser-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: WPE WebKit Mini Browser
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: wpewebkit-2.50.1.tar.xz
+License: LGPL-2.1-or-later BSD-2-Clause
+LicenseFiles: Source/WebCore/LICENSE-Apple Source/Webcore/LICENSE-LGPL-2.1
+URL: https://wpewebkit.org/
+Type: ipkg
+Description:  Minimalistic Web browser based on WPE WebKit.
+@@
+
+

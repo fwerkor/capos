@@ -1,17 +1,18 @@
 Source-Makefile: feeds/packages/libs/libdrm/Makefile
 
 Package: libdrm
-Version: 2.4.120-r1
-Depends: +libc +LIBDRM_INTEL:libpciaccess
+Submenu: Video
+Version: 2.4.123-r2
+Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libdrm-any
 Section: libs
 Category: Libraries
 Repository: base
-Title: libdrm
+Title: libdrm common library
 Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
-Source: libdrm-2.4.120.tar.xz
+Source: libdrm-2.4.123.tar.xz
 License: BSD-3-Clause
 URL: https://dri.freedesktop.org/
 Type: ipkg
@@ -19,8 +20,166 @@ Description:   LIBDRM is the cross-driver middleware which allows user-space app
   (such as Mesa and 2D drivers) to communicate with the Kernel by the means
   of the DRI protocol.
 @@
-Config:
-	source "feeds/packages/libs/libdrm/Config.in"
+
+Package: libdrm-amdgpu
+Submenu: Video
+Version: 2.4.123-r2
+Depends: +libc +libdrm
+Conflicts: 
+Menu-Depends: 
+Provides: @libdrm-amdgpu-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: libdrm for AMD GPUs
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: libdrm-2.4.123.tar.xz
+License: BSD-3-Clause
+URL: https://dri.freedesktop.org/
+Type: ipkg
+Description:   LIBDRM is the cross-driver middleware which allows user-space applications
+  (such as Mesa and 2D drivers) to communicate with the Kernel by the means
+  of the DRI protocol.
+
+This package provides the library with functions for AMD GPUs.
+@@
+
+Package: libdrm-etnaviv
+Submenu: Video
+Version: 2.4.123-r2
+Depends: +libc +libdrm @(arm||aarch64||mips||mipsel||mips64||mips64el||riscv64)
+Conflicts: 
+Menu-Depends: 
+Provides: @libdrm-etnaviv-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: libdrm for Vivante GPUs
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: libdrm-2.4.123.tar.xz
+License: BSD-3-Clause
+URL: https://dri.freedesktop.org/
+Type: ipkg
+Description:   LIBDRM is the cross-driver middleware which allows user-space applications
+  (such as Mesa and 2D drivers) to communicate with the Kernel by the means
+  of the DRI protocol.
+
+This package provides the library with functions for Vivante GPUs.
+@@
+
+Package: libdrm-intel
+Submenu: Video
+Version: 2.4.123-r2
+Depends: +libc +libdrm +libpciaccess @(i386||i686||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: @libdrm-intel-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: libdrm for Intel integrated GPUs
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: libdrm-2.4.123.tar.xz
+License: BSD-3-Clause
+URL: https://dri.freedesktop.org/
+Type: ipkg
+Description:   LIBDRM is the cross-driver middleware which allows user-space applications
+  (such as Mesa and 2D drivers) to communicate with the Kernel by the means
+  of the DRI protocol.
+
+This package provides the library with functions for GPUs integrated into Intel's CPUs.
+@@
+
+Package: libdrm-nouveau
+Submenu: Video
+Version: 2.4.123-r2
+Depends: +libc +libdrm
+Conflicts: 
+Menu-Depends: 
+Provides: @libdrm-nouveau-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: libdrm for nVidia GPUs
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: libdrm-2.4.123.tar.xz
+License: BSD-3-Clause
+URL: https://dri.freedesktop.org/
+Type: ipkg
+Description:   LIBDRM is the cross-driver middleware which allows user-space applications
+  (such as Mesa and 2D drivers) to communicate with the Kernel by the means
+  of the DRI protocol.
+
+This package provides the library with functions for nVidia GPUs.
+@@
+
+Package: libdrm-omap
+Submenu: Video
+Version: 2.4.123-r2
+Depends: +libc +libdrm @(arm||aarch64)
+Conflicts: 
+Menu-Depends: 
+Provides: @libdrm-omap-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: libdrm for TI OMAP SoCs
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: libdrm-2.4.123.tar.xz
+License: BSD-3-Clause
+URL: https://dri.freedesktop.org/
+Type: ipkg
+Description:   LIBDRM is the cross-driver middleware which allows user-space applications
+  (such as Mesa and 2D drivers) to communicate with the Kernel by the means
+  of the DRI protocol.
+
+This package provides the library with functions for TI OMAP SoCs.
+@@
+
+Package: libdrm-radeon
+Submenu: Video
+Version: 2.4.123-r2
+Depends: +libc +libdrm
+Conflicts: 
+Menu-Depends: 
+Provides: @libdrm-radeon-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: libdrm for AMD/ATI Radeon GPUs
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: libdrm-2.4.123.tar.xz
+License: BSD-3-Clause
+URL: https://dri.freedesktop.org/
+Type: ipkg
+Description:   LIBDRM is the cross-driver middleware which allows user-space applications
+  (such as Mesa and 2D drivers) to communicate with the Kernel by the means
+  of the DRI protocol.
+
+This package provides the library with functions for AMD/ATI Radeon GPUs.
+@@
+
+Package: libdrm-tegra
+Submenu: Video
+Version: 2.4.123-r2
+Depends: +libc +libdrm @(arm||aarch64)
+Conflicts: 
+Menu-Depends: 
+Provides: @libdrm-tegra-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: libdrm for nVidia Tegra SoCs
+Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
+Source: libdrm-2.4.123.tar.xz
+License: BSD-3-Clause
+URL: https://dri.freedesktop.org/
+Type: ipkg
+Description:   LIBDRM is the cross-driver middleware which allows user-space applications
+  (such as Mesa and 2D drivers) to communicate with the Kernel by the means
+  of the DRI protocol.
+
+This package provides the library with functions for nVidia Tegra SoCs.
 @@
 
 

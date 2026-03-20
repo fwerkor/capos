@@ -5,7 +5,7 @@ Version: 1.6.31-r1
 Depends: +libc +libevent2 +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @memcached-any
 Section: net
 Category: Network
 Repository: base

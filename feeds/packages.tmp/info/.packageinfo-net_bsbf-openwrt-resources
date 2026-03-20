@@ -1,0 +1,60 @@
+Source-Makefile: feeds/packages/net/bsbf-openwrt-resources/Makefile
+
+Package: bsbf-autoconf-cellular
+Version: 3
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @bsbf-autoconf-cellular-any
+Section: net
+Category: Network
+Repository: base
+Title: bsbf-autoconf-cellular
+Maintainer: Chester A. Unal <chester.a.unal@arinc9.com>
+Source: 
+License: AGPL-3.0-or-later
+URL: https://github.com/bondingshouldbefree/
+Type: ipkg
+Description:   bsbf-autoconf-cellular creates a network with MBIM or QMI protocol using a
+  newly created network interface. It uses metric values from 1 to 8.
+@@
+
+Package: bsbf-autoconf-dhcp
+Version: 3
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @bsbf-autoconf-dhcp-any
+Section: net
+Category: Network
+Repository: base
+Title: bsbf-autoconf-dhcp
+Maintainer: Chester A. Unal <chester.a.unal@arinc9.com>
+Source: 
+License: AGPL-3.0-or-later
+URL: https://github.com/bondingshouldbefree/
+Type: ipkg
+Description:   bsbf-autoconf-dhcp creates a network with a DHCP client using a newly created
+  network interface. It uses metric values from 1 to 8.
+@@
+
+Package: bsbf-bonding
+Version: 3
+Depends: +libc +bsbf-mptcp +bsbf-plpmtu +bsbf-route +bsbf-tcp-in-udp +xray-core
+Conflicts: 
+Menu-Depends: 
+Provides: @bsbf-bonding-any
+Section: net
+Category: Network
+Repository: base
+Title: bsbf-bonding
+Maintainer: Chester A. Unal <chester.a.unal@arinc9.com>
+Source: 
+License: AGPL-3.0-or-later
+URL: https://github.com/bondingshouldbefree/
+Type: ipkg
+Description:   bsbf-bonding configures the system for the BondingShouldBeFree bonding
+  solution client.
+@@
+
+

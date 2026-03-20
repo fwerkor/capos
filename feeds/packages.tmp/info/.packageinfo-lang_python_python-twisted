@@ -7,7 +7,7 @@ Version: 25.5.0-r1
 Depends: +libc +python3 +python3-appdirs +python3-attrs +python3-automat +python3-bcrypt +python3-constantly +python3-cryptography +python3-hyperlink +python3-idna +python3-incremental +python3-pyopenssl +python3-service-identity +python3-typing-extensions +python3-zope-interface
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-twisted-any
 Section: lang
 Category: Languages
 Repository: base
@@ -30,7 +30,7 @@ Version: 25.5.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-twisted-src-any
 Section: lang
 Category: Languages
 Repository: base

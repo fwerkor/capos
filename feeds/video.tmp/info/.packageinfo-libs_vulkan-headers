@@ -1,0 +1,23 @@
+Source-Makefile: feeds/video/libs/vulkan-headers/Makefile
+
+Package: vulkan-headers
+Version: 1.4.328
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @vulkan-headers-any
+Section: devel
+Category: Development
+Repository: base
+Title: Vulkan Headers
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: Vulkan-Headers-1.4.328.tar.gz
+License: Apache-2.0 OR MIT
+LicenseFiles: LICENSE.md
+URL: https://github.com/KhronosGroup/Vulkan-Headers
+Type: ipkg
+Build-Only: 1
+Description: Vulkan header files and API registry.
+@@
+
+

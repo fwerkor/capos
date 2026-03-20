@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/devel/lttng-tools/Makefile
 
 Package: lttng-tools
-Version: 2.13.9-r2
+Version: 2.13.15-r1
 Depends: +libc +lttng-ust +libpopt +libxml2 +BUILD_NLS:libiconv-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lttng-tools-any
 Section: devel
 Category: Development
 Repository: base
 Title: Linux Trace Toolkit: next generation (tools)
 Maintainer: 
-Source: lttng-tools-2.13.9.tar.bz2
+Source: lttng-tools-2.13.15.tar.bz2
 License: LGPL-2.1 GPL-2.0
 LicenseFiles: COPYING
 URL: https://lttng.org/

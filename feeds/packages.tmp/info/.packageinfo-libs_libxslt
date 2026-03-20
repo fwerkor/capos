@@ -7,7 +7,7 @@ Version: 1.1.42-r1
 Depends: +libc +libxml2 +BUILD_NLS:libiconv-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libxslt-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -27,7 +27,7 @@ Version: 1.1.42-r1
 Depends: +libc +libxslt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libexslt-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -47,7 +47,7 @@ Version: 1.1.42-r1
 Depends: +libc +libxslt +PACKAGE_xsltproc:libexslt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @xsltproc-any
 Section: utils
 Category: Utilities
 Repository: base

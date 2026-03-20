@@ -5,7 +5,7 @@ Version: 2.13.3-r1
 Depends: +libc +zlib +libpng
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libfreetype-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -13,7 +13,7 @@ Title: A free, high-quality and portable font engine
 Maintainer: Val Kulkov <val.kulkov@gmail.com>
 Source: freetype-2.13.3.tar.xz
 License: FTL GPL-2.0-only MIT ZLIB GPL-3.0-or-later
-LicenseFiles: docs/LICENSE.TXT docs/FTL.TXT docs/GPLv2.TXT src/bdf/README src/pcf/README src/gzip/zlib.h builds/unix/config.sub builds/unix/config.guess builds/unix/libtool 
+LicenseFiles: LICENSE.TXT docs/FTL.TXT docs/GPLv2.TXT src/bdf/README src/pcf/README src/gzip/zlib.h builds/unix/config.sub builds/unix/config.guess
 CPE-ID: cpe:/a:freetype:freetype
 URL: https://www.freetype.org/
 Type: ipkg

@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/net/uacme/Makefile
 
 Package: uacme
-Version: 1.7.4-r1
+Version: 1.7.6-r1
 Depends: +libc +libcurl +LIBCURL_WOLFSSL:libmbedtls
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @uacme-any
 Section: net
 Category: Network
 Repository: base
 Title: lightweight client for ACMEv2
 Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
-Source: uacme-1.7.4.tar.gz
+Source: uacme-1.7.6.tar.gz
 License: GPL-3.0-or-later
 LicenseFiles: COPYING
 URL: https://github.com/ndilieto/uacme
@@ -33,17 +33,17 @@ endif
 @@
 
 Package: uacme-ualpn
-Version: 1.7.4-r1
+Version: 1.7.6-r1
 Depends: +libc +uacme +PACKAGE_uacme-ualpn:libev
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @uacme-ualpn-any
 Section: net
 Category: Network
 Repository: base
 Title: ualpn for uacme
 Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
-Source: uacme-1.7.4.tar.gz
+Source: uacme-1.7.6.tar.gz
 License: GPL-3.0-or-later
 LicenseFiles: COPYING
 URL: https://github.com/ndilieto/uacme

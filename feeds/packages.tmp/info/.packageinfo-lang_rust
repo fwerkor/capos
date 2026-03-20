@@ -3,17 +3,17 @@ Build-Types: host
 
 Package: rust
 Submenu: Rust
-Version: 1.89.0-r1
+Version: 1.90.0-r1
 Depends: +libc @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rust-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Rust Programming Language Compiler
 Maintainer: Luca Barbato <lu_zero@luminem.org>
-Source: rustc-1.89.0-src.tar.xz
+Source: rustc-1.90.0-src.tar.xz
 License: Apache-2.0 MIT
 LicenseFiles: LICENSE-APACHE LICENSE-MIT
 URL: https://www.rust-lang.org/

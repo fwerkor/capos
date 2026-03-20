@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/libs/libnatpmp/Makefile
 
 Package: libnatpmp
-Version: 20230423-r1
+Version: 20230423-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libnatpmp-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -26,11 +26,11 @@ Description:     libnatpmp is an attempt to make a portable and fully compliant 
 
 Package: natpmpc
 Submenu: Firewall
-Version: 20230423-r1
+Version: 20230423-r2
 Depends: +libc +libnatpmp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @natpmpc-any
 Section: net
 Category: Network
 Repository: base

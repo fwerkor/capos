@@ -5,38 +5,38 @@ Build-Types: host
 
 Package: softethervpn5-libs
 Submenu: VPN
-Version: 5.02.5184-r1
+Version: 5.2.5188-r1
 Depends: +libc +libsodium +libpthread +librt +libreadline +libopenssl +libncurses +kmod-tun +zlib +BUILD_NLS:libiconv-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @softethervpn5-libs-any
 Section: net
 Category: Network
 Repository: base
-Title: softethervpn5 v5.02.5184 libs
+Title: softethervpn5 v5.2.5188 libs
 Maintainer: 
-Source: SoftEtherVPN-5.02.5184.tar.xz
+Source: SoftEtherVPN-5.2.5188.tar.xz
 License: GPL-2.0
 LicenseFiles: COPYING
 URL: http://www.softether.org/
 Type: ipkg
 Hidden: 1
-Description: softethervpn5 v5.02.5184 libs
+Description: softethervpn5 v5.2.5188 libs
 @@
 
 Package: softethervpn5-server
 Submenu: VPN
-Version: 5.02.5184-r1
+Version: 5.2.5188-r1
 Depends: +libc +softethervpn5-libs
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @softethervpn5-server-any
 Section: net
 Category: Network
 Repository: base
-Title: softethervpn5 v5.02.5184 server
+Title: softethervpn5 v5.2.5188 server
 Maintainer: 
-Source: SoftEtherVPN-5.02.5184.tar.xz
+Source: SoftEtherVPN-5.2.5188.tar.xz
 License: GPL-2.0
 LicenseFiles: COPYING
 URL: http://www.softether.org/
@@ -51,17 +51,17 @@ Description:     SoftEther VPN supports SSL-VPN, OpenVPN, L2TP, EtherIP, L2TPv3 
 
 Package: softethervpn5-bridge
 Submenu: VPN
-Version: 5.02.5184-r1
+Version: 5.2.5188-r1
 Depends: +libc +softethervpn5-libs
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @softethervpn5-bridge-any
 Section: net
 Category: Network
 Repository: base
-Title: softethervpn5 v5.02.5184 bridge
+Title: softethervpn5 v5.2.5188 bridge
 Maintainer: 
-Source: SoftEtherVPN-5.02.5184.tar.xz
+Source: SoftEtherVPN-5.2.5188.tar.xz
 License: GPL-2.0
 LicenseFiles: COPYING
 URL: http://www.softether.org/
@@ -76,17 +76,17 @@ Description:     SoftEther VPN supports SSL-VPN, OpenVPN, L2TP, EtherIP, L2TPv3 
 
 Package: softethervpn5-client
 Submenu: VPN
-Version: 5.02.5184-r1
+Version: 5.2.5188-r1
 Depends: +libc +softethervpn5-libs
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @softethervpn5-client-any
 Section: net
 Category: Network
 Repository: base
-Title: softethervpn5 v5.02.5184 client
+Title: softethervpn5 v5.2.5188 client
 Maintainer: 
-Source: SoftEtherVPN-5.02.5184.tar.xz
+Source: SoftEtherVPN-5.2.5188.tar.xz
 License: GPL-2.0
 LicenseFiles: COPYING
 URL: http://www.softether.org/

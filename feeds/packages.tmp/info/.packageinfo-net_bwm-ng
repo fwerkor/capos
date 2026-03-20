@@ -6,7 +6,7 @@ Version: 0.6.3-r2
 Depends: +libc +BWMNG_LIBNCURSES:libncurses
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bwm-ng-any
 Section: net
 Category: Network
 Repository: base

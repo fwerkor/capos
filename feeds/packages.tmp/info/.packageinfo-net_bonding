@@ -5,7 +5,7 @@ Version: 2021.04.09-r1
 Depends: +libc +kmod-bonding
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @proto-bonding-any
 Section: net
 Category: Network
 Repository: base

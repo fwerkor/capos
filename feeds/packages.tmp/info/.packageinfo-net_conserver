@@ -1,17 +1,18 @@
 Source-Makefile: feeds/packages/net/conserver/Makefile
 
 Package: conserver
-Version: 8.2.6-r3
+Version: 8.2.7-r1
 Depends: +libc +libopenssl
-Conflicts: 
+Conflicts: conserver-ipmi
 Menu-Depends: 
-Provides: 
+Provides: @conserver-any
+Build-Variant: default
 Section: net
 Category: Network
 Repository: base
 Title: Connect multiple user to a serial console with logging
 Maintainer: Bjørn Mork <bjorn@mork.no>
-Source: conserver-8.2.6.tar.gz
+Source: conserver-8.2.7.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 URL: http://www.conserver.com/
@@ -28,6 +29,40 @@ Description:  Conserver is an application that allows multiple users to watch a
  mentor, train, etc.  It also does all that client-server stuff so
  that, assuming you have a network connection, you can interact with
  any of the equipment from home or wherever.
+@@
+
+Package: conserver-ipmi
+Version: 8.2.7-r1
+Depends: +libc +libopenssl +libipmiconsole
+Conflicts: 
+Menu-Depends: 
+Provides: @conserver-ipmi-any conserver
+Build-Variant: ipmi
+Section: net
+Category: Network
+Repository: base
+Title: Conserver with IPMI support
+Maintainer: Bjørn Mork <bjorn@mork.no>
+Source: conserver-8.2.7.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: http://www.conserver.com/
+Type: ipkg
+Description:   Conserver is an application that allows multiple users to watch a
+ serial console at the same time.  It can log the data, allows users
+ to take write-access of a console (one at a time), and has a
+ variety of bells and whistles to accentuate that basic
+ functionality.  The idea is that conserver will log all your serial
+ traffic so you can go back and review why something crashed, look
+ at changes (if done on the console), or tie the console logs into a
+ monitoring system (just watch the logfiles it creates).  With
+ multi-user capabilities you can work on equipment with others,
+ mentor, train, etc.  It also does all that client-server stuff so
+ that, assuming you have a network connection, you can interact with
+ any of the equipment from home or wherever.
+ .
+ This variant is built with support for IPMI serial-over-LAN consoles,
+ adding a large dependency on FreeIPMI
 @@
 
 

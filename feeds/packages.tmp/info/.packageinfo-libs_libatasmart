@@ -7,7 +7,7 @@ Version: 2012.05.21~de6258940960443038b4c1651dfda3620075e870-r1
 Depends: +libc +libudev
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libatasmart-any
 Section: libs
 Category: Libraries
 Repository: base

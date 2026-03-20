@@ -2,11 +2,11 @@ Source-Makefile: feeds/packages/net/wifi-presence/Makefile
 Build-Depends: golang/host
 
 Package: wifi-presence
-Version: 0.3.0-r1
+Version: 0.3.0-r2
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @wifi-presence-any
 Section: net
 Category: Network
 Repository: base

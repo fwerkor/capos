@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base +luci-app-olsr +olsrd +olsrd-mod-nameservice
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-olsr-services-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -26,7 +26,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-ar-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -45,7 +45,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-bg-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -64,7 +64,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-bn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -83,7 +83,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-ca-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -102,7 +102,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-cs-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -121,7 +121,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-da-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -140,7 +140,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-de-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -159,7 +159,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-el-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -178,7 +178,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-es-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -191,13 +191,32 @@ Hidden: 1
 Description:     Translation for luci-app-olsr-services - Español (Spanish)
 @@
 
+Package: luci-i18n-olsr-services-fa
+Default: LUCI_LANG_fa||(ALL&&m)
+Version: x
+Depends: +libc luci-app-olsr-services
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-olsr-services-fa-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-olsr-services - fa translation
+Maintainer: Andreas Brau <ab@andi95.de>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-olsr-services - Farsi (Persian)
+@@
+
 Package: luci-i18n-olsr-services-fi
 Default: LUCI_LANG_fi||(ALL&&m)
 Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-fi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -216,7 +235,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-fr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -235,7 +254,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-ga-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -254,7 +273,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-he-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -273,7 +292,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-hi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -292,7 +311,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-hu-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -311,7 +330,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-it-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -330,7 +349,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-ja-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -349,7 +368,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-ko-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -368,7 +387,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-lt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -387,7 +406,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-mr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -406,7 +425,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-ms-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -425,7 +444,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-no-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -444,7 +463,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-nl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -463,7 +482,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-pl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -482,7 +501,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-pt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -501,7 +520,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -520,7 +539,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-ro-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -539,7 +558,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-ru-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -558,7 +577,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-sk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -577,7 +596,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-sv-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -590,13 +609,32 @@ Hidden: 1
 Description:     Translation for luci-app-olsr-services - Svenska (Swedish)
 @@
 
+Package: luci-i18n-olsr-services-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-olsr-services
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-olsr-services-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-olsr-services - ta translation
+Maintainer: Andreas Brau <ab@andi95.de>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-olsr-services - Tamil (Tamil)
+@@
+
 Package: luci-i18n-olsr-services-tr
 Default: LUCI_LANG_tr||(ALL&&m)
 Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-tr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -615,7 +653,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-uk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -634,7 +672,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-vi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -653,7 +691,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-yua-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -672,7 +710,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -691,7 +729,7 @@ Version: x
 Depends: +libc luci-app-olsr-services
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-olsr-services-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base

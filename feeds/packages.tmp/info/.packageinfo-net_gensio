@@ -7,7 +7,7 @@ Version: 2.8.4-r1
 Depends: +libc +GENSIO_SSL:libopenssl +GENSIO_WRAP:libwrap +(IPV6&&GENSIO_SCTP):libsctp +GENSIO_PTHREADS:libpthread +GENSIO_AVAHI:libavahi-client +GENSIO_TCL:tcl +GENSIO_GLIB:glib2 +GENSIO_SSHD:libpam
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libgensio-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -43,7 +43,7 @@ Version: 2.8.4-r1
 Depends: +libc +libgensio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @gensio-bin-any
 Section: net
 Category: Network
 Repository: base
@@ -78,7 +78,7 @@ Version: 2.8.4-r1
 Depends: +libc +PACKAGE_python3-gensio:python3-light +libgensiocpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-gensio-any
 Section: lang
 Category: Languages
 Repository: base
@@ -109,7 +109,7 @@ Version: 2.8.4-r1
 Depends: +libc +libgensio +PACKAGE_libgensiocpp:libstdcpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libgensiocpp-any
 Section: libs
 Category: Libraries
 Repository: base

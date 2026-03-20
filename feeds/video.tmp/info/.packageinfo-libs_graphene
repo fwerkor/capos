@@ -1,0 +1,23 @@
+Source-Makefile: feeds/video/libs/graphene/Makefile
+
+Package: libgraphene
+Submenu: Video
+Version: 2025.01.23~47b503d6086900057ceefab785546ad524caa735-r1
+Depends: +libc +glib2
+Conflicts: 
+Menu-Depends: 
+Provides: @libgraphene-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: Graphene
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: graphene-2025.01.23~47b503d6086900057ceefab785546ad524caa735.tar.zst
+License: MIT
+LicenseFiles: LICENSE.txt
+URL: https://github.com/ebassi/graphene
+Type: ipkg
+Description:  A thin layer of types for graphic libraries
+@@
+
+

@@ -10,13 +10,20 @@
       },
       "uci": [
         "usteer"
-      ]
+      ],
+	  "file": {
+        "/etc/init.d/usteer": [ "read" ]
+      }
     },
     "write": {
       "ubus": {
         "uci": [ "set", "commit"  ]
       },
-      "uci": [ "usteer" ]
+      "uci": [ "usteer" ],
+      "file": {
+        "/usr/sbin/hostapd_cli -i * all_sta": [ "exec" ]
+      }
     }
   }
 }
+

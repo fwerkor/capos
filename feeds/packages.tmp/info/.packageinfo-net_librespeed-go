@@ -7,7 +7,7 @@ Version: 1.1.5-r5
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @librespeed-go-any
 Section: net
 Category: Network
 Repository: base

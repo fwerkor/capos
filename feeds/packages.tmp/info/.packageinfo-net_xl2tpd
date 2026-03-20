@@ -2,11 +2,11 @@ Source-Makefile: feeds/packages/net/xl2tpd/Makefile
 
 Package: xl2tpd
 Submenu: VPN
-Version: 1.3.18-r1
+Version: 1.3.18-r2
 Depends: +libc +ppp-mod-pppol2tp +resolveip
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @xl2tpd-any
 Section: net
 Category: Network
 Repository: base

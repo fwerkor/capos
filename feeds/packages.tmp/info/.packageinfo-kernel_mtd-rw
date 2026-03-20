@@ -6,7 +6,7 @@ Version: <LINUX_VERSION>.2021.02.28~e87767395a6d27380196702f5f7bf98e92774f3f-r1
 Depends: @!(TARGET_x86||TARGET_bcm27xx||TARGET_octeontx)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kmod-mtd-rw-any
 Section: kernel
 Category: Kernel modules
 Title: Write-enabler for MTD partitions

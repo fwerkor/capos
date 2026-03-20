@@ -6,7 +6,7 @@ Version: 0.5-r2
 Depends: +libc +kmod-tun +libpthread +liblzo
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @eoip-any
 Section: net
 Category: Network
 Repository: base

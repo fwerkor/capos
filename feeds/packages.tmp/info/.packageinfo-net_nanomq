@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/net/nanomq/Makefile
+
+Package: nanomq
+Version: 0.24.6-r1
+Depends: +libc +libatomic
+Conflicts: 
+Menu-Depends: 
+Provides: @nanomq-any
+Section: net
+Category: Network
+Repository: base
+Title: NanoMQ Broker
+Maintainer: Andrew Yong <me@ndoo.sg>
+Source: nanomq-0.24.6.tar.zst
+License: MIT
+LicenseFiles: LICENSE.txt
+URL: https://github.com/nanomq/nanomq
+Type: ipkg
+Description:   An ultra-lightweight and blazing-fast Messaging Broker/Bus for IoT Edge & SDV
+@@
+
+

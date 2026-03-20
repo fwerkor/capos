@@ -3,17 +3,17 @@ Source-Makefile: feeds/telephony/net/siproxd/Makefile
 Package: siproxd
 Menu: 1
 Submenu: Telephony
-Version: 2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523-r2
+Version: 2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d-r1
 Depends: +libc +libltdl +libpthread +libosip2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @siproxd-any
 Section: net
 Category: Network
 Repository: base
 Title: SIP (Session Initiation Protocol) proxy
 Maintainer: Tony Ambardar <itugrok@yahoo.com>
-Source: siproxd-2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523.tar.zst
+Source: siproxd-2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d.tar.zst
 License: GPL-2.0+
 LicenseFiles: COPYING
 URL: http://siproxd.sourceforge.net/
@@ -32,17 +32,17 @@ Config:
 
 Package: siproxd-mod-blacklist
 Submenu: Telephony
-Version: 2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523-r2
+Version: 2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d-r1
 Depends: +libc siproxd +libsqlite3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @siproxd-mod-blacklist-any
 Section: net
 Category: Network
 Repository: base
 Title: siproxd blacklist plugin
 Maintainer: Tony Ambardar <itugrok@yahoo.com>
-Source: siproxd-2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523.tar.zst
+Source: siproxd-2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d.tar.zst
 License: GPL-2.0+
 LicenseFiles: COPYING
 URL: http://siproxd.sourceforge.net/
@@ -52,17 +52,17 @@ Description: siproxd blacklist plugin
 
 Package: siproxd-mod-codecfilter
 Submenu: Telephony
-Version: 2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523-r2
+Version: 2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d-r1
 Depends: +libc siproxd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @siproxd-mod-codecfilter-any
 Section: net
 Category: Network
 Repository: base
 Title: siproxd codecfilter plugin
 Maintainer: Tony Ambardar <itugrok@yahoo.com>
-Source: siproxd-2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523.tar.zst
+Source: siproxd-2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d.tar.zst
 License: GPL-2.0+
 LicenseFiles: COPYING
 URL: http://siproxd.sourceforge.net/
@@ -72,17 +72,17 @@ Description: siproxd codecfilter plugin
 
 Package: siproxd-mod-defaulttarget
 Submenu: Telephony
-Version: 2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523-r2
+Version: 2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d-r1
 Depends: +libc siproxd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @siproxd-mod-defaulttarget-any
 Section: net
 Category: Network
 Repository: base
 Title: siproxd defaulttarget plugin
 Maintainer: Tony Ambardar <itugrok@yahoo.com>
-Source: siproxd-2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523.tar.zst
+Source: siproxd-2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d.tar.zst
 License: GPL-2.0+
 LicenseFiles: COPYING
 URL: http://siproxd.sourceforge.net/
@@ -92,17 +92,17 @@ Description: siproxd defaulttarget plugin
 
 Package: siproxd-mod-demo
 Submenu: Telephony
-Version: 2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523-r2
+Version: 2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d-r1
 Depends: +libc siproxd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @siproxd-mod-demo-any
 Section: net
 Category: Network
 Repository: base
 Title: siproxd demo plugin
 Maintainer: Tony Ambardar <itugrok@yahoo.com>
-Source: siproxd-2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523.tar.zst
+Source: siproxd-2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d.tar.zst
 License: GPL-2.0+
 LicenseFiles: COPYING
 URL: http://siproxd.sourceforge.net/
@@ -112,17 +112,17 @@ Description: siproxd demo plugin
 
 Package: siproxd-mod-fix-bogus-via
 Submenu: Telephony
-Version: 2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523-r2
+Version: 2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d-r1
 Depends: +libc siproxd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @siproxd-mod-fix-bogus-via-any
 Section: net
 Category: Network
 Repository: base
 Title: siproxd fix_bogus_via plugin
 Maintainer: Tony Ambardar <itugrok@yahoo.com>
-Source: siproxd-2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523.tar.zst
+Source: siproxd-2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d.tar.zst
 License: GPL-2.0+
 LicenseFiles: COPYING
 URL: http://siproxd.sourceforge.net/
@@ -132,17 +132,17 @@ Description: siproxd fix_bogus_via plugin
 
 Package: siproxd-mod-fix-DTAG
 Submenu: Telephony
-Version: 2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523-r2
+Version: 2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d-r1
 Depends: +libc siproxd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @siproxd-mod-fix-DTAG-any
 Section: net
 Category: Network
 Repository: base
 Title: siproxd fix_DTAG plugin
 Maintainer: Tony Ambardar <itugrok@yahoo.com>
-Source: siproxd-2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523.tar.zst
+Source: siproxd-2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d.tar.zst
 License: GPL-2.0+
 LicenseFiles: COPYING
 URL: http://siproxd.sourceforge.net/
@@ -152,17 +152,17 @@ Description: siproxd fix_DTAG plugin
 
 Package: siproxd-mod-fix-fbox-anoncall
 Submenu: Telephony
-Version: 2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523-r2
+Version: 2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d-r1
 Depends: +libc siproxd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @siproxd-mod-fix-fbox-anoncall-any
 Section: net
 Category: Network
 Repository: base
 Title: siproxd fix_fbox_anoncall plugin
 Maintainer: Tony Ambardar <itugrok@yahoo.com>
-Source: siproxd-2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523.tar.zst
+Source: siproxd-2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d.tar.zst
 License: GPL-2.0+
 LicenseFiles: COPYING
 URL: http://siproxd.sourceforge.net/
@@ -172,17 +172,17 @@ Description: siproxd fix_fbox_anoncall plugin
 
 Package: siproxd-mod-logcall
 Submenu: Telephony
-Version: 2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523-r2
+Version: 2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d-r1
 Depends: +libc siproxd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @siproxd-mod-logcall-any
 Section: net
 Category: Network
 Repository: base
 Title: siproxd logcall plugin
 Maintainer: Tony Ambardar <itugrok@yahoo.com>
-Source: siproxd-2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523.tar.zst
+Source: siproxd-2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d.tar.zst
 License: GPL-2.0+
 LicenseFiles: COPYING
 URL: http://siproxd.sourceforge.net/
@@ -192,17 +192,17 @@ Description: siproxd logcall plugin
 
 Package: siproxd-mod-prefix
 Submenu: Telephony
-Version: 2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523-r2
+Version: 2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d-r1
 Depends: +libc siproxd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @siproxd-mod-prefix-any
 Section: net
 Category: Network
 Repository: base
 Title: siproxd prefix plugin
 Maintainer: Tony Ambardar <itugrok@yahoo.com>
-Source: siproxd-2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523.tar.zst
+Source: siproxd-2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d.tar.zst
 License: GPL-2.0+
 LicenseFiles: COPYING
 URL: http://siproxd.sourceforge.net/
@@ -212,17 +212,17 @@ Description: siproxd prefix plugin
 
 Package: siproxd-mod-regex
 Submenu: Telephony
-Version: 2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523-r2
+Version: 2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d-r1
 Depends: +libc siproxd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @siproxd-mod-regex-any
 Section: net
 Category: Network
 Repository: base
 Title: siproxd regex plugin
 Maintainer: Tony Ambardar <itugrok@yahoo.com>
-Source: siproxd-2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523.tar.zst
+Source: siproxd-2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d.tar.zst
 License: GPL-2.0+
 LicenseFiles: COPYING
 URL: http://siproxd.sourceforge.net/
@@ -232,17 +232,17 @@ Description: siproxd regex plugin
 
 Package: siproxd-mod-shortdial
 Submenu: Telephony
-Version: 2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523-r2
+Version: 2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d-r1
 Depends: +libc siproxd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @siproxd-mod-shortdial-any
 Section: net
 Category: Network
 Repository: base
 Title: siproxd shortdial plugin
 Maintainer: Tony Ambardar <itugrok@yahoo.com>
-Source: siproxd-2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523.tar.zst
+Source: siproxd-2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d.tar.zst
 License: GPL-2.0+
 LicenseFiles: COPYING
 URL: http://siproxd.sourceforge.net/
@@ -252,17 +252,17 @@ Description: siproxd shortdial plugin
 
 Package: siproxd-mod-stats
 Submenu: Telephony
-Version: 2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523-r2
+Version: 2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d-r1
 Depends: +libc siproxd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @siproxd-mod-stats-any
 Section: net
 Category: Network
 Repository: base
 Title: siproxd stats plugin
 Maintainer: Tony Ambardar <itugrok@yahoo.com>
-Source: siproxd-2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523.tar.zst
+Source: siproxd-2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d.tar.zst
 License: GPL-2.0+
 LicenseFiles: COPYING
 URL: http://siproxd.sourceforge.net/
@@ -272,17 +272,17 @@ Description: siproxd stats plugin
 
 Package: siproxd-mod-stripheader
 Submenu: Telephony
-Version: 2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523-r2
+Version: 2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d-r1
 Depends: +libc siproxd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @siproxd-mod-stripheader-any
 Section: net
 Category: Network
 Repository: base
 Title: siproxd stripheader plugin
 Maintainer: Tony Ambardar <itugrok@yahoo.com>
-Source: siproxd-2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523.tar.zst
+Source: siproxd-2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d.tar.zst
 License: GPL-2.0+
 LicenseFiles: COPYING
 URL: http://siproxd.sourceforge.net/
@@ -292,17 +292,17 @@ Description: siproxd stripheader plugin
 
 Package: siproxd-mod-stun
 Submenu: Telephony
-Version: 2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523-r2
+Version: 2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d-r1
 Depends: +libc siproxd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @siproxd-mod-stun-any
 Section: net
 Category: Network
 Repository: base
 Title: siproxd stun plugin
 Maintainer: Tony Ambardar <itugrok@yahoo.com>
-Source: siproxd-2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523.tar.zst
+Source: siproxd-2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d.tar.zst
 License: GPL-2.0+
 LicenseFiles: COPYING
 URL: http://siproxd.sourceforge.net/
@@ -312,17 +312,17 @@ Description: siproxd stun plugin
 
 Package: siproxd-mod-siptrunk
 Submenu: Telephony
-Version: 2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523-r2
+Version: 2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d-r1
 Depends: +libc siproxd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @siproxd-mod-siptrunk-any
 Section: net
 Category: Network
 Repository: base
 Title: siproxd siptrunk plugin
 Maintainer: Tony Ambardar <itugrok@yahoo.com>
-Source: siproxd-2022.02.18~4750bea4ffedb4543a404dafc979c2b16b53e523.tar.zst
+Source: siproxd-2025.07.24~0bb5dd4aac9f5578db664d82f67091bc83c3780d.tar.zst
 License: GPL-2.0+
 LicenseFiles: COPYING
 URL: http://siproxd.sourceforge.net/

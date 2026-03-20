@@ -6,7 +6,7 @@ Version: 2022.11.04~503dba87d726854b74b49e70679e64e6e86d5812-r1
 Depends: +libc asterisk +BUILD_NLS:libiconv-full +libsqlite3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-chan-dongle-any
 Section: net
 Category: Network
 Repository: base

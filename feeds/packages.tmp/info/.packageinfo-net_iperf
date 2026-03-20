@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/net/iperf/Makefile
 
 Package: iperf
-Version: 2.1.9-r1
+Version: 2.2.1-r1
 Depends: +libc +libstdcpp +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @iperf-any
 Section: net
 Category: Network
 Repository: base
 Title: Internet Protocol bandwidth measuring tool
 Maintainer: Felix Fietkau <nbd@nbd.name>
-Source: iperf-2.1.9.tar.gz
+Source: iperf-2.2.1.tar.gz
 License: BSD-3-Clause
 CPE-ID: cpe:/a:iperf_project:iperf
 URL: http://sourceforge.net/projects/iperf2/

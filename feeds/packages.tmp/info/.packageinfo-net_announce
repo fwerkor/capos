@@ -6,7 +6,7 @@ Version: 1.0.1-r1
 Depends: +libc +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @announce-any
 Section: net
 Category: Network
 Repository: base

@@ -11,10 +11,9 @@
 	model = "Cudy C200P";
 
 	aliases {
-		led-boot = &led_sys;
-		led-failsafe = &led_sys;
-		led-running = &led_sys;
-		led-upgrade = &led_sys;
+		led-boot = &led_status_green;
+		led-failsafe = &led_status_green;
+		led-running = &led_status_green;
 		label-mac-device = &gmac0;
 	};
 
@@ -29,21 +28,7 @@
 		hw_margin_ms = <1000>;
 		always-running;
 	};
-
-	reg_vbus: regulator {
-		compatible = "regulator-fixed";
-		regulator-name = "power_usb";
-		regulator-min-microvolt = <5000000>;
-		regulator-max-microvolt = <5000000>;
-		gpios = <&gpio 7 GPIO_ACTIVE_HIGH>;
-		enable-active-high;
-	};
-
-	output-reg-vbus {
-		compatible = "regulator-output";
-		vout-supply = <&reg_vbus>;
-	};
-
+	
 	gpio-export {
 		compatible = "gpio-export";
 		#size-cells = <0>;
@@ -68,13 +53,13 @@
 	leds {
 		compatible = "gpio-leds";
 
-		led_sys: status {
+		led_status_green: led-status-green {
 			color = <LED_COLOR_ID_GREEN>;
 			function = LED_FUNCTION_STATUS;
 			gpios = <&gpio 15 GPIO_ACTIVE_LOW>;
 		};
 
-		led_poe {
+		led-poe-green {
 			color = <LED_COLOR_ID_GREEN>;
 			function = LED_FUNCTION_INDICATOR;
 			gpios = <&gpio 13 GPIO_ACTIVE_LOW>;
@@ -82,8 +67,10 @@
 	};
 };
 
-&xhci {
-	vbus-supply = <&reg_vbus>;
+&reg_vbus {
+	/delete-property/ regulator-always-on;
+	gpios = <&gpio 7 GPIO_ACTIVE_HIGH>;
+	enable-active-high;
 };
 
 &i2c {
@@ -194,6 +181,5 @@
 			status = "okay";
 			label = "lan2";
 		};
-
 	};
 };

@@ -1,6 +1,4 @@
 #
-# Copyright (C) 2020 Sebastian Kemper <sebastian_ml@gmx.net>
-#
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
 #
@@ -11,10 +9,10 @@ PKG_NAME:=spandsp3
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/freeswitch/spandsp.git
-PKG_SOURCE_DATE=2023-06-16
-PKG_SOURCE_VERSION:=0d2e6ac65e0e8f53d652665a743015a88bf048d4
+PKG_SOURCE_DATE=2025-07-07
+PKG_SOURCE_VERSION:=797760168945c96e91af55bde9d4edaea2e654f9
 PKG_RELEASE:=1
-PKG_MIRROR_HASH:=4b380960934ca4feda6d615ae8e7bb3245d87276f04d86e12c2f5939aa36608e
+PKG_MIRROR_HASH:=5e3a084b96dfe586d61170b7e87c92b3824d734c69efae518e0bf642843d8893
 
 PKG_INSTALL:=1
 PKG_BUILD_PARALLEL:=1
@@ -22,9 +20,9 @@ PKG_FIXUP:=autoreconf
 
 PKG_LICENSE:=LGPL-2.1-or-later GPL-2.0-or-later
 PKG_LICENSE_FILES:=COPYING
-PKG_MAINTAINER:= \
-	Jiri Slachta <jiri@slachta.eu> \
-	Sebastian Kemper <sebastian_ml@gmx.net>
+PKG_MAINTAINER:=Jiri Slachta <jiri@slachta.eu>
+
+PKG_BUILD_DEPENDS:=tiff/host
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -37,6 +35,10 @@ define Package/libspandsp3
   URL:=https://github.com/freeswitch/spandsp
   ABI_VERSION:=3
 endef
+
+CONFIGURE_VARS += \
+	CC_FOR_BUILD="$(HOSTCC)" \
+	CPPFLAGS_FOR_BUILD="$(HOST_CPPFLAGS)"
 
 # Use fixed point math when soft float support is enabled for target devices.
 ifeq ($(CONFIG_SOFT_FLOAT),y)

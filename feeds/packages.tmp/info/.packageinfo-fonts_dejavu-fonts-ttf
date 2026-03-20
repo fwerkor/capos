@@ -6,7 +6,7 @@ Version: 2.37-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dejavu-fonts-ttf-DejaVuSerif-Italic-any
 Section: fonts
 Category: Fonts
 Repository: base
@@ -26,7 +26,7 @@ Version: 2.37-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dejavu-fonts-ttf-DejaVuSerifCondensed-Italic-any
 Section: fonts
 Category: Fonts
 Repository: base
@@ -46,7 +46,7 @@ Version: 2.37-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dejavu-fonts-ttf-DejaVuSerifCondensed-BoldItalic-any
 Section: fonts
 Category: Fonts
 Repository: base
@@ -66,7 +66,7 @@ Version: 2.37-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dejavu-fonts-ttf-DejaVuSerifCondensed-Bold-any
 Section: fonts
 Category: Fonts
 Repository: base
@@ -86,7 +86,7 @@ Version: 2.37-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dejavu-fonts-ttf-DejaVuSerifCondensed-any
 Section: fonts
 Category: Fonts
 Repository: base
@@ -106,7 +106,7 @@ Version: 2.37-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dejavu-fonts-ttf-DejaVuSerif-BoldItalic-any
 Section: fonts
 Category: Fonts
 Repository: base
@@ -126,7 +126,7 @@ Version: 2.37-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dejavu-fonts-ttf-DejaVuSerif-Bold-any
 Section: fonts
 Category: Fonts
 Repository: base
@@ -146,7 +146,7 @@ Version: 2.37-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dejavu-fonts-ttf-DejaVuSerif-any
 Section: fonts
 Category: Fonts
 Repository: base
@@ -166,7 +166,7 @@ Version: 2.37-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dejavu-fonts-ttf-DejaVuSans-Oblique-any
 Section: fonts
 Category: Fonts
 Repository: base
@@ -186,7 +186,7 @@ Version: 2.37-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dejavu-fonts-ttf-DejaVuSansMono-Oblique-any
 Section: fonts
 Category: Fonts
 Repository: base
@@ -206,7 +206,7 @@ Version: 2.37-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dejavu-fonts-ttf-DejaVuSansMono-BoldOblique-any
 Section: fonts
 Category: Fonts
 Repository: base
@@ -226,7 +226,7 @@ Version: 2.37-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dejavu-fonts-ttf-DejaVuSansMono-Bold-any
 Section: fonts
 Category: Fonts
 Repository: base
@@ -246,7 +246,7 @@ Version: 2.37-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dejavu-fonts-ttf-DejaVuSansMono-any
 Section: fonts
 Category: Fonts
 Repository: base
@@ -266,7 +266,7 @@ Version: 2.37-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dejavu-fonts-ttf-DejaVuSans-ExtraLight-any
 Section: fonts
 Category: Fonts
 Repository: base
@@ -286,7 +286,7 @@ Version: 2.37-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dejavu-fonts-ttf-DejaVuSansCondensed-Oblique-any
 Section: fonts
 Category: Fonts
 Repository: base
@@ -306,7 +306,7 @@ Version: 2.37-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dejavu-fonts-ttf-DejaVuSansCondensed-BoldOblique-any
 Section: fonts
 Category: Fonts
 Repository: base
@@ -326,7 +326,7 @@ Version: 2.37-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dejavu-fonts-ttf-DejaVuSansCondensed-Bold-any
 Section: fonts
 Category: Fonts
 Repository: base
@@ -346,7 +346,7 @@ Version: 2.37-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dejavu-fonts-ttf-DejaVuSansCondensed-any
 Section: fonts
 Category: Fonts
 Repository: base
@@ -366,7 +366,7 @@ Version: 2.37-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dejavu-fonts-ttf-DejaVuSans-BoldOblique-any
 Section: fonts
 Category: Fonts
 Repository: base
@@ -386,7 +386,7 @@ Version: 2.37-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dejavu-fonts-ttf-DejaVuSans-Bold-any
 Section: fonts
 Category: Fonts
 Repository: base
@@ -406,7 +406,7 @@ Version: 2.37-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dejavu-fonts-ttf-DejaVuSans-any
 Section: fonts
 Category: Fonts
 Repository: base
@@ -426,7 +426,7 @@ Version: 2.37-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dejavu-fonts-ttf-DejaVuMathTeXGyre-any
 Section: fonts
 Category: Fonts
 Repository: base

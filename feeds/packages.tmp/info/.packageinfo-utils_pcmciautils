@@ -5,7 +5,7 @@ Version: 018-r3
 Depends: +libc +libsysfs @PCMCIA_SUPPORT
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pcmciautils-any
 Section: utils
 Category: Utilities
 Repository: base

@@ -6,7 +6,7 @@ Version: 1.8.0-r2
 Depends: +libc +libusb-1.0
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @stlink-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -29,7 +29,7 @@ Version: 1.8.0-r2
 Depends: +libc stlink
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @stlink-st-info-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -48,7 +48,7 @@ Version: 1.8.0-r2
 Depends: +libc stlink
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @stlink-st-flash-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -67,7 +67,7 @@ Version: 1.8.0-r2
 Depends: +libc stlink
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @stlink-st-trace-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -86,7 +86,7 @@ Version: 1.8.0-r2
 Depends: +libc stlink
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @stlink-st-util-any
 Section: utils
 Category: Utilities
 Repository: base

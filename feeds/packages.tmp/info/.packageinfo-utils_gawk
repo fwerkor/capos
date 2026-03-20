@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/utils/gawk/Makefile
 
 Package: gawk
-Version: 5.3.0-r2
+Version: 5.3.2-r1
 Depends: +libc +libncursesw +libreadline
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @gawk-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: GNU awk
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: gawk-5.3.0.tar.xz
+Source: gawk-5.3.2.tar.xz
 License: GPL-3.0-or-later
 LicenseFiles: COPYING
 URL: https://www.gnu.org/software/gawk/

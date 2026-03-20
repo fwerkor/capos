@@ -2,11 +2,11 @@ Source-Makefile: feeds/telephony/net/miax/Makefile
 
 Package: miax
 Submenu: Telephony
-Version: 1.4-r3
+Version: 1.4-r4
 Depends: +libc +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @miax-any
 Section: net
 Category: Network
 Repository: base

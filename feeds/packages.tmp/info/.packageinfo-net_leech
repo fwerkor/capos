@@ -6,7 +6,7 @@ Version: 1.7-r1
 Depends: +libc +xsltproc +curl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @leech-any
 Section: net
 Category: Network
 Repository: base

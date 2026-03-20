@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +wireguard-tools +ucode +luci-lib-uqr +resolveip
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-proto-wireguard-any
 Section: luci
 Category: LuCI
 Repository: base

@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +openfortivpn +luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-proto-openfortivpn-any
 Section: luci
 Category: LuCI
 Repository: base

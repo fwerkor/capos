@@ -5,7 +5,7 @@ Version: 2.6.5-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @liboath-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -28,7 +28,7 @@ Version: 2.6.5-r3
 Depends: +libc +libpam +liboath
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @oath-pam-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -51,7 +51,7 @@ Version: 2.6.5-r3
 Depends: +libc +liboath
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @oath-toolkit-any
 Section: utils
 Category: Utilities
 Repository: base

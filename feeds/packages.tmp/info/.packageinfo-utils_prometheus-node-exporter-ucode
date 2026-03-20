@@ -5,7 +5,7 @@ Version: 2024.02.07-r2
 Depends: +libc +uhttpd +uhttpd-mod-ucode +rpcd +ucode-mod-fs +ucode-mod-ubus
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-ucode-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -24,7 +24,7 @@ Version: 2024.02.07-r2
 Depends: +libc prometheus-node-exporter-ucode @dnsmasq
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-ucode-dnsmasq-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -41,7 +41,7 @@ Version: 2024.02.07-r2
 Depends: +libc prometheus-node-exporter-ucode @ltq-dsl-app
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-ucode-ltq-dsl-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -58,7 +58,7 @@ Version: 2024.02.07-r2
 Depends: +libc prometheus-node-exporter-ucode
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-ucode-netstat-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -75,7 +75,7 @@ Version: 2024.02.07-r2
 Depends: +libc prometheus-node-exporter-ucode
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-ucode-openwrt-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -92,7 +92,7 @@ Version: 2024.02.07-r2
 Depends: +libc prometheus-node-exporter-ucode
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-ucode-snmp6-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -109,7 +109,7 @@ Version: 2024.02.07-r2
 Depends: +libc prometheus-node-exporter-ucode
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-ucode-uci_dhcp_host-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -126,7 +126,7 @@ Version: 2024.02.07-r2
 Depends: +libc prometheus-node-exporter-ucode +ucode-mod-nl80211
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-ucode-wifi-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -143,7 +143,7 @@ Version: 2024.02.07-r2
 Depends: +libc prometheus-node-exporter-ucode +rpcd-mod-wireguard
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-ucode-wireguard-any
 Section: utils
 Category: Utilities
 Repository: base

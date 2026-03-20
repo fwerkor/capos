@@ -4,17 +4,17 @@ Build-Types: host
 
 Package: libpq
 Submenu: Database
-Version: 15.13-r1
+Version: 17.5-r3
 Depends: +libc +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libpq-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: PostgreSQL client library
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: postgresql-15.13.tar.bz2
+Source: postgresql-17.5.tar.bz2
 License: PostgreSQL
 CPE-ID: cpe:/a:postgresql:postgresql
 URL: http://www.postgresql.org/
@@ -24,17 +24,17 @@ Description: PostgreSQL client library.
 
 Package: pgsql-cli
 Submenu: Database
-Version: 15.13-r1
+Version: 17.5-r3
 Depends: +libc +libncursesw +libpq +libreadline +librt +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pgsql-cli-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: Command Line Interface (CLI) to PostgreSQL databases
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: postgresql-15.13.tar.bz2
+Source: postgresql-17.5.tar.bz2
 License: PostgreSQL
 CPE-ID: cpe:/a:postgresql:postgresql
 URL: http://www.postgresql.org/
@@ -44,17 +44,17 @@ Description: Command Line Interface (CLI) to PostgreSQL databases.
 
 Package: pgsql-cli-extra
 Submenu: Database
-Version: 15.13-r1
+Version: 17.5-r3
 Depends: +libc +libncursesw +libpq +libreadline +librt +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pgsql-cli-extra-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: Command Line extras for PostgreSQL databases
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: postgresql-15.13.tar.bz2
+Source: postgresql-17.5.tar.bz2
 License: PostgreSQL
 CPE-ID: cpe:/a:postgresql:postgresql
 URL: http://www.postgresql.org/
@@ -64,18 +64,18 @@ Description: Command Line extras for PostgreSQL databases.
 
 Package: pgsql-server
 Submenu: Database
-Version: 15.13-r1
+Version: 17.5-r3
 Depends: +libc +pgsql-cli +blockd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pgsql-server-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: PostgreSQL databases Server
 Maintainer: Daniel Golle <daniel@makrotopia.org>
 Require-User: postgres=5432:postgres=5432
-Source: postgresql-15.13.tar.bz2
+Source: postgresql-17.5.tar.bz2
 License: PostgreSQL
 CPE-ID: cpe:/a:postgresql:postgresql
 URL: http://www.postgresql.org/

@@ -1,0 +1,27 @@
+Source-Makefile: feeds/packages/libs/oqs-provider/Makefile
+Package/openssl/add-module 1='provider'; 2='oqsprovider'; 3='/usr/lib/ossl-modules' 4=''
+MOD_TYPE='provider'; MOD_NAME='oqsprovider'; MOD_DIR='/usr/lib/ossl-modules' OSSL_PKG='libopenssl-oqsprovider'
+
+Package: libopenssl-oqsprovider
+Submenu: SSL
+Version: 0.10.0-r1
+Depends: +libc +libopenssl +liboqs
+Conflicts: 
+Menu-Depends: 
+Provides: @libopenssl-oqsprovider-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: Open Quantum Safe provider for OpenSSL (3.x)
+Maintainer: Christian Marangi <ansuelsmth@gmail.com>
+Source: libopenssl-oqsprovider-0.10.0.tar.zst
+License: MIT
+LicenseFiles: LICENSE.txt
+URL: https://openquantumsafe.org/
+Type: ipkg
+Description:   This enable quantum-safe cryptography (QSC) in a standard OpenSSL (3.x)
+  distribution by way of implementing a single shared library, the
+  OQS provider.
+@@
+
+

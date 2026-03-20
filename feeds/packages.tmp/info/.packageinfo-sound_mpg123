@@ -5,7 +5,7 @@ Version: 1.32.6-r1
 Depends: +libc +libltdl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libmpg123-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -25,7 +25,7 @@ Version: 1.32.6-r1
 Depends: +libc +libltdl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libout123-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -45,7 +45,7 @@ Version: 1.32.6-r1
 Depends: +libc +libltdl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libsyn123-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -65,7 +65,7 @@ Version: 1.32.6-r1
 Depends: +libc +libmpg123 +alsa-lib +libout123 +libsyn123
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mpg123-any
 Section: sound
 Category: Sound
 Repository: base

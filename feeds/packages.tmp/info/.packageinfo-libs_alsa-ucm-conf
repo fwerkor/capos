@@ -6,7 +6,7 @@ Version: 1.2.11-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @alsa-ucm-conf-any
 Section: libs
 Category: Libraries
 Repository: base

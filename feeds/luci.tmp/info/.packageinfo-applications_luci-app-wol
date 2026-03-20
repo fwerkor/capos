@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base +etherwake
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-wol-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -26,7 +26,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-ar-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -45,7 +45,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-bg-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -64,7 +64,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-bn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -83,7 +83,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-ca-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -102,7 +102,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-cs-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -121,7 +121,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-da-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -140,7 +140,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-de-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -159,7 +159,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-el-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -178,7 +178,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-es-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -191,13 +191,32 @@ Hidden: 1
 Description:     Translation for luci-app-wol - Español (Spanish)
 @@
 
+Package: luci-i18n-wol-fa
+Default: LUCI_LANG_fa||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wol
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wol-fa-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wol - fa translation
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wol - Farsi (Persian)
+@@
+
 Package: luci-i18n-wol-fi
 Default: LUCI_LANG_fi||(ALL&&m)
 Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-fi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -216,7 +235,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-fr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -235,7 +254,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-ga-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -254,7 +273,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-he-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -273,7 +292,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-hi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -292,7 +311,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-hu-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -311,7 +330,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-it-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -330,7 +349,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-ja-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -349,7 +368,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-ko-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -368,7 +387,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-lt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -387,7 +406,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-mr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -406,7 +425,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-ms-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -425,7 +444,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-no-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -444,7 +463,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-nl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -463,7 +482,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-pl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -482,7 +501,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-pt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -501,7 +520,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -520,7 +539,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-ro-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -539,7 +558,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-ru-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -558,7 +577,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-sk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -577,7 +596,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-sv-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -590,13 +609,32 @@ Hidden: 1
 Description:     Translation for luci-app-wol - Svenska (Swedish)
 @@
 
+Package: luci-i18n-wol-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-wol
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-wol-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wol - ta translation
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wol - Tamil (Tamil)
+@@
+
 Package: luci-i18n-wol-tr
 Default: LUCI_LANG_tr||(ALL&&m)
 Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-tr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -615,7 +653,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-uk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -634,7 +672,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-vi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -653,7 +691,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-yua-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -672,7 +710,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -691,7 +729,7 @@ Version: x
 Depends: +libc luci-app-wol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-wol-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base

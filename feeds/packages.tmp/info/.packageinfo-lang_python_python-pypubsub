@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/lang/python/python-pypubsub/Makefile
+Build-Depends: python-setuptools/host
+
+Package: python3-pypubsub
+Submenu: Python
+Version: 4.0.3-r2
+Depends: +libc +python3-light +python3-xml
+Conflicts: 
+Menu-Depends: 
+Provides: @python3-pypubsub-any
+Section: lang
+Category: Languages
+Repository: base
+Title: Python Publish-Subscribe Package
+Maintainer: Austin Lane <vidplace7@gmail.com>
+Source: pypubsub-4.0.3.tar.gz
+License: BSD-2-Clause
+LicenseFiles: src/pubsub/LICENSE_BSD_Simple.txt
+URL: https://pypi.org/project/pypubsub
+Type: ipkg
+Description: Provides a publish-subscribe API to facilitate event-based or
+message-based architecture in a single-process application.
+@@
+
+

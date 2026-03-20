@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/net/uradvd/Makefile
 
 Package: uradvd
-Version: 2025.08.16~b37524dfb0292c425fd61f5bffb3101fb1979264-r1
+Version: 2025.09.20~1e64364d323acb8c71285a6fb85d384334e7007d-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @uradvd-any
 Section: net
 Category: Network
 Repository: base
 Title: A tiny radvd
 Maintainer: Moritz Warning <moritzwarning@web.de>
-Source: uradvd-2025.08.16~b37524dfb0292c425fd61f5bffb3101fb1979264.tar.zst
+Source: uradvd-2025.09.20~1e64364d323acb8c71285a6fb85d384334e7007d.tar.zst
 License: BSD-2-Clause
 LicenseFiles: LICENSE
 Type: ipkg

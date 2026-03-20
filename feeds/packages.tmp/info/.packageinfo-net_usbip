@@ -5,7 +5,7 @@ Version: 15
 Depends: +libc @USB_SUPPORT +libwrap +kmod-usbip +libudev +usbids
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @usbip-any
 Section: net
 Category: Network
 Repository: base
@@ -23,7 +23,7 @@ Version: 15
 Depends: +libc @USB_SUPPORT usbip +kmod-usbip-client
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @usbip-client-any
 Section: net
 Category: Network
 Repository: base
@@ -41,7 +41,7 @@ Version: 15
 Depends: +libc @USB_SUPPORT usbip +kmod-usbip-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @usbip-server-any
 Section: net
 Category: Network
 Repository: base

@@ -5,7 +5,7 @@ Version: 4.8-r1
 Depends: +libc +libusb-compat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libsispmctl-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -24,7 +24,7 @@ Version: 4.8-r1
 Depends: +libc +libsispmctl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @sispmctl-any
 Section: utils
 Category: Utilities
 Repository: base

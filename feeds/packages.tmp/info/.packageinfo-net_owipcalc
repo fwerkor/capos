@@ -5,7 +5,7 @@ Version: 7
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libowipcalc-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -25,7 +25,7 @@ Version: 7
 Depends: +libc +libowipcalc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @owipcalc-any
 Section: utils
 Category: Utilities
 Repository: base

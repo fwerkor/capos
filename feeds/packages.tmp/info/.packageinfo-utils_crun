@@ -2,11 +2,11 @@ Source-Makefile: feeds/packages/utils/crun/Makefile
 Build-Depends: argp-standalone
 
 Package: crun
-Version: 1.17-r1
+Version: 1.17-r3
 Depends: +libc @!arc +libseccomp +libcap +libgcrypt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @crun-any
 Section: utils
 Category: Utilities
 Repository: base

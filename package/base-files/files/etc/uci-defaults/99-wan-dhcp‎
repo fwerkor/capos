@@ -1,0 +1,63 @@
+#!/bin/sh
+# Enable WAN IPv4 DHCP + WAN6 DHCPv6 (with prefix delegation) by default.
+# Safe policy: only modify existing sections; do not create new wan/wan6; do not touch device/ifname.
+
+changed=0
+
+# IPv4: wan -> dhcp
+if uci -q get network.wan >/dev/null; then
+    cur="$(uci -q get network.wan.proto)"
+    if [ "$cur" != "dhcp" ]; then
+        uci set network.wan.proto='dhcp'
+        changed=1
+    fi
+fi
+
+# IPv6: wan6 -> dhcpv6, bind to wan, request PD
+if uci -q get network.wan6 >/dev/null; then
+    cur6="$(uci -q get network.wan6.proto)"
+    if [ "$cur6" != "dhcpv6" ]; then
+        uci set network.wan6.proto='dhcpv6'
+        changed=1
+    fi
+
+    # make sure wan6 uses wan as its base interface (common practice)
+    cur_if="$(uci -q get network.wan6.device)"
+    cur_if2="$(uci -q get network.wan6.ifname)"  # for older configs
+    if [ -n "$cur_if" ]; then
+        if [ "$cur_if" != "@wan" ]; then
+            uci set network.wan6.device='@wan'
+            changed=1
+        fi
+    elif [ -n "$cur_if2" ]; then
+        # legacy ifname style
+        if [ "$cur_if2" != "@wan" ]; then
+            uci set network.wan6.ifname='@wan'
+            changed=1
+        fi
+    else
+        # if neither exists, set device (newer style). This doesn't change wan's device.
+        uci set network.wan6.device='@wan'
+        changed=1
+    fi
+
+    # request a delegated prefix for LAN
+    pd="$(uci -q get network.wan6.reqprefix)"
+    if [ -z "$pd" ] || [ "$pd" = "no" ] || [ "$pd" = "0" ]; then
+        uci set network.wan6.reqprefix='auto'
+        changed=1
+    fi
+fi
+
+# LAN: accept delegated prefix (many targets already have this)
+if uci -q get network.lan >/dev/null; then
+    ip6assign="$(uci -q get network.lan.ip6assign)"
+    if [ -z "$ip6assign" ] || [ "$ip6assign" = "0" ]; then
+        uci set network.lan.ip6assign='64'
+        changed=1
+    fi
+fi
+
+[ "$changed" -eq 1 ] && uci commit network
+
+exit 0

@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/libs/libksba/Makefile
 
 Package: libksba
-Version: 1.6.4-r1
+Version: 1.6.7-r1
 Depends: +libc +libgpg-error
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libksba-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: GnuPG X.509 library
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: libksba-1.6.4.tar.bz2
+Source: libksba-1.6.7.tar.bz2
 License: LGPL-3.0-or-later GPL-2.0-or-later
 LicenseFiles: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv3
 CPE-ID: cpe:/a:gnupg:libksba

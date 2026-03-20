@@ -5,7 +5,7 @@ Version: 0.4.0-r1
 Depends: +libc +ip +kmod-l2tp +kmod-l2tp-eth +kmod-sched +libnfnetlink +libnl-tiny +libpthread +librt +python3-ctypes +python3-light +python3-logging +tc-tiny
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tunneldigger-broker-any
 Section: net
 Category: Network
 Repository: base
@@ -25,7 +25,7 @@ Version: 0.4.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tunneldigger-broker-src-any
 Section: net
 Category: Network
 Repository: base

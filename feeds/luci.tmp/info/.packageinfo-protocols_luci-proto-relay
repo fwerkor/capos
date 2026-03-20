@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +relayd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-proto-relay-any
 Section: luci
 Category: LuCI
 Repository: base

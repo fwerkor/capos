@@ -6,17 +6,17 @@ Build-Types: host
 Package: mariadb-client
 Menu: 1
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc +BUILD_NLS:libiconv-full +libatomic +libfmt +libopenssl +libstdcpp +zlib +libedit
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-client-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: MariaDB database client
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -33,17 +33,17 @@ mysqlcheck
 
 Package: mariadb-client-extra
 Submenu: Database
-Version: 11.4.8-r2
-Depends: +libc mariadb-client
+Version: 11.8.3-r1
+Depends: +libc mariadb-client +KERNEL_IO_URING:liburing +libaio +libpcre2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-client-extra-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: MariaDB database client extra
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -70,17 +70,17 @@ mytop
 Package: mariadb-server
 Menu: 1
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server-base
 Conflicts: 
 Menu-Depends: 
-Provides: mysql-server
+Provides: @mariadb-server-any mysql-server
 Section: utils
 Category: Utilities
 Repository: base
 Title: MariaDB database server
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -101,18 +101,18 @@ mysqld
 
 Package: mariadb-server-base
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc +BUILD_NLS:libiconv-full +libatomic +libfmt +libopenssl +libstdcpp +zlib +KERNEL_IO_URING:liburing +libaio +liblzma +libpcre2 +resolveip +sudo
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-base-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: MariaDB database server base
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
 Require-User: mariadb=376:mariadb=376
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -128,17 +128,17 @@ the dependencies.
 
 Package: mariadb-server-extra
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-extra-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: MariaDB database server extra
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -180,17 +180,17 @@ wsrep_sst_rsync_wan
 
 Package: mariadb-server-plugin-auth-ed25519
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-plugin-auth-ed25519-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -204,17 +204,17 @@ This package provides the auth_ed25519 plugin.
 
 Package: mariadb-server-plugin-auth-gssapi
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server +PACKAGE_mariadb-server-plugin-auth-gssapi:krb5-libs
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-plugin-auth-gssapi-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -228,17 +228,17 @@ This package provides the auth_gssapi plugin.
 
 Package: mariadb-server-plugin-auth-pam
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server +PACKAGE_mariadb-server-plugin-auth-pam:libpam
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-plugin-auth-pam-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -252,17 +252,17 @@ This package provides the auth_pam plugin.
 
 Package: mariadb-server-plugin-auth-pam-v1
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server +PACKAGE_mariadb-server-plugin-auth-pam-v1:libpam
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-plugin-auth-pam-v1-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -276,17 +276,17 @@ This package provides the auth_pam_v1 plugin.
 
 Package: mariadb-server-plugin-disks
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-plugin-disks-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -300,17 +300,17 @@ This package provides the disks plugin.
 
 Package: mariadb-server-plugin-feedback
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-plugin-feedback-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -324,17 +324,17 @@ This package provides the feedback plugin.
 
 Package: mariadb-server-plugin-file-key-management
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-plugin-file-key-management-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -348,17 +348,17 @@ This package provides the file_key_management plugin.
 
 Package: mariadb-server-plugin-ha-archive
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-plugin-ha-archive-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -372,17 +372,17 @@ This package provides the ha_archive plugin.
 
 Package: mariadb-server-plugin-ha-blackhole
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-plugin-ha-blackhole-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -396,17 +396,17 @@ This package provides the ha_blackhole plugin.
 
 Package: mariadb-server-plugin-ha-connect
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server +PACKAGE_mariadb-server-plugin-ha-connect:libxml2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-plugin-ha-connect-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -420,17 +420,17 @@ This package provides the ha_connect plugin.
 
 Package: mariadb-server-plugin-ha-federated
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-plugin-ha-federated-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -444,17 +444,17 @@ This package provides the ha_federated plugin.
 
 Package: mariadb-server-plugin-ha-federatedx
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-plugin-ha-federatedx-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -468,17 +468,17 @@ This package provides the ha_federatedx plugin.
 
 Package: mariadb-server-plugin-ha-sphinx
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-plugin-ha-sphinx-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -492,17 +492,17 @@ This package provides the ha_sphinx plugin.
 
 Package: mariadb-server-plugin-ha-spider
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-plugin-ha-spider-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -516,17 +516,17 @@ This package provides the ha_spider plugin.
 
 Package: mariadb-server-plugin-handlersocket
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-plugin-handlersocket-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -540,17 +540,17 @@ This package provides the handlersocket plugin.
 
 Package: mariadb-server-plugin-locales
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-plugin-locales-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -564,17 +564,17 @@ This package provides the locales plugin.
 
 Package: mariadb-server-plugin-metadata-lock-info
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-plugin-metadata-lock-info-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -588,17 +588,17 @@ This package provides the metadata_lock_info plugin.
 
 Package: mariadb-server-plugin-query-cache-info
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-plugin-query-cache-info-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -612,17 +612,17 @@ This package provides the query_cache_info plugin.
 
 Package: mariadb-server-plugin-query-response-time
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-plugin-query-response-time-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -636,17 +636,17 @@ This package provides the query_response_time plugin.
 
 Package: mariadb-server-plugin-server-audit
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-plugin-server-audit-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -660,17 +660,17 @@ This package provides the server_audit plugin.
 
 Package: mariadb-server-plugin-simple-password-check
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-plugin-simple-password-check-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -684,17 +684,17 @@ This package provides the simple_password_check plugin.
 
 Package: mariadb-server-plugin-sql-errlog
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-plugin-sql-errlog-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb
@@ -708,17 +708,17 @@ This package provides the sql_errlog plugin.
 
 Package: mariadb-server-plugin-wsrep-info
 Submenu: Database
-Version: 11.4.8-r2
+Version: 11.8.3-r1
 Depends: +libc mariadb-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mariadb-server-plugin-wsrep-info-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-11.4.8.tar.gz
+Source: mariadb-11.8.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING THIRDPARTY
 CPE-ID: cpe:/a:mariadb:mariadb

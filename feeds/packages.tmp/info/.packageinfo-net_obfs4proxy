@@ -6,7 +6,7 @@ Version: 0.0.14-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @obfs4proxy-any
 Section: net
 Category: Network
 Repository: base
@@ -39,7 +39,7 @@ Version: 0.0.14-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @golang-gitlab-yawning-obfs4-dev-any
 Section: lang
 Category: Languages
 Repository: base

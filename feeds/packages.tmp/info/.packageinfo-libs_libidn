@@ -6,7 +6,7 @@ Version: 1.42-r1
 Depends: +libc +libidn
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @idn-any
 Section: net
 Category: Network
 Repository: base
@@ -31,7 +31,7 @@ Version: 1.42-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libidn-any
 Section: libs
 Category: Libraries
 Repository: base

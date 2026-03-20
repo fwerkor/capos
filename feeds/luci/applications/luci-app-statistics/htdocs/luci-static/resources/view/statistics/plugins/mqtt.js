@@ -5,7 +5,7 @@
 return baseclass.extend({
     title: _('Mqtt Plugin Configuration'),
 
-    addFormOptions: function(s) {
+    addFormOptions(s) {
         let o, ss;
 
         o = s.option(form.Flag, 'enable', _('Sends or receives data via mqtt'));
@@ -68,6 +68,19 @@ return baseclass.extend({
         o.value('false', _('False'));
         o.modalonly = true;
         o.optional = true;
+        
+        o = ss.option(form.ListValue, 'TLSProtocol', _('TLSProtocol'));
+        o.depends('blocktype', 'Publish');
+        o.value('tlsv1.2', _('TLS 1.2'));
+        o.value('tlsv1.3', _('TLS 1.3'));
+        o.modalonly = true;
+        o.optional = true;
+
+        o = ss.option(form.Value, 'CACert', _('CACert'));
+        o.depends({'TLSProtocol': 'tls', '!contains': true });
+        o.optional = true;
+        o.modalonly = true;
+        o.default = '/etc/ssl/certs/ca-certificates.crt';
 
         o = ss.option(form.ListValue, 'CleanSession', _('CleanSession'));
         o.depends('blocktype', 'Subscribe');
@@ -82,7 +95,7 @@ return baseclass.extend({
         o.modalonly = true;
     },
 
-    configSummary: function(section) {
+    configSummary(section) {
         return _('Mqtt plugin enabled');
     }
 });

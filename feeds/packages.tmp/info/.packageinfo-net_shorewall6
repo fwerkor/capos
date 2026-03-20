@@ -7,7 +7,7 @@ Version: 5.2.8-r3
 Depends: +libc +ip @IPV6 +ip6tables +kmod-ipt-hashlimit +kmod-ipt-raw6 +iptables-mod-hashlimit +shorewall-core +perl +perlbase-autoloader +perlbase-autouse +perlbase-dynaloader +perlbase-digest +perlbase-findbin +perlbase-getopt +perlbase-hash
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shorewall6-any
 Section: net
 Category: Network
 Repository: base

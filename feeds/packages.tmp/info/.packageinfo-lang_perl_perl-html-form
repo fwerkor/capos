@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/perl/perl-html-form/Makefile
+
+Package: perl-html-form
+Submenu: Perl
+Version: 6.12.5.40-r1
+Depends: +libc perl +perlbase-encode +perlbase-essential +perl-html-parser +perl-http-message +perl-uri
+Conflicts: 
+Menu-Depends: 
+Provides: @perl-html-form-any
+Section: lang
+Category: Languages
+Repository: base
+Title: Class that represents an HTML form element
+Maintainer: Jens Wagner <jens@wagner2013.de>
+Source: HTML-Form-6.12.tar.gz
+License: GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE
+URL: https://metacpan.org/pod/HTML::Form
+Type: ipkg
+Description:   Objects of the HTML::Form class represents a single HTML
+  <form> ... </form> instance.
+@@
+
+

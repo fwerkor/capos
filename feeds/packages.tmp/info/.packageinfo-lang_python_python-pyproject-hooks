@@ -4,17 +4,17 @@ Build-Types: host
 
 Package: python3-pyproject-hooks
 Submenu: Python
-Version: 1.0.0-r2
+Version: 1.2.0-r1
 Depends: +libc +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pyproject-hooks-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Wrappers to call pyproject.toml-based build backend hooks
 Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: pyproject_hooks-1.0.0.tar.gz
+Source: pyproject_hooks-1.2.0.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 URL: https://github.com/pypa/pyproject-hooks
@@ -28,17 +28,17 @@ projects.
 
 Package: python3-pyproject-hooks-src
 Submenu: Python
-Version: 1.0.0-r2
+Version: 1.2.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pyproject-hooks-src-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Wrappers to call pyproject.toml-based build backend hooks (sources)
 Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: pyproject_hooks-1.0.0.tar.gz
+Source: pyproject_hooks-1.2.0.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 URL: https://github.com/pypa/pyproject-hooks

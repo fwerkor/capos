@@ -1,0 +1,75 @@
+Source-Makefile: feeds/packages/lang/lua/luaossl/Makefile
+
+Package: luaossl
+Submenu: Lua
+Version: 20220711-r2
+Depends: +libc +libopenssl +liblua
+Conflicts: 
+Menu-Depends: 
+Provides: @luaossl-any
+Build-Variant: lua51
+Section: lang
+Category: Languages
+Repository: base
+Title: Comprehensive binding to OpenSSL for lua5.1
+Maintainer: Siger Yang <siger.yang@outlook.com>
+Source: luaossl-20220711.tar.zst
+License: MIT
+LicenseFiles: LICENSE
+URL: http://25thandclement.com/~william/projects/luaossl.html
+Type: ipkg
+Description:  luaossl is a comprehensive binding to OpenSSL for Lua 5.1, 5.2, and
+ later. It includes support for certificate and key management, key
+ generation, signature verification, and deep bindings to the
+ distinguished name, alternative name, and X.509v3 extension interfaces. 
+@@
+
+Package: luaossl-lua5.3
+Submenu: Lua
+Version: 20220711-r2
+Depends: +libc +libopenssl +liblua5.3
+Conflicts: 
+Menu-Depends: 
+Provides: @luaossl-lua5.3-any
+Build-Variant: lua53
+Section: lang
+Category: Languages
+Repository: base
+Title: Comprehensive binding to OpenSSL for lua5.3
+Maintainer: Siger Yang <siger.yang@outlook.com>
+Source: luaossl-20220711.tar.zst
+License: MIT
+LicenseFiles: LICENSE
+URL: http://25thandclement.com/~william/projects/luaossl.html
+Type: ipkg
+Description:  luaossl is a comprehensive binding to OpenSSL for Lua 5.1, 5.2, and
+ later. It includes support for certificate and key management, key
+ generation, signature verification, and deep bindings to the
+ distinguished name, alternative name, and X.509v3 extension interfaces. 
+@@
+
+Package: luaossl-lua5.4
+Submenu: Lua
+Version: 20220711-r2
+Depends: +libc +libopenssl +liblua5.4
+Conflicts: 
+Menu-Depends: 
+Provides: @luaossl-lua5.4-any
+Build-Variant: lua54
+Section: lang
+Category: Languages
+Repository: base
+Title: Comprehensive binding to OpenSSL for lua5.4
+Maintainer: Siger Yang <siger.yang@outlook.com>
+Source: luaossl-20220711.tar.zst
+License: MIT
+LicenseFiles: LICENSE
+URL: http://25thandclement.com/~william/projects/luaossl.html
+Type: ipkg
+Description:  luaossl is a comprehensive binding to OpenSSL for Lua 5.1, 5.2, and
+ later. It includes support for certificate and key management, key
+ generation, signature verification, and deep bindings to the
+ distinguished name, alternative name, and X.509v3 extension interfaces. 
+@@
+
+

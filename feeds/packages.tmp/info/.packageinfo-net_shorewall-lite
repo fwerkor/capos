@@ -7,7 +7,7 @@ Version: 5.2.8-r2
 Depends: +libc +ip +iptables +shorewall-core
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shorewall-lite-any
 Section: net
 Category: Network
 Repository: base

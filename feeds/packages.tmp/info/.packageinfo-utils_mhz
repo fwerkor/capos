@@ -5,7 +5,7 @@ Version: 2025.07.26~512f63021f6f0cec8e5e13be744dba0b4704cfae-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mhz-any
 Section: utils
 Category: Utilities
 Repository: base

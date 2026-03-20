@@ -3,18 +3,18 @@ Build-Depends: libtorrent
 
 Package: rtorrent
 Submenu: BitTorrent
-Version: 0.9.8-r2
-Depends: +libc +libcurl +libncurses +libpthread +libopenssl +libstdcpp +zlib
+Version: 0.15.5-r1
+Depends: +libc +libcurl +libncurses +libatomic +libopenssl +libstdcpp +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rtorrent-any
 Build-Variant: norpc
 Section: net
 Category: Network
 Repository: base
 Title: BitTorrent client for ncurses
 Maintainer: Rosen Penev <rosenp@gmail.com>
-Source: rtorrent-0.9.8.tar.gz
+Source: rtorrent-0.15.5.tar.zst
 License: GPL-2.0-or-later
 LicenseFiles: COPYING
 URL: https://github.com/rakshasa/rtorrent
@@ -28,18 +28,18 @@ Description:  rTorrent is a BitTorrent client for ncurses, using the libtorrent 
 
 Package: rtorrent-rpc
 Submenu: BitTorrent
-Version: 0.9.8-r2
-Depends: +libc +libcurl +libncurses +libpthread +libopenssl +libstdcpp +zlib +xmlrpc-c-server
+Version: 0.15.5-r1
+Depends: +libc +libcurl +libncurses +libatomic +libopenssl +libstdcpp +zlib +xmlrpc-c-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rtorrent-rpc-any
 Build-Variant: rpc
 Section: net
 Category: Network
 Repository: base
 Title: BitTorrent client for ncurses (with rpc support)
 Maintainer: Rosen Penev <rosenp@gmail.com>
-Source: rtorrent-0.9.8.tar.gz
+Source: rtorrent-0.15.5.tar.zst
 License: GPL-2.0-or-later
 LicenseFiles: COPYING
 URL: https://github.com/rakshasa/rtorrent

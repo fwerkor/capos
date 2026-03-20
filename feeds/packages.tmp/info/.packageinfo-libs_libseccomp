@@ -6,7 +6,7 @@ Version: 2.5.5-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libseccomp-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -29,7 +29,7 @@ Version: 2.5.5-r1
 Depends: +libc libseccomp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @scmp_sys_resolver-any
 Section: libs
 Category: Libraries
 Repository: base

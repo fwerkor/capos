@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/utils/prometheus-node-exporter-lua/Makefile
 
 Package: prometheus-node-exporter-lua
-Version: 2025.07.15-r1
+Version: 2025.11.22-r1
 Depends: +libc +luasocket +lua +uhttpd +uhttpd-mod-lua +libubus-lua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-lua-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -20,11 +20,11 @@ Description:   Provides node metrics as Prometheus scraping endpoint.
 @@
 
 Package: prometheus-node-exporter-lua-bmx7
-Version: 2025.07.15-r1
+Version: 2025.11.22-r1
 Depends: +libc prometheus-node-exporter-lua bmx7 +lua-cjson +bmx7-json
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-lua-bmx7-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -37,11 +37,11 @@ Description: Prometheus node exporter (bmx7 links collector)
 @@
 
 Package: prometheus-node-exporter-lua-dawn
-Version: 2025.07.15-r1
+Version: 2025.11.22-r1
 Depends: +libc prometheus-node-exporter-lua +libiwinfo-lua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-lua-dawn-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -54,11 +54,11 @@ Description: Prometheus node exporter (dawn collector)
 @@
 
 Package: prometheus-node-exporter-lua-hostapd_stations
-Version: 2025.07.15-r1
+Version: 2025.11.22-r1
 Depends: +libc prometheus-node-exporter-lua +hostapd-utils +lua-bit32
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-lua-hostapd_stations-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -71,11 +71,11 @@ Description: Prometheus node exporter (hostapd_stations collector) - Requires a 
 @@
 
 Package: prometheus-node-exporter-lua-hostapd_ubus_stations
-Version: 2025.07.15-r1
+Version: 2025.11.22-r1
 Depends: +libc prometheus-node-exporter-lua +luabitop
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-lua-hostapd_ubus_stations-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -88,11 +88,11 @@ Description: Prometheus node exporter (hostapd_ubus_stations collector)
 @@
 
 Package: prometheus-node-exporter-lua-hwmon
-Version: 2025.07.15-r1
+Version: 2025.11.22-r1
 Depends: +libc prometheus-node-exporter-lua +luci-lib-nixio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-lua-hwmon-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -105,11 +105,11 @@ Description: Prometheus node exporter (hwmon collector)
 @@
 
 Package: prometheus-node-exporter-lua-ltq-dsl
-Version: 2025.07.15-r1
+Version: 2025.11.22-r1
 Depends: +libc prometheus-node-exporter-lua ltq-dsl-app
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-lua-ltq-dsl-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -122,11 +122,11 @@ Description: Prometheus node exporter (lantiq dsl collector)
 @@
 
 Package: prometheus-node-exporter-lua-nat_traffic
-Version: 2025.07.15-r1
+Version: 2025.11.22-r1
 Depends: +libc prometheus-node-exporter-lua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-lua-nat_traffic-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -139,11 +139,11 @@ Description: Prometheus node exporter (nat_traffic collector)
 @@
 
 Package: prometheus-node-exporter-lua-netstat
-Version: 2025.07.15-r1
+Version: 2025.11.22-r1
 Depends: +libc prometheus-node-exporter-lua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-lua-netstat-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -156,11 +156,11 @@ Description: Prometheus node exporter (netstat collector)
 @@
 
 Package: prometheus-node-exporter-lua-openwrt
-Version: 2025.07.15-r1
+Version: 2025.11.22-r1
 Depends: +libc prometheus-node-exporter-lua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-lua-openwrt-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -173,11 +173,11 @@ Description: Prometheus node exporter (openwrt collector)
 @@
 
 Package: prometheus-node-exporter-lua-textfile
-Version: 2025.07.15-r1
+Version: 2025.11.22-r1
 Depends: +libc prometheus-node-exporter-lua +luci-lib-nixio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-lua-textfile-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -190,11 +190,11 @@ Description: Prometheus node exporter (textfile collector)
 @@
 
 Package: prometheus-node-exporter-lua-thermal
-Version: 2025.07.15-r1
+Version: 2025.11.22-r1
 Depends: +libc prometheus-node-exporter-lua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-lua-thermal-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -207,11 +207,11 @@ Description: Prometheus node exporter (thermal collector)
 @@
 
 Package: prometheus-node-exporter-lua-ubnt-manager
-Version: 2025.07.15-r1
+Version: 2025.11.22-r1
 Depends: +libc prometheus-node-exporter-lua +ubnt-manager +lua-cjson
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-lua-ubnt-manager-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -224,11 +224,11 @@ Description: Prometheus node exporter (ubnt-manager collector)
 @@
 
 Package: prometheus-node-exporter-lua-uci_dhcp_host
-Version: 2025.07.15-r1
+Version: 2025.11.22-r1
 Depends: +libc prometheus-node-exporter-lua +libuci-lua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-lua-uci_dhcp_host-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -241,11 +241,11 @@ Description: Prometheus node exporter (uci_dhcp_host collector)
 @@
 
 Package: prometheus-node-exporter-lua-wifi
-Version: 2025.07.15-r1
+Version: 2025.11.22-r1
 Depends: +libc prometheus-node-exporter-lua +libiwinfo-lua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-lua-wifi-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -258,11 +258,11 @@ Description: Prometheus node exporter (wifi collector)
 @@
 
 Package: prometheus-node-exporter-lua-wifi_stations
-Version: 2025.07.15-r1
+Version: 2025.11.22-r1
 Depends: +libc prometheus-node-exporter-lua +libiwinfo-lua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-lua-wifi_stations-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -275,11 +275,11 @@ Description: Prometheus node exporter (wifi_stations collector)
 @@
 
 Package: prometheus-node-exporter-lua-snmp6
-Version: 2025.07.15-r1
+Version: 2025.11.22-r1
 Depends: +libc prometheus-node-exporter-lua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-lua-snmp6-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -292,11 +292,11 @@ Description: Prometheus node exporter (snmp6 collector)
 @@
 
 Package: prometheus-node-exporter-lua-realtek-poe
-Version: 2025.07.15-r1
+Version: 2025.11.22-r1
 Depends: +libc prometheus-node-exporter-lua +realtek-poe
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-lua-realtek-poe-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -309,11 +309,11 @@ Description: Prometheus node exporter (realtek-poe collector)
 @@
 
 Package: prometheus-node-exporter-lua-mwan3
-Version: 2025.07.15-r1
+Version: 2025.11.22-r1
 Depends: +libc prometheus-node-exporter-lua +mwan3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-lua-mwan3-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -326,11 +326,11 @@ Description: Prometheus node exporter (mwan3 collector)
 @@
 
 Package: prometheus-node-exporter-lua-ethtool
-Version: 2025.07.15-r1
+Version: 2025.11.22-r1
 Depends: +libc prometheus-node-exporter-lua +ethtool-lua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-lua-ethtool-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -343,11 +343,11 @@ Description: Prometheus node exporter (ethtool collector)
 @@
 
 Package: prometheus-node-exporter-lua-nft-counters
-Version: 2025.07.15-r1
+Version: 2025.11.22-r1
 Depends: +libc prometheus-node-exporter-lua +nftables-json +lua-cjson
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prometheus-node-exporter-lua-nft-counters-any
 Section: utils
 Category: Utilities
 Repository: base

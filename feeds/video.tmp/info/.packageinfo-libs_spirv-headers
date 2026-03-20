@@ -1,0 +1,24 @@
+Source-Makefile: feeds/video/libs/spirv-headers/Makefile
+Build-Types: host
+
+Package: spirv-headers
+Version: 1.4.328.0
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @spirv-headers-any
+Section: devel
+Category: Development
+Repository: base
+Title: SPIR-V Headers
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: SPIRV-Headers-1.4.328.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/KhronosGroup/SPIRV-Headers
+Type: ipkg
+Build-Only: 1
+Description: The LLVM Project is a collection of modular and reusable compiler and toolchain technologies.
+@@
+
+

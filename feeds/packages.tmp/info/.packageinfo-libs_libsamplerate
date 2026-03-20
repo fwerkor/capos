@@ -5,7 +5,7 @@ Version: 0.2.2-r1
 Depends: +libc +libsndfile
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libsamplerate-any
 Section: libs
 Category: Libraries
 Repository: base

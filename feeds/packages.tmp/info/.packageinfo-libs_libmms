@@ -5,7 +5,7 @@ Version: 0.6.4-r4
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libmms-any
 Section: libs
 Category: Libraries
 Repository: base

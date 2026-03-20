@@ -5,7 +5,7 @@ Version: 1.0.2-r1
 Depends: +libc +libnfnetlink +kmod-nfnetlink-log +libmnl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libnetfilter-log-any
 Section: libs
 Category: Libraries
 Repository: base

@@ -7,7 +7,7 @@ Version: 1.0-r2
 Depends: +libc @DEVEL +python3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-packages-any
 Section: lang
 Category: Languages
 Repository: base

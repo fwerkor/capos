@@ -6,7 +6,7 @@ Version: 1.11.1-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tinyproxy-any
 Section: net
 Category: Network
 Repository: base

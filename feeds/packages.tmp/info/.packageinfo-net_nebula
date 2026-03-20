@@ -2,18 +2,18 @@ Source-Makefile: feeds/packages/net/nebula/Makefile
 Build-Depends: golang/host
 
 Package: nebula
-Version: 1.8.2-r2
+Version: 1.9.7-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) +kmod-tun
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nebula-any
 Section: net
 Category: Network
 Repository: base
 Title: nebula
-Maintainer: 
-Source: nebula-1.8.2.tar.gz
-License: Apache-2.0
+Maintainer: Yuxi Yang <i@bgme.me>
+Source: nebula-1.9.7.tar.gz
+License: MIT
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:slack:nebula
 URL: https://docs.openwrt.melmac.net/nebula/
@@ -25,18 +25,18 @@ Description:     Nebula is a scalable overlay networking tool with a focus on pe
 @@
 
 Package: nebula-cert
-Version: 1.8.2-r2
+Version: 1.9.7-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nebula-cert-any
 Section: net
 Category: Network
 Repository: base
 Title: nebula-cert
-Maintainer: 
-Source: nebula-1.8.2.tar.gz
-License: Apache-2.0
+Maintainer: Yuxi Yang <i@bgme.me>
+Source: nebula-1.9.7.tar.gz
+License: MIT
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:slack:nebula
 URL: https://docs.openwrt.melmac.net/nebula/
@@ -47,18 +47,18 @@ Description:     Nebula is a scalable overlay networking tool with a focus on pe
 @@
 
 Package: nebula-proto
-Version: 1.8.2-r2
+Version: 1.9.7-r1
 Depends: +libc nebula +!BUSYBOX_DEFAULT_AWK:gawk +!BUSYBOX_DEFAULT_GREP:grep +!BUSYBOX_DEFAULT_SED:sed
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nebula-proto-any
 Section: net
 Category: Network
 Repository: base
 Title: nebula-proto
-Maintainer: 
-Source: nebula-1.8.2.tar.gz
-License: Apache-2.0
+Maintainer: Yuxi Yang <i@bgme.me>
+Source: nebula-1.9.7.tar.gz
+License: MIT
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:slack:nebula
 URL: https://docs.openwrt.melmac.net/nebula/
@@ -69,18 +69,18 @@ Description:     Nebula is a scalable overlay networking tool with a focus on pe
 @@
 
 Package: nebula-service
-Version: 1.8.2-r2
+Version: 1.9.7-r1
 Depends: +libc nebula +!BUSYBOX_DEFAULT_AWK:gawk +!BUSYBOX_DEFAULT_SED:sed
 Conflicts: nebula-proto
 Menu-Depends: 
-Provides: 
+Provides: @nebula-service-any
 Section: net
 Category: Network
 Repository: base
 Title: nebula-service
-Maintainer: 
-Source: nebula-1.8.2.tar.gz
-License: Apache-2.0
+Maintainer: Yuxi Yang <i@bgme.me>
+Source: nebula-1.9.7.tar.gz
+License: MIT
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:slack:nebula
 URL: https://docs.openwrt.melmac.net/nebula/

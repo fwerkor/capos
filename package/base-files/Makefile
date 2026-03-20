@@ -1,7 +1,6 @@
 #
 # Copyright (C) 2007-2021 OpenWrt.org
 # Copyright (C) 2010 Vertical Communications
-# Copyright (C) 2026 CapOS Project
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -47,7 +46,7 @@ define Package/base-files
 	+SELINUX:busybox-selinux +!SELINUX:busybox \
 	+capos-core
   TITLE:=Base filesystem for CapOS
-  URL:=https://github.com/fwerkor/capos
+  URL:=http://openwrt.org/
   VERSION:=$(PKG_RELEASE)~$(lastword $(subst -, ,$(REVISION)))
 endef
 
@@ -77,7 +76,7 @@ $(call $(TARGET)/conffiles)
 endef
 
 define Package/base-files/description
- This package contains a base filesystem and system scripts for CapOS.
+ This package contains a base filesystem and system scripts for OpenWrt.
 endef
 
 define ImageConfigOptions
@@ -191,8 +190,8 @@ define Package/base-files/install
 		$(1)/etc/device_info \
 		$(1)/etc/capos_release \
 		$(1)/etc/capos_version \
-		$(1)/usr/lib/os-release \
-		$(1)/etc/openwrt_version
+		$(1)/etc/openwrt_version \
+		$(1)/usr/lib/os-release
 
 
 	$(SED) "s#%PATH%#$(TARGET_INIT_PATH)#g" \
@@ -253,12 +252,13 @@ endif
 		rm -f $(1)/etc/banner.failsafe,)
 
 ifneq ($(CONFIG_USE_APK),)
-	mkdir -p $(1)/etc/apk/
-	$(call FeedSourcesAppendAPK,$(1)/etc/apk/repositories)
-	$(VERSION_SED_SCRIPT) $(1)/etc/apk/repositories
+	mkdir -p $(1)/etc/apk/repositories.d
+	$(call FeedSourcesAppendAPK,$(1)/etc/apk/repositories.d/distfeeds.list)
+	$(VERSION_SED_SCRIPT) $(1)/etc/apk/repositories.d/distfeeds.list
 
 	rm -f $(1)/etc/uci-defaults/13_fix-group-user
 	rm -f $(1)/sbin/pkg_check
+	echo $(PKG_RELEASE)~$(lastword $(subst -, ,$(REVISION))) >$(STAGING_DIR)/base-files.version
 else
 	$(if $(CONFIG_CLEAN_IPKG),, \
 		mkdir -p $(1)/etc/opkg; \

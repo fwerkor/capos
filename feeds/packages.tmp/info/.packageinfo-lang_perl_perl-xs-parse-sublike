@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/lang/perl/perl-xs-parse-sublike/Makefile
+
+Package: perl-xs-parse-sublike
+Submenu: Perl
+Version: 0.37.5.40-r1
+Depends: +libc perl +perlbase-essential +perlbase-xsloader
+Conflicts: 
+Menu-Depends: 
+Provides: @perl-xs-parse-sublike-any
+Section: lang
+Category: Languages
+Repository: base
+Title: XS functions to assist in parsing sub-like syntax
+Maintainer: Jens Wagner <jens@wagner2013.de>
+Source: XS-Parse-Sublike-0.37.tar.gz
+License: GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE
+URL: https://metacpan.org/pod/XS::Parse::Sublike
+Type: ipkg
+Description:   This module provides some XS functions to assist in writing parsers for
+  sub-like syntax, primarily for authors of keyword plugins using the
+  PL_keyword_plugin hook mechanism.
+@@
+
+

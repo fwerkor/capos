@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +avahi-autoipd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-proto-autoip-any
 Section: luci
 Category: LuCI
 Repository: base

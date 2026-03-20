@@ -3,17 +3,17 @@ Source-Makefile: feeds/packages/libs/openldap/Makefile
 Package: libopenldap
 Menu: 1
 Submenu: OpenLDAP
-Version: 2.6.8-r2
+Version: 2.6.10-r2
 Depends: +libc +libopenssl +libsasl2 +libpthread +libuuid +OPENLDAP_DB47:libdb47 +OPENLDAP_ICU:icu
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopenldap-any
 Section: net
 Category: Network
 Repository: base
 Title: LDAP directory suite (libraries)
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: openldap-2.6.8.tgz
+Source: openldap-2.6.10.tgz
 License: OLDAP-2.8
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:openldap:openldap
@@ -27,17 +27,17 @@ Config:
 
 Package: openldap-utils
 Submenu: OpenLDAP
-Version: 2.6.8-r2
+Version: 2.6.10-r2
 Depends: +libc +libopenldap
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @openldap-utils-any
 Section: net
 Category: Network
 Repository: base
 Title: LDAP directory suite (utilities)
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: openldap-2.6.8.tgz
+Source: openldap-2.6.10.tgz
 License: OLDAP-2.8
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:openldap:openldap
@@ -48,17 +48,17 @@ Description: This package contains client programs required to access LDAP serve
 
 Package: openldap-server
 Submenu: OpenLDAP
-Version: 2.6.8-r2
+Version: 2.6.10-r2
 Depends: +libc +libopenldap +libuuid
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @openldap-server-any
 Section: net
 Category: Network
 Repository: base
 Title: LDAP directory suite (server)
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: openldap-2.6.8.tgz
+Source: openldap-2.6.10.tgz
 License: OLDAP-2.8
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:openldap:openldap

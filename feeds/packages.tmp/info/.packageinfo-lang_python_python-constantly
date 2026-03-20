@@ -7,7 +7,7 @@ Version: 23.10.4-r1
 Depends: +libc +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-constantly-any
 Section: lang
 Category: Languages
 Repository: base
@@ -29,7 +29,7 @@ Version: 23.10.4-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-constantly-src-any
 Section: lang
 Category: Languages
 Repository: base

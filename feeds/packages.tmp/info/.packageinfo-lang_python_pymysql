@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/lang/python/pymysql/Makefile
 
 Package: python3-pymysql
 Submenu: Python
-Version: 1.1.0-r2
+Version: 1.1.2-r1
 Depends: +libc +python3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pymysql-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Pure Python MySQL Client
 Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
-Source: PyMySQL-1.1.0.tar.gz
+Source: pymysql-1.1.2.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 URL: https://pymysql.readthedocs.io/
@@ -22,17 +22,17 @@ Description:   This package contains a pure-Python MySQL client library, based o
 
 Package: python3-pymysql-src
 Submenu: Python
-Version: 1.1.0-r2
+Version: 1.1.2-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pymysql-src-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Pure Python MySQL Client (sources)
 Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
-Source: PyMySQL-1.1.0.tar.gz
+Source: pymysql-1.1.2.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 URL: https://pymysql.readthedocs.io/
@@ -47,17 +47,17 @@ Config:
 
 Package: python3-pymysql-sha-pwd
 Submenu: Python
-Version: 1.1.0-r2
+Version: 1.1.2-r1
 Depends: +libc +python3-pymysql @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64) +PACKAGE_python3-pymysql-sha-pwd:python3-cryptography
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pymysql-sha-pwd-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Pure Python MySQL Client w/ SHA256 password auth
 Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
-Source: PyMySQL-1.1.0.tar.gz
+Source: pymysql-1.1.2.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 URL: https://pymysql.readthedocs.io/

@@ -7,7 +7,7 @@ Version: 1.8.2-r2
 Depends: +libc +nebula +nebula-proto
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-proto-nebula-any
 Section: luci
 Category: LuCI
 Repository: base

@@ -7,7 +7,7 @@ Version: 41.0.7-r1
 Depends: +libc +libopenssl +libopenssl-legacy +python3-light +python3-email +python3-urllib +python3-cffi @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-cryptography-any
 Section: lang
 Category: Languages
 Repository: base
@@ -16,7 +16,7 @@ Maintainer: Jeffery To <jeffery.to@gmail.com>
 Source: cryptography-41.0.7.tar.gz
 License: Apache-2.0 BSD-3-Clause
 LicenseFiles: LICENSE.APACHE LICENSE.BSD
-CPE-ID: cpe:/a:cryptography_project:cryptography
+CPE-ID: cpe:/a:cryptography.io:cryptography
 URL: https://github.com/pyca/cryptography
 Type: ipkg
 Description: cryptography is a package which provides cryptographic recipes and
@@ -30,7 +30,7 @@ Version: 41.0.7-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-cryptography-src-any
 Section: lang
 Category: Languages
 Repository: base
@@ -39,7 +39,7 @@ Maintainer: Jeffery To <jeffery.to@gmail.com>
 Source: cryptography-41.0.7.tar.gz
 License: Apache-2.0 BSD-3-Clause
 LicenseFiles: LICENSE.APACHE LICENSE.BSD
-CPE-ID: cpe:/a:cryptography_project:cryptography
+CPE-ID: cpe:/a:cryptography.io:cryptography
 URL: https://github.com/pyca/cryptography
 Type: ipkg
 Description:     cryptography is a package which provides cryptographic recipes and

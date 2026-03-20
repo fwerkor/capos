@@ -277,6 +277,7 @@ body.modal-overlay-active #modal_overlay {
 .modal .button-row {
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .modal .button-row > :not(:last-child) {
@@ -298,16 +299,12 @@ table {
 	border-collapse: collapse;
 }
 
-tr.cbi-section-table-titles[data-title]::before {
+tr.cbi-section-table-titles {
 	font-weight: bold;
-	border-top: none;
 }
 
 tr[data-title]::before {
-	content: attr(data-title);
-	display: table-cell;
-	border-top: 1px solid var(--main-dark-color);
-	padding: .5em;
+	content: none;
 }
 
 th {
@@ -551,7 +548,9 @@ tr.placeholder > td {
 	vertical-align: middle !important;
 }
 
-.nowrap {
+.nowrap:not(span) {
+/*	Sometimes you need to wrap: badges on narrow screens look weird 
+	and nowrap defeats other width constraints, so exclude span */
 	white-space: nowrap !important;
 }
 
@@ -699,6 +698,11 @@ p > a {
 	text-align: center;
 	padding: .3em .25em .25em .25em;
 	white-space: nowrap;
+}
+
+#cbi-network-interface .ifacebox img {
+	width: 24px;
+	height: 24px;
 }
 
 .ifacebadge {
@@ -869,19 +873,28 @@ p > a {
 }
 
 .alert-message.info {
+	color: var(--secondary-bright-color);
 	background: var(--main-bright-color);
 }
 
 .alert-message.warning {
+	color: var(--secondary-bright-color);
 	background: var(--warning-color);
 }
 
 .alert-message.danger {
+	color: var(--secondary-bright-color);
 	background: var(--danger-color);
 }
 
 .alert-message.success {
+	color: var(--secondary-bright-color);
 	background: var(--success-color);
+}
+
+.alert-message.notice {
+	color: var(--main-bright-color);
+	background: var(--secondary-bright-color);
 }
 
 .alert-message .btn {
@@ -890,6 +903,17 @@ p > a {
 
 .alert-message .btn:hover {
 	box-shadow: 0 0 4px 1px var(--secondary-bright-color);
+}
+
+/* Fix for table text in notifications */
+.alert-message.notice table,
+.alert-message.notice .table,
+.alert-message.notice td,
+.alert-message.notice th,
+.alert-message.notice .td,
+.alert-message.notice .th {
+	color: var(--main-bright-color) !important;
+	background: transparent !important;
 }
 
 @keyframes fade-in {
@@ -1115,6 +1139,7 @@ textarea {
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0 0 1em 0;
+	align-items: baseline;
 }
 
 .cbi-value > label:first-child {
@@ -1631,6 +1656,12 @@ button.spinning::before, .btn.spinning::before {
 	background: var(--success-color);
 }
 
+.label.notice {
+	background:var(--secondary-bright-color);
+	color:var(--main-bright-color);
+	border: 1px solid var(--main-bright-color);
+}
+
 ul.deps {
 	margin: 0;
 	padding: 0;
@@ -1748,8 +1779,6 @@ ul.errors {
 		padding-bottom: .5em;
 	}
 
-	tr.cbi-section-table-titles[data-title]::before,
-	tr.cbi-section-table-titles,
 	tr.cbi-section-table-descr {
 		display: none;
 	}
@@ -1779,20 +1808,7 @@ ul.errors {
 	}
 
 	td[data-title]::before {
-		content: attr(data-title) ": ";
-		white-space: nowrap;
-		font-weight: bold;
-		width: 40%;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		position: absolute;
-		left: 0;
-		top: 0;
-		bottom: 0;
-		padding: .2em 0;
-		text-align: left;
-		display: inline-flex;
-		align-items: center;
+		content: none;
 	}
 
 	td[data-title]::after {

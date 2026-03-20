@@ -6,7 +6,7 @@ Version: 0.2.3-r2
 Depends: +libc +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dtndht-any
 Section: libs
 Category: Libraries
 Repository: base

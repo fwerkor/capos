@@ -46,6 +46,34 @@ define Device/Default
 	BLOCKSIZE := 128k
 endef
 
+define Device/actiontec_mi424wr_ac
+	DEVICE_VENDOR := Actiontec
+	DEVICE_MODEL := MI424WR rev A/C
+	# Only 8 MB of Flash so not building by default
+	DEFAULT := n
+	DEVICE_PACKAGES := ixp4xx-microcode-ethernet kmod-dsa-ks8995
+	DEVICE_DTS := intel-ixp42x-actiontec-mi424wr-ac
+	KERNEL := kernel-bin | append-dtb
+	IMAGES := kernel.bin rootfs.bin
+	IMAGE/kernel.bin := append-kernel
+	IMAGE/rootfs.bin := append-rootfs | pad-rootfs | pad-to 128k
+endef
+TARGET_DEVICES += actiontec_mi424wr_ac
+
+define Device/actiontec_mi424wr_d
+	DEVICE_VENDOR := Actiontec
+	DEVICE_MODEL := MI424WR rev D
+	# Only 8 MB of Flash so not building by default
+	DEFAULT := n
+	DEVICE_PACKAGES := ixp4xx-microcode-ethernet kmod-dsa-ks8995
+	DEVICE_DTS := intel-ixp42x-actiontec-mi424wr-d
+	KERNEL := kernel-bin | append-dtb
+	IMAGES := kernel.bin rootfs.bin
+	IMAGE/kernel.bin := append-kernel
+	IMAGE/rootfs.bin := append-rootfs | pad-rootfs | pad-to 128k
+endef
+TARGET_DEVICES += actiontec_mi424wr_d
+
 define Device/dlink_dsm_g600_a
 	DEVICE_VENDOR := D-Link
 	DEVICE_MODEL := DSM G600 A
@@ -123,6 +151,22 @@ define Device/linksys_nslu2
 	IMAGE/factory.bin := append-kernel | linksys-ixp425-image "nslu2"
 endef
 TARGET_DEVICES += linksys_nslu2
+
+define Device/netgear_wg302v1
+	DEVICE_VENDOR := Netgear
+	DEVICE_MODEL := WG302 v1
+	DEVICE_PACKAGES := ixp4xx-microcode-ethernet kmod-phy-amd kmod-ath5k \
+		wpad-basic-mbedtls kmod-input-gpio-keys-polled
+	# Only 32 MB of RAM and small flash so not building by default
+	DEFAULT := n
+	DEVICE_DTS := intel-ixp42x-netgear-wg302v1
+	KERNEL := kernel-bin | append-dtb
+	IMAGES := kernel.bin rootfs.bin
+	IMAGE/kernel.bin := append-kernel
+	IMAGE/rootfs.bin := append-rootfs | pad-rootfs | pad-to 128k
+	IMAGE/sysupgrade.bin := append-rootfs | pad-rootfs | pad-to 128k | append-metadata
+endef
+TARGET_DEVICES += netgear_wg302v1
 
 define Device/usrobotics_usr8200
 	DEVICE_VENDOR := USRobotics

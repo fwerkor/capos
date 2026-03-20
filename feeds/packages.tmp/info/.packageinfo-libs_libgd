@@ -6,7 +6,7 @@ Version: 2.3.3-r1
 Depends: +libc +libjpeg +libpng +libwebp +LIBGD_TIFF:libtiff +LIBGD_FREETYPE:libfreetype
 Conflicts: libgd-full
 Menu-Depends: 
-Provides: 
+Provides: @libgd-any
 Build-Variant: default
 Section: libs
 Category: Libraries
@@ -44,7 +44,7 @@ Version: 2.3.3-r1
 Depends: +libc +libjpeg +libpng +libwebp +libtiff +libfreetype
 Conflicts: 
 Menu-Depends: 
-Provides: libgd
+Provides: @libgd-full-any libgd
 Build-Variant: full
 Section: libs
 Category: Libraries

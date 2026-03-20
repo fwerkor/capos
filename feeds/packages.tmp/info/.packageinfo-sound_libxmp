@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/sound/libxmp/Makefile
+
+Package: libxmp
+Version: 4.6.3-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @libxmp-any
+Section: sound
+Category: Sound
+Repository: base
+Title: Extended Module Player Library
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: libxmp-4.6.3.tar.gz
+License: MIT
+LicenseFiles: README
+URL: https://github.com/libxmp/libxmp
+Type: ipkg
+Description:   Libxmp is a library that renders module files to PCM data. It supports
+  over 90 mainstream and obscure module formats including Protracker (MOD),
+  Scream Tracker 3 (S3M), Fast Tracker II (XM), and Impulse Tracker (IT).
+@@
+
+

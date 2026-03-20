@@ -162,13 +162,47 @@ endef
 $(eval $(call KernelPackage,i2c-gpio))
 
 
+I2C_HID_MODULES:= \
+  CONFIG_I2C_HID_CORE:drivers/hid/i2c-hid/i2c-hid
+
+define KernelPackage/i2c-hid
+  $(call i2c_defaults,$(I2C_HID_MODULES),60)
+  TITLE:=I2C HID support
+  KCONFIG+= CONFIG_I2C_HID
+  DEPENDS:=+kmod-drm +kmod-hid
+  HIDDEN:=1
+endef
+
+$(eval $(call KernelPackage,i2c-hid))
+
+
+I2C_HID_ACPI_MODULES:= \
+  CONFIG_I2C_HID_ACPI:drivers/hid/i2c-hid/i2c-hid-acpi
+
+define KernelPackage/i2c-hid-acpi
+  $(call i2c_defaults,$(I2C_HID_ACPI_MODULES),61)
+  TITLE:=HID over I2C transport layer ACPI driver
+  DEPENDS:=@TARGET_armsr_armv8||TARGET_loongarch64||TARGET_x86 +kmod-i2c-hid
+endef
+
+define KernelPackage/i2c-hid-acpi/description
+  Support for keyboard, touchpad, touchscreen, or any
+  other HID based devices which is connected to your computer via I2C.
+  This driver supports ACPI-based systems.
+endef
+
+$(eval $(call KernelPackage,i2c-hid-acpi))
+
+
 I2C_I801_MODULES:= \
   CONFIG_I2C_I801:drivers/i2c/busses/i2c-i801
 
 define KernelPackage/i2c-i801
   $(call i2c_defaults,$(I2C_I801_MODULES),59)
   TITLE:=Intel I801 and compatible I2C interfaces
-  DEPENDS:=@PCI_SUPPORT @TARGET_x86 +kmod-i2c-core +kmod-i2c-smbus
+  DEPENDS:= \
+    @PCI_SUPPORT @TARGET_x86 +kmod-i2c-core +kmod-i2c-smbus \
+    PACKAGE_kmod-i2c-mux-gpio:kmod-i2c-mux-gpio
 endef
 
 define KernelPackage/i2c-i801/description
@@ -254,6 +288,22 @@ endef
 $(eval $(call KernelPackage,i2c-mux-mlxcpld))
 
 
+I2C_MUX_PINCTRL_MODULES:= \
+  CONFIG_I2C_MUX_PINCTRL:drivers/i2c/muxes/i2c-mux-pinctrl
+
+define KernelPackage/i2c-mux-pinctrl
+  $(call i2c_defaults,$(I2C_MUX_PINCTRL_MODULES),51)
+  TITLE:=Pinctrl-based I2C mux/switches
+  DEPENDS:=@PINCTRL_SUPPORT @USES_DEVICETREE +kmod-i2c-mux
+endef
+
+define KernelPackage/i2c-mux-pinctrl/description
+ Kernel modules for Pinctrl-based I2C bus mux/switching devices
+endef
+
+$(eval $(call KernelPackage,i2c-mux-pinctrl))
+
+
 I2C_MUX_REG_MODULES:= \
   CONFIG_I2C_MUX_REG:drivers/i2c/muxes/i2c-mux-reg
 
@@ -307,7 +357,7 @@ I2C_PIIX4_MODULES:= \
 define KernelPackage/i2c-piix4
   $(call i2c_defaults,$(I2C_PIIX4_MODULES),59)
   TITLE:=Intel PIIX4 and compatible I2C interfaces
-  DEPENDS:=@PCI_SUPPORT @TARGET_x86 +kmod-i2c-core
+  DEPENDS:=@PCI_SUPPORT @TARGET_x86 +kmod-i2c-core +kmod-i2c-smbus
 endef
 
 define KernelPackage/i2c-piix4/description

@@ -23,7 +23,7 @@ mips: ath79: cleanup defconfig for NEC QCA9558 Aterm series
 
 --- a/arch/mips/dts/Makefile
 +++ b/arch/mips/dts/Makefile
-@@ -25,6 +25,7 @@ dtb-$(CONFIG_BOARD_LINKIT_SMART_7688) +=
+@@ -24,6 +24,7 @@ dtb-$(CONFIG_BOARD_LINKIT_SMART_7688) +=
  dtb-$(CONFIG_TARGET_OCTEON_EBB7304) += mrvl,octeon-ebb7304.dtb
  dtb-$(CONFIG_TARGET_OCTEON_NIC23) += mrvl,octeon-nic23.dtb
  dtb-$(CONFIG_BOARD_NEC_AR9344_ATERM) += nec,ar9344-aterm.dtb
@@ -242,7 +242,7 @@ mips: ath79: cleanup defconfig for NEC QCA9558 Aterm series
 +# CONFIG_ISO_PARTITION is not set
 +# CONFIG_OF_TAG_MIGRATE is not set
 +CONFIG_SYS_RELOC_GD_ENV_ADDR=y
-+# CONFIG_NET is not set
++CONFIG_NO_NET=y
 +CONFIG_CLK=y
 +# CONFIG_GPIO is not set
 +# CONFIG_I2C is not set

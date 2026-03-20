@@ -2,18 +2,18 @@ Source-Makefile: feeds/packages/utils/telegraf/Makefile
 Build-Depends: golang/host
 
 Package: telegraf
-Version: 1.23.4-r1
+Version: 1.38.0-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @telegraf-any
 Build-Variant: small
 Section: utils
 Category: Utilities
 Repository: base
 Title: Telegraf (Small)
-Maintainer: Jonathan Pagel <jonny_tischbein@systemli.org>
-Source: telegraf-1.23.4.tar.gz
+Maintainer: Niklas Thorild <niklas@thorild.se>
+Source: telegraf-1.38.0.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 Type: ipkg
@@ -23,18 +23,18 @@ Description: 		Telegraf is a plugin-driven agent for collecting and sending metr
 @@
 
 Package: telegraf-full
-Version: 1.23.4-r1
+Version: 1.38.0-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @telegraf-full-any
 Build-Variant: full
 Section: utils
 Category: Utilities
 Repository: base
 Title: Telegraf (Full)
-Maintainer: Jonathan Pagel <jonny_tischbein@systemli.org>
-Source: telegraf-1.23.4.tar.gz
+Maintainer: Niklas Thorild <niklas@thorild.se>
+Source: telegraf-1.38.0.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 Type: ipkg

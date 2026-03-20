@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +IPV6:luci-proto-ipv6 +luci-app-firewall +luci-mod-admin-full +luci-proto-ppp +luci-theme-bootstrap +rpcd-mod-rrdns +uhttpd +uhttpd-mod-ubus
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-light-any
 Section: luci
 Category: LuCI
 Repository: base

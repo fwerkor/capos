@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-filemanager-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -20,13 +20,32 @@ Type: ipkg
 Description: LuCI File Manager module
 @@
 
+Package: luci-i18n-filemanager-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-filemanager
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-filemanager-cs-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-filemanager - cs translation
+Maintainer: Dmitry R <rdmitry0911@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-filemanager - Čeština (Czech)
+@@
+
 Package: luci-i18n-filemanager-de
 Default: LUCI_LANG_de||(ALL&&m)
 Version: x
 Depends: +libc luci-app-filemanager
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filemanager-de-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -45,7 +64,7 @@ Version: x
 Depends: +libc luci-app-filemanager
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filemanager-es-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -64,7 +83,7 @@ Version: x
 Depends: +libc luci-app-filemanager
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filemanager-fa-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -77,13 +96,32 @@ Hidden: 1
 Description:     Translation for luci-app-filemanager - Farsi (Persian)
 @@
 
+Package: luci-i18n-filemanager-fi
+Default: LUCI_LANG_fi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-filemanager
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-filemanager-fi-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-filemanager - fi translation
+Maintainer: Dmitry R <rdmitry0911@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-filemanager - Suomi (Finnish)
+@@
+
 Package: luci-i18n-filemanager-ga
 Default: LUCI_LANG_ga||(ALL&&m)
 Version: x
 Depends: +libc luci-app-filemanager
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filemanager-ga-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -96,13 +134,32 @@ Hidden: 1
 Description:     Translation for luci-app-filemanager - Gaeilge (Irish)
 @@
 
+Package: luci-i18n-filemanager-ja
+Default: LUCI_LANG_ja||(ALL&&m)
+Version: x
+Depends: +libc luci-app-filemanager
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-filemanager-ja-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-filemanager - ja translation
+Maintainer: Dmitry R <rdmitry0911@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-filemanager - 日本語 (Japanese)
+@@
+
 Package: luci-i18n-filemanager-lt
 Default: LUCI_LANG_lt||(ALL&&m)
 Version: x
 Depends: +libc luci-app-filemanager
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filemanager-lt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -121,7 +178,7 @@ Version: x
 Depends: +libc luci-app-filemanager
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filemanager-pl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -134,13 +191,51 @@ Hidden: 1
 Description:     Translation for luci-app-filemanager - Polski (Polish)
 @@
 
+Package: luci-i18n-filemanager-pt
+Default: LUCI_LANG_pt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-filemanager
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-filemanager-pt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-filemanager - pt translation
+Maintainer: Dmitry R <rdmitry0911@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-filemanager - Português (Portuguese)
+@@
+
+Package: luci-i18n-filemanager-ro
+Default: LUCI_LANG_ro||(ALL&&m)
+Version: x
+Depends: +libc luci-app-filemanager
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-filemanager-ro-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-filemanager - ro translation
+Maintainer: Dmitry R <rdmitry0911@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-filemanager - Română (Romanian)
+@@
+
 Package: luci-i18n-filemanager-ru
 Default: LUCI_LANG_ru||(ALL&&m)
 Version: x
 Depends: +libc luci-app-filemanager
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filemanager-ru-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -159,7 +254,7 @@ Version: x
 Depends: +libc luci-app-filemanager
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filemanager-sv-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -172,13 +267,32 @@ Hidden: 1
 Description:     Translation for luci-app-filemanager - Svenska (Swedish)
 @@
 
+Package: luci-i18n-filemanager-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-filemanager
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-filemanager-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-filemanager - ta translation
+Maintainer: Dmitry R <rdmitry0911@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-filemanager - Tamil (Tamil)
+@@
+
 Package: luci-i18n-filemanager-tr
 Default: LUCI_LANG_tr||(ALL&&m)
 Version: x
 Depends: +libc luci-app-filemanager
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filemanager-tr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -197,7 +311,7 @@ Version: x
 Depends: +libc luci-app-filemanager
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filemanager-uk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -216,7 +330,7 @@ Version: x
 Depends: +libc luci-app-filemanager
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filemanager-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -235,7 +349,7 @@ Version: x
 Depends: +libc luci-app-filemanager
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filemanager-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base

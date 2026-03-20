@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/sound/shine/Makefile
 
 Package: shine
-Version: 3.1.1-r1
+Version: 3.1.1-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shine-any
 Section: sound
 Category: Sound
 Repository: base

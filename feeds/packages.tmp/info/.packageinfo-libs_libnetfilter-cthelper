@@ -5,7 +5,7 @@ Version: 1.0.0-r2
 Depends: +libc +libmnl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libnetfilter-cthelper-any
 Section: libs
 Category: Libraries
 Repository: base

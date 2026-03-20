@@ -5,7 +5,7 @@ Version: 0.14.4-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @spice-protocol-any
 Section: libs
 Category: Libraries
 Repository: base

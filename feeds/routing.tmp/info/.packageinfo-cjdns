@@ -6,7 +6,7 @@ Version: 21.1-r6
 Depends: +libc @!arc @IPV6 +kmod-tun +libnl-tiny +libpthread +librt +libuci-lua +lua-bencode +dkjson +luasocket +lua-sha2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @cjdns-any
 Section: net
 Category: Network
 Repository: base
@@ -26,7 +26,7 @@ Version: 21.1-r6
 Depends: +libc +libpthread +librt @!arc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @cjdns-tests-any
 Section: net
 Category: Network
 Repository: base

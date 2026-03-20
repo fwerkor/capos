@@ -5,7 +5,7 @@ Version: 1-r2
 Depends: +libc +libuci-lua +libubus-lua +lua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @static-neighbor-reports-any
 Section: net
 Category: Network
 Repository: base

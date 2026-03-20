@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +openlist
 Conflicts: 
 Menu-Depends: 
-Provides: luci-app-alist
+Provides: @luci-app-openlist-any luci-app-alist
 Section: luci
 Category: LuCI
 Repository: base
@@ -26,7 +26,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-ar-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -45,7 +45,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-bg-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -64,7 +64,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-bn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -83,7 +83,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-ca-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -102,7 +102,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-cs-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -121,7 +121,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-da-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -140,7 +140,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-de-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -159,7 +159,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-el-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -178,7 +178,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-es-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -191,13 +191,32 @@ Hidden: 1
 Description:     Translation for luci-app-openlist - Español (Spanish)
 @@
 
+Package: luci-i18n-openlist-fa
+Default: LUCI_LANG_fa||(ALL&&m)
+Version: x
+Depends: +libc luci-app-openlist
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-openlist-fa-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-openlist - fa translation
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-openlist - Farsi (Persian)
+@@
+
 Package: luci-i18n-openlist-fi
 Default: LUCI_LANG_fi||(ALL&&m)
 Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-fi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -216,7 +235,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-fr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -235,7 +254,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-ga-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -254,7 +273,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-he-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -273,7 +292,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-hi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -292,7 +311,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-hu-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -311,7 +330,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-it-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -330,7 +349,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-ja-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -349,7 +368,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-ko-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -368,7 +387,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-lt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -387,7 +406,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-mr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -406,7 +425,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-ms-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -425,7 +444,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-no-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -444,7 +463,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-nl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -463,7 +482,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-pl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -482,7 +501,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-pt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -501,7 +520,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -520,7 +539,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-ro-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -539,7 +558,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-ru-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -558,7 +577,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-sk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -577,7 +596,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-sv-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -590,13 +609,32 @@ Hidden: 1
 Description:     Translation for luci-app-openlist - Svenska (Swedish)
 @@
 
+Package: luci-i18n-openlist-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-openlist
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-openlist-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-openlist - ta translation
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-openlist - Tamil (Tamil)
+@@
+
 Package: luci-i18n-openlist-tr
 Default: LUCI_LANG_tr||(ALL&&m)
 Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-tr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -615,7 +653,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-uk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -634,7 +672,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-vi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -653,7 +691,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -672,7 +710,7 @@ Version: x
 Depends: +libc luci-app-openlist
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-openlist-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base

@@ -2,11 +2,11 @@ Source-Makefile: feeds/packages/net/bcp38/Makefile
 
 Package: bcp38
 Submenu: Routing and Redirection
-Version: 5-r11
+Version: 5-r12
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bcp38-any
 Section: net
 Category: Network
 Repository: base

@@ -5,7 +5,7 @@ Version: 1.33.1-r4
 Depends: +libc +zlib +libuuid +libuv +libmnl +libjson-c
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @netdata-any
 Section: admin
 Category: Administration
 Repository: base

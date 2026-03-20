@@ -7,7 +7,7 @@ Version: 1.1.11-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @databag-any
 Section: net
 Category: Network
 Repository: base

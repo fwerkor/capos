@@ -251,6 +251,7 @@ $(eval $(call KernelPackage,crypto-echainiv))
 
 define KernelPackage/crypto-engine
   TITLE:=Crypto engine
+  HIDDEN:=1
   KCONFIG:=CONFIG_CRYPTO_ENGINE
   FILES:=$(LINUX_DIR)/crypto/crypto_engine.ko
   AUTOLOAD:=$(call AutoLoad,09,crypto_engine)
@@ -566,10 +567,12 @@ define KernelPackage/crypto-lib-chacha20
   $(call AddDepends/crypto)
 endef
 
+ifndef CONFIG_TARGET_uml
 define KernelPackage/crypto-lib-chacha20/x86_64
   KCONFIG+=CONFIG_CRYPTO_CHACHA20_X86_64
   FILES+=$(LINUX_DIR)/arch/x86/crypto/chacha-x86_64.ko
 endef
+endif
 
 # Note that a non-neon fallback implementation is available on arm32 when
 # NEON is not supported, hence all arm targets can utilize lib-chacha20/arm
@@ -621,17 +624,15 @@ define KernelPackage/crypto-lib-curve25519
   FILES:= \
 	$(LINUX_DIR)/lib/crypto/libcurve25519.ko \
 	$(LINUX_DIR)/lib/crypto/libcurve25519-generic.ko
-  $(call AddDepends/crypto,+PACKAGE_kmod-crypto-kpp:kmod-crypto-kpp)
+  $(call AddDepends/crypto,+kmod-crypto-kpp)
 endef
 
-define KernelPackage/crypto-lib-curve25519/config
-  imply PACKAGE_kmod-crypto-kpp
-endef
-
+ifndef CONFIG_TARGET_uml
 define KernelPackage/crypto-lib-curve25519/x86_64
   KCONFIG+=CONFIG_CRYPTO_CURVE25519_X86
   FILES+=$(LINUX_DIR)/arch/x86/crypto/curve25519-x86_64.ko
 endef
+endif
 
 define KernelPackage/crypto-lib-curve25519/arm-neon
   KCONFIG+=CONFIG_CRYPTO_CURVE25519_NEON
@@ -656,17 +657,15 @@ define KernelPackage/crypto-lib-poly1305
   KCONFIG:=CONFIG_CRYPTO_LIB_POLY1305
   HIDDEN:=1
   FILES:=$(LINUX_DIR)/lib/crypto/libpoly1305.ko
-  $(call AddDepends/crypto,+PACKAGE_kmod-crypto-hash:kmod-crypto-hash)
+  $(call AddDepends/crypto,+kmod-crypto-hash)
 endef
 
-define KernelPackage/crypto-lib-poly1305/config
-  imply PACKAGE_kmod-crypto-hash
-endef
-
+ifndef CONFIG_TARGET_uml
 define KernelPackage/crypto-lib-poly1305/x86_64
   KCONFIG+=CONFIG_CRYPTO_POLY1305_X86_64
   FILES+=$(LINUX_DIR)/arch/x86/crypto/poly1305-x86_64.ko
 endef
+endif
 
 define KernelPackage/crypto-lib-poly1305/arm
   KCONFIG+=CONFIG_CRYPTO_POLY1305_ARM
@@ -830,6 +829,7 @@ ifndef CONFIG_TARGET_x86_64
   endef
 endif
 
+ifndef CONFIG_TARGET_uml
 define KernelPackage/crypto-misc/x86_64
   FILES+= \
 	$(LINUX_DIR)/arch/x86/crypto/camellia-x86_64.ko \
@@ -849,6 +849,7 @@ define KernelPackage/crypto-misc/x86_64
 	cast6-avx-x86_64 twofish-x86_64 twofish-x86_64-3way \
 	twofish-avx-x86_64 blowfish-x86_64 serpent-avx-x86_64 serpent-avx2)
 endef
+endif
 
 ifdef KernelPackage/crypto-misc/$(ARCH)
   KernelPackage/crypto-misc/$(CRYPTO_TARGET)=\

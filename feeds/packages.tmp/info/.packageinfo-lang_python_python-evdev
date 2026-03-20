@@ -1,18 +1,19 @@
 Source-Makefile: feeds/packages/lang/python/python-evdev/Makefile
+Build-Depends: python-setuptools/host
 
 Package: python3-evdev
 Submenu: Python
-Version: 1.7.1-r1
+Version: 1.9.3-r1
 Depends: +libc +python3-light +python3-ctypes
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-evdev-any
 Section: lang
 Category: Languages
 Repository: base
 Title: python3-evdev
 Maintainer: Paulo Costa <me@paulo.costa.nom.br>, Alexandru Ardelean <ardeleanalex@gmail.com>
-Source: evdev-1.7.1.tar.gz
+Source: evdev-1.9.3.tar.gz
 License: BSD-3-Clause
 URL: https://github.com/gvalkov/python-evdev
 Type: ipkg
@@ -21,17 +22,17 @@ Description: 	Bindings to the Linux input handling subsystem
 
 Package: python3-evdev-src
 Submenu: Python
-Version: 1.7.1-r1
+Version: 1.9.3-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-evdev-src-any
 Section: lang
 Category: Languages
 Repository: base
 Title: python3-evdev (sources)
 Maintainer: Paulo Costa <me@paulo.costa.nom.br>, Alexandru Ardelean <ardeleanalex@gmail.com>
-Source: evdev-1.7.1.tar.gz
+Source: evdev-1.9.3.tar.gz
 License: BSD-3-Clause
 URL: https://github.com/gvalkov/python-evdev
 Type: ipkg

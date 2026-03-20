@@ -6,7 +6,7 @@ Version: 2.19-r4
 Depends: +libc +tinc +ip +kmod-tun +libopenssl +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @chaosvpn-any
 Section: net
 Category: Network
 Repository: base

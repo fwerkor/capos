@@ -8,11 +8,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=borgbackup
-PKG_VERSION:=1.2.8
+PKG_VERSION:=1.4.3
 PKG_RELEASE:=1
 
 PYPI_NAME:=borgbackup
-PKG_HASH:=d39d22b0d2cb745584d68608a179b6c75f7b40e496e96feb789e41d34991f4aa
+PKG_HASH:=79bbfa745d1901d685973584bd2d16a350686ddd176f6a2244490fb01996441f
 
 PKG_LICENSE:=BSD-3-Clause
 PKG_LICENSE_FILES:=LICENSE
@@ -35,8 +35,8 @@ define Package/borgbackup
       +python3-logging \
       +python3-lzma \
       +python3-msgpack \
+      +python3-openssl \
       +python3-packaging \
-      +python3-pyfuse3 \
       +python3-readline \
       +python3-unittest \
       +python3-urllib \

@@ -1,12 +1,14 @@
 Source-Makefile: feeds/packages/lang/python/python-setuptools/Makefile
+Build-Depends/host: python3/host python-wheel/host python-packaging/host
+Build-Types: host
 
 Package: python3-pkg-resources
 Submenu: Python
-Version: 80.9.0-r1
+Version: 80.9.0-r2
 Depends: +libc +python3-light +python3-email +python3-logging +python3-urllib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pkg-resources-any
 Section: lang
 Category: Languages
 Repository: base
@@ -15,6 +17,7 @@ Maintainer: Jeffery To <jeffery.to@gmail.com>
 Source: setuptools-80.9.0.tar.gz
 License: MIT
 LicenseFiles: LICENSE
+CPE-ID: cpe:/a:python:setuptools
 URL: https://github.com/pypa/setuptools
 Type: ipkg
 Description: Setuptools is a fully-featured, actively-maintained, and stable library
@@ -29,11 +32,11 @@ This is the pkg_resources module of setuptools.
 
 Package: python3-setuptools
 Submenu: Python
-Version: 80.9.0-r1
+Version: 80.9.0-r2
 Depends: +libc +python3 +python3-pkg-resources
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-setuptools-any
 Section: lang
 Category: Languages
 Repository: base
@@ -42,6 +45,7 @@ Maintainer: Jeffery To <jeffery.to@gmail.com>
 Source: setuptools-80.9.0.tar.gz
 License: MIT
 LicenseFiles: LICENSE
+CPE-ID: cpe:/a:python:setuptools
 URL: https://github.com/pypa/setuptools
 Type: ipkg
 Description: Setuptools is a fully-featured, actively-maintained, and stable library
@@ -56,11 +60,11 @@ This is the main setuptools module.
 
 Package: python3-pkg-resources-src
 Submenu: Python
-Version: 80.9.0-r1
+Version: 80.9.0-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pkg-resources-src-any
 Section: lang
 Category: Languages
 Repository: base
@@ -69,6 +73,7 @@ Maintainer: Jeffery To <jeffery.to@gmail.com>
 Source: setuptools-80.9.0.tar.gz
 License: MIT
 LicenseFiles: LICENSE
+CPE-ID: cpe:/a:python:setuptools
 URL: https://github.com/pypa/setuptools
 Type: ipkg
 Description:     Setuptools is a fully-featured, actively-maintained, and stable library
@@ -88,11 +93,11 @@ Config:
 
 Package: python3-setuptools-src
 Submenu: Python
-Version: 80.9.0-r1
+Version: 80.9.0-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-setuptools-src-any
 Section: lang
 Category: Languages
 Repository: base
@@ -101,6 +106,7 @@ Maintainer: Jeffery To <jeffery.to@gmail.com>
 Source: setuptools-80.9.0.tar.gz
 License: MIT
 LicenseFiles: LICENSE
+CPE-ID: cpe:/a:python:setuptools
 URL: https://github.com/pypa/setuptools
 Type: ipkg
 Description:     Setuptools is a fully-featured, actively-maintained, and stable library

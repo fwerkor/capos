@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base +clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-clamav-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -26,7 +26,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-ar-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -45,7 +45,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-bg-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -64,7 +64,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-bn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -83,7 +83,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-ca-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -102,7 +102,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-cs-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -121,7 +121,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-da-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -140,7 +140,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-de-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -159,7 +159,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-el-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -178,7 +178,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-es-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -191,13 +191,32 @@ Hidden: 1
 Description:     Translation for luci-app-clamav - Español (Spanish)
 @@
 
+Package: luci-i18n-clamav-fa
+Default: LUCI_LANG_fa||(ALL&&m)
+Version: x
+Depends: +libc luci-app-clamav
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-clamav-fa-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-clamav - fa translation
+Maintainer: Marko Ratkaj <marko.ratkaj@sartura.hr> Paul Donald <newtwen+github@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-clamav - Farsi (Persian)
+@@
+
 Package: luci-i18n-clamav-fi
 Default: LUCI_LANG_fi||(ALL&&m)
 Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-fi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -216,7 +235,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-fr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -235,7 +254,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-ga-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -254,7 +273,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-he-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -273,7 +292,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-hi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -292,7 +311,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-hu-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -311,7 +330,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-it-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -330,7 +349,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-ja-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -349,7 +368,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-ko-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -368,7 +387,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-lt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -387,7 +406,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-mr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -406,7 +425,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-ms-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -425,7 +444,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-no-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -444,7 +463,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-nl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -463,7 +482,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-pl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -482,7 +501,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-pt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -501,7 +520,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -520,7 +539,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-ro-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -539,7 +558,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-ru-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -558,7 +577,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-sk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -577,7 +596,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-sv-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -590,13 +609,32 @@ Hidden: 1
 Description:     Translation for luci-app-clamav - Svenska (Swedish)
 @@
 
+Package: luci-i18n-clamav-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-clamav
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-clamav-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-clamav - ta translation
+Maintainer: Marko Ratkaj <marko.ratkaj@sartura.hr> Paul Donald <newtwen+github@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-clamav - Tamil (Tamil)
+@@
+
 Package: luci-i18n-clamav-tr
 Default: LUCI_LANG_tr||(ALL&&m)
 Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-tr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -615,7 +653,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-uk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -634,7 +672,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-vi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -653,7 +691,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -672,7 +710,7 @@ Version: x
 Depends: +libc luci-app-clamav
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-clamav-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base

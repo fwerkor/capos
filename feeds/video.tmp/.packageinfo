@@ -1,0 +1,2810 @@
+Source-Makefile: feeds/video/frameworks/cage/Makefile
+Build-Depends: wayland/host
+
+Package: cage
+Submenu: Frameworks and Toolkits
+Version: 0.2.0
+Depends: +libc +wlroots +xkeyboard-config
+Conflicts: 
+Menu-Depends: 
+Provides: @cage-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: a Wayland kiosk
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: cage-0.2.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://wayland.freedesktop.org/
+Type: ipkg
+Description: This is Cage, a Wayland kiosk. A kiosk runs a single, maximized application.
+@@
+
+
+Source-Makefile: feeds/video/frameworks/gtk/Makefile
+Build-Depends: gst1-plugins-base gst1-plugins-bad
+
+Package: libgtk
+Submenu: Frameworks and Toolkits
+Version: 4.18.6-r1
+Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +fribidi +glib2 +harfbuzz +libcairo +libepoxy +libgdk-pixbuf +libgraphene +libgstreamer1 +libgst1player +libpango +libxkbcommon
+Conflicts: 
+Menu-Depends: 
+Provides: @libgtk-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: GTK library
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gtk-4.18.6.tar.xz
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnome:gtk
+URL: http://www.gtk.org/
+Type: ipkg
+Description:   The GTK Project - A free and open-source cross-platform widget toolkit
+
+  Shared library and basic files needed at runtime.
+@@
+
+Package: libgtk-demos
+Submenu: Video
+Version: 4.18.6-r1
+Depends: +libc +libgtk
+Conflicts: 
+Menu-Depends: 
+Provides: @libgtk-demos-any
+Section: utils
+Category: Utilities
+Repository: base
+Title: GTK demos
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gtk-4.18.6.tar.xz
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnome:gtk
+URL: http://www.gtk.org/
+Type: ipkg
+Description:   The GTK Project - A free and open-source cross-platform widget toolkit
+
+  Demo programs which come with the GTK library.
+@@
+
+Package: libgtk-utils
+Submenu: Video
+Version: 4.18.6-r1
+Depends: +libc +libgtk
+Conflicts: 
+Menu-Depends: 
+Provides: @libgtk-utils-any
+Section: utils
+Category: Utilities
+Repository: base
+Title: GTK utils
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gtk-4.18.6.tar.xz
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnome:gtk
+URL: http://www.gtk.org/
+Type: ipkg
+Description:   The GTK Project - A free and open-source cross-platform widget toolkit
+
+  Utility programs which come with the GTK library.
+@@
+
+
+Source-Makefile: feeds/video/frameworks/qt5/qt5base/Makefile
+Build-Depends/host: qt5base
+Build-Types: host
+
+Package: qt5base-core
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +libpthread +zlib +libzstd +libstdcpp +librt +libpcre2-16 +libdouble-conversion +BUILD_NLS:libiconv-full +PACKAGE_icu:icu
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-core-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base core
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base core
+@@
+Config:
+        source "feeds/video/frameworks/qt5/qt5base/Config.in"
+@@
+
+Package: qt5base-concurrent
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-concurrent-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base concurrent
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base concurrent
+@@
+
+Package: qt5base-gui
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +libpng +libfreetype +BUILD_qt5base-gui_OPENGL_OPENGLES2:libmesa
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-gui-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base gui
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base gui
+@@
+
+Package: qt5base-network
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +BUILD_qt5base-network_SSL:libopenssl
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-network-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base network
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base network
+@@
+
+Package: qt5base-printSupport
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui +qt5base-widgets
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-printSupport-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base print support
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base print support
+@@
+
+Package: qt5base-sql
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-sql-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base sql
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base sql
+@@
+
+Package: qt5base-test
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-test-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base test
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base test
+@@
+
+Package: qt5base-widgets
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-widgets-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base widgets
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base widgets
+@@
+
+Package: qt5base-xml
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-xml-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base xml
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base xml
+@@
+
+Package: qt5base-plugin-bearer-generic
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-network
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-bearer-generic-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base bearer (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base bearer (plugin)
+@@
+
+Package: qt5base-plugin-input-libinput
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui +libinput
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-input-libinput-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base libinput (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base libinput (plugin)
+@@
+
+Package: qt5base-plugin-input-evdevkeyboard
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui +PACKAGE_qt5base-input-autodiscovery:libudev +PACKAGE_qt5base-plugin-input-libinput:libinput
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-input-evdevkeyboard-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base evdev keyboard (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base evdev keyboard (plugin)
+@@
+
+Package: qt5base-plugin-input-evdevmouse
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui +PACKAGE_qt5base-input-autodiscovery:libudev +PACKAGE_qt5base-plugin-input-libinput:libinput
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-input-evdevmouse-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base evdev mouse (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base evdev mouse (plugin)
+@@
+
+Package: qt5base-plugin-input-evdevtablet
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui +PACKAGE_qt5base-input-autodiscovery:libudev +PACKAGE_qt5base-plugin-input-libinput:libinput
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-input-evdevtablet-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base evdev tablet (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base evdev tablet (plugin)
+@@
+
+Package: qt5base-plugin-input-evdevtouch
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui +PACKAGE_qt5base-input-autodiscovery:libudev +PACKAGE_qt5base-plugin-input-libinput:libinput
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-input-evdevtouch-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base evdev touch (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base evdev touch (plugin)
+@@
+
+Package: qt5base-plugin-imageformats-ico
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-imageformats-ico-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base imageformat ico (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base imageformat ico (plugin)
+@@
+
+Package: qt5base-plugin-imageformats-jpeg
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui +libjpeg
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-imageformats-jpeg-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base imageformat jpeg (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base imageformat jpeg (plugin)
+@@
+
+Package: qt5base-plugin-platforms-linuxfb
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui +libfreetype +PACKAGE_qt5base-input-autodiscovery:libudev +PACKAGE_qt5base-plugin-input-libinput:libinput
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-platforms-linuxfb-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base platform linuxfb (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base platform linuxfb (plugin)
+@@
+
+Package: qt5base-plugin-platforms-eglfs
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui +libfreetype +fontconfig +libmesa
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-platforms-eglfs-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base platform eglfs (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base platform eglfs (plugin)
+@@
+
+Package: qt5base-plugin-platforms-minimalegl
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-platforms-minimalegl-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base platform minimalegl (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base platform minimalegl (plugin)
+@@
+
+Package: qt5base-plugin-platforms-minimal
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-platforms-minimal-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base platform minimal (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base platform minimal (plugin)
+@@
+
+Package: qt5base-plugin-platforms-offscreen
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-platforms-offscreen-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base platform offscreen (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base platform offscreen (plugin)
+@@
+
+Package: qt5base-plugin-platforms-vnc
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui +qt5base-network +libfreetype +fontconfig +PACKAGE_qt5base-input-autodiscovery:libudev +PACKAGE_qt5base-plugin-input-libinput:libinput
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-plugin-platforms-vnc-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base platform vnc (plugin)
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base platform vnc (plugin)
+@@
+
+Package: qt5base-examples
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui +qt5base-widgets +qt5base-network +qt5base-sql +qt5base-xml +qt5base-printSupport +qt5base-concurrent +qt5base-test
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5base-examples-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5base examples
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtbase-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5base examples
+@@
+
+
+Source-Makefile: feeds/video/frameworks/qt5/qt5graphicaleffects/Makefile
+
+Package: qt5graphicaleffects
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick @BROKEN
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5graphicaleffects-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: qt5graphicaleffects
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtgraphicaleffects-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: qt5graphicaleffects
+@@
+
+
+Source-Makefile: feeds/video/frameworks/qt5/qt5quick/Makefile
+
+Package: qt5quick-qml
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-network
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 Qml
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 Qml
+@@
+
+Package: qt5quick-qml-models
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-qml
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-models-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QmlModels
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QmlModels
+@@
+
+Package: qt5quick-qml-worker-script
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-qml
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-worker-script-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QmlWorkerScript
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QmlWorkerScript
+@@
+
+Package: qt5quick-quick
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-gui +qt5quick-qml-models
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-quick-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 Quick
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 Quick
+@@
+
+Package: qt5quick-quick-test
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick +qt5base-widgets +qt5base-test
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-quick-test-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QuickTest
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QuickTest
+@@
+
+Package: qt5quick-quick-widgets
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick +qt5base-widgets
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-quick-widgets-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QuickWidgets
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QuickWidgets
+@@
+
+Package: qt5quick-quick-shapes
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-quick-shapes-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QuickShapes
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QuickShapes
+@@
+
+Package: qt5quick-qml-module-qtqml-models2
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-qml-models
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtqml-models2-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtQml models
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtQml models
+@@
+
+Package: qt5quick-qml-module-qtqml-statemachine
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-qml
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtqml-statemachine-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML StateMachine
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML StateMachine
+@@
+
+Package: qt5quick-qml-module-qtqml-workerscript2
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-qml-worker-script
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtqml-workerscript2-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML WorkerScript
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML WorkerScript
+@@
+
+Package: qt5quick-qml-module-qtlabs-models
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-qml-models
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtlabs-models-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtLabs qmlmodels
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtLabs qmlmodels
+@@
+
+Package: qt5quick-qml-module-qtlabs-folderlistmodel
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-qml
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtlabs-folderlistmodel-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtLabs folderlistmodel
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtLabs folderlistmodel
+@@
+
+Package: qt5quick-qml-module-qtlabs-settings
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-qml
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtlabs-settings-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtLabs settings
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtLabs settings
+@@
+
+Package: qt5quick-qml-module-qtlabs-animation
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-qml +qt5quick-quick
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtlabs-animation-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtLabs animation
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtLabs animation
+@@
+
+Package: qt5quick-qml-module-qtlabs-sharedimage
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtlabs-sharedimage-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtLabs sharedimage
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtLabs sharedimage
+@@
+
+Package: qt5quick-qml-module-qtlabs-wavefrontmesh
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtlabs-wavefrontmesh-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtLabs wavefrontmesh
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtLabs wavefrontmesh
+@@
+
+Package: qt5quick-qml-module-qtquick
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick +qt5quick-qml-worker-script
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtquick-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtQuick.2
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtQuick.2
+@@
+
+Package: qt5quick-qml-module-qtquick-layouts
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtquick-layouts-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtQuick Layouts
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtQuick Layouts
+@@
+
+Package: qt5quick-qml-module-qtquick-localstorage
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-qml +qt5base-sql
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtquick-localstorage-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtQuick LocalStorage
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtQuick LocalStorage
+@@
+
+Package: qt5quick-qml-module-qtquick-shapes
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick-shapes
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtquick-shapes-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtQuick Shapes
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtQuick Shapes
+@@
+
+Package: qt5quick-qml-module-qtquick-window2
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qtquick-window2-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtQuick Window.2
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtQuick Window.2
+@@
+
+Package: qt5quick-qml-module-qttest
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick +qt5quick-quick-test
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-qml-module-qttest-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5Quick2 QML QtTest
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtdeclarative-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5Quick2 QML QtTest
+@@
+
+
+Source-Makefile: feeds/video/frameworks/qt5/qt5quick-controls/Makefile
+
+Package: qt5quick-controls2
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5quick-controls2-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: qt5quick-controls2
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtquickcontrols2-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: qt5quick-controls2
+@@
+
+
+Source-Makefile: feeds/video/frameworks/qt5/qt5script/Makefile
+
+Package: qt5script-script
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5script-script-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5script script
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtscript-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5script script
+@@
+
+Package: qt5script-scriptTools
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui +qt5base-widgets +qt5script-script
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5script-scriptTools-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5script scriptTools
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtscript-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5script scriptTools
+@@
+
+Package: qt5script-examples
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5script-scriptTools @BROKEN
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5script-examples-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5script examples
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtscript-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5script examples
+@@
+
+
+Source-Makefile: feeds/video/frameworks/qt5/qt5svg/Makefile
+Build-Depends: qt5base
+
+Package: qt5svg
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-widgets
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5svg-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: qt5svg
+Maintainer: 
+Source: qtsvg-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: qt5svg
+@@
+
+
+Source-Makefile: feeds/video/frameworks/qt5/qt5tools/Makefile
+Build-Depends/host: qt5base/host
+Build-Types: host
+
+Package: qt5tools
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5tools-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: qt5tools
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qttools-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Build-Only: 1
+Description: qt5tools
+@@
+
+
+Source-Makefile: feeds/video/frameworks/qt5/qt5translations/Makefile
+Build-Depends: qt5tools/host
+
+Package: qt5translations
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5translations-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: qt5translations
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qttranslations-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: qt5translations
+@@
+
+
+Source-Makefile: feeds/video/frameworks/qt5/qt5virtualkeyboard/Makefile
+Build-Depends: qt5tools/host
+
+Package: qt5virtualkeyboard
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick +qt5quick-qml-models +qt5svg
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5virtualkeyboard-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: qt5virtualkeyboard
+Maintainer: 
+Source: qtvirtualkeyboard-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: qt5virtualkeyboard
+@@
+
+
+Source-Makefile: feeds/video/frameworks/wayland/Makefile
+Build-Depends: libffi/host libxml2/host wayland/host
+Build-Depends/host: libffi/host libxml2/host wayland/host
+Build-Types: host
+
+Package: libwayland
+Submenu: Frameworks and Toolkits
+Version: 1.23.0-r1
+Depends: +libc +libexpat +libffi
+Conflicts: 
+Menu-Depends: 
+Provides: @libwayland-any
+Section: libs
+Category: Video
+Repository: base
+Title: wayland
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Require-User: :video=40
+Source: wayland-1.23.0.tar.xz
+License: MIT
+LicenseFiles: COPYING
+URL: https://wayland.freedesktop.org/
+Type: ipkg
+Description: wayland
+@@
+
+Package: wayland-scanner
+Submenu: Frameworks and Toolkits
+Version: 1.23.0-r1
+Depends: +libc +libxml2 +libexpat
+Conflicts: 
+Menu-Depends: 
+Provides: @wayland-scanner-any
+Section: libs
+Category: Video
+Repository: base
+Title: wayland
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: wayland-1.23.0.tar.xz
+License: MIT
+LicenseFiles: COPYING
+URL: https://wayland.freedesktop.org/
+Type: ipkg
+Description: wayland
+@@
+
+
+Source-Makefile: feeds/video/frameworks/wayland-protocols/Makefile
+Build-Depends: wayland
+Build-Depends/host: wayland/host
+
+Package: wayland-protocols
+Submenu: Frameworks and Toolkits
+Version: 1.45-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @wayland-protocols-any
+Section: libs
+Category: Video
+Repository: base
+Title: wayland-protocols
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: wayland-protocols-1.45.tar.xz
+License: MIT
+LicenseFiles: COPYING
+URL: https://wayland.freedesktop.org/
+Type: ipkg
+Description: wayland-protocols
+@@
+
+
+Source-Makefile: feeds/video/frameworks/weston/Makefile
+Build-Depends: wayland/host
+
+Package: weston
+Submenu: Frameworks and Toolkits
+Version: 14.0.2-r2
+Depends: +libc +gstreamer1-plugins-base +libcairo +libevdev +libdisplay-info +libgst1allocators +libgst1app +libgst1video +libgstreamer1 +libinput +libmesa +libpango +libseat +libwayland +libwebp +libxkbcommon +pixman +seatd +wayland-protocols +xkeyboard-config
+Conflicts: 
+Menu-Depends: 
+Provides: @weston-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: weston
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: weston-14.0.2.tar.xz
+License: MIT
+LicenseFiles: COPYING
+URL: https://wayland.freedesktop.org/
+Type: ipkg
+Description: weston
+@@
+
+
+Source-Makefile: feeds/video/frameworks/wlroots/Makefile
+Build-Depends: wayland/host
+
+Package: wlroots
+Submenu: Frameworks and Toolkits
+Version: 0.18.2
+Depends: +libc +libmesa +libdisplay-info +libdrm +libinput +libseat +libxkbcommon +libudev +pixman +libwayland +xkeyboard-config
+Conflicts: 
+Menu-Depends: 
+Provides: @wlroots-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: modules for building a Wayland compositor
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: wlroots-0.18.2.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://gitlab.freedesktop.org/wlroots/wlroots
+Type: ipkg
+Description: Pluggable, composable, unopinionated modules for building a Wayland compositor;
+or about 60,000 lines of code you were going to write anyway.
+@@
+
+
+Source-Makefile: feeds/video/games/gzdoom/Makefile
+Build-Depends: gzdoom/host vulkan-loader
+Build-Types: host
+
+Package: gzdoom
+Version: 4.14.2-r1
+Depends: +libc +alsa-lib +glib2 +libatomic +libbz2 +libstdcpp +libzmusic +libvpx +libsdl2 +USE_MUSL:musl-fts @(ARCH_64BIT||BROKEN)
+Conflicts: 
+Menu-Depends: 
+Provides: @gzdoom-any
+Section: games
+Category: Games
+Repository: base
+Title: GZDoom
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: g4.14.2.zip
+License: GPL-3.0-or-later BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://zdoom.org/
+Type: ipkg
+Description:  ZDoom is a family of enhanced ports of the Doom engine for running on modern
+ operating systems. Use this port of DOOM on systems with some sort of hardware
+ 3D acceleration support.
+@@
+
+
+Source-Makefile: feeds/video/games/sdl2-doom/Makefile
+
+Package: sdl2-doom
+Version: 2024.05.31~fbbfb86b34af2cf267a9287cd91a5d1575fcfe58-r1
+Depends: +libc +libstdcpp +libsdl2 +libsdl2-mixer
+Conflicts: 
+Menu-Depends: 
+Provides: @sdl2-doom-any
+Section: games
+Category: Games
+Repository: base
+Title: SDL2 Doom
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: sdl2-doom-2024.05.31~fbbfb86b34af2cf267a9287cd91a5d1575fcfe58.tar.zst
+License: GPL-2.0-or-later
+LicenseFiles: License.md
+URL: https://github.com/AlexOberhofer/sdl2-doom
+Type: ipkg
+Description:   This is a source port of the ID Software source release of DOOM.
+  Using low-resolution software rendering designed in 1993 by idSoftware
+  for (from today's perspective) very slow CPUs it runs with good
+  performance even on low-end devices.
+@@
+
+
+Source-Makefile: feeds/video/games/zmusic/Makefile
+
+Package: libzmusic
+Version: 1.1.14-r1
+Depends: +libc +libstdcpp +libsndfile +alsa-lib +glib2
+Conflicts: 
+Menu-Depends: 
+Provides: @libzmusic-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: ZMusic
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: zmusic-1.1.14.tar.zst
+License: GPL-3.0
+LicenseFiles: licenses/bsd.txt licenses/dumb.txt licenses/gplv3.txt licenses/legal.txt licenses/lgplv21.txt licenses/lgplv3.txt licenses/zmusic.txt
+URL: https://zdoom.org/
+Type: ipkg
+Description:   GZDoom's music system as a standalone library
+@@
+
+
+Source-Makefile: feeds/video/libs/assimp/Makefile
+
+Package: libassimp
+Submenu: Video
+Version: 6.0.2-r1
+Depends: +libc +libstdcpp +minizip +zlib
+Conflicts: 
+Menu-Depends: 
+Provides: @libassimp-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: Open Asset Importer Library
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: assimp-6.0.2.tar.gz
+License: BSD-3-Clause
+URL: https://github.com/assimp/assimp
+Type: ipkg
+Description: Open Asset Import Library is a library that loads various 3D file formats
+into a shared, in-memory format. It supports more than 40 file formats
+for import and a growing selection of file formats for export.
+@@
+
+
+Source-Makefile: feeds/video/libs/cairo/Makefile
+
+Package: libcairo
+Submenu: Video
+Version: 1.18.4-r1
+Depends: +libc +libpng +libfreetype +fontconfig +libmesa +pixman +glib2 +libjpeg +zlib +liblzo
+Conflicts: 
+Menu-Depends: 
+Provides: @libcairo-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: cairo
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: cairo-1.18.4.tar.xz
+License: LGPL-2.1-or-later MPL-1.1
+LicenseFiles: COPYING COPYING-LGPL-2.1 COPYING-MPL-1.1
+URL: https://cairo.freedesktop.org/
+Type: ipkg
+Description:   Cairo is a 2D graphics library with support for multiple output devices.
+@@
+
+
+Source-Makefile: feeds/video/libs/cog/Makefile
+
+Package: libcogcore
+Version: 0.18.5-r1
+Depends: +libc +libdbus +libmanette +libwpewebkit +wpebackend-fdo
+Conflicts: 
+Menu-Depends: 
+Provides: @libcogcore-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: WPE WebKit API library
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: cog-0.18.5.tar.xz
+License: BSD-2-clause
+LicenseFiles: COPYING
+URL: https://wpewebkit.org/
+Type: ipkg
+Description: WPE WebKit API library
+@@
+
+Package: cog
+Version: 0.18.5-r1
+Depends: +libc +libcogcore
+Conflicts: 
+Menu-Depends: 
+Provides: @cog-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: launcher for WPE WebKit
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Require-User: cog:video=40
+Source: cog-0.18.5.tar.xz
+License: BSD-2-clause
+LicenseFiles: COPYING
+URL: https://wpewebkit.org/
+Type: ipkg
+Description: launcher for WPE WebKit
+@@
+
+
+Source-Makefile: feeds/video/libs/fribidi/Makefile
+
+Package: fribidi
+Submenu: Video
+Version: 1.0.16-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @fribidi-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: fribidi
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: fribidi-1.0.16.tar.xz
+License: LGPL-2.1
+LicenseFiles: COPYING
+URL: https://github.com/fribidi/fribidi
+Type: ipkg
+Description: fribidi
+@@
+
+
+Source-Makefile: feeds/video/libs/gdk-pixbuf/Makefile
+
+Package: libgdk-pixbuf
+Submenu: Frameworks and Toolkits
+Version: 2.42.12-r1
+Depends: +libc +giflib +libpng +libtiff +libjpeg +shared-mime-info
+Conflicts: 
+Menu-Depends: 
+Provides: @libgdk-pixbuf-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: GdkPixbuf: Image loading library
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gdk-pixbuf-2.42.12.tar.xz
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnome:gdk-pixbuf
+URL: http://www.gtk.org/
+Type: ipkg
+Description:   GdkPixbuf is a library that loads image data in various formats and stores it as linear buffers in memory.
+@@
+
+
+Source-Makefile: feeds/video/libs/glm/Makefile
+
+Package: libglm
+Submenu: Video
+Version: 1.0.1-r1
+Depends: +libc +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: @libglm-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: OpenGL Mathematics (GLM)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: glm-1.0.1.tar.gz
+License: MIT
+URL: https://github.com/g-truc/glm
+Type: ipkg
+Description: OpenGL Mathematics (GLM) is a header only C++ mathematics library for
+graphics software based on the OpenGL Shading Language (GLSL)
+specifications.
+@@
+
+
+Source-Makefile: feeds/video/libs/glslang/Makefile
+Build-Types: host
+
+Package: glslang
+Version: 15.4.0-r1
+Depends: +libc +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: @glslang-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: GLSL/ESSL, HLSL and SPIR-V generator
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: glslang-15.4.0.tar.gz
+License: BSD-3-Clause BSD-2-Clause MIT Apache GPL-3.0-or-later
+LicenseFiles: LICENSE.txt
+URL: https://github.com/KhronosGroup/glslang
+Type: ipkg
+Description: Khronos-reference front end for GLSL/ESSL, partial front end for HLSL, and a SPIR-V generator.
+@@
+
+
+Source-Makefile: feeds/video/libs/graphene/Makefile
+
+Package: libgraphene
+Submenu: Video
+Version: 2025.01.23~47b503d6086900057ceefab785546ad524caa735-r1
+Depends: +libc +glib2
+Conflicts: 
+Menu-Depends: 
+Provides: @libgraphene-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: Graphene
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: graphene-2025.01.23~47b503d6086900057ceefab785546ad524caa735.tar.zst
+License: MIT
+LicenseFiles: LICENSE.txt
+URL: https://github.com/ebassi/graphene
+Type: ipkg
+Description:  A thin layer of types for graphic libraries
+@@
+
+
+Source-Makefile: feeds/video/libs/harfbuzz/Makefile
+
+Package: harfbuzz
+Submenu: Video
+Version: 11.2.1-r1
+Depends: +libc +glib2 +icu +libcairo +libfreetype
+Conflicts: 
+Menu-Depends: 
+Provides: @harfbuzz-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: hafbuzz
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: harfbuzz-11.2.1.tar.xz
+License: LGPL-2.1
+LicenseFiles: COPYING
+URL: http://www.harfbuzz.org/
+Type: ipkg
+Description: hafbuzz
+@@
+
+
+Source-Makefile: feeds/video/libs/libdisplay-info/Makefile
+Build-Depends: hwdata
+
+Package: libdisplay-info
+Submenu: Video
+Version: 0.2.0-r1
+Depends: +libc +edid-decode
+Conflicts: 
+Menu-Depends: 
+Provides: @libdisplay-info-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: EDID and DisplayID library
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: libdisplay-info-0.2.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://gitlab.freedesktop.org/emersion/libdisplay-info
+Type: ipkg
+Description:   EDID and DisplayID library for use with compositors.
+@@
+
+
+Source-Makefile: feeds/video/libs/libdouble-conversion/Makefile
+Build-Types: host
+
+Package: libdouble-conversion
+Version: 3.3.1-r1
+Depends: +libc +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: @libdouble-conversion-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: Efficient binary-decimal and decimal-binary conversion routines for IEEE doubles
+Maintainer: Yaroslav Petrov <info@lank.me>
+Source: double-conversion-3.3.1.tar.gz
+License: BSD-3c
+LicenseFiles: COPYING LICENSE
+URL: https://github.com/google/double-conversion
+Type: ipkg
+Description:   double-conversion provides binary-decimal and decimal-binary routines for IEEE doubles.
+
+  The library consists of efficient conversion routines that have been extracted
+  from the V8 JavaScript engine. The code has been refactored and improved so that
+  it can be used more easily in other projects.
+@@
+
+
+Source-Makefile: feeds/video/libs/libepoxy/Makefile
+
+Package: libepoxy
+Submenu: Video
+Version: 1.5.10-r1
+Depends: +libc +libmesa
+Conflicts: 
+Menu-Depends: 
+Provides: @libepoxy-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: Epoxy OpenGL function pointer management
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: libepoxy-1.5.10.tar.gz
+License: MIT
+LicenseFiles: COPYING
+URL: https://github.com/anholt/libepoxy
+Type: ipkg
+Description:  Epoxy is a library for handling OpenGL function pointer management for you.
+@@
+
+
+Source-Makefile: feeds/video/libs/libva/Makefile
+
+Package: libva
+Submenu: Video
+Version: 2.22.0-r1
+Depends: +libc +libdrm +libwayland
+Conflicts: 
+Menu-Depends: 
+Provides: @libva-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: Video Acceleration API
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: libva-2.22.0.tar.gz
+License: MIT
+LicenseFiles: COPYING
+URL: https://intel.github.io/libva/
+Type: ipkg
+Description: Libva is an implementation for VA-API (Video Acceleration API)
+
+VA-API is an open-source library and API specification, which provides access
+to graphics hardware acceleration capabilities for video processing.
+It consists of a main library and driver-specific acceleration backends for
+each supported hardware vendor.
+@@
+
+
+Source-Makefile: feeds/video/libs/libwpe/Makefile
+Build-Depends: mesa
+
+Package: libwpe
+Version: 1.16.3-r1
+Depends: +libc +libstdcpp +libxkbcommon
+Conflicts: 
+Menu-Depends: 
+Provides: @libwpe-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: WPE backend abstraction library
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: libwpe-1.16.3.tar.xz
+License: BSD-2-clause
+LicenseFiles: COPYING
+URL: https://wpewebkit.org/
+Type: ipkg
+Description:  An Open Source WebKit port for Linux-based embedded devices designed
+ with flexibility and hardware acceleration in mind, leveraging common 3D
+ graphics APIs for best performance.
+@@
+
+
+Source-Makefile: feeds/video/libs/libxkbcommon/Makefile
+Build-Depends: wayland
+
+Package: libxkbcommon
+Version: 1.10.0-r2
+Depends: +libc +libwayland +libxml2 +wayland-protocols
+Conflicts: 
+Menu-Depends: 
+Provides: @libxkbcommon-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: libxkbcommon
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: libxkbcommon-1.10.0.tar.zst
+License: BSD-3-Clause
+URL: https://xkbcommon.org/
+Type: ipkg
+Description: libxkbcommon
+@@
+
+
+Source-Makefile: feeds/video/libs/llvm/Makefile
+Build-Depends: llvm/host spirv-headers spirv-tools
+Build-Depends/host: spirv-headers/host spirv-tools/host
+Build-Types: host
+
+Package: llvm
+Version: 21.1.3
+Depends: +libc @(!arc&&!powerpc64&&!powerpc||BROKEN)
+Conflicts: 
+Menu-Depends: 
+Provides: @llvm-any
+Section: devel
+Category: Development
+Repository: base
+Title: LLVM
+Maintainer: 
+Source: llvm-project-21.1.3.src.tar.xz
+CPE-ID: cpe:/a:llvm:llvm
+URL: https://llvm.org/
+Type: ipkg
+Build-Only: 1
+Description: The LLVM Project is a collection of modular and reusable compiler and toolchain technologies.
+@@
+
+Package: libclang
+Version: 21.1.3
+Depends: +libc @(!arc&&!powerpc64&&!powerpc||BROKEN) +libatomic +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: @libclang-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: LLVM Clang library
+Maintainer: 
+Source: llvm-project-21.1.3.src.tar.xz
+CPE-ID: cpe:/a:llvm:llvm
+URL: https://llvm.org/
+Type: ipkg
+Description: LLVM Clang library
+@@
+
+Package: libclang-cpp
+Version: 21.1.3
+Depends: +libc @(!arc&&!powerpc64&&!powerpc||BROKEN) +libatomic +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: @libclang-cpp-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: LLVM Clang C++ library
+Maintainer: 
+Source: llvm-project-21.1.3.src.tar.xz
+CPE-ID: cpe:/a:llvm:llvm
+URL: https://llvm.org/
+Type: ipkg
+Description: LLVM Clang C++ library
+@@
+
+Package: liblto
+Version: 21.1.3
+Depends: +libc @(!arc&&!powerpc64&&!powerpc||BROKEN) +libatomic +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: @liblto-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: LLVM LTO library
+Maintainer: 
+Source: llvm-project-21.1.3.src.tar.xz
+CPE-ID: cpe:/a:llvm:llvm
+URL: https://llvm.org/
+Type: ipkg
+Description: LLVM LTO library
+@@
+
+Package: libremarks
+Version: 21.1.3
+Depends: +libc @(!arc&&!powerpc64&&!powerpc||BROKEN) +libatomic +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: @libremarks-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: LLVM diagnostic remarks library
+Maintainer: 
+Source: llvm-project-21.1.3.src.tar.xz
+CPE-ID: cpe:/a:llvm:llvm
+URL: https://llvm.org/
+Type: ipkg
+Description: LLVM diagnostic remarks library
+@@
+
+
+Source-Makefile: feeds/video/libs/mesa/Makefile
+Build-Depends: glslang/host python3/host libva vulkan-headers MESA_USE_LLVM:llvm MESA_USE_LLVM:mesa/host
+Build-Depends/host: python3/host spirv-tools/host llvm
+Build-Types: host
+
+Package: mesa3d
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic
+Conflicts: 
+Menu-Depends: 
+Provides: @mesa3d-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Hidden: 1
+Description: Mesa3D
+@@
+Config:
+config HAVE_MESA
+	bool
+	default y
+
+config MESA_USE_LLVM
+	bool "Use LLVM to build MESA"
+	depends on aarch64||arm||i386||i686||loongarch64||mips||mipsel||mips64||mips64el||riscv64||x86_64
+	default y
+@@
+
+Package: libmesa-amd
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libstdcpp +zlib +libdrm +libsensors +libwayland +libzstd +wayland-protocols +libdrm-amdgpu +libdrm-radeon +libelf @MESA_USE_LLVM
+Conflicts: 
+Menu-Depends: 
+Provides: @libmesa-amd-any libmesa
+Build-Variant: amd
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D OpenGL and friends (AMD)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: A collection of drivers for AMD Radeon dedicated GPUs.
+
+AMD R300
+
+The R300 driver supports AMD's Radeon R300 GPU series.
+
+AMD R600
+
+The R600 driver supports AMD's Radeon HD 2000 GPU series. It's
+officially supported by AMD.
+
+AMD RadeonSI
+
+The RadeonSI OpenGL driver supports AMD's Southern Island GPUs and
+later. It's officially supported by AMD.
+@@
+
+Package: libmesa-intel
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libstdcpp +zlib +libdrm +libsensors +libwayland +libzstd +wayland-protocols +libdrm-intel @(i386||i686||x86_64) @MESA_USE_LLVM
+Conflicts: 
+Menu-Depends: 
+Provides: @libmesa-intel-any libmesa
+Build-Variant: intel
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D OpenGL and friends (Intel)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: A collection of drivers for GPUs embedded in Intel's CPUs.
+
+Intel Iris
+
+The Iris driver supports Intel's Gen 8 hardware and later. It's
+officially supported by Intel and is their next-generation Linux OpenGL
+driver.
+
+Intel Crocus
+
+The Crocus driver supports Intel's Gen 7 hardware and earlier. It's
+based on Iris and the former i965 driver, but is not officially
+supported or endorsed by Intel.
+
+Intel i915
+
+The i915 driver supports older Intel i915 and i945 chipsets.
+@@
+
+Package: libmesa-tegra
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libstdcpp +zlib +libdrm +libsensors +libwayland +libzstd +wayland-protocols +libdrm-tegra @(aarch64||arm) @MESA_USE_LLVM
+Conflicts: 
+Menu-Depends: 
+Provides: @libmesa-tegra-any libmesa
+Build-Variant: tegra
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D OpenGL and friends (NVIDIA Tegra)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: The Nouveau driver built for GPUs embedded in the Tegra SoC family. It's
+a reverse-engineered, community-developed driver, and is not endorsed by
+NVIDIA.
+@@
+
+Package: libmesa-etnaviv
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libstdcpp +zlib +libdrm +libsensors +libwayland +libzstd +wayland-protocols +libdrm-etnaviv @(aarch64||arm||mips||mips64||mipsel||mips64el||riscv64)
+Conflicts: 
+Menu-Depends: 
+Provides: @libmesa-etnaviv-any libmesa
+Build-Variant: etnaviv
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D OpenGL and friends (Vivante)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: The Etnaviv driver supports the Vivante GCxxx series of embedded GPUs.
+It's a reverse-engineered, community-developed driver, and is not
+endorsed by Vivante.
+@@
+
+Package: libmesa-broadcom
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libstdcpp +zlib +libdrm +libsensors +libwayland +libzstd +wayland-protocols +libarchive @(aarch64||arm) @HAS_FPU
+Conflicts: 
+Menu-Depends: 
+Provides: @libmesa-broadcom-any libmesa
+Build-Variant: broadcom
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D OpenGL and friends (Broadcom)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: Mesa’s VC4 graphics driver supports multiple implementations of
+Broadcom's VideoCore IV GPU. It is notably used in the Raspberry Pi 0
+through Raspberry Pi 3 hardware.
+Along with GLES 2.0, the Mesa driver also exposes OpenGL 2.1, which is
+mostly correct but with a few caveats.
+
+Mesa’s V3D graphics driver stack includes a conformant GLES3.1 driver
+called V3D, notably used on the Raspberry Pi 4 and Raspberry Pi 5.
+
+This package contains both, VC4 and V3D drivers and covers all
+RaspberryPi boards.
+@@
+
+Package: libmesa-nouveau
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libstdcpp +zlib +libdrm +libsensors +libwayland +libzstd +wayland-protocols +libdrm-nouveau @MESA_USE_LLVM
+Conflicts: 
+Menu-Depends: 
+Provides: @libmesa-nouveau-any libmesa
+Build-Variant: nouveau
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D OpenGL and friends (NVIDIA)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: The Nouveau drivers supports a large set of NVIDIA chips, ranging from
+NV04 found in the Riva TNT card to NVF0 found in the GeForce GTX 780.
+It's a reverse-engineered, community-developed driver, and is not
+endorsed by NVIDIA.
+@@
+
+Package: libmesa-lima
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libstdcpp +zlib +libdrm +libsensors +libwayland +libzstd +wayland-protocols @(aarch64||arm)
+Conflicts: 
+Menu-Depends: 
+Provides: @libmesa-lima-any libmesa
+Build-Variant: lima
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D OpenGL and friends (ARM Mali Utgard)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: Lima is an open source graphics driver which supports Mali Utgard
+(Mali-4xx) embedded GPUs from ARM. It's a reverse-engineered,
+community-developed driver, and is not endorsed by ARM. Lima was
+upstreamed in Mesa 19.1 and Linux kernel 5.2.
+
+Product         Architecture    Status
+Mali-400        Utgard          Supported
+Mali-450        Utgard          Supported
+Mali-470        Utgard          Unsupported
+
+Newer Mali chips based on the Midgard/Bifrost architectures (Mali T or G
+series) are handled by the Panfrost driver, not Lima.
+@@
+
+Package: libmesa-panfrost
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libstdcpp +zlib +libdrm +libsensors +libwayland +libzstd +wayland-protocols @(aarch64||arm) @MESA_USE_LLVM
+Conflicts: 
+Menu-Depends: 
+Provides: @libmesa-panfrost-any libmesa
+Build-Variant: panfrost
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D OpenGL and friends (ARM Mali Midgard and later)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: The Panfrost driver stack includes an OpenGL ES implementation for Arm
+Mali GPUs based on the Midgard, Bifrost and Valhall microarchitectures.
+It is conformant on Mali-G52, Mali-G57 and Mali-G610, but non-conformant
+on other GPUs. The following hardware is currently supported:
+
+Models                          Architecture    OpenGL ES       OpenGL
+T600, T620, T720                Midgard (v4)    2.0             2.1
+T760, T820, T830 T860, T880     Midgard (v5)    3.1             3.1
+G72                             Bifrost (v6)    3.1             3.1
+G31, G51, G52, G76              Bifrost (v7)    3.1             3.1
+G57                             Valhall (v9)    3.1             3.1
+G310, G610                      Valhall (v10)   3.1             3.1
+
+Other Midgard and Bifrost chips (e.g. G71) are not yet supported.
+@@
+
+Package: libmesa-virgl
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libstdcpp +zlib +libdrm +libsensors +libwayland +libzstd +wayland-protocols
+Conflicts: 
+Menu-Depends: 
+Provides: @libmesa-virgl-any libmesa
+Build-Variant: virgl
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D OpenGL and friends (VirtIO GL)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: VirGL is a virtual 3D GPU for use inside QEMU virtual machines, that
+allows the guest operating system to use the capabilities of the host
+GPU to accelerate 3D rendering. The plan is to have a guest GPU that is
+fully independent of the host GPU.
+@@
+
+Package: libmesa-zink
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libstdcpp +zlib +libdrm +libsensors +libwayland +libzstd +wayland-protocols @MESA_USE_LLVM
+Conflicts: 
+Menu-Depends: 
+Provides: @libmesa-zink-any libmesa
+Build-Variant: vulkan
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D OpenGL and friends (Zink GL via Vulkan)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: The Zink driver is a Gallium driver that emits Vulkan API calls instead
+of targeting a specific GPU architecture. This can be used to get full
+desktop OpenGL support on devices that only support Vulkan.
+@@
+
+Package: libmesa-softpipe
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libstdcpp +zlib +libdrm +libsensors +libwayland +libzstd +wayland-protocols
+Conflicts: 
+Menu-Depends: 
+Provides: @libmesa-softpipe-any libmesa
+Build-Variant: softpipe
+Default-Variant: softpipe
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D OpenGL and friends (Softpipe)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: The Softpipe driver is a reference software rasterizer; it's slow but
+accurate. It's mostly useful for testing, and on systems that lack
+support for LLVM.
+@@
+
+Package: libmesa-llvmpipe
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libstdcpp +zlib +libdrm +libsensors +libwayland +libzstd +wayland-protocols @MESA_USE_LLVM
+Conflicts: 
+Menu-Depends: 
+Provides: @libmesa-llvmpipe-any libmesa
+Build-Variant: llvmpipe
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D OpenGL and friends (LLVMpipe)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: The Gallium LLVMpipe driver is a software rasterizer that uses LLVM to
+do runtime code generation. Shaders, point/line/triangle rasterization
+and vertex processing are implemented with LLVM IR which is translated
+to native CPU machine code. Also, the driver is multithreaded to take
+advantage of multiple CPU cores (up to 32 at this time). It's the
+fastest software rasterizer for Mesa.
+@@
+
+Package: libvulkan-broadcom
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libdrm +libexpat +libstdcpp +libudev +libwayland +libzstd +zlib @(arm||aarch64) @HAS_FPU
+Conflicts: 
+Menu-Depends: 
+Provides: @libvulkan-broadcom-any
+Build-Variant: vulkan
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D Broadcom Vulkan driver
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: V3DV Vulkan graphics driver, notably used on the Raspberry Pi 4 and
+Raspberry Pi 5.
+@@
+
+Package: libvulkan-imagination
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libatomic +libdrm +libexpat +libstdcpp +libudev +libwayland +libzstd +zlib @(aarch64||arm||mips||mips64||mipsel||mips64el||riscv64)
+Conflicts: 
+Menu-Depends: 
+Provides: @libvulkan-imagination-any
+Build-Variant: vulkan
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D Imagination PowerVR driver (EXPERIMENTAL)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: PowerVR is a Vulkan driver for Imagination Technologies PowerVR GPUs,
+starting with those based on the Rogue architecture.
+
+The driver is not yet fully conformant so it requires exporting
+PVR_I_WANT_A_BROKEN_VULKAN_DRIVER=1 to the environment before running
+any Vulkan content.
+
+The following hardware is currently in active development:
+
+Product         Series          B.V.N.C         Vulkan  Conformant
+GX6250          Series 6XT      4.40.2.51       1.0     No
+AXE-1-16M       A-Series        33.15.11.3      1.0     No
+BXS-4-64        B-Series        36.53.104.796   1.0     No
+@@
+
+Package: libvulkan-intel
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libdrm-intel +libexpat +libstdcpp +libudev +libwayland +libzstd +zlib @(i386||i686||x86_64) @MESA_USE_LLVM
+Conflicts: 
+Menu-Depends: 
+Provides: @libvulkan-intel-any
+Build-Variant: vulkan
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D Intel Gen9+ Vulkan driver
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: Intel ANV for Skylake "Gen9" and newer graphics. It's officially
+supported by Intel and is their official Vulkan driver for Linux.
+@@
+
+Package: libvulkan-intel-hasvk
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libdrm-intel +libexpat +libstdcpp +libudev +libwayland +libzstd +zlib @(i386||i686||x86_64) @MESA_USE_LLVM
+Conflicts: 
+Menu-Depends: 
+Provides: @libvulkan-intel-hasvk-any
+Build-Variant: vulkan
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D Intel Gen7/Gen8 Vulkan driver
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: The ANV vulkan driver supports Intel's Gen 7/8 hardware. It's officially
+supported by Intel and is their official Vulkan driver for Linux.
+@@
+
+Package: libvulkan-lvp
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libatomic +libdrm +libstdcpp +libudev +libwayland +libzstd +zlib @MESA_USE_LLVM
+Conflicts: 
+Menu-Depends: 
+Provides: @libvulkan-lvp-any
+Build-Variant: vulkan
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D LLVM JIT CPU rendering Vulkan driver
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: The Vulkan LLVMpipe driver is a software rasterizer that uses LLVM to do
+runtime code generation.
+@@
+
+Package: libvulkan-nouveau
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64) @MESA_USE_LLVM @BROKEN
+Conflicts: 
+Menu-Depends: 
+Provides: @libvulkan-nouveau-any
+Build-Variant: vulkan
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D nouveau Vulkan driver for nVidia GPUs
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: NVK is a Vulkan driver for NVIDIA GPUs.
+
+NVK currently supports Turing (RTX 20XX and GTX 16XX) and later GPUs.
+Eventually, we plan to support as far back as Kepler (GeForce 600 and
+700 series) GPUs but anything pre-Turing is currently disabled by
+default.
+@@
+
+Package: libvulkan-panfrost
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libdrm +libexpat +libstdcpp +libudev +libwayland +libzstd +zlib @(arm||aarch64) @MESA_USE_LLVM
+Conflicts: 
+Menu-Depends: 
+Provides: @libvulkan-panfrost-any
+Build-Variant: vulkan
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D ARM Mali Midgard/Bifrost/Valhall Vulkan driver
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: The PanVk driver is an Open Source Vulkan driver for ARM Mali Midgard
+and Bifrost GPUs.
+@@
+
+Package: libvulkan-radeon
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libdrm-amdgpu +libelf +libexpat +libstdcpp +libudev +libwayland +libzstd +zlib @MESA_USE_LLVM
+Conflicts: 
+Menu-Depends: 
+Provides: @libvulkan-radeon-any
+Build-Variant: vulkan
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D AMD Radeon Vulkan driver
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: RADV is a Vulkan driver for AMD GCN/RDNA GPUs.
+@@
+
+
+Source-Makefile: feeds/video/libs/pango/Makefile
+Build-Depends: glib2/host
+
+Package: libpango
+Submenu: Video
+Version: 1.56.3-r1
+Depends: +libc +glib2 +fribidi +harfbuzz +libcairo +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full
+Conflicts: 
+Menu-Depends: 
+Provides: @libpango-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: libpango
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: pango-1.56.3.tar.xz
+License: LGPL-2.0-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnome:pango
+URL: https://www.pango.org/
+Type: ipkg
+Description: libpango
+@@
+
+
+Source-Makefile: feeds/video/libs/sdl2/Makefile
+
+Package: libsdl2
+Version: 2.32.8-r1
+Depends: +libc +libstdcpp +alsa-lib +libudev-zero +pulseaudio +libmesa +libsamplerate +libwayland +wayland-protocols
+Conflicts: 
+Menu-Depends: 
+Provides: @libsdl2-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: Simple DirectMedia Layer
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: SDL2-2.32.8.tar.gz
+License: BSD-3c
+LicenseFiles: COPYING LICENSE
+URL: https://www.libsdl.org
+Type: ipkg
+Description:  Simple DirectMedia Layer is a cross-platform development library designed to
+ provide low level access to audio, keyboard, mouse, joystick, and graphics
+ hardware via OpenGL and Direct3D.
+@@
+
+Package: libsdl2-tests
+Submenu: Video
+Version: 2.32.8-r1
+Depends: +libc +libsdl2
+Conflicts: 
+Menu-Depends: 
+Provides: @libsdl2-tests-any
+Section: utils
+Category: Utilities
+Repository: base
+Title: SDL installed tests
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: SDL2-2.32.8.tar.gz
+License: BSD-3c
+LicenseFiles: COPYING LICENSE
+URL: https://www.libsdl.org
+Type: ipkg
+Description:  Various test programs to validate SDL is working correctly, and some benchmarks.
+@@
+
+
+Source-Makefile: feeds/video/libs/sdl2-mixer/Makefile
+
+Package: libsdl2-mixer
+Version: 2.8.1-r1
+Depends: +libc +libfluidsynth +libopusfile +libsdl2 +libwavpack +libxmp
+Conflicts: 
+Menu-Depends: 
+Provides: @libsdl2-mixer-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: SDL2 Mixer
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: SDL2_mixer-2.8.1.tar.gz
+License: BSD-3c
+LicenseFiles: COPYING LICENSE
+URL: https://www.libsdl.org/
+Type: ipkg
+Description:   SDL Audio Mixer library
+@@
+
+
+Source-Makefile: feeds/video/libs/seatd/Makefile
+Build-Depends: wayland/host
+
+Package: libseat
+Submenu: Video
+Version: 0.9.1-r2
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @libseat-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: libseat
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: seatd-0.9.1.tar.zst
+License: MIT
+URL: https://git.sr.ht/~kennylevinsen/seatd
+Type: ipkg
+Description:   A universal seat management library.
+@@
+
+Package: seatd
+Submenu: Video
+Version: 0.9.1-r2
+Depends: +libc +libseat
+Conflicts: 
+Menu-Depends: 
+Provides: @seatd-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: seatd
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: seatd-0.9.1.tar.zst
+License: MIT
+URL: https://git.sr.ht/~kennylevinsen/seatd
+Type: ipkg
+Description:   A minimal seat management daemon.
+@@
+
+
+Source-Makefile: feeds/video/libs/spirv-headers/Makefile
+Build-Types: host
+
+Package: spirv-headers
+Version: 1.4.328.0
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @spirv-headers-any
+Section: devel
+Category: Development
+Repository: base
+Title: SPIR-V Headers
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: SPIRV-Headers-1.4.328.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/KhronosGroup/SPIRV-Headers
+Type: ipkg
+Build-Only: 1
+Description: The LLVM Project is a collection of modular and reusable compiler and toolchain technologies.
+@@
+
+
+Source-Makefile: feeds/video/libs/spirv-tools/Makefile
+Build-Depends: spirv-headers
+Build-Depends/host: spirv-headers/host
+Build-Types: host
+
+Package: spirv-tools
+Version: 1.4.328.0
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @spirv-tools-any
+Section: devel
+Category: Development
+Repository: base
+Title: SPIR-V Tools
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: SPIRV-Tools-vulkan-sdk-1.4.328.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/KhronosGroup/SPIRV-Tools
+Type: ipkg
+Build-Only: 1
+Description: The LLVM Project is a collection of modular and reusable compiler and toolchain technologies.
+@@
+
+
+Source-Makefile: feeds/video/libs/vulkan-headers/Makefile
+
+Package: vulkan-headers
+Version: 1.4.328
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @vulkan-headers-any
+Section: devel
+Category: Development
+Repository: base
+Title: Vulkan Headers
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: Vulkan-Headers-1.4.328.tar.gz
+License: Apache-2.0 OR MIT
+LicenseFiles: LICENSE.md
+URL: https://github.com/KhronosGroup/Vulkan-Headers
+Type: ipkg
+Build-Only: 1
+Description: Vulkan header files and API registry.
+@@
+
+
+Source-Makefile: feeds/video/libs/vulkan-loader/Makefile
+Build-Depends: vulkan-headers
+
+Package: vulkan-loader
+Submenu: Video
+Version: 1.4.328
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @vulkan-loader-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: Vulkan Loader
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: Vulkan-Loader-1.4.328.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE.txt
+URL: https://github.com/KhronosGroup/Vulkan-Loader
+Type: ipkg
+Description: This project provides the Khronos official Vulkan Loader.
+@@
+
+
+Source-Makefile: feeds/video/libs/wayland-utils/Makefile
+Build-Depends: wayland/host
+
+Package: wayland-info
+Submenu: Video
+Version: 1.2.0-r1
+Depends: +libc +libwayland +wayland-protocols +libdrm
+Conflicts: 
+Menu-Depends: 
+Provides: @wayland-info-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: wayland-utils
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: wayland-utils-1.2.0.tar.xz
+License: MIT
+LicenseFiles: COPYING
+URL: https://wayland.freedesktop.org/
+Type: ipkg
+Description: wayland-utils
+@@
+
+
+Source-Makefile: feeds/video/libs/wpebackend-fdo/Makefile
+Build-Depends: mesa
+
+Package: wpebackend-fdo
+Version: 1.16.0-r1
+Depends: +libc +glib2 +libepoxy +libstdcpp +libwayland +libwpe
+Conflicts: 
+Menu-Depends: 
+Provides: @wpebackend-fdo-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: WPE's backend based on a freedesktop.org stack
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: wpebackend-fdo-1.16.0.tar.xz
+License: BSD-2-clause
+LicenseFiles: COPYING
+URL: https://wpewebkit.org/
+Type: ipkg
+Description:  An Open Source WebKit port for Linux-based embedded devices designed
+ with flexibility and hardware acceleration in mind, leveraging common 3D
+ graphics APIs for best performance.
+@@
+
+
+Source-Makefile: feeds/video/libs/wpewebkit/Makefile
+Build-Depends: unifdef/host ruby/host
+
+Package: libwpewebkit
+Version: 2.50.1-r1
+Depends: +libc +bubblewrap +glib2 +gst1-mod-opengl +harfbuzz +icu-full-data +libepoxy +libgcrypt +libgst1allocators +libgst1app +libgst1audio +libgst1fft +libgst1gl +libgst1pbutils +libgst1tag +libgst1transcoder +libgst1video +libinput +libmanette +libjpeg +libpng +libseccomp +libsoup3 +libsqlite3 +libtasn1 +libudev +libwayland +libwebp +libwpe +libxml2 +libxslt +zlib @(arm_v7||i386||i686||ARCH_64BIT)
+Conflicts: 
+Menu-Depends: 
+Provides: @libwpewebkit-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: WPEWebKit Library
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: wpewebkit-2.50.1.tar.xz
+License: LGPL-2.1-or-later BSD-2-Clause
+LicenseFiles: Source/WebCore/LICENSE-Apple Source/Webcore/LICENSE-LGPL-2.1
+URL: https://wpewebkit.org
+Type: ipkg
+Description:  WebKitGTK is a full-featured port of the WebKit rendering engine,
+ suitable for projects requiring any kind of web integration, from
+ hybrid HTML/CSS applications to full-fledged web browsers.
+@@
+
+Package: wpewebkit-driver
+Version: 2.50.1-r1
+Depends: +libc +libwpewebkit
+Conflicts: 
+Menu-Depends: 
+Provides: @wpewebkit-driver-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: WebDriver service implementation for WPE WebKit
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: wpewebkit-2.50.1.tar.xz
+License: LGPL-2.1-or-later BSD-2-Clause
+LicenseFiles: Source/WebCore/LICENSE-Apple Source/Webcore/LICENSE-LGPL-2.1
+URL: https://wpewebkit.org
+Type: ipkg
+Description:  WebDriver is an automation API to control a web browser. It allows the
+ user to create automated tests for web applications independently of the
+ browser and platform.
+
+ The WebKitWebDriver binary provides the WebDriver service implementation
+ for WebKitGTK. It works as a server, processing client requests to spawn
+ and control the web browser. This driver is not tied to any specific
+ browser and can be used with any WebKitGTK-based browser, but it uses
+ MiniBrowser as the default.
+@@
+
+Package: wpewebkit-minibrowser
+Version: 2.50.1-r1
+Depends: +libc +libwpewebkit +wpebackend-fdo
+Conflicts: 
+Menu-Depends: 
+Provides: @wpewebkit-minibrowser-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: WPE WebKit Mini Browser
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: wpewebkit-2.50.1.tar.xz
+License: LGPL-2.1-or-later BSD-2-Clause
+LicenseFiles: Source/WebCore/LICENSE-Apple Source/Webcore/LICENSE-LGPL-2.1
+URL: https://wpewebkit.org/
+Type: ipkg
+Description:  Minimalistic Web browser based on WPE WebKit.
+@@
+
+
+Source-Makefile: feeds/video/libs/xkeyboard-config/Makefile
+Build-Depends: libxslt/host perl-xml-parser/host python3/host
+
+Package: xkeyboard-config
+Version: 2.45-r1
+Depends: +libc +libxkbcommon
+Conflicts: 
+Menu-Depends: 
+Provides: @xkeyboard-config-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: xkeyboard-config
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: xkeyboard-config-2.45.tar.xz
+License: MIT
+LicenseFiles: COPYING
+URL: https://www.freedesktop.org/wiki/Software/XKeyboardConfig/
+Type: ipkg
+Description:   The non-arch keyboard configuration database for X Window.
+@@
+
+
+Source-Makefile: feeds/video/utils/kmscube/Makefile
+
+Package: kmscube
+Submenu: Video
+Version: 2024.11.06~311eaaaa473d593c30d118799aa19ac4ad53cd65-r1
+Depends: +libc +glib2 +libmesa +libpng +gstreamer1-plugins-base +libgstreamer1 +libgst1allocators +libgst1video +libgst1app
+Conflicts: 
+Menu-Depends: 
+Provides: @kmscube-any
+Section: utils
+Category: Utilities
+Repository: base
+Title: kmscube KMS/DRM/EGL example
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: kmscube-2024.11.06~311eaaaa473d593c30d118799aa19ac4ad53cd65.tar.zst
+License: MIT
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: kmscube KMS/DRM/EGL example
+@@
+
+
+Source-Makefile: feeds/video/utils/vkmark/Makefile
+Build-Depends: glm
+
+Package: vkmark
+Submenu: Video
+Version: 2025.06.25~2c5f020005a597fb4b7d9ed1eaa1bf40e466bf01-r1
+Depends: +libc +libstdcpp +libassimp +libdrm +libmesa +libwayland +vulkan-loader
+Conflicts: 
+Menu-Depends: 
+Provides: @vkmark-any
+Section: utils
+Category: Utilities
+Repository: base
+Title: Vulkan benchmark
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: vkmark-2025.06.25~2c5f020005a597fb4b7d9ed1eaa1bf40e466bf01.tar.zst
+License: LGPL-2.1
+LicenseFiles: COPYING-LGPL2.1
+URL: https://github.com/vkmark/vkmark
+Type: ipkg
+Description: vkmark is an extensible Vulkan benchmarking suite with targeted, configurable scenes.
+@@
+
+

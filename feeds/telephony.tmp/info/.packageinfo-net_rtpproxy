@@ -3,19 +3,20 @@ Source-Makefile: feeds/telephony/net/rtpproxy/Makefile
 Package: rtpproxy
 Menu: 1
 Submenu: Telephony
-Version: 2019.10.02~aa1f179e09097f467bc4726e3300014c1e35246f-r4
-Depends: +libc +libatomic +libpthread +librt
+Version: 2025.11.04~4909e7b75a9c33265cecd39d082240b26a43f075-r1
+Depends: +libc +libsrtp2 +libatomic +libpthread +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rtpproxy-any
 Section: net
 Category: Network
 Repository: base
 Title: RTP (Realtime Transport Protocol) proxy
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: rtpproxy-2019.10.02~aa1f179e09097f467bc4726e3300014c1e35246f.tar.zst
+Source: rtpproxy-2025.11.04~4909e7b75a9c33265cecd39d082240b26a43f075.tar.zst
 License: BSD-2-Clause
 LicenseFiles: LICENSE
+CPE-ID: cpe:/a:rtpproxy:rtpproxy
 URL: http://www.rtpproxy.org/
 Type: ipkg
 Description: RTP (Realtime Transport Protocol) proxy
@@ -23,19 +24,20 @@ Description: RTP (Realtime Transport Protocol) proxy
 
 Package: rtpproxy-mod-acct-csv
 Submenu: Telephony
-Version: 2019.10.02~aa1f179e09097f467bc4726e3300014c1e35246f-r4
+Version: 2025.11.04~4909e7b75a9c33265cecd39d082240b26a43f075-r1
 Depends: +libc rtpproxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rtpproxy-mod-acct-csv-any
 Section: net
 Category: Network
 Repository: base
 Title: RTPproxy CSV accounting module
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: rtpproxy-2019.10.02~aa1f179e09097f467bc4726e3300014c1e35246f.tar.zst
+Source: rtpproxy-2025.11.04~4909e7b75a9c33265cecd39d082240b26a43f075.tar.zst
 License: BSD-2-Clause
 LicenseFiles: LICENSE
+CPE-ID: cpe:/a:rtpproxy:rtpproxy
 URL: http://www.rtpproxy.org/
 Type: ipkg
 Description: RTPproxy CSV accounting module
@@ -43,19 +45,20 @@ Description: RTPproxy CSV accounting module
 
 Package: rtpproxy-mod-acct-rtcp-hep
 Submenu: Telephony
-Version: 2019.10.02~aa1f179e09097f467bc4726e3300014c1e35246f-r4
+Version: 2025.11.04~4909e7b75a9c33265cecd39d082240b26a43f075-r1
 Depends: +libc rtpproxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rtpproxy-mod-acct-rtcp-hep-any
 Section: net
 Category: Network
 Repository: base
 Title: RTPproxy RTCP HEP accounting module
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: rtpproxy-2019.10.02~aa1f179e09097f467bc4726e3300014c1e35246f.tar.zst
+Source: rtpproxy-2025.11.04~4909e7b75a9c33265cecd39d082240b26a43f075.tar.zst
 License: BSD-2-Clause
 LicenseFiles: LICENSE
+CPE-ID: cpe:/a:rtpproxy:rtpproxy
 URL: http://www.rtpproxy.org/
 Type: ipkg
 Description: RTPproxy RTCP HEP accounting module
@@ -63,19 +66,20 @@ Description: RTPproxy RTCP HEP accounting module
 
 Package: rtpproxy-util-extractaudio
 Submenu: Telephony
-Version: 2019.10.02~aa1f179e09097f467bc4726e3300014c1e35246f-r4
+Version: 2025.11.04~4909e7b75a9c33265cecd39d082240b26a43f075-r1
 Depends: +libc rtpproxy +PACKAGE_rtpproxy-util-extractaudio:bcg729 +PACKAGE_rtpproxy-util-extractaudio:libsndfile +PACKAGE_rtpproxy-util-extractaudio:libsrtp2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rtpproxy-util-extractaudio-any
 Section: net
 Category: Network
 Repository: base
 Title: RTPproxy extractaudio utility
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: rtpproxy-2019.10.02~aa1f179e09097f467bc4726e3300014c1e35246f.tar.zst
+Source: rtpproxy-2025.11.04~4909e7b75a9c33265cecd39d082240b26a43f075.tar.zst
 License: BSD-2-Clause
 LicenseFiles: LICENSE
+CPE-ID: cpe:/a:rtpproxy:rtpproxy
 URL: http://www.rtpproxy.org/
 Type: ipkg
 Description: RTPproxy extractaudio utility
@@ -83,19 +87,20 @@ Description: RTPproxy extractaudio utility
 
 Package: rtpproxy-util-makeann
 Submenu: Telephony
-Version: 2019.10.02~aa1f179e09097f467bc4726e3300014c1e35246f-r4
+Version: 2025.11.04~4909e7b75a9c33265cecd39d082240b26a43f075-r1
 Depends: +libc rtpproxy +PACKAGE_rtpproxy-util-makeann:bcg729
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rtpproxy-util-makeann-any
 Section: net
 Category: Network
 Repository: base
 Title: RTPproxy makeann utility
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: rtpproxy-2019.10.02~aa1f179e09097f467bc4726e3300014c1e35246f.tar.zst
+Source: rtpproxy-2025.11.04~4909e7b75a9c33265cecd39d082240b26a43f075.tar.zst
 License: BSD-2-Clause
 LicenseFiles: LICENSE
+CPE-ID: cpe:/a:rtpproxy:rtpproxy
 URL: http://www.rtpproxy.org/
 Type: ipkg
 Description: RTPproxy makeann utility

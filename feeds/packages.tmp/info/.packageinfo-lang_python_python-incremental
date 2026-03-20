@@ -4,11 +4,11 @@ Build-Types: host
 
 Package: python3-incremental
 Submenu: Python
-Version: 24.7.2-r1
-Depends: +libc +python3-light +python3-distutils +python3-pkg-resources
+Version: 24.7.2-r2
+Depends: +libc +python3-light +python3-pkg-resources
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-incremental-any
 Section: lang
 Category: Languages
 Repository: base
@@ -24,11 +24,11 @@ Description: Incremental is a small library that versions your Python projects.
 
 Package: python3-incremental-src
 Submenu: Python
-Version: 24.7.2-r1
+Version: 24.7.2-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-incremental-src-any
 Section: lang
 Category: Languages
 Repository: base

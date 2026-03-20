@@ -5,7 +5,7 @@ Version: 1.09-r2
 Depends: +libc +libpam +libqrencode
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @google-authenticator-libpam-any
 Section: libs
 Category: Libraries
 Repository: base

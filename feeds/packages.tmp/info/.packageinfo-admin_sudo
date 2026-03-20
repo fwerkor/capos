@@ -2,10 +2,10 @@ Source-Makefile: feeds/packages/admin/sudo/Makefile
 
 Package: sudo
 Version: 1.9.17_p2-r1
-Depends: +libc 
+Depends: +libc +USE_GLIBC:libcrypt-compat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @sudo-any
 Section: admin
 Category: Administration
 Repository: base

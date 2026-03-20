@@ -7,7 +7,7 @@ Version: 23
 Depends: +libc +kmod-tun +libpthread +libuecc +FASTD_WITH_STATUS_SOCKET:libjson-c +FASTD_WITH_CAPABILITIES:libcap
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @fastd-any
 Section: net
 Category: Network
 Repository: base

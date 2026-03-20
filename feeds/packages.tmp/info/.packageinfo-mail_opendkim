@@ -2,11 +2,11 @@ Source-Makefile: feeds/packages/mail/opendkim/Makefile
 Build-Depends: openssl
 
 Package: opendkim
-Version: 2.10.3-r6
+Version: 2.10.3-r7
 Depends: +libc +libopendkim
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opendkim-any
 Section: mail
 Category: Mail
 Repository: base
@@ -22,11 +22,11 @@ Description:   The OpenDKIM daemon application and the opendkim-genkey Perl scri
 @@
 
 Package: libopendkim
-Version: 2.10.3-r6
+Version: 2.10.3-r7
 Depends: +libc +libopenssl +libmilter-sendmail +USE_GLIBC:libbsd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopendkim-any
 Section: mail
 Category: Libraries
 Repository: base
@@ -41,11 +41,11 @@ Description:   Library for signing and verifying DomainKeys Identified Mail (DKI
 @@
 
 Package: opendkim-tools
-Version: 2.10.3-r6
+Version: 2.10.3-r7
 Depends: +libc +libopendkim
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opendkim-tools-any
 Section: mail
 Category: Mail
 Repository: base

@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/net/transmission-web-control/Makefile
 
 Package: transmission-web-control
 Submenu: BitTorrent
-Version: 2021.09.25~4b2e1858f7a46ee678d5d1f3fa1a6cf2c739b88a-r3
+Version: 2024.04.08~f02a47aff2680de10c2269e22a3d0b37a318dbcd-r1
 Depends: +libc +transmission-daemon
 Conflicts: transmission-web
 Menu-Depends: 
-Provides: 
+Provides: @transmission-web-control-any
 Section: net
 Category: Network
 Repository: base
-Title: Transmission Web Control
+Title: A custom web UI for Transmission
 Maintainer: Richard Yu <yurichard3839@gmail.com>
-Source: transmission-web-control-2021.09.25~4b2e1858f7a46ee678d5d1f3fa1a6cf2c739b88a.tar.zst
+Source: transmission-web-control-2024.04.08~f02a47aff2680de10c2269e22a3d0b37a318dbcd.tar.zst
 License: MIT
 LicenseFiles: LICENSE
 URL: https://github.com/ronggang/transmission-web-control

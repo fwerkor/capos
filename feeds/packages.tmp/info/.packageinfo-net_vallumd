@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/net/vallumd/Makefile
 
 Package: vallumd
-Version: 0.2.2-r1
+Version: 0.2.2-r2
 Depends: +libc +ca-bundle +ipset +libmosquitto +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @vallumd-any
 Section: net
 Category: Network
 Repository: base

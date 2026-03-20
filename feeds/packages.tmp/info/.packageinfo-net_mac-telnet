@@ -5,7 +5,7 @@ Version: 2015.09.02~37d83cbc9c07266d6c957d27bf75285b305eceab-r2
 Depends: +libc +libubox
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mac-telnet-server-any
 Section: net
 Category: Network
 Repository: base
@@ -33,7 +33,7 @@ Version: 2015.09.02~37d83cbc9c07266d6c957d27bf75285b305eceab-r2
 Depends: +libc +libubox
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mac-telnet-client-any
 Section: net
 Category: Network
 Repository: base
@@ -52,7 +52,7 @@ Version: 2015.09.02~37d83cbc9c07266d6c957d27bf75285b305eceab-r2
 Depends: +libc +libubox
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mac-telnet-ping-any
 Section: net
 Category: Network
 Repository: base
@@ -71,7 +71,7 @@ Version: 2015.09.02~37d83cbc9c07266d6c957d27bf75285b305eceab-r2
 Depends: +libc +libubox
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mac-telnet-discover-any
 Section: net
 Category: Network
 Repository: base

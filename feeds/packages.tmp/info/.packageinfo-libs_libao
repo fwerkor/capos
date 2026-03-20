@@ -5,7 +5,7 @@ Version: 1.2.0-r2
 Depends: +libc +alsa-lib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libao-any
 Section: libs
 Category: Libraries
 Repository: base

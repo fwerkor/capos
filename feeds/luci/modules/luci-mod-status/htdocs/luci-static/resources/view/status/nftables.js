@@ -5,7 +5,7 @@
 'require ui';
 'require dom';
 
-var expr_translations = {
+const expr_translations = {
 	'meta.iifname': _('Ingress device name', 'nft meta iifname'),
 	'meta.oifname': _('Egress device name', 'nft meta oifname'),
 	'meta.iif': _('Ingress device id', 'nft meta iif'),
@@ -32,6 +32,12 @@ var expr_translations = {
 
 	'ct.status': _('Conntrack status', 'nft ct status'),
 	'ct.status.dnat': 'DNAT',
+
+	'ip.dscp': 'DSCP',
+	'ip6.dscp': 'DSCP',
+
+	'ether.saddr': _('Source MAC address', 'nft ether saddr'),
+	'ether.daddr': _('Destination MAC address', 'nft ether daddr'),
 
 	'ip.protocol': _('IP protocol', 'nft ip protocol'),
 	'ip.protocol.tcp': 'TCP',
@@ -79,7 +85,7 @@ var expr_translations = {
 	'payload.th': _('Transport header bits %d-%d', 'nft @th,off,len')
 };
 
-var op_translations = {
+const op_translations = {
 	'==': _('<var>%s</var> is <strong>%s</strong>', 'nft relational "==" operator expression'),
 	'!=': _('<var>%s</var> not <strong>%s</strong>', 'nft relational "!=" operator expression'),
 	'>=': _('<var>%s</var> greater than or equal to <strong>%s</strong>', 'nft relational ">=" operator expression'),
@@ -91,12 +97,15 @@ var op_translations = {
 	'not_in_set': _('<var>%s</var> not in set <strong>%s</strong>', 'nft not in set match expression'),
 };
 
-var action_translations = {
+const action_translations = {
 	'accept': _('Accept packet', 'nft accept action'),
 	'notrack': _('Do not track', 'nft notrack action'),
 	'drop': _('Drop packet', 'nft drop action'),
 	'jump': _('Continue in <strong><a href="#%q.%q">%h</a></strong>', 'nft jump action'),
-	'log': _('Log event "<strong>%h</strong>…"', 'nft log action'),
+	'goto': _('Goto chain <strong><a href="#%q.%q">%h</a></strong>', 'nft goto action'),
+	'continue': _('Continue to next rule', 'nft continue action'),
+	'log': _('Log event', 'nft log action'),
+	'log.prefix': _('Log event "<strong>%h</strong>…"', 'nft log action'),
 
 	'reject.tcp reset': _('Reject packet with <strong>TCP reset</strong>', 'nft reject with tcp reset'),
 	'reject.icmp': _('Reject IPv4 packet with <strong>ICMP type %h</strong>', 'nft reject with icmp type'),
@@ -129,20 +138,29 @@ var action_translations = {
 
 	'return': _('Continue in calling chain'),
 
+	'ct helper': _('Utilise <strong>%h</strong> conntrack helper'),
 	'flow': _('Utilize flow table <strong>%h</strong>')
 };
 
 return view.extend({
-	load: function() {
+	load() {
 		return Promise.all([
 			L.resolveDefault(fs.exec_direct('/usr/sbin/nft', [ '--terse', '--json', 'list', 'ruleset' ], 'json'), {}),
-			L.resolveDefault(fs.exec_direct('/usr/sbin/iptables-save'), ''),
-			L.resolveDefault(fs.exec_direct('/usr/sbin/ip6tables-save'), '')
+			fs.stat('/usr/sbin/iptables-legacy-save').then(function() {
+                return L.resolveDefault(fs.exec_direct('/usr/sbin/iptables-legacy-save'), '');
+            }).catch(function() {
+                return L.resolveDefault(fs.exec_direct('/usr/sbin/iptables-save'), '');
+            }),
+            fs.stat('/usr/sbin/ip6tables-legacy-save').then(function() {
+                return L.resolveDefault(fs.exec_direct('/usr/sbin/ip6tables-legacy-save'), '');
+            }).catch(function() {
+                return L.resolveDefault(fs.exec_direct('/usr/sbin/ip6tables-save'), '');
+            })
 		]);
 	},
 
-	isActionExpression: function(expr) {
-		for (var k in expr) {
+	isActionExpression(expr) {
+		for (let k in expr) {
 			if (expr.hasOwnProperty(k)) {
 				switch (k) {
 				case 'accept':
@@ -150,6 +168,8 @@ return view.extend({
 				case 'reject':
 				case 'drop':
 				case 'jump':
+				case 'goto':
+				case 'continue':
 				case 'snat':
 				case 'dnat':
 				case 'redirect':
@@ -157,6 +177,7 @@ return view.extend({
 				case 'masquerade':
 				case 'return':
 				case 'flow':
+				case 'ct helper':
 				case 'log':
 					return true;
 				}
@@ -166,11 +187,11 @@ return view.extend({
 		return false;
 	},
 
-	exprToKey: function(expr) {
-		var kind, spec;
+	exprToKey(expr) {
+		let kind, spec;
 
 		if (!Array.isArray(expr) && typeof(expr) == 'object') {
-			for (var k in expr) {
+			for (let k in expr) {
 				if (expr.hasOwnProperty(k)) {
 					kind = k;
 					spec = expr[k];
@@ -195,11 +216,11 @@ return view.extend({
 		return null;
 	},
 
-	exprToString: function(expr, hint) {
-		var kind, spec;
+	exprToString(expr, hint) {
+		let kind, spec;
 
 		if (typeof(expr) != 'object') {
-			var s;
+			let s;
 
 			if (hint)
 				s = expr_translations['%s.%h'.format(hint, expr)];
@@ -212,7 +233,7 @@ return view.extend({
 			spec = expr;
 		}
 		else {
-			for (var k in expr) {
+			for (let k in expr) {
 				if (expr.hasOwnProperty(k)) {
 					kind = k;
 					spec = expr[k];
@@ -223,21 +244,21 @@ return view.extend({
 		if (!kind)
 			return '';
 
+		const items = [];
+		const lis = [];
+		let tpl, k;
+
 		switch (kind) {
 		case 'prefix':
 			return '%h/%d'.format(spec.addr, spec.len);
 
 		case 'set':
 		case 'list':
-			var items = [],
-			    lis = [];
-
 			for (var i = 0; i < spec.length; i++) {
 				items.push('<span class="nft-set-item">%s</span>'.format(this.exprToString(spec[i])));
 				lis.push('<span class="ifacebadge">%s</span>'.format(this.exprToString(spec[i])));
 			}
 
-			var tpl;
 
 			if (kind == 'set')
 				tpl = '<div class="nft-set cbi-tooltip-container">{ <span class="nft-set-items">%s</span> }<div class="cbi-tooltip">%s</div></div>';
@@ -247,10 +268,9 @@ return view.extend({
 			return tpl.format(items.join(', '), lis.join('<br />'));
 
 		case 'concat':
-			var items = [];
 
-			for (var i = 0; i < spec.length; i++)
-				items.push(this.exprToString(spec[i]));
+			for (let s of spec)
+				items.push(this.exprToString(s));
 
 			return items.join('+');
 
@@ -259,11 +279,11 @@ return view.extend({
 
 		case 'payload':
 			if (spec.protocol && spec.field) {
-				var k = '%h.%h'.format(spec.protocol, spec.field);
+				k = '%h.%h'.format(spec.protocol, spec.field);
 				return expr_translations[k] || '<em>%s</em>'.format(k);
 			}
 			else if (spec.base && spec.offset != null && spec.len != null) {
-				var k = 'payload.%h'.format(spec.base);
+				k = 'payload.%h'.format(spec.base);
 				return (expr_translations[k] || '<em>@%s,%%d,%%d</em>'.format(spec.base)).format(spec.offset + 1, spec.offset + spec.len + 1);
 			}
 
@@ -278,7 +298,7 @@ return view.extend({
 				Array.isArray(spec[1]) ? '(%h)'.format(spec[1].join('|')) : this.exprToString(spec[1], hint));
 
 		default:
-			var k = this.exprToKey(expr);
+			k = this.exprToKey(expr);
 
 			if (k)
 				return expr_translations[k] || '<em>%s</em>'.format(k);
@@ -287,7 +307,48 @@ return view.extend({
 		}
 	},
 
-	renderMatchExpr: function(spec) {
+	renderVMap(spec, table) {
+		// spec: { key: {...}, data: { set: [ [mapkey, actionSpec], ... ] } }
+		const matchElem = E('span', { 'class': 'ifacebadge' },
+			_('Verdict map: <var>%h</var> is').format(this.exprToString(spec.key)));
+
+		const actions = [];
+		const keys = [];
+
+		if (spec && spec.data && Array.isArray(spec.data.set)) {
+			// For each mapping entry, render key and the action
+			for (var i = 0; i < spec.data.set.length; i++) {
+				const entry = spec.data.set[i];
+				const mapKey = entry[0];
+				const actionSpec = entry[1];
+
+				// if actionSpec is an action (accept/drop/jump/...), render it as action element
+				if (typeof(actionSpec) == 'object' && this.isActionExpression(actionSpec)) {
+					// renderExpr expects an expr object like { accept: null } or { jump: {...} }
+					const renderedAction = this.renderExpr(actionSpec, table);
+
+					actions.push(E('div', {  }, [ 
+						E('span', [ this.exprToString(mapKey) + ':' ]),
+						' ',
+						renderedAction
+					]));
+					keys.push('<strong>%s</strong>'.format(this.exprToString(mapKey)));
+				} else {
+					// fallback: render the actionSpec as generic JSON tooltip
+					actions.push(E('span', { 'class': 'ifacebadge', 'data-tooltip': JSON.stringify(actionSpec) },
+						this.exprToString(mapKey) + ':' + this.exprToString(actionSpec)));
+					keys.push('<strong>%s</strong>'.format(this.exprToString(mapKey)));
+				}
+
+			}
+
+			dom.append(matchElem, [ ' ', E('span', {}, keys.join(_(' or '))) ]);
+		}
+
+		return { match: matchElem, actions: actions };
+	},
+
+	renderMatchExpr(spec) {
 		switch (spec.op) {
 		case '==':
 		case '!=':
@@ -312,12 +373,12 @@ return view.extend({
 		);
 	},
 
-	renderNatFlags: function(spec) {
-		var f = [];
+	renderNatFlags(spec) {
+		const f = [];
 
 		if (spec && Array.isArray(spec.flags)) {
-			for (var i = 0; i < spec.flags.length; i++)
-				f.push(expr_translations['natflag.%h'.format(spec.flags[i])] || spec.flags[i]);
+			for (let sf of spec.flags)
+				f.push(expr_translations['natflag.%h'.format(sf)] || sf);
 		}
 
 		return f.length ? E('small', { 'class': 'cbi-tooltip-container' }, [
@@ -328,7 +389,7 @@ return view.extend({
 		]) : E([]);
 	},
 
-	renderRateUnit: function(value, unit) {
+	renderRateUnit(value, unit) {
 		if (!unit)
 			unit = 'packets';
 
@@ -338,10 +399,10 @@ return view.extend({
 		);
 	},
 
-	renderExpr: function(expr, table) {
-		var kind, spec;
+	renderExpr(expr, table) {
+		let kind, spec;
 
-		for (var k in expr) {
+		for (let k in expr) {
 			if (expr.hasOwnProperty(k)) {
 				kind = k;
 				spec = expr[k];
@@ -351,12 +412,20 @@ return view.extend({
 		if (!kind)
 			return E([]);
 
+		let k;
+		let a = [];
+
 		switch (kind) {
 		case 'match':
 			return this.renderMatchExpr(spec);
 
+		case 'ct helper':
+			return E('span', {
+					'class': 'ifacebadge'
+			}, action_translations[kind].format(spec));
+
 		case 'reject':
-			var k = 'reject.%s'.format(spec.type);
+			k = 'reject.%s'.format(spec.type);
 
 			return E('span', {
 				'class': 'ifacebadge'
@@ -374,6 +443,16 @@ return view.extend({
 				'class': 'ifacebadge'
 			}, action_translations.jump.format(table, spec.target, spec.target));
 
+		case 'goto':
+			return E('span', {
+				'class': 'ifacebadge'
+			}, action_translations.goto.format(table, spec.target, spec.target));
+
+		case 'continue':
+			return E('span', {
+				'class': 'ifacebadge'
+			}, action_translations.continue);
+
 		case 'return':
 			return E('span', {
 				'class': 'ifacebadge'
@@ -381,8 +460,7 @@ return view.extend({
 
 		case 'snat':
 		case 'dnat':
-			var k = '%h.%h'.format(kind, spec.family),
-			    a = [];
+			k = '%h.%h'.format(kind, spec.family);
 
 			if (spec.addr) {
 				k += '.addr';
@@ -400,8 +478,7 @@ return view.extend({
 			]);
 
 		case 'redirect':
-			var k = 'redirect',
-			    a = [];
+			k = 'redirect';
 
 			if (spec && spec.port) {
 				k += '.port';
@@ -427,8 +504,8 @@ return view.extend({
 				));
 
 		case 'limit':
-			var k = 'limit';
-			var a = [
+			k = 'limit';
+			a = [
 				this.renderRateUnit(spec.rate, spec.rate_unit),
 				expr_translations['unit.%h'.format(spec.per)] || spec.per
 			];
@@ -452,7 +529,9 @@ return view.extend({
 		case 'log':
 			return E('span', {
 				'class': 'ifacebadge'
-			}, action_translations.log.format(spec.prefix));
+			}, spec?.prefix ?
+				''.format.apply(action_translations['log.prefix'], [spec?.prefix])
+				: action_translations.log);
 
 		default:
 			return E('span', {
@@ -462,7 +541,7 @@ return view.extend({
 		}
 	},
 
-	renderCounter: function(data) {
+	renderCounter(data) {
 		return E('span', { 'class': 'ifacebadge cbi-tooltip-container nft-counter' }, [
 			E('var', [ '%.1024mB'.format(data.bytes) ]),
 			E('div', { 'class': 'cbi-tooltip' }, [
@@ -471,7 +550,7 @@ return view.extend({
 		]);
 	},
 
-	renderComment: function(comment) {
+	renderComment(comment) {
 		return E('span', { 'class': 'ifacebadge cbi-tooltip-container nft-comment' }, [
 			E('var', [ '#' ]),
 			E('div', { 'class': 'cbi-tooltip' }, [
@@ -480,28 +559,47 @@ return view.extend({
 		]);
 	},
 
-	renderRule: function(data, spec) {
-		var empty = true;
+	renderRule(data, spec) {
+		let empty = true;
 
-		var row = E('tr', { 'class': 'tr' }, [
+		const row = E('tr', { 'class': 'tr' }, [
 			E('td', { 'class': 'td', 'style': 'width:60%' }),
 			E('td', { 'class': 'td', 'style': 'width:40%' })
 		]);
 
 		if (Array.isArray(spec.expr)) {
-			for (var i = 0; i < spec.expr.length; i++) {
+			for (let se of spec.expr) {
 				// nftables JSON format bug, `flow` targets are currently not properly serialized
-				if (typeof(spec.expr[i]) == 'string' && spec.expr[i].match(/^flow add (@\S+)$/))
-					spec.expr[i] = { flow: { op: "add", flowtable: RegExp.$1 } };
+				if (typeof(se) == 'string' && se.match(/^flow add (@\S+)$/))
+					se = { flow: { op: "add", flowtable: RegExp.$1 } };
 
-				var res = this.renderExpr(spec.expr[i], spec.table);
+				// vmap special handling
+				if (se && se.vmap) {
+					const vm = this.renderVMap(se.vmap, spec.table);
 
-				if (typeof(spec.expr[i]) == 'object' && spec.expr[i].counter) {
+					// add match summary to left column
+					dom.append(row.childNodes[0], [ vm.match ]);
+					empty = false;
+
+					if (typeof(se) == 'object' && se.counter) {
+						row.childNodes[0].appendChild(
+							this.renderCounter(se.counter));
+					}
+
+					// append each mapped action to the actions column
+					for (let vma of vm.actions)
+						dom.append(row.childNodes[1], [ vma ]);
+					continue;
+				}
+
+				const res = this.renderExpr(se, spec.table);
+
+				if (typeof(se) == 'object' && se.counter) {
 					row.childNodes[0].insertBefore(
-						this.renderCounter(spec.expr[i].counter),
+						this.renderCounter(se.counter),
 						row.childNodes[0].firstChild);
 				}
-				else if (this.isActionExpression(spec.expr[i])) {
+				else if (this.isActionExpression(se)) {
 					dom.append(row.childNodes[1], [ res ]);
 				}
 				else {
@@ -523,8 +621,8 @@ return view.extend({
 		return row;
 	},
 
-	renderChain: function(data, spec) {
-		var title, policy, hook;
+	renderChain(data, spec) {
+		let title, policy, hook;
 
 		switch (spec.type) {
 		case 'filter':
@@ -584,7 +682,7 @@ return view.extend({
 			break;
 		}
 
-		var node = E('div', { 'class': 'nft-chain' }, [
+		const node = E('div', { 'class': 'nft-chain' }, [
 			E('h4', {
 				'id': '%h.%h'.format(spec.table, spec.name)
 			}, [ title ])
@@ -606,9 +704,9 @@ return view.extend({
 			])
 		]));
 
-		for (var i = 0; i < data.length; i++)
-			if (typeof(data[i].rule) == 'object' && data[i].rule.table == spec.table && data[i].rule.chain == spec.name && data[i].rule.family == spec.family)
-				node.lastElementChild.appendChild(this.renderRule(data, data[i].rule));
+		for (let d of data)
+			if (typeof(d.rule) == 'object' && d.rule.table == spec.table && d.rule.chain == spec.name && d.rule.family == spec.family)
+				node.lastElementChild.appendChild(this.renderRule(data, d.rule));
 
 		if (node.lastElementChild.childNodes.length == 1)
 			node.lastElementChild.appendChild(E('tr', { 'class': 'tr' }, [
@@ -620,8 +718,8 @@ return view.extend({
 		return node;
 	},
 
-	renderTable: function(data, spec) {
-		var title;
+	renderTable(data, spec) {
+		let title;
 
 		switch (spec.family) {
 		case 'ip':
@@ -653,7 +751,7 @@ return view.extend({
 			break;
 		}
 
-		var node = E([], [
+		const node = E([], [
 			E('style', { 'type': 'text/css' }, [
 				'.nft-rules .ifacebadge { margin: .125em }',
 				'.nft-rules tr > td { padding: .25em !important }',
@@ -668,14 +766,14 @@ return view.extend({
 			])
 		]);
 
-		for (var i = 0; i < data.length; i++)
-			if (typeof(data[i].chain) == 'object' && data[i].chain.table == spec.name && data[i].chain.family == spec.family)
-				node.lastElementChild.lastElementChild.appendChild(this.renderChain(data, data[i].chain));
+		for (let d of data)
+			if (typeof(d.chain) == 'object' && d.chain.table == spec.name && d.chain.family == spec.family)
+				node.lastElementChild.lastElementChild.appendChild(this.renderChain(data, d.chain));
 
 		return node;
 	},
 
-	checkLegacyRules: function(ipt4save, ipt6save) {
+	checkLegacyRules(ipt4save, ipt6save) {
 		if (ipt4save.match(/\n-A /) || ipt6save.match(/\n-A /)) {
 			ui.addNotification(_('Legacy rules detected'), [
 				E('p', _('There are legacy iptables rules present on the system. Mixing iptables and nftables rules is discouraged and may lead to incomplete traffic filtering.')),
@@ -687,20 +785,17 @@ return view.extend({
 		}
 	},
 
-	render: function(data) {
-		var view = E('div'),
-		    nft = data[0],
-		    ipt = data[1],
-		    ipt6 = data[2];
+	render([nft, ipt, ipt6]) {
+		const view = E('div');
 
 		this.checkLegacyRules(ipt, ipt6);
 
 		if (!Array.isArray(nft.nftables))
 			return E('em', _('No nftables ruleset loaded.'));
 
-		for (var i = 0; i < nft.nftables.length; i++)
-			if (nft.nftables[i].hasOwnProperty('table'))
-				view.appendChild(this.renderTable(nft.nftables, nft.nftables[i].table));
+		for (let t of nft.nftables)
+			if (t.hasOwnProperty('table'))
+				view.appendChild(this.renderTable(nft.nftables, t.table));
 
 		return view;
 	},

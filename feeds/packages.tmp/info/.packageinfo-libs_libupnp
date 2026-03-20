@@ -6,7 +6,7 @@ Version: 1.14.18-r2
 Depends: +libc +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupnp-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -29,7 +29,7 @@ Version: 1.14.18-r2
 Depends: +libc libupnp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupnp-sample-any
 Section: libs
 Category: Libraries
 Repository: base

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-09-07 21:06+0000\n"
-"Last-Translator: brodrigueznu <brodrigueznu@hotmail.com>\n"
+"PO-Revision-Date: 2026-03-12 12:47+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsnut/es/>\n"
 "Language: es\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_monitor.js:16
 msgid "%s is mutually exclusive to other choices"
@@ -151,7 +151,7 @@ msgstr "Forzar mensaje de apagado"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_monitor.js:40
 msgid "Global Settings"
-msgstr "Ajustes Globales"
+msgstr "Ajustes globales"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_cgi.js:15
 msgid "Go to NUT CGI"
@@ -165,6 +165,10 @@ msgstr "Conceder acceso UCI para luci-app-nut"
 msgid "Host"
 msgstr "Host"
 
+#: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_monitor.js:69
+msgid "Host Sync"
+msgstr "Sincronización del host"
+
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_cgi.js:24
 msgid "Hostname or IP address"
 msgstr "Nombre de host o dirección IP"
@@ -173,10 +177,6 @@ msgstr "Nombre de host o dirección IP"
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_monitor.js:188
 msgid "Hostname or address of UPS"
 msgstr "Nombre de host o dirección de UPS"
-
-#: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_monitor.js:69
-msgid "Hot Sync"
-msgstr "Sincronización caliente"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:68
 msgid "IP Address"
@@ -381,7 +381,7 @@ msgstr "Contraseña"
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_monitor.js:142
 msgid "Path containing ca certificates to match against host certificate"
 msgstr ""
-"Ruta que contiene certificados de CA para relacionarlos con el certificado "
+"Ruta que contiene certificados de ac para relacionarlos con el certificado "
 "del anfitrión"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:112
@@ -427,7 +427,7 @@ msgstr "Valor de potencia"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:60
 msgid "Primary"
-msgstr "AP"
+msgstr "Primario"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:234
 msgid "Product (regex)"
@@ -444,7 +444,7 @@ msgstr ""
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:125
 msgid "Retry Delay"
-msgstr "Reintentar demora"
+msgstr "Retraso de reintento"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:58
 msgid "Role"
@@ -516,6 +516,17 @@ msgstr "Comunicación sincrónica"
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:145
 msgid "The name of this section will be used as UPS name elsewhere"
 msgstr "El nombre de esta sección se usará como nombre de UPS en otra parte"
+
+#: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:157
+#: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:193
+#: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:196
+#: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:247
+msgid ""
+"This is passed through to the driver, so make sure your driver supports this "
+"option"
+msgstr ""
+"Esto se transmite al controlador, así que asegúrese de que su controlador "
+"admite esta opción"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:125
 msgid "Time in seconds between driver start retry attempts."

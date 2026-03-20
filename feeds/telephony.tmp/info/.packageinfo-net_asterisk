@@ -5,18 +5,18 @@ Build-Types: host
 Package: asterisk
 Menu: 1
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc +ASTERISK_LIBXSLT_SUPPORT:libxslt +libstdcpp +jansson +libcap +libedit +libopenssl +libsqlite3 +libuuid +libxml2 +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-any
 Section: net
 Category: Network
 Repository: base
-Title: Complete open source PBX, v20.8.1
+Title: Complete open source PBX, v23.1.0
 Maintainer: Jiri Slachta <jiri@slachta.eu>
 Require-User: asterisk=385:asterisk=385
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -50,17 +50,17 @@ Config:
 
 Package: asterisk-sounds
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-sounds-any
 Section: net
 Category: Network
 Repository: base
 Title: Sounds support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -71,17 +71,17 @@ Description: This package provides the sound-files for Asterisk.
 
 Package: asterisk-app-adsiprog
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-app-adsiprog:asterisk-res-adsi
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-adsiprog-any
 Section: net
 Category: Network
 Repository: base
 Title: ADSI programming support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -92,17 +92,17 @@ Description: Asterisk ADSI programming application.
 
 Package: asterisk-app-agent-pool
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-agent-pool-any
 Section: net
 Category: Network
 Repository: base
 Title: Call center agent pool support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -113,17 +113,17 @@ Description: Call center agent pool applications.
 
 Package: asterisk-app-alarmreceiver
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-alarmreceiver-any
 Section: net
 Category: Network
 Repository: base
 Title: Alarm receiver support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -134,17 +134,17 @@ Description: Alarm receiver for Asterisk.
 
 Package: asterisk-app-amd
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-amd-any
 Section: net
 Category: Network
 Repository: base
 Title: Answering machine detection support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -155,17 +155,17 @@ Description: Answering Machine Detection application.
 
 Package: asterisk-app-attended-transfer
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-attended-transfer-any
 Section: net
 Category: Network
 Repository: base
 Title: Attended transfer support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -176,17 +176,17 @@ Description: Queues up an attended transfer to a given extension.
 
 Package: asterisk-app-audiosocket
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-app-audiosocket:asterisk-res-audiosocket
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-audiosocket-any
 Section: net
 Category: Network
 Repository: base
 Title: Audiosocket app support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -197,17 +197,17 @@ Description: Audiosocket app.
 
 Package: asterisk-app-authenticate
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-authenticate-any
 Section: net
 Category: Network
 Repository: base
 Title: Authenticate commands support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -218,17 +218,17 @@ Description: Authentication application.
 
 Package: asterisk-app-blind-transfer
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-blind-transfer-any
 Section: net
 Category: Network
 Repository: base
 Title: Blind transfer support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -239,17 +239,17 @@ Description: Redirects all channels currently bridged to the caller channel to a
 
 Package: asterisk-app-bridgeaddchan
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-bridgeaddchan-any
 Section: net
 Category: Network
 Repository: base
 Title: Bridge add channel support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -260,17 +260,17 @@ Description: Bridge-add-channel application.
 
 Package: asterisk-app-bridgewait
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-app-bridgewait:asterisk-bridge-holding
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-bridgewait-any
 Section: net
 Category: Network
 Repository: base
 Title: Holding bridge support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -281,17 +281,17 @@ Description: Application to place a channel into a holding bridge.
 
 Package: asterisk-app-broadcast
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-broadcast-any
 Section: net
 Category: Network
 Repository: base
 Title: Channel audio broadcasting support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -302,17 +302,17 @@ Description: Channel Audio Broadcasting.
 
 Package: asterisk-app-celgenuserevent
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-celgenuserevent-any
 Section: net
 Category: Network
 Repository: base
 Title: User-defined CEL event support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -323,17 +323,17 @@ Description: Generate a user defined CEL event.
 
 Package: asterisk-app-chanisavail
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-chanisavail-any
 Section: net
 Category: Network
 Repository: base
 Title: Channel availability check support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -344,17 +344,17 @@ Description: Check channel availability.
 
 Package: asterisk-app-channelredirect
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-channelredirect-any
 Section: net
 Category: Network
 Repository: base
 Title: Redirect a channel support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -365,17 +365,17 @@ Description: Redirects a given channel to a dialplan target.
 
 Package: asterisk-app-chanspy
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-chanspy-any
 Section: net
 Category: Network
 Repository: base
 Title: Channel listen in support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -386,17 +386,17 @@ Description: Listen to the audio of an active channel.
 
 Package: asterisk-app-confbridge
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-app-confbridge:asterisk-bridge-builtin-features +PACKAGE_asterisk-app-confbridge:asterisk-bridge-simple +PACKAGE_asterisk-app-confbridge:asterisk-bridge-softmix
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-confbridge-any
 Section: net
 Category: Network
 Repository: base
 Title: ConfBridge support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -407,17 +407,17 @@ Description: Conference bridge application.
 
 Package: asterisk-app-controlplayback
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-controlplayback-any
 Section: net
 Category: Network
 Repository: base
 Title: Control playback support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -428,17 +428,17 @@ Description: Control playback application.
 
 Package: asterisk-app-dictate
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-dictate-any
 Section: net
 Category: Network
 Repository: base
 Title: Virtual dictation machine support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -449,17 +449,17 @@ Description: Virtual dictation machine.
 
 Package: asterisk-app-directed-pickup
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-directed-pickup-any
 Section: net
 Category: Network
 Repository: base
 Title: Directed call pickup support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -470,17 +470,17 @@ Description: Directed call pickup application.
 
 Package: asterisk-app-directory
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-directory-any
 Section: net
 Category: Network
 Repository: base
 Title: Extension directory support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -491,17 +491,17 @@ Description: Extension directory.
 
 Package: asterisk-app-disa
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-disa-any
 Section: net
 Category: Network
 Repository: base
 Title: Direct Inward System Access support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -512,17 +512,17 @@ Description: Direct Inward System Access application.
 
 Package: asterisk-app-dtmfstore
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-dtmfstore-any
 Section: net
 Category: Network
 Repository: base
 Title: DTMF storage support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -533,17 +533,17 @@ Description: Technology independent async DTMF storage.
 
 Package: asterisk-app-dumpchan
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-dumpchan-any
 Section: net
 Category: Network
 Repository: base
 Title: Dump info about channel support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -554,17 +554,17 @@ Description: Dump info about the calling channel.
 
 Package: asterisk-app-exec
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-exec-any
 Section: net
 Category: Network
 Repository: base
 Title: Exec application support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -575,17 +575,17 @@ Description: Executes dialplan applications.
 
 Package: asterisk-app-externalivr
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-externalivr-any
 Section: net
 Category: Network
 Repository: base
 Title: External IVR interface support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -596,17 +596,17 @@ Description: External IVR interface application.
 
 Package: asterisk-app-festival
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-festival-any
 Section: net
 Category: Network
 Repository: base
 Title: Simple festival interface support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -617,17 +617,17 @@ Description: Simple Festival interface.
 
 Package: asterisk-app-flash
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-app-flash:asterisk-chan-dahdi
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-flash-any
 Section: net
 Category: Network
 Repository: base
 Title: Flash channel support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -638,17 +638,17 @@ Description: Flash channel application.
 
 Package: asterisk-app-followme
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-followme-any
 Section: net
 Category: Network
 Repository: base
 Title: Find-me/follow-me support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -659,17 +659,17 @@ Description: Find-Me/Follow-Me application.
 
 Package: asterisk-app-getcpeid
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-app-getcpeid:asterisk-res-adsi
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-getcpeid-any
 Section: net
 Category: Network
 Repository: base
 Title: Get ADSI CPE ID support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -680,17 +680,17 @@ Description: Get ADSI CPE ID.
 
 Package: asterisk-app-if
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-if-any
 Section: net
 Category: Network
 Repository: base
 Title: If branch and conditional execution support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -701,17 +701,17 @@ Description: If Branch and Conditional Execution.
 
 Package: asterisk-app-ivrdemo
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-ivrdemo-any
 Section: net
 Category: Network
 Repository: base
 Title: IVR demo support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -722,17 +722,17 @@ Description: IVR demo application.
 
 Package: asterisk-app-mf
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-mf-any
 Section: net
 Category: Network
 Repository: base
 Title: MF digits support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -743,17 +743,17 @@ Description: Send MF digits Application.
 
 Package: asterisk-app-milliwatt
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-milliwatt-any
 Section: net
 Category: Network
 Repository: base
 Title: Digital milliwatt [mu-law] test app support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -764,17 +764,17 @@ Description: Digital milliwatt test application.
 
 Package: asterisk-app-minivm
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-minivm-any
 Section: net
 Category: Network
 Repository: base
 Title: Minimal voicemail system support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -785,17 +785,17 @@ Description: A minimal voicemail e-mail system.
 
 Package: asterisk-app-mixmonitor
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-mixmonitor-any
 Section: net
 Category: Network
 Repository: base
 Title: Record a call and mix the audio support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -806,17 +806,17 @@ Description: Mixed audio monitoring application.
 
 Package: asterisk-app-morsecode
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-morsecode-any
 Section: net
 Category: Network
 Repository: base
 Title: Morse code support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -827,17 +827,17 @@ Description: Morse code.
 
 Package: asterisk-app-mp3
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-app-mp3:mpg123
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-mp3-any
 Section: net
 Category: Network
 Repository: base
 Title: Silly MP3 support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -848,17 +848,17 @@ Description: Silly MP3 application.
 
 Package: asterisk-app-originate
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-originate-any
 Section: net
 Category: Network
 Repository: base
 Title: Originate a call support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -869,17 +869,17 @@ Description: Originate call.
 
 Package: asterisk-app-page
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-app-page:asterisk-app-confbridge
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-page-any
 Section: net
 Category: Network
 Repository: base
 Title: Page multiple phones support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -890,17 +890,17 @@ Description: Page multiple phones.
 
 Package: asterisk-app-playtones
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-playtones-any
 Section: net
 Category: Network
 Repository: base
 Title: Playtones application support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -911,17 +911,17 @@ Description: Playtones application.
 
 Package: asterisk-app-privacy
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-privacy-any
 Section: net
 Category: Network
 Repository: base
 Title: Require phone number support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -932,17 +932,17 @@ Description: Require phone number to be entered if no Caller ID sent.
 
 Package: asterisk-app-queue
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-queue-any
 Section: net
 Category: Network
 Repository: base
 Title: True Call Queueing support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -953,17 +953,17 @@ Description: True call queueing.
 
 Package: asterisk-app-read
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-read-any
 Section: net
 Category: Network
 Repository: base
 Title: Variable read support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -974,17 +974,17 @@ Description: Read variable application.
 
 Package: asterisk-app-readexten
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-readexten-any
 Section: net
 Category: Network
 Repository: base
 Title: Extension to variable support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -995,17 +995,17 @@ Description: Read and evaluate extension validity.
 
 Package: asterisk-app-record
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-record-any
 Section: net
 Category: Network
 Repository: base
 Title: Record sound file support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1016,17 +1016,17 @@ Description: Trivial record application.
 
 Package: asterisk-app-reload
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-reload-any
 Section: net
 Category: Network
 Repository: base
 Title: Reload support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1037,17 +1037,17 @@ Description: Reload module[s].
 
 Package: asterisk-app-saycounted
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-saycounted-any
 Section: net
 Category: Network
 Repository: base
 Title: Decline words support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1058,17 +1058,17 @@ Description: Decline words according to channel language.
 
 Package: asterisk-app-sayunixtime
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-sayunixtime-any
 Section: net
 Category: Network
 Repository: base
 Title: Say Unix time support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1079,17 +1079,17 @@ Description: Say time.
 
 Package: asterisk-app-senddtmf
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-senddtmf-any
 Section: net
 Category: Network
 Repository: base
 Title: Send DTMF digits support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1100,17 +1100,17 @@ Description: Send DTMF digits application.
 
 Package: asterisk-app-sendtext
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-sendtext-any
 Section: net
 Category: Network
 Repository: base
 Title: Send text support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1121,17 +1121,17 @@ Description: Send text applications.
 
 Package: asterisk-app-sf
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-sf-any
 Section: net
 Category: Network
 Repository: base
 Title: SF Sender and Receiver Applications support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1142,17 +1142,17 @@ Description: SF Sender and Receiver Applications.
 
 Package: asterisk-app-signal
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-signal-any
 Section: net
 Category: Network
 Repository: base
 Title: Channel signaling support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1163,17 +1163,17 @@ Description: Channel Signaling Applications.
 
 Package: asterisk-app-skel
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-skel-any
 Section: net
 Category: Network
 Repository: base
 Title: Skeleton [sample] support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1184,17 +1184,17 @@ Description: Skeleton application.
 
 Package: asterisk-app-sms
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-sms-any
 Section: net
 Category: Network
 Repository: base
 Title: SMS support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1205,17 +1205,17 @@ Description: SMS/PSTN handler.
 
 Package: asterisk-app-softhangup
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-softhangup-any
 Section: net
 Category: Network
 Repository: base
 Title: Hang up requested channel support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1226,17 +1226,17 @@ Description: Hangs up the requested channel.
 
 Package: asterisk-app-speech
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-app-speech:asterisk-res-speech
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-speech-any
 Section: net
 Category: Network
 Repository: base
 Title: Dialplan Speech support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1247,17 +1247,17 @@ Description: Dialplan speech applications.
 
 Package: asterisk-app-stack
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-app-stack:asterisk-res-agi
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-stack-any
 Section: net
 Category: Network
 Repository: base
 Title: Stack applications support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1268,17 +1268,17 @@ Description: Dialplan subroutines.
 
 Package: asterisk-app-stasis
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-app-stasis:asterisk-res-stasis
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-stasis-any
 Section: net
 Category: Network
 Repository: base
 Title: Stasis dialplan support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1289,17 +1289,17 @@ Description: Stasis dialplan application.
 
 Package: asterisk-app-statsd
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-app-statsd:asterisk-res-statsd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-statsd-any
 Section: net
 Category: Network
 Repository: base
 Title: statsd dialplan support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1310,17 +1310,17 @@ Description: StatsD dialplan application.
 
 Package: asterisk-app-stream-echo
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-stream-echo-any
 Section: net
 Category: Network
 Repository: base
 Title: Stream echo support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1331,17 +1331,17 @@ Description: Stream echo application.
 
 Package: asterisk-app-system
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-system-any
 Section: net
 Category: Network
 Repository: base
 Title: System exec support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1352,17 +1352,17 @@ Description: Generic system application.
 
 Package: asterisk-app-talkdetect
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-talkdetect-any
 Section: net
 Category: Network
 Repository: base
 Title: File playback with audio detect support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1373,17 +1373,17 @@ Description: Playback with talk detection.
 
 Package: asterisk-app-test
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-test-any
 Section: net
 Category: Network
 Repository: base
 Title: Interface test support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1394,17 +1394,17 @@ Description: Interface test application.
 
 Package: asterisk-app-transfer
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-transfer-any
 Section: net
 Category: Network
 Repository: base
 Title: Transfers caller to other ext support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1415,17 +1415,17 @@ Description: Transfers a caller to another extension.
 
 Package: asterisk-app-userevent
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-userevent-any
 Section: net
 Category: Network
 Repository: base
 Title: Custom user event support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1436,17 +1436,17 @@ Description: Custom user event application.
 
 Package: asterisk-app-verbose
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-verbose-any
 Section: net
 Category: Network
 Repository: base
 Title: Verbose logging support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1457,17 +1457,17 @@ Description: Send verbose output.
 
 Package: asterisk-app-waitforcond
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-waitforcond-any
 Section: net
 Category: Network
 Repository: base
 Title: Wait for condition support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1478,38 +1478,17 @@ Description: Wait until condition is true.
 
 Package: asterisk-app-voicemail
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-voicemail-any
 Section: net
 Category: Network
 Repository: base
 Title: Voicemail support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
-License: GPL-2.0
-LicenseFiles: COPYING LICENSE
-CPE-ID: cpe:/a:digium:asterisk
-URL: http://www.asterisk.org/
-Type: ipkg
-Description: Voicemail module.
-@@
-
-Package: asterisk-app-voicemail-imap
-Submenu: Telephony
-Version: 20.8.1-r1
-Depends: +libc asterisk +PACKAGE_asterisk-app-voicemail-imap:uw-imap
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Repository: base
-Title: Voicemail IMAP support
-Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1520,17 +1499,17 @@ Description: Voicemail module.
 
 Package: asterisk-app-voicemail-odbc
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-app-voicemail-odbc:unixodbc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-voicemail-odbc-any
 Section: net
 Category: Network
 Repository: base
 Title: Voicemail ODBC support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1541,17 +1520,17 @@ Description: Voicemail module.
 
 Package: asterisk-app-waitforring
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-waitforring-any
 Section: net
 Category: Network
 Repository: base
 Title: Wait for first ring support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1562,17 +1541,17 @@ Description: Waits until first ring after time.
 
 Package: asterisk-app-waitforsilence
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-waitforsilence-any
 Section: net
 Category: Network
 Repository: base
 Title: Wait for silence/noise support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1583,17 +1562,17 @@ Description: Wait for silence/noise.
 
 Package: asterisk-app-waituntil
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-waituntil-any
 Section: net
 Category: Network
 Repository: base
 Title: Sleep support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1604,17 +1583,17 @@ Description: Wait until specified time.
 
 Package: asterisk-app-while
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-while-any
 Section: net
 Category: Network
 Repository: base
 Title: While loop support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1625,17 +1604,17 @@ Description: While loops and conditional execution.
 
 Package: asterisk-app-zapateller
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-app-zapateller-any
 Section: net
 Category: Network
 Repository: base
 Title: Block telemarketers support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1646,17 +1625,17 @@ Description: Block telemarketers with special information tone.
 
 Package: asterisk-bridge-builtin-features
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-bridge-builtin-features-any
 Section: net
 Category: Network
 Repository: base
 Title: Bridging features support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1667,17 +1646,17 @@ Description: Built in bridging features.
 
 Package: asterisk-bridge-builtin-interval-features
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-bridge-builtin-interval-features-any
 Section: net
 Category: Network
 Repository: base
 Title: Built in bridging interval features support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1688,17 +1667,17 @@ Description: Built in bridging interval features.
 
 Package: asterisk-bridge-holding
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-bridge-holding-any
 Section: net
 Category: Network
 Repository: base
 Title: Bridging for storing channels in a bridge support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1709,17 +1688,17 @@ Description: Holding bridge module.
 
 Package: asterisk-bridge-native-rtp
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-bridge-native-rtp-any
 Section: net
 Category: Network
 Repository: base
 Title: Native RTP bridging technology module support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1730,17 +1709,17 @@ Description: Native RTP bridging module.
 
 Package: asterisk-bridge-simple
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-bridge-simple-any
 Section: net
 Category: Network
 Repository: base
 Title: Simple two channel bridging module support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1751,17 +1730,17 @@ Description: Simple two channel bridging module.
 
 Package: asterisk-bridge-softmix
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-bridge-softmix-any
 Section: net
 Category: Network
 Repository: base
 Title: Multi-party software based channel mixing support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1772,17 +1751,17 @@ Description: Multi-party software based channel mixing.
 
 Package: asterisk-cdr
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-cdr-any
 Section: net
 Category: Network
 Repository: base
 Title: Provides CDR support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1793,17 +1772,17 @@ Description: Call Detail Records.
 
 Package: asterisk-cdr-csv
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-cdr-csv-any
 Section: net
 Category: Network
 Repository: base
 Title: Provides CDR CSV support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1814,17 +1793,17 @@ Description: Comma Separated Values CDR backend.
 
 Package: asterisk-cdr-sqlite3
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk libsqlite3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-cdr-sqlite3-any
 Section: net
 Category: Network
 Repository: base
 Title: Provides CDR SQLITE3 support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1835,17 +1814,17 @@ Description: SQLite3 CDR backend.
 
 Package: asterisk-cel-custom
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-cel-custom-any
 Section: net
 Category: Network
 Repository: base
 Title: Customizable CSV CEL backend support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1856,17 +1835,17 @@ Description: Customizable Comma Separated Values CEL backend.
 
 Package: asterisk-cel-manager
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-cel-manager-any
 Section: net
 Category: Network
 Repository: base
 Title: AMI CEL backend support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1877,17 +1856,17 @@ Description: Asterisk Manager Interface CEL backend.
 
 Package: asterisk-cel-sqlite3-custom
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-cel-sqlite3-custom-any
 Section: net
 Category: Network
 Repository: base
 Title: SQLite3 custom CEL support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1896,40 +1875,19 @@ Type: ipkg
 Description: SQLite3 custom CEL module.
 @@
 
-Package: asterisk-chan-alsa
-Submenu: Telephony
-Version: 20.8.1-r1
-Depends: +libc asterisk +PACKAGE_asterisk-chan-alsa:alsa-lib
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Repository: base
-Title: ALSA channel support
-Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
-License: GPL-2.0
-LicenseFiles: COPYING LICENSE
-CPE-ID: cpe:/a:digium:asterisk
-URL: http://www.asterisk.org/
-Type: ipkg
-Description: ALSA console channel driver.
-@@
-
 Package: asterisk-chan-audiosocket
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-chan-audiosocket:asterisk-res-audiosocket
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-chan-audiosocket-any
 Section: net
 Category: Network
 Repository: base
 Title: Audiosocket channel support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1940,17 +1898,17 @@ Description: Audiosocket channel.
 
 Package: asterisk-chan-bridge-media
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-chan-bridge-media-any
 Section: net
 Category: Network
 Repository: base
 Title: Bridge media channel driver support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1961,17 +1919,17 @@ Description: Bridge media channel driver.
 
 Package: asterisk-chan-console
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-chan-console:portaudio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-chan-console-any
 Section: net
 Category: Network
 Repository: base
 Title: Console channel driver support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -1982,17 +1940,17 @@ Description: Console channel driver.
 
 Package: asterisk-chan-dahdi
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-chan-dahdi:dahdi-tools-libtonezone +PACKAGE_asterisk-chan-dahdi:kmod-dahdi +PACKAGE_asterisk-chan-dahdi:libpri @!aarch64
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-chan-dahdi-any
 Section: net
 Category: Network
 Repository: base
 Title: DAHDI channel support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2003,17 +1961,17 @@ Description: DAHDI telephony.
 
 Package: asterisk-chan-iax2
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-chan-iax2-any
 Section: net
 Category: Network
 Repository: base
 Title: IAX2 channel support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2022,40 +1980,19 @@ Type: ipkg
 Description: Inter Asterisk eXchange.
 @@
 
-Package: asterisk-chan-mgcp
-Submenu: Telephony
-Version: 20.8.1-r1
-Depends: +libc asterisk
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Repository: base
-Title: MGCP support
-Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
-License: GPL-2.0
-LicenseFiles: COPYING LICENSE
-CPE-ID: cpe:/a:digium:asterisk
-URL: http://www.asterisk.org/
-Type: ipkg
-Description: Media Gateway Control Protocol.
-@@
-
 Package: asterisk-chan-mobile
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-chan-mobile:bluez-libs
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-chan-mobile-any
 Section: net
 Category: Network
 Repository: base
 Title: Bluetooth channel support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2066,17 +2003,17 @@ Description: Bluetooth mobile device channel driver.
 
 Package: asterisk-chan-motif
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-chan-motif:asterisk-res-xmpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-chan-motif-any
 Section: net
 Category: Network
 Repository: base
 Title: Jingle channel support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2087,17 +2024,17 @@ Description: Motif Jingle channel driver.
 
 Package: asterisk-chan-ooh323
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-chan-ooh323-any
 Section: net
 Category: Network
 Repository: base
 Title: H.323 channel support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2108,17 +2045,17 @@ Description: Objective Systems H.323 channel.
 
 Package: asterisk-chan-rtp
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-chan-rtp:asterisk-res-rtp-multicast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-chan-rtp-any
 Section: net
 Category: Network
 Repository: base
 Title: RTP media channel support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2127,61 +2064,19 @@ Type: ipkg
 Description: RTP media channel.
 @@
 
-Package: asterisk-chan-sip
-Submenu: Telephony
-Version: 20.8.1-r1
-Depends: +libc asterisk +PACKAGE_asterisk-chan-sip:asterisk-app-confbridge
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Repository: base
-Title: SIP channel support
-Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
-License: GPL-2.0
-LicenseFiles: COPYING LICENSE
-CPE-ID: cpe:/a:digium:asterisk
-URL: http://www.asterisk.org/
-Type: ipkg
-Description: Session Initiation Protocol.
-@@
-
-Package: asterisk-chan-skinny
-Submenu: Telephony
-Version: 20.8.1-r1
-Depends: +libc asterisk
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Repository: base
-Title: Skinny channel support
-Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
-License: GPL-2.0
-LicenseFiles: COPYING LICENSE
-CPE-ID: cpe:/a:digium:asterisk
-URL: http://www.asterisk.org/
-Type: ipkg
-Description: Skinny Client Control Protocol.
-@@
-
 Package: asterisk-chan-unistim
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-chan-unistim-any
 Section: net
 Category: Network
 Repository: base
 Title: Unistim channel support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2192,17 +2087,17 @@ Description: UNISTIM protocol.
 
 Package: asterisk-codec-a-mu
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-codec-a-mu-any
 Section: net
 Category: Network
 Repository: base
 Title: Alaw to ulaw translation support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2213,17 +2108,17 @@ Description: Alaw and ulaw direct coder/decoder.
 
 Package: asterisk-codec-adpcm
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-codec-adpcm-any
 Section: net
 Category: Network
 Repository: base
 Title: ADPCM text support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2234,17 +2129,17 @@ Description: Adaptive Differential PCM coder/decoder.
 
 Package: asterisk-codec-alaw
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-codec-alaw-any
 Section: net
 Category: Network
 Repository: base
 Title: Signed linear to alaw translation support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2255,17 +2150,17 @@ Description: Alaw coder/decoder.
 
 Package: asterisk-codec-dahdi
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-codec-dahdi:asterisk-chan-dahdi
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-codec-dahdi-any
 Section: net
 Category: Network
 Repository: base
 Title: DAHDI codec support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2276,17 +2171,17 @@ Description: Generic DAHDI transcoder codec translator.
 
 Package: asterisk-codec-g722
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-codec-g722-any
 Section: net
 Category: Network
 Repository: base
 Title: G.722 support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2297,17 +2192,17 @@ Description: ITU G.722-64kbps G722 transcoder.
 
 Package: asterisk-codec-g726
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-codec-g726-any
 Section: net
 Category: Network
 Repository: base
 Title: Signed linear to G.726 translation support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2318,17 +2213,17 @@ Description: ITU G.726-32kbps G726 transcoder.
 
 Package: asterisk-codec-gsm
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-codec-gsm-any
 Section: net
 Category: Network
 Repository: base
 Title: linear to GSM translation support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2339,17 +2234,17 @@ Description: GSM coder/decoder.
 
 Package: asterisk-codec-ilbc
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-codec-ilbc-any
 Section: net
 Category: Network
 Repository: base
 Title: linear to ILBC translation support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2360,17 +2255,17 @@ Description: iLBC coder/decoder.
 
 Package: asterisk-codec-lpc10
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-codec-lpc10-any
 Section: net
 Category: Network
 Repository: base
 Title: Linear to LPC10 translation support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2381,17 +2276,17 @@ Description: LPC10 2.4kbps coder/decoder.
 
 Package: asterisk-codec-resample
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-codec-resample-any
 Section: net
 Category: Network
 Repository: base
 Title: resample sLinear audio support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2402,17 +2297,17 @@ Description: SLIN resampling codec.
 
 Package: asterisk-codec-speex
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk @!SOFT_FLOAT +PACKAGE_asterisk-codec-speex:libspeex +PACKAGE_asterisk-codec-speex:libspeexdsp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-codec-speex-any
 Section: net
 Category: Network
 Repository: base
 Title: Speex Coder/Decoder support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2423,17 +2318,17 @@ Description: Speex coder/decoder.
 
 Package: asterisk-codec-ulaw
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-codec-ulaw-any
 Section: net
 Category: Network
 Repository: base
 Title: Signed linear to ulaw translation support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2444,17 +2339,17 @@ Description: Ulaw coder/decoder.
 
 Package: asterisk-curl
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-curl:libcurl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-curl-any
 Section: net
 Category: Network
 Repository: base
 Title: CURL support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2465,17 +2360,17 @@ Description: cURL
 
 Package: asterisk-format-g719
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-format-g719-any
 Section: net
 Category: Network
 Repository: base
 Title: G.719 support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2486,17 +2381,17 @@ Description: ITU G.719.
 
 Package: asterisk-format-g723
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-format-g723-any
 Section: net
 Category: Network
 Repository: base
 Title: G.723.1 support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2507,17 +2402,17 @@ Description: G.723.1 simple timestamp file format.
 
 Package: asterisk-format-g726
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-format-g726-any
 Section: net
 Category: Network
 Repository: base
 Title: G.726 support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2528,17 +2423,17 @@ Description: Raw G.726 data.
 
 Package: asterisk-format-g729
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-format-g729-any
 Section: net
 Category: Network
 Repository: base
 Title: G.729 support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2549,17 +2444,17 @@ Description: Raw G.729 data.
 
 Package: asterisk-format-gsm
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-format-gsm-any
 Section: net
 Category: Network
 Repository: base
 Title: GSM format support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2570,17 +2465,17 @@ Description: Raw GSM data.
 
 Package: asterisk-format-h263
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-format-h263-any
 Section: net
 Category: Network
 Repository: base
 Title: H263 format support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2591,17 +2486,17 @@ Description: Raw H.263 data.
 
 Package: asterisk-format-h264
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-format-h264-any
 Section: net
 Category: Network
 Repository: base
 Title: H264 format support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2612,17 +2507,17 @@ Description: Raw H.264 data.
 
 Package: asterisk-format-ilbc
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-format-ilbc-any
 Section: net
 Category: Network
 Repository: base
 Title: ILBC format support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2633,17 +2528,17 @@ Description: Raw iLBC data.
 
 Package: asterisk-format-mp3
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk @BROKEN
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-format-mp3-any
 Section: net
 Category: Network
 Repository: base
 Title: MP3 format support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2654,17 +2549,17 @@ Description: MP3 format.
 
 Package: asterisk-format-ogg-speex
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk @!SOFT_FLOAT +PACKAGE_asterisk-format-ogg-speex:libogg +PACKAGE_asterisk-format-ogg-speex:libspeex
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-format-ogg-speex-any
 Section: net
 Category: Network
 Repository: base
 Title: OGG/Speex audio support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2675,17 +2570,17 @@ Description: OGG/Speex audio.
 
 Package: asterisk-format-ogg-vorbis
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-format-ogg-vorbis:libvorbis
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-format-ogg-vorbis-any
 Section: net
 Category: Network
 Repository: base
 Title: OGG/Vorbis audio support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2696,17 +2591,17 @@ Description: OGG/Vorbis audio.
 
 Package: asterisk-format-pcm
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-format-pcm-any
 Section: net
 Category: Network
 Repository: base
 Title: PCM format support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2717,17 +2612,17 @@ Description: Raw/Sun ulaw/alaw 8KHz and G.722 16Khz.
 
 Package: asterisk-format-siren14
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-format-siren14-any
 Section: net
 Category: Network
 Repository: base
 Title: Siren14 support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2738,17 +2633,17 @@ Description: ITU G.722.1 Annex C.
 
 Package: asterisk-format-siren7
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-format-siren7-any
 Section: net
 Category: Network
 Repository: base
 Title: Siren7 support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2759,17 +2654,17 @@ Description: ITU G.722.1.
 
 Package: asterisk-format-sln
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-format-sln-any
 Section: net
 Category: Network
 Repository: base
 Title: Raw slinear format support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2780,17 +2675,17 @@ Description: Raw signed linear audio support 8khz-192khz.
 
 Package: asterisk-format-vox
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-format-vox-any
 Section: net
 Category: Network
 Repository: base
 Title: VOX format support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2801,17 +2696,17 @@ Description: Dialogic VOX file format.
 
 Package: asterisk-format-wav
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-format-wav-any
 Section: net
 Category: Network
 Repository: base
 Title: WAV format (8000hz Signed Linear) support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2822,17 +2717,17 @@ Description: Microsoft WAV/WAV16 format.
 
 Package: asterisk-format-wav-gsm
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-format-wav-gsm-any
 Section: net
 Category: Network
 Repository: base
 Title: WAV format (Proprietary GSM) support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2843,17 +2738,17 @@ Description: Microsoft WAV format.
 
 Package: asterisk-func-aes
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-aes-any
 Section: net
 Category: Network
 Repository: base
 Title: AES dialplan functions support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2864,17 +2759,17 @@ Description: AES dialplan functions.
 
 Package: asterisk-func-base64
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-base64-any
 Section: net
 Category: Network
 Repository: base
 Title: base64 support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2885,17 +2780,17 @@ Description: Base64 encode/decode dialplan functions.
 
 Package: asterisk-func-blacklist
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-blacklist-any
 Section: net
 Category: Network
 Repository: base
 Title: Blacklist on callerid support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2906,17 +2801,17 @@ Description: Look up Caller ID name/number from blacklist database.
 
 Package: asterisk-func-callcompletion
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-callcompletion-any
 Section: net
 Category: Network
 Repository: base
 Title: Call control configuration function support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2927,17 +2822,17 @@ Description: Call control configuration function.
 
 Package: asterisk-func-channel
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-channel-any
 Section: net
 Category: Network
 Repository: base
 Title: Channel info support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2948,17 +2843,17 @@ Description: Channel information dialplan functions.
 
 Package: asterisk-func-config
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-config-any
 Section: net
 Category: Network
 Repository: base
 Title: Configuration file variable access support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2969,17 +2864,17 @@ Description: Asterisk configuration file variable access.
 
 Package: asterisk-func-cut
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-cut-any
 Section: net
 Category: Network
 Repository: base
 Title: CUT function support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -2990,17 +2885,17 @@ Description: Cut out information from a string.
 
 Package: asterisk-func-db
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-db-any
 Section: net
 Category: Network
 Repository: base
 Title: Database interaction support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3011,17 +2906,17 @@ Description: Database related dialplan functions.
 
 Package: asterisk-func-devstate
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-devstate-any
 Section: net
 Category: Network
 Repository: base
 Title: Blinky lights control support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3032,17 +2927,17 @@ Description: Gets or sets a device state in the dialplan.
 
 Package: asterisk-func-dialgroup
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-dialgroup-any
 Section: net
 Category: Network
 Repository: base
 Title: Dialgroup dialplan function support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3053,17 +2948,17 @@ Description: Dialgroup dialplan function.
 
 Package: asterisk-func-dialplan
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-dialplan-any
 Section: net
 Category: Network
 Repository: base
 Title: Dialplan context/extension/priority checking functions support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3074,17 +2969,17 @@ Description: Dialplan context/extension/priority checking functions.
 
 Package: asterisk-func-enum
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-enum-any
 Section: net
 Category: Network
 Repository: base
 Title: ENUM support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3095,17 +2990,17 @@ Description: ENUM related dialplan functions.
 
 Package: asterisk-func-env
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-env-any
 Section: net
 Category: Network
 Repository: base
 Title: Environment functions support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3116,17 +3011,17 @@ Description: Environment/filesystem dialplan functions.
 
 Package: asterisk-func-evalexten
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-evalexten-any
 Section: net
 Category: Network
 Repository: base
 Title: Extension evaluation support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3137,17 +3032,17 @@ Description: Extension evaluation functions.
 
 Package: asterisk-func-export
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-export-any
 Section: net
 Category: Network
 Repository: base
 Title: Export function support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3158,17 +3053,17 @@ Description: Set variables and functions on other channels.
 
 Package: asterisk-func-extstate
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-extstate-any
 Section: net
 Category: Network
 Repository: base
 Title: Hinted extension state support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3179,17 +3074,17 @@ Description: Gets the state of an extension in the dialplan.
 
 Package: asterisk-func-frame-drop
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-frame-drop-any
 Section: net
 Category: Network
 Repository: base
 Title: Frame drop support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3200,17 +3095,17 @@ Description: Function to drop frames on a channel.
 
 Package: asterisk-func-frame-trace
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-frame-trace-any
 Section: net
 Category: Network
 Repository: base
 Title: Frame trace for internal ast_frame debugging support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3221,17 +3116,17 @@ Description: Frame trace for internal ast_frame debugging.
 
 Package: asterisk-func-global
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-global-any
 Section: net
 Category: Network
 Repository: base
 Title: Global variable support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3242,17 +3137,17 @@ Description: Variable dialplan functions.
 
 Package: asterisk-func-groupcount
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-groupcount-any
 Section: net
 Category: Network
 Repository: base
 Title: Group count support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3263,17 +3158,17 @@ Description: Channel group dialplan functions.
 
 Package: asterisk-func-hangupcause
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-hangupcause-any
 Section: net
 Category: Network
 Repository: base
 Title: HANGUPCAUSE related functions support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3284,17 +3179,17 @@ Description: Hangup cause related functions and applications.
 
 Package: asterisk-func-holdintercept
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-holdintercept-any
 Section: net
 Category: Network
 Repository: base
 Title: Hold interception dialplan function support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3305,17 +3200,17 @@ Description: Hold interception dialplan function.
 
 Package: asterisk-func-iconv
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +BUILD_NLS:libiconv-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-iconv-any
 Section: net
 Category: Network
 Repository: base
 Title: Charset conversion support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3326,17 +3221,17 @@ Description: Charset conversions.
 
 Package: asterisk-func-jitterbuffer
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-jitterbuffer-any
 Section: net
 Category: Network
 Repository: base
 Title: Jitter buffer for read side of channel support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3347,17 +3242,17 @@ Description: Jitter buffer for read side of channel.
 
 Package: asterisk-func-json
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-json-any
 Section: net
 Category: Network
 Repository: base
 Title: JSON decoding function support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3368,17 +3263,17 @@ Description: JSON decoding function.
 
 Package: asterisk-func-lock
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-lock-any
 Section: net
 Category: Network
 Repository: base
 Title: Dialplan mutexes support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3389,17 +3284,17 @@ Description: Dialplan mutexes.
 
 Package: asterisk-func-math
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-math-any
 Section: net
 Category: Network
 Repository: base
 Title: Math functions support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3410,17 +3305,17 @@ Description: Mathematical dialplan function.
 
 Package: asterisk-func-md5
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-md5-any
 Section: net
 Category: Network
 Repository: base
 Title: MD5 digest dialplan functions support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3431,17 +3326,17 @@ Description: MD5 digest dialplan functions.
 
 Package: asterisk-func-module
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-module-any
 Section: net
 Category: Network
 Repository: base
 Title: Simple module check function support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3452,17 +3347,17 @@ Description: Checks if Asterisk module is loaded in memory.
 
 Package: asterisk-func-periodic-hook
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-func-periodic-hook:asterisk-app-chanspy +PACKAGE_asterisk-func-periodic-hook:asterisk-func-cut +PACKAGE_asterisk-func-periodic-hook:asterisk-func-groupcount +PACKAGE_asterisk-func-periodic-hook:asterisk-func-uri
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-periodic-hook-any
 Section: net
 Category: Network
 Repository: base
 Title: Periodic dialplan hooks support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3473,17 +3368,17 @@ Description: Periodic dialplan hooks.
 
 Package: asterisk-func-pitchshift
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-pitchshift-any
 Section: net
 Category: Network
 Repository: base
 Title: Audio effects dialplan functions support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3494,17 +3389,17 @@ Description: Audio effects dialplan functions.
 
 Package: asterisk-func-presencestate
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-presencestate-any
 Section: net
 Category: Network
 Repository: base
 Title: Hinted presence state support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3515,17 +3410,17 @@ Description: Gets or sets a presence state in the dialplan.
 
 Package: asterisk-func-rand
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-rand-any
 Section: net
 Category: Network
 Repository: base
 Title: RAND dialplan function support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3536,17 +3431,17 @@ Description: Random number dialplan function.
 
 Package: asterisk-func-realtime
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-realtime-any
 Section: net
 Category: Network
 Repository: base
 Title: REALTIME dialplan function support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3557,17 +3452,17 @@ Description: Read/write/store/destroy values from a realtime repository.
 
 Package: asterisk-func-sayfiles
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-sayfiles-any
 Section: net
 Category: Network
 Repository: base
 Title: Say files support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3578,17 +3473,17 @@ Description: Say application files.
 
 Package: asterisk-func-scramble
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-scramble-any
 Section: net
 Category: Network
 Repository: base
 Title: Scramble support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3599,17 +3494,17 @@ Description: Frequency inverting voice scrambler.
 
 Package: asterisk-func-sha1
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-sha1-any
 Section: net
 Category: Network
 Repository: base
 Title: SHA-1 computation dialplan function support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3620,17 +3515,17 @@ Description: SHA-1 computation dialplan function.
 
 Package: asterisk-func-shell
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-shell-any
 Section: net
 Category: Network
 Repository: base
 Title: Shell support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3641,17 +3536,17 @@ Description: Collects the output generated by a command executed by the system s
 
 Package: asterisk-func-sorcery
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-sorcery-any
 Section: net
 Category: Network
 Repository: base
 Title: Get a field from a sorcery object support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3662,17 +3557,17 @@ Description: Get a field from a sorcery object.
 
 Package: asterisk-func-speex
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk @!SOFT_FLOAT +PACKAGE_asterisk-func-speex:libspeex +PACKAGE_asterisk-func-speex:libspeexdsp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-speex-any
 Section: net
 Category: Network
 Repository: base
 Title: Noise reduction and AGC support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3683,17 +3578,17 @@ Description: Noise reduction and Automatic Gain Control.
 
 Package: asterisk-func-sprintf
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-sprintf-any
 Section: net
 Category: Network
 Repository: base
 Title: SPRINTF dialplan function support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3704,17 +3599,17 @@ Description: SPRINTF dialplan function.
 
 Package: asterisk-func-srv
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-srv-any
 Section: net
 Category: Network
 Repository: base
 Title: SRV functions support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3725,17 +3620,17 @@ Description: SRV related dialplan functions.
 
 Package: asterisk-func-sysinfo
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-sysinfo-any
 Section: net
 Category: Network
 Repository: base
 Title: System information related functions support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3746,17 +3641,17 @@ Description: System information related functions.
 
 Package: asterisk-func-talkdetect
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-talkdetect-any
 Section: net
 Category: Network
 Repository: base
 Title: Talk detection dialplan function support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3767,17 +3662,17 @@ Description: Talk detection dialplan function.
 
 Package: asterisk-func-uri
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-uri-any
 Section: net
 Category: Network
 Repository: base
 Title: URI encoding and decoding support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3788,17 +3683,17 @@ Description: URI encode/decode dialplan functions.
 
 Package: asterisk-func-version
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-version-any
 Section: net
 Category: Network
 Repository: base
 Title: Get Asterisk version/build info support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3809,17 +3704,17 @@ Description: Get Asterisk version/build info.
 
 Package: asterisk-func-vmcount
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-vmcount-any
 Section: net
 Category: Network
 Repository: base
 Title: vmcount dialplan support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3830,17 +3725,17 @@ Description: Indicator for whether a voice mailbox has messages in a given folde
 
 Package: asterisk-func-volume
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-func-volume-any
 Section: net
 Category: Network
 Repository: base
 Title: Technology independent volume control support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3851,17 +3746,17 @@ Description: Technology independent volume control.
 
 Package: asterisk-odbc
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-odbc:libpthread +PACKAGE_asterisk-odbc:libc +PACKAGE_asterisk-odbc:unixodbc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-odbc-any
 Section: net
 Category: Network
 Repository: base
 Title: ODBC support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3872,17 +3767,17 @@ Description: ODBC support.
 
 Package: asterisk-pbx-ael
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-pbx-ael:asterisk-res-ael-share
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-pbx-ael-any
 Section: net
 Category: Network
 Repository: base
 Title: Asterisk Extension Logic support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3893,17 +3788,17 @@ Description: Asterisk Extension Language compiler.
 
 Package: asterisk-pbx-dundi
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-pbx-dundi-any
 Section: net
 Category: Network
 Repository: base
 Title: Dundi support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3914,17 +3809,17 @@ Description: Distributed Universal Number Discovery.
 
 Package: asterisk-pbx-loopback
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-pbx-loopback-any
 Section: net
 Category: Network
 Repository: base
 Title: Loopback switch support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3935,17 +3830,17 @@ Description: Loopback switch.
 
 Package: asterisk-pbx-lua
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-pbx-lua:liblua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-pbx-lua-any
 Section: net
 Category: Network
 Repository: base
 Title: Lua support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3956,17 +3851,17 @@ Description: Lua PBX switch.
 
 Package: asterisk-pbx-realtime
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-pbx-realtime-any
 Section: net
 Category: Network
 Repository: base
 Title: Realtime Switch support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3977,17 +3872,17 @@ Description: Realtime switch.
 
 Package: asterisk-pbx-spool
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-pbx-spool-any
 Section: net
 Category: Network
 Repository: base
 Title: Call Spool support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -3998,17 +3893,17 @@ Description: Outgoing spool support.
 
 Package: asterisk-pgsql
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-pgsql:libpq
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-pgsql-any
 Section: net
 Category: Network
 Repository: base
 Title: PostgreSQL support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4019,17 +3914,17 @@ Description: PostgreSQL support.
 
 Package: asterisk-pjsip
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-pjsip:asterisk-res-http-websocket +PACKAGE_asterisk-pjsip:asterisk-res-pjproject +PACKAGE_asterisk-pjsip:asterisk-res-sorcery +PACKAGE_asterisk-pjsip:libpjsip +PACKAGE_asterisk-pjsip:libpjmedia +PACKAGE_asterisk-pjsip:libpjnath +PACKAGE_asterisk-pjsip:libpjsip-simple +PACKAGE_asterisk-pjsip:libpjsip-ua +PACKAGE_asterisk-pjsip:libpjsua +PACKAGE_asterisk-pjsip:libpjsua2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-pjsip-any
 Section: net
 Category: Network
 Repository: base
 Title: pjsip channel support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4040,17 +3935,17 @@ Description: PJSIP SIP stack.
 
 Package: asterisk-res-adsi
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-adsi-any
 Section: net
 Category: Network
 Repository: base
 Title: Provide ADSI support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4061,17 +3956,17 @@ Description: ADSI resource.
 
 Package: asterisk-res-aeap
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-aeap:asterisk-res-http-websocket
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-aeap-any
 Section: net
 Category: Network
 Repository: base
 Title: Provide AEAP support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4082,17 +3977,17 @@ Description: AEAP resource.
 
 Package: asterisk-res-ael-share
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-ael-share-any
 Section: net
 Category: Network
 Repository: base
 Title: Shareable AEL code support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4103,17 +3998,17 @@ Description: Shareable code for AEL.
 
 Package: asterisk-res-agi
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-agi:asterisk-res-speech
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-agi-any
 Section: net
 Category: Network
 Repository: base
 Title: Asterisk Gateway Interface support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4124,17 +4019,17 @@ Description: Asterisk Gateway Interface.
 
 Package: asterisk-res-ari
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-ari:asterisk-res-http-websocket
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-ari-any
 Section: net
 Category: Network
 Repository: base
 Title: Asterisk RESTful interface support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4145,17 +4040,17 @@ Description: Asterisk RESTful Interface.
 
 Package: asterisk-res-ari-applications
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-ari-applications:asterisk-res-ari +PACKAGE_asterisk-res-ari-applications:asterisk-res-ari-model +PACKAGE_asterisk-res-ari-applications:asterisk-res-stasis
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-ari-applications-any
 Section: net
 Category: Network
 Repository: base
 Title: RESTful Stasis application resources support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4166,17 +4061,17 @@ Description: RESTful API module - Stasis application resources.
 
 Package: asterisk-res-ari-asterisk
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-ari-asterisk:asterisk-res-ari +PACKAGE_asterisk-res-ari-asterisk:asterisk-res-ari-model +PACKAGE_asterisk-res-ari-asterisk:asterisk-res-stasis
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-ari-asterisk-any
 Section: net
 Category: Network
 Repository: base
 Title: RESTful Asterisk resources support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4187,17 +4082,17 @@ Description: RESTful API module - Asterisk resources.
 
 Package: asterisk-res-ari-bridges
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-ari-bridges:asterisk-res-ari +PACKAGE_asterisk-res-ari-bridges:asterisk-res-ari-model +PACKAGE_asterisk-res-ari-bridges:asterisk-res-stasis-playback
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-ari-bridges-any
 Section: net
 Category: Network
 Repository: base
 Title: RESTful bridge resources support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4208,17 +4103,17 @@ Description: RESTful API module - bridge resources.
 
 Package: asterisk-res-ari-channels
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-ari-channels:asterisk-res-ari +PACKAGE_asterisk-res-ari-channels:asterisk-res-ari-model +PACKAGE_asterisk-res-ari-channels:asterisk-res-stasis-answer +PACKAGE_asterisk-res-ari-channels:asterisk-res-stasis-playback +PACKAGE_asterisk-res-ari-channels:asterisk-res-stasis-snoop
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-ari-channels-any
 Section: net
 Category: Network
 Repository: base
 Title: RESTful channel resources support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4229,17 +4124,17 @@ Description: RESTful API module - channel resources.
 
 Package: asterisk-res-ari-device-states
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-ari-device-states:asterisk-res-ari +PACKAGE_asterisk-res-ari-device-states:asterisk-res-ari-model +PACKAGE_asterisk-res-ari-device-states:asterisk-res-stasis-device-state
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-ari-device-states-any
 Section: net
 Category: Network
 Repository: base
 Title: RESTful device state resources support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4250,17 +4145,17 @@ Description: RESTful API module - device state resources.
 
 Package: asterisk-res-ari-endpoints
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-ari-endpoints:asterisk-res-ari +PACKAGE_asterisk-res-ari-endpoints:asterisk-res-ari-model +PACKAGE_asterisk-res-ari-endpoints:asterisk-res-stasis
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-ari-endpoints-any
 Section: net
 Category: Network
 Repository: base
 Title: RESTful endpoint resources support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4271,17 +4166,17 @@ Description: RESTful API module - endpoint resources.
 
 Package: asterisk-res-ari-events
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-ari-events:asterisk-res-ari +PACKAGE_asterisk-res-ari-events:asterisk-res-ari-model +PACKAGE_asterisk-res-ari-events:asterisk-res-stasis
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-ari-events-any
 Section: net
 Category: Network
 Repository: base
 Title: RESTful WebSocket resource support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4292,17 +4187,17 @@ Description: RESTful API module - WebSocket resource.
 
 Package: asterisk-res-ari-mailboxes
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-ari-mailboxes:asterisk-res-ari +PACKAGE_asterisk-res-ari-mailboxes:asterisk-res-ari-model +PACKAGE_asterisk-res-ari-mailboxes:asterisk-res-stasis-mailbox
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-ari-mailboxes-any
 Section: net
 Category: Network
 Repository: base
 Title: RESTful mailboxes resources support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4313,17 +4208,17 @@ Description: RESTful API module - mailboxes resources.
 
 Package: asterisk-res-ari-model
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-ari-model-any
 Section: net
 Category: Network
 Repository: base
 Title: ARI model validators support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4334,17 +4229,17 @@ Description: ARI model validators.
 
 Package: asterisk-res-ari-playbacks
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-ari-playbacks:asterisk-res-ari +PACKAGE_asterisk-res-ari-playbacks:asterisk-res-ari-model +PACKAGE_asterisk-res-ari-playbacks:asterisk-res-stasis-playback
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-ari-playbacks-any
 Section: net
 Category: Network
 Repository: base
 Title: RESTful playback control resources support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4355,17 +4250,17 @@ Description: RESTful API module - playback control resources.
 
 Package: asterisk-res-ari-recordings
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-ari-recordings:asterisk-res-ari +PACKAGE_asterisk-res-ari-recordings:asterisk-res-ari-model +PACKAGE_asterisk-res-ari-recordings:asterisk-res-stasis-recording
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-ari-recordings-any
 Section: net
 Category: Network
 Repository: base
 Title: RESTful recording resources support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4376,17 +4271,17 @@ Description: RESTful API module - recording resources.
 
 Package: asterisk-res-ari-sounds
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-ari-sounds:asterisk-res-ari +PACKAGE_asterisk-res-ari-sounds:asterisk-res-ari-model +PACKAGE_asterisk-res-ari-sounds:asterisk-res-stasis
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-ari-sounds-any
 Section: net
 Category: Network
 Repository: base
 Title: RESTful sound resources support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4397,17 +4292,17 @@ Description: RESTful API module - sound resources.
 
 Package: asterisk-res-audiosocket
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-audiosocket-any
 Section: net
 Category: Network
 Repository: base
 Title: Audiosocket resource module support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4418,17 +4313,17 @@ Description: Audiosocket resource module.
 
 Package: asterisk-res-calendar
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-calendar-any
 Section: net
 Category: Network
 Repository: base
 Title: Calendar API support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4439,17 +4334,17 @@ Description: Asterisk calendar integration.
 
 Package: asterisk-res-calendar-caldav
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-calendar-caldav:asterisk-res-calendar +PACKAGE_asterisk-res-calendar-caldav:libical +PACKAGE_asterisk-res-calendar-caldav:libneon
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-calendar-caldav-any
 Section: net
 Category: Network
 Repository: base
 Title: CalDAV calendar support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4460,17 +4355,17 @@ Description: Asterisk CalDAV calendar integration.
 
 Package: asterisk-res-calendar-ews
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-calendar-ews:asterisk-res-calendar +PACKAGE_asterisk-res-calendar-ews:libneon
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-calendar-ews-any
 Section: net
 Category: Network
 Repository: base
 Title: EWS calendar support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4481,17 +4376,17 @@ Description: Asterisk MS Exchange Web Service calendar integration.
 
 Package: asterisk-res-calendar-exchange
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-calendar-exchange:asterisk-res-calendar +PACKAGE_asterisk-res-calendar-exchange:libical +PACKAGE_asterisk-res-calendar-exchange:libiksemel +PACKAGE_asterisk-res-calendar-exchange:libneon
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-calendar-exchange-any
 Section: net
 Category: Network
 Repository: base
 Title: Exchange calendar support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4502,17 +4397,17 @@ Description: Asterisk MS Exchange calendar integration.
 
 Package: asterisk-res-calendar-icalendar
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-calendar-icalendar:asterisk-res-calendar +PACKAGE_asterisk-res-calendar-icalendar:libical +PACKAGE_asterisk-res-calendar-icalendar:libneon
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-calendar-icalendar-any
 Section: net
 Category: Network
 Repository: base
 Title: iCalendar calendar support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4523,17 +4418,17 @@ Description: Asterisk iCalendar .ics file integration.
 
 Package: asterisk-res-chan-stats
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-chan-stats:asterisk-res-statsd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-chan-stats-any
 Section: net
 Category: Network
 Repository: base
 Title: statsd channel stats support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4544,17 +4439,17 @@ Description: Example of how to use Stasis.
 
 Package: asterisk-res-clialiases
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-clialiases-any
 Section: net
 Category: Network
 Repository: base
 Title: CLI aliases support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4565,17 +4460,17 @@ Description: CLI aliases.
 
 Package: asterisk-res-cliexec
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-cliexec-any
 Section: net
 Category: Network
 Repository: base
 Title: Execute from CLI support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4586,17 +4481,17 @@ Description: Simple dialplan execution from the CLI.
 
 Package: asterisk-res-clioriginate
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-clioriginate-any
 Section: net
 Category: Network
 Repository: base
 Title: Calls via CLI support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4607,17 +4502,17 @@ Description: Call origination and redirection from the CLI.
 
 Package: asterisk-res-config-ldap
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-config-ldap:libopenldap
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-config-ldap-any
 Section: net
 Category: Network
 Repository: base
 Title: LDAP realtime interface support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4628,17 +4523,17 @@ Description: LDAP realtime interface.
 
 Package: asterisk-res-config-mysql
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-config-mysql:libmysqlclient
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-config-mysql-any
 Section: net
 Category: Network
 Repository: base
 Title: MySQL CDR backend support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4649,17 +4544,17 @@ Description: MySQL realtime configuration driver.
 
 Package: asterisk-res-config-sqlite3
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-config-sqlite3-any
 Section: net
 Category: Network
 Repository: base
 Title: SQLite 3 realtime config engine support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4670,17 +4565,17 @@ Description: SQLite3 realtime config engine.
 
 Package: asterisk-res-convert
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-convert-any
 Section: net
 Category: Network
 Repository: base
 Title: File format conversion CLI command support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4691,17 +4586,17 @@ Description: File format conversion CLI command.
 
 Package: asterisk-res-endpoint-stats
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-endpoint-stats:asterisk-res-statsd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-endpoint-stats-any
 Section: net
 Category: Network
 Repository: base
 Title: Endpoint statistics support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4712,17 +4607,17 @@ Description: Endpoint statistics.
 
 Package: asterisk-res-hep
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-hep-any
 Section: net
 Category: Network
 Repository: base
 Title: HEPv3 API support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4733,17 +4628,17 @@ Description: HEPv3 API.
 
 Package: asterisk-res-hep-pjsip
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-hep-pjsip:asterisk-res-hep +PACKAGE_asterisk-res-hep-pjsip:asterisk-pjsip
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-hep-pjsip-any
 Section: net
 Category: Network
 Repository: base
 Title: PJSIP HEPv3 Logger support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4754,17 +4649,17 @@ Description: PJSIP HEPv3 logger.
 
 Package: asterisk-res-hep-rtcp
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-hep-rtcp:asterisk-res-hep
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-hep-rtcp-any
 Section: net
 Category: Network
 Repository: base
 Title: RTCP HEPv3 Logger support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4775,17 +4670,17 @@ Description: RTCP HEPv3 logger.
 
 Package: asterisk-res-fax-spandsp
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-fax-spandsp:asterisk-res-fax +PACKAGE_asterisk-res-fax-spandsp:libspandsp +PACKAGE_asterisk-res-fax-spandsp:libtiff
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-fax-spandsp-any
 Section: net
 Category: Network
 Repository: base
 Title: Spandsp T.38 and G.711 support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4796,17 +4691,17 @@ Description: Spandsp G.711 and T.38 FAX technologies.
 
 Package: asterisk-res-fax
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-fax-any
 Section: net
 Category: Network
 Repository: base
 Title: FAX modules support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4817,17 +4712,17 @@ Description: Generic FAX applications.
 
 Package: asterisk-res-format-attr-celt
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-format-attr-celt-any
 Section: net
 Category: Network
 Repository: base
 Title: CELT format attribute module support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4838,17 +4733,17 @@ Description: CELT format attribute module.
 
 Package: asterisk-res-format-attr-g729
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-format-attr-g729-any
 Section: net
 Category: Network
 Repository: base
 Title: G.729 format attribute module support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4859,17 +4754,17 @@ Description: G.729 format attribute module.
 
 Package: asterisk-res-format-attr-h263
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-format-attr-h263-any
 Section: net
 Category: Network
 Repository: base
 Title: H.263 format attribute module support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4880,17 +4775,17 @@ Description: H.263 format attribute module.
 
 Package: asterisk-res-format-attr-h264
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-format-attr-h264-any
 Section: net
 Category: Network
 Repository: base
 Title: H.264 format attribute module support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4901,17 +4796,17 @@ Description: H.264 format attribute module.
 
 Package: asterisk-res-format-attr-ilbc
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-format-attr-ilbc-any
 Section: net
 Category: Network
 Repository: base
 Title: ILBC format attribute module support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4922,17 +4817,17 @@ Description: iLBC format attribute module.
 
 Package: asterisk-res-format-attr-opus
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-format-attr-opus-any
 Section: net
 Category: Network
 Repository: base
 Title: Opus format attribute module support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4943,17 +4838,17 @@ Description: Opus format attribute module.
 
 Package: asterisk-res-format-attr-silk
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-format-attr-silk-any
 Section: net
 Category: Network
 Repository: base
 Title: SILK format attribute module support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4964,17 +4859,17 @@ Description: SILK format attribute module.
 
 Package: asterisk-res-format-attr-siren14
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-format-attr-siren14-any
 Section: net
 Category: Network
 Repository: base
 Title: Siren14 format attribute module support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -4985,17 +4880,17 @@ Description: Siren14 format attribute module.
 
 Package: asterisk-res-format-attr-siren7
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-format-attr-siren7-any
 Section: net
 Category: Network
 Repository: base
 Title: Siren7 format attribute module support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5006,17 +4901,17 @@ Description: Siren7 format attribute module.
 
 Package: asterisk-res-format-attr-vp8
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-format-attr-vp8-any
 Section: net
 Category: Network
 Repository: base
 Title: VP8 format attribute module support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5027,17 +4922,17 @@ Description: VP8 format attribute module.
 
 Package: asterisk-res-geolocation
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk @ASTERISK_LIBXSLT_SUPPORT
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-geolocation-any
 Section: net
 Category: Network
 Repository: base
 Title: Geolocation support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5048,17 +4943,17 @@ Description: Geolocation support.
 
 Package: asterisk-res-http-media-cache
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-http-media-cache:asterisk-curl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-http-media-cache-any
 Section: net
 Category: Network
 Repository: base
 Title: HTTP media cache backend support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5069,17 +4964,17 @@ Description: HTTP media cache backend.
 
 Package: asterisk-res-http-websocket
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-http-websocket-any
 Section: net
 Category: Network
 Repository: base
 Title: HTTP websocket support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5090,17 +4985,17 @@ Description: HTTP WebSocket support.
 
 Package: asterisk-res-limit
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-limit-any
 Section: net
 Category: Network
 Repository: base
 Title: Resource limits support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5111,17 +5006,17 @@ Description: Resource limits.
 
 Package: asterisk-res-manager-devicestate
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-manager-devicestate-any
 Section: net
 Category: Network
 Repository: base
 Title: Device state topic forwarder support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5132,17 +5027,17 @@ Description: Manager device state topic forwarder.
 
 Package: asterisk-res-manager-presencestate
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-manager-presencestate-any
 Section: net
 Category: Network
 Repository: base
 Title: Presence state topic forwarder support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5151,40 +5046,19 @@ Type: ipkg
 Description: Manager presence state topic forwarder.
 @@
 
-Package: asterisk-res-monitor
-Submenu: Telephony
-Version: 20.8.1-r1
-Depends: +libc asterisk
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Repository: base
-Title: PBX channel monitoring support
-Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
-License: GPL-2.0
-LicenseFiles: COPYING LICENSE
-CPE-ID: cpe:/a:digium:asterisk
-URL: http://www.asterisk.org/
-Type: ipkg
-Description: Call monitoring resource.
-@@
-
 Package: asterisk-res-musiconhold
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-musiconhold-any
 Section: net
 Category: Network
 Repository: base
 Title: MOH support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5195,17 +5069,17 @@ Description: Music On Hold resource.
 
 Package: asterisk-res-mutestream
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-mutestream-any
 Section: net
 Category: Network
 Repository: base
 Title: Mute audio stream resources support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5216,17 +5090,17 @@ Description: Mute audio stream resources.
 
 Package: asterisk-res-mwi-devstate
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-mwi-devstate-any
 Section: net
 Category: Network
 Repository: base
 Title: MWI device state subs support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5238,17 +5112,17 @@ allows common BLF keys to act as voicemail waiting indicators.
 
 Package: asterisk-res-mwi-external
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-mwi-external-any
 Section: net
 Category: Network
 Repository: base
 Title: Core external MWI resource support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5259,17 +5133,17 @@ Description: Core external MWI resource.
 
 Package: asterisk-res-mwi-external-ami
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-mwi-external-ami:asterisk-res-mwi-external
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-mwi-external-ami-any
 Section: net
 Category: Network
 Repository: base
 Title: AMI for external MWI support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5280,17 +5154,17 @@ Description: AMI support for external MWI.
 
 Package: asterisk-res-parking
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-parking:asterisk-bridge-holding
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-parking-any
 Section: net
 Category: Network
 Repository: base
 Title: Phone Parking support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5301,17 +5175,17 @@ Description: Call parking resource.
 
 Package: asterisk-res-phoneprov
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-phoneprov-any
 Section: net
 Category: Network
 Repository: base
 Title: Phone Provisioning support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5322,17 +5196,17 @@ Description: HTTP phone provisioning.
 
 Package: asterisk-res-pjsip-aoc
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-pjsip-aoc:asterisk-pjsip +PACKAGE_asterisk-res-pjsip-aoc:asterisk-res-pjproject
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-pjsip-aoc-any
 Section: net
 Category: Network
 Repository: base
 Title: PJSIP AOC support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5343,17 +5217,17 @@ Description: PJSIP AOC Support.
 
 Package: asterisk-res-pjsip-geolocation
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-pjsip-geolocation:asterisk-pjsip +PACKAGE_asterisk-res-pjsip-geolocation:asterisk-res-geolocation
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-pjsip-geolocation-any
 Section: net
 Category: Network
 Repository: base
 Title: PJSIP Geolocation support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5364,17 +5238,17 @@ Description: PJSIP Geolocation support.
 
 Package: asterisk-res-pjsip-phoneprov
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-pjsip-phoneprov:asterisk-pjsip +PACKAGE_asterisk-res-pjsip-phoneprov:asterisk-res-phoneprov
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-pjsip-phoneprov-any
 Section: net
 Category: Network
 Repository: base
 Title: PJSIP Phone Provisioning support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5385,17 +5259,17 @@ Description: PJSIP phone provisioning.
 
 Package: asterisk-res-pjsip-rfc3329
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-pjsip-rfc3329:asterisk-pjsip +PACKAGE_asterisk-res-pjsip-rfc3329:asterisk-res-pjproject
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-pjsip-rfc3329-any
 Section: net
 Category: Network
 Repository: base
 Title: PJSIP RFC3329 support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5406,17 +5280,17 @@ Description: PJSIP RFC3329 Support (partial).
 
 Package: asterisk-res-pjsip-stir-shaken
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-pjsip-stir-shaken:asterisk-pjsip +PACKAGE_asterisk-res-pjsip-stir-shaken:asterisk-res-stir-shaken
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-pjsip-stir-shaken-any
 Section: net
 Category: Network
 Repository: base
 Title: PJSIP STIR/SHAKEN resource module support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5427,17 +5301,17 @@ Description: PJSIP STIR/SHAKEN resource module.
 
 Package: asterisk-res-pjproject
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-pjproject:asterisk-res-sorcery +PACKAGE_asterisk-res-pjproject:libpj +PACKAGE_asterisk-res-pjproject:libpjlib-util +PACKAGE_asterisk-res-pjproject:libpjmedia +PACKAGE_asterisk-res-pjproject:libpjmedia +PACKAGE_asterisk-res-pjproject:libpjnath +PACKAGE_asterisk-res-pjproject:libpjsip-simple +PACKAGE_asterisk-res-pjproject:libpjsip-ua +PACKAGE_asterisk-res-pjproject:libpjsip +PACKAGE_asterisk-res-pjproject:libpjsua +PACKAGE_asterisk-res-pjproject:libpjsua2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-pjproject-any
 Section: net
 Category: Network
 Repository: base
 Title: Bridge PJPROJECT to Asterisk logging support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5446,40 +5320,19 @@ Type: ipkg
 Description: PJProject log and utility support.
 @@
 
-Package: asterisk-res-pktccops
-Submenu: Telephony
-Version: 20.8.1-r1
-Depends: +libc asterisk
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Repository: base
-Title: PktcCOPS manager for MGCP support
-Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
-License: GPL-2.0
-LicenseFiles: COPYING LICENSE
-CPE-ID: cpe:/a:digium:asterisk
-URL: http://www.asterisk.org/
-Type: ipkg
-Description: PktcCOPS manager for MGCP.
-@@
-
 Package: asterisk-res-prometheus
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-prometheus:libpjsip +PACKAGE_asterisk-res-prometheus:libpjmedia +PACKAGE_asterisk-res-prometheus:libpjnath +PACKAGE_asterisk-res-prometheus:libpjsip-simple +PACKAGE_asterisk-res-prometheus:libpjsip-ua +PACKAGE_asterisk-res-prometheus:libpjsua +PACKAGE_asterisk-res-prometheus:libpjsua2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-prometheus-any
 Section: net
 Category: Network
 Repository: base
 Title: Prometheus resource module support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5490,17 +5343,17 @@ Description: Prometheus resource module.
 
 Package: asterisk-res-realtime
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-realtime-any
 Section: net
 Category: Network
 Repository: base
 Title: RealTime CLI support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5511,17 +5364,17 @@ Description: Realtime data lookup/rewrite.
 
 Package: asterisk-res-remb-modifier
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-remb-modifier-any
 Section: net
 Category: Network
 Repository: base
 Title: REMB modifier support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5532,17 +5385,17 @@ Description: REMB modifier module.
 
 Package: asterisk-res-resolver-unbound
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-resolver-unbound:libunbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-resolver-unbound-any
 Section: net
 Category: Network
 Repository: base
 Title: Unbound DNS resolver support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5553,17 +5406,17 @@ Description: Unbound DNS resolver support.
 
 Package: asterisk-res-rtp-asterisk
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-rtp-asterisk:libpjsip +PACKAGE_asterisk-res-rtp-asterisk:libpjmedia +PACKAGE_asterisk-res-rtp-asterisk:libpjnath +PACKAGE_asterisk-res-rtp-asterisk:libpjsip-simple +PACKAGE_asterisk-res-rtp-asterisk:libpjsip-ua +PACKAGE_asterisk-res-rtp-asterisk:libpjsua +PACKAGE_asterisk-res-rtp-asterisk:libpjsua2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-rtp-asterisk-any
 Section: net
 Category: Network
 Repository: base
 Title: RTP stack support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5574,17 +5427,17 @@ Description: Asterisk RTP stack.
 
 Package: asterisk-res-rtp-multicast
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-rtp-multicast-any
 Section: net
 Category: Network
 Repository: base
 Title: RTP multicast engine support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5595,17 +5448,17 @@ Description: Multicast RTP engine.
 
 Package: asterisk-res-security-log
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-security-log-any
 Section: net
 Category: Network
 Repository: base
 Title: Security event logging support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5616,17 +5469,17 @@ Description: Security event logging.
 
 Package: asterisk-res-smdi
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-smdi-any
 Section: net
 Category: Network
 Repository: base
 Title: Provide SMDI support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5637,17 +5490,17 @@ Description: Simplified Message Desk Interface resource.
 
 Package: asterisk-res-snmp
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-snmp:libnetsnmp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-snmp-any
 Section: net
 Category: Network
 Repository: base
 Title: SNMP [Sub]Agent for Asterisk support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5658,17 +5511,17 @@ Description: SNMP agent for Asterisk.
 
 Package: asterisk-res-sorcery
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-sorcery-any
 Section: net
 Category: Network
 Repository: base
 Title: Sorcery data layer support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5680,17 +5533,17 @@ backend.
 
 Package: asterisk-res-sorcery-memory-cache
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-sorcery-memory-cache-any
 Section: net
 Category: Network
 Repository: base
 Title: Sorcery memory cache object wizard support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5701,17 +5554,17 @@ Description: Sorcery memory cache object wizard.
 
 Package: asterisk-res-speech
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-speech-any
 Section: net
 Category: Network
 Repository: base
 Title: Speech Recognition API support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5722,17 +5575,17 @@ Description: Generic speech recognition API.
 
 Package: asterisk-res-speech-aeap
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-speech-aeap:asterisk-res-aeap +PACKAGE_asterisk-res-speech-aeap:asterisk-res-speech
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-speech-aeap-any
 Section: net
 Category: Network
 Repository: base
 Title: AEAP Speech Engine support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5743,17 +5596,17 @@ Description: AEAP Speech Engine support.
 
 Package: asterisk-res-srtp
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-srtp:libsrtp2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-srtp-any
 Section: net
 Category: Network
 Repository: base
 Title: SRTP Support support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5764,17 +5617,17 @@ Description: Secure RTP.
 
 Package: asterisk-res-stasis
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-stasis-any
 Section: net
 Category: Network
 Repository: base
 Title: Stasis application support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5785,17 +5638,17 @@ Description: Stasis application support.
 
 Package: asterisk-res-stasis-answer
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-stasis-answer:asterisk-res-stasis
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-stasis-answer-any
 Section: net
 Category: Network
 Repository: base
 Title: Stasis application answer support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5806,17 +5659,17 @@ Description: Stasis application answer support.
 
 Package: asterisk-res-stasis-device-state
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-stasis-device-state:asterisk-res-stasis
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-stasis-device-state-any
 Section: net
 Category: Network
 Repository: base
 Title: Stasis application device state support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5827,17 +5680,17 @@ Description: Stasis application device state support.
 
 Package: asterisk-res-stasis-mailbox
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-stasis-mailbox:asterisk-res-stasis +PACKAGE_asterisk-res-stasis-mailbox:asterisk-res-mwi-external
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-stasis-mailbox-any
 Section: net
 Category: Network
 Repository: base
 Title: Stasis application mailbox support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5848,17 +5701,17 @@ Description: Stasis application mailbox support.
 
 Package: asterisk-res-stasis-playback
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-stasis-playback:asterisk-res-stasis-recording
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-stasis-playback-any
 Section: net
 Category: Network
 Repository: base
 Title: Stasis application playback support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5869,17 +5722,17 @@ Description: Stasis application playback support.
 
 Package: asterisk-res-stasis-recording
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-stasis-recording:asterisk-res-stasis
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-stasis-recording-any
 Section: net
 Category: Network
 Repository: base
 Title: Stasis application recording support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5890,17 +5743,17 @@ Description: Stasis application recording support.
 
 Package: asterisk-res-stasis-snoop
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-stasis-snoop:asterisk-res-stasis-recording
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-stasis-snoop-any
 Section: net
 Category: Network
 Repository: base
 Title: Stasis application snoop support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5911,17 +5764,17 @@ Description: Stasis application snoop support.
 
 Package: asterisk-res-statsd
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-statsd-any
 Section: net
 Category: Network
 Repository: base
 Title: statsd client support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5932,17 +5785,17 @@ Description: Statsd client support.
 
 Package: asterisk-res-stir-shaken
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-stir-shaken:asterisk-curl +PACKAGE_asterisk-res-stir-shaken:libjwt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-stir-shaken-any
 Section: net
 Category: Network
 Repository: base
 Title: STIR/SHAKEN resource module support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5953,17 +5806,17 @@ Description: STIR/SHAKEN resource module.
 
 Package: asterisk-res-stun-monitor
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-stun-monitor-any
 Section: net
 Category: Network
 Repository: base
 Title: STUN monitoring support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5974,17 +5827,17 @@ Description: STUN network monitor.
 
 Package: asterisk-res-timing-dahdi
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-timing-dahdi:asterisk-chan-dahdi
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-timing-dahdi-any
 Section: net
 Category: Network
 Repository: base
 Title: DAHDI Timing Interface support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -5995,17 +5848,17 @@ Description: DAHDI timing interface.
 
 Package: asterisk-res-timing-pthread
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-timing-pthread-any
 Section: net
 Category: Network
 Repository: base
 Title: pthread Timing Interface support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -6014,19 +5867,40 @@ Type: ipkg
 Description: pthread timing interface.
 @@
 
-Package: asterisk-res-tonedetect
+Package: asterisk-res-timing-timerfd
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-timing-timerfd-any
+Section: net
+Category: Network
+Repository: base
+Title: timerfd Timing Interface support
+Maintainer: Jiri Slachta <jiri@slachta.eu>
+Source: asterisk-23.1.0.tar.gz
+License: GPL-2.0
+LicenseFiles: COPYING LICENSE
+CPE-ID: cpe:/a:digium:asterisk
+URL: http://www.asterisk.org/
+Type: ipkg
+Description: timerfd timing interface.
+@@
+
+Package: asterisk-res-tonedetect
+Submenu: Telephony
+Version: 23.1.0-r1
+Depends: +libc asterisk
+Conflicts: 
+Menu-Depends: 
+Provides: @asterisk-res-tonedetect-any
 Section: net
 Category: Network
 Repository: base
 Title: Tone detection support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -6035,19 +5909,40 @@ Type: ipkg
 Description: Tone detection module.
 @@
 
+Package: asterisk-res-websocket-client
+Submenu: Telephony
+Version: 23.1.0-r1
+Depends: +libc asterisk
+Conflicts: 
+Menu-Depends: 
+Provides: @asterisk-res-websocket-client-any
+Section: net
+Category: Network
+Repository: base
+Title: WebSocket Client support
+Maintainer: Jiri Slachta <jiri@slachta.eu>
+Source: asterisk-23.1.0.tar.gz
+License: GPL-2.0
+LicenseFiles: COPYING LICENSE
+CPE-ID: cpe:/a:digium:asterisk
+URL: http://www.asterisk.org/
+Type: ipkg
+Description: WebSocket Client module.
+@@
+
 Package: asterisk-res-xmpp
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-res-xmpp:libiksemel +PACKAGE_asterisk-res-xmpp:libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-res-xmpp-any
 Section: net
 Category: Network
 Repository: base
 Title: XMPP client and component module support
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -6058,17 +5953,17 @@ Description: Asterisk XMPP interface.
 
 Package: asterisk-util-aelparse
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-util-aelparse:asterisk-pbx-ael
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-util-aelparse-any
 Section: net
 Category: Network
 Repository: base
 Title: aelparse utility
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -6079,17 +5974,17 @@ Description: Check extensions.ael file.
 
 Package: asterisk-util-astcanary
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-util-astcanary-any
 Section: net
 Category: Network
 Repository: base
 Title: astcanary utility
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -6098,61 +5993,19 @@ Type: ipkg
 Description: Assures Asterisk no threads have gone missing.
 @@
 
-Package: asterisk-util-astdb2sqlite3
-Submenu: Telephony
-Version: 20.8.1-r1
-Depends: +libc asterisk
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Repository: base
-Title: astdb2sqlite3 utility
-Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
-License: GPL-2.0
-LicenseFiles: COPYING LICENSE
-CPE-ID: cpe:/a:digium:asterisk
-URL: http://www.asterisk.org/
-Type: ipkg
-Description: Convert astdb to SQLite 3.
-@@
-
-Package: asterisk-util-astdb2bdb
-Submenu: Telephony
-Version: 20.8.1-r1
-Depends: +libc asterisk
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Repository: base
-Title: astdb2bdb utility
-Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
-License: GPL-2.0
-LicenseFiles: COPYING LICENSE
-CPE-ID: cpe:/a:digium:asterisk
-URL: http://www.asterisk.org/
-Type: ipkg
-Description: Convert astdb back to Berkeley DB 1.86.
-@@
-
 Package: asterisk-util-check-expr
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-util-check-expr-any
 Section: net
 Category: Network
 Repository: base
 Title: check_expr utility
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -6163,17 +6016,17 @@ Description: Expression checker [older version].
 
 Package: asterisk-util-check-expr2
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-util-check-expr2-any
 Section: net
 Category: Network
 Repository: base
 Title: check_expr2 utility
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -6184,17 +6037,17 @@ Description: Expression checker [newer version].
 
 Package: asterisk-util-smsq
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk +PACKAGE_asterisk-util-smsq:libpopt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-util-smsq-any
 Section: net
 Category: Network
 Repository: base
 Title: smsq utility
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -6205,17 +6058,17 @@ Description: Send messages from command line.
 
 Package: asterisk-util-stereorize
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-util-stereorize-any
 Section: net
 Category: Network
 Repository: base
 Title: stereorize utility
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk
@@ -6226,17 +6079,17 @@ Description: Merge two mono WAV-files to one stereo WAV-file.
 
 Package: asterisk-util-streamplayer
 Submenu: Telephony
-Version: 20.8.1-r1
+Version: 23.1.0-r1
 Depends: +libc asterisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-util-streamplayer-any
 Section: net
 Category: Network
 Repository: base
 Title: streamplayer utility
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: asterisk-20.8.1.tar.gz
+Source: asterisk-23.1.0.tar.gz
 License: GPL-2.0
 LicenseFiles: COPYING LICENSE
 CPE-ID: cpe:/a:digium:asterisk

@@ -1,16 +1,16 @@
 Source-Makefile: feeds/packages/libs/giflib/Makefile
 
 Package: giflib
-Version: 5.2.2-r1
+Version: 5.2.2-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @giflib-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: GIF libraries
-Maintainer: Ted Hess <thess@kitschensync.net>
+Maintainer: 
 Source: giflib-5.2.2.tar.gz
 License: MIT
 LicenseFiles: COPYING
@@ -23,16 +23,16 @@ Description:   giflib is a library for reading and writing gif images.
 @@
 
 Package: giflib-utils
-Version: 5.2.2-r1
+Version: 5.2.2-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @giflib-utils-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: GIF utilities
-Maintainer: Ted Hess <thess@kitschensync.net>
+Maintainer: 
 Source: giflib-5.2.2.tar.gz
 License: MIT
 LicenseFiles: COPYING

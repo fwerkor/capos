@@ -5,7 +5,7 @@ Version: 1.8.3-r1
 Depends: +libc +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libldns-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -29,7 +29,7 @@ Version: 1.8.3-r1
 Depends: +libc +libopenssl +libldns
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @drill-any
 Section: net
 Category: Network
 Repository: base
@@ -52,7 +52,7 @@ Version: 1.8.3-r1
 Depends: +libc +libopenssl +libldns +libpcap +drill
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ldns-examples-any
 Section: net
 Category: Network
 Repository: base

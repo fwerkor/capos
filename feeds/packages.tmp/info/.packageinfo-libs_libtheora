@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/libs/libtheora/Makefile
 Build-Depends: libvorbis
 
 Package: libtheora
-Version: 1.1.1-r1
+Version: 1.2.0-r1
 Depends: +libc +libogg
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libtheora-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: libtheora
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: libtheora-1.1.1.tar.bz2
+Source: libtheora-1.2.0.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING LICENSE
 URL: http://xiph.org/theora/

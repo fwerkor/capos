@@ -7,7 +7,7 @@ Version: 1.4.8-r1
 Depends: +libc +libnetfilter-conntrack +libnetfilter-cttimeout +libnetfilter-cthelper +libnetfilter-queue
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @conntrack-any
 Section: net
 Category: Network
 Repository: base
@@ -30,7 +30,7 @@ Version: 1.4.8-r1
 Depends: +libc +libnetfilter-conntrack +libnetfilter-cttimeout +libnetfilter-cthelper +libnetfilter-queue
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @conntrackd-any
 Section: net
 Category: Network
 Repository: base

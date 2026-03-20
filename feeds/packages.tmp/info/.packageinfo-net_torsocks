@@ -6,7 +6,7 @@ Version: 2.3.0-r1
 Depends: +libc +tor
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @torsocks-any
 Section: net
 Category: Network
 Repository: base

@@ -1,0 +1,44 @@
+Source-Makefile: feeds/video/libs/sdl2/Makefile
+
+Package: libsdl2
+Version: 2.32.8-r1
+Depends: +libc +libstdcpp +alsa-lib +libudev-zero +pulseaudio +libmesa +libsamplerate +libwayland +wayland-protocols
+Conflicts: 
+Menu-Depends: 
+Provides: @libsdl2-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: Simple DirectMedia Layer
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: SDL2-2.32.8.tar.gz
+License: BSD-3c
+LicenseFiles: COPYING LICENSE
+URL: https://www.libsdl.org
+Type: ipkg
+Description:  Simple DirectMedia Layer is a cross-platform development library designed to
+ provide low level access to audio, keyboard, mouse, joystick, and graphics
+ hardware via OpenGL and Direct3D.
+@@
+
+Package: libsdl2-tests
+Submenu: Video
+Version: 2.32.8-r1
+Depends: +libc +libsdl2
+Conflicts: 
+Menu-Depends: 
+Provides: @libsdl2-tests-any
+Section: utils
+Category: Utilities
+Repository: base
+Title: SDL installed tests
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: SDL2-2.32.8.tar.gz
+License: BSD-3c
+LicenseFiles: COPYING LICENSE
+URL: https://www.libsdl.org
+Type: ipkg
+Description:  Various test programs to validate SDL is working correctly, and some benchmarks.
+@@
+
+

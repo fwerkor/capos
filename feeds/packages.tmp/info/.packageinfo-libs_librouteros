@@ -5,7 +5,7 @@ Version: 2018.07.19~c485c777ffbbbd87c3d72d843af36ba016803cae-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @librouteros-any
 Section: libs
 Category: Libraries
 Repository: base

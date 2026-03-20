@@ -5,7 +5,7 @@ Version: 2.0.3-r1
 Depends: +libc +USE_MUSL:musl-fts +@KERNEL_CGROUPS
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libcgroup-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -24,7 +24,7 @@ Version: 2.0.3-r1
 Depends: +libc +libcgroup
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @cgroup-tools-any
 Section: opt
 Category: Utilities
 Repository: base

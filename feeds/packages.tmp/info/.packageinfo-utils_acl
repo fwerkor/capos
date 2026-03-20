@@ -6,7 +6,7 @@ Version: 2.3.2-r2
 Depends: +libc +libacl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @acl-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -31,7 +31,7 @@ Version: 2.3.2-r2
 Depends: +libc +libattr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libacl-any
 Section: libs
 Category: Libraries
 Repository: base

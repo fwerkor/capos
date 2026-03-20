@@ -30,22 +30,22 @@ var pkg = {
 			pkg.Name +
 			"/" +
 			(pkg.ReadmeCompat ? pkg.ReadmeCompat + "/" : "") +
-			"#Donate"
+			"#donate"
 		);
 	},
 	templateToRegexp: function (template) {
 		if (template)
 			return new RegExp(
 				"^" +
-					template
-						.split(/(\{\w+\})/g)
-						.map((part) => {
-							let placeholder = part.match(/^\{(\w+)\}$/);
-							if (placeholder) return `(?<${placeholder[1]}>.*?)`;
-							else return part.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-						})
-						.join("") +
-					"$"
+				template
+					.split(/(\{\w+\})/g)
+					.map((part) => {
+						let placeholder = part.match(/^\{(\w+)\}$/);
+						if (placeholder) return `(?<${placeholder[1]}>.*?)`;
+						else return part.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+					})
+					.join("") +
+				"$"
 			);
 		return new RegExp("");
 	},
@@ -79,10 +79,10 @@ const getProviders = rpc.declare({
 	params: ["name"],
 });
 
-const getRuntime = rpc.declare({
-	object: "luci." + pkg.Name,
-	method: "getRuntime",
-	params: ["name"],
+const getServiceInfo = rpc.declare({
+	object: "service",
+	method: "list",
+	params: ["name", "verbose"],
 });
 
 const _setInitAction = rpc.declare({
@@ -138,10 +138,10 @@ var RPC = {
 			}.bind(this)
 		);
 	},
-	getRuntime: function (name) {
-		getRuntime(name).then(
+	getServiceInfo: function (name, verbose) {
+		getServiceInfo(name, verbose).then(
 			function (result) {
-				this.emit("getRuntime", result);
+				this.emit("getServiceInfo", result);
 			}.bind(this)
 		);
 	},
@@ -159,7 +159,7 @@ var status = baseclass.extend({
 		return Promise.all([
 			L.resolveDefault(getInitStatus(pkg.Name), {}),
 			L.resolveDefault(getProviders(pkg.Name), {}),
-			L.resolveDefault(getRuntime(pkg.Name), {}),
+			L.resolveDefault(getServiceInfo(pkg.Name, true), {}),
 		]).then(function (data) {
 			var text;
 			var reply = {
@@ -170,9 +170,8 @@ var status = baseclass.extend({
 					version: null,
 				},
 				providers: (data[1] && data[1][pkg.Name]) || [{ title: "empty" }],
-				runtime: (data[2] && data[2][pkg.Name]) || {
-					instances: null,
-					triggers: [],
+				ubus: (data[2] && data[2][pkg.Name]) || {
+					instances: {},
 				},
 			};
 			reply.providers.sort(function (a, b) {
@@ -187,7 +186,7 @@ var status = baseclass.extend({
 			var header = E("h2", {}, _("HTTPS DNS Proxy - Status"));
 			var statusTitle = E(
 				"label",
-				{ class: "cbi-value-title" },
+				{ class: "cbi-value-title", for: pkg.Name + "-status" },
 				_("Service Status")
 			);
 			if (reply.status.version) {
@@ -212,7 +211,7 @@ var status = baseclass.extend({
 			} else {
 				text = _("Not installed or not found");
 			}
-			var statusText = E("div", { class: "cbi-value-description" }, text);
+			var statusText = E("output", { id: pkg.Name + "-status", class: "cbi-value-description" }, text);
 			var statusField = E("div", { class: "cbi-value-field" }, statusText);
 			var statusDiv = E("div", { class: "cbi-value" }, [
 				statusTitle,
@@ -220,22 +219,22 @@ var status = baseclass.extend({
 			]);
 
 			var instancesDiv = [];
-			if (reply.runtime.instances) {
+			if (reply.ubus.instances && Object.keys(reply.ubus.instances).length > 0) {
 				var instancesTitle = E(
 					"label",
-					{ class: "cbi-value-title" },
+					{ class: "cbi-value-title", for: pkg.Name + "-instances" },
 					_("Service Instances")
 				);
 				text = _("See the %sREADME%s for details.").format(
 					'<a href="' +
-						pkg.URL +
-						'#a-word-about-default-routing " target="_blank">',
+					pkg.URL +
+					'#a-word-about-default-routing " target="_blank">',
 					"</a>"
 				);
 				var instancesDescr = E("div", { class: "cbi-value-description" }, "");
 
 				text = "";
-				Object.values(reply.runtime.instances).forEach((element) => {
+				Object.values(reply.ubus.instances).forEach((element) => {
 					var resolver;
 					var address;
 					var port;
@@ -296,7 +295,7 @@ var status = baseclass.extend({
 						"<a href='" + pkg.DonateURL + "' target='_blank'>",
 						"</a>"
 					);
-				var instancesText = E("div", { class: "cbi-value-description" }, text);
+				var instancesText = E("output", { id: pkg.Name + "-instances", class: "cbi-value-description" }, text);
 				var instancesField = E("div", { class: "cbi-value-field" }, [
 					instancesText,
 					instancesDescr,
@@ -430,10 +429,10 @@ var status = baseclass.extend({
 
 			var buttonsTitle = E(
 				"label",
-				{ class: "cbi-value-title" },
+				{ class: "cbi-value-title", for: pkg.Name + "-buttons" },
 				_("Service Control")
 			);
-			var buttonsText = E("div", {}, [
+			var buttonsText = E("output", { id: pkg.Name + "-buttons" }, [
 				btn_start,
 				btn_gap,
 				btn_action,
@@ -464,5 +463,5 @@ return L.Class.extend({
 	getInitStatus: getInitStatus,
 	getPlatformSupport: getPlatformSupport,
 	getProviders: getProviders,
-	getRuntime: getRuntime,
+	getServiceInfo: getServiceInfo,
 });

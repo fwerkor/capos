@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/net/openfortivpn/Makefile
 
 Package: openfortivpn
 Submenu: VPN
-Version: 1.22.1-r1
+Version: 1.23.1-r1
 Depends: +libc +ppp +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @openfortivpn-any
 Section: net
 Category: Network
 Repository: base
 Title: Fortinet SSL VPN client
 Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
-Source: openfortivpn-1.22.1.tar.gz
+Source: openfortivpn-1.23.1.tar.gz
 License: GPL-3.0-or-later OpenSSL
 LicenseFiles: LICENSE LICENSE.OpenSSL
 URL: https://github.com/adrienverge/openfortivpn

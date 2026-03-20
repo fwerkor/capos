@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/lang/lua/lua-openssl/Makefile
+
+Package: lua-openssl
+Submenu: Lua
+Version: 0.10.0.0-r1
+Depends: +libc +lua +libopenssl +librt
+Conflicts: 
+Menu-Depends: 
+Provides: @lua-openssl-any
+Section: lang
+Category: Languages
+Repository: base
+Title: Lua openSSL binding
+Maintainer: Amnon Paz <pazamnon@gmail.com>
+Source: lua-openssl-0.10.0.0.tar.zst
+License: MIT
+LicenseFiles: LICENSE
+URL: http://github.com/zhaozg/lua-openssl
+Type: ipkg
+Description:     A free, MIT-licensed OpenSSL binding for Lua.
+@@
+
+

@@ -6,7 +6,7 @@ Version: <LINUX_VERSION>.1.2-r4
 Depends: @(!(TARGET_ps3||TARGET_pxcab))
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kmod-siit-any
 Section: kernel
 Category: Kernel modules
 Title: Stateless IP ICMP Translation Algorithm

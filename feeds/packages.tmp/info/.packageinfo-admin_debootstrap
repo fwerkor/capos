@@ -5,7 +5,7 @@ Version: 1.0.128.2~deb121-r2
 Depends: +libc +coreutils +coreutils-chroot +coreutils-sha1sum +ar +xz-utils +xz
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @debootstrap-any
 Section: admin
 Category: Administration
 Repository: base

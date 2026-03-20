@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/admin/muninlite/Makefile
 
 Package: muninlite
-Version: 2.1.2-r1
+Version: 2.1.2-r3
 Depends: +libc +xinetd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @muninlite-any
 Section: admin
 Category: Administration
 Repository: base

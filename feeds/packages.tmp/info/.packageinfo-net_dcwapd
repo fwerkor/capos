@@ -6,7 +6,7 @@ Version: 1.1.0-r6
 Depends: +libc +libstdcpp +kmod-macremapper +libdcwsocket +libdcwproto +mrmctl +libuci
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dcwapd-any
 Section: net
 Category: Network
 Repository: base

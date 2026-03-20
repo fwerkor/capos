@@ -5,7 +5,7 @@ Version: 1.6.3-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libkeyutils-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -27,7 +27,7 @@ Version: 1.6.3-r2
 Depends: +libc +libkeyutils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @keyutils-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -47,7 +47,7 @@ Version: 1.6.3-r2
 Depends: +libc +libkeyutils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @keyctl-any
 Section: utils
 Category: Utilities
 Repository: base

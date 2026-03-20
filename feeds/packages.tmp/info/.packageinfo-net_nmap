@@ -1,4 +1,5 @@
 Source-Makefile: feeds/packages/net/nmap/Makefile
+Build-Depends: python-setuptools/host
 
 Package: nmap
 Submenu: NMAP Suite
@@ -6,7 +7,7 @@ Version: 7.95-r1
 Depends: +libc +libpcap +libstdcpp +zlib +libpcre2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nmap-any
 Build-Variant: nossl
 Section: net
 Category: Network
@@ -28,7 +29,7 @@ Version: 7.95-r1
 Depends: +libc +libpcap +libstdcpp +zlib +libpcre2 +libopenssl +ca-certs
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nmap-ssl-any
 Build-Variant: ssl
 Section: net
 Category: Network
@@ -50,7 +51,7 @@ Version: 7.95-r1
 Depends: +libc +libpcap +libstdcpp +zlib +libpcre2 +libopenssl +ca-certs +liblua5.4 +libssh2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nmap-full-any
 Build-Variant: full
 Section: net
 Category: Network
@@ -72,7 +73,7 @@ Version: 7.95-r1
 Depends: +libc +libpcap
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ncat-any
 Build-Variant: nossl
 Section: net
 Category: Network
@@ -94,7 +95,7 @@ Version: 7.95-r1
 Depends: +libc +libpcap +libopenssl +ca-certs
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ncat-ssl-any
 Build-Variant: ssl
 Section: net
 Category: Network
@@ -116,7 +117,7 @@ Version: 7.95-r1
 Depends: +libc +libpcap +libopenssl +ca-certs +liblua5.4
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ncat-full-any
 Build-Variant: full
 Section: net
 Category: Network
@@ -138,7 +139,7 @@ Version: 7.95-r1
 Depends: +libc +libpcap +libpthread +libstdcpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nping-any
 Build-Variant: nossl
 Section: net
 Category: Network
@@ -160,7 +161,7 @@ Version: 7.95-r1
 Depends: +libc +libpcap +libpthread +libstdcpp +libopenssl +ca-certs
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nping-ssl-any
 Build-Variant: ssl
 Section: net
 Category: Network
@@ -182,7 +183,7 @@ Version: 7.95-r1
 Depends: +libc +python3-light +python3-xml
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ndiff-any
 Section: net
 Category: Network
 Repository: base
@@ -203,7 +204,7 @@ Version: 7.95-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ndiff-src-any
 Section: net
 Category: Network
 Repository: base

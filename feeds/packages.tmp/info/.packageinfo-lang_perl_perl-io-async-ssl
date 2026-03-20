@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/perl/perl-io-async-ssl/Makefile
+
+Package: perl-io-async-ssl
+Submenu: Perl
+Version: 0.25.5.40-r1
+Depends: +libc perl +perlbase-io +perl-future +perl-io-async
+Conflicts: 
+Menu-Depends: 
+Provides: @perl-io-async-ssl-any
+Section: lang
+Category: Languages
+Repository: base
+Title: SSL/TLS with IO::Async
+Maintainer: Jens Wagner <jens@wagner2013.de>
+Source: IO-Async-SSL-0.25.tar.gz
+License: GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE
+URL: https://metacpan.org/pod/IO::Async::SSL
+Type: ipkg
+Description:   This module extends existing IO::Async classes with extra methods to
+  allow the use of SSL or TLS-based connections using IO::Socket::SSL.
+@@
+
+

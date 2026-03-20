@@ -6,7 +6,7 @@ Version: 0.13.0-r1
 Depends: +libc +python3-light +python3-xml
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-xmltodict-any
 Section: lang
 Category: Languages
 Repository: base
@@ -27,7 +27,7 @@ Version: 0.13.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-xmltodict-src-any
 Section: lang
 Category: Languages
 Repository: base

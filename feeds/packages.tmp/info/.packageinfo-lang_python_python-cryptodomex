@@ -6,7 +6,7 @@ Version: 3.18.0-r1
 Depends: +libc +libgmp +python3-light +python3-cffi
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-cryptodomex-any
 Section: lang
 Category: Languages
 Repository: base
@@ -28,7 +28,7 @@ Version: 3.18.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-cryptodomex-src-any
 Section: lang
 Category: Languages
 Repository: base

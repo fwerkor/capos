@@ -6,15 +6,16 @@ Version: 1.13.17-r2
 Depends: +libc +libopenssl +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @sofia-sip-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Sofia-SIP open-source SIP User-Agent library
-Maintainer: Sebastian Kemper <sebastian_ml@gmx.net>
+Maintainer: 
 Source: sofia-sip-1.13.17.tar.gz
 License: LGPL-2.1+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:signalwire:sofia-sip
 URL: http://sofia-sip.sourceforge.net/index.html
 ABI-Version: 0
 Type: ipkg

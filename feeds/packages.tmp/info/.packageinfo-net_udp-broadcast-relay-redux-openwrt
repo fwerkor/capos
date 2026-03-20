@@ -6,7 +6,7 @@ Version: 2021.04.05~671372938b55a186625a80516f86e8b9948c977a-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @udp-broadcast-relay-redux-any
 Section: net
 Category: Network
 Repository: base

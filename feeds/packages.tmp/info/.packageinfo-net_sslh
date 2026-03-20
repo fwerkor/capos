@@ -6,7 +6,7 @@ Version: 2.1.2-r1
 Depends: +libc +libconfig +libcap +libpcre2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @sslh-any
 Section: net
 Category: Network
 Repository: base

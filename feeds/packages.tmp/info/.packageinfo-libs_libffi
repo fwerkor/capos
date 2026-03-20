@@ -6,7 +6,7 @@ Version: 3.4.7-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libffi-any
 Section: libs
 Category: Libraries
 Repository: base

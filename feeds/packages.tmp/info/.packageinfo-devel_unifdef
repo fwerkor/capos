@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/devel/unifdef/Makefile
+Build-Types: host
+
+Package: unifdef
+Version: 2.12-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @unifdef-any
+Section: devel
+Category: Development
+Repository: base
+Title: selectively remove C preprocessor conditionals
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: unifdef-2.12.tar.gz
+License: BSD-2-clause
+URL: https://dotat.at/prog/unifdef
+Type: ipkg
+Build-Only: 1
+Description:  The unifdef utility selectively processes conditional C preprocessor #if and
+ #ifdef directives. It removes from a file both the directives and the
+ additional text that they delimit, while otherwise leaving the file alone.
+@@
+
+

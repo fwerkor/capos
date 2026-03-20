@@ -6,7 +6,7 @@ Version: 2.1.0-r1
 Depends: +libc +kmod-usb-acm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @sx1302_hal-tests-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -25,7 +25,7 @@ Version: 2.1.0-r1
 Depends: +libc +kmod-usb-acm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @sx1302_hal-utils-any
 Section: libs
 Category: Libraries
 Repository: base

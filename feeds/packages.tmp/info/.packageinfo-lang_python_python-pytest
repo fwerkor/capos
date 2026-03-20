@@ -7,7 +7,7 @@ Version: 7.4.0-r1
 Depends: +libc +python3 +python3-iniconfig +python3-packaging +python3-pluggy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pytest-any
 Section: lang
 Category: Languages
 Repository: base
@@ -28,7 +28,7 @@ Version: 7.4.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pytest-src-any
 Section: lang
 Category: Languages
 Repository: base

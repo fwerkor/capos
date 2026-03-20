@@ -2,38 +2,61 @@
 # Copyright (C) 2017 OpenWrt.org
 
 START=92
-
 USE_PROCD=1
+PROG=/usr/bin/baresip
+ACCOUNTS=
 
-#PROCD_DEBUG=1
+add_account()
+{
+	local user password server transport append ignore mediaenc
+	local acc
 
-DAEMON=baresip
-DEFAULT=/etc/default/$DAEMON
-LOGGER="/usr/bin/logger -p user.err -s -t $DAEMON"
-OPTIONS=
-PROG=/usr/bin/$DAEMON
+	uci_validate_section baresip account "${1}" \
+		'ignore:bool:0' \
+		'user:string' \
+		'password:string' \
+		'server:string' \
+		'transport:string:udp' \
+		'mediaenc:string' \
+		'append:string'
 
-[ -f $DEFAULT ] && . $DEFAULT
+	[ "$ignore" = "0" ] || return
 
-start_service() {
-  local dir=
+	acc="<sip:${user}@${server};transport=${transport}>"
+	[ -n "$mediaenc" ] && acc="${acc};mediaenc=${mediaenc}"
+	[ -n "$password" ] && acc="${acc};auth_pass=${password}"
+	[ -n "$append" ] && acc="${acc};${append}"
 
-  if [ "$ENABLE_BARESIP" != yes ]; then
-    $LOGGER User configuration incomplete - not starting $DAEMON
-    $LOGGER Check ENABLE_BARESIP in $DEFAULT
-    return 1
-  fi
+	ACCOUNTS="${ACCOUNTS}${acc}\n"
+}
 
-  procd_open_instance
-  procd_set_param command $PROG
-  procd_append_param command \
-    -f /etc/$DAEMON \
-    $OPTIONS
-  procd_set_param pidfile /var/run/${DAEMON}.pid
-  # forward stderr to logd
-  procd_set_param stderr 1
-  # forward stdout to logd
-  #procd_set_param stdout 1
-  procd_set_param user $DAEMON
-  procd_close_instance
+start_service()
+{
+	local enable options
+
+	uci_validate_section baresip baresip main \
+		'enable:bool:0' \
+		'options:string'
+
+	[ "$enable" = "0" ] && return
+
+	config_load baresip
+	config_foreach add_account account
+	printf "$ACCOUNTS" > /etc/baresip/accounts
+
+	procd_open_instance
+	procd_set_param command $PROG -f /etc/baresip $options
+	procd_set_param user baresip
+	procd_set_param respawn
+	procd_close_instance
+}
+
+service_triggers()
+{
+	procd_add_reload_trigger baresip
+}
+
+reload_service()
+{
+	/etc/init.d/baresip restart
 }

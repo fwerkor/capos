@@ -3,11 +3,11 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 
 Package: luci-app-privoxy
 Submenu: 3. Applications
-Version: 1.0.6-r2
-Depends: +libc +luci-compat +luci-lib-ipkg +luci-base +privoxy +luci-lua-runtime
+Version: x
+Depends: +libc +luci-base +privoxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-privoxy-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -23,46 +23,6 @@ Config:
 # shown in make menuconfig <Help>
 help
 	LuCI Support for Privoxy WEB proxy
-	.
-	Version: 1.0.6-2
-@@
-
-Package: luci-i18n-privoxy-ar
-Default: LUCI_LANG_ar||(ALL&&m)
-Version: x
-Depends: +libc luci-app-privoxy
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-privoxy - ar translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
-Source: 
-License: Apache-2.0
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-privoxy - العربية (Arabic)
-@@
-
-Package: luci-i18n-privoxy-bg
-Default: LUCI_LANG_bg||(ALL&&m)
-Version: x
-Depends: +libc luci-app-privoxy
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-privoxy - bg translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
-Source: 
-License: Apache-2.0
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-privoxy - български (Bulgarian)
 @@
 
 Package: luci-i18n-privoxy-bn
@@ -71,36 +31,17 @@ Version: x
 Depends: +libc luci-app-privoxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-privoxy-bn-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-privoxy - bn translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-privoxy - বাংলা (Bengali)
-@@
-
-Package: luci-i18n-privoxy-ca
-Default: LUCI_LANG_ca||(ALL&&m)
-Version: x
-Depends: +libc luci-app-privoxy
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-privoxy - ca translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
-Source: 
-License: Apache-2.0
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-privoxy - Català (Catalan)
 @@
 
 Package: luci-i18n-privoxy-cs
@@ -109,36 +50,17 @@ Version: x
 Depends: +libc luci-app-privoxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-privoxy-cs-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-privoxy - cs translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-privoxy - Čeština (Czech)
-@@
-
-Package: luci-i18n-privoxy-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc luci-app-privoxy
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-privoxy - da translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
-Source: 
-License: Apache-2.0
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-privoxy - Dansk (Danish)
 @@
 
 Package: luci-i18n-privoxy-de
@@ -147,36 +69,17 @@ Version: x
 Depends: +libc luci-app-privoxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-privoxy-de-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-privoxy - de translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-privoxy - Deutsch (German)
-@@
-
-Package: luci-i18n-privoxy-el
-Default: LUCI_LANG_el||(ALL&&m)
-Version: x
-Depends: +libc luci-app-privoxy
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-privoxy - el translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
-Source: 
-License: Apache-2.0
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-privoxy - Ελληνικά (Greek)
 @@
 
 Package: luci-i18n-privoxy-es
@@ -185,36 +88,17 @@ Version: x
 Depends: +libc luci-app-privoxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-privoxy-es-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-privoxy - es translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-privoxy - Español (Spanish)
-@@
-
-Package: luci-i18n-privoxy-fi
-Default: LUCI_LANG_fi||(ALL&&m)
-Version: x
-Depends: +libc luci-app-privoxy
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-privoxy - fi translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
-Source: 
-License: Apache-2.0
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-privoxy - Suomi (Finnish)
 @@
 
 Package: luci-i18n-privoxy-fr
@@ -223,12 +107,12 @@ Version: x
 Depends: +libc luci-app-privoxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-privoxy-fr-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-privoxy - fr translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -242,36 +126,17 @@ Version: x
 Depends: +libc luci-app-privoxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-privoxy-ga-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-privoxy - ga translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-privoxy - Gaeilge (Irish)
-@@
-
-Package: luci-i18n-privoxy-he
-Default: LUCI_LANG_he||(ALL&&m)
-Version: x
-Depends: +libc luci-app-privoxy
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-privoxy - he translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
-Source: 
-License: Apache-2.0
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-privoxy - עִבְרִית (Hebrew)
 @@
 
 Package: luci-i18n-privoxy-hi
@@ -280,12 +145,12 @@ Version: x
 Depends: +libc luci-app-privoxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-privoxy-hi-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-privoxy - hi translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -299,12 +164,12 @@ Version: x
 Depends: +libc luci-app-privoxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-privoxy-hu-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-privoxy - hu translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -318,12 +183,12 @@ Version: x
 Depends: +libc luci-app-privoxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-privoxy-it-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-privoxy - it translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -337,36 +202,17 @@ Version: x
 Depends: +libc luci-app-privoxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-privoxy-ja-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-privoxy - ja translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-privoxy - 日本語 (Japanese)
-@@
-
-Package: luci-i18n-privoxy-ko
-Default: LUCI_LANG_ko||(ALL&&m)
-Version: x
-Depends: +libc luci-app-privoxy
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-privoxy - ko translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
-Source: 
-License: Apache-2.0
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-privoxy - 한국어 (Korean)
 @@
 
 Package: luci-i18n-privoxy-lt
@@ -375,74 +221,17 @@ Version: x
 Depends: +libc luci-app-privoxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-privoxy-lt-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-privoxy - lt translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-privoxy - Lietuvių (Lithuanian)
-@@
-
-Package: luci-i18n-privoxy-mr
-Default: LUCI_LANG_mr||(ALL&&m)
-Version: x
-Depends: +libc luci-app-privoxy
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-privoxy - mr translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
-Source: 
-License: Apache-2.0
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-privoxy - Marāṭhī (Marathi)
-@@
-
-Package: luci-i18n-privoxy-ms
-Default: LUCI_LANG_ms||(ALL&&m)
-Version: x
-Depends: +libc luci-app-privoxy
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-privoxy - ms translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
-Source: 
-License: Apache-2.0
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-privoxy - Bahasa Melayu (Malay)
-@@
-
-Package: luci-i18n-privoxy-no
-Default: LUCI_LANG_nb_NO||(ALL&&m)
-Version: x
-Depends: +libc luci-app-privoxy
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-privoxy - no translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
-Source: 
-License: Apache-2.0
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-privoxy - Norsk (Norwegian)
 @@
 
 Package: luci-i18n-privoxy-nl
@@ -451,12 +240,12 @@ Version: x
 Depends: +libc luci-app-privoxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-privoxy-nl-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-privoxy - nl translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -470,12 +259,12 @@ Version: x
 Depends: +libc luci-app-privoxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-privoxy-pl-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-privoxy - pl translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -489,12 +278,12 @@ Version: x
 Depends: +libc luci-app-privoxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-privoxy-pt-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-privoxy - pt translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -508,12 +297,12 @@ Version: x
 Depends: +libc luci-app-privoxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-privoxy-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-privoxy - pt-br translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -527,12 +316,12 @@ Version: x
 Depends: +libc luci-app-privoxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-privoxy-ro-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-privoxy - ro translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -546,36 +335,17 @@ Version: x
 Depends: +libc luci-app-privoxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-privoxy-ru-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-privoxy - ru translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-privoxy - Русский (Russian)
-@@
-
-Package: luci-i18n-privoxy-sk
-Default: LUCI_LANG_sk||(ALL&&m)
-Version: x
-Depends: +libc luci-app-privoxy
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-privoxy - sk translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
-Source: 
-License: Apache-2.0
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-privoxy - Slovenčina (Slovak)
 @@
 
 Package: luci-i18n-privoxy-sv
@@ -584,17 +354,36 @@ Version: x
 Depends: +libc luci-app-privoxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-privoxy-sv-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-privoxy - sv translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-privoxy - Svenska (Swedish)
+@@
+
+Package: luci-i18n-privoxy-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-privoxy
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-privoxy-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-privoxy - ta translation
+Maintainer: Paul Donald <newtwen+github@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-privoxy - Tamil (Tamil)
 @@
 
 Package: luci-i18n-privoxy-tr
@@ -603,12 +392,12 @@ Version: x
 Depends: +libc luci-app-privoxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-privoxy-tr-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-privoxy - tr translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -622,12 +411,12 @@ Version: x
 Depends: +libc luci-app-privoxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-privoxy-uk-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-privoxy - uk translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -641,12 +430,12 @@ Version: x
 Depends: +libc luci-app-privoxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-privoxy-vi-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-privoxy - vi translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -660,12 +449,12 @@ Version: x
 Depends: +libc luci-app-privoxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-privoxy-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-privoxy - zh-cn translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -679,12 +468,12 @@ Version: x
 Depends: +libc luci-app-privoxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-privoxy-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-privoxy - zh-tw translation
-Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Maintainer: Paul Donald <newtwen+github@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg

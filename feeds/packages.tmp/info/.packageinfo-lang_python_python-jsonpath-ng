@@ -6,7 +6,7 @@ Version: 1.5.3-r1
 Depends: +libc +python3-light +python3-logging +python3-ply +python3-six +python3-decorator
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-jsonpath-ng-any
 Section: lang
 Category: Languages
 Repository: base
@@ -32,7 +32,7 @@ Version: 1.5.3-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-jsonpath-ng-src-any
 Section: lang
 Category: Languages
 Repository: base

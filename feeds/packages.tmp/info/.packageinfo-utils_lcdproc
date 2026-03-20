@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/utils/lcdproc/Makefile
 
 Package: lcdproc-clients
-Version: 0.5.9-r8
+Version: 0.5.9-r9
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lcdproc-clients-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -28,11 +28,11 @@ project:
 @@
 
 Package: lcdproc-server
-Version: 0.5.9-r8
+Version: 0.5.9-r9
 Depends: +libc +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lcdproc-server-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -56,11 +56,11 @@ serialPOS serialVFD sli SureElec text tyan vlsys_m428 yard2LCD
 @@
 
 Package: lcdproc-drivers
-Version: 0.5.9-r8
+Version: 0.5.9-r9
 Depends: +libc +lcdproc-server +libncurses +libusb-1.0 +libusb-compat +libftdi1 +GPIO_SUPPORT:libugpio +serdisplib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lcdproc-drivers-any
 Section: utils
 Category: Utilities
 Repository: base

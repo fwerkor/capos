@@ -6,7 +6,7 @@ Version: 0.18.16-r1
 Depends: +libc +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-ruamel-yaml-any
 Section: lang
 Category: Languages
 Repository: base
@@ -28,7 +28,7 @@ Version: 0.18.16-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-ruamel-yaml-src-any
 Section: lang
 Category: Languages
 Repository: base

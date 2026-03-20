@@ -1,19 +1,19 @@
 Source-Makefile: feeds/packages/lang/python/python-pynacl/Makefile
-Build-Depends: libffi/host python-cffi/host  
+Build-Depends: python3/host python-setuptools/host libffi/host python-cffi/host  
 
 Package: python3-pynacl
 Submenu: Python
-Version: 1.5.0-r3
-Depends: +libc +libsodium +python3-light +python3-cffi +python3-six
+Version: 1.6.1-r1
+Depends: +libc +libsodium +python3-light +python3-cffi
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pynacl-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Python binding to the libsodium library
 Maintainer: Javier Marcet <javier@marcet.info>
-Source: PyNaCl-1.5.0.tar.gz
+Source: pynacl-1.6.1.tar.gz
 License: Apache-2.0
 LicenseFiles: LICENSE
 URL: https://github.com/pyca/pynacl/
@@ -23,17 +23,17 @@ Description:   PyNaCl is a Python binding to libsodium, which is a fork of the N
 
 Package: python3-pynacl-src
 Submenu: Python
-Version: 1.5.0-r3
+Version: 1.6.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pynacl-src-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Python binding to the libsodium library (sources)
 Maintainer: Javier Marcet <javier@marcet.info>
-Source: PyNaCl-1.5.0.tar.gz
+Source: pynacl-1.6.1.tar.gz
 License: Apache-2.0
 LicenseFiles: LICENSE
 URL: https://github.com/pyca/pynacl/

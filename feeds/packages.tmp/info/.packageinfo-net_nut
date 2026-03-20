@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/net/nut/Makefile
 
 Package: nut
 Menu: 1
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-any
 Section: net
 Category: Network
 Repository: base
 Title: Network UPS Tools (NUT)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -28,17 +28,17 @@ Config:
 @@
 
 Package: nut-common
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +NUT_DRIVER_SNMP:libnetsnmp +NUT_DRIVER_USB:libusb-compat +NUT_DRIVER_NEON:libneon +NUT_SSL:libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-common-any
 Section: net
 Category: Network
 Repository: base
 Title: Network UPS Tools (NUT) (common)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -52,18 +52,18 @@ This package contains the common files.
 @@
 
 Package: nut-server
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-server-any
 Section: net
 Category: Network
 Repository: base
 Title: Network UPS Tools (NUT) (server)
 Maintainer: 
 Require-User: nut=113:nut=113
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -81,18 +81,18 @@ all times to actually make any use out of the drivers and clients.
 @@
 
 Package: nut-upsmon
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-upsmon-any
 Section: net
 Category: Network
 Repository: base
 Title: Network UPS Tools (NUT) (monitor)
 Maintainer: 
 Require-User: nutmon=114:nutmon=114
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -111,17 +111,17 @@ is assigned a power value and a type (slave or master).
 @@
 
 Package: nut-upsmon-sendmail-notify
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-upsmon
 Conflicts: nut-upssched
 Menu-Depends: 
-Provides: 
+Provides: @nut-upsmon-sendmail-notify-any
 Section: net
 Category: Network
 Repository: base
 Title: Network UPS Tools (NUT) (upsmon with notifications via sendmail)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -135,17 +135,17 @@ upsmon with default notification via sendmail
 @@
 
 Package: nut-upsc
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-upsc-any
 Section: net
 Category: Network
 Repository: base
 Title: Network UPS Tools (NUT) (upsc command)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -161,17 +161,17 @@ but do not want to include the full interface.
 @@
 
 Package: nut-upscmd
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-upscmd-any
 Section: net
 Category: Network
 Repository: base
 Title: Network UPS Tools (NUT) (controller)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -189,17 +189,17 @@ this program to start and stop battery tests, invoke a front panel test
 @@
 
 Package: nut-upslog
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-upslog-any
 Section: net
 Category: Network
 Repository: base
 Title: Network UPS Tools (NUT) (logging client)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -214,17 +214,17 @@ variables that interest you, format them, and write them to a file.
 @@
 
 Package: nut-upsrw
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-upsrw-any
 Section: net
 Category: Network
 Repository: base
 Title: Network UPS Tools (NUT) (variable editor)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -243,17 +243,17 @@ support any of them.
 @@
 
 Package: nut-upssched
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-common +nut-upsmon
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-upssched-any
 Section: net
 Category: Network
 Repository: base
 Title: Network UPS Tools (NUT) (helper for triggering events from upsmon)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -271,17 +271,17 @@ You can alternatively write your own script and save some space.
 @@
 
 Package: nut-web-cgi
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-common +PACKAGE_nut-web-cgi:libgd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-web-cgi-any
 Section: net
 Category: Network
 Repository: base
 Title: Network UPS Tools (NUT) Web CGI interface
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -292,17 +292,17 @@ commands from any web browser. Javascript and cookies are not required.
 @@
 
 Package: nut-avahi-service
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +avahi-daemon
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-avahi-service-any
 Section: net
 Category: Network
 Repository: base
 Title: Network UPS Tools (NUT) (Avahi service)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -312,17 +312,17 @@ attached UPS via mDNS/DNS-SD.
 @@
 
 Package: nut-driver-al175
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-al175-any
 Section: net
 Category: Network
 Repository: base
 Title: al175 (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -331,17 +331,17 @@ Description: 		 Driver for Eltek UPS models with AL175 alarm module
 @@
 
 Package: nut-driver-bcmxcp
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-bcmxcp-any
 Section: net
 Category: Network
 Repository: base
 Title: bcmxcp (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -350,17 +350,17 @@ Description: 		 Driver for UPSes supporting the serial BCM/XCP protocol
 @@
 
 Package: nut-driver-belkin
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-belkin-any
 Section: net
 Category: Network
 Repository: base
 Title: belkin (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -369,17 +369,17 @@ Description: 		 Driver for Belkin serial UPS equipment
 @@
 
 Package: nut-driver-belkinunv
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-belkinunv-any
 Section: net
 Category: Network
 Repository: base
 Title: belkinunv (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -388,17 +388,17 @@ Description: 		 Driver for Belkin "Universal UPS" and compatible
 @@
 
 Package: nut-driver-bestfcom
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-bestfcom-any
 Section: net
 Category: Network
 Repository: base
 Title: bestfcom (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -407,17 +407,17 @@ Description: 		 Driver for Best Power Fortress/Ferrups
 @@
 
 Package: nut-driver-bestfortress
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-bestfortress-any
 Section: net
 Category: Network
 Repository: base
 Title: bestfortress (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -426,17 +426,17 @@ Description: 		 Driver for old Best Fortress UPS equipment
 @@
 
 Package: nut-driver-bestuferrups
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-bestuferrups-any
 Section: net
 Category: Network
 Repository: base
 Title: bestuferrups (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -445,17 +445,17 @@ Description: 		 Driver for Best Power Micro-Ferrups
 @@
 
 Package: nut-driver-bestups
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-bestups-any
 Section: net
 Category: Network
 Repository: base
 Title: bestups (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -463,37 +463,18 @@ Type: ipkg
 Description: 		 Driver for Best Power / SOLA (Phoenixtec protocol) UPS equipment
 @@
 
-Package: nut-driver-dummy-ups
-Version: 2.8.1-r2
-Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Repository: base
-Title: dummy-ups (NUT serial driver)
-Maintainer: 
-Source: nut-2.8.1.tar.gz
-License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
-LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
-URL: http://www.networkupstools.org/
-Type: ipkg
-Description: 		 Driver for multi-purpose UPS emulation
-@@
-
 Package: nut-driver-etapro
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-etapro-any
 Section: net
 Category: Network
 Repository: base
 Title: etapro (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -502,17 +483,17 @@ Description: 		 Driver for ETA UPS equipment
 @@
 
 Package: nut-driver-everups
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-everups-any
 Section: net
 Category: Network
 Repository: base
 Title: everups (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -521,17 +502,17 @@ Description: 		 Driver for Ever UPS models
 @@
 
 Package: nut-driver-gamatronic
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-gamatronic-any
 Section: net
 Category: Network
 Repository: base
 Title: gamatronic (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -540,17 +521,17 @@ Description: 		 Driver for Gamatronic UPS equipment
 @@
 
 Package: nut-driver-genericups
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-genericups-any
 Section: net
 Category: Network
 Repository: base
 Title: genericups (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -559,17 +540,17 @@ Description: 		 Driver for contact-closure UPS equipment
 @@
 
 Package: nut-driver-isbmex
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-isbmex-any
 Section: net
 Category: Network
 Repository: base
 Title: isbmex (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -578,17 +559,17 @@ Description: 		 Driver for ISBMEX UPS equipment
 @@
 
 Package: nut-driver-liebert
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-liebert-any
 Section: net
 Category: Network
 Repository: base
 Title: liebert (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -597,17 +578,17 @@ Description: 		 Driver for Liebert contact-closure UPS equipment
 @@
 
 Package: nut-driver-liebert-esp2
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-liebert-esp2-any
 Section: net
 Category: Network
 Repository: base
 Title: liebert-esp2 (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -615,18 +596,37 @@ Type: ipkg
 Description: 		 Driver for Liebert UPS
 @@
 
-Package: nut-driver-masterguard
-Version: 2.8.1-r2
+Package: nut-driver-liebert-gxe
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-liebert-gxe-any
+Section: net
+Category: Network
+Repository: base
+Title: liebert-gxe (NUT serial driver)
+Maintainer: 
+Source: nut-2.8.4.tar.gz
+License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
+URL: http://www.networkupstools.org/
+Type: ipkg
+Description: 		 Driver for Liebert GXE series UPS
+@@
+
+Package: nut-driver-masterguard
+Version: 2.8.4-r1
+Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
+Conflicts: 
+Menu-Depends: 
+Provides: @nut-driver-masterguard-any
 Section: net
 Category: Network
 Repository: base
 Title: masterguard (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -635,17 +635,17 @@ Description: 		 Driver for Masterguard UPS equipment
 @@
 
 Package: nut-driver-metasys
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-metasys-any
 Section: net
 Category: Network
 Repository: base
 Title: metasys (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -654,17 +654,17 @@ Description: 		 Driver for Meta System UPS equipment
 @@
 
 Package: nut-driver-mge-utalk
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-mge-utalk-any
 Section: net
 Category: Network
 Repository: base
 Title: mge-utalk (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -673,17 +673,17 @@ Description: 		 Driver for MGE UPS SYSTEMS UTalk protocol equipment
 @@
 
 Package: nut-driver-microdowell
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-microdowell-any
 Section: net
 Category: Network
 Repository: base
 Title: microdowell (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -691,18 +691,37 @@ Type: ipkg
 Description: 		 Driver for Microdowell Enterprise UPS series
 @@
 
-Package: nut-driver-mge-shut
-Version: 2.8.1-r2
+Package: nut-driver-microsol-apc
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-microsol-apc-any
+Section: net
+Category: Network
+Repository: base
+Title: microsol-apc (NUT serial driver)
+Maintainer: 
+Source: nut-2.8.4.tar.gz
+License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
+URL: http://www.networkupstools.org/
+Type: ipkg
+Description: 		 Driver for APC Back-UPS BR UPS equipment
+@@
+
+Package: nut-driver-mge-shut
+Version: 2.8.4-r1
+Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
+Conflicts: 
+Menu-Depends: 
+Provides: @nut-driver-mge-shut-any
 Section: net
 Category: Network
 Repository: base
 Title: mge-shut (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -710,18 +729,37 @@ Type: ipkg
 Description: 		 Driver for SHUT Protocol UPS equipment
 @@
 
-Package: nut-driver-oneac
-Version: 2.8.1-r2
+Package: nut-driver-nutdrv_hashx
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-nutdrv_hashx-any
+Section: net
+Category: Network
+Repository: base
+Title: nutdrv_hashx (NUT serial driver)
+Maintainer: 
+Source: nut-2.8.4.tar.gz
+License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
+URL: http://www.networkupstools.org/
+Type: ipkg
+Description: 		 Driver for #* protocol serial based UPS equipment
+@@
+
+Package: nut-driver-oneac
+Version: 2.8.4-r1
+Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
+Conflicts: 
+Menu-Depends: 
+Provides: @nut-driver-oneac-any
 Section: net
 Category: Network
 Repository: base
 Title: oneac (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -730,17 +768,17 @@ Description: 		 Driver for Oneac UPS equipment
 @@
 
 Package: nut-driver-optiups
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-optiups-any
 Section: net
 Category: Network
 Repository: base
 Title: optiups (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -749,17 +787,17 @@ Description: 		 Driver for Opti-UPS (Viewsonic) UPS and Zinto D (ONLINE-USV) equ
 @@
 
 Package: nut-driver-powercom
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-powercom-any
 Section: net
 Category: Network
 Repository: base
 Title: powercom (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -767,18 +805,37 @@ Type: ipkg
 Description: 		 Driver for serial Powercom/Trust/Advice UPS equipment
 @@
 
-Package: nut-driver-rhino
-Version: 2.8.1-r2
+Package: nut-driver-powervar_cx_ser
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-powervar_cx_ser-any
+Section: net
+Category: Network
+Repository: base
+Title: powervar_cx_ser (NUT serial driver)
+Maintainer: 
+Source: nut-2.8.4.tar.gz
+License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
+URL: http://www.networkupstools.org/
+Type: ipkg
+Description: 		 Driver for Powervar UPM Series UPS equipment with Serial connection
+@@
+
+Package: nut-driver-rhino
+Version: 2.8.4-r1
+Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
+Conflicts: 
+Menu-Depends: 
+Provides: @nut-driver-rhino-any
 Section: net
 Category: Network
 Repository: base
 Title: rhino (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -787,17 +844,17 @@ Description: 		 Driver for Brazilian Microsol RHINO UPS equipment
 @@
 
 Package: nut-driver-safenet
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-safenet-any
 Section: net
 Category: Network
 Repository: base
 Title: safenet (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -805,18 +862,37 @@ Type: ipkg
 Description: 		 Driver for SafeNet compatible UPS equipment
 @@
 
-Package: nut-driver-solis
-Version: 2.8.1-r2
+Package: nut-driver-nutdrv_siemens-sitop
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-nutdrv_siemens-sitop-any
+Section: net
+Category: Network
+Repository: base
+Title: nutdrv_siemens-sitop (NUT serial driver)
+Maintainer: 
+Source: nut-2.8.4.tar.gz
+License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
+URL: http://www.networkupstools.org/
+Type: ipkg
+Description: 		 Driver for the Siemens SITOP UPS500 series UPS
+@@
+
+Package: nut-driver-solis
+Version: 2.8.4-r1
+Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
+Conflicts: 
+Menu-Depends: 
+Provides: @nut-driver-solis-any
 Section: net
 Category: Network
 Repository: base
 Title: solis (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -825,17 +901,17 @@ Description: 		 Driver for Brazilian Microsol SOLIS UPS equipment
 @@
 
 Package: nut-driver-tripplite
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-tripplite-any
 Section: net
 Category: Network
 Repository: base
 Title: tripplite (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -844,17 +920,17 @@ Description: 		 Driver for Tripp-Lite SmartPro UPS equipment
 @@
 
 Package: nut-driver-tripplitesu
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-tripplitesu-any
 Section: net
 Category: Network
 Repository: base
 Title: tripplitesu (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -863,17 +939,17 @@ Description: 		 Driver for Tripp-Lite SmartOnline (SU) UPS equipment
 @@
 
 Package: nut-driver-upscode2
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-upscode2-any
 Section: net
 Category: Network
 Repository: base
 Title: upscode2 (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -882,17 +958,17 @@ Description: 		 Driver for UPScode II compatible UPS equipment
 @@
 
 Package: nut-driver-victronups
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-victronups-any
 Section: net
 Category: Network
 Repository: base
 Title: victronups (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -901,17 +977,17 @@ Description: 		 Driver for IMV/Victron UPS unit Match
 @@
 
 Package: nut-driver-powerpanel
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-powerpanel-any
 Section: net
 Category: Network
 Repository: base
 Title: powerpanel (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -920,17 +996,17 @@ Description: 		 Driver for PowerPanel Plus compatible UPS equipment
 @@
 
 Package: nut-driver-blazer_ser
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-blazer_ser-any
 Section: net
 Category: Network
 Repository: base
 Title: blazer_ser (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -938,37 +1014,18 @@ Type: ipkg
 Description: 		 Driver for Megatec/Q1 protocol serial based UPS equipment
 @@
 
-Package: nut-driver-clone
-Version: 2.8.1-r2
-Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Repository: base
-Title: clone (NUT serial driver)
-Maintainer: 
-Source: nut-2.8.1.tar.gz
-License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
-LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
-URL: http://www.networkupstools.org/
-Type: ipkg
-Description: 		 UPS driver clone
-@@
-
 Package: nut-driver-ivtscd
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-ivtscd-any
 Section: net
 Category: Network
 Repository: base
 Title: ivtscd (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -977,17 +1034,17 @@ Description: 		 Driver for the IVT Solar Controller Device
 @@
 
 Package: nut-driver-apcsmart
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-apcsmart-any
 Section: net
 Category: Network
 Repository: base
 Title: apcsmart (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -996,17 +1053,17 @@ Description: 		 Driver for American Power Conversion Smart Protocol UPS equipmen
 @@
 
 Package: nut-driver-apcsmart-old
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-apcsmart-old-any
 Section: net
 Category: Network
 Repository: base
 Title: apcsmart-old (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -1014,37 +1071,18 @@ Type: ipkg
 Description: 		 Driver for American Power Conversion Smart Protocol UPS equipment
 @@
 
-Package: nut-driver-apcupsd-ups
-Version: 2.8.1-r2
-Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Repository: base
-Title: apcupsd-ups (NUT serial driver)
-Maintainer: 
-Source: nut-2.8.1.tar.gz
-License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
-LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
-URL: http://www.networkupstools.org/
-Type: ipkg
-Description: 		 Driver for apcupsd client access
-@@
-
 Package: nut-driver-riello_ser
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-riello_ser-any
 Section: net
 Category: Network
 Repository: base
 Title: riello_ser (NUT serial driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -1052,18 +1090,170 @@ Type: ipkg
 Description: 		 Driver for Riello UPS Protocol UPS equipment
 @@
 
+Package: nut-driver-sms_ser
+Version: 2.8.4-r1
+Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
+Conflicts: 
+Menu-Depends: 
+Provides: @nut-driver-sms_ser-any
+Section: net
+Category: Network
+Repository: base
+Title: sms_ser (NUT serial driver)
+Maintainer: 
+Source: nut-2.8.4.tar.gz
+License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
+URL: http://www.networkupstools.org/
+Type: ipkg
+Description: 		 Driver for SMS UPS Protocol 1Phase.
+@@
+
+Package: nut-driver-bicker_ser
+Version: 2.8.4-r1
+Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
+Conflicts: 
+Menu-Depends: 
+Provides: @nut-driver-bicker_ser-any
+Section: net
+Category: Network
+Repository: base
+Title: bicker_ser (NUT serial driver)
+Maintainer: 
+Source: nut-2.8.4.tar.gz
+License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
+URL: http://www.networkupstools.org/
+Type: ipkg
+Description: 		 Driver for Bicker DC UPS via serial port connections
+@@
+
+Package: nut-driver-ve-direct
+Version: 2.8.4-r1
+Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
+Conflicts: 
+Menu-Depends: 
+Provides: @nut-driver-ve-direct-any
+Section: net
+Category: Network
+Repository: base
+Title: ve-direct (NUT serial driver)
+Maintainer: 
+Source: nut-2.8.4.tar.gz
+License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
+URL: http://www.networkupstools.org/
+Type: ipkg
+Description: 		 Driver for Victron UPS unit running on VE.Direct serial protocol
+@@
+
+Package: nut-driver-nhs_ser
+Version: 2.8.4-r1
+Depends: +libc nut +nut-server @NUT_DRIVER_SERIAL
+Conflicts: 
+Menu-Depends: 
+Provides: @nut-driver-nhs_ser-any
+Section: net
+Category: Network
+Repository: base
+Title: nhs_ser (NUT serial driver)
+Maintainer: 
+Source: nut-2.8.4.tar.gz
+License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
+URL: http://www.networkupstools.org/
+Type: ipkg
+Description: 		 Driver for NHS Nobreaks
+@@
+
+Package: nut-driver-dummy-ups
+Version: 2.8.4-r1
+Depends: +libc nut +nut-server
+Conflicts: 
+Menu-Depends: 
+Provides: @nut-driver-dummy-ups-any
+Section: net
+Category: Network
+Repository: base
+Title: dummy-ups (NUT software driver)
+Maintainer: 
+Source: nut-2.8.4.tar.gz
+License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
+URL: http://www.networkupstools.org/
+Type: ipkg
+Description: 		 Driver for multi-purpose UPS emulation
+@@
+
+Package: nut-driver-clone
+Version: 2.8.4-r1
+Depends: +libc nut +nut-server
+Conflicts: 
+Menu-Depends: 
+Provides: @nut-driver-clone-any
+Section: net
+Category: Network
+Repository: base
+Title: clone (NUT software driver)
+Maintainer: 
+Source: nut-2.8.4.tar.gz
+License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
+URL: http://www.networkupstools.org/
+Type: ipkg
+Description: 		 UPS driver clone
+@@
+
+Package: nut-driver-failover
+Version: 2.8.4-r1
+Depends: +libc nut +nut-server
+Conflicts: 
+Menu-Depends: 
+Provides: @nut-driver-failover-any
+Section: net
+Category: Network
+Repository: base
+Title: failover (NUT software driver)
+Maintainer: 
+Source: nut-2.8.4.tar.gz
+License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
+URL: http://www.networkupstools.org/
+Type: ipkg
+Description: 		 UPS Failover Driver
+@@
+
+Package: nut-driver-apcupsd-ups
+Version: 2.8.4-r1
+Depends: +libc nut +nut-server
+Conflicts: 
+Menu-Depends: 
+Provides: @nut-driver-apcupsd-ups-any
+Section: net
+Category: Network
+Repository: base
+Title: apcupsd-ups (NUT software driver)
+Maintainer: 
+Source: nut-2.8.4.tar.gz
+License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
+URL: http://www.networkupstools.org/
+Type: ipkg
+Description: 		 Driver for apcupsd client access
+@@
+
 Package: nut-driver-snmp-ups
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_SNMP
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-snmp-ups-any
 Section: net
 Category: Network
 Repository: base
 Title: snmp-ups (NUT snmp driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -1072,17 +1262,17 @@ Description: 		 Multi-MIB Driver for SNMP UPS equipment
 @@
 
 Package: nut-driver-usbhid-ups
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_USB
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-usbhid-ups-any
 Section: net
 Category: Network
 Repository: base
 Title: usbhid-ups (NUT usb driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -1091,17 +1281,17 @@ Description: 		 Driver for USB/HID UPS equipment
 @@
 
 Package: nut-driver-bcmxcp_usb
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_USB
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-bcmxcp_usb-any
 Section: net
 Category: Network
 Repository: base
 Title: bcmxcp_usb (NUT usb driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -1110,17 +1300,17 @@ Description: 		 Experimental driver for UPSes supporting the BCM/XCP protocol ov
 @@
 
 Package: nut-driver-tripplite_usb
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_USB
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-tripplite_usb-any
 Section: net
 Category: Network
 Repository: base
 Title: tripplite_usb (NUT usb driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -1129,17 +1319,17 @@ Description: 		 Driver for older Tripp Lite USB UPSes (not PDC HID)
 @@
 
 Package: nut-driver-blazer_usb
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_USB
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-blazer_usb-any
 Section: net
 Category: Network
 Repository: base
 Title: blazer_usb (NUT usb driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -1148,17 +1338,17 @@ Description: 		 Driver for Megatec/Q1 protocol USB based UPS equipment
 @@
 
 Package: nut-driver-richcomm_usb
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_USB
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-richcomm_usb-any
 Section: net
 Category: Network
 Repository: base
 Title: richcomm_usb (NUT usb driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -1167,17 +1357,17 @@ Description: 		 Driver for UPS equipment using Richcomm dry-contact to USB solut
 @@
 
 Package: nut-driver-riello_usb
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_USB
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-riello_usb-any
 Section: net
 Category: Network
 Repository: base
 Title: riello_usb (NUT usb driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -1185,18 +1375,37 @@ Type: ipkg
 Description: 		 Driver for Riello UPS Protocol UPS equipment via USB
 @@
 
-Package: nut-driver-nutdrv_atcl_usb
-Version: 2.8.1-r2
+Package: nut-driver-powervar_cx_usb
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_USB
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-powervar_cx_usb-any
+Section: net
+Category: Network
+Repository: base
+Title: powervar_cx_usb (NUT usb driver)
+Maintainer: 
+Source: nut-2.8.4.tar.gz
+License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
+URL: http://www.networkupstools.org/
+Type: ipkg
+Description: 		 Driver for Powervar GTS and UPM Series UPS equipment with USB connection
+@@
+
+Package: nut-driver-nutdrv_atcl_usb
+Version: 2.8.4-r1
+Depends: +libc nut +nut-server @NUT_DRIVER_USB
+Conflicts: 
+Menu-Depends: 
+Provides: @nut-driver-nutdrv_atcl_usb-any
 Section: net
 Category: Network
 Repository: base
 Title: nutdrv_atcl_usb (NUT usb driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -1205,17 +1414,17 @@ Description: 		 Driver for ATCL FOR UPS equipment
 @@
 
 Package: nut-driver-nutdrv_qx
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_USB
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-nutdrv_qx-any
 Section: net
 Category: Network
 Repository: base
 Title: nutdrv_qx (NUT usb driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/
@@ -1224,17 +1433,17 @@ Description: 		 Driver for Q* protocol serial and USB based UPS equipment
 @@
 
 Package: nut-driver-netxml-ups
-Version: 2.8.1-r2
+Version: 2.8.4-r1
 Depends: +libc nut +nut-server @NUT_DRIVER_NEON
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nut-driver-netxml-ups-any
 Section: net
 Category: Network
 Repository: base
 Title: netxml-ups (NUT neon driver)
 Maintainer: 
-Source: nut-2.8.1.tar.gz
+Source: nut-2.8.4.tar.gz
 License: GPL-2.0-or-later GPL-3.0-or-later GPL-1.0-or-later Artistic-1.0-Perl
 LicenseFiles: LICENSE-GPL2 LICENSE-GPL3 COPYING
 URL: http://www.networkupstools.org/

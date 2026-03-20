@@ -7,7 +7,7 @@ Version: 0.21.1-r2
 Depends: +libc +python3-light +python3-async-timeout +python3-asyncio +python3-dbus-fast +python3-ctypes +python3-typing-extensions +python3-logging
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-bleak-any
 Section: lang
 Category: Languages
 Repository: base
@@ -30,7 +30,7 @@ Version: 0.21.1-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-bleak-src-any
 Section: lang
 Category: Languages
 Repository: base

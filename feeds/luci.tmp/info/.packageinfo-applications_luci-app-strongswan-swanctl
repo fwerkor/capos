@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +strongswan-swanctl +swanmon
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-strongswan-swanctl-any
 Section: luci
 Category: LuCI
 Repository: base

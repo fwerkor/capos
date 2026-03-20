@@ -3,17 +3,17 @@ Build-Depends: python-cython/host
 
 Package: python3-lxml
 Submenu: Python
-Version: 5.4.0-r1
+Version: 6.0.2-r1
 Depends: +libc +libxml2 +libxslt +libexslt +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-lxml-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Pythonic XML processing library
 Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
-Source: lxml-5.4.0.tar.gz
+Source: lxml-6.0.2.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSES.txt
 CPE-ID: cpe:/a:lxml:lxml
@@ -29,17 +29,17 @@ Description:   lxml is a Pythonic, mature binding for the libxml2 and libxslt
 
 Package: python3-lxml-src
 Submenu: Python
-Version: 5.4.0-r1
+Version: 6.0.2-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-lxml-src-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Pythonic XML processing library (sources)
 Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
-Source: lxml-5.4.0.tar.gz
+Source: lxml-6.0.2.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSES.txt
 CPE-ID: cpe:/a:lxml:lxml

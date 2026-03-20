@@ -5,7 +5,7 @@ Version: 2018.05.22~a5a5d2e2ca9a433bb8f017682ac6f2085741bdf8-r1
 Depends: +libc +libpcap +libncurses
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dnstop-any
 Section: net
 Category: Network
 Repository: base

@@ -2,7 +2,7 @@
 
 /dts-v1/;
 #include <dt-bindings/leds/common.h>
-#include "mt7981.dtsi"
+#include "mt7981b.dtsi"
 
 / {
 	aliases {
@@ -113,8 +113,6 @@
 	status = "okay";
 
 	spi_nand: flash@0 {
-		#address-cells = <1>;
-		#size-cells = <1>;
 		compatible = "spi-nand";
 		reg = <0>;
 

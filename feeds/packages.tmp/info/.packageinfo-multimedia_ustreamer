@@ -1,0 +1,27 @@
+Source-Makefile: feeds/packages/multimedia/ustreamer/Makefile
+
+Package: ustreamer
+Version: 6.52-r1
+Depends: +libc +libatomic +libjpeg +libevent2 +libevent2-pthreads
+Conflicts: 
+Menu-Depends: 
+Provides: @ustreamer-any
+Section: multimedia
+Category: Multimedia
+Repository: base
+Title: Lightweight and fast MJPEG-HTTP streamer
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: ustreamer-6.52.tar.gz
+License: GPL-3.0
+LicenseFiles: LICENSE
+URL: https://github.com/pikvm/ustreamer
+Type: ipkg
+Description: uStreamer is a lightweight and very quick server to stream MJPEG video
+from any V4L2 device to the net. All new browsers have native support
+of this video format, as well as most video players such as mplayer,
+VLC etc. uStreamer is a part of the PiKVM project designed to stream
+VGA and HDMI screencast hardware data with the highest resolution and
+FPS possible.
+@@
+
+

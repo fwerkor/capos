@@ -1,0 +1,51 @@
+Source-Makefile: feeds/packages/lang/python/python-pika/Makefile
+Build-Depends: python-setuptools/host
+
+Package: python3-pika
+Submenu: Python
+Version: 1.3.2-r1
+Depends: +libc +python3
+Conflicts: 
+Menu-Depends: 
+Provides: @python3-pika-any
+Section: lang
+Category: Languages
+Repository: base
+Title: Pika RabbitMQ/AMQP 0-9-1 client library
+Maintainer: 
+Source: pika-1.3.2.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://pika.readthedocs.io/
+Type: ipkg
+Description:   Pika is a pure-Python implementation of the AMQP 0-9-1 protocol including
+  RabbitMQ's extensions.
+@@
+
+Package: python3-pika-src
+Submenu: Python
+Version: 1.3.2-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @python3-pika-src-any
+Section: lang
+Category: Languages
+Repository: base
+Title: Pika RabbitMQ/AMQP 0-9-1 client library (sources)
+Maintainer: 
+Source: pika-1.3.2.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://pika.readthedocs.io/
+Type: ipkg
+Description:       Pika is a pure-Python implementation of the AMQP 0-9-1 protocol including
+  RabbitMQ's extensions.
+
+    This package contains the Python source files for python3-pika.
+@@
+Config:
+    depends on PACKAGE_python3-pika
+@@
+
+

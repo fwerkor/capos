@@ -5,7 +5,7 @@ Version: 7.5.3-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: mac2unix
+Provides: @dos2unix-any mac2unix
 Section: utils
 Category: Utilities
 Repository: base
@@ -27,7 +27,7 @@ Version: 7.5.3-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: unix2mac
+Provides: @unix2dos-any unix2mac
 Section: utils
 Category: Utilities
 Repository: base

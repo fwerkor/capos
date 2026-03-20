@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/net/atlas-probe/Makefile
 
 Package: atlas-probe
-Version: 2.6.3-r2
+Version: 2.6.3-r3
 Depends: +libc +librt +libopenssl +openssh-client +sudo
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @atlas-probe-any
 Section: net
 Category: Network
 Repository: base

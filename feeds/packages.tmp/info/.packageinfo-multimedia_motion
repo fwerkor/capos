@@ -6,7 +6,7 @@ Version: 4.5.0-r1
 Depends: +libc +libjpeg +libpthread +libmicrohttpd +BUILD_NLS:libintl-full
 Conflicts: 
 Menu-Depends: 
-Provides: motion
+Provides: @motion-noffmpeg-any motion
 Build-Variant: noffmpeg
 Default-Variant: noffmpeg
 Section: multimedia
@@ -31,7 +31,7 @@ Version: 4.5.0-r1
 Depends: +libc +libjpeg +libpthread +libmicrohttpd +BUILD_NLS:libintl-full +libffmpeg-full
 Conflicts: 
 Menu-Depends: 
-Provides: motion
+Provides: @motion-ffmpeg-any motion
 Build-Variant: ffmpeg
 Section: multimedia
 Category: Multimedia

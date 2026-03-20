@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/libs/libmad/Makefile
 
 Package: libmad
-Version: 0.16.4-r3
+Version: 0.16.4-r4
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libmad-any
 Section: libs
 Category: Libraries
 Repository: base

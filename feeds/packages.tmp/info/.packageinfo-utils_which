@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/utils/which/Makefile
 
 Package: which
-Version: 2.21-r1
+Version: 2.23-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @which-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: which utility - full version
 Maintainer: Huangbin Zhan <zhanhb88@gmail.com>
-Source: which-2.21.tar.gz
+Source: which-2.23.tar.gz
 License: GPL-2.0-or-later
 LicenseFiles: COPYING
 URL: https://carlowood.github.io/which/

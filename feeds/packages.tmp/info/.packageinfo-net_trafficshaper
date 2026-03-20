@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/net/trafficshaper/Makefile
 
 Package: trafficshaper
-Version: 1.0.0-r2
-Depends: +libc +tc +kmod-sched-core +kmod-sched-connmark +kmod-ifb +iptables +kmod-sched-cake +iptables-mod-conntrack-extra
+Version: 1.0.0-r3
+Depends: +libc +tc +kmod-sched-core +kmod-sched-connmark +kmod-ifb +iptables +IPV6:ip6tables +kmod-sched-cake +iptables-mod-conntrack-extra
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @trafficshaper-any
 Section: net
 Category: Network
 Repository: base

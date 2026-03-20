@@ -5,7 +5,7 @@ Version: 0.2-r1
 Depends: +libc +libogg +libopus +libopusfile +libopusenc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opus-tools-any
 Section: sound
 Category: Sound
 Repository: base

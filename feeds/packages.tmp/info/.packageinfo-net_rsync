@@ -3,11 +3,11 @@ Source-Makefile: feeds/packages/net/rsync/Makefile
 Package: rsync
 Menu: 1
 Submenu: File Transfer
-Version: 3.4.1-r1
+Version: 3.4.1-r3
 Depends: +libc +libpopt +zlib +RSYNC_xattr:libattr +RSYNC_acl:libacl +RSYNC_zstd:libzstd +RSYNC_xxhash:libxxhash +RSYNC_lz4:liblz4 +BUILD_NLS:libiconv-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rsync-any
 Section: net
 Category: Network
 Repository: base
@@ -33,16 +33,17 @@ Config:
 
 Package: rsyncd
 Submenu: File Transfer
-Version: 3.4.1-r1
+Version: 3.4.1-r3
 Depends: +libc +rsync
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rsyncd-any
 Section: net
 Category: Network
 Repository: base
 Title: Rsync daemon
 Maintainer: Maxim Storchak <m.storchak@gmail.com>
+Require-User: rsyncd=976:rsyncd=976
 Source: rsync-3.4.1.tar.gz
 License: GPL-3.0-or-later
 LicenseFiles: COPYING
@@ -55,11 +56,11 @@ Description:  rsyncd is a configuration file and initscript to utilize rsync as 
 
 Package: rrsync
 Submenu: File Transfer
-Version: 3.4.1-r1
-Depends: +libc +rsync +perlbase-file +perl @(PACKAGE_openssh-server||PACKAGE_openssh-server-pam)
+Version: 3.4.1-r3
+Depends: +libc +rsync python3-light @(PACKAGE_openssh-server||PACKAGE_openssh-server-pam||(PACKAGE_dropbear&&DROPBEAR_SVR_PUBKEY_OPTIONS))
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rrsync-any
 Section: net
 Category: Network
 Repository: base

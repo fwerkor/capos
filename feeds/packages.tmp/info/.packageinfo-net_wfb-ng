@@ -7,7 +7,7 @@ Version: 25.01-r1
 Depends: +libc +libpcap +libsodium +libstdcpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @wfb-ng-any
 Section: net
 Category: Network
 Repository: base
@@ -29,7 +29,7 @@ Version: 25.01-r1
 Depends: +libc +libevent2-core +kmod-tun
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @wfb-ng-tun-any
 Section: net
 Category: Network
 Repository: base

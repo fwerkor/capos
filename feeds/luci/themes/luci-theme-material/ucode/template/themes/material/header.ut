@@ -22,7 +22,6 @@
 	import { getuid, getspnam } from 'luci.core';
 
 	const boardinfo = ubus.call('system', 'board');
-	const hostname = striptags(boardinfo?.hostname ?? '?');
 
 	http.prepare_content('text/html; charset=UTF-8');
 -%}
@@ -31,14 +30,7 @@
 <html lang="{{ dispatcher.lang }}">
 <head>
 <meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#09c">
-<meta name="msapplication-tap-highlight" content="no">
-<meta name="msapplication-TileColor" content="#09c">
-<meta name="application-name" content="{{ hostname }} - LuCI">
-<meta name="apple-mobile-web-app-title" content="{{ hostname }} - LuCI">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{{ media }}/cascade.css">
 <link rel="icon" href="{{ media }}/logo_48.png" sizes="48x48">
 <link rel="icon" href="{{ media }}/logo.svg" sizes="any">
@@ -47,7 +39,7 @@
 {% endif %}
 <script src="{{ dispatcher.build_url('admin/translations', dispatcher.lang) }}"></script>
 <script src="{{ resource }}/cbi.js"></script>
-<title>{{ hostname }}{{ node?.title ? ` - ${striptags(node.title)}` : '' }} - LuCI</title>
+<title>{{ striptags(`${boardinfo.hostname ?? '?'}${dispatched?.title ? ` | ${_(dispatched.title)}` : ''}`) }}</title>
 {% if (css): %}
 <style title="text/css">{{ css }}</style>
 {% endif %}
@@ -58,7 +50,7 @@
 		<div class="container">
 			<span class="showSide"></span>
 			<a id="logo" href="{{ ctx.authsession ? dispatcher.build_url('admin/status/overview') : '#' }}"><img src="{{ media }}/brand.png" alt="OpenWrt"></a>
-			<a class="brand" href="#">{{ hostname }}</a>
+			<a class="brand" href="#">{{ striptags(`${boardinfo.hostname ?? '?'}`) }}</a>
 			<span class="status" id="indicators"></span>
 		</div>
 	</div>

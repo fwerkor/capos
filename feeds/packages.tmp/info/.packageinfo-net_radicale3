@@ -1,0 +1,69 @@
+Source-Makefile: feeds/packages/net/radicale3/Makefile
+
+Package: radicale3
+Submenu: Web Servers/Proxies
+Version: 3.6.0-r1
+Depends: +libc +python3 +python3-dateutil +python3-vobject +python3-setuptools +python3-defusedxml +python3-libpass +python3-requests +python3-pika +python3-packaging
+Conflicts: 
+Menu-Depends: 
+Provides: @radicale3-any radicale radicale2
+Section: net
+Category: Network
+Repository: base
+Title: Radicale 3.x CalDAV/CardDAV server
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Require-User: radicale3=226:radicale3=226
+Source: radicale-3.6.0.tar.gz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING.md
+CPE-ID: cpe:/a:radicale:radicale
+URL: https://radicale.org/
+Type: ipkg
+Description:   The Radicale Project is a CalDAV (calendar) and CardDAV (contact) server.
+  It aims to be a light solution, easy to use, easy to install, easy to
+  configure. As a consequence, it requires few software dependencies and is
+  pre-configured to work out-of-the-box.
+  The Radicale Project runs on most of the UNIX-like platforms
+  (Linux, BSD, MacOS X) and Windows. It is known to work with Evolution,
+  Lightning, iPhone and Android clients. It is free and open-source software,
+  released under GPL version 3.
+
+  This package contains the python files.
+@@
+
+Package: radicale3-src
+Submenu: Web Servers/Proxies
+Version: 3.6.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @radicale3-src-any
+Section: net
+Category: Network
+Repository: base
+Title: Radicale 3.x CalDAV/CardDAV server (sources)
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: radicale-3.6.0.tar.gz
+License: GPL-3.0-or-later
+LicenseFiles: COPYING.md
+CPE-ID: cpe:/a:radicale:radicale
+URL: https://radicale.org/
+Type: ipkg
+Description:       The Radicale Project is a CalDAV (calendar) and CardDAV (contact) server.
+  It aims to be a light solution, easy to use, easy to install, easy to
+  configure. As a consequence, it requires few software dependencies and is
+  pre-configured to work out-of-the-box.
+  The Radicale Project runs on most of the UNIX-like platforms
+  (Linux, BSD, MacOS X) and Windows. It is known to work with Evolution,
+  Lightning, iPhone and Android clients. It is free and open-source software,
+  released under GPL version 3.
+
+  This package contains the python files.
+
+    This package contains the Python source files for radicale3.
+@@
+Config:
+    depends on PACKAGE_radicale3
+@@
+
+

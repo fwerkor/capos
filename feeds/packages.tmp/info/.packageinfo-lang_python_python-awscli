@@ -6,7 +6,7 @@ Version: 1.29.7-r1
 Depends: +libc +python3 +python3-botocore +python3-colorama +python3-docutils +python3-rsa +python3-s3transfer +python3-yaml
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-awscli-any
 Section: lang
 Category: Languages
 Repository: base
@@ -27,7 +27,7 @@ Version: 1.29.7-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-awscli-src-any
 Section: lang
 Category: Languages
 Repository: base

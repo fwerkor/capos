@@ -71,8 +71,8 @@ menu "Global build settings"
 
 	config USE_APK
 		imply PACKAGE_apk-mbedtls
-		bool "Use APK instead of OPKG to build distribution (BROKEN)"
-		depends on BROKEN
+		bool "Use APK instead of OPKG to build distribution"
+		default y
 
 	comment "General build options"
 
@@ -109,6 +109,7 @@ menu "Global build settings"
 	config CLEAN_IPKG
 		bool
 		prompt "Remove ipkg/opkg status data files in final images"
+		depends on !USE_APK
 		help
 		  This removes all ipkg/opkg status data files from the target directory
 		  before building the root filesystem.
@@ -175,8 +176,7 @@ menu "Global build settings"
 		  Packages can choose to opt-out via setting PKG_BUILD_FLAGS:=no-lto
 
 	config MOLD
-		depends on (aarch64 || arm || i386 || i686 || m68k || powerpc || powerpc64 || sh4 || x86_64)
-		depends on !GCC_USE_VERSION_11
+		depends on (aarch64 || arm || i386 || i686 || loongarch64 || m68k || powerpc || powerpc64 || riscv64 || sh4 || x86_64)
 		depends on !HOST_OS_MACOS
 		def_bool $(shell, ./config/check-hostcxx.sh 10 2 12)
 
@@ -251,6 +251,15 @@ menu "Global build settings"
 		  not selected during the build process.
 
 	comment "Hardening build options"
+
+	config PKG_FANALYZER
+		bool
+		prompt "Enable gcc fanalyzer"
+		default n
+		help
+		  Add -fanalyzer to the CFLAGS. As a result of this option, a static analysis
+		  of the program flow is conducted, allowing interprocedural paths to be
+		  identified and warnings to be issued if problems are identified.
 
 	config PKG_CHECK_FORMAT_SECURITY
 		bool
@@ -360,9 +369,11 @@ menu "Global build settings"
 		config PKG_FORTIFY_SOURCE_NONE
 			bool "None"
 		config PKG_FORTIFY_SOURCE_1
-			bool "Conservative"
+			bool "Conservative Level 1"
 		config PKG_FORTIFY_SOURCE_2
-			bool "Aggressive"
+			bool "Aggressive Level 2"
+		config PKG_FORTIFY_SOURCE_3
+			bool "Aggressive Level 3"
 	endchoice
 
 	choice
@@ -383,9 +394,19 @@ menu "Global build settings"
 			bool "Full"
 	endchoice
 
+	config PKG_DT_RELR
+		bool "Link with relative relocations (RELR)"
+		depends on (aarch64 || i386 || loongarch64 || x86_64)
+		default y
+		help
+		  Link all applications with -Wl,-z,pack-relative-relocs.
+		  This will reduce the size of many applications.
+		  This is only supported on a limited number of architectures.
+
 	config TARGET_ROOTFS_SECURITY_LABELS
 		bool
 		select KERNEL_SQUASHFS_XATTR
+		select KERNEL_EROFS_FS_SECURITY
 		select KERNEL_EXT4_FS_SECURITY
 		select KERNEL_F2FS_FS_SECURITY
 		select KERNEL_UBIFS_FS_SECURITY
@@ -428,7 +449,6 @@ menu "Global build settings"
 	config USE_SECCOMP
 		bool "Enable SECCOMP"
 		select KERNEL_SECCOMP
-		select PACKAGE_procd-seccomp
 		depends on (aarch64 || arm || armeb || mips || mipsel || mips64 || mips64el || i386 || loongarch64 || powerpc || x86_64)
 		depends on !TARGET_uml
 		default y

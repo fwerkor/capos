@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/libs/libinput/Makefile
 
 Package: libinput
-Version: 1.25.0-r1
-Depends: +libc +libevdev +mtdev +libudev
+Version: 1.28.1-r1
+Depends: +libc +libevdev +mtdev +libudev +libwacom
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libinput-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: a library to handle input devices
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: libinput-1.25.0.tar.zst
+Source: libinput-1.28.1.tar.gz
 License: MIT
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:freedesktop:libinput

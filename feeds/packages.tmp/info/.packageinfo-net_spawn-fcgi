@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/net/spawn-fcgi/Makefile
 
 Package: spawn-fcgi
 Submenu: Web Servers/Proxies
-Version: 1.6.4-r2
+Version: 1.6.6-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @spawn-fcgi-any
 Section: net
 Category: Network
 Repository: base
 Title: Tool to spawn fastcgi applications
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: spawn-fcgi-1.6.4.tar.xz
+Source: spawn-fcgi-1.6.6.tar.xz
 License: BSD-3-Clause
 LicenseFiles: COPYING
 URL: http://redmine.lighttpd.net/projects/spawn-fcgi

@@ -5,7 +5,7 @@ Version: 2.80.1-r1
 Depends: +libc +glib2 +libgnutls
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libgio-gnutls-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -25,7 +25,7 @@ Version: 2.80.1-r1
 Depends: +libc +glib2 +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libgio-openssl-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -45,7 +45,7 @@ Version: 2.80.1-r1
 Depends: +libc +glib2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libgio-environmentproxy-any
 Section: libs
 Category: Libraries
 Repository: base

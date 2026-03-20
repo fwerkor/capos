@@ -6,7 +6,7 @@ Version: 3.8.2-r2
 Depends: +libc +POSTFIX_CDB:tinycdb +POSTFIX_TLS:libopenssl +POSTFIX_SASL:libsasl2 +POSTFIX_LDAP:libopenldap +POSTFIX_DB:libdb47 +POSTFIX_SQLITE:libsqlite3 +POSTFIX_MYSQL:libmysqlclient +POSTFIX_PGSQL:libpq +POSTFIX_EAI:icu +POSTFIX_PCRE:libpcre2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @postfix-any
 Section: mail
 Category: Mail
 Repository: base

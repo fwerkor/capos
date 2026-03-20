@@ -1,0 +1,23 @@
+Source-Makefile: feeds/video/libs/xkeyboard-config/Makefile
+Build-Depends: libxslt/host perl-xml-parser/host python3/host
+
+Package: xkeyboard-config
+Version: 2.45-r1
+Depends: +libc +libxkbcommon
+Conflicts: 
+Menu-Depends: 
+Provides: @xkeyboard-config-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: xkeyboard-config
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: xkeyboard-config-2.45.tar.xz
+License: MIT
+LicenseFiles: COPYING
+URL: https://www.freedesktop.org/wiki/Software/XKeyboardConfig/
+Type: ipkg
+Description:   The non-arch keyboard configuration database for X Window.
+@@
+
+

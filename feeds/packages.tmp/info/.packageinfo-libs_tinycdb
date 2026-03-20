@@ -5,7 +5,7 @@ Version: 0.78-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tinycdb-any
 Section: libs
 Category: Libraries
 Repository: base

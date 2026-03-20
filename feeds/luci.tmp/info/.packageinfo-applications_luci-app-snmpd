@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base +snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-snmpd-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -26,12 +26,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-ar-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - ar translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -45,12 +45,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-bg-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - bg translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -64,12 +64,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-bn-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - bn translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -83,12 +83,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-ca-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - ca translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -102,12 +102,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-cs-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - cs translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -121,12 +121,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-da-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - da translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -140,12 +140,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-de-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - de translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -159,12 +159,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-el-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - el translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -178,12 +178,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-es-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - es translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -197,12 +197,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-fi-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - fi translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -216,12 +216,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-fr-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - fr translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -235,12 +235,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-ga-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - ga translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -254,12 +254,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-he-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - he translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -273,12 +273,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-hi-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - hi translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -292,12 +292,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-hu-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - hu translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -311,12 +311,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-it-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - it translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -330,12 +330,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-ja-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - ja translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -349,12 +349,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-ko-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - ko translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -368,12 +368,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-lt-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - lt translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -387,12 +387,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-mr-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - mr translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -406,12 +406,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-ms-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - ms translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -425,12 +425,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-no-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - no translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -444,12 +444,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-nl-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - nl translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -463,12 +463,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-pl-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - pl translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -482,12 +482,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-pt-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - pt translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -501,12 +501,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - pt-br translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -520,12 +520,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-ro-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - ro translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -539,12 +539,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-ru-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - ru translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -558,12 +558,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-sk-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - sk translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -577,17 +577,36 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-sv-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - sv translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-snmpd - Svenska (Swedish)
+@@
+
+Package: luci-i18n-snmpd-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-snmpd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-snmpd-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-snmpd - ta translation
+Maintainer: Christian Korber <ck@dev.tdt.de>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-snmpd - Tamil (Tamil)
 @@
 
 Package: luci-i18n-snmpd-tr
@@ -596,12 +615,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-tr-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - tr translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -615,12 +634,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-uk-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - uk translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -634,12 +653,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-vi-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - vi translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -653,12 +672,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-yua-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - yua translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -672,12 +691,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - zh-cn translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -691,12 +710,12 @@ Version: x
 Depends: +libc luci-app-snmpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-snmpd-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-snmpd - zh-tw translation
-Maintainer: Karl Palsson <karlp@etactica.com>
+Maintainer: Christian Korber <ck@dev.tdt.de>
 Source: 
 License: Apache-2.0
 Type: ipkg

@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/net/csshnpd/Makefile
+
+Package: csshnpd
+Submenu: SSH
+Version: 1.0.17-r1
+Depends: +libc +libmbedtls +cJSON
+Conflicts: 
+Menu-Depends: 
+Provides: @csshnpd-any
+Section: net
+Category: Network
+Repository: base
+Title: NoPorts Daemon
+Maintainer: Chris Swan <chris@atsign.com>
+Source: csshnpd-c1.0.17.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://noports.com
+Type: ipkg
+Description:   A small and portable daemon for NoPorts.
+@@
+
+

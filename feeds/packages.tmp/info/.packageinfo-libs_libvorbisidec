@@ -5,7 +5,7 @@ Version: 2024.06.11~9b78f57f4335f7158dbb82df00645d2ba57e0d33-r1
 Depends: +libc +libogg
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libvorbisidec-any
 Section: libs
 Category: Libraries
 Repository: base

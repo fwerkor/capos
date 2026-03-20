@@ -1,16 +1,16 @@
 Source-Makefile: feeds/packages/libs/libsndfile/Makefile
 
 Package: libsndfile
-Version: 1.2.2-r1
+Version: 1.2.2-r2
 Depends: +libc +lame-lib +libmpg123
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libsndfile-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Library for reading/writing audio files
-Maintainer: Peter Wagner <tripolar@gmx.at>
+Maintainer: 
 Source: libsndfile-1.2.2.tar.xz
 License: LGPLv2.1
 LicenseFiles: COPYING

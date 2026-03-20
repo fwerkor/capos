@@ -6,7 +6,7 @@ Version: 2.6.0-r1
 Depends: +libc +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libsrtp2-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -15,6 +15,7 @@ Maintainer: Jiri Slachta <jiri@slachta.eu>
 Source: libsrtp-2.6.0.tar.zst
 License: BSD-3-Clause
 LicenseFiles: LICENSE
+CPE-ID: cpe:/a:cisco:libsrtp
 URL: https://github.com/cisco/libsrtp
 ABI-Version: 1
 Type: ipkg

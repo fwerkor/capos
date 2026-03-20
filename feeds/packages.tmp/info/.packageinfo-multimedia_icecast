@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/multimedia/icecast/Makefile
 
 Package: icecast
-Version: 2.4.4-r4
+Version: 2.4.4-r5
 Depends: +libc +libcurl +libxml2 +libxslt +libogg +libvorbisidec +BUILD_NLS:libiconv-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @icecast-any
 Section: multimedia
 Category: Multimedia
 Repository: base

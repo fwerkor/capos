@@ -1,0 +1,21 @@
+Source-Makefile: feeds/packages/utils/xdg-dbus-proxy/Makefile
+
+Package: xdg-dbus-proxy
+Version: 0.1.6-r1
+Depends: +libc +glib2
+Conflicts: 
+Menu-Depends: 
+Provides: @xdg-dbus-proxy-any
+Section: utils
+Category: Utilities
+Repository: base
+Title: xdg-dbus-proxy
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: xdg-dbus-proxy-0.1.6.tar.xz
+License: LGPLv2-or-later
+URL: https://github.com/containers/xdg-dbus-proxy
+Type: ipkg
+Description:  xdg-dbus-proxy is a filtering proxy for D-Bus connections.
+@@
+
+

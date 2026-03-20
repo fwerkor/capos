@@ -5,7 +5,7 @@ Version: 0.53-r3
 Depends: +libc @IPV6 +ip +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ahcpd-any
 Section: net
 Category: Network
 Repository: base

@@ -6,7 +6,7 @@ Version: 1.2-r4
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tcpproxy-any
 Section: net
 Category: Network
 Repository: base

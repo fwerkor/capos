@@ -1,0 +1,764 @@
+Source-Makefile: feeds/luci/applications/luci-app-radicale3/Makefile
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+
+Package: luci-app-radicale3
+Submenu: 3. Applications
+Version: x
+Depends: +libc +luci-base +radicale3 +rpcd-mod-rad3-enc
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-app-radicale3-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: Radicale v3 CalDAV/CardDAV Server
+Maintainer: OpenWrt LuCI community
+Source: 
+License: Apache-2.0
+URL: https://github.com/openwrt/luci
+Type: ipkg
+Description: Radicale v3 CalDAV/CardDAV Server
+@@
+
+Package: luci-i18n-radicale3-ar
+Default: LUCI_LANG_ar||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-ar-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - ar translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - العربية (Arabic)
+@@
+
+Package: luci-i18n-radicale3-bg
+Default: LUCI_LANG_bg||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-bg-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - bg translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - български (Bulgarian)
+@@
+
+Package: luci-i18n-radicale3-bn
+Default: LUCI_LANG_bn_BD||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-bn-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - bn translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - বাংলা (Bengali)
+@@
+
+Package: luci-i18n-radicale3-ca
+Default: LUCI_LANG_ca||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-ca-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - ca translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Català (Catalan)
+@@
+
+Package: luci-i18n-radicale3-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-cs-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - cs translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Čeština (Czech)
+@@
+
+Package: luci-i18n-radicale3-da
+Default: LUCI_LANG_da||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-da-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - da translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Dansk (Danish)
+@@
+
+Package: luci-i18n-radicale3-de
+Default: LUCI_LANG_de||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-de-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - de translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Deutsch (German)
+@@
+
+Package: luci-i18n-radicale3-el
+Default: LUCI_LANG_el||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-el-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - el translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Ελληνικά (Greek)
+@@
+
+Package: luci-i18n-radicale3-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-es-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - es translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Español (Spanish)
+@@
+
+Package: luci-i18n-radicale3-fa
+Default: LUCI_LANG_fa||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-fa-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - fa translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Farsi (Persian)
+@@
+
+Package: luci-i18n-radicale3-fi
+Default: LUCI_LANG_fi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-fi-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - fi translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Suomi (Finnish)
+@@
+
+Package: luci-i18n-radicale3-fil
+Default: LUCI_LANG_fil||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-fil-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - fil translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Filipino (Philippinic)
+@@
+
+Package: luci-i18n-radicale3-fr
+Default: LUCI_LANG_fr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-fr-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - fr translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Français (French)
+@@
+
+Package: luci-i18n-radicale3-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-ga-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - ga translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-radicale3-he
+Default: LUCI_LANG_he||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-he-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - he translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - עִבְרִית (Hebrew)
+@@
+
+Package: luci-i18n-radicale3-hi
+Default: LUCI_LANG_hi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-hi-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - hi translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - हिंदी (Hindi)
+@@
+
+Package: luci-i18n-radicale3-hu
+Default: LUCI_LANG_hu||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-hu-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - hu translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Magyar (Hungarian)
+@@
+
+Package: luci-i18n-radicale3-it
+Default: LUCI_LANG_it||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-it-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - it translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Italiano (Italian)
+@@
+
+Package: luci-i18n-radicale3-ja
+Default: LUCI_LANG_ja||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-ja-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - ja translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - 日本語 (Japanese)
+@@
+
+Package: luci-i18n-radicale3-ko
+Default: LUCI_LANG_ko||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-ko-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - ko translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - 한국어 (Korean)
+@@
+
+Package: luci-i18n-radicale3-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-lt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - lt translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-radicale3-mr
+Default: LUCI_LANG_mr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-mr-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - mr translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Marāṭhī (Marathi)
+@@
+
+Package: luci-i18n-radicale3-ms
+Default: LUCI_LANG_ms||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-ms-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - ms translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Bahasa Melayu (Malay)
+@@
+
+Package: luci-i18n-radicale3-no
+Default: LUCI_LANG_nb_NO||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-no-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - no translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Norsk (Norwegian)
+@@
+
+Package: luci-i18n-radicale3-nl
+Default: LUCI_LANG_nl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-nl-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - nl translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Nederlands (Dutch)
+@@
+
+Package: luci-i18n-radicale3-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-pl-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - pl translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Polski (Polish)
+@@
+
+Package: luci-i18n-radicale3-pt
+Default: LUCI_LANG_pt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-pt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - pt translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Português (Portuguese)
+@@
+
+Package: luci-i18n-radicale3-pt-br
+Default: LUCI_LANG_pt_BR||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-pt-br-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - pt-br translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Português do Brasil (Brazilian Portuguese)
+@@
+
+Package: luci-i18n-radicale3-ro
+Default: LUCI_LANG_ro||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-ro-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - ro translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Română (Romanian)
+@@
+
+Package: luci-i18n-radicale3-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-ru-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - ru translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Русский (Russian)
+@@
+
+Package: luci-i18n-radicale3-sk
+Default: LUCI_LANG_sk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-sk-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - sk translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Slovenčina (Slovak)
+@@
+
+Package: luci-i18n-radicale3-sv
+Default: LUCI_LANG_sv||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-sv-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - sv translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Svenska (Swedish)
+@@
+
+Package: luci-i18n-radicale3-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - ta translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Tamil (Tamil)
+@@
+
+Package: luci-i18n-radicale3-tr
+Default: LUCI_LANG_tr||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-tr-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - tr translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Türkçe (Turkish)
+@@
+
+Package: luci-i18n-radicale3-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-uk-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - uk translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-radicale3-vi
+Default: LUCI_LANG_vi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-vi-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - vi translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Tiếng Việt (Vietnamese)
+@@
+
+Package: luci-i18n-radicale3-yua
+Default: LUCI_LANG_yua||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-yua-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - yua translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - Yucateco (Yucatec Maya)
+@@
+
+Package: luci-i18n-radicale3-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-zh-cn-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - zh-cn translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-radicale3-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-radicale3-zh-tw-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-radicale3 - zh-tw translation
+Maintainer: Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-radicale3 - 正體中文 (Traditional Chinese)
+@@
+
+

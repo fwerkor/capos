@@ -7,7 +7,7 @@ Version: 1.1.0-r1
 Depends: +libc +luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-filebrowser-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -26,7 +26,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-ar-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -39,13 +39,32 @@ Hidden: 1
 Description:     Translation for luci-app-filebrowser - العربية (Arabic)
 @@
 
+Package: luci-i18n-filebrowser-ca
+Default: LUCI_LANG_ca||(ALL&&m)
+Version: x
+Depends: +libc luci-app-filebrowser
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-filebrowser-ca-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-filebrowser - ca translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-filebrowser - Català (Catalan)
+@@
+
 Package: luci-i18n-filebrowser-cs
 Default: LUCI_LANG_cs||(ALL&&m)
 Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-cs-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -64,7 +83,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-da-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -83,7 +102,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-de-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -102,7 +121,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-es-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -121,7 +140,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-fa-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -140,7 +159,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-fi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -159,7 +178,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-fr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -178,7 +197,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-ga-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -197,7 +216,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-hu-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -216,7 +235,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-it-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -235,7 +254,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-ja-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -254,7 +273,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-lt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -273,7 +292,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-nl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -292,7 +311,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-pl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -311,7 +330,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-pt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -330,7 +349,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -349,7 +368,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-ro-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -368,7 +387,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-ru-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -387,7 +406,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-sk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -406,7 +425,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-sv-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -419,13 +438,32 @@ Hidden: 1
 Description:     Translation for luci-app-filebrowser - Svenska (Swedish)
 @@
 
+Package: luci-i18n-filebrowser-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-filebrowser
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-filebrowser-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-filebrowser - ta translation
+Maintainer: Sergey Ponomarev <stokito@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-filebrowser - Tamil (Tamil)
+@@
+
 Package: luci-i18n-filebrowser-tr
 Default: LUCI_LANG_tr||(ALL&&m)
 Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-tr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -444,7 +482,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-uk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -463,7 +501,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-vi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -482,7 +520,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-yua-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -501,7 +539,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -520,7 +558,7 @@ Version: x
 Depends: +libc luci-app-filebrowser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-filebrowser-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base

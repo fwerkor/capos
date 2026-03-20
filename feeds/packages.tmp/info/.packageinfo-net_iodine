@@ -2,11 +2,11 @@ Source-Makefile: feeds/packages/net/iodine/Makefile
 
 Package: iodine
 Submenu: Firewall Tunnel
-Version: 0.8.0-r4
+Version: 0.8.0-r5
 Depends: +libc +kmod-tun +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @iodine-any
 Section: net
 Category: Network
 Repository: base
@@ -23,11 +23,11 @@ Description:  iodine client version
 
 Package: iodined
 Submenu: Firewall Tunnel
-Version: 0.8.0-r4
+Version: 0.8.0-r5
 Depends: +libc +kmod-tun +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @iodined-any
 Section: net
 Category: Network
 Repository: base

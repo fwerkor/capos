@@ -1,0 +1,24 @@
+Source-Makefile: feeds/video/libs/gdk-pixbuf/Makefile
+
+Package: libgdk-pixbuf
+Submenu: Frameworks and Toolkits
+Version: 2.42.12-r1
+Depends: +libc +giflib +libpng +libtiff +libjpeg +shared-mime-info
+Conflicts: 
+Menu-Depends: 
+Provides: @libgdk-pixbuf-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: GdkPixbuf: Image loading library
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gdk-pixbuf-2.42.12.tar.xz
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnome:gdk-pixbuf
+URL: http://www.gtk.org/
+Type: ipkg
+Description:   GdkPixbuf is a library that loads image data in various formats and stores it as linear buffers in memory.
+@@
+
+

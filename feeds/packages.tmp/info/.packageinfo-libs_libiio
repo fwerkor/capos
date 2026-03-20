@@ -6,7 +6,7 @@ Version: 0.25-r1
 Depends: +libc +zlib +LIBIIO_USB_BACKEND:libusb-1.0 +LIBIIO_NETWORK_BACKEND:libavahi-client +LIBIIO_XML_BACKEND:libxml2 +BUILD_NLS:libiconv-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libiio-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -57,7 +57,7 @@ Version: 0.25-r1
 Depends: +libc +libiio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @iiod-any
 Section: net
 Category: Network
 Repository: base
@@ -76,7 +76,7 @@ Version: 0.25-r1
 Depends: +libc +libiio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @iio-utils-any
 Section: utils
 Category: Utilities
 Repository: base

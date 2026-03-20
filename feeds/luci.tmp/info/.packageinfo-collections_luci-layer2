@@ -1,0 +1,23 @@
+Source-Makefile: feeds/luci/collections/luci-layer2/Makefile
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+
+Package: luci-layer2
+Submenu: 1. Collections
+Version: x
+Depends: +libc +luci-mod-admin-full +luci-theme-bootstrap +rpcd-mod-rrdns +uhttpd +uhttpd-mod-ubus
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-layer2-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: LuCI interface for layer-2 devices, using Uhttpd (layer-2)
+Maintainer: OpenWrt LuCI community
+Source: 
+License: Apache-2.0
+URL: https://github.com/openwrt/luci
+Type: ipkg
+Description:    Layer-2 OpenWrt set including admin support and the default Bootstrap theme
+@@
+
+

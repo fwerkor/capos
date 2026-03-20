@@ -5,7 +5,7 @@ Version: 1.8.0-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libpkgconf-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -28,7 +28,7 @@ Version: 1.8.0-r2
 Depends: +libc +libpkgconf
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pkgconf-any
 Section: devel
 Category: Development
 Repository: base

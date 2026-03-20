@@ -7,7 +7,7 @@ Version: 2.82.0-r1
 Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +zlib +libpthread +libffi +libattr +libpcre2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @glib2-any
 Section: libs
 Category: Libraries
 Repository: base

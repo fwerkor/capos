@@ -5,7 +5,7 @@ Version: 2021.03.08~4f72b30578ac3dbc5482f4a54054bf870355bdf5-r2
 Depends: +libc +kmod-l2tp +kmod-l2tp-ip +kmod-l2tp-eth +libnl-tiny +libpthread +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tunneldigger-any
 Section: net
 Category: Network
 Repository: base

@@ -5,7 +5,7 @@ Version: 2.4.6-r2
 Depends: +libc +libvorbisidec +libpthread +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libshout-any
 Build-Variant: notheora
 Section: libs
 Category: Libraries
@@ -32,7 +32,7 @@ Version: 2.4.6-r2
 Depends: +libc +libvorbisidec +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libshout-nossl-any
 Build-Variant: nossl
 Section: libs
 Category: Libraries
@@ -59,7 +59,7 @@ Version: 2.4.6-r2
 Depends: +libc +libvorbisidec +libpthread +libtheora +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libshout-full-any
 Build-Variant: full
 Section: libs
 Category: Libraries

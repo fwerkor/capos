@@ -1,0 +1,26 @@
+Source-Makefile: feeds/packages/admin/iotop/Makefile
+
+Package: iotop
+Version: 1.30-r1
+Depends: +libc +libncurses @KERNEL_TASKSTATS
+Conflicts: 
+Menu-Depends: 
+Provides: @iotop-any
+Section: admin
+Category: Administration
+Repository: base
+Title: A top utility for IO
+Maintainer: 
+Source: iotop-1.30.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:iotop:iotop
+URL: https://github.com/Tomas-M/iotop
+Type: ipkg
+Description:   Iotop identifies processes that use high amount of input/output
+  requests on your machine. It is similar to the well known top utility
+  but instead of showing you what consumes CPU the most, it lists
+  processes by their IO usage.
+@@
+
+

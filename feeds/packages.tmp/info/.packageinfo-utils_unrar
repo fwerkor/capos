@@ -6,7 +6,7 @@ Version: 7.0.9-r1
 Depends: +libc +libstdcpp +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @unrar-any
 Build-Variant: bin
 Section: utils
 Category: Utilities
@@ -29,7 +29,7 @@ Version: 7.0.9-r1
 Depends: +libc +libstdcpp +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libunrar-any
 Build-Variant: lib
 Section: libs
 Category: Libraries

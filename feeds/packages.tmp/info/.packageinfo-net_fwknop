@@ -6,7 +6,7 @@ Version: 2.6.11-r1
 Depends: +libc +iptables +libfko +!FWKNOPD_NFQ_CAPTURE:libpcap +FWKNOPD_NFQ_CAPTURE:iptables-mod-nfqueue +FWKNOPD_NFQ_CAPTURE:libnetfilter-queue +FWKNOPD_NFQ_CAPTURE:libnfnetlink +FWKNOP_GPG:gnupg +FWKNOP_GPG:libgpgme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @fwknopd-any
 Section: net
 Category: Network
 Repository: base
@@ -38,7 +38,7 @@ Version: 2.6.11-r1
 Depends: +libc +libfko +FWKNOPD_GPG:gnupg +FWKNOPD_GPG:libgpgme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @fwknop-any
 Section: net
 Category: Network
 Repository: base
@@ -67,7 +67,7 @@ Version: 2.6.11-r1
 Depends: +libc +FWKNOPD_GPG:gnupg +FWKNOPD_GPG:libgpgme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libfko-any
 Section: libs
 Category: Libraries
 Repository: base

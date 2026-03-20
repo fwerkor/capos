@@ -6,7 +6,7 @@ Version: 1.4-r2
 Depends: +libc +libgnutls
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libiksemel-any
 Section: libs
 Category: Libraries
 Repository: base

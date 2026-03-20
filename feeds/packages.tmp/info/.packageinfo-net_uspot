@@ -3,17 +3,17 @@ Build-Depends: bpf-headers
 
 Package: uspot
 Submenu: Captive Portals
-Version: 2025.08.07~8599a968877b55b0ce29f37d4b2d78036b257787-r1
+Version: 2025.11.20~389e48df4fa3de06b3cd8a8daf3c4007dcd45fdd-r2
 Depends: +libc +conntrack +libblobmsg-json +liblucihttp-ucode +libradcli +libubox +libubus +libuci +uspotfilter +ucode +ucode-mod-log +ucode-mod-math +ucode-mod-nl80211 +ucode-mod-rtnl +uhttpd-mod-ucode +ucode-mod-uloop +ucode-mod-bpf +ucode-mod-struct +kmod-sched-core +kmod-sched-bpf @HAS_BPF_TOOLCHAIN +@NEED_BPF_TOOLCHAIN
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @uspot-any
 Section: net
 Category: Network
 Repository: base
 Title: uspot hotspot daemon
 Maintainer: Thibaut VARÈNE <hacks@slashdirt.org>
-Source: uspot-2025.08.07~8599a968877b55b0ce29f37d4b2d78036b257787.tar.zst
+Source: uspot-2025.11.20~389e48df4fa3de06b3cd8a8daf3c4007dcd45fdd.tar.zst
 License: GPL-2.0
 Type: ipkg
 Description:   This package implements a captive portal supporting click-to-continue,
@@ -27,17 +27,17 @@ Description:   This package implements a captive portal supporting click-to-cont
 
 Package: uspot-www
 Submenu: Captive Portals
-Version: 2025.08.07~8599a968877b55b0ce29f37d4b2d78036b257787-r1
+Version: 2025.11.20~389e48df4fa3de06b3cd8a8daf3c4007dcd45fdd-r2
 Depends: +libc +uspot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @uspot-www-any
 Section: net
 Category: Network
 Repository: base
 Title: uspot default user interface files
 Maintainer: Thibaut VARÈNE <hacks@slashdirt.org>
-Source: uspot-2025.08.07~8599a968877b55b0ce29f37d4b2d78036b257787.tar.zst
+Source: uspot-2025.11.20~389e48df4fa3de06b3cd8a8daf3c4007dcd45fdd.tar.zst
 License: GPL-2.0
 Type: ipkg
 Description:   This package provides CSS and HTML templates for uspot UI.
@@ -45,17 +45,17 @@ Description:   This package provides CSS and HTML templates for uspot UI.
 @@
 
 Package: uspotfilter
-Version: 2025.08.07~8599a968877b55b0ce29f37d4b2d78036b257787-r1
+Version: 2025.11.20~389e48df4fa3de06b3cd8a8daf3c4007dcd45fdd-r2
 Depends: +libc +conntrack +nftables-json +ucode +ucode-mod-rtnl +ucode-mod-uloop +ucode-mod-log
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @uspotfilter-any
 Section: net
 Category: Network
 Repository: base
 Title: uspot firewall interface
 Maintainer: Thibaut VARÈNE <hacks@slashdirt.org>
-Source: uspot-2025.08.07~8599a968877b55b0ce29f37d4b2d78036b257787.tar.zst
+Source: uspot-2025.11.20~389e48df4fa3de06b3cd8a8daf3c4007dcd45fdd.tar.zst
 License: GPL-2.0
 Type: ipkg
 Description:   This package provides the nftables firewall interface to uspot.

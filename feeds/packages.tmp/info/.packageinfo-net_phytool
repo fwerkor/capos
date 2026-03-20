@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/net/phytool/Makefile
+
+Package: phytool
+Version: 2-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @phytool-any
+Section: net
+Category: Network
+Repository: base
+Title: Linux MDIO register access
+Maintainer: Thomas Richard <thomas.richard@bootlin.com>
+Source: phytool-2.tar.xz
+License: GPL-2.0
+LicenseFiles: LICENCE
+URL: https://github.com/wkz/phytool.git
+Type: ipkg
+Description: Linux MDIO register access
+@@
+
+

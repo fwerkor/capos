@@ -1,0 +1,96 @@
+Source-Makefile: feeds/packages/admin/freeipmi/Makefile
+Build-Depends: !USE_GLIBC:argp-standalone
+
+Package: libfreeipmi
+Version: 1.6.15-r1
+Depends: +libc +libgcrypt +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: @libfreeipmi-any
+Section: net
+Category: Network
+Repository: base
+Title: GNU implementation of the IPMI protocol (libfreeipmi)
+Maintainer: Bjørn Mork <bjorn@mork.no>
+Source: freeipmi-1.6.15.tar.gz
+License: GPLv3
+LicenseFiles: COPYING
+URL: https://www.gnu.org/software/freeipmi/
+Type: ipkg
+Description: OpenIPMI, KCS, SMIC, SSIF, LAN drivers, and an IPMI API in a C Library.
+@@
+
+Package: freeipmi-tools
+Version: 1.6.15-r1
+Depends: +libc +libipmiconsole +libipmidetect
+Conflicts: 
+Menu-Depends: 
+Provides: @freeipmi-tools-any
+Section: net
+Category: Network
+Repository: base
+Title: GNU implementation of the IPMI protocol (tools)
+Maintainer: Bjørn Mork <bjorn@mork.no>
+Source: freeipmi-1.6.15.tar.gz
+License: GPLv3
+LicenseFiles: COPYING
+URL: https://www.gnu.org/software/freeipmi/
+Type: ipkg
+Description: Assorted IPMI-related tools:
+ * bmc-config - configure BMC values
+ * bmc-info - display BMC information
+ * ipmi-chassis - IPMI chassis management utility
+ * ipmi-fru - display FRU information
+ * ipmi-locate - IPMI probing utility
+ * ipmi-oem - IPMI OEM utility
+ * ipmi-pet - decode Platform Event Traps
+ * ipmi-raw - IPMI raw communication utility
+ * ipmi-sel - display SEL entries
+ * ipmi-sensors - display IPMI sensor information
+ * ipmi-sensors-config - configure sensors
+ * ipmiconsole - IPMI console utility
+ * ipmiping - send IPMI Get Authentication Capabilitiy request
+ * ipmipower - IPMI power control utility
+ * pef-config - configure PEF values
+ * rmcpping - send RMCP Ping to network hosts
+@@
+
+Package: libipmiconsole
+Version: 1.6.15-r1
+Depends: +libc +libfreeipmi
+Conflicts: 
+Menu-Depends: 
+Provides: @libipmiconsole-any
+Section: net
+Category: Network
+Repository: base
+Title: GNU implementation of the IPMI protocol (libipmiconsole)
+Maintainer: Bjørn Mork <bjorn@mork.no>
+Source: freeipmi-1.6.15.tar.gz
+License: GPLv3
+LicenseFiles: COPYING
+URL: https://www.gnu.org/software/freeipmi/
+Type: ipkg
+Description: A library for Serial-over-Lan (SOL).
+@@
+
+Package: libipmidetect
+Version: 1.6.15-r1
+Depends: +libc +libfreeipmi
+Conflicts: 
+Menu-Depends: 
+Provides: @libipmidetect-any
+Section: net
+Category: Network
+Repository: base
+Title: GNU implementation of the IPMI protocol (libipmidetect)
+Maintainer: Bjørn Mork <bjorn@mork.no>
+Source: freeipmi-1.6.15.tar.gz
+License: GPLv3
+LicenseFiles: COPYING
+URL: https://www.gnu.org/software/freeipmi/
+Type: ipkg
+Description: A library for IPMI node detection.
+@@
+
+

@@ -5,7 +5,7 @@ Version: 1.2-r1
 Depends: +libc +fxload
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @midisport-firmware-any
 Section: firmware
 Category: Firmware
 Repository: base

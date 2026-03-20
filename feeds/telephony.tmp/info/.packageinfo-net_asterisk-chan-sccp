@@ -7,7 +7,7 @@ Version: 2020.12.19~968caa458920965c5dd15c31bcd50d21a891ab20-r2
 Depends: +libc asterisk +BUILD_NLS:libiconv-full +libltdl +asterisk-bridge-holding +asterisk-bridge-native-rtp +asterisk-bridge-simple +asterisk-bridge-softmix +asterisk-res-stasis-device-state
 Conflicts: asterisk-chan-skinny
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-chan-sccp-any
 Section: net
 Category: Network
 Repository: base

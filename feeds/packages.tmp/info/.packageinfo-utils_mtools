@@ -6,7 +6,7 @@ Version: 4.0.45-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mtools-any
 Section: utils
 Category: Utilities
 Repository: base

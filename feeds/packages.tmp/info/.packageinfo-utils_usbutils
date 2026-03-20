@@ -5,7 +5,7 @@ Version: 017-r1
 Depends: +libc +libusb-1.0 +libudev +librt +libpthread +usbids
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @usbutils-any
 Section: utils
 Category: Utilities
 Repository: base

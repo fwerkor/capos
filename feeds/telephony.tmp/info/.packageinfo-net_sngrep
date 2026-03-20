@@ -6,15 +6,16 @@ Version: 1.6.0-r1
 Depends: +libc +libncursesw +libopenssl +libpcap +SNGREP_WITH_PCRE:libpcre2 +SNGREP_WITH_ZLIB:zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @sngrep-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: Ncurses SIP messages flow viewer
-Maintainer: Sebastian Kemper <sebastian_ml@gmx.net>
+Maintainer: 
 Source: sngrep-1.6.0.tar.gz
 License: GPL-3.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:irontec:sngrep
 URL: https://github.com/irontec/sngrep
 Type: ipkg
 Description: sngrep is a tool for displaying SIP calls message flows from terminal.

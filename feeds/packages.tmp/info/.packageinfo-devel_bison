@@ -5,7 +5,7 @@ Version: 3.8.2-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bison-any
 Section: devel
 Category: Development
 Repository: base

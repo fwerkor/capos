@@ -5,7 +5,7 @@ Version: 1.48.0-r1
 Depends: +libc +libpthread +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libuv-any
 Section: libs
 Category: Libraries
 Repository: base

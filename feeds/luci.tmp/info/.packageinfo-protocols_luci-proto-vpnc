@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +vpnc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-proto-vpnc-any
 Section: luci
 Category: LuCI
 Repository: base

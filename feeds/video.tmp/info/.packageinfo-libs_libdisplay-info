@@ -1,0 +1,24 @@
+Source-Makefile: feeds/video/libs/libdisplay-info/Makefile
+Build-Depends: hwdata
+
+Package: libdisplay-info
+Submenu: Video
+Version: 0.2.0-r1
+Depends: +libc +edid-decode
+Conflicts: 
+Menu-Depends: 
+Provides: @libdisplay-info-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: EDID and DisplayID library
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: libdisplay-info-0.2.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://gitlab.freedesktop.org/emersion/libdisplay-info
+Type: ipkg
+Description:   EDID and DisplayID library for use with compositors.
+@@
+
+

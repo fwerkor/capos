@@ -5,7 +5,7 @@ Version: 0.1-r3
 Depends: +libc @IPV6
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @generate-ipv6-address-any
 Section: net
 Category: Network
 Repository: base

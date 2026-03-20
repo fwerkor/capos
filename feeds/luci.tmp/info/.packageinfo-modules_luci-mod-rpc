@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-lib-json +luci-lua-runtime
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-mod-rpc-any
 Section: luci
 Category: LuCI
 Repository: base

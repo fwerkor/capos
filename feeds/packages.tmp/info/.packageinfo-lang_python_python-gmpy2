@@ -6,7 +6,7 @@ Version: 2.1.5-r1
 Depends: +libc +libgmp +libmpc +libmpfr +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-gmpy2-any
 Section: lang
 Category: Languages
 Repository: base
@@ -32,7 +32,7 @@ Version: 2.1.5-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-gmpy2-src-any
 Section: lang
 Category: Languages
 Repository: base

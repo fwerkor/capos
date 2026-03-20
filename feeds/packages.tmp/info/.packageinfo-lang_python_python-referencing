@@ -7,7 +7,7 @@ Version: 0.32.0-r1
 Depends: +libc +python3-light +python3-email +python3-urllib +python3-attrs +python3-rpds-py
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-referencing-any
 Section: lang
 Category: Languages
 Repository: base
@@ -27,7 +27,7 @@ Version: 0.32.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-referencing-src-any
 Section: lang
 Category: Languages
 Repository: base

@@ -6,7 +6,7 @@ Version: 28
 Depends: +libc +kmod-wireguard +wireguard-tools +owipcalc +rpcd +uhttpd +uhttpd-mod-ubus +coreutils-dirname
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @wg-installer-server-any
 Section: net
 Category: Network
 Repository: base
@@ -24,7 +24,7 @@ Version: 28
 Depends: +libc wg-installer-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @wg-installer-server-hotplug-babeld-any
 Section: net
 Category: Network
 Repository: base
@@ -42,7 +42,7 @@ Version: 28
 Depends: +libc wg-installer-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @wg-installer-server-hotplug-olsrd-any
 Section: net
 Category: Network
 Repository: base
@@ -59,7 +59,7 @@ Version: 28
 Depends: +libc +kmod-wireguard +wireguard-tools +owipcalc +curl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @wg-installer-client-any
 Section: net
 Category: Network
 Repository: base

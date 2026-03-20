@@ -5,7 +5,7 @@ Version: 0.91.201110-r2
 Depends: +libc +libpagekite
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pagekitec-any
 Section: net
 Category: Network
 Repository: base
@@ -35,7 +35,7 @@ Version: 0.91.201110-r2
 Depends: +libc +libopenssl +libpthread +libev
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libpagekite-any
 Section: libs
 Category: Libraries
 Repository: base

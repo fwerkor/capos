@@ -5,7 +5,7 @@ Version: 2.6.4-r4
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @flex-any
 Section: devel
 Category: Development
 Repository: base

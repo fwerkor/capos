@@ -5,7 +5,7 @@ Version: 0.43.2-r1
 Depends: +libc +KERNEL_IO_URING:liburing
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ivykis-any
 Section: libs
 Category: Libraries
 Repository: base

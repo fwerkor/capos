@@ -7,7 +7,7 @@ Version: 2.4.8-r1
 Depends: +libc +libgpg-error +libnpth +libassuan +libksba +libgcrypt +zlib +libncurses +libreadline +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @gnupg2-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -35,7 +35,7 @@ Version: 2.4.8-r1
 Depends: +libc +libgpg-error +libnpth +libassuan +libksba +libgcrypt +zlib +libncurses +libreadline +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @gpgv2-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -56,7 +56,7 @@ Version: 2.4.8-r1
 Depends: +libc +libgpg-error +libnpth +libassuan +libksba +libgcrypt +zlib +libncurses +libreadline +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +libgnutls
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @gnupg2-dirmngr-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -82,7 +82,7 @@ Version: 2.4.8-r1
 Depends: +libc gnupg2 +libcurl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @gnupg2-utils-any
 Section: utils
 Category: Utilities
 Repository: base

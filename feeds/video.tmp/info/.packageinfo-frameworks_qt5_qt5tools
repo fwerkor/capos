@@ -1,0 +1,25 @@
+Source-Makefile: feeds/video/frameworks/qt5/qt5tools/Makefile
+Build-Depends/host: qt5base/host
+Build-Types: host
+
+Package: qt5tools
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5tools-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: qt5tools
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qttools-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Build-Only: 1
+Description: qt5tools
+@@
+
+

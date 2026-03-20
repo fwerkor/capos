@@ -2,16 +2,16 @@ Source-Makefile: feeds/routing/batman-adv/Makefile
 
 Package: kmod-batman-adv
 Submenu: Network Support
-Version: <LINUX_VERSION>.2024.3-r7
+Version: <LINUX_VERSION>.2025.4-r2
 Depends: +BATMAN_ADV_BLA:kmod-lib-crc16 +kmod-lib-crc32c +kmod-cfg80211 +batctl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kmod-batman-adv-any
 Section: kernel
 Category: Kernel modules
 Title: B.A.T.M.A.N. Adv
 Maintainer: Simon Wunderlich <sw@simonwunderlich.de>
-Source: batman-adv-2024.3.tar.gz
+Source: batman-adv-2025.4.tar.gz
 License: GPL-2.0-only MIT
 LicenseFiles: LICENSES/preferred/GPL-2.0 LICENSES/preferred/MIT
 URL: https://www.open-mesh.org/
@@ -20,7 +20,7 @@ Description:   B.A.T.M.A.N. (better approach to mobile ad-hoc networking) is
   a routing protocol for multi-hop ad-hoc mesh networks. The
   networks may be wired or wireless. See
   https://www.open-mesh.org/ for more information and user space
-  tools. This package builds version 2024.3 of the kernel
+  tools. This package builds version 2025.4 of the kernel
   module.
 @@
 Config:

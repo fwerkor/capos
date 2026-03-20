@@ -5,7 +5,7 @@ Version: 3.0.719-r6
 Depends: +libc +libpcap +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @darkstat-any
 Section: net
 Category: Network
 Repository: base

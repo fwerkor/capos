@@ -1,0 +1,28 @@
+Source-Makefile: feeds/video/libs/libva/Makefile
+
+Package: libva
+Submenu: Video
+Version: 2.22.0-r1
+Depends: +libc +libdrm +libwayland
+Conflicts: 
+Menu-Depends: 
+Provides: @libva-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: Video Acceleration API
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: libva-2.22.0.tar.gz
+License: MIT
+LicenseFiles: COPYING
+URL: https://intel.github.io/libva/
+Type: ipkg
+Description: Libva is an implementation for VA-API (Video Acceleration API)
+
+VA-API is an open-source library and API specification, which provides access
+to graphics hardware acceleration capabilities for video processing.
+It consists of a main library and driver-specific acceleration backends for
+each supported hardware vendor.
+@@
+
+
