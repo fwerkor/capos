@@ -16,7 +16,7 @@ indicate_failsafe() {
 	done
 	preinit_net_echo "Entering Failsafe!\n"
 	indicate_failsafe_led
-	echo OpenWrt-failsafe > /proc/sys/kernel/hostname
+	echo CapOS-failsafe > /proc/sys/kernel/hostname
 }
 
 boot_hook_add failsafe indicate_failsafe

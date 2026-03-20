@@ -215,6 +215,11 @@ endef
 
 ifeq ($(DUMP),)
 ROOTFS_PARTSIZE=$(shell echo $$(($(CONFIG_TARGET_ROOTFS_PARTSIZE)*1024*1024)))
+ifneq ($(CONFIG_PACKAGE_podman),)
+  ifneq ($(shell [ -n "$(CONFIG_TARGET_ROOTFS_PARTSIZE)" ] && [ "$(CONFIG_TARGET_ROOTFS_PARTSIZE)" -lt 256 ] && echo y),)
+    $(error TARGET_ROOTFS_PARTSIZE=$(CONFIG_TARGET_ROOTFS_PARTSIZE) MiB is too small for Podman. Set it to at least 256 MiB or regenerate the config with the updated defaults)
+  endif
+endif
 endif
 
 define Image/pad-root-squashfs

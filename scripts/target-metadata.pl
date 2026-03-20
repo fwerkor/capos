@@ -65,6 +65,34 @@ sub target_name($) {
 	}
 }
 
+my %capos_podman_arches = map { $_ => 1 } qw(
+	aarch64
+	aarch64_be
+	loongarch64
+	mips64
+	mips64el
+	powerpc64
+	riscv64
+	x86_64
+);
+
+sub target_has_feature($$) {
+	my ($target, $feature) = @_;
+
+	return grep { $_ eq $feature } @{$target->{features}};
+}
+
+sub target_supports_capos_podman($) {
+	my $target = shift;
+	my $arch = $target->{arch} || "";
+
+	return 0 unless $capos_podman_arches{$arch};
+	return 0 if target_has_feature($target, "small_flash");
+	return 0 if target_has_feature($target, "source-only");
+	return 0 unless target_has_feature($target, "ext4");
+	return 1;
+}
+
 sub kver($) {
 	my $v = shift;
 	$v =~ tr/\./_/;
@@ -161,6 +189,36 @@ sub gen_target_config() {
 	my $file = shift @ARGV;
 	my @target = parse_target_metadata($file);
 	my %defaults;
+	my %supported_subtargets;
+	my %supported_boards;
+
+	foreach my $target (@target) {
+		next unless $target->{subtarget};
+		next unless target_supports_capos_podman($target);
+		$supported_subtargets{$target->{id}} = 1;
+		$supported_boards{$target->{board}} = 1;
+	}
+
+	@target = grep {
+		if ($_->{subtarget}) {
+			$supported_subtargets{$_->{id}};
+		} elsif (@{$_->{subtargets}} > 0) {
+			$supported_boards{$_->{board}};
+		} else {
+			target_supports_capos_podman($_);
+		}
+	} @target;
+
+	foreach my $target (@target) {
+		next unless @{$target->{subtargets}} > 0;
+		@{$target->{subtargets}} = grep {
+			$supported_subtargets{$target->{board} . "/" . $_}
+		} @{$target->{subtargets}};
+
+		if ($target->{def_subtarget} && !grep { $_ eq $target->{def_subtarget} } @{$target->{subtargets}}) {
+			$target->{def_subtarget} = $target->{subtargets}->[0];
+		}
+	}
 
 	my @target_sort = sort {
 		target_name($a) cmp target_name($b);
@@ -182,7 +240,7 @@ EOF
 	print <<EOF;
 choice
 	prompt "Target System"
-	default TARGET_mediatek
+	default TARGET_x86
 	reset if !DEVEL
 	
 EOF

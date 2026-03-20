@@ -1,7 +1,7 @@
 if [ -x /usr/bin/apk ] ; then
 cat << EOF
 
- OpenWrt recently switched to the "apk" package manager!
+ CapOS uses the "apk" package manager.
 
  OPKG Command           APK Equivalent      Description
  ------------------------------------------------------------------

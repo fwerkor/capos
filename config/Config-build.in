@@ -2,13 +2,14 @@
 #
 # Copyright (C) 2006-2013 OpenWrt.org
 # Copyright (C) 2016 LEDE Project
+# Copyright (C) 2026 CapOS Project
 
 config EXPERIMENTAL
 	bool "Enable experimental features by default"
 	help
 	  Set this option to build with latest bleeding edge features
 	  which may or may not work as expected.
-	  If you would like to help the development of OpenWrt, you are
+	  If you would like to help the development of CapOS, you are
 	  encouraged to set this option and provide feedback (both
 	  positive and negative). But do so only if you know how to
 	  recover your device in case of flashing potentially non-working
@@ -98,7 +99,7 @@ menu "Global build settings"
 		bool "Compile with full language support"
 		help
 		  When this option is enabled, packages are built with the full versions of
-		  iconv and GNU gettext instead of the default OpenWrt stubs. If uClibc is
+		  iconv and GNU gettext instead of the default CapOS stubs. If uClibc is
 		  used, it is also built with locale support.
 
 	config SHADOW_PASSWORDS
@@ -441,7 +442,7 @@ menu "Global build settings"
 			bool "dssp"
 			select PACKAGE_selinux-policy
 			help
-			  Defensec SELinux Security Policy -- OpenWrt edition
+			  Defensec SELinux Security Policy -- CapOS edition
 
 	endchoice
 

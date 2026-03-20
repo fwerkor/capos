@@ -10,7 +10,7 @@ define Package/capos-core
   SECTION:=capos
   CATEGORY:=CapOS
   TITLE:=CapOS Core Meta Package
-  DEPENDS:=+capbox +capos-webpanel +sudo
+  DEPENDS:=@ARCH_64BIT @!SMALL_FLASH +capbox +capos-webpanel +sudo
 endef
 
 define Package/capos-core/description

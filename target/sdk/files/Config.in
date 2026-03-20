@@ -1,4 +1,4 @@
-mainmenu "OpenWrt Configuration"
+mainmenu "CapOS Configuration"
 
 menu "Global build settings"
 
@@ -33,7 +33,7 @@ menu "Global build settings"
 		bool "Compile with full language support"
 		help
 		  When this option is enabled, packages are built with the full versions of
-		  iconv and GNU gettext instead of the default OpenWrt stubs.
+		  iconv and GNU gettext instead of the default CapOS stubs.
 
 	comment "Package build options"
 
@@ -94,7 +94,7 @@ menu "Advanced configuration options (for developers)"
 		  If not set then defaults to './dl', which is removed by operations such as
 		  'git clean -xdf' or 'make distclean'.
 		  This option is useful if you have a low bandwidth Internet connection, and by
-		  setting a path outside the OpenWrt tree downloads will be saved.
+		  setting a path outside the CapOS tree downloads will be saved.
 
 	config LOCALMIRROR
 		string "Local mirror for source packages"
