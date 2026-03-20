@@ -1,17 +1,17 @@
 Source-Makefile: feeds/routing/alfred/Makefile
 
 Package: alfred
-Version: 2024.3-r1
+Version: 2025.4-r2
 Depends: +libc @IPV6 +libnl-tiny +librt +ALFRED_NEEDS_lua:lua +ALFRED_NEEDS_libgps:libgps
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @alfred-any
 Section: net
 Category: Network
 Repository: base
 Title: A.L.F.R.E.D. - Almighty Lightweight Fact Remote Exchange Daemon
 Maintainer: Simon Wunderlich <sw@simonwunderlich.de>
-Source: alfred-2024.3.tar.gz
+Source: alfred-2025.4.tar.gz
 License: GPL-2.0-only MIT
 LicenseFiles: LICENSES/preferred/GPL-2.0 LICENSES/preferred/MIT
 URL: https://www.open-mesh.org/

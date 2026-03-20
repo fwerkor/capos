@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/net/fail2ban/Makefile
 
 Package: fail2ban
-Version: 1.1.0-r1
-Depends: +libc +nftables +python3-light +python3-ctypes +python3-distutils +python3-email +python3-logging +python3-sqlite3 +python3-urllib +python3-pkg-resources
+Version: 1.1.0-r2
+Depends: +libc +nftables +python3-light +python3-ctypes +python3-email +python3-logging +python3-sqlite3 +python3-urllib +python3-pkg-resources
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @fail2ban-any
 Section: net
 Category: Network
 Repository: base
@@ -21,11 +21,11 @@ Description:   Fail2Ban scans log files like /var/log/auth.log and bans IP addre
 @@
 
 Package: fail2ban-src
-Version: 1.1.0-r1
+Version: 1.1.0-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @fail2ban-src-any
 Section: net
 Category: Network
 Repository: base

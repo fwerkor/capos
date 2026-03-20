@@ -5,7 +5,7 @@ Version: 2023.06.02~d7334ee4c3c8036c27fb35c7a24df3a88a15676b-r1
 Depends: +libc +libevent2 +libncurses +libpthread +libssh +msgpack-c +terminfo +openssh-keygen
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tmate-ssh-server-any
 Section: net
 Category: Network
 Repository: base

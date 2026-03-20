@@ -5,7 +5,7 @@ Version: 20170710
 Depends: +libc +rpcd +libubox +libubus
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rpcd-mod-rrdns-any
 Section: libs
 Category: Libraries
 Repository: base

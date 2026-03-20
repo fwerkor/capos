@@ -2,11 +2,11 @@ Source-Makefile: feeds/packages/net/v2ray-geodata/Makefile
 
 Package: v2ray-geoip
 Submenu: IP Addresses and Names
-Version: 202510050144-r1
+Version: 202601050204-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: v2ray-geodata xray-geodata xray-geoip
+Provides: @v2ray-geoip-any @v2ray-geodata @xray-geodata @xray-geoip
 Section: net
 Category: Network
 Repository: base
@@ -22,11 +22,11 @@ Description: GeoIP List for V2Ray
 
 Package: v2ray-geosite
 Submenu: IP Addresses and Names
-Version: 20250916122507-r1
+Version: 20260117053629-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: v2ray-geodata xray-geodata xray-geosite
+Provides: @v2ray-geosite-any @v2ray-geodata @xray-geodata @xray-geosite
 Section: net
 Category: Network
 Repository: base
@@ -42,11 +42,11 @@ Description: Geosite List for V2Ray
 
 Package: v2ray-geosite-ir
 Submenu: IP Addresses and Names
-Version: 202510130040-r1
+Version: 202601120047-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: xray-geosite-ir
+Provides: @v2ray-geosite-ir-any @xray-geosite-ir
 Section: net
 Category: Network
 Repository: base

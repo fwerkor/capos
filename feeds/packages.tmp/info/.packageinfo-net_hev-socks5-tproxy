@@ -5,7 +5,7 @@ Version: 2.10.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @hev-socks5-tproxy-any
 Section: net
 Category: Network
 Repository: base

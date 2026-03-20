@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base +watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-watchcat-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -26,7 +26,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-ar-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -45,7 +45,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-bg-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -64,7 +64,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-bn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -83,7 +83,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-ca-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -102,7 +102,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-cs-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -121,7 +121,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-da-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -140,7 +140,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-de-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -159,7 +159,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-el-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -178,7 +178,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-es-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -197,7 +197,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-fi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -216,7 +216,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-fr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -235,7 +235,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-ga-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -254,7 +254,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-he-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -273,7 +273,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-hi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -292,7 +292,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-hu-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -311,7 +311,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-it-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -330,7 +330,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-ja-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -349,7 +349,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-ko-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -368,7 +368,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-lt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -387,7 +387,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-mr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -406,7 +406,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-ms-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -425,7 +425,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-no-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -444,7 +444,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-nl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -463,7 +463,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-pl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -482,7 +482,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-pt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -501,7 +501,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -520,7 +520,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-ro-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -539,7 +539,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-ru-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -558,7 +558,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-sk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -577,7 +577,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-sv-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -590,13 +590,32 @@ Hidden: 1
 Description:     Translation for luci-app-watchcat - Svenska (Swedish)
 @@
 
+Package: luci-i18n-watchcat-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-watchcat
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-watchcat-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-watchcat - ta translation
+Maintainer: Jo-Philipp Wich <jo@mein.io>, Nicholas Smith <nicholas@nbembedded.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-watchcat - Tamil (Tamil)
+@@
+
 Package: luci-i18n-watchcat-tr
 Default: LUCI_LANG_tr||(ALL&&m)
 Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-tr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -615,7 +634,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-uk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -634,7 +653,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-vi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -653,7 +672,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -672,7 +691,7 @@ Version: x
 Depends: +libc luci-app-watchcat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-watchcat-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base

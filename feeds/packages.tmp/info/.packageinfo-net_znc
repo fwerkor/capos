@@ -7,7 +7,7 @@ Version: 1.10.1-r2
 Depends: +libc +libopenssl +libstdcpp +ZNC_ICU:icu +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-any
 Section: net
 Category: Network
 Repository: base
@@ -34,7 +34,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-adminlog-any
 Section: net
 Category: Network
 Repository: base
@@ -56,7 +56,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-alias-any
 Section: net
 Category: Network
 Repository: base
@@ -78,7 +78,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-autoattach-any
 Section: net
 Category: Network
 Repository: base
@@ -100,7 +100,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-autocycle-any
 Section: net
 Category: Network
 Repository: base
@@ -122,7 +122,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-autoop-any
 Section: net
 Category: Network
 Repository: base
@@ -144,7 +144,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-autoreply-any
 Section: net
 Category: Network
 Repository: base
@@ -166,7 +166,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-autovoice-any
 Section: net
 Category: Network
 Repository: base
@@ -188,7 +188,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-awaynick-any
 Section: net
 Category: Network
 Repository: base
@@ -210,7 +210,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-awaystore-any
 Section: net
 Category: Network
 Repository: base
@@ -232,7 +232,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-block-motd-any
 Section: net
 Category: Network
 Repository: base
@@ -254,7 +254,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-blockuser-any
 Section: net
 Category: Network
 Repository: base
@@ -276,7 +276,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-bouncedcc-any
 Section: net
 Category: Network
 Repository: base
@@ -298,7 +298,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-buffextras-any
 Section: net
 Category: Network
 Repository: base
@@ -320,7 +320,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-cert-any
 Section: net
 Category: Network
 Repository: base
@@ -342,7 +342,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-certauth-any
 Section: net
 Category: Network
 Repository: base
@@ -364,7 +364,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-chansaver-any
 Section: net
 Category: Network
 Repository: base
@@ -386,7 +386,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-clearbufferonmsg-any
 Section: net
 Category: Network
 Repository: base
@@ -408,7 +408,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-clientnotify-any
 Section: net
 Category: Network
 Repository: base
@@ -430,7 +430,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-controlpanel-any
 Section: net
 Category: Network
 Repository: base
@@ -452,7 +452,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-crypt-any
 Section: net
 Category: Network
 Repository: base
@@ -474,7 +474,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-ctcpflood-any
 Section: net
 Category: Network
 Repository: base
@@ -496,7 +496,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-dcc-any
 Section: net
 Category: Network
 Repository: base
@@ -518,7 +518,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-disconkick-any
 Section: net
 Category: Network
 Repository: base
@@ -540,7 +540,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-fail2ban-any
 Section: net
 Category: Network
 Repository: base
@@ -562,7 +562,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-flooddetach-any
 Section: net
 Category: Network
 Repository: base
@@ -584,7 +584,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-identfile-any
 Section: net
 Category: Network
 Repository: base
@@ -606,7 +606,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-imapauth-any
 Section: net
 Category: Network
 Repository: base
@@ -628,7 +628,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-keepnick-any
 Section: net
 Category: Network
 Repository: base
@@ -650,7 +650,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-kickrejoin-any
 Section: net
 Category: Network
 Repository: base
@@ -672,7 +672,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-lastseen-any
 Section: net
 Category: Network
 Repository: base
@@ -694,7 +694,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-listsockets-any
 Section: net
 Category: Network
 Repository: base
@@ -716,7 +716,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-log-any
 Section: net
 Category: Network
 Repository: base
@@ -738,7 +738,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-missingmotd-any
 Section: net
 Category: Network
 Repository: base
@@ -760,7 +760,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-modules_online-any
 Section: net
 Category: Network
 Repository: base
@@ -782,7 +782,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-nickserv-any
 Section: net
 Category: Network
 Repository: base
@@ -804,7 +804,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-notes-any
 Section: net
 Category: Network
 Repository: base
@@ -826,7 +826,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-notify-connect-any
 Section: net
 Category: Network
 Repository: base
@@ -848,7 +848,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-perform-any
 Section: net
 Category: Network
 Repository: base
@@ -870,7 +870,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-raw-any
 Section: net
 Category: Network
 Repository: base
@@ -892,7 +892,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-route-replies-any
 Section: net
 Category: Network
 Repository: base
@@ -914,7 +914,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-sasl-any
 Section: net
 Category: Network
 Repository: base
@@ -936,7 +936,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-savebuff-any
 Section: net
 Category: Network
 Repository: base
@@ -958,7 +958,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-schat-any
 Section: net
 Category: Network
 Repository: base
@@ -980,7 +980,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-send-raw-any
 Section: net
 Category: Network
 Repository: base
@@ -1002,7 +1002,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-simple-away-any
 Section: net
 Category: Network
 Repository: base
@@ -1024,7 +1024,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-shell-any
 Section: net
 Category: Network
 Repository: base
@@ -1046,7 +1046,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-stickychan-any
 Section: net
 Category: Network
 Repository: base
@@ -1068,7 +1068,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-watch-any
 Section: net
 Category: Network
 Repository: base
@@ -1090,7 +1090,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-playback-any
 Section: net
 Category: Network
 Repository: base
@@ -1112,7 +1112,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-push-any
 Section: net
 Category: Network
 Repository: base
@@ -1135,7 +1135,7 @@ Version: 1.10.1-r2
 Depends: +libc znc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-mod-webadmin-any
 Section: net
 Category: Network
 Repository: base
@@ -1157,7 +1157,7 @@ Version: 1.10.1-r2
 Depends: +libc znc-mod-webadmin
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-webskin-dark-clouds-any
 Section: net
 Category: Network
 Repository: base
@@ -1179,7 +1179,7 @@ Version: 1.10.1-r2
 Depends: +libc znc-mod-webadmin
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-webskin-forest-any
 Section: net
 Category: Network
 Repository: base
@@ -1201,7 +1201,7 @@ Version: 1.10.1-r2
 Depends: +libc znc-mod-webadmin
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @znc-webskin-ice-any
 Section: net
 Category: Network
 Repository: base

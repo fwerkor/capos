@@ -1,17 +1,18 @@
 Source-Makefile: feeds/packages/utils/i2c-tools/Makefile
+Build-Depends: python-setuptools/host
 
 Package: libi2c
-Version: 4.3-r3
+Version: 4.4-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libi2c-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: I2C library for i2c-tools
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: i2c-tools-4.3.tar.xz
+Source: i2c-tools-4.4.tar.xz
 License: GPL-2.0-or-later LGPL-2.1-or-later
 LicenseFiles: COPYING COPYING.LGPL
 CPE-ID: cpe:/a:i2c-tools_project:i2c-tools
@@ -21,17 +22,17 @@ Description:  This package contains i2c functionality needed by i2c-tools.
 @@
 
 Package: i2c-tools
-Version: 4.3-r3
+Version: 4.4-r2
 Depends: +libc +libi2c
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @i2c-tools-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: I2C tools for Linux
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: i2c-tools-4.3.tar.xz
+Source: i2c-tools-4.4.tar.xz
 License: GPL-2.0-or-later LGPL-2.1-or-later
 LicenseFiles: COPYING COPYING.LGPL
 CPE-ID: cpe:/a:i2c-tools_project:i2c-tools
@@ -43,17 +44,17 @@ Description:  This package contains an heterogeneous set of I2C tools for Linux.
 
 Package: python3-smbus
 Submenu: Python
-Version: 4.3-r3
+Version: 4.4-r2
 Depends: +libc +libi2c +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-smbus-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Python bindings for the SMBUS
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: i2c-tools-4.3.tar.xz
+Source: i2c-tools-4.4.tar.xz
 License: GPL-2.0-or-later LGPL-2.1-or-later
 LicenseFiles: COPYING COPYING.LGPL
 CPE-ID: cpe:/a:i2c-tools_project:i2c-tools

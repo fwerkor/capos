@@ -3,17 +3,17 @@ Source-Makefile: feeds/packages/net/coova-chilli/Makefile
 Package: coova-chilli
 Menu: 1
 Submenu: Captive Portals
-Version: 1.6-r12
+Version: 1.7-r1
 Depends: +libc +kmod-tun +librt +COOVACHILLI_MINIPORTAL:haserl +COOVACHILLI_WOLFSSL:libwolfssl +COOVACHILLI_OPENSSL:libopenssl +COOVACHILLI_JSONINTERFACE:libjson-c
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @coova-chilli-any
 Section: net
 Category: Network
 Repository: base
 Title: Wireless LAN HotSpot controller (Coova Chilli Version)
 Maintainer: Jaehoon You <teslamint@gmail.com>
-Source: coova-chilli-1.6.tar.gz
+Source: coova-chilli-1.7.tar.zst
 License: GPL-2.0-or-later
 LicenseFiles: COPYING
 URL: https://coova.github.io/
@@ -32,16 +32,16 @@ Config:
 
 Package: kmod-ipt-coova
 Submenu: Netfilter Extensions
-Version: <LINUX_VERSION>.1.6-r12
+Version: <LINUX_VERSION>.1.7-r1
 Depends: +kmod-ipt-core +libxtables
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kmod-ipt-coova-any
 Section: kernel
 Category: Kernel modules
 Title: Coova netfilter module
 Maintainer: Jaehoon You <teslamint@gmail.com>
-Source: coova-chilli-1.6.tar.gz
+Source: coova-chilli-1.7.tar.zst
 License: GPL-2.0-or-later
 LicenseFiles: COPYING
 URL: http://www.coova.org/CoovaChilli

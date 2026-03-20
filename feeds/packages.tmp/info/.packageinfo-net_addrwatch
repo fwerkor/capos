@@ -6,7 +6,7 @@ Version: 1.0.2-r3
 Depends: +libc +libpcap +libevent2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @addrwatch-any
 Section: net
 Category: Network
 Repository: base
@@ -30,7 +30,7 @@ Version: 1.0.2-r3
 Depends: +libc +addrwatch +libmariadb
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @addrwatch-mysql-any
 Section: net
 Category: Network
 Repository: base
@@ -54,7 +54,7 @@ Version: 1.0.2-r3
 Depends: +libc +addrwatch
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @addrwatch-stdout-any
 Section: net
 Category: Network
 Repository: base
@@ -78,7 +78,7 @@ Version: 1.0.2-r3
 Depends: +libc +addrwatch
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @addrwatch-syslog-any
 Section: net
 Category: Network
 Repository: base

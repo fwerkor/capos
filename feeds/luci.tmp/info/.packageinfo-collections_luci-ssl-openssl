@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-light +libustream-openssl +openssl-util +luci-app-package-manager
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-ssl-openssl-any
 Section: luci
 Category: LuCI
 Repository: base

@@ -6,7 +6,7 @@ Version: 1.51-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ntripclient-any
 Section: net
 Category: Network
 Repository: base

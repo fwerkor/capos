@@ -5,7 +5,7 @@ Version: 2021.06.26~8b1aeb18d686815f93e2bfe976e536c5699d6371-r1
 Depends: +libc +libpcap
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bpfcountd-any
 Section: net
 Category: Network
 Repository: base

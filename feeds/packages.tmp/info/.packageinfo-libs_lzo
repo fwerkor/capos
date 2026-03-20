@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/libs/lzo/Makefile
 
 Package: liblzo
-Version: 2.10-r4
+Version: 2.10-r5
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @liblzo-any
 Section: libs
 Category: Libraries
 Repository: base

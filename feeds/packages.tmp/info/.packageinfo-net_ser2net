@@ -5,7 +5,7 @@ Version: 4.6.2-r1
 Depends: +libc +libgensio +libyaml +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ser2net-any
 Section: net
 Category: Network
 Repository: base

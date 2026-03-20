@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/libs/libopen62541/Makefile
 
 Package: libopen62541
-Version: 1.3.6-r1
+Version: 1.3.6-r2
 Depends: +libc +librt +zlib +libstdcpp +libpthread +libatomic +LIBOPEN62541_MBDEDTLS:libmbedtls +LIBOPEN62541_OPENSSL:libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopen62541-any
 Section: libs
 Category: Libraries
 Repository: base

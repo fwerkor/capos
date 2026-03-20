@@ -5,7 +5,7 @@ Version: 0.9.33-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lmdb-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -25,7 +25,7 @@ Version: 0.9.33-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: lmdb
-Provides: 
+Provides: @lmdb-utils-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -44,7 +44,7 @@ Version: 0.9.33-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: lmdb
-Provides: 
+Provides: @lmdb-test-any
 Section: libs
 Category: Libraries
 Repository: base

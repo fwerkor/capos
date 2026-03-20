@@ -6,7 +6,7 @@ Version: 3.7.2-r3
 Depends: +libc +fuse3-utils +glib2 +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @sshfs-any
 Section: net
 Category: Network
 Repository: base

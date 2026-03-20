@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/libs/cyrus-sasl/Makefile
 
 Package: libsasl2
-Version: 2.1.28-r3
-Depends: +libc +libopenssl
+Version: 2.1.28-r4
+Depends: +libc +USE_GLIBC:libcrypt-compat +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libsasl2-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -21,11 +21,11 @@ Description: A general purpose authentication library (libraries)
 @@
 
 Package: libsasl2-sasldb
-Version: 2.1.28-r3
+Version: 2.1.28-r4
 Depends: +libc +libsasl2 +libdb47
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libsasl2-sasldb-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -41,11 +41,11 @@ Description: A general purpose authentication library (sasldb libraries)
 @@
 
 Package: libsasl2-utils
-Version: 2.1.28-r3
+Version: 2.1.28-r4
 Depends: +libc +libsasl2 +libdb47
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libsasl2-utils-any
 Section: libs
 Category: Libraries
 Repository: base

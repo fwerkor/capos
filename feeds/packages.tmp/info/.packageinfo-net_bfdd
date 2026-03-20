@@ -6,7 +6,7 @@ Version: 2019.08.22~c54534beb524afc3972039f57b56ec65332b43f7-r4
 Depends: +libc +libevent2 +libjson-c
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bfdd-any
 Section: net
 Category: Network
 Repository: base

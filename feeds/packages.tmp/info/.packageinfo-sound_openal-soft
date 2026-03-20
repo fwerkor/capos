@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/sound/openal-soft/Makefile
+
+Package: openal-soft
+Version: 1.24.3-r1
+Depends: +libc +libatomic +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: @openal-soft-any
+Section: sound
+Category: Sound
+Repository: base
+Title: OpenAL Soft
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: openal-soft-1.24.3.tar.gz
+License: LGPL-2.0-only BSD-3-Clause
+LicenseFiles: BSD-3Clause COPYING LICENSE-pffft
+URL: https://openal-soft.org
+Type: ipkg
+Description:  OpenAL Soft is an LGPL-licensed, cross-platform, software
+ implementation of the OpenAL 3D audio API.
+@@
+
+

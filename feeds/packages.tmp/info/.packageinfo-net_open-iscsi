@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/net/open-iscsi/Makefile
 
 Package: open-iscsi
-Version: 2.1.7-r1
+Version: 2.1.10-r1
 Depends: +libc +libopenssl +open-isns +libmount +libkmod +kmod-iscsi-initiator
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-iscsi-any
 Section: net
 Category: Network
 Repository: base
 Title: iSCSI userland tools
 Maintainer: Lucian CRISTIAN <lucian.cristian@gmail.com>
-Source: open-iscsi-2.1.7.tar.gz
+Source: open-iscsi-2.1.10.tar.zst
 License: GPL-2.0-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:open-iscsi_project:open-iscsi

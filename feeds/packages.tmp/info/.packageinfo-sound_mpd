@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/sound/mpd/Makefile
 
 Package: mpd-full
-Version: 0.23.15-r2
+Version: 0.23.16-r1
 Depends: +libc +zlib +libcurl +libpthread +libmpdclient +boost +BUILD_NLS:libiconv-full +libfmt +AUDIO_SUPPORT:alsa-lib +libexpat +libflac +libid3tag +libfaad2 +libopus +AUDIO_SUPPORT:pulseaudio +libvorbis +libmms +libnpupnp +libshout +yajl +libffmpeg +lame-lib +libsoxr +!BUILD_PATENTED:libmad
 Conflicts: 
 Menu-Depends: 
-Provides: mpd
+Provides: @mpd-full-any mpd
 Build-Variant: full
 Section: sound
 Category: Sound
@@ -13,7 +13,7 @@ Repository: base
 Title: Music Player Daemon (full)
 Maintainer: 
 Require-User: mpd:mpd
-Source: mpd-0.23.15.tar.xz
+Source: mpd-0.23.16.tar.xz
 License: GPL-2.0-or-later
 LicenseFiles: COPYING
 URL: https://www.musicpd.org/
@@ -27,11 +27,11 @@ Description:  Music Player Daemon (MPD) is a flexible, powerful, server-side
 @@
 
 Package: mpd-mini
-Version: 0.23.15-r2
+Version: 0.23.16-r1
 Depends: +libc +zlib +libcurl +libpthread +libmpdclient +boost +BUILD_NLS:libiconv-full +libfmt +AUDIO_SUPPORT:alsa-lib +libexpat +libflac +libid3tag +libfaad2 +libopus +libmad +libvorbisidec
 Conflicts: 
 Menu-Depends: 
-Provides: mpd
+Provides: @mpd-mini-any mpd
 Build-Variant: mini
 Section: sound
 Category: Sound
@@ -39,7 +39,7 @@ Repository: base
 Title: Music Player Daemon (mini)
 Maintainer: 
 Require-User: mpd:mpd
-Source: mpd-0.23.15.tar.xz
+Source: mpd-0.23.16.tar.xz
 License: GPL-2.0-or-later
 LicenseFiles: COPYING
 URL: https://www.musicpd.org/
@@ -54,18 +54,18 @@ Description:  Music Player Daemon (MPD) is a flexible, powerful, server-side
 @@
 
 Package: mpd-avahi-service
-Version: 0.23.15-r2
+Version: 0.23.16-r1
 Depends: +libc +zlib +libcurl +libpthread +libmpdclient +boost +BUILD_NLS:libiconv-full +libfmt +AUDIO_SUPPORT:alsa-lib +libexpat +libflac +libid3tag +libfaad2 +libopus +avahi-dbus-daemon
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mpd-avahi-service-any
 Section: sound
 Category: Sound
 Repository: base
 Title: Music Player Daemon (Avahi service)
 Maintainer: 
 Require-User: mpd:mpd
-Source: mpd-0.23.15.tar.xz
+Source: mpd-0.23.16.tar.xz
 License: GPL-2.0-or-later
 LicenseFiles: COPYING
 URL: https://www.musicpd.org/

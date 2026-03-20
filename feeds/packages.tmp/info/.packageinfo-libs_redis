@@ -6,7 +6,7 @@ Version: 6.2.14-r1
 Depends: +libc +redis-utils +redis-cli
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @redis-full-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -30,7 +30,7 @@ Version: 6.2.14-r1
 Depends: +libc +libpthread +libatomic
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @redis-server-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -51,7 +51,7 @@ Version: 6.2.14-r1
 Depends: +libc +libatomic
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @redis-cli-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -72,7 +72,7 @@ Version: 6.2.14-r1
 Depends: +libc +redis-server
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @redis-utils-any
 Section: libs
 Category: Libraries
 Repository: base

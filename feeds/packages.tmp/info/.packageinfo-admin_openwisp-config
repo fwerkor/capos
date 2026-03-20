@@ -6,7 +6,7 @@ Version: 1.2.0-r1
 Depends: +libc +curl +lua +libuci-lua +luafilesystem +luci-lib-nixio +ca-certificates
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @openwisp-config-any
 Section: admin
 Category: Administration
 Repository: base

@@ -3,20 +3,20 @@ Build-Depends: golang/host
 
 Package: cloudflared
 Submenu: Web Servers/Proxies
-Version: 2025.5.0-r1
+Version: 2025.11.0-r2
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) +ca-bundle
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @cloudflared-any
 Section: net
 Category: Network
 Repository: base
 Title: Cloudflare Tunnel client
 Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
-Source: cloudflared-2025.5.0.tar.gz
+Source: cloudflared-2025.11.0.tar.gz
 License: Apache-2.0
 LicenseFiles: LICENSE
-URL: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide
+URL: https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/get-started/
 Type: ipkg
 Description:   Contains the command-line client for Cloudflare Tunnel, a tunneling
   daemon that proxies traffic from the Cloudflare network to your origins.

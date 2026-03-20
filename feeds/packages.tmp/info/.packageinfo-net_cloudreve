@@ -7,7 +7,7 @@ Version: 4.9.2-r1
 Depends: +libc @(aarch64||arm||i386||i686||riscv64||x86_64) +ca-bundle
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @cloudreve-any
 Section: net
 Category: Network
 Repository: base

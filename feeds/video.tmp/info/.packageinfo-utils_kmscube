@@ -1,0 +1,22 @@
+Source-Makefile: feeds/video/utils/kmscube/Makefile
+
+Package: kmscube
+Submenu: Video
+Version: 2024.11.06~311eaaaa473d593c30d118799aa19ac4ad53cd65-r1
+Depends: +libc +glib2 +libmesa +libpng +gstreamer1-plugins-base +libgstreamer1 +libgst1allocators +libgst1video +libgst1app
+Conflicts: 
+Menu-Depends: 
+Provides: @kmscube-any
+Section: utils
+Category: Utilities
+Repository: base
+Title: kmscube KMS/DRM/EGL example
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: kmscube-2024.11.06~311eaaaa473d593c30d118799aa19ac4ad53cd65.tar.zst
+License: MIT
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: kmscube KMS/DRM/EGL example
+@@
+
+

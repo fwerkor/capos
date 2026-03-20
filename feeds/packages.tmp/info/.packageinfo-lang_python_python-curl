@@ -1,18 +1,19 @@
 Source-Makefile: feeds/packages/lang/python/python-curl/Makefile
+Build-Depends: python3/host python-setuptools/host
 
 Package: python3-curl
 Submenu: Python
-Version: 7.45.2-r3
+Version: 7.45.7-r1
 Depends: +libc +libcurl +python3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-curl-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Python module interface to the cURL library
 Maintainer: Waldemar Konik <informatyk74@interia.pl>
-Source: pycurl-7.45.2.tar.gz
+Source: pycurl-7.45.7.tar.gz
 License: LGPL-2.1
 LicenseFiles: COPYING-LGPL
 URL: http://pycurl.io/
@@ -22,17 +23,17 @@ Description: PycURL is a Python interface to libcurl, the multiprotocol file tra
 
 Package: python3-curl-src
 Submenu: Python
-Version: 7.45.2-r3
+Version: 7.45.7-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-curl-src-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Python module interface to the cURL library (sources)
 Maintainer: Waldemar Konik <informatyk74@interia.pl>
-Source: pycurl-7.45.2.tar.gz
+Source: pycurl-7.45.7.tar.gz
 License: LGPL-2.1
 LicenseFiles: COPYING-LGPL
 URL: http://pycurl.io/

@@ -1,12 +1,13 @@
 Source-Makefile: feeds/packages/lang/python/python-asgiref/Makefile
+Build-Depends: python-setuptools/host
 
 Package: python3-asgiref
 Submenu: Python
-Version: 3.7.2-r1
+Version: 3.7.2-r2
 Depends: +libc +python3-light +python3-logging +python3-asyncio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-asgiref-any
 Section: lang
 Category: Languages
 Repository: base
@@ -23,11 +24,11 @@ Description:   ASGI is a standard for Python asynchronous web apps and servers t
 
 Package: python3-asgiref-src
 Submenu: Python
-Version: 3.7.2-r1
+Version: 3.7.2-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-asgiref-src-any
 Section: lang
 Category: Languages
 Repository: base

@@ -5,7 +5,7 @@ Version: 2.12.0-r1
 Depends: +libc +zlib +libncurses +glib2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @atop-any
 Section: admin
 Category: Administration
 Repository: base

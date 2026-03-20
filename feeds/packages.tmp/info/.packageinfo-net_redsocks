@@ -5,7 +5,7 @@ Version: 0.5-r2
 Depends: +libc +libevent2-core
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @redsocks-any
 Section: net
 Category: Network
 Repository: base

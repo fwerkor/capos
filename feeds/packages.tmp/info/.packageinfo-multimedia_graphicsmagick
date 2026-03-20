@@ -6,12 +6,12 @@ Version: 1.3.45-r1
 Depends: +libc +libltdl +libpthread +zlib +libfreetype +libpng +libjpeg +libtiff
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @graphicsmagick-any
 Section: multimedia
 Category: Multimedia
 Repository: base
 Title: Graphics manipulation tools
-Maintainer: Aleksey Vasilenko <aleksey.vasilenko@gmail.com>
+Maintainer: 
 Source: GraphicsMagick-1.3.45.tar.xz
 License: MIT
 LicenseFiles: Copyright.txt

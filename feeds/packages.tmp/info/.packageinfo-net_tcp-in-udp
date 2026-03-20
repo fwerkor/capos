@@ -1,0 +1,21 @@
+Source-Makefile: feeds/packages/net/tcp-in-udp/Makefile
+Build-Depends: bpf-headers
+
+Package: tcp-in-udp
+Version: 2026.02.24~bf16ad0b1c43853abbcac2053241d28e2bb20d12-r1
+Depends: +libc +libbpf @HAS_BPF_TOOLCHAIN +@NEED_BPF_TOOLCHAIN
+Conflicts: 
+Menu-Depends: 
+Provides: @tcp-in-udp-any
+Section: net
+Category: Network
+Repository: base
+Title: Lightweight TCP in UDP tunnel using eBPF
+Maintainer: Chester A. Unal <chester.a.unal@arinc9.com>
+Source: tcp-in-udp-2026.02.24~bf16ad0b1c43853abbcac2053241d28e2bb20d12.tar.zst
+License: AGPL-3.0-or-later
+Type: ipkg
+Description: Lightweight TCP in UDP tunnel using eBPF
+@@
+
+

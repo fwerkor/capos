@@ -2,20 +2,21 @@ Source-Makefile: feeds/packages/net/tor-hs/Makefile
 
 Package: tor-hs
 Submenu: IP Addresses and Names
-Version: 0.0.1-r3
+Version: 0.1.0-r1
 Depends: +libc +tor +rpcd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tor-hs-any
 Section: net
 Category: Network
 Repository: base
-Title: Tor hidden service configurator
-Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Title: Tor onion service configurator
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>, Sergey Ponomarev <stokito@gmail.com>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
-Description:   Tor Hidden Service configurator
+Description:   Tor Onion (Hidden) Service configurator.
+  See documentation https://openwrt.org/docs/guide-user/services/tor/hs
 @@
 
 

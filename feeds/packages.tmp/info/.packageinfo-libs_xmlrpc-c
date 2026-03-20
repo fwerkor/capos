@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/libs/xmlrpc-c/Makefile
 
 Package: xmlrpc-c-common
-Version: 1.59.03-r1
+Version: 1.60.05-r2
 Depends: +libc +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @xmlrpc-c-common-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: XML-RPC library - common
-Maintainer: Ted Hess <thess@kitschensync.net>
-Source: xmlrpc-c-1.59.03.tgz
+Maintainer: 
+Source: xmlrpc-c-1.60.05.tgz
 License: VARIOUS
 LicenseFiles: doc/COPYING
 URL: http://xmlrpc-c.sourceforge.net/
@@ -23,18 +23,18 @@ Description:     Programming library for writing an XML-RPC server or client in 
 @@
 
 Package: xmlrpc-c-libxml2
-Version: 1.59.03-r1
+Version: 1.60.05-r2
 Depends: +libc +xmlrpc-c-common +libxml2
 Conflicts: 
 Menu-Depends: 
-Provides: xmlrpc-c
+Provides: @xmlrpc-c-libxml2-any xmlrpc-c
 Build-Variant: libxml2
 Section: libs
 Category: Libraries
 Repository: base
 Title: XML-RPC library (uses libxml2)
-Maintainer: Ted Hess <thess@kitschensync.net>
-Source: xmlrpc-c-1.59.03.tgz
+Maintainer: 
+Source: xmlrpc-c-1.60.05.tgz
 License: VARIOUS
 LicenseFiles: doc/COPYING
 URL: http://xmlrpc-c.sourceforge.net/
@@ -44,40 +44,18 @@ Description:     Programming library for writing an XML-RPC server or client in 
     a simple remote procedure call (RPC) type request of a server. Uses external libxml2 library (quite big)
 @@
 
-Package: xmlrpc-c-internal
-Version: 1.59.03-r1
-Depends: +libc +xmlrpc-c-common
-Conflicts: 
-Menu-Depends: 
-Provides: xmlrpc-c
-Build-Variant: internal
-Section: libs
-Category: Libraries
-Repository: base
-Title: XML-RPC library (uses internal expat variant)
-Maintainer: Ted Hess <thess@kitschensync.net>
-Source: xmlrpc-c-1.59.03.tgz
-License: VARIOUS
-LicenseFiles: doc/COPYING
-URL: http://xmlrpc-c.sourceforge.net/
-Type: ipkg
-Description:     Programming library for writing an XML-RPC server or client in C or C++.
-    XML-RPC is a standard network protocol to allow a client program to make
-    a simple remote procedure call (RPC) type request of a server. Uses internal expat variant (stripped down)
-@@
-
 Package: xmlrpc-c-server
-Version: 1.59.03-r1
+Version: 1.60.05-r2
 Depends: +libc +xmlrpc-c
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @xmlrpc-c-server-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: XML-RPC library - server
-Maintainer: Ted Hess <thess@kitschensync.net>
-Source: xmlrpc-c-1.59.03.tgz
+Maintainer: 
+Source: xmlrpc-c-1.60.05.tgz
 License: VARIOUS
 LicenseFiles: doc/COPYING
 URL: http://xmlrpc-c.sourceforge.net/
@@ -86,17 +64,17 @@ Description: XML-RPC library - server
 @@
 
 Package: xmlrpc-c-abyss
-Version: 1.59.03-r1
+Version: 1.60.05-r2
 Depends: +libc +xmlrpc-c-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @xmlrpc-c-abyss-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: XML-RPC library - abyss
-Maintainer: Ted Hess <thess@kitschensync.net>
-Source: xmlrpc-c-1.59.03.tgz
+Maintainer: 
+Source: xmlrpc-c-1.60.05.tgz
 License: VARIOUS
 LicenseFiles: doc/COPYING
 URL: http://xmlrpc-c.sourceforge.net/
@@ -105,17 +83,17 @@ Description: XML-RPC library - abyss
 @@
 
 Package: xmlrpc-c-server-abyss
-Version: 1.59.03-r1
+Version: 1.60.05-r2
 Depends: +libc +xmlrpc-c-server +xmlrpc-c-abyss
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @xmlrpc-c-server-abyss-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: XML-RPC library - abyss server
-Maintainer: Ted Hess <thess@kitschensync.net>
-Source: xmlrpc-c-1.59.03.tgz
+Maintainer: 
+Source: xmlrpc-c-1.60.05.tgz
 License: VARIOUS
 LicenseFiles: doc/COPYING
 URL: http://xmlrpc-c.sourceforge.net/
@@ -124,17 +102,17 @@ Description: XML-RPC library - abyss server
 @@
 
 Package: xmlrpc-c-client
-Version: 1.59.03-r1
+Version: 1.60.05-r2
 Depends: +libc +xmlrpc-c +libcurl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @xmlrpc-c-client-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: XML-RPC library - client
-Maintainer: Ted Hess <thess@kitschensync.net>
-Source: xmlrpc-c-1.59.03.tgz
+Maintainer: 
+Source: xmlrpc-c-1.60.05.tgz
 License: VARIOUS
 LicenseFiles: doc/COPYING
 URL: http://xmlrpc-c.sourceforge.net/

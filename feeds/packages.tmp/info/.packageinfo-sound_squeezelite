@@ -2,18 +2,18 @@ Source-Makefile: feeds/packages/sound/squeezelite/Makefile
 Build-Depends: faad2 ffmpeg flac libsoxr libvorbis openssl opusfile
 
 Package: squeezelite-full
-Version: 1.9.9.1432-r3
+Version: 2.0.0.1518-r1
 Depends: +libc +alsa-lib +libfaad2 +libffmpeg-audio-dec +libflac +libmpg123 +libopenssl +libopusfile +libsoxr +libvorbis
 Conflicts: 
 Menu-Depends: 
-Provides: squeezelite
+Provides: @squeezelite-full-any squeezelite
 Build-Variant: full
 Section: sound
 Category: Sound
 Repository: base
 Title: Headless squeezebox emulator (full)
 Maintainer: Ted Hess <thess@kitschensync.net>
-Source: squeezelite-1.9.9.1432.tar.zst
+Source: squeezelite-2.0.0.1518.tar.zst
 License: GPL-3.0-or-later
 LicenseFiles: LICENSE.txt
 URL: https://github.com/ralph-irving/squeezelite
@@ -31,18 +31,18 @@ Description:         Squeezelite is a small headless squeezebox emulator for lin
 @@
 
 Package: squeezelite-dynamic
-Version: 1.9.9.1432-r3
+Version: 2.0.0.1518-r1
 Depends: +libc +alsa-lib +libmpg123
 Conflicts: 
 Menu-Depends: 
-Provides: squeezelite
+Provides: @squeezelite-dynamic-any squeezelite
 Build-Variant: dynamic
 Section: sound
 Category: Sound
 Repository: base
 Title: Headless squeezebox emulator (dynamic)
 Maintainer: Ted Hess <thess@kitschensync.net>
-Source: squeezelite-1.9.9.1432.tar.zst
+Source: squeezelite-2.0.0.1518.tar.zst
 License: GPL-3.0-or-later
 LicenseFiles: LICENSE.txt
 URL: https://github.com/ralph-irving/squeezelite
@@ -69,18 +69,18 @@ Description:         Squeezelite is a small headless squeezebox emulator for lin
 
 Package: squeezelite-custom
 Menu: 1
-Version: 1.9.9.1432-r3
+Version: 2.0.0.1518-r1
 Depends: +libc +alsa-lib @!ALL +SQUEEZELITE_AAC:libfaad2 +SQUEEZELITE_FLAC:libflac +SQUEEZELITE_MP3_MAD:libmad +SQUEEZELITE_MP3_MPG123:libmpg123 +SQUEEZELITE_OPUS:libopusfile +SQUEEZELITE_RESAMPLE:libsoxr +SQUEEZELITE_SSL:libopenssl +SQUEEZELITE_VORBIS:libvorbis +SQUEEZELITE_VORBIS_TREMOR:libvorbisidec +SQUEEZELITE_WMA_ALAC:libffmpeg-audio-dec
 Conflicts: 
 Menu-Depends: 
-Provides: squeezelite
+Provides: @squeezelite-custom-any squeezelite
 Build-Variant: custom
 Section: sound
 Category: Sound
 Repository: base
 Title: Headless squeezebox emulator (custom)
 Maintainer: Ted Hess <thess@kitschensync.net>
-Source: squeezelite-1.9.9.1432.tar.zst
+Source: squeezelite-2.0.0.1518.tar.zst
 License: GPL-3.0-or-later
 LicenseFiles: LICENSE.txt
 URL: https://github.com/ralph-irving/squeezelite

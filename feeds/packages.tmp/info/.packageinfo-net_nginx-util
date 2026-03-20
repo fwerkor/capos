@@ -2,11 +2,11 @@ Source-Makefile: feeds/packages/net/nginx-util/Makefile
 
 Package: nginx-ssl-util
 Submenu: Web Servers/Proxies
-Version: 1.7-r1
+Version: 1.7-r2
 Depends: +libc +libstdcpp +libuci +libubus +libubox +libpthread +libopenssl +libpcre2
 Conflicts: nginx-ssl-util-nopcre,
 Menu-Depends: 
-Provides: 
+Provides: @nginx-ssl-util-any
 Section: net
 Category: Network
 Repository: base
@@ -21,11 +21,11 @@ Description:   Utility that builds dynamically LAN listen directives for Nginx.
 
 Package: nginx-ssl-util-nopcre
 Submenu: Web Servers/Proxies
-Version: 1.7-r1
+Version: 1.7-r2
 Depends: +libc +libstdcpp +libuci +libubus +libubox +libpthread +libopenssl
 Conflicts: nginx-ssl-util
 Menu-Depends: 
-Provides: 
+Provides: @nginx-ssl-util-nopcre-any
 Section: net
 Category: Network
 Repository: base

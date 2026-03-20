@@ -3,17 +3,17 @@ Build-Depends: boost/host
 Build-Types: host
 
 Package: boost-atomic
-Version: 1.86.0-r1
-Depends: +libc +libstdcpp +libpthread +librt +boost-system
+Version: 1.89.0-r1
+Depends: +libc +libstdcpp +libpthread +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-atomic-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (atomic)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -24,17 +24,17 @@ Description:    This package contains the Boost atomic library.
 @@
 
 Package: boost-charconv
-Version: 1.86.0-r1
+Version: 1.89.0-r1
 Depends: +libc +libstdcpp +libpthread +librt +PACKAGE_boost-charconv:libquadmath
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-charconv-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (charconv)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -45,17 +45,17 @@ Description:    This package contains the Boost charconv library.
 @@
 
 Package: boost-chrono
-Version: 1.86.0-r1
-Depends: +libc +libstdcpp +libpthread +librt +boost-system
+Version: 1.89.0-r1
+Depends: +libc +libstdcpp +libpthread +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-chrono-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (chrono)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -66,17 +66,17 @@ Description:    This package contains the Boost chrono library.
 @@
 
 Package: boost-cobalt
-Version: 1.86.0-r1
-Depends: +libc +libstdcpp +libpthread +librt +boost-system +boost-container
+Version: 1.89.0-r1
+Depends: +libc +libstdcpp +libpthread +librt +boost-container +boost-context +boost-date_time
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-cobalt-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (cobalt)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -87,17 +87,17 @@ Description:    This package contains the Boost cobalt library.
 @@
 
 Package: boost-container
-Version: 1.86.0-r1
+Version: 1.89.0-r1
 Depends: +libc +libstdcpp +libpthread +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-container-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (container)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -108,17 +108,17 @@ Description:    This package contains the Boost container library.
 @@
 
 Package: boost-context
-Version: 1.86.0-r1
-Depends: +libc +libstdcpp +libpthread +librt +boost-chrono +boost-system @!boost-context-exclude
+Version: 1.89.0-r1
+Depends: +libc +libstdcpp +libpthread +librt +boost-chrono @!boost-context-exclude
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-context-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (context)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -129,17 +129,17 @@ Description:    This package contains the Boost context library.
 @@
 
 Package: boost-contract
-Version: 1.86.0-r1
-Depends: +libc +libstdcpp +libpthread +librt +boost-system
+Version: 1.89.0-r1
+Depends: +libc +libstdcpp +libpthread +librt +boost-atomic +boost-chrono +boost-container +boost-date_time +boost-thread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-contract-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (contract)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -150,17 +150,17 @@ Description:    This package contains the Boost contract library.
 @@
 
 Package: boost-coroutine
-Version: 1.86.0-r1
-Depends: +libc +libstdcpp +libpthread +librt +boost-system +boost-chrono +boost-context +boost-thread @!boost-coroutine-exclude
+Version: 1.89.0-r1
+Depends: +libc +libstdcpp +libpthread +librt +boost-chrono +boost-context +boost-thread @!boost-coroutine-exclude
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-coroutine-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (coroutine)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -171,17 +171,17 @@ Description:    This package contains the Boost coroutine library.
 @@
 
 Package: boost-date_time
-Version: 1.86.0-r1
+Version: 1.89.0-r1
 Depends: +libc +libstdcpp +libpthread +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-date_time-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (date_time)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -192,17 +192,17 @@ Description:    This package contains the Boost date_time library.
 @@
 
 Package: boost-fiber
-Version: 1.86.0-r1
+Version: 1.89.0-r1
 Depends: +libc +libstdcpp +libpthread +librt +boost-coroutine +boost-filesystem @!boost-fiber-exclude
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-fiber-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (fiber)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -213,17 +213,17 @@ Description:    This package contains the Boost fiber library.
 @@
 
 Package: boost-filesystem
-Version: 1.86.0-r1
-Depends: +libc +libstdcpp +libpthread +librt +boost-system +boost-atomic
+Version: 1.89.0-r1
+Depends: +libc +libstdcpp +libpthread +librt +boost-atomic
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-filesystem-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (filesystem)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -234,17 +234,17 @@ Description:    This package contains the Boost filesystem library.
 @@
 
 Package: boost-graph
-Version: 1.86.0-r1
-Depends: +libc +libstdcpp +libpthread +librt +boost-regex
+Version: 1.89.0-r1
+Depends: +libc +libstdcpp +libpthread +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-graph-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (graph)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -255,17 +255,17 @@ Description:    This package contains the Boost graph library.
 @@
 
 Package: boost-iostreams
-Version: 1.86.0-r1
-Depends: +libc +libstdcpp +libpthread +librt +PACKAGE_boost-iostreams:zlib +PACKAGE_boost-iostreams:liblzma +PACKAGE_boost-iostreams:libbz2 +PACKAGE_boost-iostreams:libzstd
+Version: 1.89.0-r1
+Depends: +libc +libstdcpp +libpthread +librt +boost-random +boost-regex +PACKAGE_boost-iostreams:zlib +PACKAGE_boost-iostreams:liblzma +PACKAGE_boost-iostreams:libbz2 +PACKAGE_boost-iostreams:libzstd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-iostreams-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (iostreams)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -276,17 +276,17 @@ Description:    This package contains the Boost iostreams library.
 @@
 
 Package: boost-json
-Version: 1.86.0-r1
+Version: 1.89.0-r1
 Depends: +libc +libstdcpp +libpthread +librt +boost-container
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-json-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (json)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -297,17 +297,17 @@ Description:    This package contains the Boost json library.
 @@
 
 Package: boost-locale
-Version: 1.86.0-r1
-Depends: +libc +libstdcpp +libpthread +librt +boost-system +boost-chrono +boost-thread +PACKAGE_boost-locale:icu
+Version: 1.89.0-r1
+Depends: +libc +libstdcpp +libpthread +librt +boost-chrono +boost-thread +boost-charconv +PACKAGE_boost-locale:icu
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-locale-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (locale)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -318,17 +318,17 @@ Description:    This package contains the Boost locale library.
 @@
 
 Package: boost-log
-Version: 1.86.0-r1
-Depends: +libc +libstdcpp +libpthread +librt +boost-system +boost-chrono +boost-date_time +boost-thread +boost-filesystem +boost-regex
+Version: 1.89.0-r1
+Depends: +libc +libstdcpp +libpthread +librt +boost-chrono +boost-date_time +boost-thread +boost-filesystem +boost-regex +boost-serialization
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-log-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (log)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -339,17 +339,17 @@ Description:    This package contains the Boost log library.
 @@
 
 Package: boost-math
-Version: 1.86.0-r1
-Depends: +libc +libstdcpp +libpthread +librt
+Version: 1.89.0-r1
+Depends: +libc +libstdcpp +libpthread +librt +boost-container +boost-random
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-math-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (math)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -360,17 +360,17 @@ Description:    This package contains the Boost math library.
 @@
 
 Package: boost-nowide
-Version: 1.86.0-r1
+Version: 1.89.0-r1
 Depends: +libc +libstdcpp +libpthread +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-nowide-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (nowide)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -381,17 +381,17 @@ Description:    This package contains the Boost nowide library.
 @@
 
 Package: boost-program_options
-Version: 1.86.0-r1
+Version: 1.89.0-r1
 Depends: +libc +libstdcpp +libpthread +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-program_options-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (program_options)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -402,17 +402,17 @@ Description:    This package contains the Boost program_options library.
 @@
 
 Package: boost-python3
-Version: 1.86.0-r1
-Depends: +libc +libstdcpp +libpthread +librt +PACKAGE_boost-python3:python3-base
+Version: 1.89.0-r1
+Depends: +libc +libstdcpp +libpthread +librt +boost-container +boost-graph +PACKAGE_boost-python3:python3-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-python3-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (python3)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -423,17 +423,17 @@ Description:    This package contains the Boost python3 library.
 @@
 
 Package: boost-random
-Version: 1.86.0-r1
-Depends: +libc +libstdcpp +libpthread +librt +boost-system
+Version: 1.89.0-r1
+Depends: +libc +libstdcpp +libpthread +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-random-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (random)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -444,17 +444,17 @@ Description:    This package contains the Boost random library.
 @@
 
 Package: boost-regex
-Version: 1.86.0-r1
+Version: 1.89.0-r1
 Depends: +libc +libstdcpp +libpthread +librt +PACKAGE_boost-regex:icu
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-regex-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (regex)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -465,17 +465,17 @@ Description:    This package contains the Boost regex library.
 @@
 
 Package: boost-serialization
-Version: 1.86.0-r1
+Version: 1.89.0-r1
 Depends: +libc +libstdcpp +libpthread +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-serialization-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (serialization)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -486,17 +486,17 @@ Description:    This package contains the Boost serialization library.
 @@
 
 Package: boost-wserialization
-Version: 1.86.0-r1
+Version: 1.89.0-r1
 Depends: +libc +libstdcpp +libpthread +librt +boost-serialization
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-wserialization-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (wserialization)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -507,17 +507,17 @@ Description:    This package contains the Boost wserialization library.
 @@
 
 Package: boost-stacktrace
-Version: 1.86.0-r1
+Version: 1.89.0-r1
 Depends: +libc +libstdcpp +libpthread +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-stacktrace-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (stacktrace)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -527,39 +527,18 @@ Hidden: 1
 Description:    This package contains the Boost stacktrace library.
 @@
 
-Package: boost-system
-Version: 1.86.0-r1
-Depends: +libc +libstdcpp +libpthread +librt
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: libs
-Category: Libraries
-Repository: base
-Title: Boost C++ source library (system)
-Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
-License: BSL-1.0
-LicenseFiles: LICENSE_1_0.txt
-CPE-ID: cpe:/a:boost:boost
-URL: https://www.boost.org
-Type: ipkg
-Hidden: 1
-Description:    This package contains the Boost system library.
-@@
-
 Package: boost-thread
-Version: 1.86.0-r1
-Depends: +libc +libstdcpp +libpthread +librt +boost-system +boost-chrono +boost-atomic
+Version: 1.89.0-r1
+Depends: +libc +libstdcpp +libpthread +librt +boost-chrono +boost-atomic +boost-container +boost-date_time
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-thread-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (thread)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -570,17 +549,17 @@ Description:    This package contains the Boost thread library.
 @@
 
 Package: boost-timer
-Version: 1.86.0-r1
+Version: 1.89.0-r1
 Depends: +libc +libstdcpp +libpthread +librt +boost-chrono
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-timer-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (timer)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -591,17 +570,17 @@ Description:    This package contains the Boost timer library.
 @@
 
 Package: boost-type_erasure
-Version: 1.86.0-r1
-Depends: +libc +libstdcpp +libpthread +librt +boost-chrono +boost-system +boost-thread
+Version: 1.89.0-r1
+Depends: +libc +libstdcpp +libpthread +librt +boost-chrono +boost-thread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-type_erasure-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (type_erasure)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -612,17 +591,17 @@ Description:    This package contains the Boost type_erasure library.
 @@
 
 Package: boost-url
-Version: 1.86.0-r1
+Version: 1.89.0-r1
 Depends: +libc +libstdcpp +libpthread +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-url-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (url)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -633,17 +612,17 @@ Description:    This package contains the Boost url library.
 @@
 
 Package: boost-wave
-Version: 1.86.0-r1
-Depends: +libc +libstdcpp +libpthread +librt +boost-date_time +boost-thread +boost-filesystem
+Version: 1.89.0-r1
+Depends: +libc +libstdcpp +libpthread +librt +boost-date_time +boost-thread +boost-filesystem +boost-container +boost-serialization +boost-regex
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-wave-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (wave)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -654,17 +633,17 @@ Description:    This package contains the Boost wave library.
 @@
 
 Package: boost-test
-Version: 1.86.0-r1
-Depends: +libc +libstdcpp +libpthread +librt +boost-system +boost-timer
+Version: 1.89.0-r1
+Depends: +libc +libstdcpp +libpthread +librt +boost-timer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-test-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (test)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -675,17 +654,17 @@ Description: Boost C++ source library (test)
 @@
 
 Package: boost-libs
-Version: 1.86.0-r1
-Depends: +libc +libstdcpp +libpthread +librt +boost-atomic +boost-charconv +boost-chrono +boost-cobalt +boost-container +!boost-context-exclude:boost-context +boost-contract +!boost-coroutine-exclude:boost-coroutine +boost-date_time +!boost-fiber-exclude:boost-fiber +boost-filesystem +boost-graph +boost-iostreams +boost-json +boost-locale +boost-log +boost-math +boost-nowide +boost-program_options +boost-python3 +boost-random +boost-regex +boost-serialization +boost-wserialization +boost-stacktrace +boost-system +boost-thread +boost-timer +boost-type_erasure +boost-url +boost-wave
+Version: 1.89.0-r1
+Depends: +libc +libstdcpp +libpthread +librt +boost-atomic +boost-charconv +boost-chrono +boost-cobalt +boost-container +!boost-context-exclude:boost-context +boost-contract +!boost-coroutine-exclude:boost-coroutine +boost-date_time +!boost-fiber-exclude:boost-fiber +boost-filesystem +boost-graph +boost-iostreams +boost-json +boost-locale +boost-log +boost-math +boost-nowide +boost-program_options +boost-python3 +boost-random +boost-regex +boost-serialization +boost-wserialization +boost-stacktrace +boost-thread +boost-timer +boost-type_erasure +boost-url +boost-wave
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-libs-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library (all libs)
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
@@ -697,23 +676,23 @@ Description:  This meta package contains only dependencies to the other librarie
 @@
 
 Package: boost
-Version: 1.86.0-r1
+Version: 1.89.0-r1
 Depends: +libc +libstdcpp +libpthread +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boost-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Boost C++ source library packages
 Maintainer: Carlos M. Ferreira <carlosmf.pt@gmail.com>
-Source: boost_1_86_0.tar.bz2
+Source: boost_1_89_0.tar.bz2
 License: BSL-1.0
 LicenseFiles: LICENSE_1_0.txt
 CPE-ID: cpe:/a:boost:boost
 URL: https://www.boost.org
 Type: ipkg
-Description: This package provides the Boost v1.86.0 libraries.
+Description: This package provides the Boost v1.89.0 libraries.
 Boost is a set of free, peer-reviewed, portable C++ source libraries.
 
 This package provides the following run-time libraries:
@@ -743,7 +722,6 @@ This package provides the following run-time libraries:
  - regex
  - serialization and wserialization
  - stackstrace
- - system
  - thread
  - timer
  - type_erasure
@@ -751,7 +729,7 @@ This package provides the following run-time libraries:
  - wave
 
 There are many more header-only libraries supported by Boost.
-See more at http://www.boost.org/doc/libs/1_86_0/
+See more at http://www.boost.org/doc/libs/1_89_0/
 @@
 Config:
 	# Invisible config dependency
@@ -1034,7 +1012,7 @@ Config:
 			
 		 
 		config PACKAGE_boost-python3
-			prompt "Boost python3 (v3.11) library."
+			prompt "Boost python3 (v3.13) library."
 			default m if ALL
 			 
 			
@@ -1065,12 +1043,6 @@ Config:
 		 
 		config PACKAGE_boost-stacktrace
 			prompt "Boost stacktrace library."
-			default m if ALL
-			 
-			
-		 
-		config PACKAGE_boost-system
-			prompt "Boost system library."
 			default m if ALL
 			 
 			

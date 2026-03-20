@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-mod-dsl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -26,7 +26,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-ar-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -45,7 +45,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-bg-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -64,7 +64,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-bn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -83,7 +83,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-ca-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -102,7 +102,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-cs-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -121,7 +121,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-da-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -140,7 +140,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-de-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -159,7 +159,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-el-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -178,7 +178,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-es-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -197,7 +197,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-fi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -216,7 +216,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-fr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -235,7 +235,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-ga-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -254,7 +254,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-he-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -273,7 +273,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-hi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -292,7 +292,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-hu-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -311,7 +311,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-it-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -330,7 +330,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-ja-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -349,7 +349,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-ko-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -368,7 +368,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-lt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -387,7 +387,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-mr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -406,7 +406,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-ms-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -425,7 +425,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-no-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -444,7 +444,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-nl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -463,7 +463,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-pl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -482,7 +482,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-pt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -501,7 +501,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -520,7 +520,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-ro-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -539,7 +539,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-ru-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -558,7 +558,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-sk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -577,7 +577,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-sv-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -590,13 +590,32 @@ Hidden: 1
 Description:     Translation for luci-mod-dsl - Svenska (Swedish)
 @@
 
+Package: luci-i18n-dsl-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-mod-dsl
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dsl-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-mod-dsl - ta translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-mod-dsl - Tamil (Tamil)
+@@
+
 Package: luci-i18n-dsl-tr
 Default: LUCI_LANG_tr||(ALL&&m)
 Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-tr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -615,7 +634,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-uk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -634,7 +653,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-vi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -653,7 +672,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -672,7 +691,7 @@ Version: x
 Depends: +libc luci-mod-dsl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dsl-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base

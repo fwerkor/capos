@@ -4,37 +4,37 @@ Build-Depends/host: python3/host rpcsvc-proto/host perl/host perl-parse-yapp/hos
 Build-Types: host
 
 Package: samba4-libs
-Version: 4.18.11-r1
-Depends: +libc +libtirpc +libreadline +libpopt +libcap +zlib +libgnutls +libtasn1 +libuuid +libopenssl +libpthread +KERNEL_IO_URING:liburing +PACKAGE_libpam:libpam +SAMBA4_SERVER_VFS:attr +SAMBA4_SERVER_AVAHI:libavahi-client +SAMBA4_SERVER_AD_DC:python3-cryptodome +SAMBA4_SERVER_AD_DC:python3-markdown +SAMBA4_SERVER_AD_DC:python3-dns +SAMBA4_SERVER_AD_DC:libopenldap +SAMBA4_SERVER_AD_DC:jansson +SAMBA4_SERVER_AD_DC:libarchive +SAMBA4_SERVER_AD_DC:acl +SAMBA4_SERVER_AD_DC:attr
+Version: 4.22.7-r3
+Depends: +libc +(arm||armeb||mips||mipsel||powerpc):libatomic +libcap +libgnutls +libopenssl +libpopt +libreadline +libtasn1 +libtirpc +libuuid +zlib +KERNEL_IO_URING:liburing +PACKAGE_icu:icu +PACKAGE_libpam:libpam +SAMBA4_SERVER_AD_DC:acl +(SAMBA4_SERVER_AD_DC||SAMBA4_SERVER_VFS):attr +SAMBA4_SERVER_AD_DC:jansson +SAMBA4_SERVER_AD_DC:libarchive +SAMBA4_SERVER_AVAHI:libavahi-client +SAMBA4_SERVER_AD_DC:libopenldap +SAMBA4_SERVER_AD_DC:python3-cryptodome +SAMBA4_SERVER_AD_DC:python3-dns +SAMBA4_SERVER_AD_DC:python3-markdown +USE_GLIBC:libcrypt-compat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @samba4-libs-any
 Section: net
 Category: Network
 Repository: base
-Title: Samba 4.18.11 libs
+Title: Samba 4.22.7 libs
 Maintainer: 
-Source: samba-4.18.11.tar.gz
+Source: samba-4.22.7.tar.gz
 License: GPL-3.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:samba:samba
 URL: https://www.samba.org/
 Type: ipkg
-Description: Samba 4.18.11 libs
+Description: Samba 4.22.7 libs
 @@
 
 Package: samba4-server
-Version: 4.18.11-r1
+Version: 4.22.7-r3
 Depends: +libc +samba4-libs
 Conflicts: samba36-server
 Menu-Depends: 
-Provides: 
+Provides: @samba4-server-any
 Section: net
 Category: Network
 Repository: base
-Title: Samba 4.18.11 server
+Title: Samba 4.22.7 server
 Maintainer: 
-Source: samba-4.18.11.tar.gz
+Source: samba-4.22.7.tar.gz
 License: GPL-3.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:samba:samba
@@ -51,17 +51,17 @@ Config:
 @@
 
 Package: samba4-client
-Version: 4.18.11-r1
+Version: 4.22.7-r3
 Depends: +libc +samba4-libs
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @samba4-client-any
 Section: net
 Category: Network
 Repository: base
-Title: Samba 4.18.11 client
+Title: Samba 4.22.7 client
 Maintainer: 
-Source: samba-4.18.11.tar.gz
+Source: samba-4.22.7.tar.gz
 License: GPL-3.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:samba:samba
@@ -73,17 +73,17 @@ Description:   installs: cifsdd smbclient smbget
 @@
 
 Package: samba4-admin
-Version: 4.18.11-r1
+Version: 4.22.7-r3
 Depends: +libc +samba4-libs
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @samba4-admin-any
 Section: net
 Category: Network
 Repository: base
-Title: Samba 4.18.11 admin tools
+Title: Samba 4.22.7 admin tools
 Maintainer: 
-Source: samba-4.18.11.tar.gz
+Source: samba-4.22.7.tar.gz
 License: GPL-3.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:samba:samba
@@ -97,17 +97,17 @@ Description:   installs: net smbcontrol profiles rpcclient dbwrap_tool eventloga
 @@
 
 Package: samba4-utils
-Version: 4.18.11-r1
+Version: 4.22.7-r3
 Depends: +libc +samba4-libs
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @samba4-utils-any
 Section: net
 Category: Network
 Repository: base
-Title: Samba 4.18.11 utils
+Title: Samba 4.22.7 utils
 Maintainer: 
-Source: samba-4.18.11.tar.gz
+Source: samba-4.22.7.tar.gz
 License: GPL-3.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:samba:samba

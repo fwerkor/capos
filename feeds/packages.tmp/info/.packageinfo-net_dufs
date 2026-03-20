@@ -7,7 +7,7 @@ Version: 0.45.0-r1
 Depends: +libc @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64) @!(i386||mips64) +liblzma
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dufs-any
 Section: net
 Category: Network
 Repository: base

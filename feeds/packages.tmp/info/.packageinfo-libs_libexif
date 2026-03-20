@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/libs/libexif/Makefile
 
 Package: libexif
-Version: 0.6.24-r1
+Version: 0.6.25-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libexif-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: library for jpeg files with exif tags
 Maintainer: 
-Source: libexif-0.6.24.tar.bz2
+Source: libexif-0.6.25.tar.bz2
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:libexif:libexif

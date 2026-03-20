@@ -5,7 +5,7 @@ Version: 1.2304.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libfastjson-any
 Section: libs
 Category: Libraries
 Repository: base

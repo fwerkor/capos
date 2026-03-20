@@ -6,7 +6,7 @@ Version: 1.6.1-r2
 Depends: +libc +libneon +kmod-fuse +libfuse
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @davfs2-any
 Section: net
 Category: Network
 Repository: base

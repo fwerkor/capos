@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base +udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-udpxy-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -26,7 +26,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-ar-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -45,7 +45,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-bg-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -64,7 +64,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-bn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -83,7 +83,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-ca-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -102,7 +102,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-cs-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -121,7 +121,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-da-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -140,7 +140,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-de-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -159,7 +159,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-el-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -178,7 +178,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-es-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -197,7 +197,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-fi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -216,7 +216,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-fr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -235,7 +235,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-ga-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -254,7 +254,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-he-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -273,7 +273,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-hi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -292,7 +292,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-hu-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -311,7 +311,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-it-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -330,7 +330,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-ja-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -349,7 +349,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-ko-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -368,7 +368,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-lt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -387,7 +387,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-mr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -406,7 +406,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-ms-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -425,7 +425,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-no-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -444,7 +444,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-nl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -463,7 +463,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-pl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -482,7 +482,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-pt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -501,7 +501,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -520,7 +520,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-ro-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -539,7 +539,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-ru-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -558,7 +558,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-sk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -577,7 +577,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-sv-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -590,13 +590,32 @@ Hidden: 1
 Description:     Translation for luci-app-udpxy - Svenska (Swedish)
 @@
 
+Package: luci-i18n-udpxy-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-udpxy
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-udpxy-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-udpxy - ta translation
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-udpxy - Tamil (Tamil)
+@@
+
 Package: luci-i18n-udpxy-tr
 Default: LUCI_LANG_tr||(ALL&&m)
 Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-tr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -615,7 +634,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-uk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -634,7 +653,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-vi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -653,7 +672,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-yua-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -672,7 +691,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -691,7 +710,7 @@ Version: x
 Depends: +libc luci-app-udpxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-udpxy-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base

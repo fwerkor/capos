@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +comgt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-proto-3g-any
 Section: luci
 Category: LuCI
 Repository: base

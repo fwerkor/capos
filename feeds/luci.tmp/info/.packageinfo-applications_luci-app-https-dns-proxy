@@ -3,11 +3,11 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 
 Package: luci-app-https-dns-proxy
 Submenu: 3. Applications
-Version: 2025.10.07-r2
+Version: 2025.12.29-r4
 Depends: +libc +luci-base +https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-https-dns-proxy-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -15,7 +15,7 @@ Title: DNS Over HTTPS Proxy Web UI
 Maintainer: OpenWrt LuCI community
 Source: 
 License: AGPL-3.0-or-later
-URL: https://github.com/stangri/luci-app-https-dns-proxy/
+URL: https://github.com/mossdef-org/luci-app-https-dns-proxy/
 Type: ipkg
 Description:    Provides Web UI for DNS Over HTTPS Proxy
 @@
@@ -24,7 +24,7 @@ Config:
 help
 	DNS Over HTTPS Proxy Web UI
 	.
-	Version: 2025.10.07-2
+	Version: 2025.12.29-4
 @@
 
 Package: luci-i18n-https-dns-proxy-ar
@@ -33,7 +33,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-ar-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -52,7 +52,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-bg-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -71,7 +71,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-bn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -90,7 +90,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-ca-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -109,7 +109,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-cs-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -128,7 +128,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-da-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -147,7 +147,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-de-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -166,7 +166,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-el-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -185,7 +185,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-es-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -204,7 +204,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-fi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -223,7 +223,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-fr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -242,7 +242,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-ga-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -261,7 +261,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-he-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -280,7 +280,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-hi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -299,7 +299,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-hu-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -318,7 +318,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-it-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -337,7 +337,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-ja-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -356,7 +356,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-ko-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -375,7 +375,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-lt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -394,7 +394,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-mr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -413,7 +413,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-ms-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -432,7 +432,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-no-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -451,7 +451,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-nl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -470,7 +470,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-pl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -489,7 +489,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-pt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -508,7 +508,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -527,7 +527,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-ro-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -546,7 +546,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-ru-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -565,7 +565,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-sk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -584,7 +584,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-sv-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -597,13 +597,32 @@ Hidden: 1
 Description:     Translation for luci-app-https-dns-proxy - Svenska (Swedish)
 @@
 
+Package: luci-i18n-https-dns-proxy-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-https-dns-proxy
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-https-dns-proxy-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-https-dns-proxy - ta translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-https-dns-proxy - Tamil (Tamil)
+@@
+
 Package: luci-i18n-https-dns-proxy-tr
 Default: LUCI_LANG_tr||(ALL&&m)
 Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-tr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -622,7 +641,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-uk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -641,7 +660,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-vi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -660,7 +679,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -679,7 +698,7 @@ Version: x
 Depends: +libc luci-app-https-dns-proxy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-https-dns-proxy-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base

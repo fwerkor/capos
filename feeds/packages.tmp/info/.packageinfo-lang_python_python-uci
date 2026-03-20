@@ -6,7 +6,7 @@ Version: 0.10.3-r2
 Depends: +libc +python3-light +libuci
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-uci-any
 Section: lang
 Category: Languages
 Repository: base
@@ -26,7 +26,7 @@ Version: 0.10.3-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-uci-src-any
 Section: lang
 Category: Languages
 Repository: base

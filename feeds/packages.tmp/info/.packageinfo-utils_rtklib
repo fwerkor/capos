@@ -6,7 +6,7 @@ Version: 2.4.3.34-r1
 Depends: +libc +libpthread +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @convbin-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -25,7 +25,7 @@ Version: 2.4.3.34-r1
 Depends: +libc +libpthread +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pos2kml-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -44,7 +44,7 @@ Version: 2.4.3.34-r1
 Depends: +libc +libpthread +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rnx2rtkp-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -63,7 +63,7 @@ Version: 2.4.3.34-r1
 Depends: +libc +libpthread +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rtkrcv-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -82,7 +82,7 @@ Version: 2.4.3.34-r1
 Depends: +libc +libpthread +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @str2str-any
 Section: utils
 Category: Utilities
 Repository: base

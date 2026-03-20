@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/multimedia/grilo/Makefile
 Build-Depends: vala/host
 
 Package: grilo
-Version: 0.3.16-r2
+Version: 0.3.19-r1
 Depends: +libc +glib2 +libsoup3 +libxml2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @grilo-any
 Section: multimedia
 Category: Multimedia
 Repository: base
 Title: grilo
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: grilo-0.3.16.tar.xz
+Source: grilo-0.3.19.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 URL: https://wiki.gnome.org/Projects/Grilo

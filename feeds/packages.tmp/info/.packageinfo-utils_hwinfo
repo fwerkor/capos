@@ -7,7 +7,7 @@ Version: 21.71-r4
 Depends: +libc +libuuid
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @hwinfo-any
 Section: utils
 Category: Utilities
 Repository: base

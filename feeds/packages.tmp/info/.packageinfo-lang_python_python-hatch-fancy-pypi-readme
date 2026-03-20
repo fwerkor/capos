@@ -8,7 +8,7 @@ Version: 23.1.0-r1
 Depends: +libc +python3-light +python3-hatchling
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-hatch-fancy-pypi-readme-any
 Section: lang
 Category: Languages
 Repository: base
@@ -38,7 +38,7 @@ Version: 23.1.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-hatch-fancy-pypi-readme-src-any
 Section: lang
 Category: Languages
 Repository: base

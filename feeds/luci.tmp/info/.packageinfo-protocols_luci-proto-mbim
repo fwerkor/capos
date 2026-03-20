@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +umbim
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-proto-mbim-any
 Section: luci
 Category: LuCI
 Repository: base

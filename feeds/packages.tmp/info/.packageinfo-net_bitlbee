@@ -6,7 +6,7 @@ Version: 3.6-r1
 Depends: +libc +glib2 +libopenssl +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bitlbee-any
 Section: net
 Category: Network
 Repository: base

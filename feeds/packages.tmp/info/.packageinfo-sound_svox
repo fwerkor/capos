@@ -5,7 +5,7 @@ Version: 1.0.20130326-r3
 Depends: +libc +libpopt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @svox-any
 Section: sound
 Category: Sound
 Repository: base

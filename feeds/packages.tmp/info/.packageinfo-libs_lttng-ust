@@ -5,7 +5,7 @@ Version: 2.13.9-r1
 Depends: +libc +liburcu +libuuid +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lttng-ust-any
 Section: libs
 Category: Libraries
 Repository: base

@@ -4,17 +4,17 @@ Build-Types: host
 
 Package: cargo-c
 Submenu: Rust
-Version: 0.9.32-r1
+Version: 0.10.13-r1
 Depends: +libc @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @cargo-c-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Build and install rust crates as C libraries
 Maintainer: Luca Barbato <lu_zero@luminem.org>
-Source: cargo-c-0.9.32.tar.gz
+Source: cargo-c-0.10.13.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 URL: https://github.com/lu-zero/cargo-c

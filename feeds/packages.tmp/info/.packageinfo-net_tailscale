@@ -3,17 +3,17 @@ Build-Depends: golang/host
 
 Package: tailscale
 Submenu: VPN
-Version: 1.80.3-r1
+Version: 1.94.1-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) +ca-bundle +kmod-tun
 Conflicts: 
 Menu-Depends: 
-Provides: tailscaled
+Provides: @tailscale-any tailscaled
 Section: net
 Category: Network
 Repository: base
 Title: Zero config VPN
 Maintainer: Zephyr Lykos <self@mochaa.ws>, Sandro Jäckel <sandro.jaeckel@gmail.com>
-Source: tailscale-1.80.3.tar.gz
+Source: tailscale-1.94.1.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:tailscale:tailscale

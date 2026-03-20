@@ -4,17 +4,17 @@ Build-Depends/host: protobuf/host
 Build-Types: host
 
 Package: libprotobuf-c
-Version: 1.4.1-r1
+Version: 1.5.2-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libprotobuf-c-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Protocol Buffers library
 Maintainer: 
-Source: protobuf-c-1.4.1.tar.gz
+Source: protobuf-c-1.5.2.tar.gz
 License: BSD-2-Clause
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:protobuf-c_project:protobuf-c

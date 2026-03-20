@@ -3,12 +3,13 @@
 
 'use strict';
 
-import { stdin, access, dirname, basename, open, popen, glob, lsdir, readfile, readlink, error } from 'fs';
+import { stdin, access, dirname, basename, open, popen, glob, lsdir, readfile, readlink, realpath, error } from 'fs';
 import { cursor } from 'uci';
 
 import { init_list, init_index, init_enabled, init_action, conntrack_list, process_list } from 'luci.sys';
 import { revision, branch } from 'luci.version';
 import { statvfs, uname } from 'luci.core';
+import { connect } from 'ubus';
 
 import timezones from 'luci.zoneinfo';
 
@@ -94,8 +95,9 @@ const methods = {
 		}
 	},
 
-	getLocaltime: {
+	getUnixtime: {
 		call: function(request) {
+			// time() ; Returns the current UNIX epoch.
 			return { result: time() };
 		}
 	},
@@ -229,7 +231,6 @@ const methods = {
 				offloading: access('/sys/module/xt_FLOWOFFLOAD/refcnt') == true || access('/sys/module/nft_flow_offload/refcnt') == true,
 				br2684ctl:  access('/usr/sbin/br2684ctl') == true,
 				swconfig:   access('/sbin/swconfig') == true,
-				odhcpd:     access('/usr/sbin/odhcpd') == true,
 				zram:       access('/sys/class/zram-control') == true,
 				sysntpd:    readlink('/usr/sbin/ntpd') != null,
 				ipv6:       access('/proc/net/ipv6_route') == true,
@@ -238,6 +239,7 @@ const methods = {
 				relayd:     access('/usr/sbin/relayd') == true,
 				apk:        access('/usr/bin/apk') == true,
 				wifi:       access('/sbin/wifi') == true,
+				ufpd:       access('/usr/sbin/ufpd') == true,
 				vrf:        access('/sys/module/vrf/refcnt') == true, // vrf.ko is loaded
 				netifd_vrf: false,
 			};
@@ -282,6 +284,25 @@ const methods = {
 
 					result.dnsmasq ??= {};
 					result.dnsmasq[lc(f)] = (f == opt);
+				}
+
+				fd.close();
+			}
+
+			result.odhcpd = false;
+			fd = popen('odhcpd -h 2>/dev/null');
+
+			if (fd) {
+				const output = fd.read('all');
+
+				if (output) {
+					result.odhcpd = {};
+					const m = match(output, /^Features: (.+)$/s);
+
+					for (let opt in split(m?.[1], ' ')) {
+						let f = replace(opt, 'no-', '', 1);
+						result.odhcpd[lc(f)] = (f == opt);
+					}
 				}
 
 				fd.close();
@@ -520,8 +541,8 @@ const methods = {
 
 				for (let line = fd.read('line'); length(line); line = fd.read('line')) {
 					const m = split(line, ' ');
-					const device = replace(m[0], /\\([0-9][0-9][0-9])/g, (m, n) => char(int(n, 8)));
-					const mount  = replace(m[1], /\\([0-9][0-9][0-9])/g, (m, n) => char(int(n, 8)));
+					const device = replace(m[0], /\\([0-9][0-9][0-9])/g, (m, n) => chr(int(n, 8)));
+					const mount  = replace(m[1], /\\([0-9][0-9][0-9])/g, (m, n) => chr(int(n, 8)));
 					const stat = statvfs(mount);
 
 					if (stat?.blocks > 0) {
@@ -543,6 +564,7 @@ const methods = {
 			}
 		}
 	},
+
 	getRealtimeStats: {
 		args: { mode: 'interface', device: 'eth0' },
 		call: function(request) {
@@ -614,7 +636,7 @@ const methods = {
 			/* Workaround for targets that do not enumerate  all netdevs in board.json */
 			if (uname().machine in [ 'x86_64' ] &&
 			    match(ports[0]?.device, /^eth\d+$/)) {
-				let bus = readlink(`/sys/class/net/${ports[0].device}/device/subsystem`);
+				let bus = realpath(`/sys/class/net/${ports[0].device}/device/subsystem`);
 
 				for (let netdev in lsdir('/sys/class/net')) {
 					if (!match(netdev, /^eth\d+$/))
@@ -623,7 +645,7 @@ const methods = {
 					if (length(filter(ports, port => port.device == netdev)))
 						continue;
 
-					if (readlink(`/sys/class/net/${netdev}/device/subsystem`) != bus)
+					if (realpath(`/sys/class/net/${netdev}/device/subsystem`) != bus)
 						continue;
 
 					push(ports, { role: 'unknown', device: netdev });
@@ -631,6 +653,31 @@ const methods = {
 			}
 
 			return { result: ports };
+		}
+	},
+
+	getOdhcp6cStats: {
+		call: function() {
+			const ubus = connect();
+			const devs = ubus.call('network.device', 'status');
+
+			if (!devs)
+				return false;
+
+			const dev_stats = {};
+
+			for (let dev in devs) {
+				const m = ubus.call(`odhcp6c.${dev}`, 'get_statistics');
+
+				// not all interfaces are exposed unless odhcp6c runs on it
+				if (!m)
+					continue;
+
+				push(dev_stats, dev);
+				dev_stats[dev] = m;
+			}
+
+			return { result: dev_stats };
 		}
 	}
 };

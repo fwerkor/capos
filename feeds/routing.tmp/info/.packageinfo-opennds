@@ -2,11 +2,11 @@ Source-Makefile: feeds/routing/opennds/Makefile
 
 Package: opennds
 Submenu: Captive Portals
-Version: 10.3.1-r1
+Version: 10.3.1-r2
 Depends: +libc +libmicrohttpd-no-ssl
 Conflicts: nodogsplash
 Menu-Depends: 
-Provides: 
+Provides: @opennds-any
 Section: net
 Category: Network
 Repository: base
@@ -15,6 +15,7 @@ Maintainer: Rob White <rob@blue-wave.net>
 Source: opennds-10.3.1.tar.gz
 License: GPL-2.0-or-later
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:opennds:captive_portal
 URL: https://github.com/opennds/opennds
 Type: ipkg
 Description:   openNDS (open Network Demarcation Service) is a high performance, small footprint, Captive Portal.

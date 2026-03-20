@@ -4,20 +4,22 @@
 'require uci';
 
 return view.extend({
-	load: function() {
+	load() {
 		return Promise.all([
 			uci.load('keepalived'),
 		]);
 	},
 
-	renderVirtualServer: function(m) {
-		var s, o;
-		var real_servers;
+	renderVirtualServer(m) {
+		let s, o;
+		let real_servers;
 
 		s = m.section(form.GridSection, 'virtual_server', _('Virtual Server'),
-			_('A virtual server is a service configured to listen on a specific virtual IP.') + '<br/>' +
-			_('A VIP address migrates from one LVS router to the other during a failover,') +
-			_('thus maintaining a presence at that IP address'));
+			_('A virtual server is a service configured to listen ' +
+			  'on a specific virtual IP.') + '<br/>' +
+			_('A VIP address migrates from one LVS router to the ' +
+			  'other during a failover, thus maintaining a presence ' +
+			  'at that IP address'));
 		s.anonymous = true;
 		s.addremove = true;
 		s.nodescriptions = true;
@@ -117,9 +119,9 @@ return view.extend({
 		o.modalonly = true;
 	},
 
-	renderRealServer: function(m) {
-		var s, o;
-		var urls;
+	renderRealServer(m) {
+		let s, o;
+		let urls;
 
 		s = m.section(form.GridSection, 'real_server', _('Real Servers'),
 			_('Real Server to redirect all request'));
@@ -177,7 +179,7 @@ return view.extend({
 		urls = uci.sections('keepalived', 'url');
 		o = s.option(form.DynamicList, 'url', _('URLs'));
 		if (urls != '') {
-			for (var i = 0; i < urls.length; i++) {
+			for (let i = 0; i < urls.length; i++) {
 				o.value(urls[i].name);
 			}
 		}
@@ -191,8 +193,8 @@ return view.extend({
 		o.datatype = 'uinteger';
 	},
 
-	render: function() {
-		var m;
+	render() {
+		let m;
 
 		m = new form.Map('keepalived');
 

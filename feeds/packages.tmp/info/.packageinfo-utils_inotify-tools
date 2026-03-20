@@ -5,7 +5,7 @@ Version: 4.23.9.0-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libinotifytools-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -31,7 +31,7 @@ Version: 4.23.9.0-r2
 Depends: +libc +libinotifytools
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @inotifywait-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -57,7 +57,7 @@ Version: 4.23.9.0-r2
 Depends: +libc +libinotifytools
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @inotifywatch-any
 Section: utils
 Category: Utilities
 Repository: base

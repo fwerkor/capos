@@ -6,7 +6,7 @@ Version: 1.0.20-r1
 Depends: +libc +libevent2 +libopenssl +ppp +resolveip
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @sstp-client-any
 Section: net
 Category: Network
 Repository: base

@@ -5,7 +5,7 @@ Version: 1.6.3-r1
 Depends: +libc +libapr +libexpat +libuuid +BUILD_NLS:libiconv-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libaprutil-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -25,7 +25,7 @@ Version: 1.6.3-r1
 Depends: +libc libaprutil +PACKAGE_libaprutil-crypto-openssl:libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libaprutil-crypto-openssl-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -45,7 +45,7 @@ Version: 1.6.3-r1
 Depends: +libc libaprutil +PACKAGE_libaprutil-dbd-mysql:libmariadb
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libaprutil-dbd-mysql-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -65,7 +65,7 @@ Version: 1.6.3-r1
 Depends: +libc libaprutil +PACKAGE_libaprutil-dbd-odbc:unixodbc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libaprutil-dbd-odbc-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -85,7 +85,7 @@ Version: 1.6.3-r1
 Depends: +libc libaprutil +PACKAGE_libaprutil-dbd-pgsql:libpq
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libaprutil-dbd-pgsql-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -105,7 +105,7 @@ Version: 1.6.3-r1
 Depends: +libc libaprutil +PACKAGE_libaprutil-dbd-sqlite3:libsqlite3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libaprutil-dbd-sqlite3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -125,7 +125,7 @@ Version: 1.6.3-r1
 Depends: +libc libaprutil +PACKAGE_libaprutil-dbm-gdbm:libgdbm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libaprutil-dbm-gdbm-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -145,7 +145,7 @@ Version: 1.6.3-r1
 Depends: +libc libaprutil +PACKAGE_libaprutil-ldap:libopenldap
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libaprutil-ldap-any
 Section: libs
 Category: Libraries
 Repository: base

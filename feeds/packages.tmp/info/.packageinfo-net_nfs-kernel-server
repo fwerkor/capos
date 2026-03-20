@@ -3,80 +3,110 @@ Build-Depends: nfs-kernel-server/host libevent2
 Build-Depends/host: libtirpc/host
 Build-Types: host
 
-Package: nfs-utils
-Submenu: Filesystem
-Version: 2.6.2-r4
-Depends: +libc +libblkid +libuuid +libtirpc +NFS_KERNEL_SERVER_V4:libkeyutils +NFS_KERNEL_SERVER_V4:libdevmapper
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: utils
-Category: Utilities
-Repository: base
-Title: updated mount utility (includes nfs4)
-Maintainer: Peter Wagner <tripolar@gmx.at>
-Source: nfs-utils-2.6.2.tar.xz
-URL: http://nfs.sourceforge.net/
-Type: ipkg
-Description: Updated mount.nfs command - allows mounting nfs4 volumes
-@@
-
-Package: nfs-utils-libs
-Submenu: Filesystem
-Version: 2.6.2-r4
-Depends: +libc +libblkid +libuuid +libtirpc +NFS_KERNEL_SERVER_V4:libkeyutils +NFS_KERNEL_SERVER_V4:libdevmapper
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: utils
-Category: Utilities
-Repository: base
-Title: libraries provided by nfs-utils
-Maintainer: Peter Wagner <tripolar@gmx.at>
-Source: nfs-utils-2.6.2.tar.xz
-URL: http://nfs.sourceforge.net/
-Type: ipkg
-Description: Libraries provided by nfs-utils
-@@
-
 Package: nfs-kernel-server
 Submenu: Filesystem
-Version: 2.6.2-r4
-Depends: +libc +libblkid +libuuid +libtirpc +kmod-fs-nfsd +kmod-fs-nfs +NFS_KERNEL_SERVER_V4:kmod-fs-nfs-v4 +rpcbind +NFS_KERNEL_SERVER_V4:nfs-utils-libs +NFS_KERNEL_SERVER_V4:libkeyutils +NFS_KERNEL_SERVER_V4:libdevmapper
-Conflicts: 
+Version: 2.8.4-r3
+Depends: +libc +libblkid +libuuid +libtirpc +lsqlite3 +libxml2 +libnl +kmod-fs-nfsd +kmod-fs-nfs +rpcbind
+Conflicts: nfs-kernel-server-v4
 Menu-Depends: 
-Provides: 
+Provides: @nfs-kernel-server-any
+Build-Variant: v3
 Section: net
 Category: Network
 Repository: base
-Title: Kernel NFS server support
-Maintainer: Peter Wagner <tripolar@gmx.at>
+Title: Kernel NFS server (NFSv3)
+Maintainer: 
 Require-User: nfs:nfs
-Source: nfs-utils-2.6.2.tar.xz
+Source: nfs-utils-2.8.4.tar.xz
+License: GPL-2.0-or-later
+CPE-ID: cpe:/a:nfs_project:nfs-utils
 URL: http://nfs.sourceforge.net/
 Type: ipkg
-Description: Kernel NFS server support
+Description: Kernel NFS server with NFSv3 support
 @@
-Config:
-	source "feeds/packages/net/nfs-kernel-server/Config.in"
+
+Package: nfs-kernel-server-v4
+Submenu: Filesystem
+Version: 2.8.4-r3
+Depends: +libc +libblkid +libuuid +libtirpc +lsqlite3 +libxml2 +libnl +kmod-fs-nfsd +kmod-fs-nfs +rpcbind +kmod-fs-nfs-v4 +libkeyutils +libdevmapper +libevent2-core +libreadline
+Conflicts: 
+Menu-Depends: 
+Provides: @nfs-kernel-server-v4-any nfs-kernel-server
+Build-Variant: v4
+Section: net
+Category: Network
+Repository: base
+Title: Kernel NFS server (NFSv4.x)
+Maintainer: 
+Require-User: nfs:nfs
+Source: nfs-utils-2.8.4.tar.xz
+License: GPL-2.0-or-later
+CPE-ID: cpe:/a:nfs_project:nfs-utils
+URL: http://nfs.sourceforge.net/
+Type: ipkg
+Description: Kernel NFS server with NFSv4.x support
+@@
+
+Package: nfs-utils
+Submenu: Filesystem
+Version: 2.8.4-r3
+Depends: +libc +libtirpc
+Conflicts: nfs-utils-v4
+Menu-Depends: 
+Provides: @nfs-utils-any
+Build-Variant: v3
+Section: utils
+Category: Utilities
+Repository: base
+Title: NFS mount and umount utils (NFSv3)
+Maintainer: 
+Source: nfs-utils-2.8.4.tar.xz
+License: GPL-2.0-or-later
+CPE-ID: cpe:/a:nfs_project:nfs-utils
+URL: http://nfs.sourceforge.net/
+Type: ipkg
+Description: Mount/umount utilities for NFSv3
+@@
+
+Package: nfs-utils-v4
+Submenu: Filesystem
+Version: 2.8.4-r3
+Depends: +libc +libtirpc +libkeyutils +libdevmapper
+Conflicts: 
+Menu-Depends: 
+Provides: @nfs-utils-v4-any nfs-utils
+Build-Variant: v4
+Section: utils
+Category: Utilities
+Repository: base
+Title: NFS mount and umount utils (NFSv4.x)
+Maintainer: 
+Source: nfs-utils-2.8.4.tar.xz
+License: GPL-2.0-or-later
+CPE-ID: cpe:/a:nfs_project:nfs-utils
+URL: http://nfs.sourceforge.net/
+Type: ipkg
+Description: Mount/umount utilities for NFSv4.x
 @@
 
 Package: nfs-kernel-server-utils
 Submenu: Filesystem
-Version: 2.6.2-r4
-Depends: +libc nfs-kernel-server
+Version: 2.8.4-r3
+Depends: +libc nfs-kernel-server +libtirpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nfs-kernel-server-utils-any
 Section: net
 Category: Network
 Repository: base
 Title: NFS server utils
-Maintainer: Peter Wagner <tripolar@gmx.at>
-Source: nfs-utils-2.6.2.tar.xz
+Maintainer: 
+Source: nfs-utils-2.8.4.tar.xz
+License: GPL-2.0-or-later
+CPE-ID: cpe:/a:nfs_project:nfs-utils
 URL: http://nfs.sourceforge.net/
 Type: ipkg
-Description: NFS server utils
+Description: NFS server utils including showmount and nfsstat
 @@
 
 

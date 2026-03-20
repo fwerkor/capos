@@ -6,7 +6,7 @@ Version: 6.0.5-r1
 Depends: +libc @!arc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -30,7 +30,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-common-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -50,7 +50,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-hooks-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -70,7 +70,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-configs-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -90,7 +90,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-templates-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -110,7 +110,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +libcap +libpthread +LXC_SECCOMP:libseccomp +libopenssl +libdbus
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @liblxc-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -130,7 +130,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-init-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -150,7 +150,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-start +lxc-stop
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-auto-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -173,7 +173,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +shadow-utils +shadow-newuidmap +shadow-newgidmap
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-unprivileged-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -194,7 +194,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common +libpthread +libcap +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-attach-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -214,7 +214,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common +libpthread +libcap +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-autostart-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -234,7 +234,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common +libpthread +libcap +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-cgroup-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -254,7 +254,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common +libpthread +libcap +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-copy-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -274,7 +274,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common +libpthread +libcap +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-config-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -294,7 +294,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common +libpthread +libcap +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-console-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -314,7 +314,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common +libpthread +libcap +liblxc +lxc-configs +lxc-hooks +lxc-templates +flock +getopt +tar
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-create-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -334,7 +334,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common +libpthread +libcap +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-destroy-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -354,7 +354,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common +libpthread +libcap +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-device-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -374,7 +374,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common +libpthread +libcap +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-execute-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -394,7 +394,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common +libpthread +libcap +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-freeze-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -414,7 +414,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common +libpthread +libcap +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-info-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -434,7 +434,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common +libpthread +libcap +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-monitor-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -454,7 +454,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common +libpthread +libcap +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-snapshot-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -474,7 +474,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common +libpthread +libcap +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-start-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -494,7 +494,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common +libpthread +libcap +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-stop-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -514,7 +514,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common +libpthread +libcap +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-unfreeze-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -534,7 +534,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common +libpthread +libcap +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-unshare-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -554,7 +554,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common +libpthread +libcap +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-usernsexec-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -574,7 +574,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common +libpthread +libcap +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-wait-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -594,7 +594,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common +libpthread +libcap +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-top-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -614,7 +614,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common +libpthread +libcap +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-ls-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -634,7 +634,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common +libpthread +libcap +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-monitord-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -654,7 +654,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common +libpthread +libcap +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-user-nic-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -674,7 +674,7 @@ Version: 6.0.5-r1
 Depends: +libc lxc +lxc-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lxc-checkconfig-any
 Section: utils
 Category: Utilities
 Repository: base

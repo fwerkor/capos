@@ -7,7 +7,7 @@ Version: 4.0.6-r2
 Depends: +libc +libatomic +libcurl +libdeflate +libdht +libevent2 +libevent2-pthreads +libminiupnpc +libnatpmp +libpthread +libpsl +librt +libutp +zlib +LIBCURL_NOSSL:libmbedtls +LIBCURL_GNUTLS:libmbedtls +LIBCURL_MBEDTLS:libmbedtls
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @transmission-daemon-any
 Section: net
 Category: Network
 Repository: base
@@ -32,7 +32,7 @@ Version: 4.0.6-r2
 Depends: +libc +libatomic +libcurl +libdeflate +libdht +libevent2 +libevent2-pthreads +libminiupnpc +libnatpmp +libpthread +libpsl +librt +libutp +zlib +LIBCURL_NOSSL:libmbedtls +LIBCURL_GNUTLS:libmbedtls +LIBCURL_MBEDTLS:libmbedtls
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @transmission-cli-any
 Section: net
 Category: Network
 Repository: base
@@ -53,7 +53,7 @@ Version: 4.0.6-r2
 Depends: +libc +libatomic +libcurl +libdeflate +libdht +libevent2 +libevent2-pthreads +libminiupnpc +libnatpmp +libpthread +libpsl +librt +libutp +zlib +LIBCURL_NOSSL:libmbedtls +LIBCURL_GNUTLS:libmbedtls +LIBCURL_MBEDTLS:libmbedtls
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @transmission-remote-any
 Section: net
 Category: Network
 Repository: base
@@ -74,7 +74,7 @@ Version: 4.0.6-r2
 Depends: +libc +transmission-daemon
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @transmission-web-any
 Section: net
 Category: Network
 Repository: base

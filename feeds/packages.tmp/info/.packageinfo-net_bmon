@@ -5,7 +5,7 @@ Version: 4.0-r1
 Depends: +libc +libncursesw +libnl-core +libnl-route +confuse +terminfo
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bmon-any
 Section: net
 Category: Network
 Repository: base

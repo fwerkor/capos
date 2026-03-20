@@ -1,0 +1,24 @@
+Source-Makefile: feeds/video/libs/vulkan-loader/Makefile
+Build-Depends: vulkan-headers
+
+Package: vulkan-loader
+Submenu: Video
+Version: 1.4.328
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @vulkan-loader-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: Vulkan Loader
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: Vulkan-Loader-1.4.328.tar.gz
+License: Apache-2.0
+LicenseFiles: LICENSE.txt
+URL: https://github.com/KhronosGroup/Vulkan-Loader
+Type: ipkg
+Description: This project provides the Khronos official Vulkan Loader.
+@@
+
+

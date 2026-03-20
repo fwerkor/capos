@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base +basicstation
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-lorawan-basicstation-any
 Section: luci
 Category: LuCI
 Repository: base

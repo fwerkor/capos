@@ -6,7 +6,7 @@ Version: 21.0.0-r1
 Depends: +libc +python3-light +python3-codecs +python3-idna
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-hyperlink-any
 Section: lang
 Category: Languages
 Repository: base
@@ -28,7 +28,7 @@ Version: 21.0.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-hyperlink-src-any
 Section: lang
 Category: Languages
 Repository: base

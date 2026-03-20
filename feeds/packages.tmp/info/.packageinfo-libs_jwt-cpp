@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/libs/jwt-cpp/Makefile
+Build-Depends: openssl nlohmannjson
+
+Package: jwt-cpp
+Submenu: Libraries
+Version: 0.7.1-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @jwt-cpp-any
+Section: devel
+Category: Development
+Repository: base
+Title: Header-only C++ library for JSON Web Tokens
+Maintainer: David Woodhouse <dwmw2@infradead.org>
+Source: jwt-cpp-v0.7.1.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/Thalhammer/jwt-cpp
+Type: ipkg
+Build-Only: 1
+Description:   jwt-cpp is a header only library for creating and validating JSON Web Tokens in C++11
+@@
+
+

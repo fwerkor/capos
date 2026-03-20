@@ -12,7 +12,7 @@ define Device/Default
   KERNEL = kernel-bin | lzma | \
 	fit lzma $$(KDIR)/image-$$(firstword $$(DEVICE_DTS)).dtb
   KERNEL_INITRAMFS = kernel-bin | lzma | \
-	fit lzma $$(KDIR)/image-$$(firstword $$(DEVICE_DTS)).dtb with-initrd
+	fit lzma $$(KDIR)/image-$$(firstword $$(DEVICE_DTS)).dtb
   KERNEL_LOADADDR = $(loadaddr-y)
   FILESYSTEMS := squashfs
   DEVICE_DTS = $$(SOC)-$(lastword $(subst _, ,$(1)))

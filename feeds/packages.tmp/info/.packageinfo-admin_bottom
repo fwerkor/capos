@@ -6,7 +6,7 @@ Version: 0.11.1-r1
 Depends: +libc @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bottom-any
 Section: admin
 Category: Administration
 Repository: base

@@ -6,7 +6,7 @@ Version: 3.3.5-r6
 Depends: +libc +libev +PACKAGE_libuwsc-openssl:libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: libuwsc
+Provides: @libuwsc-openssl-any libuwsc
 Build-Variant: openssl
 Section: libs
 Category: Libraries
@@ -37,7 +37,7 @@ Version: 3.3.5-r6
 Depends: +libc +libev +PACKAGE_libuwsc-wolfssl:libwolfssl
 Conflicts: 
 Menu-Depends: 
-Provides: libuwsc
+Provides: @libuwsc-wolfssl-any libuwsc
 Build-Variant: wolfssl
 Section: libs
 Category: Libraries
@@ -68,7 +68,7 @@ Version: 3.3.5-r6
 Depends: +libc +libev +PACKAGE_libuwsc-mbedtls:libmbedtls
 Conflicts: 
 Menu-Depends: 
-Provides: libuwsc
+Provides: @libuwsc-mbedtls-any libuwsc
 Build-Variant: mbedtls
 Section: libs
 Category: Libraries
@@ -99,7 +99,7 @@ Version: 3.3.5-r6
 Depends: +libc +libev
 Conflicts: 
 Menu-Depends: 
-Provides: libuwsc
+Provides: @libuwsc-nossl-any libuwsc
 Build-Variant: nossl
 Section: libs
 Category: Libraries

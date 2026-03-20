@@ -6,7 +6,7 @@ Version: 2023.12.21~b676d8ac8f1aef792cb0761fb68a0a589ded3207-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @wsdd2-any
 Section: net
 Category: Network
 Repository: base

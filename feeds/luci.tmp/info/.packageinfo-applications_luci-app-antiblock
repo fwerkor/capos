@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base +antiblock
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-antiblock-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -18,6 +18,272 @@ License: GPL-3.0-or-later
 URL: https://github.com/karen07/luci-app-antiblock-openwrt-package
 Type: ipkg
 Description:    Provides Web UI for AntiBlock
+@@
+
+Package: luci-i18n-antiblock-cs
+Default: LUCI_LANG_cs||(ALL&&m)
+Version: x
+Depends: +libc luci-app-antiblock
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-antiblock-cs-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-antiblock - cs translation
+Maintainer: Khachatryan Karen <karen0734@gmail.com>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-antiblock - Čeština (Czech)
+@@
+
+Package: luci-i18n-antiblock-es
+Default: LUCI_LANG_es||(ALL&&m)
+Version: x
+Depends: +libc luci-app-antiblock
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-antiblock-es-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-antiblock - es translation
+Maintainer: Khachatryan Karen <karen0734@gmail.com>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-antiblock - Español (Spanish)
+@@
+
+Package: luci-i18n-antiblock-fi
+Default: LUCI_LANG_fi||(ALL&&m)
+Version: x
+Depends: +libc luci-app-antiblock
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-antiblock-fi-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-antiblock - fi translation
+Maintainer: Khachatryan Karen <karen0734@gmail.com>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-antiblock - Suomi (Finnish)
+@@
+
+Package: luci-i18n-antiblock-ga
+Default: LUCI_LANG_ga||(ALL&&m)
+Version: x
+Depends: +libc luci-app-antiblock
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-antiblock-ga-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-antiblock - ga translation
+Maintainer: Khachatryan Karen <karen0734@gmail.com>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-antiblock - Gaeilge (Irish)
+@@
+
+Package: luci-i18n-antiblock-ja
+Default: LUCI_LANG_ja||(ALL&&m)
+Version: x
+Depends: +libc luci-app-antiblock
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-antiblock-ja-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-antiblock - ja translation
+Maintainer: Khachatryan Karen <karen0734@gmail.com>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-antiblock - 日本語 (Japanese)
+@@
+
+Package: luci-i18n-antiblock-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-antiblock
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-antiblock-lt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-antiblock - lt translation
+Maintainer: Khachatryan Karen <karen0734@gmail.com>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-antiblock - Lietuvių (Lithuanian)
+@@
+
+Package: luci-i18n-antiblock-pl
+Default: LUCI_LANG_pl||(ALL&&m)
+Version: x
+Depends: +libc luci-app-antiblock
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-antiblock-pl-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-antiblock - pl translation
+Maintainer: Khachatryan Karen <karen0734@gmail.com>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-antiblock - Polski (Polish)
+@@
+
+Package: luci-i18n-antiblock-pt
+Default: LUCI_LANG_pt||(ALL&&m)
+Version: x
+Depends: +libc luci-app-antiblock
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-antiblock-pt-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-antiblock - pt translation
+Maintainer: Khachatryan Karen <karen0734@gmail.com>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-antiblock - Português (Portuguese)
+@@
+
+Package: luci-i18n-antiblock-ro
+Default: LUCI_LANG_ro||(ALL&&m)
+Version: x
+Depends: +libc luci-app-antiblock
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-antiblock-ro-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-antiblock - ro translation
+Maintainer: Khachatryan Karen <karen0734@gmail.com>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-antiblock - Română (Romanian)
+@@
+
+Package: luci-i18n-antiblock-ru
+Default: LUCI_LANG_ru||(ALL&&m)
+Version: x
+Depends: +libc luci-app-antiblock
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-antiblock-ru-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-antiblock - ru translation
+Maintainer: Khachatryan Karen <karen0734@gmail.com>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-antiblock - Русский (Russian)
+@@
+
+Package: luci-i18n-antiblock-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-antiblock
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-antiblock-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-antiblock - ta translation
+Maintainer: Khachatryan Karen <karen0734@gmail.com>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-antiblock - Tamil (Tamil)
+@@
+
+Package: luci-i18n-antiblock-uk
+Default: LUCI_LANG_uk||(ALL&&m)
+Version: x
+Depends: +libc luci-app-antiblock
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-antiblock-uk-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-antiblock - uk translation
+Maintainer: Khachatryan Karen <karen0734@gmail.com>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-antiblock - Українська (Ukrainian)
+@@
+
+Package: luci-i18n-antiblock-zh-cn
+Default: LUCI_LANG_zh_Hans||(ALL&&m)
+Version: x
+Depends: +libc luci-app-antiblock
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-antiblock-zh-cn-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-antiblock - zh-cn translation
+Maintainer: Khachatryan Karen <karen0734@gmail.com>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-antiblock - 简体中文 (Simplified Chinese)
+@@
+
+Package: luci-i18n-antiblock-zh-tw
+Default: LUCI_LANG_zh_Hant||(ALL&&m)
+Version: x
+Depends: +libc luci-app-antiblock
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-antiblock-zh-tw-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-antiblock - zh-tw translation
+Maintainer: Khachatryan Karen <karen0734@gmail.com>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-antiblock - 正體中文 (Traditional Chinese)
 @@
 
 

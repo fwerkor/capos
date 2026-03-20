@@ -6,7 +6,7 @@ Version: 3.6.13-r1
 Depends: +libc +git +perlbase-essential +perlbase-data +perlbase-digest +perlbase-env +perlbase-findbin +perlbase-getopt +perlbase-mime +perlbase-storable +perlbase-sys +perlbase-text +perlbase-time +perlbase-utf8
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @gitolite-any
 Section: net
 Category: Network
 Repository: base

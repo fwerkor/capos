@@ -1,0 +1,25 @@
+Source-Makefile: feeds/video/frameworks/wlroots/Makefile
+Build-Depends: wayland/host
+
+Package: wlroots
+Submenu: Frameworks and Toolkits
+Version: 0.18.2
+Depends: +libc +libmesa +libdisplay-info +libdrm +libinput +libseat +libxkbcommon +libudev +pixman +libwayland +xkeyboard-config
+Conflicts: 
+Menu-Depends: 
+Provides: @wlroots-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: modules for building a Wayland compositor
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: wlroots-0.18.2.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://gitlab.freedesktop.org/wlroots/wlroots
+Type: ipkg
+Description: Pluggable, composable, unopinionated modules for building a Wayland compositor;
+or about 60,000 lines of code you were going to write anyway.
+@@
+
+

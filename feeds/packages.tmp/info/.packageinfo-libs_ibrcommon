@@ -6,7 +6,7 @@ Version: 1.0.1-r10
 Depends: +libc +libstdcpp +librt +libnl +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ibrcommon-any
 Section: libs
 Category: Libraries
 Repository: base

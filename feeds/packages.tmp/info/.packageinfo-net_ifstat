@@ -5,7 +5,7 @@ Version: 1.1-r4
 Depends: +libc +IFSTAT_SNMP:libnetsnmp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ifstat-any
 Section: net
 Category: Network
 Repository: base

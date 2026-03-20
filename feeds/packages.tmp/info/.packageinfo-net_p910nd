@@ -6,7 +6,7 @@ Version: 0.97-r14
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @p910nd-any
 Section: net
 Category: Network
 Repository: base

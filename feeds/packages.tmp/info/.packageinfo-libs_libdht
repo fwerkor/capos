@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/libs/libdht/Makefile
 
 Package: libdht
-Version: 2022.04.27~111230894416d400c9a1e038a033586bfeaafc93-r1
-Depends: +libc 
+Version: 2022.04.27~111230894416d400c9a1e038a033586bfeaafc93-r2
+Depends: +libc +USE_GLIBC:libcrypt-compat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libdht-any
 Section: libs
 Category: Libraries
 Repository: base

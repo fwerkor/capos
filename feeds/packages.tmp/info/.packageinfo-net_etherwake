@@ -5,14 +5,14 @@ Version: 1.09-r5
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @etherwake-any
 Section: net
 Category: Network
 Repository: base
 Title: WoL client for magic packets via ethernet frames
 Maintainer: Peter Wagner <tripolar@gmx.at>
 Source: etherwake_1.09.orig.tar.gz
-URL: http://ftp.debian.org/debian/pool/main/e/etherwake
+URL: https://ftp.debian.org/debian/pool/main/e/etherwake
 Type: ipkg
 Description: 	You can wake up WOL compliant Computers which have been powered down to
 	sleep mode or start WOL compliant Computers with a BIOS feature.

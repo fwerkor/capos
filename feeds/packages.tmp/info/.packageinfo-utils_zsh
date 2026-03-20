@@ -2,11 +2,11 @@ Source-Makefile: feeds/packages/utils/zsh/Makefile
 
 Package: zsh
 Submenu: Shells
-Version: 5.9-r3
+Version: 5.9-r4
 Depends: +libc +libcap +libncurses +libncursesw +libpcre2 +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @zsh-any
 Section: utils
 Category: Utilities
 Repository: base

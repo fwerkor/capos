@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/multimedia/xupnpd/Makefile
 
 Package: xupnpd
-Version: 2021.04.08~2bc1e741e0efe04cb3150430ff25410093618b4f-r1
-Depends: +libc +liblua +libopenssl
+Version: 2021.04.08~2bc1e741e0efe04cb3150430ff25410093618b4f-r2
+Depends: +libc +USE_GLIBC:libcrypt-compat +liblua +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @xupnpd-any
 Section: multimedia
 Category: Multimedia
 Repository: base

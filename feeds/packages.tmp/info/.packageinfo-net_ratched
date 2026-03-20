@@ -5,7 +5,7 @@ Version: 1.0.0-r1
 Depends: +libc +libopenssl +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ratched-any
 Section: net
 Category: Network
 Repository: base

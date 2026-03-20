@@ -6,14 +6,15 @@ Version: 3.1-r5
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @picocom-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: A minimal dumb-terminal emulation program
 Maintainer: 
 Source: picocom-3.1.tar.gz
-License: LICENSE.txt
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE.txt
 CPE-ID: cpe:/a:picocom_project:picocom
 URL: https://github.com/npat-efault/picocom
 Type: ipkg

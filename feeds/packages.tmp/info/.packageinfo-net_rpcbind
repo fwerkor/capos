@@ -5,7 +5,7 @@ Version: 1.2.6-r2
 Depends: +libc +libtirpc +RPCBIND_LIBWRAP:libwrap
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rpcbind-any
 Section: net
 Category: Network
 Repository: base

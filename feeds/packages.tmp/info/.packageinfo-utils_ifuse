@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/utils/ifuse/Makefile
 
 Package: ifuse
 Submenu: libimobiledevice
-Version: 2023.01.06~814a0e38050850937debd697fcfe6eca3de1b66f-r1
-Depends: +libc +fuse-utils +libimobiledevice
+Version: 2024.12.02~bbf2838a474c287e28ed6d348ee252ddaeb9aab0-r1
+Depends: +libc +fuse3-utils +libimobiledevice
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ifuse-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: Fuse filesystem access to iOS devices
 Maintainer: Rosen Penev <rosenp@gmail.com>
-Source: ifuse-2023.01.06~814a0e38050850937debd697fcfe6eca3de1b66f.tar.zst
+Source: ifuse-2024.12.02~bbf2838a474c287e28ed6d348ee252ddaeb9aab0.tar.zst
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:libimobiledevice:ifuse

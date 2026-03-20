@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/lang/perl/perl-io-socket-ssl/Makefile
+
+Package: perl-io-socket-ssl
+Submenu: Perl
+Version: 2.094.5.40-r1
+Depends: +libc perl +perlbase-autoloader +perlbase-io +perlbase-list +perl-net-ssleay
+Conflicts: 
+Menu-Depends: 
+Provides: @perl-io-socket-ssl-any
+Section: lang
+Category: Languages
+Repository: base
+Title: Perl SSL sockets with IO::Socket interface
+Maintainer: Jens Wagner <jens@wagner2013.de>
+Source: IO-Socket-SSL-2.094.tar.gz
+License: GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE
+URL: https://metacpan.org/pod/Net::SSLeay
+Type: ipkg
+Description:   IO::Socket::SSL makes using SSL/TLS much easier by wrapping the
+  functionality into the familiar IO::Socket interface and providing
+  secure defaults whenever possible.
+@@
+
+

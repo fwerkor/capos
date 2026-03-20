@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base +lua +luci-lib-base +luci-lib-nixio +luci-lib-ip +luci-lib-jsonc +libubus-lua +liblucihttp-lua +ucode-mod-lua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-lua-runtime-any
 Section: luci
 Category: LuCI
 Repository: base

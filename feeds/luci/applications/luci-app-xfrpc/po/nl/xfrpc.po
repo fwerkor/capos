@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2025-01-20 10:53+0000\n"
-"Last-Translator: Meow <sander.schutten@gmail.com>\n"
+"PO-Revision-Date: 2026-01-10 04:39+0000\n"
+"Last-Translator: Marco Otto <marco.otto@tuta.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsxfrpc/nl/>\n"
 "Language: nl\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 
 #: applications/luci-app-xfrpc/htdocs/luci-static/resources/view/xfrpc.js:104
 msgid "Alert"
@@ -18,11 +18,11 @@ msgstr "Alarm"
 
 #: applications/luci-app-xfrpc/htdocs/luci-static/resources/view/xfrpc.js:82
 msgid "By default, this value is \"\"."
-msgstr ""
+msgstr "Standaard is deze waarde \"\"."
 
 #: applications/luci-app-xfrpc/htdocs/luci-static/resources/view/xfrpc.js:71
 msgid "By default, this value is \"0.0.0.0\"."
-msgstr ""
+msgstr "Standaard is deze waarde \"0.0.0.0\"."
 
 #: applications/luci-app-xfrpc/htdocs/luci-static/resources/view/xfrpc.js:97
 msgid "By default, this value is \"Info\"."
@@ -70,7 +70,7 @@ msgstr ""
 
 #: applications/luci-app-xfrpc/htdocs/luci-static/resources/view/xfrpc.js:120
 msgid "General Settings"
-msgstr ""
+msgstr "Algemene instellingen"
 
 #: applications/luci-app-xfrpc/root/usr/share/rpcd/acl.d/luci-app-xfrpc.json:3
 msgid "Grant access to LuCI app xfrpc"

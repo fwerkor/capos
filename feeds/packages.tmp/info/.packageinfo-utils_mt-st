@@ -5,7 +5,7 @@ Version: 1.7-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mt-st-any
 Section: utils
 Category: Utilities
 Repository: base

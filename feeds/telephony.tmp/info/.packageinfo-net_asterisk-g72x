@@ -6,7 +6,7 @@ Version: 1.4.3-r1
 Depends: +libc asterisk +bcg729
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-codec-g729-any
 Section: net
 Category: Network
 Repository: base

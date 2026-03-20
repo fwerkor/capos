@@ -5,7 +5,7 @@ Version: 2016.12.22~5b788d4d558a78c52e6cfe97325e4564b307a3a0-r2
 Depends: +libc +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libsoc-any
 Section: libs
 Category: Libraries
 Repository: base

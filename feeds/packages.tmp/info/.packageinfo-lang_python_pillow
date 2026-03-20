@@ -7,7 +7,7 @@ Version: 10.1.0-r1
 Depends: +libc +libfreetype +libjpeg +libtiff +zlib +libwebp +python3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pillow-any
 Section: lang
 Category: Languages
 Repository: base
@@ -28,7 +28,7 @@ Version: 10.1.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pillow-src-any
 Section: lang
 Category: Languages
 Repository: base

@@ -6,7 +6,7 @@ Version: 5.0.2-r1
 Depends: +libc +libpthread +libmicrohttpd-no-ssl +iptables-nft +iptables-mod-nat-extra +iptables-mod-ipopt +iptables-mod-conntrack-extra
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nodogsplash-any
 Section: net
 Category: Network
 Repository: base

@@ -6,7 +6,7 @@ Version: 5.3.1-r1
 Depends: +libc +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-cachetools-any
 Section: lang
 Category: Languages
 Repository: base
@@ -28,7 +28,7 @@ Version: 5.3.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-cachetools-src-any
 Section: lang
 Category: Languages
 Repository: base

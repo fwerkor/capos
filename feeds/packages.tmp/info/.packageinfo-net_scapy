@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/net/scapy/Makefile
 
 Package: scapy
-Version: 2.5.0-r1
+Version: 2.6.1-r1
 Depends: +libc +python3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @scapy-any
 Section: net
 Category: Network
 Repository: base
 Title: Interactive packet manipulation tool and network scanner
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: scapy-2.5.0.tar.gz
+Source: scapy-2.6.1.tar.gz
 License: GPL-2.0-only
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:scapy:scapy
@@ -24,17 +24,17 @@ Description:   Scapy is a powerful interactive packet manipulation program built
 @@
 
 Package: scapy-src
-Version: 2.5.0-r1
+Version: 2.6.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @scapy-src-any
 Section: net
 Category: Network
 Repository: base
 Title: Interactive packet manipulation tool and network scanner (sources)
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: scapy-2.5.0.tar.gz
+Source: scapy-2.6.1.tar.gz
 License: GPL-2.0-only
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:scapy:scapy

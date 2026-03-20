@@ -3,11 +3,11 @@ Build-Depends: px5g-mbedtls libowfat
 
 Package: gatling
 Submenu: Web Servers/Proxies
-Version: 0.16-r2
+Version: 0.16-r3
 Depends: +libc +zlib +libcap +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @gatling-any
 Section: net
 Category: Network
 Repository: base

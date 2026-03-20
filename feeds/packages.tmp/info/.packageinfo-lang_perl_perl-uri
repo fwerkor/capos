@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/perl/perl-uri/Makefile
+
+Package: perl-uri
+Submenu: Perl
+Version: 5.32.5.40-r1
+Depends: +libc perl +perlbase-essential +perlbase-integer +perlbase-mime +perlbase-scalar +perlbase-utf8
+Conflicts: 
+Menu-Depends: 
+Provides: @perl-uri-any
+Section: lang
+Category: Languages
+Repository: base
+Title: Manipulates and accesses URI strings
+Maintainer: Jens Wagner <jens@wagner2013.de>
+Source: URI-5.32.tar.gz
+License: GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE
+URL: https://metacpan.org/pod/URI
+Type: ipkg
+Description:   This module implements the URI class. Objects of this class represent
+  Uniform Resource Identifier references as specified in RFCs 2396/2732
+@@
+
+

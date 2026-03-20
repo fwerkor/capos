@@ -5,7 +5,7 @@ Version: 26018-r1
 Depends: +libc +libstdcpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @boinc-wrapper-any
 Section: net
 Category: Network
 Repository: base

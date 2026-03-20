@@ -4,17 +4,17 @@ Build-Types: host
 
 Package: python3-cffi
 Submenu: Python
-Version: 1.16.0-r1
+Version: 2.0.0-r1
 Depends: +libc +libffi +python3-light +python3-ctypes +python3-pycparser
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-cffi-any
 Section: lang
 Category: Languages
 Repository: base
 Title: C Foreign Function Interface
 Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: cffi-1.16.0.tar.gz
+Source: cffi-2.0.0.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 URL: https://cffi.readthedocs.org/
@@ -24,17 +24,17 @@ Description: Foreign Function Interface for Python calling C code.
 
 Package: python3-cffi-src
 Submenu: Python
-Version: 1.16.0-r1
+Version: 2.0.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-cffi-src-any
 Section: lang
 Category: Languages
 Repository: base
 Title: C Foreign Function Interface (sources)
 Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: cffi-1.16.0.tar.gz
+Source: cffi-2.0.0.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 URL: https://cffi.readthedocs.org/

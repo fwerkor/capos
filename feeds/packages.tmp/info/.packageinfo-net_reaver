@@ -6,7 +6,7 @@ Version: 1.6.6-r1
 Depends: +libc +libpcap
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @reaver-any
 Section: net
 Category: Network
 Repository: base

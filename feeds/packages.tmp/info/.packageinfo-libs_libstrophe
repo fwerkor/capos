@@ -6,7 +6,7 @@ Version: 0.13.1-r1
 Depends: +libc +libopenssl +libstrophe-libxml2:libxml2 +libstrophe-expat:libexpat +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libstrophe-any
 Section: libs
 Category: Libraries
 Repository: base

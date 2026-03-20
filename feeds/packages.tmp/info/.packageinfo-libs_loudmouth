@@ -5,7 +5,7 @@ Version: 1.5.4-r1
 Depends: +libc +glib2 +libopenssl +PACKAGE_krb5-libs:krb5-libs
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @loudmouth-any
 Section: libs
 Category: Libraries
 Repository: base

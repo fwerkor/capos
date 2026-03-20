@@ -5,7 +5,7 @@ Version: 174.11-r1
 Depends: +libc +libao +libfaad2 +libmpg123 +libmbedtls +libjson-c +libgcrypt +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pianod-any
 Section: sound
 Category: Sound
 Repository: base
@@ -29,7 +29,7 @@ Version: 174.11-r1
 Depends: +libc +pianod
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pianod-client-any
 Section: sound
 Category: Sound
 Repository: base

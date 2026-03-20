@@ -5,7 +5,7 @@ Version: 2023.03.15~9b5b683fbb2bb0010aa031d620d0ab8105516757-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @liblucihttp-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -24,7 +24,7 @@ Version: 2023.03.15~9b5b683fbb2bb0010aa031d620d0ab8105516757-r1
 Depends: +libc +liblucihttp +liblua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @liblucihttp-lua-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -42,7 +42,7 @@ Version: 2023.03.15~9b5b683fbb2bb0010aa031d620d0ab8105516757-r1
 Depends: +libc +liblucihttp +libucode
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @liblucihttp-ucode-any
 Section: libs
 Category: Libraries
 Repository: base

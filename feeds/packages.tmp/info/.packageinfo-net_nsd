@@ -6,7 +6,7 @@ Version: 4.6.1-r1
 Depends: +libc +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nsd-any
 Build-Variant: ssl
 Section: net
 Category: Network
@@ -29,7 +29,7 @@ Version: 4.6.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nsd-nossl-any
 Build-Variant: nossl
 Section: net
 Category: Network
@@ -52,7 +52,7 @@ Version: 4.6.1-r1
 Depends: +libc +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nsd-control-any
 Section: net
 Category: Network
 Repository: base
@@ -74,7 +74,7 @@ Version: 4.6.1-r1
 Depends: +libc +openssl-util
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nsd-control-setup-any
 Section: net
 Category: Network
 Repository: base

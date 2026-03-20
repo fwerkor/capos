@@ -5,7 +5,7 @@ Version: 0.3.1-r1
 Depends: +libc +libusb-1.0
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libjaylink-any
 Section: libs
 Category: Libraries
 Repository: base

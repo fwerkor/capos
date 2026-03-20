@@ -1,11 +1,12 @@
 Source-Makefile: feeds/packages/libs/yajl/Makefile
+Build-Types: host
 
 Package: yajl
-Version: 2.1.0-r3
+Version: 2.1.0-r4
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yajl-any
 Section: libs
 Category: Libraries
 Repository: base

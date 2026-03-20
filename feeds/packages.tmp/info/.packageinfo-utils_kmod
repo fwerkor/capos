@@ -5,7 +5,7 @@ Version: 32-r1
 Depends: +libc +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kmod-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -27,7 +27,7 @@ Version: 32-r1
 Depends: +libc +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libkmod-any
 Section: libs
 Category: Libraries
 Repository: base

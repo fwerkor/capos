@@ -5,7 +5,7 @@ Version: 3.10-r1
 Depends: +libc +USE_GLIBC:librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @diffutils-any
 Section: devel
 Category: Development
 Repository: base

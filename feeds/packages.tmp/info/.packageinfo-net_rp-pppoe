@@ -3,11 +3,11 @@ Build-Depends: ppp
 
 Package: rp-pppoe-common
 Submenu: Dial-in/up
-Version: 4.0-r1
+Version: 4.0-r2
 Depends: +libc ppp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rp-pppoe-common-any
 Section: net
 Category: Network
 Repository: base
@@ -28,11 +28,11 @@ Description:   Dubbed RP-PPPoE, this open-source product is ideal for Linux user
 Package: rp-pppoe-relay
 Submenu: Dial-in/up
 Default: n
-Version: 4.0-r1
+Version: 4.0-r2
 Depends: +libc +rp-pppoe-common
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rp-pppoe-relay-any
 Section: net
 Category: Network
 Repository: base
@@ -52,11 +52,11 @@ Description:   Dubbed RP-PPPoE, this open-source product is ideal for Linux user
 
 Package: rp-pppoe-server
 Submenu: Dial-in/up
-Version: 4.0-r1
+Version: 4.0-r2
 Depends: +libc +rp-pppoe-common +ppp-mod-pppoe
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rp-pppoe-server-any
 Section: net
 Category: Network
 Repository: base
@@ -76,11 +76,11 @@ Description:   Dubbed RP-PPPoE, this open-source product is ideal for Linux user
 
 Package: rp-pppoe-sniff
 Submenu: Dial-in/up
-Version: 4.0-r1
+Version: 4.0-r2
 Depends: +libc +ppp @BROKEN
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rp-pppoe-sniff-any
 Section: net
 Category: Network
 Repository: base

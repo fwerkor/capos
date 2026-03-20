@@ -6,7 +6,7 @@ Version: 20151220-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @vpnc-scripts-any
 Section: net
 Category: Network
 Repository: base

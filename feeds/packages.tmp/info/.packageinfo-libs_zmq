@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/libs/zmq/Makefile
 
 Package: libzmq-nc
-Version: 4.3.5-r1
+Version: 4.3.5-r2
 Depends: +libc +libuuid +libstdcpp +LIBZMQ_NC_WITH_OPENPGM:openpgm
 Conflicts: 
 Menu-Depends: 
-Provides: libzmq
+Provides: @libzmq-nc-any libzmq
 Build-Variant: nc
 Section: libs
 Category: Libraries
@@ -28,11 +28,11 @@ Config:
 @@
 
 Package: libzmq-curve
-Version: 4.3.5-r1
+Version: 4.3.5-r2
 Depends: +libc +libuuid +libstdcpp +libsodium +LIBZMQ_CURVE_WITH_OPENPGM:openpgm
 Conflicts: 
 Menu-Depends: 
-Provides: libzmq
+Provides: @libzmq-curve-any libzmq
 Build-Variant: curve
 Section: libs
 Category: Libraries

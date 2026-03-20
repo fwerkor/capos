@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/utils/xxhash/Makefile
 
 Package: libxxhash
-Version: 0.8.2-r2
+Version: 0.8.3-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libxxhash-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Extremely fast hash algorithm
 Maintainer: Julien Malik <julien.malik@paraiso.me>
-Source: xxhash-0.8.2.tar.zst
+Source: xxhash-0.8.3.tar.zst
 License: BSD-2-Clause GPL-2.0-or-later
 LicenseFiles: LICENSE cli/COPYING
 URL: https://xxhash.com/
@@ -26,17 +26,17 @@ Description:     xxHash is an Extremely fast Hash algorithm, running at RAM spee
 @@
 
 Package: xxhash
-Version: 0.8.2-r2
+Version: 0.8.3-r1
 Depends: +libc +libxxhash
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @xxhash-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: Extremely fast hash algorithm
 Maintainer: Julien Malik <julien.malik@paraiso.me>
-Source: xxhash-0.8.2.tar.zst
+Source: xxhash-0.8.3.tar.zst
 License: BSD-2-Clause GPL-2.0-or-later
 LicenseFiles: LICENSE cli/COPYING
 URL: https://xxhash.com/

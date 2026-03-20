@@ -7,7 +7,7 @@ Version: 2.8.0-r1
 Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +libblkid +libuuid +libpopt +lvm2 +libdevmapper +libjson-c +@KERNEL_DIRECT_IO +kmod-crypto-user
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @cryptsetup-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -28,7 +28,7 @@ Version: 2.8.0-r1
 Depends: +libc +cryptsetup +PACKAGE_cryptsetup-ssh:libssh
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @cryptsetup-ssh-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -49,7 +49,7 @@ Version: 2.8.0-r1
 Depends: +libc +cryptsetup
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @integritysetup-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -70,7 +70,7 @@ Version: 2.8.0-r1
 Depends: +libc +cryptsetup
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @veritysetup-any
 Section: utils
 Category: Utilities
 Repository: base

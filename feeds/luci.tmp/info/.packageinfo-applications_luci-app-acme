@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base +acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-acme-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -26,7 +26,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-ar-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -45,7 +45,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-bg-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -64,7 +64,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-bn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -83,7 +83,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-ca-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -102,7 +102,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-cs-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -121,7 +121,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-da-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -140,7 +140,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-de-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -159,7 +159,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-el-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -178,7 +178,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-es-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -197,7 +197,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-fa-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -216,7 +216,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-fi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -229,13 +229,32 @@ Hidden: 1
 Description:     Translation for luci-app-acme - Suomi (Finnish)
 @@
 
+Package: luci-i18n-acme-fil
+Default: LUCI_LANG_fil||(ALL&&m)
+Version: x
+Depends: +libc luci-app-acme
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-acme-fil-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-acme - fil translation
+Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-acme - Filipino (Philippinic)
+@@
+
 Package: luci-i18n-acme-fr
 Default: LUCI_LANG_fr||(ALL&&m)
 Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-fr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -254,7 +273,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-ga-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -273,7 +292,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-he-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -292,7 +311,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-hi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -311,7 +330,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-hu-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -330,7 +349,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-it-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -349,7 +368,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-ja-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -368,7 +387,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-ko-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -387,7 +406,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-lt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -406,7 +425,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-mr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -425,7 +444,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-ms-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -444,7 +463,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-no-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -463,7 +482,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-nl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -482,7 +501,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-pl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -501,7 +520,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-pt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -520,7 +539,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -539,7 +558,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-ro-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -558,7 +577,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-ru-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -577,7 +596,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-sk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -596,7 +615,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-sv-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -609,13 +628,32 @@ Hidden: 1
 Description:     Translation for luci-app-acme - Svenska (Swedish)
 @@
 
+Package: luci-i18n-acme-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-acme
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-acme-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-acme - ta translation
+Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-acme - Tamil (Tamil)
+@@
+
 Package: luci-i18n-acme-tr
 Default: LUCI_LANG_tr||(ALL&&m)
 Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-tr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -634,7 +672,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-uk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -653,7 +691,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-vi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -666,13 +704,32 @@ Hidden: 1
 Description:     Translation for luci-app-acme - Tiếng Việt (Vietnamese)
 @@
 
+Package: luci-i18n-acme-yua
+Default: LUCI_LANG_yua||(ALL&&m)
+Version: x
+Depends: +libc luci-app-acme
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-acme-yua-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-acme - yua translation
+Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-acme - Yucateco (Yucatec Maya)
+@@
+
 Package: luci-i18n-acme-zh-cn
 Default: LUCI_LANG_zh_Hans||(ALL&&m)
 Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -691,7 +748,7 @@ Version: x
 Depends: +libc luci-app-acme
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-acme-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base

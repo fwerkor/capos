@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/net/ariang/Makefile
 
 Package: ariang
 Submenu: Download Manager
-Version: 1.3.6-r1
+Version: 1.3.11-r1
 Depends: +libc +aria2 +uhttpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ariang-any
 Section: net
 Category: Network
 Repository: base
 Title: AriaNg webui for uhttpd webserver
 Maintainer: Ansuel Smith <ansuelsmth@gmail.com>
-Source: ariang-1.3.6.zip
+Source: ariang-1.3.11.zip
 License: MIT
 LicenseFiles: LICENSE
 URL: https://ariang.mayswind.net
@@ -22,17 +22,17 @@ Description: 	AriaNg is a web frontend making aria2 easier to use. AriaNg is wri
 
 Package: ariang-nginx
 Submenu: Download Manager
-Version: 1.3.6-r1
+Version: 1.3.11-r1
 Depends: +libc +aria2 +nginx
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ariang-nginx-any
 Section: net
 Category: Network
 Repository: base
 Title: AriaNg webui for nginx webserver
 Maintainer: Ansuel Smith <ansuelsmth@gmail.com>
-Source: ariang-1.3.6.zip
+Source: ariang-1.3.11.zip
 License: MIT
 LicenseFiles: LICENSE
 URL: https://ariang.mayswind.net

@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/sound/portaudio/Makefile
 
 Package: portaudio
-Version: 190600_20161030-r2
-Depends: +libc +alsa-lib +libpthread +librt
+Version: 19.7.0-r2
+Depends: +libc +alsa-lib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @portaudio-any
 Section: sound
 Category: Sound
 Repository: base
 Title: Portable cross-platform audio I/O
 Maintainer: 
-Source: pa_stable_v190600_20161030.tgz
+Source: portaudio-19.7.0.tar.zst
 License: MIT
 LicenseFiles: LICENSE.txt
 URL: http://www.portaudio.com/

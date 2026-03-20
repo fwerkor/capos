@@ -7,7 +7,7 @@ Version: x
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-lib-uqr-any
 Section: luci
 Category: LuCI
 Repository: base

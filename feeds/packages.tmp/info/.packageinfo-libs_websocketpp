@@ -5,7 +5,7 @@ Version: 0.8.2-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @websocketpp-any
 Section: libs
 Category: Libraries
 Repository: base

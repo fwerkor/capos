@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-05-12 07:34+0000\n"
+"PO-Revision-Date: 2026-03-08 17:33+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsttyd/cs/>\n"
@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:65
 msgid "Accept only one client and exit on disconnection"
@@ -23,12 +23,8 @@ msgid "Allow URL args"
 msgstr "Povolit argumenty URL"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:49
-msgid ""
-"Allow client to send command line arguments in URL (eg: http://"
-"localhost:7681?arg=foo&arg=bar)"
-msgstr ""
-"Povolit klientovi odesílat argumenty příkazového řádku v URL adrese (např.: "
-"http://localhost:7681?arg=foo&arg=bar)"
+msgid "Allow client to send command line arguments in URL (eg: %s)"
+msgstr "Umožnit klientům posílat v URL argumenty příkazového řádku (např. %s)"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:20
 msgid "Bind to UNIX domain socket instead of IP port"
@@ -48,7 +44,7 @@ msgstr "Příkaz"
 
 #: applications/luci-app-ttyd/root/usr/share/luci/menu.d/luci-app-ttyd.json:23
 msgid "Config"
-msgstr "Nastavení"
+msgstr "Konfigurace"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:37
 msgid "Credential"
@@ -240,7 +236,7 @@ msgstr "Popis umístění soketu unixové domény (např. /var/run/ttyd.sock)"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:20
 msgid "UNIX socket"
-msgstr "Unixový soket"
+msgstr "UNIX soket"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:32
 msgid "UNIX socket path"

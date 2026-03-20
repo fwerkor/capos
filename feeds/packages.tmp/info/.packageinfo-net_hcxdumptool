@@ -6,7 +6,7 @@ Version: 6.3.4-r1
 Depends: +libc +libpcap +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @hcxdumptool-any
 Section: net
 Category: Network
 Repository: base

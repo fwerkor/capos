@@ -1,12 +1,12 @@
 Source-Makefile: feeds/packages/utils/runc/Makefile
-Build-Depends: golang/host
+Build-Depends: golang/host dockerd
 
 Package: runc
-Version: 1.1.14-r1
+Version: 1.1.14-r2
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) +KERNEL_SECCOMP_FILTER:libseccomp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @runc-any
 Section: utils
 Category: Utilities
 Repository: base

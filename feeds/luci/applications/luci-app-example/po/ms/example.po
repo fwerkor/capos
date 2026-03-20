@@ -20,19 +20,19 @@ msgstr "Pilihan boolean"
 msgid "A select option"
 msgstr "Pilih pilihan"
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:56
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:55
 msgid "Cats"
 msgstr "Kucing"
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-tablesection.js:73
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-tablesection.js:72
 msgid "Description for this table section"
 msgstr "Penerangan untuk bahagian jadual ini"
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-typedsection.js:73
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-typedsection.js:72
 msgid "Description for this typed section"
 msgstr "Penerangan untuk bahagian yang ditaip ini"
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:57
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:56
 msgid "Dogs"
 msgstr "Anjing"
 
@@ -84,41 +84,41 @@ msgstr "Input untuk kata laluan (storan pada disk tidak disulitkan)"
 msgid "Input for the first option"
 msgstr "Input untuk pilihan pertama"
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:60
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:59
 msgid "Is this real?"
 msgstr "Adakah ini benar?"
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:130
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:127
 msgid "JSON converted to table via array building and loop"
 msgstr "JSON ditukar kepada jadual melalui pembinaan tatasusunan dan gelung"
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-tablesection.js:60
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-tablesection.js:59
 msgid "JSONMap TableSection Sample"
 msgstr "Contoh Bahagian Jadual JSONMap"
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-typedsection.js:60
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-typedsection.js:59
 msgid "JSONMap TypedSection Sample"
 msgstr "Sampel JSONMap TypedSection"
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:60
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:59
 msgid "No"
 msgstr "Tidak"
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:87
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:86
 msgid "Not found"
 msgstr "Tidak dijumpai"
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-tablesection.js:74
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-typedsection.js:74
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-tablesection.js:73
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-typedsection.js:73
 msgid "Option name"
 msgstr "Nama pilihan"
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-tablesection.js:75
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-typedsection.js:75
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-tablesection.js:74
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-typedsection.js:74
 msgid "Option value"
 msgstr "Nilai pilihan"
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:58
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:57
 msgid "Parakeets"
 msgstr "burung parkit"
 
@@ -138,19 +138,19 @@ msgstr "Contoh Jadual RPC JSONMap"
 msgid "RPC JSONMap Typed Example"
 msgstr "Contoh Ditaip Peta JSON RPC"
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-tablesection.js:36
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-typedsection.js:36
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:35
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-tablesection.js:35
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-typedsection.js:35
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:34
 msgid "RPC call failure:"
 msgstr "Kegagalan panggilan RPC:"
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:128
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:125
 msgid "Sample JS via RPC"
 msgstr "Sampel JS melalui RPC"
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-tablesection.js:61
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-typedsection.js:61
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:115
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-tablesection.js:60
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc-jsonmap-typedsection.js:60
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:112
 msgid "See browser console for raw data"
 msgstr "Lihat konsol penyemak imbas untuk data mentah"
 
@@ -158,11 +158,11 @@ msgstr "Lihat konsol penyemak imbas untuk data mentah"
 msgid "Select Option"
 msgstr "Pilih pilihan"
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:59
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:58
 msgid "Should be \"Not found\""
 msgstr "Harus \"Tidak dijumpai\""
 
-#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:60
+#: applications/luci-app-example/htdocs/luci-static/resources/view/example/rpc.js:59
 msgid "Yes"
 msgstr "Ya"
 

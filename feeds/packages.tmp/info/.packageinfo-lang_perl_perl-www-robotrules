@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/lang/perl/perl-www-robotrules/Makefile
+
+Package: perl-www-robotrules
+Submenu: Perl
+Version: 6.02.5.40-r3
+Depends: +libc perl +perlbase-anydbm-file +perlbase-essential +perlbase-fcntl +perl-uri
+Conflicts: 
+Menu-Depends: 
+Provides: @perl-www-robotrules-any
+Section: lang
+Category: Languages
+Repository: base
+Title: database of robots.txt-derived permissions
+Maintainer: Jens Wagner <jens@wagner2013.de>
+Source: WWW-RobotRules-6.02.tar.gz
+License: GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE
+URL: https://metacpan.org/pod/WWW::RobotRules
+Type: ipkg
+Description:   This module parses /robots.txt files.
+@@
+
+

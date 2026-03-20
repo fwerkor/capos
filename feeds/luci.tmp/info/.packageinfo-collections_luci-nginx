@@ -4,10 +4,10 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 Package: luci-nginx
 Submenu: 1. Collections
 Version: x
-Depends: +libc +nginx +nginx-mod-luci +luci-mod-admin-full +luci-theme-bootstrap +luci-app-firewall +luci-app-package-manager +luci-proto-ppp +IPV6:luci-proto-ipv6 +rpcd-mod-rrdns
+Depends: +libc +IPV6:luci-proto-ipv6 +luci-app-firewall +luci-app-package-manager +luci-mod-admin-full +luci-proto-ppp +luci-theme-bootstrap +nginx +nginx-mod-luci +rpcd-mod-rrdns
 Conflicts: 
 Menu-Depends: 
-Provides: luci-ssl-nginx
+Provides: @luci-nginx-any luci-ssl-nginx
 Section: luci
 Category: LuCI
 Repository: base

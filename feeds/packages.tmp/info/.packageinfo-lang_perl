@@ -5,11 +5,11 @@ Build-Types: host
 Package: perl
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
-Depends: +libc +USE_GLIBC:libbsd +PERL_THREADS:libpthread @!arc
+Version: 5.40.0-r3
+Depends: +libc +USE_GLIBC:libcrypt-compat +USE_GLIBC:libbsd +PERL_THREADS:libpthread @!arc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perl-any
 Section: lang
 Category: Languages
 Repository: base
@@ -32,11 +32,11 @@ Config:
 Package: perlbase-anydbm-file
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-anydbm-file-any
 Section: lang
 Category: Languages
 Repository: base
@@ -54,11 +54,11 @@ Description: AnyDBM_File perl module
 Package: perlbase-app
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-autouse +perlbase-base +perlbase-config +perlbase-cpan +perlbase-essential +perlbase-file +perlbase-getopt +perlbase-if +perlbase-tap +perlbase-text
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-app-any
 Section: lang
 Category: Languages
 Repository: base
@@ -76,11 +76,11 @@ Description: app perl module
 Package: perlbase-archive
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-cwd +perlbase-essential +perlbase-file +perlbase-io
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-archive-any
 Section: lang
 Category: Languages
 Repository: base
@@ -98,11 +98,11 @@ Description: Archive perl module
 Package: perlbase-attribute
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-attribute-any
 Section: lang
 Category: Languages
 Repository: base
@@ -120,11 +120,11 @@ Description: Attribute perl module
 Package: perlbase-attributes
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-xsloader
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-attributes-any
 Section: lang
 Category: Languages
 Repository: base
@@ -142,11 +142,11 @@ Description: attributes perl module
 Package: perlbase-autodie
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-autodie-any
 Section: lang
 Category: Languages
 Repository: base
@@ -164,11 +164,11 @@ Description: autodie perl module
 Package: perlbase-autoloader
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-autoloader-any
 Section: lang
 Category: Languages
 Repository: base
@@ -186,11 +186,11 @@ Description: AutoLoader perl module
 Package: perlbase-autosplit
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-config +perlbase-essential +perlbase-file
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-autosplit-any
 Section: lang
 Category: Languages
 Repository: base
@@ -208,11 +208,11 @@ Description: AutoSplit perl module
 Package: perlbase-autouse
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-autouse-any
 Section: lang
 Category: Languages
 Repository: base
@@ -230,11 +230,11 @@ Description: autouse perl module
 Package: perlbase-b
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-config +perlbase-essential +perlbase-feature
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-b-any
 Section: lang
 Category: Languages
 Repository: base
@@ -252,11 +252,11 @@ Description: B perl module
 Package: perlbase-base
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-base-any
 Section: lang
 Category: Languages
 Repository: base
@@ -274,11 +274,11 @@ Description: base perl module
 Package: perlbase-benchmark
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-benchmark-any
 Section: lang
 Category: Languages
 Repository: base
@@ -296,11 +296,11 @@ Description: Benchmark perl module
 Package: perlbase-bigint
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-bigint-any
 Section: lang
 Category: Languages
 Repository: base
@@ -318,11 +318,11 @@ Description: bigint perl module
 Package: perlbase-bignum
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-bigint +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-bignum-any
 Section: lang
 Category: Languages
 Repository: base
@@ -340,11 +340,11 @@ Description: bignum perl module
 Package: perlbase-blib
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-cwd +perlbase-essential +perlbase-file
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-blib-any
 Section: lang
 Category: Languages
 Repository: base
@@ -362,11 +362,11 @@ Description: blib perl module
 Package: perlbase-bytes
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-bytes-any
 Section: lang
 Category: Languages
 Repository: base
@@ -384,11 +384,11 @@ Description: bytes perl module
 Package: perlbase-charnames
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-bytes +perlbase-essential +perlbase-re +perlbase-unicore
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-charnames-any
 Section: lang
 Category: Languages
 Repository: base
@@ -406,11 +406,11 @@ Description: charnames perl module
 Package: perlbase-class
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-class-any
 Section: lang
 Category: Languages
 Repository: base
@@ -428,11 +428,11 @@ Description: Class perl module
 Package: perlbase-compress
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-bytes +perlbase-essential +perlbase-io +perlbase-scalar
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-compress-any
 Section: lang
 Category: Languages
 Repository: base
@@ -450,11 +450,11 @@ Description: Compress perl module
 Package: perlbase-config
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-config-any
 Section: lang
 Category: Languages
 Repository: base
@@ -472,11 +472,11 @@ Description: Config perl module
 Package: perlbase-cpan
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-b +perlbase-config +perlbase-cwd +perlbase-dirhandle +perlbase-essential +perlbase-extutils +perlbase-fcntl +perlbase-file +perlbase-filehandle +perlbase-http-tiny +perlbase-net +perlbase-safe +perlbase-scalar +perlbase-sys +perlbase-text
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-cpan-any
 Section: lang
 Category: Languages
 Repository: base
@@ -494,11 +494,11 @@ Description: CPAN perl module
 Package: perlbase-cwd
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-cwd-any
 Section: lang
 Category: Languages
 Repository: base
@@ -516,11 +516,11 @@ Description: Cwd perl module
 Package: perlbase-data
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-bytes +perlbase-essential +perlbase-scalar
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-data-any
 Section: lang
 Category: Languages
 Repository: base
@@ -538,11 +538,11 @@ Description: Data perl module
 Package: perlbase-db
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +libdb47 +perlbase-essential +perlbase-meta-notation
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-db-any
 Section: lang
 Category: Languages
 Repository: base
@@ -560,11 +560,11 @@ Description: DB perl module
 Package: perlbase-db-file
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +libdb47 +perlbase-essential +perlbase-tie
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-db-file-any
 Section: lang
 Category: Languages
 Repository: base
@@ -582,11 +582,11 @@ Description: DB_File perl module
 Package: perlbase-dbm-filter
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-dbm-filter-any
 Section: lang
 Category: Languages
 Repository: base
@@ -604,11 +604,11 @@ Description: DBM_Filter perl module
 Package: perlbase-devel
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-file +perlbase-selfloader +perlbase-xsloader
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-devel-any
 Section: lang
 Category: Languages
 Repository: base
@@ -626,11 +626,11 @@ Description: Devel perl module
 Package: perlbase-diagnostics
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-config +perlbase-essential +perlbase-text
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-diagnostics-any
 Section: lang
 Category: Languages
 Repository: base
@@ -648,11 +648,11 @@ Description: diagnostics perl module
 Package: perlbase-digest
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-dynaloader +perlbase-essential +perlbase-fcntl +perlbase-integer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-digest-any
 Section: lang
 Category: Languages
 Repository: base
@@ -670,11 +670,11 @@ Description: Digest perl module
 Package: perlbase-dirhandle
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-symbol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-dirhandle-any
 Section: lang
 Category: Languages
 Repository: base
@@ -692,11 +692,11 @@ Description: DirHandle perl module
 Package: perlbase-dumpvalue
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-dumpvalue-any
 Section: lang
 Category: Languages
 Repository: base
@@ -714,11 +714,11 @@ Description: Dumpvalue perl module
 Package: perlbase-dumpvar
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-dumpvar-any
 Section: lang
 Category: Languages
 Repository: base
@@ -736,11 +736,11 @@ Description: dumpvar perl module
 Package: perlbase-dynaloader
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-config
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-dynaloader-any
 Section: lang
 Category: Languages
 Repository: base
@@ -758,11 +758,11 @@ Description: DynaLoader perl module
 Package: perlbase-encode
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-mime +perlbase-utf8 +perlbase-xsloader
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-encode-any
 Section: lang
 Category: Languages
 Repository: base
@@ -780,11 +780,11 @@ Description: Encode perl module
 Package: perlbase-encoding
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-encode +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-encoding-any
 Section: lang
 Category: Languages
 Repository: base
@@ -802,11 +802,11 @@ Description: encoding perl module
 Package: perlbase-english
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-english-any
 Section: lang
 Category: Languages
 Repository: base
@@ -824,11 +824,11 @@ Description: English perl module
 Package: perlbase-env
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-config +perlbase-tie
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-env-any
 Section: lang
 Category: Languages
 Repository: base
@@ -846,11 +846,11 @@ Description: Env perl module
 Package: perlbase-errno
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-config +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-errno-any
 Section: lang
 Category: Languages
 Repository: base
@@ -868,11 +868,11 @@ Description: Errno perl module
 Package: perlbase-essential
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-config
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-essential-any
 Section: lang
 Category: Languages
 Repository: base
@@ -890,11 +890,11 @@ Description: essential perl module
 Package: perlbase-experimental
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-feature +perlbase-version
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-experimental-any
 Section: lang
 Category: Languages
 Repository: base
@@ -912,11 +912,11 @@ Description: experimental perl module
 Package: perlbase-extutils
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
-Depends: +libc perl +perlbase-autosplit +perlbase-base +perlbase-config +perlbase-cwd +perlbase-dirhandle +perlbase-encode +perlbase-essential +perlbase-file +perlbase-io +perlbase-ipc +perlbase-ostype +perlbase-symbol +perlbase-text
+Version: 5.40.0-r3
+Depends: +libc perl +perlbase-autosplit +perlbase-base +perlbase-config +perlbase-cwd +perlbase-dirhandle +perlbase-encode +perlbase-essential +perlbase-file +perlbase-io +perlbase-ipc +perlbase-ostype +perlbase-symbol +perlbase-text +perlbase-version
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-extutils-any
 Section: lang
 Category: Languages
 Repository: base
@@ -934,11 +934,11 @@ Description: ExtUtils perl module
 Package: perlbase-fatal
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-autodie +perlbase-config +perlbase-essential +perlbase-scalar +perlbase-tie
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-fatal-any
 Section: lang
 Category: Languages
 Repository: base
@@ -956,11 +956,11 @@ Description: Fatal perl module
 Package: perlbase-fcntl
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-xsloader
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-fcntl-any
 Section: lang
 Category: Languages
 Repository: base
@@ -978,11 +978,11 @@ Description: Fcntl perl module
 Package: perlbase-feature
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-feature-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1000,11 +1000,11 @@ Description: feature perl module
 Package: perlbase-fields
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-fields-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1022,11 +1022,11 @@ Description: fields perl module
 Package: perlbase-file
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-class +perlbase-config +perlbase-cwd +perlbase-errno +perlbase-essential +perlbase-fcntl +perlbase-filehandle +perlbase-io +perlbase-locale +perlbase-params +perlbase-scalar +perlbase-symbol +perlbase-xsloader
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-file-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1044,11 +1044,11 @@ Description: File perl module
 Package: perlbase-filecache
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-filecache-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1066,11 +1066,11 @@ Description: FileCache perl module
 Package: perlbase-filehandle
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-io
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-filehandle-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1088,11 +1088,11 @@ Description: FileHandle perl module
 Package: perlbase-filetest
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-filetest-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1110,11 +1110,11 @@ Description: filetest perl module
 Package: perlbase-filter
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-dynaloader +perlbase-essential +perlbase-text
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-filter-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1132,11 +1132,11 @@ Description: Filter perl module
 Package: perlbase-findbin
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-cwd +perlbase-essential +perlbase-file
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-findbin-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1154,11 +1154,11 @@ Description: FindBin perl module
 Package: perlbase-gdbm-file
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +libgdbm +perlbase-essential +perlbase-tie +perlbase-xsloader
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-gdbm-file-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1176,11 +1176,11 @@ Description: GDBM_File perl module
 Package: perlbase-getopt
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-getopt-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1198,11 +1198,11 @@ Description: Getopt perl module
 Package: perlbase-hash
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-scalar +perlbase-xsloader
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-hash-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1220,11 +1220,11 @@ Description: Hash perl module
 Package: perlbase-http-tiny
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-errno +perlbase-essential +perlbase-io
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-http-tiny-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1242,11 +1242,11 @@ Description: http-tiny perl module
 Package: perlbase-i18n
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-posix +perlbase-xsloader
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-i18n-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1264,11 +1264,11 @@ Description: I18N perl module
 Package: perlbase-if
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-if-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1286,11 +1286,11 @@ Description: if perl module
 Package: perlbase-integer
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-integer-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1308,11 +1308,11 @@ Description: integer perl module
 Package: perlbase-io
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-base +perlbase-bytes +perlbase-config +perlbase-errno +perlbase-essential +perlbase-fcntl +perlbase-list +perlbase-posix +perlbase-scalar +perlbase-selectsaver +perlbase-socket +perlbase-symbol +perlbase-tie +perlbase-xsloader
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-io-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1330,11 +1330,11 @@ Description: IO perl module
 Package: perlbase-ipc
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-config +perlbase-essential +perlbase-file +perlbase-locale +perlbase-params +perlbase-symbol +perlbase-text
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-ipc-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1352,11 +1352,11 @@ Description: IPC perl module
 Package: perlbase-json-pp
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-b +perlbase-base +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-json-pp-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1374,11 +1374,11 @@ Description: json-pp perl module
 Package: perlbase-less
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-less-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1396,11 +1396,11 @@ Description: less perl module
 Package: perlbase-list
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-xsloader
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-list-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1418,11 +1418,11 @@ Description: List perl module
 Package: perlbase-locale
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-i18n +perlbase-integer +perlbase-utf8
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-locale-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1440,11 +1440,11 @@ Description: Locale perl module
 Package: perlbase-math
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-config +perlbase-essential +perlbase-scalar +perlbase-xsloader
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-math-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1462,11 +1462,11 @@ Description: Math perl module
 Package: perlbase-memoize
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-config +perlbase-essential +perlbase-storable
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-memoize-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1484,11 +1484,11 @@ Description: Memoize perl module
 Package: perlbase-meta-notation
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-meta-notation-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1506,11 +1506,11 @@ Description: meta_notation module
 Package: perlbase-mime
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-xsloader
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-mime-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1528,11 +1528,11 @@ Description: MIME perl module
 Package: perlbase-module
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-file +perlbase-filehandle +perlbase-locale +perlbase-params +perlbase-version
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-module-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1550,11 +1550,11 @@ Description: Module perl module
 Package: perlbase-mro
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-xsloader
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-mro-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1572,11 +1572,11 @@ Description: mro perl module
 Package: perlbase-net
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-class +perlbase-errno +perlbase-essential +perlbase-fcntl +perlbase-filehandle +perlbase-io +perlbase-posix +perlbase-socket +perlbase-symbol +perlbase-time
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-net-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1594,11 +1594,11 @@ Description: Net perl module
 Package: perlbase-next
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-next-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1616,11 +1616,11 @@ Description: NEXT perl module
 Package: perlbase-o
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-b +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-o-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1638,11 +1638,11 @@ Description: O perl module
 Package: perlbase-opcode
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-xsloader
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-opcode-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1660,11 +1660,11 @@ Description: Opcode perl module
 Package: perlbase-open
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-open-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1682,11 +1682,11 @@ Description: open perl module
 Package: perlbase-ops
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-opcode
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-ops-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1704,11 +1704,11 @@ Description: ops perl module
 Package: perlbase-ostype
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-ostype-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1726,11 +1726,11 @@ Description: OSType perl module
 Package: perlbase-params
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-locale
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-params-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1748,11 +1748,11 @@ Description: Params perl module
 Package: perlbase-perl5db
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-cwd +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-perl5db-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1770,11 +1770,11 @@ Description: perl5db perl module
 Package: perlbase-perlio
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-mime +perlbase-xsloader
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-perlio-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1792,11 +1792,11 @@ Description: PerlIO perl module
 Package: perlbase-pod
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-config +perlbase-cwd +perlbase-encode +perlbase-essential +perlbase-fcntl +perlbase-file +perlbase-getopt +perlbase-integer +perlbase-posix +perlbase-symbol +perlbase-term +perlbase-text
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-pod-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1814,11 +1814,11 @@ Description: Pod perl module
 Package: perlbase-posix
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-fcntl +perlbase-tie +perlbase-xsloader
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-posix-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1836,11 +1836,11 @@ Description: POSIX perl module
 Package: perlbase-re
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-re-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1858,11 +1858,11 @@ Description: re perl module
 Package: perlbase-safe
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-b +perlbase-essential +perlbase-opcode +perlbase-scalar +perlbase-utf8
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-safe-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1880,11 +1880,11 @@ Description: Safe perl module
 Package: perlbase-scalar
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-list
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-scalar-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1902,11 +1902,11 @@ Description: Scalar perl module
 Package: perlbase-sdbm-file
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-tie +perlbase-xsloader
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-sdbm-file-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1924,11 +1924,11 @@ Description: SDBM_File perl module
 Package: perlbase-search
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-search-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1946,11 +1946,11 @@ Description: Search perl module
 Package: perlbase-selectsaver
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-symbol
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-selectsaver-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1968,11 +1968,11 @@ Description: SelectSaver perl module
 Package: perlbase-selfloader
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-io
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-selfloader-any
 Section: lang
 Category: Languages
 Repository: base
@@ -1990,11 +1990,11 @@ Description: SelfLoader perl module
 Package: perlbase-sigtrap
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-meta-notation
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-sigtrap-any
 Section: lang
 Category: Languages
 Repository: base
@@ -2012,11 +2012,11 @@ Description: sigtrap perl module
 Package: perlbase-socket
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-xsloader
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-socket-any
 Section: lang
 Category: Languages
 Repository: base
@@ -2034,11 +2034,11 @@ Description: Socket perl module
 Package: perlbase-sort
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-sort-any
 Section: lang
 Category: Languages
 Repository: base
@@ -2056,11 +2056,11 @@ Description: sort perl module
 Package: perlbase-storable
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-xsloader
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-storable-any
 Section: lang
 Category: Languages
 Repository: base
@@ -2078,11 +2078,11 @@ Description: Storable perl module
 Package: perlbase-symbol
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-symbol-any
 Section: lang
 Category: Languages
 Repository: base
@@ -2100,11 +2100,11 @@ Description: Symbol perl module
 Package: perlbase-sys
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-file +perlbase-posix +perlbase-socket
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-sys-any
 Section: lang
 Category: Languages
 Repository: base
@@ -2122,11 +2122,11 @@ Description: Sys perl module
 Package: perlbase-tap
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-base +perlbase-benchmark +perlbase-config +perlbase-essential +perlbase-file +perlbase-io +perlbase-posix +perlbase-text
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-tap-any
 Section: lang
 Category: Languages
 Repository: base
@@ -2144,11 +2144,11 @@ Description: TAP perl module
 Package: perlbase-term
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-term-any
 Section: lang
 Category: Languages
 Repository: base
@@ -2166,11 +2166,11 @@ Description: Term perl module
 Package: perlbase-test
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-base +perlbase-config +perlbase-essential +perlbase-io +perlbase-symbol +perlbase-tap +perlbase-text
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-test-any
 Section: lang
 Category: Languages
 Repository: base
@@ -2188,11 +2188,11 @@ Description: Test perl module
 Package: perlbase-text
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-selfloader
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-text-any
 Section: lang
 Category: Languages
 Repository: base
@@ -2210,11 +2210,11 @@ Description: Text perl module
 Package: perlbase-thread
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-scalar +perlbase-threads
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-thread-any
 Section: lang
 Category: Languages
 Repository: base
@@ -2232,11 +2232,11 @@ Description: Thread perl module
 Package: perlbase-threads
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-config +perlbase-essential +perlbase-scalar +perlbase-xsloader
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-threads-any
 Section: lang
 Category: Languages
 Repository: base
@@ -2254,11 +2254,11 @@ Description: threads perl module
 Package: perlbase-tie
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-fcntl +perlbase-xsloader
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-tie-any
 Section: lang
 Category: Languages
 Repository: base
@@ -2276,11 +2276,11 @@ Description: Tie perl module
 Package: perlbase-time
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-class +perlbase-config +perlbase-dynaloader +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-time-any
 Section: lang
 Category: Languages
 Repository: base
@@ -2298,11 +2298,11 @@ Description: Time perl module
 Package: perlbase-unicode
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-base +perlbase-charnames +perlbase-dynaloader +perlbase-essential +perlbase-file
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-unicode-any
 Section: lang
 Category: Languages
 Repository: base
@@ -2320,11 +2320,11 @@ Description: Unicode perl module
 Package: perlbase-unicore
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-unicore-any
 Section: lang
 Category: Languages
 Repository: base
@@ -2342,11 +2342,11 @@ Description: unicore perl module
 Package: perlbase-universal
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-universal-any
 Section: lang
 Category: Languages
 Repository: base
@@ -2364,11 +2364,11 @@ Description: UNIVERSAL perl module
 Package: perlbase-user
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-class +perlbase-config +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-user-any
 Section: lang
 Category: Languages
 Repository: base
@@ -2386,11 +2386,11 @@ Description: User perl module
 Package: perlbase-utf8
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-essential +perlbase-re +perlbase-unicore
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-utf8-any
 Section: lang
 Category: Languages
 Repository: base
@@ -2408,11 +2408,11 @@ Description: utf8 perl module
 Package: perlbase-version
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl +perlbase-config +perlbase-essential
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-version-any
 Section: lang
 Category: Languages
 Repository: base
@@ -2430,11 +2430,11 @@ Description: version perl module
 Package: perlbase-xsloader
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc perl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perlbase-xsloader-any
 Section: lang
 Category: Languages
 Repository: base
@@ -2452,11 +2452,11 @@ Description: XSLoader perl module
 Package: perl-tests-common
 Submenu: Perl
 Prereq-Check: 1
-Version: 5.40.0-r2
+Version: 5.40.0-r3
 Depends: +libc @PERL_TESTS
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @perl-tests-common-any
 Section: lang
 Category: Languages
 Repository: base

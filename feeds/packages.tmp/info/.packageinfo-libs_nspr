@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/libs/nspr/Makefile
 
 Package: nspr
-Version: 4.35-r2
+Version: 4.36-r1
 Depends: +libc +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nspr-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Netscape Portable Runtime (NSPR)
 Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
-Source: nspr-4.35.tar.gz
+Source: nspr-4.36.tar.gz
 License: MPL-2.0
 CPE-ID: cpe:/a:mozilla:netscape_portable_runtime
 URL: https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSPR

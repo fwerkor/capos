@@ -1,21 +1,21 @@
 Source-Makefile: feeds/packages/lang/python/python-pycparser/Makefile
-Build-Depends: python-ply/host  
-Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host python-ply/host
+Build-Depends: python3/host python-setuptools/host python-ply/host  
+Build-Depends/host: python3/host python-setuptools/host python-build/host python-installer/host python-wheel/host python-ply/host
 Build-Types: host
 
 Package: python3-pycparser
 Submenu: Python
-Version: 2.21-r2
+Version: 2.23-r1
 Depends: +libc +python3-light +python3-ply
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pycparser-any
 Section: lang
 Category: Languages
 Repository: base
 Title: C parser in Python
 Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: pycparser-2.21.tar.gz
+Source: pycparser-2.23.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 URL: https://github.com/eliben/pycparser
@@ -27,17 +27,17 @@ C source code.
 
 Package: python3-pycparser-src
 Submenu: Python
-Version: 2.21-r2
+Version: 2.23-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pycparser-src-any
 Section: lang
 Category: Languages
 Repository: base
 Title: C parser in Python (sources)
 Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: pycparser-2.21.tar.gz
+Source: pycparser-2.23.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 URL: https://github.com/eliben/pycparser

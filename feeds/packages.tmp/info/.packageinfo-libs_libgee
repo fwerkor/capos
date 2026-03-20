@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/libs/libgee/Makefile
 Build-Depends: vala/host
 
 Package: libgee
-Version: 0.20.6-r1
+Version: 0.20.8-r1
 Depends: +libc +glib2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libgee-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: libgee
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: libgee-0.20.6.tar.xz
+Source: libgee-0.20.8.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:gnome:libgee

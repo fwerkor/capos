@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/multimedia/lcdgrilo/Makefile
 Build-Depends: vala/host
 
 Package: lcdgrilo
-Version: 0.0.12-r4
+Version: 0.0.13-r4
 Depends: +libc +grilo +grilo-plugins +gstreamer1-libs +libgee +libgstreamer1
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lcdgrilo-any
 Section: multimedia
 Category: Multimedia
 Repository: base
 Title: lcdgrilo
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: lcdgrilo-0.0.12.tar.gz
+Source: lcdgrilo-0.0.13.tar.gz
 License: GPL-2.0-or-later
 LicenseFiles: COPYING
 URL: https://www.flyn.org/projects/lcdgrilo/

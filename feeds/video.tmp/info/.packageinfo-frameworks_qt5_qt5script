@@ -1,0 +1,60 @@
+Source-Makefile: feeds/video/frameworks/qt5/qt5script/Makefile
+
+Package: qt5script-script
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5script-script-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5script script
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtscript-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5script script
+@@
+
+Package: qt5script-scriptTools
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5base-gui +qt5base-widgets +qt5script-script
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5script-scriptTools-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5script scriptTools
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtscript-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5script scriptTools
+@@
+
+Package: qt5script-examples
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5base-core +qt5script-scriptTools @BROKEN
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5script-examples-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: Qt5script examples
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtscript-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: Qt5script examples
+@@
+
+

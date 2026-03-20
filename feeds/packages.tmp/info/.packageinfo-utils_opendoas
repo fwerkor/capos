@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/utils/opendoas/Makefile
 
 Package: opendoas
-Version: 6.8.2-r3
-Depends: +libc +BUSYBOX_CONFIG_PAM:libpam
+Version: 6.8.2-r4
+Depends: +libc +USE_GLIBC:libcrypt-compat +BUSYBOX_CONFIG_PAM:libpam
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opendoas-any
 Section: utils
 Category: Utilities
 Repository: base

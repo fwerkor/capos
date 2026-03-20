@@ -6,7 +6,7 @@ Version: 3.4.1-r1
 Depends: +libc +libncurses
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @htop-any
 Section: admin
 Category: Administration
 Repository: base

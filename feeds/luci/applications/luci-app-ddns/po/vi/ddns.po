@@ -17,7 +17,7 @@ msgstr ""
 msgid "\"../\" not allowed in path for Security Reason."
 msgstr "\"../\" không được phép trong đường dẫn vì lý do bảo mật."
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:748
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:763
 msgid "A.k.a. the TOKEN at e.g. afraid.org"
 msgstr ""
 
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Add new services..."
 msgstr "Thêm dịch vụ mới..."
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:600
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:607
 msgid "Advanced Settings"
 msgstr "Cài đặt Nâng cao"
 
@@ -34,11 +34,11 @@ msgstr "Cài đặt Nâng cao"
 msgid "Allow non-public IPs"
 msgstr "Cho phép IP không công khai"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:599
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:606
 msgid "Basic Settings"
 msgstr "Cài đặt cơ bản"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:888
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:903
 msgid "Bind Network"
 msgstr "Ràng buộc mạng"
 
@@ -78,11 +78,11 @@ msgstr ""
 msgid "Cancel"
 msgstr "Hủy lệnh"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:966
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:981
 msgid "Check Interval"
 msgstr "Kiểm tra khoảng thời gian"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:981
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:996
 msgid "Check Unit"
 msgstr "Kiểm tra đơn vị"
 
@@ -91,8 +91,8 @@ msgstr "Kiểm tra đơn vị"
 msgid "Configuration"
 msgstr "Cấu hình"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:214
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1120
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:226
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1134
 msgid "Configuration Error"
 msgstr "Lỗi cấu hình"
 
@@ -112,45 +112,45 @@ msgstr "Tạo dịch vụ"
 msgid "Current setting:"
 msgstr "Cài đặt hiện tại:"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:198
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:209
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:276
 msgid "Currently DDNS updates are not started at boot or on interface events."
 msgstr ""
 "Hiện tại, các cập nhật DDNS không được bắt đầu khi khởi động hoặc sự kiện "
 "giao diện."
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:712
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:727
 msgid "Custom update script for updating your DDNS Provider."
 msgstr ""
 "Kịch bản cập nhật tùy chỉnh được sử dụng để cập nhật Nhà cung cấp DDNS của "
 "bạn."
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:693
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:708
 msgid "Custom update-URL"
 msgstr "Tùy chỉnh cập nhật - URL"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:711
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:726
 msgid "Custom update-script"
 msgstr "Kịch bản cập nhật tùy chỉnh"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:196
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:284
+msgid "DDNS"
+msgstr ""
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:207
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:279
 msgid "DDNS Autostart disabled"
 msgstr "Tắt tự động khởi động DDNS"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:195
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:206
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:279
 msgid "DDNS Autostart enabled"
 msgstr "Bật tự động khởi động DDNS"
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:512
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:633
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:640
 msgid "DDNS Service provider"
 msgstr "Nhà cung cấp dịch vụ DDNS"
-
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:284
-msgid "DDns"
-msgstr "DDNS"
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:577
 msgid "DDns Service"
@@ -160,7 +160,7 @@ msgstr "Dịch vụ DDns"
 msgid "DNS requests via TCP not supported"
 msgstr "Không hỗ trợ yêu cầu DNS qua TCP"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:909
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:924
 msgid "DNS-Server"
 msgstr "Máy chủ DNS"
 
@@ -168,23 +168,23 @@ msgstr "Máy chủ DNS"
 msgid "Date format"
 msgstr "Định dạng ngày tháng"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:838
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:853
 msgid "Defines the Web page to read systems IP-Address from."
 msgstr "Xác định trang Web để đọc địa chỉ IP của hệ thống từ."
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:848
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:863
 msgid "Defines the interface to read systems IP-Address from"
 msgstr "Xác định giao diện để đọc địa chỉ IP của hệ thống từ"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:830
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:845
 msgid "Defines the network to read systems IP-Address from"
 msgstr "Xác định mạng để đọc địa chỉ IP của hệ thống từ"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:17
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:18
 msgid "Disabled"
 msgstr "Vô hiệu hoá"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:733
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:748
 msgid "Domain"
 msgstr "Tên Miền"
 
@@ -202,45 +202,45 @@ msgstr "Phiên bản Dynamic DNS"
 msgid "Edit"
 msgstr "Chỉnh Sửa"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:768
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:783
 msgid "Enable secure communication with DDNS provider"
 msgstr "Kích hoạt giao tiếp an toàn với nhà cung cấp DDNS"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:605
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1128
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:612
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1140
 msgid "Enabled"
 msgstr "Kích Hoạt"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:951
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:966
 msgid "Error"
 msgstr "Lỗi"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1025
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1040
 msgid "Error Max Retry Counter"
 msgstr ""
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1035
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1050
 msgid "Error Retry Interval"
 msgstr "Khoảng thời gian thử lại lỗi"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:862
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:872
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:877
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:887
 msgid "Event Network"
 msgstr "Mạng sự kiện"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:840
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:855
 msgid "Example for IPv4"
 msgstr "Ví dụ cho IPv4"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:842
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:857
 msgid "Example for IPv6"
 msgstr "Ví dụ cho IPv6"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:960
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:975
 msgid "File"
 msgstr "Tệp"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:696
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:711
 msgid "Follow instructions found on their WEB page."
 msgstr "Theo hướng dẫn bạn sẽ tìm thấy trên trang WEB của họ."
 
@@ -248,27 +248,27 @@ msgstr "Theo hướng dẫn bạn sẽ tìm thấy trên trang WEB của họ."
 msgid "For supported codes look here"
 msgstr "Để xem các mã được hỗ trợ, hãy xem ở đây"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:900
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:915
 msgid "Force IP Version"
 msgstr "Bắt buộc Phiên bản IP"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:990
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1005
 msgid "Force Interval"
 msgstr "Khoảng thời gian bắt buộc"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:921
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:936
 msgid "Force TCP on DNS"
 msgstr "Bắt buộc sử dụng TCP trên DNS"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1016
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1031
 msgid "Force Unit"
 msgstr "Đơn vị bắt buộc"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:933
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:948
 msgid "Format"
 msgstr "Định dạng"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:912
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:927
 msgid "Format: IP or FQDN"
 msgstr "Định dạng: IP hoặc FQDN"
 
@@ -291,25 +291,25 @@ msgstr "Cấp quyền tru cập cho phương thức ddns"
 msgid "HTTPS not supported"
 msgstr "Không hỗ trợ HTTPS"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:615
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:622
 msgid "Hostname/FQDN to validate, whether an IP update is necessary"
 msgstr "Tên máy/FQDN để xác nhận, nếu cập nhật IP xảy ra hoặc cần thiết"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:791
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:806
 msgid "IP address source"
 msgstr "Nguồn địa chỉ IP"
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:503
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:622
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:629
 msgid "IP address version"
 msgstr "Phiên bản địa chỉ IP"
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:506
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:627
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:634
 msgid "IPv4-Address"
 msgstr "Địa chỉ IPv4"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:935
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:950
 msgid "IPv6 address must be given in square brackets"
 msgstr "Địa chỉ IPv6 phải được đặt trong dấu ngoặc vuông"
 
@@ -322,7 +322,7 @@ msgid "IPv6 not supported"
 msgstr "Không hỗ trợ IPv6"
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:508
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:629
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:636
 msgid "IPv6-Address"
 msgstr "Địa chỉ IPv6"
 
@@ -334,7 +334,7 @@ msgstr ""
 "Nếu đã cài đặt gói Wget và cURL, Wget sẽ được sử dụng cho giao tiếp theo mặc "
 "định."
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:606
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:613
 msgid "If this service section is disabled it will not be started."
 msgstr "Nếu phần dịch vụ này bị tắt, nó không thể được khởi động."
 
@@ -351,7 +351,7 @@ msgstr ""
 "Trong một số phiên bản, cURL/libcurl trên OpenWrt được biên dịch mà không có "
 "hỗ trợ proxy."
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:948
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:963
 msgid "Info"
 msgstr "Thông tin"
 
@@ -375,33 +375,33 @@ msgstr ""
 "Cài đặt gói 'ca-certificates' hoặc cần bỏ chứng thư bằng tay vào thư mục mặc "
 "định /etc/ssl/certs"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:663
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:670
 msgid "Install Service"
 msgstr "Cài đặt Dịch vụ"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:797
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:847
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:812
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:862
 msgid "Interface"
 msgstr "Giao diện"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:991
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1006
 msgid "Interval to force an update at the DDNS Provider"
 msgstr "Khoảng thời gian để gửi cập nhật bắt buộc đến Nhà cung cấp DDNS"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1017
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1032
 msgid "Interval unit for forced updates sent to DDNS Provider."
 msgstr ""
 "Đơn vị khoảng thời gian để gửi cập nhật bắt buộc đến Nhà cung cấp DDNS."
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:982
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:997
 msgid "Interval unit to check for changed IP"
 msgstr "Đơn vị khoảng thời gian để kiểm tra IP đã thay đổi"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1133
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1145
 msgid "Last Update"
 msgstr "Cập nhật cuối cùng"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:602
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:609
 msgid "Log File Viewer"
 msgstr "Trình xem Tệp Nhật ký"
 
@@ -413,26 +413,26 @@ msgstr "Thư mục nhật ký"
 msgid "Log length"
 msgstr "Độ dài nhật ký"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:954
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:969
 msgid "Log to file"
 msgstr "Lưu nhật ký vào tệp"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:942
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:957
 msgid "Log to syslog"
 msgstr "Log to syslog"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:614
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1116
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:621
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1130
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/status/include/70_ddns.js:29
 msgid "Lookup Hostname"
 msgstr "Tra cứu Tên máy"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:792
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:807
 msgid "Method used to determine the system IP-Address to send in updates"
 msgstr ""
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:491
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1110
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1124
 msgid "Name"
 msgstr "Tên"
 
@@ -452,24 +452,24 @@ msgstr ""
 "Không cài đặt GNU Wget với SSL hoặc cURL để hỗ trợ cập nhật an toàn qua giao "
 "thức HTTPS."
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:608
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:615
 msgid "Neither from LuCI interface nor from console."
 msgstr "Không từ giao diện LuCI cũng không từ bảng điều khiển."
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:795
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:829
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:810
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:844
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/status/include/70_ddns.js:31
 msgid "Network"
 msgstr "Mạng"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:863
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:873
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:891
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:878
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:888
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:906
 msgid "Network on which the ddns-updater scripts will be started"
 msgstr "Mạng mà các kịch bản ddns-updater sẽ được khởi động"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:216
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1137
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:228
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1149
 msgid "Never"
 msgstr "Không bao giờ"
 
@@ -477,13 +477,17 @@ msgstr "Không bao giờ"
 msgid "New DDns Service…"
 msgstr "Dịch vụ DDns mới…"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1133
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1145
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/status/include/70_ddns.js:28
 msgid "Next Update"
 msgstr "Cập nhật tiếp theo"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:215
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1121
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1145
+msgid "Next Verify"
+msgstr ""
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:227
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1135
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/status/include/70_ddns.js:40
 msgid "No Data"
 msgstr "Không có dữ liệu"
@@ -492,7 +496,7 @@ msgstr "Không có dữ liệu"
 msgid "No certificates found"
 msgstr "Không tìm thấy chứng chỉ"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:947
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:962
 msgid "No logging"
 msgstr "Không có nhật ký"
 
@@ -500,12 +504,12 @@ msgstr "Không có nhật ký"
 msgid "Non-public and by default blocked IPs"
 msgstr "Địa chỉ IP không công khai và bị chặn theo mặc định"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:218
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1107
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:231
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1121
 msgid "Not Running"
 msgstr "Không Chạy"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:949
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:964
 msgid "Notice"
 msgstr "Lưu ý"
 
@@ -513,61 +517,61 @@ msgstr "Lưu ý"
 msgid "Number of last lines stored in log files"
 msgstr "Số dòng cuối cùng được lưu trữ trong tệp nhật ký"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:901
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:916
 msgid "OPTIONAL: Force the usage of pure IPv4/IPv6 only communication."
 msgstr "TÙY CHỌN: Bắt buộc sử dụng giao tiếp chỉ với IPv4/IPv6."
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:922
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:937
 msgid "OPTIONAL: Force the use of TCP instead of default UDP on DNS requests."
 msgstr ""
 "TÙY CHỌN: Bắt buộc sử dụng giao thức TCP thay vì UDP mặc định cho yêu cầu "
 "DNS."
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:889
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:904
 msgid "OPTIONAL: Network to use for communication"
 msgstr "TÙY CHỌN: Mạng để sử dụng cho giao tiếp"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:931
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:946
 msgid "OPTIONAL: Proxy-Server for detection and updates."
 msgstr "TÙY CHỌN: Máy chủ Proxy để phát hiện và cập nhật."
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:910
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:925
 msgid "OPTIONAL: Use non-default DNS-Server to detect 'Registered IP'."
 msgstr ""
 "TÙY CHỌN: Sử dụng DNS-Server không mặc định để phát hiện 'IP đã đăng ký'."
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1026
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1041
 msgid ""
 "On Error the script will stop execution after the given number of retries."
 msgstr ""
 "Khi xảy ra Lỗi, tập lệnh sẽ dừng thực thi sau một số lần thử nhất định."
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:754
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:769
 msgid "Optional Encoded Parameter"
 msgstr "Tham số Tùy chọn đã Mã hóa"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:760
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:775
 msgid "Optional Parameter"
 msgstr "Tham số Tùy chọn"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:755
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:770
 msgid "Optional: Replaces [PARAMENC] in Update-URL (URL-encoded)"
 msgstr "Tùy chọn: Thay thế [PARAMENC] trong Địa chỉ URL Cập nhật (Mã hóa URL)"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:761
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:776
 msgid "Optional: Replaces [PARAMOPT] in Update-URL (NOT URL-encoded)"
 msgstr ""
 "Tùy chọn: Thay thế [PARAMOPT] trong Địa chỉ URL Cập nhật (KHÔNG mã hóa URL)"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:930
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:945
 msgid "PROXY-Server"
 msgstr "Máy chủ PROXY"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:745
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:760
 msgid "Password"
 msgstr "Mật khẩu"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:773
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:788
 msgid "Path to CA-Certificate"
 msgstr "Đường dẫn đến Chứng chỉ CA"
 
@@ -578,24 +582,24 @@ msgstr ""
 "Vui lòng làm theo hướng dẫn trên trang chủ của OpenWrt để bật chế độ hỗ trợ "
 "IPv6"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1071
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1086
 msgid "Please press [Read] button"
 msgstr "Vui lòng nhấn nút [Đọc]"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:704
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:726
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:719
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:741
 msgid "Provide either an Update Script OR an Update URL"
 msgstr "Chèn một Kịch bản Cập nhật HOẶC một URL Cập nhật"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1054
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1069
 msgid "Read / Reread log file"
 msgstr "Đọc / Đọc lại tệp nhật ký"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:678
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:693
 msgid "Really switch service?"
 msgstr "Thật sự chuyển dịch vụ?"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1116
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1130
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/status/include/70_ddns.js:30
 msgid "Registered IP"
 msgstr "IP Đã Đăng ký"
@@ -608,15 +612,15 @@ msgstr "Tải lại"
 msgid "Reload this service"
 msgstr "Tải lại dịch vụ này"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:734
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:749
 msgid "Replaces [DOMAIN] in Update-URL (URL-encoded)"
 msgstr "Thay thế [DOMAIN] trong Địa chỉ URL Cập nhật (Mã hóa URL)"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:746
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:761
 msgid "Replaces [PASSWORD] in Update-URL (URL-encoded)"
 msgstr "Thay thế [PASSWORD] trong Địa chỉ URL Cập nhật (Mã hóa URL)"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:740
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:755
 msgid "Replaces [USERNAME] in Update-URL (URL-encoded)"
 msgstr "Thay thế [USERNAME] trong Địa chỉ URL Cập nhật (Mã hóa URL)"
 
@@ -624,37 +628,37 @@ msgstr "Thay thế [USERNAME] trong Địa chỉ URL Cập nhật (Mã hóa URL)
 msgid "Restart DDns"
 msgstr "Khởi động lại DDns"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1043
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1058
 msgid "Retry Unit"
 msgstr "Đơn vị Thử lại"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:16
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:17
 msgid "Run once"
 msgstr "Chạy một lần"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:229
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1106
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:231
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1120
 msgid "Running"
 msgstr "Đang chạy"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:798
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:855
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:813
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:870
 msgid "Script"
 msgstr "Kịch bản"
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:517
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:650
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:657
 msgid "Select a service"
 msgstr "Chọn một dịch vụ"
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:518
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:652
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:672
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:659
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:679
 msgid "Service doesn't support this IP type"
 msgstr "Dịch vụ không hỗ trợ loại IP này"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:651
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:662
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:658
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:669
 msgid "Service not installed"
 msgstr "Dịch vụ chưa được cài đặt"
 
@@ -670,7 +674,7 @@ msgstr "URL Tải về Dịch vụ"
 msgid "Services list last update"
 msgstr "Cập nhật cuối cùng danh sách Dịch vụ"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:993
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1008
 msgid "Setting this parameter to 0 will force the script to only run once"
 msgstr "Thiết lập tham số này thành 0 sẽ bắt buộc tập lệnh chỉ chạy một lần"
 
@@ -682,7 +686,7 @@ msgstr ""
 "Url được sử dụng để tải xuống tệp dịch vụ. Mặc định là kho dữ liệu gói "
 "openwrt ddns."
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:190
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:201
 msgid "Start DDNS"
 msgstr "Khởi động DDNS"
 
@@ -690,7 +694,7 @@ msgstr "Khởi động DDNS"
 msgid "State"
 msgstr "Trạng thái"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1103
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1117
 msgid "Status"
 msgstr "Trạng thái"
 
@@ -702,7 +706,7 @@ msgstr "Thư mục Trạng thái"
 msgid "Stop"
 msgstr "Dừng"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:190
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:201
 msgid "Stop DDNS"
 msgstr "Dừng DDNS"
 
@@ -710,19 +714,19 @@ msgstr "Dừng DDNS"
 msgid "Stop this service"
 msgstr "Dừng dịch vụ này"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:18
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:19
 msgid "Stopped"
 msgstr "Đã dừng"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:679
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:694
 msgid "Switch service"
 msgstr "Chuyển dịch vụ"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1028
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1043
 msgid "The default setting of '0' will retry infinitely."
 msgstr "Thiết lập mặc định là '0' sẽ thử lại vô hạn."
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1036
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1051
 msgid "The interval between which each subsequent retry commences."
 msgstr "Khoảng thời gian mà mỗi lần thử lại liên tiếp sẽ bắt đầu."
 
@@ -740,11 +744,11 @@ msgid ""
 "is unreachable via one of them."
 msgstr ""
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1070
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1085
 msgid "This is the current content of the log file in %h for this service."
 msgstr "Đây là nội dung hiện tại của tệp nhật ký trong %h cho dịch vụ này."
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:199
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:210
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:277
 msgid ""
 "This is the default if you run DDNS scripts by yourself (i.e. via cron with "
@@ -753,24 +757,26 @@ msgstr ""
 "Đây là mặc định nếu bạn chạy các tập lệnh DDNS bằng chính mình (tức là thông "
 "qua cron với force_interval được đặt thành '0')"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:878
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:893
 msgid "This will be autoset to the selected interface"
 msgstr "Điều này sẽ được tự động thiết lập cho giao diện đã chọn"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:601
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:608
 msgid "Timer Settings"
 msgstr "Cài đặt hẹn giờ"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:796
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:811
 msgid "URL"
 msgstr "URL"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:837
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:852
 msgid "URL to detect"
 msgstr "URL để phát hiện"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:217
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1137
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:229
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:230
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1150
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1151
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/status/include/70_ddns.js:38
 msgid "Unknown"
 msgstr "Không xác định"
@@ -779,11 +785,15 @@ msgstr "Không xác định"
 msgid "Update DDns Services List"
 msgstr "Cập nhật Danh sách Dịch vụ DDns"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:694
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:684
+msgid "Update URL"
+msgstr ""
+
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:709
 msgid "Update URL for updating your DDNS Provider."
 msgstr "Cập nhật URL được sử dụng để cập nhật Nhà cung cấp DDNS của bạn."
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:767
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:782
 msgid "Use HTTP Secure"
 msgstr "Sử dụng HTTP Bảo mật"
 
@@ -791,11 +801,11 @@ msgstr "Sử dụng HTTP Bảo mật"
 msgid "Use cURL"
 msgstr "Sử dụng cURL"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:856
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:871
 msgid "User defined script to read system IP-Address"
 msgstr "Kịch bản xác định người dùng để đọc Địa chỉ IP của hệ thống"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:739
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:754
 msgid "Username"
 msgstr "Tên người dùng"
 
@@ -803,37 +813,37 @@ msgstr "Tên người dùng"
 msgid "Using specific DNS Server not supported"
 msgstr "Không hỗ trợ sử dụng máy chủ DNS cụ thể"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:975
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:990
 msgid "Values below 5 minutes == 300 seconds are not supported"
 msgstr "Không hỗ trợ giá trị dưới 5 phút == 300 giây"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1010
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1025
 msgid "Values lower than 'Check Interval' except '0' are invalid"
 msgstr "Không hỗ trợ giá trị thấp hơn 'Check Interval' trừ '"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:15
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:16
 msgid "Verify"
 msgstr "Xác minh"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:950
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:965
 msgid "Warning"
 msgstr "Cảnh báo"
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:504
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:623
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:630
 msgid "Which record type to update at the DDNS provider (A/AAAA)"
 msgstr "Xác định địa chỉ IP 'IPv4/IPv6' nào được gửi đến nhà cung cấp DDNS"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1044
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1059
 msgid "Which time units to use for retry counters."
 msgstr "Các đơn vị thời gian nào được sử dụng cho bộ đếm thử lại."
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:959
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:974
 msgid ""
 "Writes detailed messages to log file. File will be truncated automatically."
 msgstr "Ghi thông điệp chi tiết vào tệp nhật ký. Tệp sẽ tự động bị cắt."
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:943
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:958
 msgid ""
 "Writes log messages to syslog. Critical Errors will always be written to "
 "syslog."
@@ -877,30 +887,30 @@ msgid "cURL without Proxy Support"
 msgstr "cURL không có Hỗ trợ Proxy"
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:513
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:635
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:642
 msgid "custom"
 msgstr "tùy chỉnh"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1022
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1037
 msgid "days"
 msgstr "ngày"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:774
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:789
 msgid "directory or path/file"
 msgstr "thư mục hoặc đường dẫn/tệp"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:987
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1021
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1002
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1036
 msgid "hours"
 msgstr "giờ"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:986
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1020
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1048
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1001
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1035
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1063
 msgid "minutes"
 msgstr "phút"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:776
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:791
 msgid "or"
 msgstr "hoặc"
 
@@ -908,11 +918,11 @@ msgstr "hoặc"
 msgid "or update your system to the latest OpenWrt Release"
 msgstr "hoặc cập nhật hệ thống của bạn lên phiên bản OpenWrt mới nhất"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:985
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1047
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1000
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1062
 msgid "seconds"
 msgstr "Giây"
 
-#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:778
+#: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:793
 msgid "to run HTTPS without verification of server certificates (insecure)"
 msgstr "để chạy HTTPS mà không xác minh chứng chỉ máy chủ (không an toàn)"

@@ -5,7 +5,7 @@ Version: 2.2.12-r2
 Depends: +libc +zlib +libpthread +libpng +libjpeg +libusb-1.0
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libcups-any
 Section: libs
 Category: Libraries
 Repository: base

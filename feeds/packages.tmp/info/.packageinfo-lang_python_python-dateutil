@@ -7,7 +7,7 @@ Version: 2.9.0-r1
 Depends: +libc +python3 +python3-six
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-dateutil-any
 Section: lang
 Category: Languages
 Repository: base
@@ -26,7 +26,7 @@ Version: 2.9.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-dateutil-src-any
 Section: lang
 Category: Languages
 Repository: base

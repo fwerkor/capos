@@ -6,7 +6,7 @@ Version: 2021.11.01~20522fbcd3fdf6f0adb20602d096d14cd69055e8-r2
 Depends: +libc asterisk +libopus
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-codec-opus-any
 Section: net
 Category: Network
 Repository: base
@@ -36,7 +36,7 @@ Version: 2021.11.01~20522fbcd3fdf6f0adb20602d096d14cd69055e8-r2
 Depends: +libc asterisk +libopus +libopusfile +libopusenc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-format-ogg-opus-any
 Section: net
 Category: Network
 Repository: base

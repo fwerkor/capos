@@ -5,7 +5,7 @@ Version: 0.52.24-r1
 Depends: +libc +libslang2 +BUILD_NLS:libintl-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libnewt-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -28,7 +28,7 @@ Version: 0.52.24-r1
 Depends: +libc +libnewt +libpopt +libslang2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @whiptail-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -50,7 +50,7 @@ Version: 0.52.24-r1
 Depends: +libc +libnewt +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-newt-any
 Section: lang
 Category: Languages
 Repository: base
@@ -76,7 +76,7 @@ Version: 0.52.24-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-newt-src-any
 Section: lang
 Category: Languages
 Repository: base

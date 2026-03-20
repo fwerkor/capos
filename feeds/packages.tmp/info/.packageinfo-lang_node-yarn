@@ -8,7 +8,7 @@ Version: 1.22.10-r2
 Depends: +libc +node
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @node-yarn-any
 Section: lang
 Category: Languages
 Repository: base

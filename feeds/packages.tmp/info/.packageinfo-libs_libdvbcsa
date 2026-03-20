@@ -5,7 +5,7 @@ Version: 0~bc6c0b164a87ce05e9925785cc6fb3f54c02b026-r2
 Depends: +libc @BUILD_PATENTED
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libdvbcsa-any
 Section: libs
 Category: Libraries
 Repository: base

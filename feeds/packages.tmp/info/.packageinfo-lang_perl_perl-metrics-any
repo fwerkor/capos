@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/lang/perl/perl-metrics-any/Makefile
+
+Package: perl-metrics-any
+Submenu: Perl
+Version: 0.10.5.40-r1
+Depends: +libc perl +perlbase-list
+Conflicts: 
+Menu-Depends: 
+Provides: @perl-metrics-any-any
+Section: lang
+Category: Languages
+Repository: base
+Title: Abstract collection of monitoring metrics
+Maintainer: Jens Wagner <jens@wagner2013.de>
+Source: Metrics-Any-0.10.tar.gz
+License: GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE
+URL: https://metacpan.org/pod/Metrics::Any
+Type: ipkg
+Description:   Provides a central location for modules to report monitoring metrics.
+@@
+
+

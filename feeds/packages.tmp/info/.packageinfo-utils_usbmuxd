@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/utils/usbmuxd/Makefile
 
 Package: usbmuxd
 Submenu: libimobiledevice
-Version: 2023.10.11~360619c5f721f93f0b9d8af1a2df0b926fbcf281-r1
+Version: 2025.02.01~523f7004dce885fe38b4f80e34a8f76dc8ea98b5-r1
 Depends: +libc +libusb-1.0 +libusbmuxd +libopenssl +libimobiledevice +usbutils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @usbmuxd-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: USB multiplexing daemon
 Maintainer: Rosen Penev <rosenp@gmail.com>
-Source: usbmuxd-2023.10.11~360619c5f721f93f0b9d8af1a2df0b926fbcf281.tar.zst
+Source: usbmuxd-2025.02.01~523f7004dce885fe38b4f80e34a8f76dc8ea98b5.tar.zst
 License: GPL-2.0-or-later
 LicenseFiles: COPYING.GPLv2
 CPE-ID: cpe:/a:libimobiledevice:usbmuxd

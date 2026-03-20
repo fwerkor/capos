@@ -1,11 +1,12 @@
 Source-Makefile: feeds/packages/net/family-dns/Makefile
 
 Package: family-dns
+Submenu: IP Addresses and Names
 Version: 1.0.0-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @family-dns-any
 Section: net
 Category: Network
 Repository: base

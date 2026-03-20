@@ -1,18 +1,19 @@
 Source-Makefile: feeds/packages/lang/python/python-eventlet/Makefile
+Build-Depends: python3/host python-setuptools/host python-hatch-vcs/host python-hatchling/host
 
 Package: python3-eventlet
 Submenu: Python
-Version: 0.33.3-r1
-Depends: +libc +python3-light +python3-six +python3-dns +python3-greenlet +python3-distutils +python3-email +python3-logging +python3-openssl +python3-urllib
+Version: 0.40.3-r1
+Depends: +libc +python3-light +python3-dns +python3-greenlet +python3-email +python3-logging +python3-openssl +python3-urllib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-eventlet-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Python concurrent networking library
 Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
-Source: eventlet-0.33.3.tar.gz
+Source: eventlet-0.40.3.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 URL: https://eventlet.net/
@@ -23,17 +24,17 @@ Description:   Eventlet is a concurrent networking library for Python that
 
 Package: python3-eventlet-src
 Submenu: Python
-Version: 0.33.3-r1
+Version: 0.40.3-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-eventlet-src-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Python concurrent networking library (sources)
 Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
-Source: eventlet-0.33.3.tar.gz
+Source: eventlet-0.40.3.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 URL: https://eventlet.net/

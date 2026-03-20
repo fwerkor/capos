@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/net/vnstat2/Makefile
 
 Package: vnstat2
-Version: 2.12-r1
+Version: 2.13-r1
 Depends: +libc +libsqlite3
 Conflicts: vnstat
 Menu-Depends: 
-Provides: 
+Provides: @vnstat2-any
 Section: net
 Category: Network
 Repository: base
 Title: Console-based network traffic monitor
 Maintainer: Jan Hoffmann <jan@3e8.eu>
-Source: vnstat-2.12.tar.gz
+Source: vnstat-2.13.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING
 URL: https://humdi.net/vnstat/
@@ -23,17 +23,17 @@ Description: 	vnStat is a network traffic monitor for Linux that keeps a log of 
 @@
 
 Package: vnstati2
-Version: 2.12-r1
+Version: 2.13-r1
 Depends: +libc +libsqlite3 vnstat2 +libgd
 Conflicts: vnstat
 Menu-Depends: 
-Provides: 
+Provides: @vnstati2-any
 Section: net
 Category: Network
 Repository: base
 Title: PNG image output support for vnStat
 Maintainer: Jan Hoffmann <jan@3e8.eu>
-Source: vnstat-2.12.tar.gz
+Source: vnstat-2.13.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING
 URL: https://humdi.net/vnstat/

@@ -6,7 +6,7 @@ Version: 5.7.6-r1
 Depends: +libc +knot-libs +knot-libzscanner +libuv @HAS_LUAJIT_ARCH +luajit +luasec +luasocket +libstdcpp +libnghttp2 +lmdb PACKAGE_knot-resolver_dnstap:libfstrm PACKAGE_knot-resolver_dnstap:libprotobuf-c
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @knot-resolver-any
 Section: net
 Category: Network
 Repository: base

@@ -5,7 +5,7 @@ Version: 2.14.1-r2
 Depends: +libc +libstdcpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ssdeep-any
 Section: utils
 Category: Utilities
 Repository: base

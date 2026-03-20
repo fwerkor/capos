@@ -1,5 +1,5 @@
 Source-Makefile: feeds/packages/lang/python/python-hatchling/Makefile
-Build-Depends/host: python3/host python-build/host python-installer/host python-editables/host python-packaging/host python-pathspec/host python-pluggy/host python-trove-classifiers/host
+Build-Depends/host: python3/host python-build/host python-setuptools/host python-installer/host python-editables/host python-packaging/host python-pathspec/host python-pluggy/host python-trove-classifiers/host
 Build-Types: host
 
 Package: python3-hatchling
@@ -8,7 +8,7 @@ Version: 1.27.0-r1
 Depends: +libc +python3-light +python3-email +python3-editables +python3-packaging +python3-pathspec +python3-pluggy +python3-trove-classifiers
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-hatchling-any
 Section: lang
 Category: Languages
 Repository: base
@@ -29,7 +29,7 @@ Version: 1.27.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-hatchling-src-any
 Section: lang
 Category: Languages
 Repository: base

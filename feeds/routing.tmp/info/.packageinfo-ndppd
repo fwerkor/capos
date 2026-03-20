@@ -1,17 +1,17 @@
 Source-Makefile: feeds/routing/ndppd/Makefile
 
 Package: ndppd
-Version: 0.2.5-r2
+Version: 0.2.6-r1
 Depends: +libc @IPV6 +libstdcpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ndppd-any
 Section: net
 Category: Network
 Repository: base
 Title: NDP Proxy Daemon
 Maintainer: Gabriel Kerneis <gabriel@kerneis.info>
-Source: ndppd-0.2.5.tar.gz
+Source: ndppd-0.2.6.tar.gz
 License: GPL-3.0-or-later
 URL: http://www.priv.nu/projects/ndppd/
 Type: ipkg

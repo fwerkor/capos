@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2025-01-20 10:53+0000\n"
-"Last-Translator: Meow <sander.schutten@gmail.com>\n"
+"PO-Revision-Date: 2026-01-10 04:39+0000\n"
+"Last-Translator: Marco Otto <marco.otto@tuta.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsclamav/nl/>\n"
 "Language: nl\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 
 #: applications/luci-app-clamav/htdocs/luci-static/resources/view/clamav/clamav.js:248
 msgid "150M"
@@ -19,11 +19,11 @@ msgstr "150M"
 #: applications/luci-app-clamav/htdocs/luci-static/resources/view/clamav/clamav-milter.js:164
 #: applications/luci-app-clamav/htdocs/luci-static/resources/view/clamav/clamav.js:245
 msgid "1M"
-msgstr ""
+msgstr "1M"
 
 #: applications/luci-app-clamav/htdocs/luci-static/resources/view/clamav/clamav-milter.js:166
 msgid "25M"
-msgstr ""
+msgstr "25M"
 
 #: applications/luci-app-clamav/htdocs/luci-static/resources/view/clamav/clamav-milter.js:165
 #: applications/luci-app-clamav/htdocs/luci-static/resources/view/clamav/clamav.js:246
@@ -44,7 +44,7 @@ msgstr ""
 #: applications/luci-app-clamav/htdocs/luci-static/resources/view/clamav/clamav-milter.js:69
 #: applications/luci-app-clamav/htdocs/luci-static/resources/view/clamav/clamav-milter.js:77
 msgid "Accept"
-msgstr ""
+msgstr "Accepteren"
 
 #: applications/luci-app-clamav/htdocs/luci-static/resources/view/clamav/clamav-milter.js:82
 msgid "Add header"
@@ -78,6 +78,10 @@ msgstr ""
 msgid "ClamAV"
 msgstr ""
 
+#: applications/luci-app-clamav/htdocs/luci-static/resources/view/clamav/clamav-log.js:4
+msgid "ClamAV Log"
+msgstr ""
+
 #: applications/luci-app-clamav/htdocs/luci-static/resources/view/clamav/clamav-milter.js:15
 #: applications/luci-app-clamav/root/usr/share/luci/menu.d/luci-app-clamav.json:24
 msgid "ClamAV Milter"
@@ -95,7 +99,7 @@ msgstr ""
 #: applications/luci-app-clamav/htdocs/luci-static/resources/view/clamav/clamav.js:16
 #: applications/luci-app-clamav/htdocs/luci-static/resources/view/clamav/freshclam.js:15
 msgid "Configuration"
-msgstr ""
+msgstr "Configuratie"
 
 #: applications/luci-app-clamav/htdocs/luci-static/resources/view/clamav/freshclam.js:160
 msgid "Connect timeout"
@@ -449,7 +453,7 @@ msgstr ""
 #: applications/luci-app-clamav/htdocs/luci-static/resources/view/clamav/clamav-milter.js:44
 #: applications/luci-app-clamav/htdocs/luci-static/resources/view/clamav/clamav.js:265
 msgid "User"
-msgstr ""
+msgstr "Gebruiker"
 
 #: applications/luci-app-clamav/htdocs/luci-static/resources/view/clamav/clamav-milter.js:34
 #: applications/luci-app-clamav/htdocs/luci-static/resources/view/clamav/clamav-milter.js:84

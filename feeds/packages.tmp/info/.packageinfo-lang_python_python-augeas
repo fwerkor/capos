@@ -7,7 +7,7 @@ Version: 1.1.0-r2
 Depends: +libc +python3-light +python3-cffi +augeas
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-augeas-any
 Section: lang
 Category: Languages
 Repository: base
@@ -27,7 +27,7 @@ Version: 1.1.0-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-augeas-src-any
 Section: lang
 Category: Languages
 Repository: base

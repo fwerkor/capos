@@ -5,7 +5,7 @@ Version: 1.1.0-r1
 Depends: +libc +swconfig
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @switchdev-poller-any
 Section: net
 Category: Network
 Repository: base

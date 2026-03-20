@@ -5,7 +5,7 @@ Version: 4.4-r3
 Depends: +libc +libstdcpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @hashdeep-any
 Section: utils
 Category: Utilities
 Repository: base

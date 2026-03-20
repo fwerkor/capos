@@ -6,7 +6,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libjpeg +libmodbus +openzwave +libupm-a110x +libupm-abp +libupm-ad8232 +libupm-adafruitms1438 +libupm-adafruitss +libupm-adc121c021 +libupm-adis16448 +libupm-ads1x15 +libupm-adxl335 +libupm-adxl345 +libupm-adxrs610 +libupm-am2315 +libupm-apa102 +libupm-apds9002 +libupm-apds9930 +libupm-at42qt1070 +libupm-bh1749 +libupm-bh1750 +libupm-bh1792 +libupm-biss0001 +libupm-bma220 +libupm-bma250e +libupm-bmg160 +libupm-bmi160 +libupm-bmm150 +libupm-bmp280 +libupm-bmpx8x +libupm-bmx055 +libupm-bno055 +libupm-button +libupm-buzzer +libupm-cjq4435 +libupm-collision +libupm-cwlsxxa +libupm-dfrec +libupm-dfrorp +libupm-dfrph +libupm-ds1307 +libupm-ds1808lc +libupm-ds18b20 +libupm-ds2413 +libupm-ecezo +libupm-ecs1030 +libupm-ehr +libupm-eldriver +libupm-electromagnet +libupm-emg +libupm-enc03r +libupm-flex +libupm-gas +libupm-gp2y0a +libupm-gprs +libupm-gsr +libupm-guvas12d +libupm-h3lis331dl +libupm-hcsr04 +libupm-hdc1000 +libupm-hdxxvxta +libupm-hka5 +libupm-hlg150h +libupm-hm11 +libupm-hmc5883l +libupm-hmtrp +libupm-hp20x +libupm-ht9170 +libupm-htu21d +libupm-hx711 +libupm-ili9341 +libupm-ims +libupm-ina132 +libupm-interfaces +libupm-isd1820 +libupm-itg3200 +libupm-jhd1313m1 +libupm-joystick12 +libupm-kx122 +libupm-kxcjk1013 +libupm-kxtj3 +libupm-l298 +libupm-l3gd20 +libupm-lcd +libupm-lcdks +libupm-lcm1602 +libupm-ldt0028 +libupm-led +libupm-lidarlitev3 +libupm-light +libupm-linefinder +libupm-lis2ds12 +libupm-lis3dh +libupm-lm35 +libupm-lol +libupm-loudness +libupm-lp8860 +libupm-lpd8806 +libupm-lsm303agr +libupm-lsm303d +libupm-lsm303dlh +libupm-lsm6ds3h +libupm-lsm6dsl +libupm-lsm9ds0 +libupm-m24lr64e +libupm-mag3110 +libupm-max30100 +libupm-max31723 +libupm-max31855 +libupm-max44000 +libupm-max44009 +libupm-max5487 +libupm-maxds3231m +libupm-maxsonarez +libupm-mb704x +libupm-mcp2515 +libupm-mcp9808 +libupm-md +libupm-mg811 +libupm-mhz16 +libupm-mic +libupm-micsv89 +libupm-mlx90614 +libupm-mma7361 +libupm-mma7455 +libupm-mma7660 +libupm-mma8x5x +libupm-mmc35240 +libupm-moisture +libupm-mpl3115a2 +libupm-mpr121 +libupm-mpu9150 +libupm-mq303a +libupm-ms5611 +libupm-ms5803 +libupm-my9221 +libupm-nlgpio16 +libupm-nmea_gps +libupm-nrf24l01 +libupm-nrf8001 +libupm-nunchuck +libupm-o2 +libupm-otp538u +libupm-p9813 +libupm-pca9685 +libupm-pn532 +libupm-ppd42ns +libupm-pulsensor +libupm-relay +libupm-rf22 +libupm-rfr359f +libupm-rgbringcoder +libupm-rhusb +libupm-rn2903 +libupm-rotary +libupm-rotaryencoder +libupm-rpr220 +libupm-rsc +libupm-scam +libupm-sensortemplate +libupm-servo +libupm-sht1x +libupm-si1132 +libupm-si114x +libupm-si7005 +libupm-slide +libupm-sm130 +libupm-smartdrive +libupm-speaker +libupm-ssd1351 +libupm-st7735 +libupm-stepmotor +libupm-sx1276 +libupm-sx6119 +libupm-t6713 +libupm-ta12200 +libupm-tca9548a +libupm-tcs3414cs +libupm-tcs37727 +libupm-teams +libupm-temperature +libupm-tex00 +libupm-th02 +libupm-tm1637 +libupm-tmp006 +libupm-tsl2561 +libupm-ttp223 +libupm-uartat +libupm-uln200xa +libupm-ultrasonic +libupm-urm37 +libupm-utilities +libupm-vdiv +libupm-veml6070 +libupm-water +libupm-waterlevel +libupm-wfs +libupm-wheelencoder +libupm-wt5001 +libupm-xbee +libupm-yg1006 +libupm-zfm20 +libupm-vcap +libupm-t3311 +libupm-hwxpxx +libupm-h803x +libupm-ozw +libupm-curieimu +libupm-a110x-python3 +libupm-abp-python3 +libupm-ad8232-python3 +libupm-adafruitms1438-python3 +libupm-adafruitss-python3 +libupm-adc121c021-python3 +libupm-adis16448-python3 +libupm-ads1x15-python3 +libupm-adxl335-python3 +libupm-adxl345-python3 +libupm-adxrs610-python3 +libupm-am2315-python3 +libupm-apa102-python3 +libupm-apds9002-python3 +libupm-apds9930-python3 +libupm-at42qt1070-python3 +libupm-bh1749-python3 +libupm-bh1750-python3 +libupm-bh1792-python3 +libupm-biss0001-python3 +libupm-bma220-python3 +libupm-bma250e-python3 +libupm-bmg160-python3 +libupm-bmi160-python3 +libupm-bmm150-python3 +libupm-bmp280-python3 +libupm-bmpx8x-python3 +libupm-bmx055-python3 +libupm-bno055-python3 +libupm-button-python3 +libupm-buzzer-python3 +libupm-cjq4435-python3 +libupm-collision-python3 +libupm-cwlsxxa-python3 +libupm-dfrec-python3 +libupm-dfrorp-python3 +libupm-dfrph-python3 +libupm-ds1307-python3 +libupm-ds1808lc-python3 +libupm-ds18b20-python3 +libupm-ds2413-python3 +libupm-ecezo-python3 +libupm-ecs1030-python3 +libupm-ehr-python3 +libupm-eldriver-python3 +libupm-electromagnet-python3 +libupm-emg-python3 +libupm-enc03r-python3 +libupm-flex-python3 +libupm-gas-python3 +libupm-gp2y0a-python3 +libupm-gprs-python3 +libupm-gsr-python3 +libupm-guvas12d-python3 +libupm-h3lis331dl-python3 +libupm-hcsr04-python3 +libupm-hdc1000-python3 +libupm-hdxxvxta-python3 +libupm-hka5-python3 +libupm-hlg150h-python3 +libupm-hm11-python3 +libupm-hmc5883l-python3 +libupm-hmtrp-python3 +libupm-hp20x-python3 +libupm-ht9170-python3 +libupm-htu21d-python3 +libupm-hx711-python3 +libupm-ili9341-python3 +libupm-ims-python3 +libupm-ina132-python3 +libupm-interfaces-python3 +libupm-isd1820-python3 +libupm-itg3200-python3 +libupm-jhd1313m1-python3 +libupm-joystick12-python3 +libupm-kx122-python3 +libupm-kxcjk1013-python3 +libupm-kxtj3-python3 +libupm-l298-python3 +libupm-l3gd20-python3 +libupm-lcd-python3 +libupm-lcdks-python3 +libupm-lcm1602-python3 +libupm-ldt0028-python3 +libupm-led-python3 +libupm-lidarlitev3-python3 +libupm-light-python3 +libupm-linefinder-python3 +libupm-lis2ds12-python3 +libupm-lis3dh-python3 +libupm-lm35-python3 +libupm-lol-python3 +libupm-loudness-python3 +libupm-lp8860-python3 +libupm-lpd8806-python3 +libupm-lsm303agr-python3 +libupm-lsm303d-python3 +libupm-lsm303dlh-python3 +libupm-lsm6ds3h-python3 +libupm-lsm6dsl-python3 +libupm-lsm9ds0-python3 +libupm-m24lr64e-python3 +libupm-mag3110-python3 +libupm-max30100-python3 +libupm-max31723-python3 +libupm-max31855-python3 +libupm-max44000-python3 +libupm-max44009-python3 +libupm-max5487-python3 +libupm-maxds3231m-python3 +libupm-maxsonarez-python3 +libupm-mb704x-python3 +libupm-mcp2515-python3 +libupm-mcp9808-python3 +libupm-md-python3 +libupm-mg811-python3 +libupm-mhz16-python3 +libupm-mic-python3 +libupm-micsv89-python3 +libupm-mlx90614-python3 +libupm-mma7361-python3 +libupm-mma7455-python3 +libupm-mma7660-python3 +libupm-mma8x5x-python3 +libupm-mmc35240-python3 +libupm-moisture-python3 +libupm-mpl3115a2-python3 +libupm-mpr121-python3 +libupm-mpu9150-python3 +libupm-mq303a-python3 +libupm-ms5611-python3 +libupm-ms5803-python3 +libupm-my9221-python3 +libupm-nlgpio16-python3 +libupm-nmea_gps-python3 +libupm-nrf24l01-python3 +libupm-nrf8001-python3 +libupm-nunchuck-python3 +libupm-o2-python3 +libupm-otp538u-python3 +libupm-p9813-python3 +libupm-pca9685-python3 +libupm-pn532-python3 +libupm-ppd42ns-python3 +libupm-pulsensor-python3 +libupm-relay-python3 +libupm-rf22-python3 +libupm-rfr359f-python3 +libupm-rgbringcoder-python3 +libupm-rhusb-python3 +libupm-rn2903-python3 +libupm-rotary-python3 +libupm-rotaryencoder-python3 +libupm-rpr220-python3 +libupm-rsc-python3 +libupm-scam-python3 +libupm-sensortemplate-python3 +libupm-servo-python3 +libupm-sht1x-python3 +libupm-si1132-python3 +libupm-si114x-python3 +libupm-si7005-python3 +libupm-slide-python3 +libupm-sm130-python3 +libupm-smartdrive-python3 +libupm-speaker-python3 +libupm-ssd1351-python3 +libupm-st7735-python3 +libupm-stepmotor-python3 +libupm-sx1276-python3 +libupm-sx6119-python3 +libupm-t6713-python3 +libupm-ta12200-python3 +libupm-tca9548a-python3 +libupm-tcs3414cs-python3 +libupm-tcs37727-python3 +libupm-teams-python3 +libupm-temperature-python3 +libupm-tex00-python3 +libupm-th02-python3 +libupm-tm1637-python3 +libupm-tmp006-python3 +libupm-tsl2561-python3 +libupm-ttp223-python3 +libupm-uartat-python3 +libupm-uln200xa-python3 +libupm-ultrasonic-python3 +libupm-urm37-python3 +libupm-utilities-python3 +libupm-vdiv-python3 +libupm-veml6070-python3 +libupm-water-python3 +libupm-waterlevel-python3 +libupm-wfs-python3 +libupm-wheelencoder-python3 +libupm-wt5001-python3 +libupm-xbee-python3 +libupm-yg1006-python3 +libupm-zfm20-python3 +libupm-vcap-python3 +libupm-t3311-python3 +libupm-hwxpxx-python3 +libupm-h803x-python3 +libupm-ozw-python3 +libupm-curieimu-python3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -32,7 +32,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-a110x-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -58,7 +58,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-a110x +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-a110x-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -84,7 +84,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-abp-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -110,7 +110,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-abp +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-abp-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -136,7 +136,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ad8232-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -162,7 +162,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-ad8232 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ad8232-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -188,7 +188,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-pca9685
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-adafruitms1438-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -214,7 +214,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-pca9685 +libupm-adafruitms1438 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-adafruitms1438-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -240,7 +240,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-adafruitss-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -266,7 +266,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-adafruitss +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-adafruitss-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -292,7 +292,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-adc121c021-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -318,7 +318,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-adc121c021 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-adc121c021-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -344,7 +344,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-adis16448-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -370,7 +370,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-adis16448 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-adis16448-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -396,7 +396,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-interfaces
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ads1x15-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -422,7 +422,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-interfaces +libupm-ads1x15 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ads1x15-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -448,7 +448,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-adxl335-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -474,7 +474,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-adxl335 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-adxl335-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -500,7 +500,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-adxl345-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -526,7 +526,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-adxl345 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-adxl345-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -552,7 +552,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-adxrs610-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -578,7 +578,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-adxrs610 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-adxrs610-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -604,7 +604,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-am2315-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -630,7 +630,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-am2315 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-am2315-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -656,7 +656,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-apa102-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -682,7 +682,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-apa102 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-apa102-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -708,7 +708,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-apds9002-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -734,7 +734,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-apds9002 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-apds9002-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -760,7 +760,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-apds9930-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -786,7 +786,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-apds9930 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-apds9930-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -812,7 +812,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-at42qt1070-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -838,7 +838,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-at42qt1070 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-at42qt1070-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -864,7 +864,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-bh1749-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -890,7 +890,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-bh1749 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-bh1749-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -916,7 +916,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-bh1750-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -942,7 +942,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-utilities +libupm-bh1750 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-bh1750-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -968,7 +968,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-bh1792-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -994,7 +994,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-bh1792 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-bh1792-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1020,7 +1020,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-biss0001-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1046,7 +1046,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-biss0001 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-biss0001-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1072,7 +1072,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-bma220-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1098,7 +1098,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-bma220 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-bma220-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1124,7 +1124,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-bma250e-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1150,7 +1150,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-bma250e +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-bma250e-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1176,7 +1176,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-bmg160-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1202,7 +1202,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-bmg160 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-bmg160-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1228,7 +1228,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-bmi160-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1254,7 +1254,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-bmi160 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-bmi160-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1280,7 +1280,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-bmm150-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1306,7 +1306,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-bmm150 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-bmm150-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1332,7 +1332,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-interfaces +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-bmp280-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1358,7 +1358,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-interfaces +libupm-utilities +libupm-bmp280 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-bmp280-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1384,7 +1384,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-interfaces +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-bmpx8x-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1410,7 +1410,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-interfaces +libupm-utilities +libupm-bmpx8x +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-bmpx8x-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1436,7 +1436,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-bma250e +libupm-bmg160 +libupm-bmm150
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-bmx055-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1462,7 +1462,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-bma250e +libupm-bmg160 +libupm-bmm150 +libupm-bmx055 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-bmx055-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1488,7 +1488,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-bno055-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1514,7 +1514,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-bno055 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-bno055-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1540,7 +1540,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-button-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1566,7 +1566,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-button +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-button-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1592,7 +1592,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-buzzer-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1618,7 +1618,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-buzzer +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-buzzer-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1644,7 +1644,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-cjq4435-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1670,7 +1670,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-cjq4435 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-cjq4435-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1696,7 +1696,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-collision-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1722,7 +1722,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-collision +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-collision-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1748,7 +1748,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-cwlsxxa-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1774,7 +1774,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-cwlsxxa +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-cwlsxxa-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1800,7 +1800,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-ds18b20
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-dfrec-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1826,7 +1826,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-ds18b20 +libupm-dfrec +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-dfrec-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1852,7 +1852,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-dfrorp-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1878,7 +1878,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-dfrorp +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-dfrorp-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1904,7 +1904,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-dfrph-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1930,7 +1930,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-dfrph +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-dfrph-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1956,7 +1956,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ds1307-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -1982,7 +1982,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-ds1307 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ds1307-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2008,7 +2008,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-interfaces
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ds1808lc-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2034,7 +2034,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-interfaces +libupm-ds1808lc +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ds1808lc-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2060,7 +2060,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ds18b20-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2086,7 +2086,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-ds18b20 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ds18b20-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2112,7 +2112,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ds2413-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2138,7 +2138,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-ds2413 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ds2413-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2164,7 +2164,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ecezo-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2190,7 +2190,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-ecezo +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ecezo-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2216,7 +2216,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ecs1030-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2242,7 +2242,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-ecs1030 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ecs1030-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2268,7 +2268,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ehr-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2294,7 +2294,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-ehr +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ehr-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2320,7 +2320,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-eldriver-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2346,7 +2346,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-eldriver +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-eldriver-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2372,7 +2372,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-electromagnet-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2398,7 +2398,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-electromagnet +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-electromagnet-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2424,7 +2424,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-emg-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2450,7 +2450,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-emg +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-emg-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2476,7 +2476,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-enc03r-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2502,7 +2502,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-enc03r +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-enc03r-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2528,7 +2528,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-flex-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2554,7 +2554,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-flex +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-flex-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2580,7 +2580,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-gas-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2606,7 +2606,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-gas +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-gas-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2632,7 +2632,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-gp2y0a-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2658,7 +2658,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-gp2y0a +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-gp2y0a-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2684,7 +2684,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-gprs-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2710,7 +2710,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-gprs +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-gprs-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2736,7 +2736,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-gsr-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2762,7 +2762,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-gsr +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-gsr-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2788,7 +2788,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-guvas12d-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2814,7 +2814,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-guvas12d +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-guvas12d-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2840,7 +2840,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-h3lis331dl-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2866,7 +2866,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-h3lis331dl +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-h3lis331dl-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2892,7 +2892,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-hcsr04-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2918,7 +2918,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-hcsr04 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-hcsr04-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2944,7 +2944,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-hdc1000-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2970,7 +2970,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-hdc1000 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-hdc1000-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -2996,7 +2996,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-hdxxvxta-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3022,7 +3022,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-hdxxvxta +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-hdxxvxta-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3048,7 +3048,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-hka5-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3074,7 +3074,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-hka5 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-hka5-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3100,7 +3100,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-interfaces
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-hlg150h-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3126,7 +3126,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-interfaces +libupm-hlg150h +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-hlg150h-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3152,7 +3152,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-hm11-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3178,7 +3178,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-hm11 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-hm11-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3204,7 +3204,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-hmc5883l-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3230,7 +3230,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-hmc5883l +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-hmc5883l-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3256,7 +3256,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-hmtrp-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3282,7 +3282,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-hmtrp +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-hmtrp-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3308,7 +3308,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-hp20x-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3334,7 +3334,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-hp20x +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-hp20x-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3360,7 +3360,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ht9170-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3386,7 +3386,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-ht9170 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ht9170-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3412,7 +3412,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-htu21d-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3438,7 +3438,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-htu21d +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-htu21d-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3464,7 +3464,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-hx711-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3490,7 +3490,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-hx711 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-hx711-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3516,7 +3516,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ili9341-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3542,7 +3542,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-ili9341 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ili9341-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3568,7 +3568,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ims-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3594,7 +3594,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-ims +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ims-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3620,7 +3620,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ina132-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3646,7 +3646,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-ina132 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ina132-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3672,7 +3672,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-interfaces-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3698,7 +3698,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-interfaces +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-interfaces-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3724,7 +3724,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-isd1820-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3750,7 +3750,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-isd1820 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-isd1820-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3776,7 +3776,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-itg3200-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3802,7 +3802,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-itg3200 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-itg3200-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3828,7 +3828,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-lcm1602
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-jhd1313m1-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3854,7 +3854,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-lcm1602 +libupm-jhd1313m1 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-jhd1313m1-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3880,7 +3880,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-joystick12-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3906,7 +3906,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-joystick12 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-joystick12-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3932,7 +3932,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-kx122-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3958,7 +3958,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-kx122 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-kx122-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -3984,7 +3984,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-kxcjk1013-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4010,7 +4010,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-kxcjk1013 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-kxcjk1013-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4036,7 +4036,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-kxtj3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4062,7 +4062,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-kxtj3 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-kxtj3-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4088,7 +4088,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-l298-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4114,7 +4114,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-l298 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-l298-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4140,7 +4140,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-l3gd20-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4166,7 +4166,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-l3gd20 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-l3gd20-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4192,7 +4192,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lcd-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4218,7 +4218,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-lcd +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lcd-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4244,7 +4244,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-lcm1602
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lcdks-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4270,7 +4270,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-lcm1602 +libupm-lcdks +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lcdks-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4296,7 +4296,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lcm1602-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4322,7 +4322,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-lcm1602 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lcm1602-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4348,7 +4348,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ldt0028-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4374,7 +4374,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-ldt0028 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ldt0028-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4400,7 +4400,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-led-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4426,7 +4426,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-led +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-led-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4452,7 +4452,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lidarlitev3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4478,7 +4478,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-lidarlitev3 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lidarlitev3-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4504,7 +4504,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-light-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4530,7 +4530,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-light +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-light-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4556,7 +4556,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-linefinder-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4582,7 +4582,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-linefinder +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-linefinder-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4608,7 +4608,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lis2ds12-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4634,7 +4634,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-lis2ds12 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lis2ds12-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4660,7 +4660,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lis3dh-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4686,7 +4686,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-lis3dh +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lis3dh-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4712,7 +4712,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lm35-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4738,7 +4738,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-lm35 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lm35-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4764,7 +4764,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lol-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4790,7 +4790,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-lol +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lol-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4816,7 +4816,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-loudness-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4842,7 +4842,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-loudness +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-loudness-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4868,7 +4868,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-interfaces
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lp8860-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4894,7 +4894,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-interfaces +libupm-lp8860 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lp8860-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4920,7 +4920,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lpd8806-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4946,7 +4946,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-lpd8806 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lpd8806-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4972,7 +4972,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lsm303agr-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -4998,7 +4998,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-lsm303agr +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lsm303agr-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5024,7 +5024,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lsm303d-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5050,7 +5050,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-lsm303d +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lsm303d-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5076,7 +5076,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lsm303dlh-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5102,7 +5102,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-lsm303dlh +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lsm303dlh-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5128,7 +5128,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lsm6ds3h-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5154,7 +5154,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-lsm6ds3h +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lsm6ds3h-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5180,7 +5180,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lsm6dsl-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5206,7 +5206,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-lsm6dsl +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lsm6dsl-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5232,7 +5232,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lsm9ds0-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5258,7 +5258,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-lsm9ds0 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-lsm9ds0-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5284,7 +5284,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-m24lr64e-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5310,7 +5310,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-m24lr64e +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-m24lr64e-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5336,7 +5336,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mag3110-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5362,7 +5362,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-mag3110 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mag3110-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5388,7 +5388,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-max30100-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5414,7 +5414,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-max30100 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-max30100-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5440,7 +5440,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-max31723-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5466,7 +5466,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-max31723 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-max31723-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5492,7 +5492,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-max31855-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5518,7 +5518,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-max31855 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-max31855-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5544,7 +5544,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-max44000-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5570,7 +5570,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-max44000 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-max44000-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5596,7 +5596,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-interfaces
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-max44009-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5622,7 +5622,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-interfaces +libupm-max44009 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-max44009-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5648,7 +5648,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-max5487-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5674,7 +5674,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-max5487 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-max5487-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5700,7 +5700,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-maxds3231m-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5726,7 +5726,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-maxds3231m +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-maxds3231m-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5752,7 +5752,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-maxsonarez-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5778,7 +5778,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-maxsonarez +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-maxsonarez-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5804,7 +5804,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mb704x-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5830,7 +5830,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-mb704x +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mb704x-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5856,7 +5856,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mcp2515-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5882,7 +5882,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-mcp2515 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mcp2515-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5908,7 +5908,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mcp9808-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5934,7 +5934,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-mcp9808 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mcp9808-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5960,7 +5960,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-md-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -5986,7 +5986,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-md +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-md-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6012,7 +6012,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mg811-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6038,7 +6038,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-mg811 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mg811-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6064,7 +6064,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mhz16-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6090,7 +6090,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-mhz16 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mhz16-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6116,7 +6116,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mic-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6142,7 +6142,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-mic +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mic-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6168,7 +6168,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-micsv89-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6194,7 +6194,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-micsv89 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-micsv89-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6220,7 +6220,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mlx90614-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6246,7 +6246,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-mlx90614 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mlx90614-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6272,7 +6272,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mma7361-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6298,7 +6298,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-mma7361 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mma7361-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6324,7 +6324,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mma7455-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6350,7 +6350,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-mma7455 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mma7455-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6376,7 +6376,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mma7660-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6402,7 +6402,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-mma7660 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mma7660-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6428,7 +6428,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mma8x5x-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6454,7 +6454,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-mma8x5x +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mma8x5x-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6480,7 +6480,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mmc35240-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6506,7 +6506,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-mmc35240 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mmc35240-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6532,7 +6532,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-moisture-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6558,7 +6558,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-moisture +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-moisture-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6584,7 +6584,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mpl3115a2-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6610,7 +6610,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-mpl3115a2 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mpl3115a2-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6636,7 +6636,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mpr121-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6662,7 +6662,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-mpr121 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mpr121-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6688,7 +6688,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mpu9150-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6714,7 +6714,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-mpu9150 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mpu9150-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6740,7 +6740,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mq303a-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6766,7 +6766,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-mq303a +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-mq303a-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6792,7 +6792,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-interfaces
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ms5611-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6818,7 +6818,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-interfaces +libupm-ms5611 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ms5611-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6844,7 +6844,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ms5803-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6870,7 +6870,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-ms5803 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ms5803-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6896,7 +6896,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-my9221-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6922,7 +6922,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-my9221 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-my9221-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6948,7 +6948,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-nlgpio16-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -6974,7 +6974,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-nlgpio16 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-nlgpio16-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7000,7 +7000,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libatomic
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-nmea_gps-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7026,7 +7026,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libatomic +libupm-nmea_gps +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-nmea_gps-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7052,7 +7052,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-nrf24l01-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7078,7 +7078,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-nrf24l01 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-nrf24l01-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7104,7 +7104,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-nrf8001-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7130,7 +7130,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-nrf8001 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-nrf8001-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7156,7 +7156,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-nunchuck-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7182,7 +7182,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-nunchuck +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-nunchuck-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7208,7 +7208,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-o2-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7234,7 +7234,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-o2 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-o2-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7260,7 +7260,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-otp538u-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7286,7 +7286,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-otp538u +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-otp538u-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7312,7 +7312,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-p9813-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7338,7 +7338,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-p9813 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-p9813-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7364,7 +7364,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-pca9685-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7390,7 +7390,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-pca9685 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-pca9685-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7416,7 +7416,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-pn532-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7442,7 +7442,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-pn532 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-pn532-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7468,7 +7468,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ppd42ns-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7494,7 +7494,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-ppd42ns +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ppd42ns-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7520,7 +7520,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-pulsensor-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7546,7 +7546,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-pulsensor +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-pulsensor-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7572,7 +7572,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-relay-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7598,7 +7598,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-relay +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-relay-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7624,7 +7624,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-rf22-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7650,7 +7650,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-rf22 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-rf22-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7676,7 +7676,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-rfr359f-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7702,7 +7702,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-rfr359f +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-rfr359f-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7728,7 +7728,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-rgbringcoder-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7754,7 +7754,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-rgbringcoder +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-rgbringcoder-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7780,7 +7780,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-rhusb-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7806,7 +7806,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-rhusb +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-rhusb-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7832,7 +7832,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-rn2903-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7858,7 +7858,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-rn2903 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-rn2903-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7884,7 +7884,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-rotary-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7910,7 +7910,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-rotary +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-rotary-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7936,7 +7936,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-rotaryencoder-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7962,7 +7962,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-rotaryencoder +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-rotaryencoder-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -7988,7 +7988,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-rpr220-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8014,7 +8014,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-rpr220 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-rpr220-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8040,7 +8040,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-rsc-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8066,7 +8066,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-rsc +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-rsc-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8092,7 +8092,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-scam-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8118,7 +8118,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-scam +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-scam-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8144,7 +8144,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-sensortemplate-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8170,7 +8170,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-sensortemplate +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-sensortemplate-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8196,7 +8196,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-servo-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8222,7 +8222,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-servo +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-servo-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8248,7 +8248,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-sht1x-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8274,7 +8274,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-sht1x +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-sht1x-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8300,7 +8300,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-interfaces
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-si1132-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8326,7 +8326,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-interfaces +libupm-si1132 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-si1132-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8352,7 +8352,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-si114x-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8378,7 +8378,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-si114x +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-si114x-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8404,7 +8404,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-interfaces
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-si7005-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8430,7 +8430,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-interfaces +libupm-si7005 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-si7005-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8456,7 +8456,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-slide-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8482,7 +8482,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-slide +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-slide-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8508,7 +8508,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-sm130-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8534,7 +8534,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-sm130 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-sm130-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8560,7 +8560,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-smartdrive-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8586,7 +8586,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-smartdrive +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-smartdrive-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8612,7 +8612,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-speaker-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8638,7 +8638,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-speaker +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-speaker-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8664,7 +8664,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ssd1351-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8690,7 +8690,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-ssd1351 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ssd1351-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8716,7 +8716,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-st7735-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8742,7 +8742,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-st7735 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-st7735-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8768,7 +8768,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-stepmotor-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8794,7 +8794,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-stepmotor +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-stepmotor-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8820,7 +8820,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-sx1276-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8846,7 +8846,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-sx1276 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-sx1276-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8872,7 +8872,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-sx6119-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8898,7 +8898,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-sx6119 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-sx6119-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8924,7 +8924,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-interfaces
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-t6713-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8950,7 +8950,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-interfaces +libupm-t6713 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-t6713-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -8976,7 +8976,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ta12200-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9002,7 +9002,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-ta12200 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ta12200-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9028,7 +9028,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-tca9548a-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9054,7 +9054,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-tca9548a +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-tca9548a-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9080,7 +9080,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-tcs3414cs-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9106,7 +9106,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-tcs3414cs +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-tcs3414cs-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9132,7 +9132,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-tcs37727-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9158,7 +9158,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-tcs37727 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-tcs37727-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9184,7 +9184,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-teams-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9210,7 +9210,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-teams +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-teams-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9236,7 +9236,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-temperature-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9262,7 +9262,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-temperature +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-temperature-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9288,7 +9288,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-tex00-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9314,7 +9314,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-tex00 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-tex00-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9340,7 +9340,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-th02-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9366,7 +9366,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-th02 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-th02-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9392,7 +9392,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-tm1637-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9418,7 +9418,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-tm1637 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-tm1637-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9444,7 +9444,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-tmp006-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9470,7 +9470,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-tmp006 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-tmp006-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9496,7 +9496,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-tsl2561-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9522,7 +9522,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-tsl2561 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-tsl2561-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9548,7 +9548,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ttp223-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9574,7 +9574,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-ttp223 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ttp223-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9600,7 +9600,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-uartat-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9626,7 +9626,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-uartat +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-uartat-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9652,7 +9652,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-uln200xa-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9678,7 +9678,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-uln200xa +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-uln200xa-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9704,7 +9704,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ultrasonic-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9730,7 +9730,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-ultrasonic +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ultrasonic-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9756,7 +9756,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-urm37-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9782,7 +9782,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-urm37 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-urm37-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9808,7 +9808,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-utilities-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9834,7 +9834,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-utilities-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9860,7 +9860,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-vdiv-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9886,7 +9886,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-vdiv +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-vdiv-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9912,7 +9912,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-veml6070-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9938,7 +9938,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-veml6070 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-veml6070-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9964,7 +9964,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-water-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -9990,7 +9990,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-water +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-water-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10016,7 +10016,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-waterlevel-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10042,7 +10042,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-waterlevel +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-waterlevel-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10068,7 +10068,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-wfs-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10094,7 +10094,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-wfs +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-wfs-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10120,7 +10120,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-wheelencoder-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10146,7 +10146,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-wheelencoder +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-wheelencoder-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10172,7 +10172,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-wt5001-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10198,7 +10198,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-wt5001 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-wt5001-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10224,7 +10224,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-xbee-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10250,7 +10250,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-xbee +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-xbee-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10276,7 +10276,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-yg1006-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10302,7 +10302,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-yg1006 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-yg1006-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10328,7 +10328,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-zfm20-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10354,7 +10354,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-utilities +libupm-zfm20 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-zfm20-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10380,7 +10380,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libjpeg
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-vcap-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10406,7 +10406,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libjpeg +libupm-vcap +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-vcap-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10432,7 +10432,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libmodbus
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-t3311-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10458,7 +10458,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libmodbus +libupm-t3311 +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-t3311-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10484,7 +10484,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libmodbus
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-hwxpxx-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10510,7 +10510,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libmodbus +libupm-hwxpxx +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-hwxpxx-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10536,7 +10536,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libmodbus
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-h803x-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10562,7 +10562,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libmodbus +libupm-h803x +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-h803x-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10588,7 +10588,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +openzwave
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ozw-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10614,7 +10614,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +openzwave +libupm-ozw +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-ozw-python3-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10640,7 +10640,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-curieimu-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -10666,7 +10666,7 @@ Version: 2.0.0-r7
 Depends: +libc +libmraa +librt +libupm-curieimu +libmraa-python3 +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libupm-curieimu-python3-any
 Section: libs
 Category: Libraries
 Repository: base

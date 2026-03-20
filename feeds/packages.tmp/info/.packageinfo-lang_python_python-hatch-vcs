@@ -1,20 +1,20 @@
 Source-Makefile: feeds/packages/lang/python/python-hatch-vcs/Makefile
-Build-Depends/host: python3/host python-build/host python-installer/host python-hatchling/host python-setuptools-scm/host
+Build-Depends/host: python3/host python-setuptools/host python-build/host python-installer/host python-hatchling/host python-setuptools-scm/host
 Build-Types: host
 
 Package: python3-hatch-vcs
 Submenu: Python
-Version: 0.4.0-r1
+Version: 0.5.0-r1
 Depends: +libc +python3-light +python3-hatchling +python3-setuptools-scm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-hatch-vcs-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Hatch plugin for versioning with your preferred VCS
 Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: hatch_vcs-0.4.0.tar.gz
+Source: hatch_vcs-0.5.0.tar.gz
 License: MIT
 LicenseFiles: LICENSE.txt
 URL: https://github.com/ofek/hatch-vcs
@@ -26,17 +26,17 @@ control system (like Git) to determine project versions.
 
 Package: python3-hatch-vcs-src
 Submenu: Python
-Version: 0.4.0-r1
+Version: 0.5.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-hatch-vcs-src-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Hatch plugin for versioning with your preferred VCS (sources)
 Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: hatch_vcs-0.4.0.tar.gz
+Source: hatch_vcs-0.5.0.tar.gz
 License: MIT
 LicenseFiles: LICENSE.txt
 URL: https://github.com/ofek/hatch-vcs

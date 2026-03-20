@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/libs/libvorbis/Makefile
 
 Package: libvorbis
-Version: 1.3.7-r2
+Version: 1.3.7-r3
 Depends: +libc +libogg
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libvorbis-any
 Section: libs
 Category: Libraries
 Repository: base

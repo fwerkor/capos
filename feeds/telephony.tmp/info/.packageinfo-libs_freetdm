@@ -8,12 +8,12 @@ Version: 2021.08.30~8918ee1c3637cad0f9d41a402d26d3aa076fc202-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libfreetdm-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: TDM signaling and media API
-Maintainer: Sebastian Kemper <sebastian_ml@gmx.net>
+Maintainer: 
 Source: freetdm-2021.08.30~8918ee1c3637cad0f9d41a402d26d3aa076fc202.tar.zst
 License: BSD-2-Clause BSD-3-Clause BSD-4-Clause GPL-2.0+ MIT/X11 (BSD like) MPL-1.1
 LicenseFiles: LICENSE
@@ -28,12 +28,12 @@ Version: 2021.08.30~8918ee1c3637cad0f9d41a402d26d3aa076fc202-r3
 Depends: +libc freeswitch +libfreetdm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @freeswitch-mod-freetdm-any
 Section: net
 Category: Network
 Repository: base
 Title: FreeTDM endpoint module
-Maintainer: Sebastian Kemper <sebastian_ml@gmx.net>
+Maintainer: 
 Source: freetdm-2021.08.30~8918ee1c3637cad0f9d41a402d26d3aa076fc202.tar.zst
 License: BSD-2-Clause BSD-3-Clause BSD-4-Clause GPL-2.0+ MIT/X11 (BSD like) MPL-1.1
 LicenseFiles: LICENSE
@@ -48,12 +48,12 @@ Version: 2021.08.30~8918ee1c3637cad0f9d41a402d26d3aa076fc202-r3
 Depends: +libc libfreetdm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libfreetdm-ftmod-analog-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Analog FreeTDM module
-Maintainer: Sebastian Kemper <sebastian_ml@gmx.net>
+Maintainer: 
 Source: freetdm-2021.08.30~8918ee1c3637cad0f9d41a402d26d3aa076fc202.tar.zst
 License: BSD-2-Clause BSD-3-Clause BSD-4-Clause GPL-2.0+ MIT/X11 (BSD like) MPL-1.1
 LicenseFiles: LICENSE
@@ -68,12 +68,12 @@ Version: 2021.08.30~8918ee1c3637cad0f9d41a402d26d3aa076fc202-r3
 Depends: +libc libfreetdm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libfreetdm-ftmod-analog-em-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Analog EM FreeTDM module
-Maintainer: Sebastian Kemper <sebastian_ml@gmx.net>
+Maintainer: 
 Source: freetdm-2021.08.30~8918ee1c3637cad0f9d41a402d26d3aa076fc202.tar.zst
 License: BSD-2-Clause BSD-3-Clause BSD-4-Clause GPL-2.0+ MIT/X11 (BSD like) MPL-1.1
 LicenseFiles: LICENSE
@@ -88,12 +88,12 @@ Version: 2021.08.30~8918ee1c3637cad0f9d41a402d26d3aa076fc202-r3
 Depends: +libc libfreetdm +PACKAGE_libfreetdm-ftmod-libpri:libpri @!aarch64
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libfreetdm-ftmod-libpri-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: LibPRI FreeTDM module
-Maintainer: Sebastian Kemper <sebastian_ml@gmx.net>
+Maintainer: 
 Source: freetdm-2021.08.30~8918ee1c3637cad0f9d41a402d26d3aa076fc202.tar.zst
 License: BSD-2-Clause BSD-3-Clause BSD-4-Clause GPL-2.0+ MIT/X11 (BSD like) MPL-1.1
 LicenseFiles: LICENSE
@@ -103,38 +103,18 @@ Description: Offers support for PRI lines using the open source libpri stack for
 type of card supported by FreeTDM. Supports both PRI and BRI signalling.
 @@
 
-Package: libfreetdm-ftmod-pritap
-Submenu: Telephony
-Version: 2021.08.30~8918ee1c3637cad0f9d41a402d26d3aa076fc202-r3
-Depends: +libc libfreetdm +PACKAGE_libfreetdm-ftmod-pritap:libfreetdm-ftmod-libpri
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: libs
-Category: Libraries
-Repository: base
-Title: PRI tapping FreeTDM module
-Maintainer: Sebastian Kemper <sebastian_ml@gmx.net>
-Source: freetdm-2021.08.30~8918ee1c3637cad0f9d41a402d26d3aa076fc202.tar.zst
-License: BSD-2-Clause BSD-3-Clause BSD-4-Clause GPL-2.0+ MIT/X11 (BSD like) MPL-1.1
-LicenseFiles: LICENSE
-URL: https://www.freeswitch.org
-Type: ipkg
-Description: This module is used to tap PRI lines.
-@@
-
 Package: libfreetdm-ftmod-skel
 Submenu: Telephony
 Version: 2021.08.30~8918ee1c3637cad0f9d41a402d26d3aa076fc202-r3
 Depends: +libc libfreetdm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libfreetdm-ftmod-skel-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Skeleton FreeTDM module
-Maintainer: Sebastian Kemper <sebastian_ml@gmx.net>
+Maintainer: 
 Source: freetdm-2021.08.30~8918ee1c3637cad0f9d41a402d26d3aa076fc202.tar.zst
 License: BSD-2-Clause BSD-3-Clause BSD-4-Clause GPL-2.0+ MIT/X11 (BSD like) MPL-1.1
 LicenseFiles: LICENSE
@@ -149,12 +129,12 @@ Version: 2021.08.30~8918ee1c3637cad0f9d41a402d26d3aa076fc202-r3
 Depends: +libc libfreetdm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libfreetdm-ftmod-zt-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: DAHDI I/O FreeTDM module
-Maintainer: Sebastian Kemper <sebastian_ml@gmx.net>
+Maintainer: 
 Source: freetdm-2021.08.30~8918ee1c3637cad0f9d41a402d26d3aa076fc202.tar.zst
 License: BSD-2-Clause BSD-3-Clause BSD-4-Clause GPL-2.0+ MIT/X11 (BSD like) MPL-1.1
 LicenseFiles: LICENSE

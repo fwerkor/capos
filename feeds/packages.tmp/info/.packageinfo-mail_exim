@@ -6,7 +6,7 @@ Version: 4.99-r1
 Depends: +libc +USE_GLIBC:libcrypt-compat +libdb47 +libpcre2 +BUILD_NLS:libiconv-full +BUILD_NLS:libidn2 +BUILD_NLS:libidn
 Conflicts: exim-openssl exim-gnutls exim-ldap
 Menu-Depends: 
-Provides: 
+Provides: @exim-any
 Build-Variant: nossl
 Section: mail
 Category: Mail
@@ -31,7 +31,7 @@ Version: 4.99-r1
 Depends: +libc +USE_GLIBC:libcrypt-compat +libdb47 +libpcre2 +BUILD_NLS:libiconv-full +BUILD_NLS:libidn2 +BUILD_NLS:libidn +PACKAGE_exim-gnutls:libgnutls +EXIM_GNUTLS_DANE:libgnutls-dane
 Conflicts: exim-openssl exim-ldap
 Menu-Depends: 
-Provides: exim
+Provides: @exim-gnutls-any exim
 Build-Variant: gnutls
 Section: mail
 Category: Mail
@@ -65,7 +65,7 @@ Version: 4.99-r1
 Depends: +libc +USE_GLIBC:libcrypt-compat +libdb47 +libpcre2 +BUILD_NLS:libiconv-full +BUILD_NLS:libidn2 +BUILD_NLS:libidn +PACKAGE_exim-openssl:libopenssl
 Conflicts: exim-ldap
 Menu-Depends: 
-Provides: exim
+Provides: @exim-openssl-any exim
 Build-Variant: openssl
 Section: mail
 Category: Mail
@@ -90,7 +90,7 @@ Version: 4.99-r1
 Depends: +libc +USE_GLIBC:libcrypt-compat +libdb47 +libpcre2 +BUILD_NLS:libiconv-full +BUILD_NLS:libidn2 +BUILD_NLS:libidn +PACKAGE_exim-ldap:libopenssl +PACKAGE_exim-ldap:libsasl2 +PACKAGE_exim-ldap:libopenldap
 Conflicts: 
 Menu-Depends: 
-Provides: exim
+Provides: @exim-ldap-any exim
 Build-Variant: ldap
 Section: mail
 Category: Mail
@@ -115,7 +115,7 @@ Version: 4.99-r1
 Depends: +libc exim
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @exim-lookup-cdb-any
 Section: mail
 Category: Mail
 Repository: base
@@ -135,7 +135,7 @@ Version: 4.99-r1
 Depends: +libc exim
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @exim-lookup-dbmdb-any
 Section: mail
 Category: Mail
 Repository: base
@@ -155,7 +155,7 @@ Version: 4.99-r1
 Depends: +libc exim
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @exim-lookup-dnsdb-any
 Section: mail
 Category: Mail
 Repository: base
@@ -175,7 +175,7 @@ Version: 4.99-r1
 Depends: +libc exim +PACKAGE_exim-lookup-json:jansson
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @exim-lookup-json-any
 Section: mail
 Category: Mail
 Repository: base
@@ -195,7 +195,7 @@ Version: 4.99-r1
 Depends: +libc exim +PACKAGE_exim-lookup-mysql:libmariadb
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @exim-lookup-mysql-any
 Section: mail
 Category: Mail
 Repository: base
@@ -215,7 +215,7 @@ Version: 4.99-r1
 Depends: +libc exim
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @exim-lookup-passwd-any
 Section: mail
 Category: Mail
 Repository: base
@@ -235,7 +235,7 @@ Version: 4.99-r1
 Depends: +libc exim +PACKAGE_exim-lookup-pgsql:libpq
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @exim-lookup-pgsql-any
 Section: mail
 Category: Mail
 Repository: base
@@ -255,7 +255,7 @@ Version: 4.99-r1
 Depends: +libc exim +PACKAGE_exim-lookup-redis:libhiredis
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @exim-lookup-redis-any
 Section: mail
 Category: Mail
 Repository: base
@@ -275,7 +275,7 @@ Version: 4.99-r1
 Depends: +libc exim +PACKAGE_exim-lookup-sqlite:libsqlite3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @exim-lookup-sqlite-any
 Section: mail
 Category: Mail
 Repository: base

@@ -7,7 +7,7 @@ Version: 1.11.0-r1
 Depends: +libc +python3-light +python3-xml +python3-urllib +python3-uuid
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-py-any
 Section: lang
 Category: Languages
 Repository: base
@@ -28,7 +28,7 @@ Version: 1.11.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-py-src-any
 Section: lang
 Category: Languages
 Repository: base

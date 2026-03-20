@@ -1,0 +1,25 @@
+Source-Makefile: feeds/video/frameworks/wayland-protocols/Makefile
+Build-Depends: wayland
+Build-Depends/host: wayland/host
+
+Package: wayland-protocols
+Submenu: Frameworks and Toolkits
+Version: 1.45-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @wayland-protocols-any
+Section: libs
+Category: Video
+Repository: base
+Title: wayland-protocols
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: wayland-protocols-1.45.tar.xz
+License: MIT
+LicenseFiles: COPYING
+URL: https://wayland.freedesktop.org/
+Type: ipkg
+Description: wayland-protocols
+@@
+
+

@@ -6,7 +6,7 @@ Version: 1.18-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @vnstat-any
 Section: net
 Category: Network
 Repository: base
@@ -26,7 +26,7 @@ Version: 1.18-r3
 Depends: +libc vnstat +libgd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @vnstati-any
 Section: net
 Category: Network
 Repository: base

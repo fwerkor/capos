@@ -5,7 +5,7 @@ Version: 0.1.11-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libestr-any
 Section: libs
 Category: Libraries
 Repository: base

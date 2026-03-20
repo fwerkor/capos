@@ -6,7 +6,7 @@ Version: 2-r1
 Depends: +libc +CONFIG_GL_PULI_MCU_XE300:kmod-usb-serial-ch341 +libubus +libubox
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @gl-puli-mcu-any
 Section: utils
 Category: Utilities
 Repository: base

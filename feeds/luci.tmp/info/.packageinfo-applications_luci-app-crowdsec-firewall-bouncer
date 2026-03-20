@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base +crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-crowdsec-firewall-bouncer-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -26,7 +26,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-ar-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -45,7 +45,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-bn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -64,7 +64,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-cs-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -83,7 +83,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-da-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -102,7 +102,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-de-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -121,7 +121,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-es-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -140,7 +140,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-fi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -159,7 +159,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-fr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -178,7 +178,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-ga-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -197,7 +197,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-hu-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -216,7 +216,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-it-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -235,7 +235,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-ja-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -254,7 +254,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-lt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -273,7 +273,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-no-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -292,7 +292,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-nl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -311,7 +311,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-pl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -330,7 +330,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-pt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -349,7 +349,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -368,7 +368,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-ro-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -387,7 +387,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-ru-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -406,7 +406,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-sv-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -419,13 +419,32 @@ Hidden: 1
 Description:     Translation for luci-app-crowdsec-firewall-bouncer - Svenska (Swedish)
 @@
 
+Package: luci-i18n-crowdsec-firewall-bouncer-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-crowdsec-firewall-bouncer
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-crowdsec-firewall-bouncer - ta translation
+Maintainer: S. Brusch <ne20002@gmx.ch>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-crowdsec-firewall-bouncer - Tamil (Tamil)
+@@
+
 Package: luci-i18n-crowdsec-firewall-bouncer-tr
 Default: LUCI_LANG_tr||(ALL&&m)
 Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-tr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -444,7 +463,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-uk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -463,7 +482,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-vi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -482,7 +501,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-yua-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -501,7 +520,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -520,7 +539,7 @@ Version: x
 Depends: +libc luci-app-crowdsec-firewall-bouncer
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-crowdsec-firewall-bouncer-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base

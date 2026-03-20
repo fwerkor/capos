@@ -5,7 +5,7 @@ Version: 2.7.0-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @netperf-any
 Section: net
 Category: Network
 Repository: base

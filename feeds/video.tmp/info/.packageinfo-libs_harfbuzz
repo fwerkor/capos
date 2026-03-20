@@ -1,0 +1,23 @@
+Source-Makefile: feeds/video/libs/harfbuzz/Makefile
+
+Package: harfbuzz
+Submenu: Video
+Version: 11.2.1-r1
+Depends: +libc +glib2 +icu +libcairo +libfreetype
+Conflicts: 
+Menu-Depends: 
+Provides: @harfbuzz-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: hafbuzz
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: harfbuzz-11.2.1.tar.xz
+License: LGPL-2.1
+LicenseFiles: COPYING
+URL: http://www.harfbuzz.org/
+Type: ipkg
+Description: hafbuzz
+@@
+
+

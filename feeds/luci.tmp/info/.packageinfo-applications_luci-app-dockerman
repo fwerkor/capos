@@ -3,11 +3,11 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 
 Package: luci-app-dockerman
 Submenu: 3. Applications
-Version: 0.5.13.20241008-r1
-Depends: +libc @(aarch64||arm||x86_64) +luci-base +luci-compat +luci-lib-docker +docker +ttyd +dockerd +docker-compose +luci-lua-runtime
+Version: x
+Depends: +libc @(aarch64||arm||x86_64) +luci-base +docker +ttyd +dockerd +docker-compose +ucode-mod-socket
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-dockerman-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -26,12 +26,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-ar-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - ar translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -45,12 +45,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-bg-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - bg translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -64,12 +64,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-bn-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - bn translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -83,12 +83,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-ca-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - ca translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -102,12 +102,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-cs-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - cs translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -121,12 +121,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-da-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - da translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -140,12 +140,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-de-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - de translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -159,12 +159,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-el-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - el translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -178,12 +178,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-es-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - es translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -197,12 +197,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-fa-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - fa translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -216,12 +216,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-fi-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - fi translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -235,12 +235,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-fr-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - fr translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -254,12 +254,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-ga-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - ga translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -273,12 +273,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-he-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - he translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -292,12 +292,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-hi-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - hi translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -311,12 +311,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-hu-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - hu translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -330,12 +330,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-it-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - it translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -349,12 +349,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-ja-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - ja translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -368,12 +368,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-ko-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - ko translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -387,12 +387,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-lt-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - lt translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -406,12 +406,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-mr-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - mr translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -425,12 +425,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-ms-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - ms translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -444,12 +444,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-no-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - no translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -463,12 +463,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-nl-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - nl translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -482,12 +482,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-pl-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - pl translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -501,12 +501,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-pt-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - pt translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -520,12 +520,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - pt-br translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -539,12 +539,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-ro-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - ro translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -558,12 +558,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-ru-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - ru translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -577,12 +577,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-sk-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - sk translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -596,17 +596,36 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-sv-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - sv translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-dockerman - Svenska (Swedish)
+@@
+
+Package: luci-i18n-dockerman-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dockerman
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dockerman-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dockerman - ta translation
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Source: 
+License: AGPL-3.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dockerman - Tamil (Tamil)
 @@
 
 Package: luci-i18n-dockerman-tr
@@ -615,12 +634,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-tr-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - tr translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -634,12 +653,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-uk-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - uk translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -653,12 +672,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-vi-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - vi translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -672,12 +691,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-yua-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - yua translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -691,12 +710,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - zh-cn translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg
@@ -710,12 +729,12 @@ Version: x
 Depends: +libc luci-app-dockerman
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dockerman-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-dockerman - zh-tw translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Maintainer: Paul Donald <newtwen+github@gmail.com> Florian Eckert <fe@dev.tdt.de>
 Source: 
 License: AGPL-3.0
 Type: ipkg

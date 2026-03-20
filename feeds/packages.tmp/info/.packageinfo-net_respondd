@@ -5,7 +5,7 @@ Version: 2019.05.01~58405297e76f97d4752dc7511dc15bbc7a01e586-r2
 Depends: +libc @IPV6 +libjson-c
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @respondd-any
 Section: net
 Category: Network
 Repository: base

@@ -5,7 +5,7 @@ Version: 1.3.4-r1
 Depends: +libc +MINISATIP_AES:libopenssl +BUILD_PATENTED:libdvbcsa
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @minisatip-any
 Section: multimedia
 Category: Multimedia
 Repository: base

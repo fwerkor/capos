@@ -3,80 +3,42 @@ Source-Makefile: feeds/telephony/net/kamailio/Makefile
 Package: kamailio
 Menu: 1
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc +BUILD_NLS:libiconv-full +libncurses +libpthread +libreadline +libxml2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-any
 Section: net
 Category: Network
 Repository: base
-Title: Mature and flexible open source SIP server, v5.7.2
+Title: Mature and flexible open source SIP server, v6.0.1
 Maintainer: Jiri Slachta <jiri@slachta.eu>
 Require-User: kamailio=380:kamailio=380
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
-Description: Mature and flexible open source SIP server, v5.7.2
-@@
-
-Package: kamailio-lib-libkamailio-ims
-Submenu: Telephony
-Version: 5.7.2-r2
-Depends: +libc kamailio
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Repository: base
-Title: Kamailio IMS library
-Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
-License: GPL-2.0+
-LicenseFiles: COPYING
-URL: http://www.kamailio.org/
-Type: ipkg
-Description: Kamailio IMS library
-@@
-
-Package: kamailio-lib-libtrie
-Submenu: Telephony
-Version: 5.7.2-r2
-Depends: +libc kamailio
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Repository: base
-Title: Kamailio digital tree library
-Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
-License: GPL-2.0+
-LicenseFiles: COPYING
-URL: http://www.kamailio.org/
-Type: ipkg
-Description: Kamailio digital tree library
+Description: Mature and flexible open source SIP server, v6.0.1
 @@
 
 Package: kamailio-util-kambdb-recover
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-util-kambdb-recover:kamailio-mod-db-berkeley
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-util-kambdb-recover-any
 Section: net
 Category: Network
 Repository: base
 Title: Kamailio Berkeley DB recovery utility
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Kamailio Berkeley DB recovery utility
@@ -84,19 +46,20 @@ Description: Kamailio Berkeley DB recovery utility
 
 Package: kamailio-mod-acc
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-acc:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-acc-any
 Section: net
 Category: Network
 Repository: base
 Title: Accounting for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Accounting for Kamailio
@@ -104,19 +67,20 @@ Description: Accounting for Kamailio
 
 Package: kamailio-mod-acc-diameter
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-acc-diameter:kamailio-mod-acc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-acc-diameter-any
 Section: net
 Category: Network
 Repository: base
 Title: Accounting for DIAMETER backend for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Accounting for DIAMETER backend for Kamailio
@@ -124,19 +88,20 @@ Description: Accounting for DIAMETER backend for Kamailio
 
 Package: kamailio-mod-acc-json
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-acc-json:jansson +PACKAGE_kamailio-mod-acc-json:kamailio-mod-acc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-acc-json-any
 Section: net
 Category: Network
 Repository: base
 Title: Accounting with records exported in JSON format for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Accounting with records exported in JSON format for Kamailio
@@ -144,19 +109,20 @@ Description: Accounting with records exported in JSON format for Kamailio
 
 Package: kamailio-mod-alias-db
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-alias-db-any
 Section: net
 Category: Network
 Repository: base
 Title: Database-backend aliases for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Database-backend aliases for Kamailio
@@ -164,19 +130,20 @@ Description: Database-backend aliases for Kamailio
 
 Package: kamailio-mod-app-jsdt
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-app-jsdt-any
 Section: net
 Category: Network
 Repository: base
 Title: Execute JavaScript scripts for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Execute JavaScript scripts for Kamailio
@@ -184,59 +151,41 @@ Description: Execute JavaScript scripts for Kamailio
 
 Package: kamailio-mod-app-lua
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-app-lua:liblua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-app-lua-any
 Section: net
 Category: Network
 Repository: base
 Title: Execute embedded Lua scripts for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Execute embedded Lua scripts for Kamailio
 @@
 
-Package: kamailio-mod-app-lua-sr
-Submenu: Telephony
-Version: 5.7.2-r2
-Depends: +libc kamailio +PACKAGE_kamailio-mod-app-lua-sr:kamailio-mod-app-lua
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Repository: base
-Title: Old Lua API for Kamailio
-Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
-License: GPL-2.0+
-LicenseFiles: COPYING
-URL: http://www.kamailio.org/
-Type: ipkg
-Description: Old Lua API for Kamailio
-@@
-
 Package: kamailio-mod-app-python3
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-app-python3:python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-app-python3-any
 Section: net
 Category: Network
 Repository: base
 Title: Python3 scripting interpreter for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Python3 scripting interpreter for Kamailio
@@ -244,59 +193,41 @@ Description: Python3 scripting interpreter for Kamailio
 
 Package: kamailio-mod-app-ruby
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-app-ruby:libruby
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-app-ruby-any
 Section: net
 Category: Network
 Repository: base
 Title: Ruby scripting interpreter for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Ruby scripting interpreter for Kamailio
 @@
 
-Package: kamailio-mod-app-sqlang
-Submenu: Telephony
-Version: 5.7.2-r2
-Depends: +libc kamailio +PACKAGE_kamailio-mod-app-sqlang:libstdcpp
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Repository: base
-Title: Execute Squirrel language scripts for Kamailio
-Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
-License: GPL-2.0+
-LicenseFiles: COPYING
-URL: http://www.kamailio.org/
-Type: ipkg
-Description: Execute Squirrel language scripts for Kamailio
-@@
-
 Package: kamailio-mod-async
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-async:kamailio-mod-tm +PACKAGE_kamailio-mod-async:kamailio-mod-tmx
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-async-any
 Section: net
 Category: Network
 Repository: base
 Title: Asynchronous SIP handling functions for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Asynchronous SIP handling functions for Kamailio
@@ -304,19 +235,20 @@ Description: Asynchronous SIP handling functions for Kamailio
 
 Package: kamailio-mod-auth
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-auth-any
 Section: net
 Category: Network
 Repository: base
 Title: Authentication Framework for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Authentication Framework for Kamailio
@@ -324,19 +256,20 @@ Description: Authentication Framework for Kamailio
 
 Package: kamailio-mod-auth-db
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-auth-db:kamailio-mod-auth
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-auth-db-any
 Section: net
 Category: Network
 Repository: base
 Title: Database-backend authentication for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Database-backend authentication for Kamailio
@@ -344,19 +277,20 @@ Description: Database-backend authentication for Kamailio
 
 Package: kamailio-mod-auth-diameter
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-auth-diameter:kamailio-mod-sl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-auth-diameter-any
 Section: net
 Category: Network
 Repository: base
 Title: Diameter authentication for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Diameter authentication for Kamailio
@@ -364,59 +298,41 @@ Description: Diameter authentication for Kamailio
 
 Package: kamailio-mod-auth-ephemeral
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-auth-ephemeral:libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-auth-ephemeral-any
 Section: net
 Category: Network
 Repository: base
 Title: Ephemeral credentials for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Ephemeral credentials for Kamailio
 @@
 
-Package: kamailio-mod-auth-identity
-Submenu: Telephony
-Version: 5.7.2-r2
-Depends: +libc kamailio +PACKAGE_kamailio-mod-auth-identity:libopenssl +PACKAGE_kamailio-mod-auth-identity:libcurl
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Repository: base
-Title: Identity authentication for Kamailio
-Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
-License: GPL-2.0+
-LicenseFiles: COPYING
-URL: http://www.kamailio.org/
-Type: ipkg
-Description: Identity authentication for Kamailio
-@@
-
 Package: kamailio-mod-auth-xkeys
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-auth-xkeys:kamailio-mod-auth
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-auth-xkeys-any
 Section: net
 Category: Network
 Repository: base
 Title: Shared-key authentication for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Shared-key authentication for Kamailio
@@ -424,19 +340,20 @@ Description: Shared-key authentication for Kamailio
 
 Package: kamailio-mod-avp
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-avp-any
 Section: net
 Category: Network
 Repository: base
 Title: Functions for handling AVPs for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Functions for handling AVPs for Kamailio
@@ -444,19 +361,20 @@ Description: Functions for handling AVPs for Kamailio
 
 Package: kamailio-mod-avpops
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-avpops-any
 Section: net
 Category: Network
 Repository: base
 Title: AVP operation for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: AVP operation for Kamailio
@@ -464,19 +382,20 @@ Description: AVP operation for Kamailio
 
 Package: kamailio-mod-benchmark
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-benchmark-any
 Section: net
 Category: Network
 Repository: base
 Title: Config benchmark for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Config benchmark for Kamailio
@@ -484,19 +403,20 @@ Description: Config benchmark for Kamailio
 
 Package: kamailio-mod-blst
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-blst-any
 Section: net
 Category: Network
 Repository: base
 Title: Blacklisting API for config for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Blacklisting API for config for Kamailio
@@ -504,19 +424,20 @@ Description: Blacklisting API for config for Kamailio
 
 Package: kamailio-mod-call-control
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-call-control:kamailio-mod-dialog +PACKAGE_kamailio-mod-call-control:kamailio-mod-pv
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-call-control-any
 Section: net
 Category: Network
 Repository: base
 Title: Call Control for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Call Control for Kamailio
@@ -524,19 +445,20 @@ Description: Call Control for Kamailio
 
 Package: kamailio-mod-call-obj
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-call-obj-any
 Section: net
 Category: Network
 Repository: base
 Title: Call identification support for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Call identification support for Kamailio
@@ -544,19 +466,20 @@ Description: Call identification support for Kamailio
 
 Package: kamailio-mod-carrierroute
 Submenu: Telephony
-Version: 5.7.2-r2
-Depends: +libc kamailio +PACKAGE_kamailio-mod-carrierroute:kamailio-lib-libtrie
+Version: 6.0.1-r2
+Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-carrierroute-any
 Section: net
 Category: Network
 Repository: base
 Title: Carrier Route for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Carrier Route for Kamailio
@@ -564,19 +487,20 @@ Description: Carrier Route for Kamailio
 
 Package: kamailio-mod-cdp
 Submenu: Telephony
-Version: 5.7.2-r2
-Depends: +libc kamailio
+Version: 6.0.1-r2
+Depends: +libc kamailio +PACKAGE_kamailio-mod-cdp:libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-cdp-any
 Section: net
 Category: Network
 Repository: base
 Title: C Diameter Peer for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: C Diameter Peer for Kamailio
@@ -584,19 +508,20 @@ Description: C Diameter Peer for Kamailio
 
 Package: kamailio-mod-cdp-avp
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-cdp-avp:kamailio-mod-cdp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-cdp-avp-any
 Section: net
 Category: Network
 Repository: base
 Title: CDP AVP helper module for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: CDP AVP helper module for Kamailio
@@ -604,19 +529,20 @@ Description: CDP AVP helper module for Kamailio
 
 Package: kamailio-mod-cfgutils
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-cfgutils-any
 Section: net
 Category: Network
 Repository: base
 Title: Config utilities for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Config utilities for Kamailio
@@ -624,19 +550,20 @@ Description: Config utilities for Kamailio
 
 Package: kamailio-mod-cfg-db
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-cfg-db-any
 Section: net
 Category: Network
 Repository: base
 Title: Load parameters from database for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Load parameters from database for Kamailio
@@ -644,19 +571,20 @@ Description: Load parameters from database for Kamailio
 
 Package: kamailio-mod-cfg-rpc
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-cfg-rpc-any
 Section: net
 Category: Network
 Repository: base
 Title: Update parameters via RPC for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Update parameters via RPC for Kamailio
@@ -664,19 +592,20 @@ Description: Update parameters via RPC for Kamailio
 
 Package: kamailio-mod-cfgt
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-cfgt-any
 Section: net
 Category: Network
 Repository: base
 Title: Unit test reporting for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Unit test reporting for Kamailio
@@ -684,19 +613,20 @@ Description: Unit test reporting for Kamailio
 
 Package: kamailio-mod-cnxcc
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-cnxcc:kamailio-mod-dialog +PACKAGE_kamailio-mod-cnxcc:libhiredis +PACKAGE_kamailio-mod-cnxcc:libevent2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-cnxcc-any
 Section: net
 Category: Network
 Repository: base
 Title: Limit call duration for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Limit call duration for Kamailio
@@ -704,19 +634,20 @@ Description: Limit call duration for Kamailio
 
 Package: kamailio-mod-corex
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-corex-any
 Section: net
 Category: Network
 Repository: base
 Title: Legacy functions for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Legacy functions for Kamailio
@@ -724,19 +655,20 @@ Description: Legacy functions for Kamailio
 
 Package: kamailio-mod-counters
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-counters-any
 Section: net
 Category: Network
 Repository: base
 Title: Functions for counter manipulation for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Functions for counter manipulation for Kamailio
@@ -744,19 +676,20 @@ Description: Functions for counter manipulation for Kamailio
 
 Package: kamailio-mod-cplc
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-cplc:kamailio-mod-sl +PACKAGE_kamailio-mod-cplc:kamailio-mod-tm +PACKAGE_kamailio-mod-cplc:kamailio-mod-usrloc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-cplc-any
 Section: net
 Category: Network
 Repository: base
 Title: Call Processing Language interpreter for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Call Processing Language interpreter for Kamailio
@@ -764,19 +697,20 @@ Description: Call Processing Language interpreter for Kamailio
 
 Package: kamailio-mod-crypto
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-crypto:libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-crypto-any
 Section: net
 Category: Network
 Repository: base
 Title: Various cryptography tools for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Various cryptography tools for Kamailio
@@ -784,19 +718,20 @@ Description: Various cryptography tools for Kamailio
 
 Package: kamailio-mod-ctl
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-ctl-any
 Section: net
 Category: Network
 Repository: base
 Title: BINRPC transport interface for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: BINRPC transport interface for Kamailio
@@ -804,19 +739,20 @@ Description: BINRPC transport interface for Kamailio
 
 Package: kamailio-mod-db2-ldap
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-db2-ldap:libopenldap
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-db2-ldap-any
 Section: net
 Category: Network
 Repository: base
 Title: DBv2 LDAP module for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: DBv2 LDAP module for Kamailio
@@ -824,19 +760,20 @@ Description: DBv2 LDAP module for Kamailio
 
 Package: kamailio-mod-db2-ops
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-db2-ops-any
 Section: net
 Category: Network
 Repository: base
 Title: Run SQL queries from script for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Run SQL queries from script for Kamailio
@@ -844,19 +781,20 @@ Description: Run SQL queries from script for Kamailio
 
 Package: kamailio-mod-db-berkeley
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-db-berkeley:libdb47
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-db-berkeley-any
 Section: net
 Category: Network
 Repository: base
 Title: Berkeley DB backend for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Berkeley DB backend for Kamailio
@@ -864,19 +802,20 @@ Description: Berkeley DB backend for Kamailio
 
 Package: kamailio-mod-db-cluster
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-db-cluster-any
 Section: net
 Category: Network
 Repository: base
 Title: Database clustering system for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Database clustering system for Kamailio
@@ -884,19 +823,20 @@ Description: Database clustering system for Kamailio
 
 Package: kamailio-mod-db-flatstore
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-db-flatstore-any
 Section: net
 Category: Network
 Repository: base
 Title: fast write-only text DB-backend for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: fast write-only text DB-backend for Kamailio
@@ -904,19 +844,20 @@ Description: fast write-only text DB-backend for Kamailio
 
 Package: kamailio-mod-db-mysql
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-db-mysql:libmysqlclient
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-db-mysql-any
 Section: net
 Category: Network
 Repository: base
 Title: MySQL DB-backend for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: MySQL DB-backend for Kamailio
@@ -924,19 +865,20 @@ Description: MySQL DB-backend for Kamailio
 
 Package: kamailio-mod-db-postgres
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-db-postgres:libpq
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-db-postgres-any
 Section: net
 Category: Network
 Repository: base
 Title: PostgreSQL DB-backend for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: PostgreSQL DB-backend for Kamailio
@@ -944,19 +886,20 @@ Description: PostgreSQL DB-backend for Kamailio
 
 Package: kamailio-mod-db-redis
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-db-redis:libhiredis
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-db-redis-any
 Section: net
 Category: Network
 Repository: base
 Title: Database backend with Redis server for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Database backend with Redis server for Kamailio
@@ -964,19 +907,20 @@ Description: Database backend with Redis server for Kamailio
 
 Package: kamailio-mod-db-sqlite
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-db-sqlite:libsqlite3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-db-sqlite-any
 Section: net
 Category: Network
 Repository: base
 Title: SQLite DB-backend for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: SQLite DB-backend for Kamailio
@@ -984,19 +928,20 @@ Description: SQLite DB-backend for Kamailio
 
 Package: kamailio-mod-db-text
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-db-text-any
 Section: net
 Category: Network
 Repository: base
 Title: Text DB-backend for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Text DB-backend for Kamailio
@@ -1004,19 +949,20 @@ Description: Text DB-backend for Kamailio
 
 Package: kamailio-mod-db-unixodbc
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-db-unixodbc:unixodbc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-db-unixodbc-any
 Section: net
 Category: Network
 Repository: base
 Title: UnixODBC DB-backend for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: UnixODBC DB-backend for Kamailio
@@ -1024,19 +970,20 @@ Description: UnixODBC DB-backend for Kamailio
 
 Package: kamailio-mod-debugger
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-debugger-any
 Section: net
 Category: Network
 Repository: base
 Title: Interactive config file debugger for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Interactive config file debugger for Kamailio
@@ -1044,19 +991,20 @@ Description: Interactive config file debugger for Kamailio
 
 Package: kamailio-mod-dialog
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-dialog:kamailio-mod-rr +PACKAGE_kamailio-mod-dialog:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-dialog-any
 Section: net
 Category: Network
 Repository: base
 Title: Dialog support for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Dialog support for Kamailio
@@ -1064,19 +1012,20 @@ Description: Dialog support for Kamailio
 
 Package: kamailio-mod-dialplan
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-dialplan:libpcre2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-dialplan-any
 Section: net
 Category: Network
 Repository: base
 Title: Dialplan management for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Dialplan management for Kamailio
@@ -1084,19 +1033,20 @@ Description: Dialplan management for Kamailio
 
 Package: kamailio-mod-dispatcher
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-dispatcher-any
 Section: net
 Category: Network
 Repository: base
 Title: Dispatcher for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Dispatcher for Kamailio
@@ -1104,19 +1054,20 @@ Description: Dispatcher for Kamailio
 
 Package: kamailio-mod-diversion
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-diversion-any
 Section: net
 Category: Network
 Repository: base
 Title: Diversion header insertion for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Diversion header insertion for Kamailio
@@ -1124,19 +1075,20 @@ Description: Diversion header insertion for Kamailio
 
 Package: kamailio-mod-dlgs
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-dlgs-any
 Section: net
 Category: Network
 Repository: base
 Title: Track active calls in stateless mode for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Track active calls in stateless mode for Kamailio
@@ -1144,19 +1096,20 @@ Description: Track active calls in stateless mode for Kamailio
 
 Package: kamailio-mod-dmq
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-dmq:kamailio-mod-sl +PACKAGE_kamailio-mod-dmq:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-dmq-any
 Section: net
 Category: Network
 Repository: base
 Title: Distributed Message Queue for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Distributed Message Queue for Kamailio
@@ -1164,19 +1117,20 @@ Description: Distributed Message Queue for Kamailio
 
 Package: kamailio-mod-dmq-usrloc
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-dmq-usrloc:kamailio-mod-dmq +PACKAGE_kamailio-mod-dmq-usrloc:kamailio-mod-usrloc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-dmq-usrloc-any
 Section: net
 Category: Network
 Repository: base
 Title: DMQ USRLOC replication for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: DMQ USRLOC replication for Kamailio
@@ -1184,19 +1138,20 @@ Description: DMQ USRLOC replication for Kamailio
 
 Package: kamailio-mod-domain
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-domain-any
 Section: net
 Category: Network
 Repository: base
 Title: Multi-domain support for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Multi-domain support for Kamailio
@@ -1204,19 +1159,20 @@ Description: Multi-domain support for Kamailio
 
 Package: kamailio-mod-domainpolicy
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-domainpolicy-any
 Section: net
 Category: Network
 Repository: base
 Title: Domain policy for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Domain policy for Kamailio
@@ -1224,19 +1180,20 @@ Description: Domain policy for Kamailio
 
 Package: kamailio-mod-drouting
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-drouting-any
 Section: net
 Category: Network
 Repository: base
 Title: Dynamic routing module for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Dynamic routing module for Kamailio
@@ -1244,19 +1201,20 @@ Description: Dynamic routing module for Kamailio
 
 Package: kamailio-mod-enum
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-enum-any
 Section: net
 Category: Network
 Repository: base
 Title: ENUM lookup for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: ENUM lookup for Kamailio
@@ -1264,19 +1222,20 @@ Description: ENUM lookup for Kamailio
 
 Package: kamailio-mod-erlang
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio @!USE_MUSL +PACKAGE_kamailio-mod-erlang:erlang
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-erlang-any
 Section: net
 Category: Network
 Repository: base
 Title: Erlang node connector module for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Erlang node connector module for Kamailio
@@ -1284,19 +1243,20 @@ Description: Erlang node connector module for Kamailio
 
 Package: kamailio-mod-evapi
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-evapi:libev
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-evapi-any
 Section: net
 Category: Network
 Repository: base
 Title: push event details via tcp for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: push event details via tcp for Kamailio
@@ -1304,19 +1264,20 @@ Description: push event details via tcp for Kamailio
 
 Package: kamailio-mod-evrexec
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-evrexec-any
 Section: net
 Category: Network
 Repository: base
 Title: Execut event routes at startup for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Execut event routes at startup for Kamailio
@@ -1324,19 +1285,20 @@ Description: Execut event routes at startup for Kamailio
 
 Package: kamailio-mod-exec
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-exec-any
 Section: net
 Category: Network
 Repository: base
 Title: External exec for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: External exec for Kamailio
@@ -1344,19 +1306,20 @@ Description: External exec for Kamailio
 
 Package: kamailio-mod-group
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-group-any
 Section: net
 Category: Network
 Repository: base
 Title: Database-backend user-groups for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Database-backend user-groups for Kamailio
@@ -1364,19 +1327,20 @@ Description: Database-backend user-groups for Kamailio
 
 Package: kamailio-mod-gzcompress
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-gzcompress:zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-gzcompress-any
 Section: net
 Category: Network
 Repository: base
 Title: Compress SIP messages for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Compress SIP messages for Kamailio
@@ -1384,19 +1348,20 @@ Description: Compress SIP messages for Kamailio
 
 Package: kamailio-mod-h350
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-h350:kamailio-mod-ldap +PACKAGE_kamailio-mod-h350:libopenldap
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-h350-any
 Section: net
 Category: Network
 Repository: base
 Title: H.350 for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: H.350 for Kamailio
@@ -1404,19 +1369,20 @@ Description: H.350 for Kamailio
 
 Package: kamailio-mod-htable
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-htable-any
 Section: net
 Category: Network
 Repository: base
 Title: Hash Table for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Hash Table for Kamailio
@@ -1424,19 +1390,20 @@ Description: Hash Table for Kamailio
 
 Package: kamailio-mod-http-client
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-http-client:libcurl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-http-client-any
 Section: net
 Category: Network
 Repository: base
 Title: HTTP client using CURL for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: HTTP client using CURL for Kamailio
@@ -1444,19 +1411,20 @@ Description: HTTP client using CURL for Kamailio
 
 Package: kamailio-mod-imc
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-imc:kamailio-mod-db-mysql +PACKAGE_kamailio-mod-imc:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-imc-any
 Section: net
 Category: Network
 Repository: base
 Title: IM conferencing for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: IM conferencing for Kamailio
@@ -1464,19 +1432,20 @@ Description: IM conferencing for Kamailio
 
 Package: kamailio-mod-ims-auth
 Submenu: Telephony
-Version: 5.7.2-r2
-Depends: +libc kamailio +PACKAGE_kamailio-mod-ims-auth:kamailio-lib-libkamailio-ims +PACKAGE_kamailio-mod-ims-auth:kamailio-mod-cdp +PACKAGE_kamailio-mod-ims-auth:kamailio-mod-cdp-avp +PACKAGE_kamailio-mod-ims-auth:kamailio-mod-tm
+Version: 6.0.1-r2
+Depends: +libc kamailio +PACKAGE_kamailio-mod-ims-auth:kamailio-mod-cdp +PACKAGE_kamailio-mod-ims-auth:kamailio-mod-cdp-avp +PACKAGE_kamailio-mod-ims-auth:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-ims-auth-any
 Section: net
 Category: Network
 Repository: base
 Title: IMS authentication module for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: IMS authentication module for Kamailio
@@ -1484,19 +1453,20 @@ Description: IMS authentication module for Kamailio
 
 Package: kamailio-mod-ims-charging
 Submenu: Telephony
-Version: 5.7.2-r2
-Depends: +libc kamailio +PACKAGE_kamailio-mod-ims-charging:kamailio-lib-libkamailio-ims +PACKAGE_kamailio-mod-ims-charging:kamailio-mod-cdp +PACKAGE_kamailio-mod-ims-charging:kamailio-mod-cdp-avp +PACKAGE_kamailio-mod-ims-charging:kamailio-mod-tm
+Version: 6.0.1-r2
+Depends: +libc kamailio +PACKAGE_kamailio-mod-ims-charging:kamailio-mod-cdp +PACKAGE_kamailio-mod-ims-charging:kamailio-mod-cdp-avp +PACKAGE_kamailio-mod-ims-charging:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-ims-charging-any
 Section: net
 Category: Network
 Repository: base
 Title: IMS charging component module for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: IMS charging component module for Kamailio
@@ -1504,19 +1474,20 @@ Description: IMS charging component module for Kamailio
 
 Package: kamailio-mod-ims-dialog
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-ims-dialog:kamailio-mod-rr +PACKAGE_kamailio-mod-ims-dialog:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-ims-dialog-any
 Section: net
 Category: Network
 Repository: base
 Title: IMS dialog tracking module for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: IMS dialog tracking module for Kamailio
@@ -1524,19 +1495,20 @@ Description: IMS dialog tracking module for Kamailio
 
 Package: kamailio-mod-ims-diameter-server
 Submenu: Telephony
-Version: 5.7.2-r2
-Depends: +libc kamailio +PACKAGE_kamailio-mod-ims-diameter-server:kamailio-lib-libkamailio-ims +PACKAGE_kamailio-mod-ims-diameter-server:kamailio-mod-cdp +PACKAGE_kamailio-mod-ims-diameter-server:kamailio-mod-cdp-avp
+Version: 6.0.1-r2
+Depends: +libc kamailio +PACKAGE_kamailio-mod-ims-diameter-server:kamailio-mod-cdp +PACKAGE_kamailio-mod-ims-diameter-server:kamailio-mod-cdp-avp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-ims-diameter-server-any
 Section: net
 Category: Network
 Repository: base
 Title: IMS DIAMETER server module for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: IMS DIAMETER server module for Kamailio
@@ -1544,19 +1516,20 @@ Description: IMS DIAMETER server module for Kamailio
 
 Package: kamailio-mod-ims-icscf
 Submenu: Telephony
-Version: 5.7.2-r2
-Depends: +libc kamailio +PACKAGE_kamailio-mod-ims-icscf:kamailio-lib-libkamailio-ims +PACKAGE_kamailio-mod-ims-icscf:kamailio-mod-cdp +PACKAGE_kamailio-mod-ims-icscf:kamailio-mod-cdp-avp +PACKAGE_kamailio-mod-ims-icscf:kamailio-mod-sl +PACKAGE_kamailio-mod-ims-icscf:kamailio-mod-tm
+Version: 6.0.1-r2
+Depends: +libc kamailio +PACKAGE_kamailio-mod-ims-icscf:kamailio-mod-cdp +PACKAGE_kamailio-mod-ims-icscf:kamailio-mod-cdp-avp +PACKAGE_kamailio-mod-ims-icscf:kamailio-mod-sl +PACKAGE_kamailio-mod-ims-icscf:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-ims-icscf-any
 Section: net
 Category: Network
 Repository: base
 Title: IMS ICSCF component module for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: IMS ICSCF component module for Kamailio
@@ -1564,19 +1537,20 @@ Description: IMS ICSCF component module for Kamailio
 
 Package: kamailio-mod-ims-ipsec-pcscf
 Submenu: Telephony
-Version: 5.7.2-r2
-Depends: +libc kamailio +PACKAGE_kamailio-mod-ims-ipsec-pcscf:kamailio-lib-libkamailio-ims +PACKAGE_kamailio-mod-ims-ipsec-pcscf:kamailio-mod-ims-usrloc-pcscf +PACKAGE_kamailio-mod-ims-ipsec-pcscf:kamailio-mod-tm +PACKAGE_kamailio-mod-ims-ipsec-pcscf:libmnl
+Version: 6.0.1-r2
+Depends: +libc kamailio +PACKAGE_kamailio-mod-ims-ipsec-pcscf:kamailio-mod-ims-usrloc-pcscf +PACKAGE_kamailio-mod-ims-ipsec-pcscf:kamailio-mod-tm +PACKAGE_kamailio-mod-ims-ipsec-pcscf:libmnl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-ims-ipsec-pcscf-any
 Section: net
 Category: Network
 Repository: base
 Title: Diameter server implementation for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Diameter server implementation for Kamailio
@@ -1584,19 +1558,20 @@ Description: Diameter server implementation for Kamailio
 
 Package: kamailio-mod-ims-isc
 Submenu: Telephony
-Version: 5.7.2-r2
-Depends: +libc kamailio +PACKAGE_kamailio-mod-ims-isc:kamailio-lib-libkamailio-ims +PACKAGE_kamailio-mod-ims-isc:kamailio-mod-ims-usrloc-scscf +PACKAGE_kamailio-mod-ims-isc:kamailio-mod-tm
+Version: 6.0.1-r2
+Depends: +libc kamailio +PACKAGE_kamailio-mod-ims-isc:kamailio-mod-ims-usrloc-scscf +PACKAGE_kamailio-mod-ims-isc:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-ims-isc-any
 Section: net
 Category: Network
 Repository: base
 Title: IMS ISC component module for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: IMS ISC component module for Kamailio
@@ -1604,19 +1579,20 @@ Description: IMS ISC component module for Kamailio
 
 Package: kamailio-mod-ims-ocs
 Submenu: Telephony
-Version: 5.7.2-r2
-Depends: +libc kamailio +PACKAGE_kamailio-mod-ims-ocs:kamailio-lib-libkamailio-ims +PACKAGE_kamailio-mod-ims-ocs:kamailio-mod-cdp +PACKAGE_kamailio-mod-ims-ocs:kamailio-mod-cdp-avp
+Version: 6.0.1-r2
+Depends: +libc kamailio +PACKAGE_kamailio-mod-ims-ocs:kamailio-mod-cdp +PACKAGE_kamailio-mod-ims-ocs:kamailio-mod-cdp-avp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-ims-ocs-any
 Section: net
 Category: Network
 Repository: base
 Title: MS OCS component module for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: MS OCS component module for Kamailio
@@ -1624,39 +1600,62 @@ Description: MS OCS component module for Kamailio
 
 Package: kamailio-mod-ims-qos
 Submenu: Telephony
-Version: 5.7.2-r2
-Depends: +libc kamailio +PACKAGE_kamailio-mod-ims-qos:kamailio-lib-libkamailio-ims +PACKAGE_kamailio-mod-ims-qos:kamailio-mod-cdp +PACKAGE_kamailio-mod-ims-qos:kamailio-mod-cdp-avp +PACKAGE_kamailio-mod-ims-qos:kamailio-mod-ims-dialog +PACKAGE_kamailio-mod-ims-qos:kamailio-mod-ims-usrloc-pcscf +PACKAGE_kamailio-mod-ims-qos:kamailio-mod-tm
+Version: 6.0.1-r2
+Depends: +libc kamailio +PACKAGE_kamailio-mod-ims-qos:kamailio-mod-cdp +PACKAGE_kamailio-mod-ims-qos:kamailio-mod-cdp-avp +PACKAGE_kamailio-mod-ims-qos:kamailio-mod-ims-dialog +PACKAGE_kamailio-mod-ims-qos:kamailio-mod-ims-usrloc-pcscf +PACKAGE_kamailio-mod-ims-qos:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-ims-qos-any
 Section: net
 Category: Network
 Repository: base
 Title: IMS Diameter Rx interface between PCSCF and PCRF functions for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: IMS Diameter Rx interface between PCSCF and PCRF functions for Kamailio
 @@
 
-Package: kamailio-mod-ims-registrar-pcscf
+Package: kamailio-mod-ims-qos-npn
 Submenu: Telephony
-Version: 5.7.2-r2
-Depends: +libc kamailio +PACKAGE_kamailio-mod-ims-registrar-pcscf:kamailio-lib-libkamailio-ims +PACKAGE_kamailio-mod-ims-registrar-pcscf:kamailio-mod-ims-usrloc-pcscf
+Version: 6.0.1-r2
+Depends: +libc kamailio +PACKAGE_kamailio-mod-ims-qos-npn:kamailio-mod-ims-usrloc-pcscf +PACKAGE_kamailio-mod-ims-qos-npn:kamailio-mod-tm +PACKAGE_kamailio-mod-ims-qos-npn:kamailio-mod-cdp +PACKAGE_kamailio-mod-ims-qos-npn:kamailio-mod-cdp-avp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-ims-qos-npn-any
+Section: net
+Category: Network
+Repository: base
+Title: IMS QoS NPN Diameter Rx interface between PCSCF and PCRF functions for Kamailio
+Maintainer: Jiri Slachta <jiri@slachta.eu>
+Source: 6.0.1.tar.gz
+License: GPL-2.0+
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
+URL: http://www.kamailio.org/
+Type: ipkg
+Description: enhanced version of IMS QoS implementation
+@@
+
+Package: kamailio-mod-ims-registrar-pcscf
+Submenu: Telephony
+Version: 6.0.1-r2
+Depends: +libc kamailio +PACKAGE_kamailio-mod-ims-registrar-pcscf:kamailio-mod-ims-usrloc-pcscf
+Conflicts: 
+Menu-Depends: 
+Provides: @kamailio-mod-ims-registrar-pcscf-any
 Section: net
 Category: Network
 Repository: base
 Title: MS PCSCF registrar module for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: MS PCSCF registrar module for Kamailio
@@ -1664,19 +1663,20 @@ Description: MS PCSCF registrar module for Kamailio
 
 Package: kamailio-mod-ims-registrar-scscf
 Submenu: Telephony
-Version: 5.7.2-r2
-Depends: +libc kamailio +PACKAGE_kamailio-mod-ims-registrar-scscf:kamailio-lib-libkamailio-ims +PACKAGE_kamailio-mod-ims-registrar-scscf:kamailio-mod-cdp +PACKAGE_kamailio-mod-ims-registrar-scscf:kamailio-mod-cdp-avp +PACKAGE_kamailio-mod-ims-registrar-scscf:kamailio-mod-ims-usrloc-scscf +PACKAGE_kamailio-mod-ims-registrar-scscf:kamailio-mod-tm
+Version: 6.0.1-r2
+Depends: +libc kamailio +PACKAGE_kamailio-mod-ims-registrar-scscf:kamailio-mod-cdp +PACKAGE_kamailio-mod-ims-registrar-scscf:kamailio-mod-cdp-avp +PACKAGE_kamailio-mod-ims-registrar-scscf:kamailio-mod-ims-usrloc-scscf +PACKAGE_kamailio-mod-ims-registrar-scscf:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-ims-registrar-scscf-any
 Section: net
 Category: Network
 Repository: base
 Title: IMS SCSCF registrar module for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: IMS SCSCF registrar module for Kamailio
@@ -1684,19 +1684,20 @@ Description: IMS SCSCF registrar module for Kamailio
 
 Package: kamailio-mod-ims-usrloc-pcscf
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-ims-usrloc-pcscf-any
 Section: net
 Category: Network
 Repository: base
 Title: IMS PCSCF usrloc module for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: IMS PCSCF usrloc module for Kamailio
@@ -1704,19 +1705,20 @@ Description: IMS PCSCF usrloc module for Kamailio
 
 Package: kamailio-mod-ims-usrloc-scscf
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-ims-usrloc-scscf-any
 Section: net
 Category: Network
 Repository: base
 Title: IMS SCSCF usrloc module for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: IMS SCSCF usrloc module for Kamailio
@@ -1724,19 +1726,20 @@ Description: IMS SCSCF usrloc module for Kamailio
 
 Package: kamailio-mod-ipops
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-ipops-any
 Section: net
 Category: Network
 Repository: base
 Title: IP and IPv6 operations for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: IP and IPv6 operations for Kamailio
@@ -1744,19 +1747,20 @@ Description: IP and IPv6 operations for Kamailio
 
 Package: kamailio-mod-jansson
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-jansson:jansson
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-jansson-any
 Section: net
 Category: Network
 Repository: base
 Title: Access to JSON attributes for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Access to JSON attributes for Kamailio
@@ -1764,19 +1768,20 @@ Description: Access to JSON attributes for Kamailio
 
 Package: kamailio-mod-janssonrpcc
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-janssonrpcc:kamailio-mod-jansson +PACKAGE_kamailio-mod-janssonrpcc:libevent2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-janssonrpcc-any
 Section: net
 Category: Network
 Repository: base
 Title: Alternative JSONRPC server for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Alternative JSONRPC server for Kamailio
@@ -1784,19 +1789,20 @@ Description: Alternative JSONRPC server for Kamailio
 
 Package: kamailio-mod-json
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-json:libjson-c
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-json-any
 Section: net
 Category: Network
 Repository: base
 Title: Access to JSON document attributes for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Access to JSON document attributes for Kamailio
@@ -1804,19 +1810,20 @@ Description: Access to JSON document attributes for Kamailio
 
 Package: kamailio-mod-jsonrpcs
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-jsonrpcs:libevent2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-jsonrpcs-any
 Section: net
 Category: Network
 Repository: base
 Title: JSONRPC server over HTTP for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: JSONRPC server over HTTP for Kamailio
@@ -1824,19 +1831,20 @@ Description: JSONRPC server over HTTP for Kamailio
 
 Package: kamailio-mod-keepalive
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-keepalive:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-keepalive-any
 Section: net
 Category: Network
 Repository: base
 Title: SIP keepalive monitoring for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: SIP keepalive monitoring for Kamailio
@@ -1844,19 +1852,20 @@ Description: SIP keepalive monitoring for Kamailio
 
 Package: kamailio-mod-kemix
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-kemix-any
 Section: net
 Category: Network
 Repository: base
 Title: KEMI extensions for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: KEMI extensions for Kamailio
@@ -1864,19 +1873,20 @@ Description: KEMI extensions for Kamailio
 
 Package: kamailio-mod-kex
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-kex-any
 Section: net
 Category: Network
 Repository: base
 Title: Core extensions for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Core extensions for Kamailio
@@ -1884,19 +1894,20 @@ Description: Core extensions for Kamailio
 
 Package: kamailio-mod-lcr
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-lcr:kamailio-mod-tm +PACKAGE_kamailio-mod-lcr:libpcre2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-lcr-any
 Section: net
 Category: Network
 Repository: base
 Title: Least Cost Routing for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Least Cost Routing for Kamailio
@@ -1904,19 +1915,20 @@ Description: Least Cost Routing for Kamailio
 
 Package: kamailio-mod-ldap
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-ldap:libopenldap
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-ldap-any
 Section: net
 Category: Network
 Repository: base
 Title: LDAP connector for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: LDAP connector for Kamailio
@@ -1924,19 +1936,20 @@ Description: LDAP connector for Kamailio
 
 Package: kamailio-mod-log-custom
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-log-custom-any
 Section: net
 Category: Network
 Repository: base
 Title: Logging to custom backends for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Logging to custom backends for Kamailio
@@ -1944,19 +1957,20 @@ Description: Logging to custom backends for Kamailio
 
 Package: kamailio-mod-lost
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-lost:kamailio-mod-http-client
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-lost-any
 Section: net
 Category: Network
 Repository: base
 Title: HELD and LOST routing for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: HELD and LOST routing for Kamailio
@@ -1964,19 +1978,20 @@ Description: HELD and LOST routing for Kamailio
 
 Package: kamailio-mod-lrkproxy
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-lrkproxy-any
 Section: net
 Category: Network
 Repository: base
 Title: pylrkproxy media stream relay for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: pylrkproxy media stream relay for Kamailio
@@ -1984,19 +1999,20 @@ Description: pylrkproxy media stream relay for Kamailio
 
 Package: kamailio-mod-mangler
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-mangler-any
 Section: net
 Category: Network
 Repository: base
 Title: SDP mangling for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: SDP mangling for Kamailio
@@ -2004,19 +2020,20 @@ Description: SDP mangling for Kamailio
 
 Package: kamailio-mod-matrix
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-matrix-any
 Section: net
 Category: Network
 Repository: base
 Title: Matrix operations for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Matrix operations for Kamailio
@@ -2024,19 +2041,20 @@ Description: Matrix operations for Kamailio
 
 Package: kamailio-mod-maxfwd
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-maxfwd-any
 Section: net
 Category: Network
 Repository: base
 Title: Max-Forward processor for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Max-Forward processor for Kamailio
@@ -2044,19 +2062,20 @@ Description: Max-Forward processor for Kamailio
 
 Package: kamailio-mod-mediaproxy
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-mediaproxy:kamailio-mod-dialog
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-mediaproxy-any
 Section: net
 Category: Network
 Repository: base
 Title: Automatic NAT traversal for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Automatic NAT traversal for Kamailio
@@ -2064,19 +2083,20 @@ Description: Automatic NAT traversal for Kamailio
 
 Package: kamailio-mod-misctest
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-misctest-any
 Section: net
 Category: Network
 Repository: base
 Title: Debugging/testing for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: This is a debugging/test module. It implements functions (both script
@@ -2088,19 +2108,20 @@ Warning: This module should never be used in a production environment.
 
 Package: kamailio-mod-mohqueue
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-mohqueue:kamailio-mod-rtpproxy +PACKAGE_kamailio-mod-mohqueue:kamailio-mod-sl +PACKAGE_kamailio-mod-mohqueue:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-mohqueue-any
 Section: net
 Category: Network
 Repository: base
 Title: Music on hold queuing system for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Music on hold queuing system for Kamailio
@@ -2108,19 +2129,20 @@ Description: Music on hold queuing system for Kamailio
 
 Package: kamailio-mod-mqueue
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-mqueue-any
 Section: net
 Category: Network
 Repository: base
 Title: Generic message queue system for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Generic message queue system for Kamailio
@@ -2128,19 +2150,20 @@ Description: Generic message queue system for Kamailio
 
 Package: kamailio-mod-msilo
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-msilo:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-msilo-any
 Section: net
 Category: Network
 Repository: base
 Title: SIP message silo for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: SIP message silo for Kamailio
@@ -2148,19 +2171,20 @@ Description: SIP message silo for Kamailio
 
 Package: kamailio-mod-msrp
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-msrp:kamailio-mod-tls
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-msrp-any
 Section: net
 Category: Network
 Repository: base
 Title: MSRP routing engine for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: MSRP routing engine for Kamailio
@@ -2168,19 +2192,20 @@ Description: MSRP routing engine for Kamailio
 
 Package: kamailio-mod-mtree
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-mtree-any
 Section: net
 Category: Network
 Repository: base
 Title: Memory caching system for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Memory caching system for Kamailio
@@ -2188,19 +2213,20 @@ Description: Memory caching system for Kamailio
 
 Package: kamailio-mod-nathelper
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-nathelper:kamailio-mod-usrloc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-nathelper-any
 Section: net
 Category: Network
 Repository: base
 Title: NAT helper for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: NAT helper for Kamailio
@@ -2208,39 +2234,62 @@ Description: NAT helper for Kamailio
 
 Package: kamailio-mod-nat-traversal
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-nat-traversal:kamailio-mod-dialog +PACKAGE_kamailio-mod-nat-traversal:kamailio-mod-sl +PACKAGE_kamailio-mod-nat-traversal:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-nat-traversal-any
 Section: net
 Category: Network
 Repository: base
 Title: NAT traversal for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: NAT traversal for Kamailio
 @@
 
+Package: kamailio-mod-nghttp2
+Submenu: Telephony
+Version: 6.0.1-r2
+Depends: +libc kamailio +PACKAGE_kamailio-mod-nghttp2:libnghttp2 +PACKAGE_kamailio-mod-nghttp2:libopenssl +PACKAGE_kamailio-mod-nghttp2:libevent2 +PACKAGE_kamailio-mod-nghttp2:libevent2-openssl
+Conflicts: 
+Menu-Depends: 
+Provides: @kamailio-mod-nghttp2-any
+Section: net
+Category: Network
+Repository: base
+Title: NGHTTP2 for Kamailio
+Maintainer: Jiri Slachta <jiri@slachta.eu>
+Source: 6.0.1.tar.gz
+License: GPL-2.0+
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
+URL: http://www.kamailio.org/
+Type: ipkg
+Description: HTTP2 server module implementation
+@@
+
 Package: kamailio-mod-ndb-redis
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-ndb-redis:libhiredis
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-ndb-redis-any
 Section: net
 Category: Network
 Repository: base
 Title: Connect to REDIS NoSQL for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Connect to REDIS NoSQL for Kamailio
@@ -2248,19 +2297,20 @@ Description: Connect to REDIS NoSQL for Kamailio
 
 Package: kamailio-mod-nosip
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-nosip:kamailio-mod-rr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-nosip-any
 Section: net
 Category: Network
 Repository: base
 Title: non-sip package handling for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: non-sip package handling for Kamailio
@@ -2268,19 +2318,20 @@ Description: non-sip package handling for Kamailio
 
 Package: kamailio-mod-outbound
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-outbound:kamailio-mod-stun +PACKAGE_kamailio-mod-outbound:libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-outbound-any
 Section: net
 Category: Network
 Repository: base
 Title: SIP Outbound implementation for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: SIP Outbound implementation for Kamailio
@@ -2288,19 +2339,20 @@ Description: SIP Outbound implementation for Kamailio
 
 Package: kamailio-mod-p-usrloc
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-p-usrloc-any
 Section: net
 Category: Network
 Repository: base
 Title: Partitioned USRLOC services for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Partitioned USRLOC services for Kamailio
@@ -2308,19 +2360,20 @@ Description: Partitioned USRLOC services for Kamailio
 
 Package: kamailio-mod-path
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-path:kamailio-mod-rr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-path-any
 Section: net
 Category: Network
 Repository: base
 Title: SIP path insertion for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: SIP path insertion for Kamailio
@@ -2328,19 +2381,20 @@ Description: SIP path insertion for Kamailio
 
 Package: kamailio-mod-pdb
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-pdb-any
 Section: net
 Category: Network
 Repository: base
 Title: Number portability module for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Number portability module for Kamailio
@@ -2348,19 +2402,20 @@ Description: Number portability module for Kamailio
 
 Package: kamailio-mod-pdt
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-pdt-any
 Section: net
 Category: Network
 Repository: base
 Title: Prefix-to-Domain translator for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Prefix-to-Domain translator for Kamailio
@@ -2368,19 +2423,20 @@ Description: Prefix-to-Domain translator for Kamailio
 
 Package: kamailio-mod-permissions
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-permissions-any
 Section: net
 Category: Network
 Repository: base
 Title: Permissions control for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Permissions control for Kamailio
@@ -2388,19 +2444,20 @@ Description: Permissions control for Kamailio
 
 Package: kamailio-mod-pike
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-pike-any
 Section: net
 Category: Network
 Repository: base
 Title: Flood detector for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Flood detector for Kamailio
@@ -2408,19 +2465,20 @@ Description: Flood detector for Kamailio
 
 Package: kamailio-mod-pipelimit
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-pipelimit:kamailio-mod-sl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-pipelimit-any
 Section: net
 Category: Network
 Repository: base
 Title: Traffic shaping policies for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Traffic shaping policies for Kamailio
@@ -2428,19 +2486,20 @@ Description: Traffic shaping policies for Kamailio
 
 Package: kamailio-mod-posops
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-posops-any
 Section: net
 Category: Network
 Repository: base
 Title: Position SIP message buffer ops for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: The module exports utility functions to work with the position inside the SIP
@@ -2450,19 +2509,20 @@ a specific position.
 
 Package: kamailio-mod-prefix-route
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-prefix-route-any
 Section: net
 Category: Network
 Repository: base
 Title: Execute based on prefix for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Execute based on prefix for Kamailio
@@ -2470,19 +2530,20 @@ Description: Execute based on prefix for Kamailio
 
 Package: kamailio-mod-presence
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-presence:kamailio-mod-sl +PACKAGE_kamailio-mod-presence:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-presence-any
 Section: net
 Category: Network
 Repository: base
 Title: Presence server for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Presence server for Kamailio
@@ -2490,19 +2551,20 @@ Description: Presence server for Kamailio
 
 Package: kamailio-mod-presence-conference
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-presence-conference:kamailio-mod-presence
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-presence-conference-any
 Section: net
 Category: Network
 Repository: base
 Title: Conference events for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Conference events for Kamailio
@@ -2510,39 +2572,62 @@ Description: Conference events for Kamailio
 
 Package: kamailio-mod-presence-dialoginfo
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-presence-dialoginfo:kamailio-mod-presence
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-presence-dialoginfo-any
 Section: net
 Category: Network
 Repository: base
 Title: Dialog Event presence for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Dialog Event presence for Kamailio
 @@
 
+Package: kamailio-mod-presence-dfks
+Submenu: Telephony
+Version: 6.0.1-r2
+Depends: +libc kamailio +PACKAGE_kamailio-mod-presence-dfks:kamailio-mod-sl +PACKAGE_kamailio-mod-presence-dfks:kamailio-mod-presence +PACKAGE_kamailio-mod-presence-dfks:kamailio-mod-pua
+Conflicts: 
+Menu-Depends: 
+Provides: @kamailio-mod-presence-dfks-any
+Section: net
+Category: Network
+Repository: base
+Title: Device FeatureKey Synchronization for Kamailio
+Maintainer: Jiri Slachta <jiri@slachta.eu>
+Source: 6.0.1.tar.gz
+License: GPL-2.0+
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
+URL: http://www.kamailio.org/
+Type: ipkg
+Description: Device FeatureKey Synchronization for Kamailio
+@@
+
 Package: kamailio-mod-presence-mwi
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-presence-mwi:kamailio-mod-presence
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-presence-mwi-any
 Section: net
 Category: Network
 Repository: base
 Title: MWI presence for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: MWI presence for Kamailio
@@ -2550,19 +2635,20 @@ Description: MWI presence for Kamailio
 
 Package: kamailio-mod-presence-profile
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-presence-profile:kamailio-mod-presence
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-presence-profile-any
 Section: net
 Category: Network
 Repository: base
 Title: User profile extensions for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: User profile extensions for Kamailio
@@ -2570,19 +2656,20 @@ Description: User profile extensions for Kamailio
 
 Package: kamailio-mod-presence-reginfo
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-presence-reginfo:kamailio-mod-presence
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-presence-reginfo-any
 Section: net
 Category: Network
 Repository: base
 Title: Registration info for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Registration info for Kamailio
@@ -2590,19 +2677,20 @@ Description: Registration info for Kamailio
 
 Package: kamailio-mod-presence-xml
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-presence-xml:kamailio-mod-presence +PACKAGE_kamailio-mod-presence-xml:kamailio-mod-xcap-client
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-presence-xml-any
 Section: net
 Category: Network
 Repository: base
 Title: XCAP presence for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: XCAP presence for Kamailio
@@ -2610,19 +2698,20 @@ Description: XCAP presence for Kamailio
 
 Package: kamailio-mod-pua
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-pua:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-pua-any
 Section: net
 Category: Network
 Repository: base
 Title: Presence User Agent for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Presence User Agent for Kamailio
@@ -2630,19 +2719,20 @@ Description: Presence User Agent for Kamailio
 
 Package: kamailio-mod-pua-bla
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-pua-bla:kamailio-mod-presence +PACKAGE_kamailio-mod-pua-bla:kamailio-mod-pua +PACKAGE_kamailio-mod-pua-bla:kamailio-mod-usrloc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-pua-bla-any
 Section: net
 Category: Network
 Repository: base
 Title: Bridged Line Appearence PUA for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Bridged Line Appearence PUA for Kamailio
@@ -2650,19 +2740,20 @@ Description: Bridged Line Appearence PUA for Kamailio
 
 Package: kamailio-mod-pua-dialoginfo
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-pua-dialoginfo:kamailio-mod-dialog +PACKAGE_kamailio-mod-pua-dialoginfo:kamailio-mod-pua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-pua-dialoginfo-any
 Section: net
 Category: Network
 Repository: base
 Title: Dialog Event PUA for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Dialog Event PUA for Kamailio
@@ -2670,19 +2761,20 @@ Description: Dialog Event PUA for Kamailio
 
 Package: kamailio-mod-pua-json
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-pua-json:libjson-c
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-pua-json-any
 Section: net
 Category: Network
 Repository: base
 Title: Presence user agent implementation with JSON messages for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Presence user agent implementation with JSON messages for Kamailio
@@ -2690,19 +2782,20 @@ Description: Presence user agent implementation with JSON messages for Kamailio
 
 Package: kamailio-mod-pua-reginfo
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-pua-reginfo:kamailio-mod-pua +PACKAGE_kamailio-mod-pua-reginfo:kamailio-mod-usrloc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-pua-reginfo-any
 Section: net
 Category: Network
 Repository: base
 Title: PUA registration info for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: PUA registration info for Kamailio
@@ -2710,19 +2803,20 @@ Description: PUA registration info for Kamailio
 
 Package: kamailio-mod-pua-rpc
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-pua-rpc:kamailio-mod-pua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-pua-rpc-any
 Section: net
 Category: Network
 Repository: base
 Title: RPC extensions for PUA for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: RPC extensions for PUA for Kamailio
@@ -2730,19 +2824,20 @@ Description: RPC extensions for PUA for Kamailio
 
 Package: kamailio-mod-pua-usrloc
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-pua-usrloc:kamailio-mod-pua +PACKAGE_kamailio-mod-pua-usrloc:kamailio-mod-usrloc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-pua-usrloc-any
 Section: net
 Category: Network
 Repository: base
 Title: PUA User Location for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: PUA User Location for Kamailio
@@ -2750,19 +2845,20 @@ Description: PUA User Location for Kamailio
 
 Package: kamailio-mod-pua-xmpp
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-pua-xmpp:kamailio-mod-presence +PACKAGE_kamailio-mod-pua-xmpp:kamailio-mod-pua +PACKAGE_kamailio-mod-pua-xmpp:kamailio-mod-xmpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-pua-xmpp-any
 Section: net
 Category: Network
 Repository: base
 Title: PUA XMPP for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: PUA XMPP for Kamailio
@@ -2770,39 +2866,62 @@ Description: PUA XMPP for Kamailio
 
 Package: kamailio-mod-pv
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-pv-any
 Section: net
 Category: Network
 Repository: base
 Title: Pseudo-Variables for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Pseudo-Variables for Kamailio
 @@
 
-Package: kamailio-mod-pv-headers
+Package: kamailio-mod-pvtpl
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-pvtpl-any
+Section: net
+Category: Network
+Repository: base
+Title: PVTPL for Kamailio
+Maintainer: Jiri Slachta <jiri@slachta.eu>
+Source: 6.0.1.tar.gz
+License: GPL-2.0+
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
+URL: http://www.kamailio.org/
+Type: ipkg
+Description: reads content of files at startup and can evaluate the variables inside during runtime
+@@
+
+Package: kamailio-mod-pv-headers
+Submenu: Telephony
+Version: 6.0.1-r2
+Depends: +libc kamailio
+Conflicts: 
+Menu-Depends: 
+Provides: @kamailio-mod-pv-headers-any
 Section: net
 Category: Network
 Repository: base
 Title: Flexible SIP header management for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Flexible SIP header management for Kamailio
@@ -2810,19 +2929,20 @@ Description: Flexible SIP header management for Kamailio
 
 Package: kamailio-mod-qos
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-qos:kamailio-mod-dialog
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-qos-any
 Section: net
 Category: Network
 Repository: base
 Title: QoS control for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: QoS control for Kamailio
@@ -2830,19 +2950,20 @@ Description: QoS control for Kamailio
 
 Package: kamailio-mod-ratelimit
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-ratelimit-any
 Section: net
 Category: Network
 Repository: base
 Title: Traffic shapping for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Traffic shapping for Kamailio
@@ -2850,19 +2971,20 @@ Description: Traffic shapping for Kamailio
 
 Package: kamailio-mod-regex
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-regex:libpcre2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-regex-any
 Section: net
 Category: Network
 Repository: base
 Title: Regular Expression for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Regular Expression for Kamailio
@@ -2870,19 +2992,20 @@ Description: Regular Expression for Kamailio
 
 Package: kamailio-mod-registrar
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-registrar:kamailio-mod-usrloc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-registrar-any
 Section: net
 Category: Network
 Repository: base
 Title: SIP Registrar for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: SIP Registrar for Kamailio
@@ -2890,19 +3013,20 @@ Description: SIP Registrar for Kamailio
 
 Package: kamailio-mod-rls
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-rls:kamailio-mod-presence +PACKAGE_kamailio-mod-rls:kamailio-mod-pua +PACKAGE_kamailio-mod-rls:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-rls-any
 Section: net
 Category: Network
 Repository: base
 Title: Resource List Server for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Resource List Server for Kamailio
@@ -2910,19 +3034,20 @@ Description: Resource List Server for Kamailio
 
 Package: kamailio-mod-rr
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-rr-any
 Section: net
 Category: Network
 Repository: base
 Title: Record-Route and Route for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Record-Route and Route for Kamailio
@@ -2930,19 +3055,20 @@ Description: Record-Route and Route for Kamailio
 
 Package: kamailio-mod-rtimer
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-rtimer-any
 Section: net
 Category: Network
 Repository: base
 Title: Routing Timer for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Routing Timer for Kamailio
@@ -2950,19 +3076,20 @@ Description: Routing Timer for Kamailio
 
 Package: kamailio-mod-rtjson
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-rtjson-any
 Section: net
 Category: Network
 Repository: base
 Title: SIP routing based on JSON API for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: SIP routing based on JSON API for Kamailio
@@ -2970,19 +3097,20 @@ Description: SIP routing based on JSON API for Kamailio
 
 Package: kamailio-mod-rtpengine
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-rtpengine:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-rtpengine-any
 Section: net
 Category: Network
 Repository: base
 Title: RTP engine for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: RTP engine for Kamailio
@@ -2990,19 +3118,20 @@ Description: RTP engine for Kamailio
 
 Package: kamailio-mod-rtpproxy
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-rtpproxy:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-rtpproxy-any
 Section: net
 Category: Network
 Repository: base
 Title: RTP proxy for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: RTP proxy for Kamailio
@@ -3010,19 +3139,20 @@ Description: RTP proxy for Kamailio
 
 Package: kamailio-mod-sanity
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-sanity:kamailio-mod-sl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-sanity-any
 Section: net
 Category: Network
 Repository: base
 Title: SIP sanity checks for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: SIP sanity checks for Kamailio
@@ -3030,19 +3160,20 @@ Description: SIP sanity checks for Kamailio
 
 Package: kamailio-mod-sca
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-sca:kamailio-mod-sl +PACKAGE_kamailio-mod-sca:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-sca-any
 Section: net
 Category: Network
 Repository: base
 Title: Shared Call Appearances for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Shared Call Appearances for Kamailio
@@ -3050,19 +3181,20 @@ Description: Shared Call Appearances for Kamailio
 
 Package: kamailio-mod-sctp
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-sctp:libsctp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-sctp-any
 Section: net
 Category: Network
 Repository: base
 Title: SCTP support for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: SCTP support for Kamailio
@@ -3070,19 +3202,20 @@ Description: SCTP support for Kamailio
 
 Package: kamailio-mod-sdpops
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-sdpops-any
 Section: net
 Category: Network
 Repository: base
 Title: Managing SDP payloads for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Managing SDP payloads for Kamailio
@@ -3090,19 +3223,20 @@ Description: Managing SDP payloads for Kamailio
 
 Package: kamailio-mod-seas
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-seas:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-seas-any
 Section: net
 Category: Network
 Repository: base
 Title: Sip Express Application Server for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Sip Express Application Server for Kamailio
@@ -3110,19 +3244,20 @@ Description: Sip Express Application Server for Kamailio
 
 Package: kamailio-mod-secfilter
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-secfilter-any
 Section: net
 Category: Network
 Repository: base
 Title: Allow/block filters for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Allow/block filters for Kamailio
@@ -3130,19 +3265,20 @@ Description: Allow/block filters for Kamailio
 
 Package: kamailio-mod-sipcapture
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-sipcapture-any
 Section: net
 Category: Network
 Repository: base
 Title: SIP capture for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: SIP capture for Kamailio
@@ -3150,19 +3286,20 @@ Description: SIP capture for Kamailio
 
 Package: kamailio-mod-sipdump
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-sipdump-any
 Section: net
 Category: Network
 Repository: base
 Title: Save SIP traffic for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Save SIP traffic for Kamailio
@@ -3170,19 +3307,20 @@ Description: Save SIP traffic for Kamailio
 
 Package: kamailio-mod-siprepo
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-siprepo-any
 Section: net
 Category: Network
 Repository: base
 Title: SIP Repo for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: This module can store and fetch SIP message content in an in-memory hash
@@ -3191,19 +3329,20 @@ table.
 
 Package: kamailio-mod-sipt
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-sipt-any
 Section: net
 Category: Network
 Repository: base
 Title: SIP-T and SIP-I operations for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: SIP-T and SIP-I operations for Kamailio
@@ -3211,19 +3350,20 @@ Description: SIP-T and SIP-I operations for Kamailio
 
 Package: kamailio-mod-siptrace
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-siptrace-any
 Section: net
 Category: Network
 Repository: base
 Title: SIP trace for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: SIP trace for Kamailio
@@ -3231,19 +3371,20 @@ Description: SIP trace for Kamailio
 
 Package: kamailio-mod-siputils
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-siputils:kamailio-mod-sl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-siputils-any
 Section: net
 Category: Network
 Repository: base
 Title: SIP utilities for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: SIP utilities for Kamailio
@@ -3251,19 +3392,20 @@ Description: SIP utilities for Kamailio
 
 Package: kamailio-mod-sl
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-sl-any
 Section: net
 Category: Network
 Repository: base
 Title: Stateless replier for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Stateless replier for Kamailio
@@ -3271,19 +3413,20 @@ Description: Stateless replier for Kamailio
 
 Package: kamailio-mod-slack
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-slack:libcurl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-slack-any
 Section: net
 Category: Network
 Repository: base
 Title: Slack integration for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: This module provides integration with Slack over webhooks.
@@ -3291,19 +3434,20 @@ Description: This module provides integration with Slack over webhooks.
 
 Package: kamailio-mod-sms
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-sms:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-sms-any
 Section: net
 Category: Network
 Repository: base
 Title: SIP-to-SMS IM gateway for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: SIP-to-SMS IM gateway for Kamailio
@@ -3311,19 +3455,20 @@ Description: SIP-to-SMS IM gateway for Kamailio
 
 Package: kamailio-mod-smsops
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-smsops-any
 Section: net
 Category: Network
 Repository: base
 Title: Handle SMS packets in SIP for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Handle SMS packets in SIP for Kamailio
@@ -3331,19 +3476,20 @@ Description: Handle SMS packets in SIP for Kamailio
 
 Package: kamailio-mod-snmpstats
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-snmpstats:libnetsnmp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-snmpstats-any
 Section: net
 Category: Network
 Repository: base
 Title: SNMP interface for statistics for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: SNMP interface for statistics for Kamailio
@@ -3351,19 +3497,20 @@ Description: SNMP interface for statistics for Kamailio
 
 Package: kamailio-mod-speeddial
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-speeddial-any
 Section: net
 Category: Network
 Repository: base
 Title: Per-user speed-dial controller for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Per-user speed-dial controller for Kamailio
@@ -3371,19 +3518,20 @@ Description: Per-user speed-dial controller for Kamailio
 
 Package: kamailio-mod-sqlops
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-sqlops-any
 Section: net
 Category: Network
 Repository: base
 Title: SQL operations for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: SQL operations for Kamailio
@@ -3391,19 +3539,20 @@ Description: SQL operations for Kamailio
 
 Package: kamailio-mod-ss7ops
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-ss7ops-any
 Section: net
 Category: Network
 Repository: base
 Title: JSON Operations for SS7 over HEP for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: JSON Operations for SS7 over HEP for Kamailio
@@ -3411,19 +3560,20 @@ Description: JSON Operations for SS7 over HEP for Kamailio
 
 Package: kamailio-mod-statistics
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-statistics-any
 Section: net
 Category: Network
 Repository: base
 Title: Script statistics for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Script statistics for Kamailio
@@ -3431,19 +3581,20 @@ Description: Script statistics for Kamailio
 
 Package: kamailio-mod-statsc
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-statsc-any
 Section: net
 Category: Network
 Repository: base
 Title: Statistics collector for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Statistics collector for Kamailio
@@ -3451,19 +3602,20 @@ Description: Statistics collector for Kamailio
 
 Package: kamailio-mod-statsd
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-statsd-any
 Section: net
 Category: Network
 Repository: base
 Title: Connector for statsd application for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Connector for statsd application for Kamailio
@@ -3471,19 +3623,20 @@ Description: Connector for statsd application for Kamailio
 
 Package: kamailio-mod-stun
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-stun-any
 Section: net
 Category: Network
 Repository: base
 Title: STUN server support for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: STUN server support for Kamailio
@@ -3491,19 +3644,20 @@ Description: STUN server support for Kamailio
 
 Package: kamailio-mod-sst
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-sst:kamailio-mod-dialog +PACKAGE_kamailio-mod-sst:kamailio-mod-sl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-sst-any
 Section: net
 Category: Network
 Repository: base
 Title: SIP Session Timer for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: SIP Session Timer for Kamailio
@@ -3511,19 +3665,20 @@ Description: SIP Session Timer for Kamailio
 
 Package: kamailio-mod-tcpops
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-tcpops-any
 Section: net
 Category: Network
 Repository: base
 Title: TCP options tweaking operations for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: TCP options tweaking operations for Kamailio
@@ -3531,19 +3686,20 @@ Description: TCP options tweaking operations for Kamailio
 
 Package: kamailio-mod-textops
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-textops-any
 Section: net
 Category: Network
 Repository: base
 Title: Text operations for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Text operations for Kamailio
@@ -3551,19 +3707,20 @@ Description: Text operations for Kamailio
 
 Package: kamailio-mod-textopsx
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-textopsx-any
 Section: net
 Category: Network
 Repository: base
 Title: Extra text operations for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Extra text operations for Kamailio
@@ -3571,19 +3728,20 @@ Description: Extra text operations for Kamailio
 
 Package: kamailio-mod-timer
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-timer-any
 Section: net
 Category: Network
 Repository: base
 Title: Execute routing blocks on core timers for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Execute routing blocks on core timers for Kamailio
@@ -3591,19 +3749,20 @@ Description: Execute routing blocks on core timers for Kamailio
 
 Package: kamailio-mod-tls
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-tls:libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-tls-any
 Section: net
 Category: Network
 Repository: base
 Title: TLS operations for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: TLS operations for Kamailio
@@ -3611,19 +3770,20 @@ Description: TLS operations for Kamailio
 
 Package: kamailio-mod-tmrec
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-tmrec-any
 Section: net
 Category: Network
 Repository: base
 Title: Match time recurrences for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Match time recurrences for Kamailio
@@ -3631,19 +3791,20 @@ Description: Match time recurrences for Kamailio
 
 Package: kamailio-mod-topoh
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-topoh:kamailio-mod-rr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-topoh-any
 Section: net
 Category: Network
 Repository: base
 Title: Topology hiding for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Topology hiding for Kamailio
@@ -3651,39 +3812,62 @@ Description: Topology hiding for Kamailio
 
 Package: kamailio-mod-topos
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-topos:kamailio-mod-rr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-topos-any
 Section: net
 Category: Network
 Repository: base
 Title: Topology stripping module for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Topology stripping module for Kamailio
 @@
 
+Package: kamailio-mod-topos-htable
+Submenu: Telephony
+Version: 6.0.1-r2
+Depends: +libc kamailio +PACKAGE_kamailio-mod-topos-htable:kamailio-mod-topos +PACKAGE_kamailio-mod-topos-htable:kamailio-mod-htable
+Conflicts: 
+Menu-Depends: 
+Provides: @kamailio-mod-topos-htable-any
+Section: net
+Category: Network
+Repository: base
+Title: Hash Table storage for topology stripping for Kamailio
+Maintainer: Jiri Slachta <jiri@slachta.eu>
+Source: 6.0.1.tar.gz
+License: GPL-2.0+
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
+URL: http://www.kamailio.org/
+Type: ipkg
+Description: Hash Table storage for topology stripping for Kamailio
+@@
+
 Package: kamailio-mod-topos-redis
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-topos-redis:kamailio-mod-ndb-redis +PACKAGE_kamailio-mod-topos-redis:kamailio-mod-topos
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-topos-redis-any
 Section: net
 Category: Network
 Repository: base
 Title: Redis backend for topos module for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Redis backend for topos module for Kamailio
@@ -3691,19 +3875,20 @@ Description: Redis backend for topos module for Kamailio
 
 Package: kamailio-mod-tm
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-tm-any
 Section: net
 Category: Network
 Repository: base
 Title: Transaction for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Transaction for Kamailio
@@ -3711,19 +3896,20 @@ Description: Transaction for Kamailio
 
 Package: kamailio-mod-tmx
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-tmx-any
 Section: net
 Category: Network
 Repository: base
 Title: Transaction module extensions for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Transaction module extensions for Kamailio
@@ -3731,19 +3917,20 @@ Description: Transaction module extensions for Kamailio
 
 Package: kamailio-mod-tsilo
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-tsilo:kamailio-mod-registrar +PACKAGE_kamailio-mod-tsilo:kamailio-mod-sl +PACKAGE_kamailio-mod-tsilo:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-tsilo-any
 Section: net
 Category: Network
 Repository: base
 Title: Transaction storage for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Transaction storage for Kamailio
@@ -3751,19 +3938,20 @@ Description: Transaction storage for Kamailio
 
 Package: kamailio-mod-uac
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-uac:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-uac-any
 Section: net
 Category: Network
 Repository: base
 Title: User Agent Client for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: User Agent Client for Kamailio
@@ -3771,19 +3959,20 @@ Description: User Agent Client for Kamailio
 
 Package: kamailio-mod-uac-redirect
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-uac-redirect:kamailio-mod-tm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-uac-redirect-any
 Section: net
 Category: Network
 Repository: base
 Title: User Agent Client redirection for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: User Agent Client redirection for Kamailio
@@ -3791,19 +3980,20 @@ Description: User Agent Client redirection for Kamailio
 
 Package: kamailio-mod-uid-auth-db
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-uid-auth-db:kamailio-mod-auth
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-uid-auth-db-any
 Section: net
 Category: Network
 Repository: base
 Title: Authentication module for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Authentication module for Kamailio
@@ -3811,19 +4001,20 @@ Description: Authentication module for Kamailio
 
 Package: kamailio-mod-uid-avp-db
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-uid-avp-db-any
 Section: net
 Category: Network
 Repository: base
 Title: AVP database operations for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: AVP database operations for Kamailio
@@ -3831,19 +4022,20 @@ Description: AVP database operations for Kamailio
 
 Package: kamailio-mod-uid-domain
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-uid-domain-any
 Section: net
 Category: Network
 Repository: base
 Title: Domains management for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Domains management for Kamailio
@@ -3851,19 +4043,20 @@ Description: Domains management for Kamailio
 
 Package: kamailio-mod-uid-gflags
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-uid-gflags-any
 Section: net
 Category: Network
 Repository: base
 Title: Global attributes and flags for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Global attributes and flags for Kamailio
@@ -3871,19 +4064,20 @@ Description: Global attributes and flags for Kamailio
 
 Package: kamailio-mod-uid-uri-db
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-uid-uri-db-any
 Section: net
 Category: Network
 Repository: base
 Title: Database URI operations for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Database URI operations for Kamailio
@@ -3891,19 +4085,20 @@ Description: Database URI operations for Kamailio
 
 Package: kamailio-mod-uri-db
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-uri-db-any
 Section: net
 Category: Network
 Repository: base
 Title: Database-backend SIP URI checking for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Database-backend SIP URI checking for Kamailio
@@ -3911,19 +4106,20 @@ Description: Database-backend SIP URI checking for Kamailio
 
 Package: kamailio-mod-userblocklist
 Submenu: Telephony
-Version: 5.7.2-r2
-Depends: +libc kamailio +PACKAGE_kamailio-mod-userblocklist:kamailio-lib-libtrie
+Version: 6.0.1-r2
+Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-userblocklist-any
 Section: net
 Category: Network
 Repository: base
 Title: User blocklists for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: User blocklists for Kamailio
@@ -3931,19 +4127,20 @@ Description: User blocklists for Kamailio
 
 Package: kamailio-mod-usrloc
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-usrloc-any
 Section: net
 Category: Network
 Repository: base
 Title: User location for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: User location for Kamailio
@@ -3951,19 +4148,20 @@ Description: User location for Kamailio
 
 Package: kamailio-mod-utils
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-utils:libcurl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-utils-any
 Section: net
 Category: Network
 Repository: base
 Title: Misc utilities for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Misc utilities for Kamailio
@@ -3971,19 +4169,20 @@ Description: Misc utilities for Kamailio
 
 Package: kamailio-mod-uuid
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-uuid:libuuid
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-uuid-any
 Section: net
 Category: Network
 Repository: base
 Title: UUID utilities for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: UUID utilities for Kamailio
@@ -3991,19 +4190,20 @@ Description: UUID utilities for Kamailio
 
 Package: kamailio-mod-websocket
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-websocket:kamailio-mod-sl +PACKAGE_kamailio-mod-websocket:kamailio-mod-tm +PACKAGE_kamailio-mod-websocket:libopenssl +PACKAGE_kamailio-mod-websocket:libunistring
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-websocket-any
 Section: net
 Category: Network
 Repository: base
 Title: WebSocket transport layer for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: WebSocket transport layer for Kamailio
@@ -4011,19 +4211,20 @@ Description: WebSocket transport layer for Kamailio
 
 Package: kamailio-mod-xcap-client
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-xcap-client:libcurl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-xcap-client-any
 Section: net
 Category: Network
 Repository: base
 Title: XCAP Client for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: XCAP Client for Kamailio
@@ -4031,19 +4232,20 @@ Description: XCAP Client for Kamailio
 
 Package: kamailio-mod-xcap-server
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-xcap-server:kamailio-mod-xhttp +PACKAGE_kamailio-mod-xcap-server:kamailio-mod-sl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-xcap-server-any
 Section: net
 Category: Network
 Repository: base
 Title: XCAP server implementation for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: XCAP server implementation for Kamailio
@@ -4051,19 +4253,20 @@ Description: XCAP server implementation for Kamailio
 
 Package: kamailio-mod-xhttp
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-xhttp:kamailio-mod-sl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-xhttp-any
 Section: net
 Category: Network
 Repository: base
 Title: Basic HTTP request handling server for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Basic HTTP request handling server for Kamailio
@@ -4071,19 +4274,20 @@ Description: Basic HTTP request handling server for Kamailio
 
 Package: kamailio-mod-xhttp-pi
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-xhttp-pi:kamailio-mod-xhttp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-xhttp-pi-any
 Section: net
 Category: Network
 Repository: base
 Title: HTTP provisioning interface for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: HTTP provisioning interface for Kamailio
@@ -4091,19 +4295,20 @@ Description: HTTP provisioning interface for Kamailio
 
 Package: kamailio-mod-xhttp-prom
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-xhttp-prom:kamailio-mod-xhttp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-xhttp-prom-any
 Section: net
 Category: Network
 Repository: base
 Title: Prometheus metrics for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Prometheus metrics for Kamailio
@@ -4111,19 +4316,20 @@ Description: Prometheus metrics for Kamailio
 
 Package: kamailio-mod-xhttp-rpc
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-xhttp-rpc:kamailio-mod-xhttp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-xhttp-rpc-any
 Section: net
 Category: Network
 Repository: base
 Title: RPC commands handling over HTTP for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: RPC commands handling over HTTP for Kamailio
@@ -4131,19 +4337,20 @@ Description: RPC commands handling over HTTP for Kamailio
 
 Package: kamailio-mod-xlog
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-xlog-any
 Section: net
 Category: Network
 Repository: base
 Title: Advanced logger for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Advanced logger for Kamailio
@@ -4151,19 +4358,20 @@ Description: Advanced logger for Kamailio
 
 Package: kamailio-mod-xmlops
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-xmlops-any
 Section: net
 Category: Network
 Repository: base
 Title: XML operations for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: XML operations for Kamailio
@@ -4171,19 +4379,20 @@ Description: XML operations for Kamailio
 
 Package: kamailio-mod-xmlrpc
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-xmlrpc-any
 Section: net
 Category: Network
 Repository: base
 Title: XML RPC module for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: XML RPC module for Kamailio
@@ -4191,19 +4400,20 @@ Description: XML RPC module for Kamailio
 
 Package: kamailio-mod-xmpp
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio +PACKAGE_kamailio-mod-xmpp:kamailio-mod-tm +PACKAGE_kamailio-mod-xmpp:libexpat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-xmpp-any
 Section: net
 Category: Network
 Repository: base
 Title: SIP-to-XMPP Gateway for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: SIP-to-XMPP Gateway for Kamailio
@@ -4211,19 +4421,20 @@ Description: SIP-to-XMPP Gateway for Kamailio
 
 Package: kamailio-mod-xprint
 Submenu: Telephony
-Version: 5.7.2-r2
+Version: 6.0.1-r2
 Depends: +libc kamailio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kamailio-mod-xprint-any
 Section: net
 Category: Network
 Repository: base
 Title: Print messages with specifiers for Kamailio
 Maintainer: Jiri Slachta <jiri@slachta.eu>
-Source: kamailio-5.7.2_src.tar.gz
+Source: 6.0.1.tar.gz
 License: GPL-2.0+
 LicenseFiles: COPYING
+CPE-ID: cpe:/a:kamailio:kamailio
 URL: http://www.kamailio.org/
 Type: ipkg
 Description: Print messages with specifiers for Kamailio

@@ -1,0 +1,20 @@
+Source-Makefile: feeds/luci/libs/rpcd-mod-rad3-enc/Makefile
+
+Package: rpcd-mod-rad3-enc
+Version: 20260109
+Depends: +libc +rpcd +python3 +python3-passlib +radicale3
+Conflicts: 
+Menu-Depends: 
+Provides: @rpcd-mod-rad3-enc-any rpcd-mod-rad2-enc
+Section: libs
+Category: Libraries
+Repository: base
+Title: Radicale v3 Hashing RPC module
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Description: Radicale v3 Hashing RPC module
+@@
+
+

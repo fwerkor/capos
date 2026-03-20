@@ -4,10 +4,10 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 Package: luci-lib-nixio
 Submenu: 6. Libraries
 Version: x
-Depends: +libc +liblua
+Depends: +libc +USE_GLIBC:libcrypt-compat +liblua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-lib-nixio-any
 Section: luci
 Category: LuCI
 Repository: base

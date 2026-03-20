@@ -6,7 +6,7 @@ Version: 5.3.1-r1
 Depends: +libc +librt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libosip2-any
 Section: libs
 Category: Libraries
 Repository: base

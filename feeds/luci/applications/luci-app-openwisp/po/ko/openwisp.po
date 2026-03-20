@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2025-08-09 17:23+0000\n"
-"Last-Translator: 안정언 <me@jeongeon.net>\n"
+"PO-Revision-Date: 2026-03-03 17:09+0000\n"
+"Last-Translator: Hyeonjeong Lee <h9101654@gmail.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsopenwisp/ko/>\n"
 "Language: ko\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:17
 msgid "Advanced Settings"
-msgstr ""
+msgstr "고급 설정"
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:82
 msgid "Boot Delay"
@@ -31,9 +31,7 @@ msgstr ""
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:12
 msgid ""
 "Configure, start and stop the OpenWISP agent on this device. Read more about "
-"configuration values: <a target='_blank' rel='noopener noreferrer' "
-"href='https://github.com/openwisp/openwisp-config'>https://github.com/"
-"openwisp/openwisp-config</a>"
+"configuration values: %s."
 msgstr ""
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:87
@@ -46,11 +44,11 @@ msgstr ""
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:29
 msgid "Disabled"
-msgstr ""
+msgstr "비활성화"
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:27
 msgid "Enable"
-msgstr ""
+msgstr "활성화"
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:28
 msgid "Enable or disable the OpenWISP service."
@@ -58,15 +56,15 @@ msgstr ""
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:30
 msgid "Enabled"
-msgstr "활성화됨"
+msgstr "활성화"
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:16
 msgid "General Settings"
-msgstr ""
+msgstr "일반 설정"
 
 #: applications/luci-app-openwisp/root/usr/share/rpcd/acl.d/luci-app-openwisp.json:3
 msgid "Grant access to luci-app-openwisp"
-msgstr ""
+msgstr "luci-app-openwisp에 접근 권한 부여"
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:74
 msgid "Hardware ID Key"
@@ -142,7 +140,7 @@ msgstr ""
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:36
 msgid "Shared Secret"
-msgstr ""
+msgstr "공유 비밀"
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:64
 msgid "Tags"
@@ -165,8 +163,7 @@ msgid "The Key of this device in the OpenWISP server."
 msgstr ""
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:33
-msgid ""
-"The URL to the OpenWISP server. Example: https://openwisp2.mynetwork.com"
+msgid "The URL to the OpenWISP server. Example: %s"
 msgstr ""
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:20
@@ -233,3 +230,6 @@ msgid ""
 "default, but must be enabled also in the controller application in order to "
 "work."
 msgstr ""
+"자동 등록 기능을 사용하면 장치를 초기화하거나 펌웨어를 다시 설치하더라도 기"
+"존 설정을 그대로 유지할 수 있습니다. 이 기능은 기본으로 활성화되어 있지만, 정"
+"상적으로 작동하려면 컨트롤러 응용 프로그램에서도 활성화해야 합니다."

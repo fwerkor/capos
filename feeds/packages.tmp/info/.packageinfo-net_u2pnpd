@@ -5,7 +5,7 @@ Version: 0.5-r3
 Depends: +libc +libupnp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @u2pnpd-any
 Section: net
 Category: Network
 Repository: base

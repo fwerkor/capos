@@ -3,11 +3,11 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 
 Package: luci-app-adblock-fast
 Submenu: 3. Applications
-Version: 1.2.0-r20
-Depends: +libc +luci-base +adblock-fast +jsonfilter
+Version: 1.2.2-r10
+Depends: +libc +luci-base +adblock-fast +rpcd-mod-ucode
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-adblock-fast-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -15,7 +15,7 @@ Title: AdBlock-Fast Web UI
 Maintainer: OpenWrt LuCI community
 Source: 
 License: AGPL-3.0-or-later
-URL: https://github.com/stangri/luci-app-adblock-fast/
+URL: https://github.com/mossdef-org/luci-app-adblock-fast/
 Type: ipkg
 Description:    Provides Web UI for adblock-fast service.
 @@
@@ -24,7 +24,7 @@ Config:
 help
 	AdBlock-Fast Web UI
 	.
-	Version: 1.2.0-20
+	Version: 1.2.2-10
 @@
 
 Package: luci-i18n-adblock-fast-ar
@@ -33,7 +33,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-ar-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -52,7 +52,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-bg-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -71,7 +71,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-bn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -90,7 +90,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-ca-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -109,7 +109,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-cs-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -128,7 +128,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-da-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -147,7 +147,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-de-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -166,7 +166,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-el-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -185,7 +185,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-es-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -198,13 +198,32 @@ Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Español (Spanish)
 @@
 
+Package: luci-i18n-adblock-fast-fa
+Default: LUCI_LANG_fa||(ALL&&m)
+Version: x
+Depends: +libc luci-app-adblock-fast
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-adblock-fast-fa-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-adblock-fast - fa translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-adblock-fast - Farsi (Persian)
+@@
+
 Package: luci-i18n-adblock-fast-fi
 Default: LUCI_LANG_fi||(ALL&&m)
 Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-fi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -223,7 +242,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-fr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -242,7 +261,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-ga-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -261,7 +280,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-he-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -280,7 +299,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-hi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -299,7 +318,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-hu-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -318,7 +337,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-it-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -337,7 +356,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-ja-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -356,7 +375,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-ko-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -375,7 +394,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-lt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -394,7 +413,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-mr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -413,7 +432,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-ms-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -432,7 +451,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-no-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -451,7 +470,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-nl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -470,7 +489,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-pl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -489,7 +508,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-pt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -508,7 +527,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -527,7 +546,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-ro-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -546,7 +565,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-ru-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -565,7 +584,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-sk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -584,7 +603,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-sv-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -597,13 +616,32 @@ Hidden: 1
 Description:     Translation for luci-app-adblock-fast - Svenska (Swedish)
 @@
 
+Package: luci-i18n-adblock-fast-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-adblock-fast
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-adblock-fast-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-adblock-fast - ta translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-adblock-fast - Tamil (Tamil)
+@@
+
 Package: luci-i18n-adblock-fast-tr
 Default: LUCI_LANG_tr||(ALL&&m)
 Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-tr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -622,7 +660,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-uk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -641,7 +679,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-vi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -660,7 +698,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -679,7 +717,7 @@ Version: x
 Depends: +libc luci-app-adblock-fast
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-adblock-fast-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base

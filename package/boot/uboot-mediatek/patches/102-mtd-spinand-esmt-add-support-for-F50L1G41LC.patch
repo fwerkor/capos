@@ -7,14 +7,14 @@ ID with support for the ESMT F50L1G41LC chip.
 
 --- a/drivers/mtd/nand/spi/core.c
 +++ b/drivers/mtd/nand/spi/core.c
-@@ -834,6 +834,7 @@ static const struct spinand_manufacturer
+@@ -895,6 +895,7 @@ static const struct spinand_manufacturer
  	&toshiba_spinand_manufacturer,
  	&winbond_spinand_manufacturer,
  	&esmt_c8_spinand_manufacturer,
 +	&esmt_8c_spinand_manufacturer,
+ 	&foresee_spinand_manufacturer,
  	&xtx_spinand_manufacturer,
  };
- 
 --- a/drivers/mtd/nand/spi/esmt.c
 +++ b/drivers/mtd/nand/spi/esmt.c
 @@ -13,6 +13,7 @@
@@ -58,11 +58,11 @@ ID with support for the ESMT F50L1G41LC chip.
 +};
 --- a/include/linux/mtd/spinand.h
 +++ b/include/linux/mtd/spinand.h
-@@ -252,6 +252,7 @@ extern const struct spinand_manufacturer
+@@ -306,6 +306,7 @@ extern const struct spinand_manufacturer
  extern const struct spinand_manufacturer toshiba_spinand_manufacturer;
  extern const struct spinand_manufacturer winbond_spinand_manufacturer;
  extern const struct spinand_manufacturer esmt_c8_spinand_manufacturer;
 +extern const struct spinand_manufacturer esmt_8c_spinand_manufacturer;
+ extern const struct spinand_manufacturer foresee_spinand_manufacturer;
  extern const struct spinand_manufacturer xtx_spinand_manufacturer;
  
- /**

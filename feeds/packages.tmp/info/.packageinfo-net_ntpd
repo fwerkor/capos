@@ -2,18 +2,18 @@ Source-Makefile: feeds/packages/net/ntpd/Makefile
 
 Package: ntpd
 Submenu: Time Synchronization
-Version: 4.2.8_p17-r3
+Version: 4.2.8_p18-r3
 Depends: +libc +libopenssl +libpthread +libcap +ntp-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ntpd-any
 Section: net
 Category: Network
 Repository: base
 Title: ISC ntp server
-Maintainer: Peter Wagner <tripolar@gmx.at>
+Maintainer: 
 Require-User: ntp=123:ntp=123
-Source: ntp-4.2.8p17.tar.gz
+Source: ntp-4.2.8p18.tar.gz
 License: NTP
 LicenseFiles: COPYRIGHT html/copyright.html
 CPE-ID: cpe:/a:ntp:ntp
@@ -28,17 +28,17 @@ Description:  The ISC ntp suite is a collection of tools used to synchronize the
 
 Package: ntpdate
 Submenu: Time Synchronization
-Version: 4.2.8_p17-r3
+Version: 4.2.8_p18-r3
 Depends: +libc +libopenssl +libpthread +libcap
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ntpdate-any
 Section: net
 Category: Network
 Repository: base
 Title: ISC ntp date
-Maintainer: Peter Wagner <tripolar@gmx.at>
-Source: ntp-4.2.8p17.tar.gz
+Maintainer: 
+Source: ntp-4.2.8p18.tar.gz
 License: NTP
 LicenseFiles: COPYRIGHT html/copyright.html
 CPE-ID: cpe:/a:ntp:ntp
@@ -53,17 +53,17 @@ Description:  The ISC ntp suite is a collection of tools used to synchronize the
 
 Package: ntp-utils
 Submenu: Time Synchronization
-Version: 4.2.8_p17-r3
+Version: 4.2.8_p18-r3
 Depends: +libc +libopenssl +libpthread +libcap +libevent2-pthreads
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ntp-utils-any
 Section: net
 Category: Network
 Repository: base
 Title: ISC ntp utilities
-Maintainer: Peter Wagner <tripolar@gmx.at>
-Source: ntp-4.2.8p17.tar.gz
+Maintainer: 
+Source: ntp-4.2.8p18.tar.gz
 License: NTP
 LicenseFiles: COPYRIGHT html/copyright.html
 CPE-ID: cpe:/a:ntp:ntp
@@ -78,17 +78,17 @@ Description:  The ISC ntp suite is a collection of tools used to synchronize the
 
 Package: ntp-keygen
 Submenu: Time Synchronization
-Version: 4.2.8_p17-r3
+Version: 4.2.8_p18-r3
 Depends: +libc +libopenssl +libpthread +libcap +libevent2-core
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ntp-keygen-any
 Section: net
 Category: Network
 Repository: base
 Title: ISC ntp keygen
-Maintainer: Peter Wagner <tripolar@gmx.at>
-Source: ntp-4.2.8p17.tar.gz
+Maintainer: 
+Source: ntp-4.2.8p18.tar.gz
 License: NTP
 LicenseFiles: COPYRIGHT html/copyright.html
 CPE-ID: cpe:/a:ntp:ntp

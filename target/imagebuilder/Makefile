@@ -23,6 +23,7 @@ BUNDLER_PATH := $(subst $(space),:,$(filter-out $(TOPDIR)/%,$(subst :,$(space),$
 BUNDLER_COMMAND := PATH=$(BUNDLER_PATH) $(XARGS) $(SCRIPT_DIR)/bundle-libraries.sh $(PKG_BUILD_DIR)/staging_dir/host
 
 PACKAGE_SUFFIX:=$(if $(CONFIG_USE_APK),apk,ipk)
+PACKAGE_VERSION_SEPARATOR:=$(if $(CONFIG_USE_APK),-,_)
 
 all: compile
 
@@ -48,7 +49,6 @@ ifneq ($(CONFIG_USE_APK),)
 	$(call FeedSourcesAppendAPK,$(PKG_BUILD_DIR)/repositories)
 	$(VERSION_SED_SCRIPT) $(PKG_BUILD_DIR)/repositories
   endif
-	echo "packages/packages.adb" >> $(PKG_BUILD_DIR)/repositories
 
 	$(INSTALL_DATA) ./files/README.apk.md $(PKG_BUILD_DIR)/packages/README.md
 else
@@ -68,19 +68,16 @@ else
 	echo 'src imagebuilder file:packages'                          >> $(PKG_BUILD_DIR)/repositories.conf
 endif
 
-ifeq ($(CONFIG_BUILDBOT),)
-  ifeq ($(CONFIG_IB_STANDALONE),)
+ifeq ($(CONFIG_IB_STANDALONE),)
 	$(FIND) $(call FeedPackageDir,libc) -type f \
-		\( -name 'libc*.$(PACKAGE_SUFFIX)' -or -name 'kernel*.$(PACKAGE_SUFFIX)' -or -name 'kmod-*.$(PACKAGE_SUFFIX)' \) \
-		-exec $(CP) -t $(PKG_BUILD_DIR)/packages {} +
-  else
+	  \( \
+		-name 'base-files$(PACKAGE_VERSION_SEPARATOR)*.$(PACKAGE_SUFFIX)' -or \
+		-name 'libc$(PACKAGE_VERSION_SEPARATOR)*.$(PACKAGE_SUFFIX)' -or \
+		-name 'kernel$(PACKAGE_VERSION_SEPARATOR)*.$(PACKAGE_SUFFIX)' \) \
+	  -exec $(CP) -t $(PKG_BUILD_DIR)/packages {} +
+else
 	$(FIND) $(wildcard $(PACKAGE_SUBDIRS)) -type f -name '*.$(PACKAGE_SUFFIX)' \
 		-exec $(CP) -t $(PKG_BUILD_DIR)/packages/ {} +
-  endif
-else
-	$(FIND) $(call FeedPackageDir,libc) -type f \
-		\( -name 'libc*.$(PACKAGE_SUFFIX)' -or -name 'kernel*.$(PACKAGE_SUFFIX)' \) \
-		-exec $(CP) -t $(IB_LDIR)/ {} +
 endif
 
 ifneq ($(CONFIG_SIGNATURE_CHECK),)
@@ -129,6 +126,9 @@ endif
 	fi
 	$(SED) 's,^# REVISION:=.*,REVISION:=$(REVISION),g' $(PKG_BUILD_DIR)/include/version.mk
 	$(SED) 's,^# SOURCE_DATE_EPOCH:=.*,SOURCE_DATE_EPOCH:=$(SOURCE_DATE_EPOCH),g' $(PKG_BUILD_DIR)/include/version.mk
+	$(SED) 's,^# BASE_FILES_VERSION:=.*,BASE_FILES_VERSION:=$(shell cat $(STAGING_DIR)/base-files.version),g' $(PKG_BUILD_DIR)/include/version.mk
+	$(SED) 's,^# LIBC_VERSION:=.*,LIBC_VERSION:=$(shell cat $(STAGING_DIR)/libc.version),g' $(PKG_BUILD_DIR)/include/version.mk
+	$(SED) 's,^# KERNEL_VERSION:=.*,KERNEL_VERSION:=$(shell cat $(STAGING_DIR)/kernel.version),g' $(PKG_BUILD_DIR)/include/version.mk
 	$(SED) '/LINUX_VERMAGIC:=/ { s,unknown,$(LINUX_VERMAGIC),g }' $(PKG_BUILD_DIR)/include/kernel.mk
 	find $(PKG_BUILD_DIR) -name CVS -o -name .git -o -name .svn \
 	  | $(XARGS) rm -rf

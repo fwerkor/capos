@@ -6,7 +6,7 @@ Version: 4.10.2-r2
 Depends: +libc +libpcre2 +glib2 +libopenssl +libpthread +librt +libdbi +libjson-c +libcurl +libuuid +ivykis +SYSLOGNG_LOGROTATE:logrotate +LIBCURL_ZLIB:zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @syslog-ng-any
 Section: admin
 Category: Administration
 Repository: base

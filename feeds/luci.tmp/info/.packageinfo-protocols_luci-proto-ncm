@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +comgt-ncm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-proto-ncm-any
 Section: luci
 Category: LuCI
 Repository: base

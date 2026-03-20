@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/libs/libtorrent/Makefile
 
 Package: libtorrent
-Version: 0.13.8-r2
+Version: 0.15.5-r1
 Depends: +libc +libopenssl +libstdcpp +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libtorrent-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Rakshasa's BitTorrent library
 Maintainer: Rosen Penev <rosenp@gmail.com>
-Source: libtorrent-0.13.8.tar.gz
+Source: libtorrent-0.15.5.tar.zst
 License: GPL-2.0-or-later
 LicenseFiles: COPYING
 URL: https://rakshasa.github.io/rtorrent/

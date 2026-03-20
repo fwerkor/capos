@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/utils/selinux-python/Makefile
 
 Package: python3-seobject
 Submenu: Python
-Version: 3.5-r1
+Version: 3.8.1-r1
 Depends: +libc +python3-light +python3-selinux +python3-semanage +python3-sepolicy +python3-setools
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-seobject-any
 Section: lang
 Category: Languages
 Repository: base
 Title: SELinux seobject library
 Maintainer: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Source: selinux-python-3.5.tar.gz
+Source: selinux-python-3.8.1.tar.gz
 License: GPL-2.0-only
 LicenseFiles: LICENSE
 URL: http://selinuxproject.org/page/Main_Page
@@ -25,17 +25,17 @@ This package contains the seobject library.
 
 Package: python3-sepolgen
 Submenu: Python
-Version: 3.5-r1
+Version: 3.8.1-r1
 Depends: +libc +python3-light +python3-selinux
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-sepolgen-any
 Section: lang
 Category: Languages
 Repository: base
 Title: SELinux policy generation library
 Maintainer: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Source: selinux-python-3.5.tar.gz
+Source: selinux-python-3.8.1.tar.gz
 License: GPL-2.0-only
 LicenseFiles: LICENSE
 URL: http://selinuxproject.org/page/Main_Page
@@ -48,17 +48,17 @@ This package contains the SELinux policy generation Python library.
 
 Package: python3-sepolicy
 Submenu: Python
-Version: 3.5-r1
+Version: 3.8.1-r1
 Depends: +libc +python3-light +python3-selinux +python3-sepolgen +python3-xml +python3-setools
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-sepolicy-any
 Section: lang
 Category: Languages
 Repository: base
 Title: SELinux Policy Analyses binding
 Maintainer: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Source: selinux-python-3.5.tar.gz
+Source: selinux-python-3.8.1.tar.gz
 License: GPL-2.0-only
 LicenseFiles: LICENSE
 URL: http://selinuxproject.org/page/Main_Page
@@ -71,17 +71,17 @@ This package contains a Python binding for SELinux Policy Analyses.
 
 Package: python3-seobject-src
 Submenu: Python
-Version: 3.5-r1
+Version: 3.8.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-seobject-src-any
 Section: lang
 Category: Languages
 Repository: base
 Title: SELinux seobject library (sources)
 Maintainer: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Source: selinux-python-3.5.tar.gz
+Source: selinux-python-3.8.1.tar.gz
 License: GPL-2.0-only
 LicenseFiles: LICENSE
 URL: http://selinuxproject.org/page/Main_Page
@@ -99,17 +99,17 @@ Config:
 
 Package: python3-sepolgen-src
 Submenu: Python
-Version: 3.5-r1
+Version: 3.8.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-sepolgen-src-any
 Section: lang
 Category: Languages
 Repository: base
 Title: SELinux policy generation library (sources)
 Maintainer: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Source: selinux-python-3.5.tar.gz
+Source: selinux-python-3.8.1.tar.gz
 License: GPL-2.0-only
 LicenseFiles: LICENSE
 URL: http://selinuxproject.org/page/Main_Page
@@ -127,17 +127,17 @@ Config:
 
 Package: python3-sepolicy-src
 Submenu: Python
-Version: 3.5-r1
+Version: 3.8.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-sepolicy-src-any
 Section: lang
 Category: Languages
 Repository: base
 Title: SELinux Policy Analyses binding (sources)
 Maintainer: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Source: selinux-python-3.5.tar.gz
+Source: selinux-python-3.8.1.tar.gz
 License: GPL-2.0-only
 LicenseFiles: LICENSE
 URL: http://selinuxproject.org/page/Main_Page
@@ -154,17 +154,17 @@ Config:
 @@
 
 Package: selinux-audit2allow
-Version: 3.5-r1
+Version: 3.8.1-r1
 Depends: +libc +python3-light +python3-selinux +python3-sepolgen
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @selinux-audit2allow-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: SELinux management utility audit2allow
 Maintainer: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Source: selinux-python-3.5.tar.gz
+Source: selinux-python-3.8.1.tar.gz
 License: GPL-2.0-only
 LicenseFiles: LICENSE
 URL: http://selinuxproject.org/page/Main_Page
@@ -176,17 +176,17 @@ This package contains the audit2allow and audit2why tools.
 @@
 
 Package: selinux-chcat
-Version: 3.5-r1
+Version: 3.8.1-r1
 Depends: +libc +python3-light +python3-selinux +python3-seobject +selinux-semanage
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @selinux-chcat-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: SELinux management utility chcat
 Maintainer: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Source: selinux-python-3.5.tar.gz
+Source: selinux-python-3.8.1.tar.gz
 License: GPL-2.0-only
 LicenseFiles: LICENSE
 URL: http://selinuxproject.org/page/Main_Page
@@ -198,17 +198,17 @@ This package contains the chcat tool.
 @@
 
 Package: selinux-python
-Version: 3.5-r1
+Version: 3.8.1-r1
 Depends: +libc +selinux-audit2allow +selinux-chcat +selinux-semanage +selinux-sepolgen-ifgen +selinux-sepolicy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @selinux-python-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: SELinux management utility meta-package
 Maintainer: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Source: selinux-python-3.5.tar.gz
+Source: selinux-python-3.8.1.tar.gz
 License: GPL-2.0-only
 LicenseFiles: LICENSE
 URL: http://selinuxproject.org/page/Main_Page
@@ -221,17 +221,17 @@ utilities.
 @@
 
 Package: selinux-semanage
-Version: 3.5-r1
+Version: 3.8.1-r1
 Depends: +libc +python3-light +python3-seobject
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @selinux-semanage-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: SELinux management utility semanage
 Maintainer: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Source: selinux-python-3.5.tar.gz
+Source: selinux-python-3.8.1.tar.gz
 License: GPL-2.0-only
 LicenseFiles: LICENSE
 URL: http://selinuxproject.org/page/Main_Page
@@ -243,17 +243,17 @@ This package contains the semanage tool.
 @@
 
 Package: selinux-sepolgen-ifgen
-Version: 3.5-r1
+Version: 3.8.1-r1
 Depends: +libc +python3-light +python3-selinux +python3-sepolgen +libselinux
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @selinux-sepolgen-ifgen-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: SELinux management utility sepolgen-ifgen
 Maintainer: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Source: selinux-python-3.5.tar.gz
+Source: selinux-python-3.8.1.tar.gz
 License: GPL-2.0-only
 LicenseFiles: LICENSE
 URL: http://selinuxproject.org/page/Main_Page
@@ -262,17 +262,17 @@ Description: SELinux management utility sepolgen-ifgen
 @@
 
 Package: selinux-sepolicy
-Version: 3.5-r1
+Version: 3.8.1-r1
 Depends: +libc +python3-light +python3-multiprocessing +python3-selinux +python3-sepolicy
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @selinux-sepolicy-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: SELinux management utility sepolicy
 Maintainer: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Source: selinux-python-3.5.tar.gz
+Source: selinux-python-3.8.1.tar.gz
 License: GPL-2.0-only
 LicenseFiles: LICENSE
 URL: http://selinuxproject.org/page/Main_Page

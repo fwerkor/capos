@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/libs/msgpack-c/Makefile
 
 Package: msgpack-c
-Version: 6.0.0-r1
+Version: 6.1.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @msgpack-c-any
 Section: lib
 Category: Libraries
 Repository: base
 Title: MessagePack implementation for C
 Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
-Source: msgpack-c-6.0.0.tar.gz
+Source: msgpack-c-6.1.0.tar.gz
 License: BSL-1.0
 LicenseFiles: COPYING LICENSE_1_0.txt
 URL: https://github.com/msgpack/msgpack-c

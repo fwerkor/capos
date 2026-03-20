@@ -1,13 +1,13 @@
 Source-Makefile: feeds/luci/applications/luci-app-advanced-reboot/Makefile
-Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+Build-Depends: jq/host lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
 
 Package: luci-app-advanced-reboot
 Submenu: 3. Applications
-Version: 1.1.0-r1
+Version: 1.1.1-r15
 Depends: +libc +luci-base +jshn
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-advanced-reboot-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -24,7 +24,7 @@ Config:
 help
 	Advanced Linksys Reboot Web UI
 	.
-	Version: 1.1.0-1
+	Version: 1.1.1-15
 @@
 
 Package: luci-i18n-advanced-reboot-ar
@@ -33,7 +33,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-ar-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -52,7 +52,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-bg-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -71,7 +71,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-bn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -90,7 +90,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-ca-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -109,7 +109,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-cs-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -128,7 +128,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-da-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -147,7 +147,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-de-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -166,7 +166,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-el-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -185,7 +185,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-es-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -198,13 +198,32 @@ Hidden: 1
 Description:     Translation for luci-app-advanced-reboot - Español (Spanish)
 @@
 
+Package: luci-i18n-advanced-reboot-fa
+Default: LUCI_LANG_fa||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-advanced-reboot-fa-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - fa translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Farsi (Persian)
+@@
+
 Package: luci-i18n-advanced-reboot-fi
 Default: LUCI_LANG_fi||(ALL&&m)
 Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-fi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -223,7 +242,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-fr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -242,7 +261,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-ga-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -261,7 +280,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-he-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -280,7 +299,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-hi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -299,7 +318,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-hu-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -318,7 +337,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-it-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -337,7 +356,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-ja-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -356,7 +375,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-ko-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -375,7 +394,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-lt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -394,7 +413,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-mr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -413,7 +432,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-ms-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -432,7 +451,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-no-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -451,7 +470,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-nl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -470,7 +489,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-pl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -489,7 +508,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-pt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -508,7 +527,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -527,7 +546,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-ro-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -546,7 +565,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-ru-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -565,7 +584,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-sk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -584,7 +603,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-sv-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -597,13 +616,32 @@ Hidden: 1
 Description:     Translation for luci-app-advanced-reboot - Svenska (Swedish)
 @@
 
+Package: luci-i18n-advanced-reboot-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-advanced-reboot
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-advanced-reboot-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-advanced-reboot - ta translation
+Maintainer: Stan Grishin <stangri@melmac.ca>
+Source: 
+License: AGPL-3.0-or-later
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-advanced-reboot - Tamil (Tamil)
+@@
+
 Package: luci-i18n-advanced-reboot-tr
 Default: LUCI_LANG_tr||(ALL&&m)
 Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-tr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -622,7 +660,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-uk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -641,7 +679,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-vi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -660,7 +698,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -679,7 +717,7 @@ Version: x
 Depends: +libc luci-app-advanced-reboot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-advanced-reboot-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base

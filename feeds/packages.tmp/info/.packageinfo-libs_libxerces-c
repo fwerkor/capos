@@ -5,7 +5,7 @@ Version: 3.2.5-r1
 Depends: +libc +BUILD_NLS:libiconv-full +libstdcpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libxerces-c-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -32,7 +32,7 @@ Version: 3.2.5-r1
 Depends: +libc +libxerces-c
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libxerces-c-samples-any
 Section: libs
 Category: Libraries
 Repository: base

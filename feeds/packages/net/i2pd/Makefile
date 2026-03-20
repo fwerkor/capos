@@ -10,26 +10,28 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=i2pd
-PKG_VERSION:=2.54.0
-PKG_RELEASE:=1
+PKG_VERSION:=2.58.0
+PKG_RELEASE:=2
 PKG_BUILD_PARALLEL:=1
 
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://codeload.github.com/PurpleI2P/i2pd/tar.gz/$(PKG_VERSION)?
-PKG_HASH:=5c3f703417bb5f3e5dda642d39c5d30593a5dcf69d5a5ecfe82d5e8a7d454aaf
+PKG_SOURCE_PROTO:=git
+PKG_SOURCE_URL:=https://github.com/PurpleI2P/i2pd
+PKG_SOURCE_VERSION:=$(PKG_VERSION)
+PKG_MIRROR_HASH:=e2a8374e12d8df40b35974fd9d7d10b1c37461f41bbdb6ae09c22ecca6da4a53
 
 PKG_MAINTAINER:=David Yang <mmyangfl@gmail.com>
 PKG_LICENSE:=BSD-3-Clause
 PKG_LICENSE_FILES:=LICENSE
 PKG_CPE_ID:=cpe:/a:i2pd:i2pd
 
+PKG_BUILD_DEPENDS:=boost
+
 include $(INCLUDE_DIR)/package.mk
 
 define Package/i2pd
 	SECTION:=net
 	CATEGORY:=Network
-	DEPENDS:=+libopenssl +boost +boost-system \
-	         +boost-program_options +libatomic +zlib
+	DEPENDS:=+libopenssl +boost +boost-program_options +libatomic +zlib
 	TITLE:=full-featured C++ implementation of I2P client
 	URL:=https://github.com/PurpleI2P/i2pd
 	USERID:=i2pd:i2pd

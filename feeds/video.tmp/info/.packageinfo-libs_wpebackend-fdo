@@ -1,0 +1,25 @@
+Source-Makefile: feeds/video/libs/wpebackend-fdo/Makefile
+Build-Depends: mesa
+
+Package: wpebackend-fdo
+Version: 1.16.0-r1
+Depends: +libc +glib2 +libepoxy +libstdcpp +libwayland +libwpe
+Conflicts: 
+Menu-Depends: 
+Provides: @wpebackend-fdo-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: WPE's backend based on a freedesktop.org stack
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: wpebackend-fdo-1.16.0.tar.xz
+License: BSD-2-clause
+LicenseFiles: COPYING
+URL: https://wpewebkit.org/
+Type: ipkg
+Description:  An Open Source WebKit port for Linux-based embedded devices designed
+ with flexibility and hardware acceleration in mind, leveraging common 3D
+ graphics APIs for best performance.
+@@
+
+

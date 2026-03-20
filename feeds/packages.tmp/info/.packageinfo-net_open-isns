@@ -5,7 +5,7 @@ Version: 0.100-r2
 Depends: +libc +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @open-isns-any
 Section: libs
 Category: Libraries
 Repository: base

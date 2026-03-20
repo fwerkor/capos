@@ -5,7 +5,7 @@ Version: 3.100-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lame-lib-any
 Section: sound
 Category: Sound
 Repository: base
@@ -29,7 +29,7 @@ Version: 3.100-r1
 Depends: +libc +libncurses +lame-lib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lame-any
 Section: sound
 Category: Sound
 Repository: base

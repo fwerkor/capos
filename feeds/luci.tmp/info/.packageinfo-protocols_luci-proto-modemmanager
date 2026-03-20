@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +modemmanager
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-proto-modemmanager-any
 Section: luci
 Category: LuCI
 Repository: base

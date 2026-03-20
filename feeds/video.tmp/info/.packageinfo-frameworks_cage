@@ -1,0 +1,24 @@
+Source-Makefile: feeds/video/frameworks/cage/Makefile
+Build-Depends: wayland/host
+
+Package: cage
+Submenu: Frameworks and Toolkits
+Version: 0.2.0
+Depends: +libc +wlroots +xkeyboard-config
+Conflicts: 
+Menu-Depends: 
+Provides: @cage-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: a Wayland kiosk
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: cage-0.2.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://wayland.freedesktop.org/
+Type: ipkg
+Description: This is Cage, a Wayland kiosk. A kiosk runs a single, maximized application.
+@@
+
+

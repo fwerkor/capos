@@ -6,7 +6,7 @@ Version: 2020.03.03~157-r1
 Depends: +libc +libstdcpp +USE_GLIBC:libbsd +libpcap
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pcapsipdump-any
 Section: net
 Category: Network
 Repository: base
@@ -18,7 +18,7 @@ LicenseFiles: LICENSE
 URL: http://sourceforge.net/projects/pcapsipdump/
 Type: ipkg
 Description:  pcapsipdump is a tool for dumping SIP sessions (plus RTP traffic, if
- available) to disk in a fashion similar to "tcpdump -w" (format is
+ available) to disk in a fashion similar to 'tcpdump -w' (format is
  exactly the same), but one file per SIP session (even if there are
  thousands of concurrent SIP sessions).
 @@

@@ -1,20 +1,20 @@
 Source-Makefile: feeds/packages/lang/python/python-greenlet/Makefile
-Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host
+Build-Depends/host: python3/host python-setuptools/host python-build/host python-installer/host python-wheel/host
 Build-Types: host
 
 Package: python3-greenlet
 Submenu: Python
-Version: 3.0.2-r1
+Version: 3.2.4-r1
 Depends: +libc +python3-light +libstdcpp @!arc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-greenlet-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Lightweight coroutines for in-process concurrent programming
 Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
-Source: greenlet-3.0.2.tar.gz
+Source: greenlet-3.2.4.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 URL: https://github.com/python-greenlet/greenlet
@@ -25,17 +25,17 @@ Description:   The greenlet package is a spin-off of Stackless
 
 Package: python3-greenlet-src
 Submenu: Python
-Version: 3.0.2-r1
+Version: 3.2.4-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-greenlet-src-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Lightweight coroutines for in-process concurrent programming (sources)
 Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
-Source: greenlet-3.0.2.tar.gz
+Source: greenlet-3.2.4.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 URL: https://github.com/python-greenlet/greenlet

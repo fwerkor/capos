@@ -2,16 +2,16 @@ Source-Makefile: feeds/telephony/net/sipgrep/Makefile
 
 Package: sipgrep
 Submenu: Telephony
-Version: 2.2.0-r1
+Version: 2.2.0-r2
 Depends: +libc +libpcap +libpcre2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @sipgrep-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: Command line tool to sniff, capture, display SIP messages
-Maintainer: Sebastian Kemper <sebastian_ml@gmx.net>
+Maintainer: 
 Source: sipgrep-2.2.0.tar.zst
 License: GPL-3.0
 LicenseFiles: COPYING

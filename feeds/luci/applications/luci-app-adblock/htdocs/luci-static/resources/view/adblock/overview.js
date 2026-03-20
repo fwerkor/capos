@@ -6,14 +6,16 @@
 'require ui';
 'require uci';
 'require form';
+'require uqr';
 'require tools.widgets as widgets';
 
 /*
 	button handling
 */
 function handleAction(ev) {
+	const status = document.getElementById('status');
+	const map = document.querySelector('.cbi-map');
 	if (ev === 'restart' || ev === 'reload') {
-		const map = document.querySelector('.cbi-map');
 		return dom.callClassMethod(map, 'save')
 			.then(L.bind(ui.changes.apply, ui.changes))
 			.then(function () {
@@ -22,15 +24,14 @@ function handleAction(ev) {
 					btn.blur();
 				});
 				return fs.exec_direct('/etc/init.d/adblock', [ev]);
-			})
+			});
 	} else {
 		if (ev !== 'stop') {
 			document.querySelectorAll('.cbi-page-actions button').forEach(function (btn) {
 				btn.disabled = true;
 				btn.blur();
 			});
-			if (document.getElementById('status') &&
-				document.getElementById('status').textContent.substring(0, 6) === 'paused') {
+			if (status && status.textContent.startsWith('paused')) {
 				ev = 'resume';
 			}
 		}
@@ -44,110 +45,105 @@ return view.extend({
 			L.resolveDefault(fs.read_direct('/etc/adblock/adblock.custom.feeds'), ''),
 			L.resolveDefault(fs.read_direct('/etc/adblock/adblock.feeds'), ''),
 			L.resolveDefault(fs.read_direct('/etc/adblock/adblock.categories'), ''),
-			uci.load('adblock')
+			uci.load('adblock').catch(() => 0),
+			`https://${window.location.hostname}/cgi-bin/adblock`
 		]);
 	},
-	render: function (result) {
-		let m, s, o;
 
+	render: function (result) {
+		/*
+			config check
+		*/
+		if (!result[3] || result[3].length === 0) {
+			ui.addNotification(null, E('p', _('No adblock config found!')), 'error');
+			return;
+		}
+
+		/*
+			main map
+		*/
+		let m, s, o;
 		m = new form.Map('adblock', 'Adblock', _('Configuration of the adblock package to block ad/abuse domains by using DNS. \
-			For further information <a href="https://github.com/openwrt/packages/blob/master/net/adblock/files/README.md" target="_blank" rel="noreferrer noopener" >check the online documentation</a>'));
+			For further information please check the %s.'.format(`<a style="color:#37c;font-weight:bold;" href="https://github.com/openwrt/packages/blob/master/net/adblock/files/README.md" target="_blank" rel="noreferrer noopener" >${_('online documentation')}</a>`)));
+
+		/*
+			set text content helper function
+		*/
+		const setText = (id, value) => {
+			const el = document.getElementById(id);
+			if (el) {
+				el.textContent = value || '-';
+			}
+		};
 
 		/*
 			poll runtime information
 		*/
-		pollData: poll.add(function () {
-			return L.resolveDefault(fs.read_direct('/var/run/adb_runtime.json'), 'null').then(function (res) {
-				const status = document.getElementById('status');
-				const buttons = document.querySelectorAll('.cbi-page-actions button');
-				try {
-					var info = JSON.parse(res);
-				} catch (e) {
-					status.textContent = '-';
-					poll.stop();
-					if (status.classList.contains('spinning')) {
-						buttons.forEach(function (btn) {
-							btn.disabled = false;
-						})
-						status.classList.remove('spinning');
-					}
-					ui.addNotification(null, E('p', _('Unable to parse the runtime information!')), 'error');
+		let parseErrCount = 0;
+		poll.add(function () {
+			return L.resolveDefault(fs.stat('/var/run/adb_runtime.json'), null).then(function (stat) {
+				if (!stat) {
+					return;
 				}
-				if (status && info) {
-					status.textContent = (info.adblock_status || '-') + ' / ' + (info.adblock_version || '-');
-					if (info.adblock_status === "running") {
-						if (!status.classList.contains("spinning")) {
-							status.classList.add("spinning");
-						}
-					} else {
-						if (status.classList.contains("spinning")) {
+				return L.resolveDefault(fs.read_direct('/var/run/adb_runtime.json'), null).then(function (res) {
+					const status = document.getElementById('status');
+					const buttons = document.querySelectorAll('.cbi-page-actions button');
+					let info = null;
+					try {
+						info = JSON.parse(res);
+						parseErrCount = 0;
+					} catch (e) {
+						info = null;
+						parseErrCount++;
+						if (status) {
+							status.textContent = '-';
 							buttons.forEach(function (btn) {
 								btn.disabled = false;
-							})
+							});
+							status.classList.remove('spinning');
+							if (parseErrCount >= 3) {
+								ui.addNotification(null, E('p', _('Unable to parse the adblock runtime information!')), 'error');
+								poll.stop();
+							}
+						}
+						return;
+					}
+					if (status && info) {
+						status.textContent = `${info.adblock_status || '-'} (frontend: ${info.frontend_ver || '-'} / backend: ${info.backend_ver || '-'})`;
+						if (info.adblock_status === "processing") {
+							buttons.forEach(function (btn) {
+								btn.disabled = true;
+								btn.blur();
+							});
+							if (!status.classList.contains("spinning")) {
+								status.classList.add("spinning");
+							}
+						} else {
 							status.classList.remove("spinning");
 							if (document.getElementById('btn_suspend')) {
-								if (status.textContent.substring(0, 6) === 'paused') {
+								if (info.adblock_status === 'paused') {
 									document.querySelector('#btn_suspend').textContent = 'Resume';
 								}
-								if (document.getElementById('status').textContent.substring(0, 7) === 'enabled') {
+								if (info.adblock_status === 'enabled') {
 									document.querySelector('#btn_suspend').textContent = 'Suspend';
 								}
 							}
+							buttons.forEach(function (btn) {
+								btn.disabled = false;
+							});
 						}
 					}
-					if (status.textContent.substring(0, 6) === 'paused' && document.getElementById('btn_suspend')) {
-						document.querySelector('#btn_suspend').textContent = 'Resume';
+					if (info) {
+						setText('domains', info.blocked_domains);
+						setText('feeds', info.active_feeds?.join(' '));
+						setText('backend', info.dns_backend);
+						setText('ifaces', info.run_ifaces);
+						setText('run', info.run_information);
+						setText('flags', info.run_flags);
+						setText('last', info.last_run);
+						setText('sys', info.system_info);
 					}
-				} else if (status) {
-					status.textContent = '-';
-					poll.stop();
-					if (status.classList.contains('spinning')) {
-						buttons.forEach(function (btn) {
-							btn.disabled = false;
-						})
-						status.classList.remove('spinning');
-					}
-				}
-				var domains = document.getElementById('domains');
-				if (domains && info) {
-					domains.textContent = info.blocked_domains || '-';
-				}
-				var feeds = document.getElementById('feeds');
-				var src_array = [];
-				if (feeds && info) {
-					for (var i = 0; i < info.active_feeds.length; i++) {
-						if (i < info.active_feeds.length - 1) {
-							src_array += info.active_feeds[i] + ', ';
-						} else {
-							src_array += info.active_feeds[i]
-						}
-					}
-					feeds.textContent = src_array || '-';
-				}
-				var backend = document.getElementById('backend');
-				if (backend && info) {
-					backend.textContent = info.dns_backend || '-';
-				}
-				var ifaces = document.getElementById('ifaces');
-				if (ifaces && info) {
-					ifaces.textContent = info.run_ifaces || '-';
-				}
-				var dirs = document.getElementById('dirs');
-				if (dirs && info) {
-					dirs.textContent = info.run_directories || '-';
-				}
-				var flags = document.getElementById('flags');
-				if (flags && info) {
-					flags.textContent = info.run_flags || '-';
-				}
-				var run = document.getElementById('run');
-				if (run && info) {
-					run.textContent = info.last_run || '-';
-				}
-				var sys = document.getElementById('sys');
-				if (sys && info) {
-					sys.textContent = info.system_info || '-';
-				}
+				});
 			});
 		}, 2);
 
@@ -179,8 +175,8 @@ return view.extend({
 					E('div', { 'class': 'cbi-value-field', 'id': 'ifaces', 'style': 'margin-bottom:-5px;color:#37c;' }, '-')
 				]),
 				E('div', { 'class': 'cbi-value' }, [
-					E('label', { 'class': 'cbi-value-title', 'style': 'margin-bottom:-5px;padding-top:0rem;' }, _('Run Directories')),
-					E('div', { 'class': 'cbi-value-field', 'id': 'dirs', 'style': 'margin-bottom:-5px;color:#37c;' }, '-')
+					E('label', { 'class': 'cbi-value-title', 'style': 'margin-bottom:-5px;padding-top:0rem;' }, _('Run Information')),
+					E('div', { 'class': 'cbi-value-field', 'id': 'run', 'style': 'margin-bottom:-5px;color:#37c;' }, '-')
 				]),
 				E('div', { 'class': 'cbi-value' }, [
 					E('label', { 'class': 'cbi-value-title', 'style': 'margin-bottom:-5px;padding-top:0rem;' }, _('Run Flags')),
@@ -188,7 +184,7 @@ return view.extend({
 				]),
 				E('div', { 'class': 'cbi-value' }, [
 					E('label', { 'class': 'cbi-value-title', 'style': 'margin-bottom:-5px;padding-top:0rem;' }, _('Last Run')),
-					E('div', { 'class': 'cbi-value-field', 'id': 'run', 'style': 'margin-bottom:-5px;color:#37c;' }, '-')
+					E('div', { 'class': 'cbi-value-field', 'id': 'last', 'style': 'margin-bottom:-5px;color:#37c;' }, '-')
 				]),
 				E('div', { 'class': 'cbi-value' }, [
 					E('label', { 'class': 'cbi-value-title', 'style': 'margin-bottom:-5px;padding-top:0rem;' }, _('System Info')),
@@ -196,7 +192,6 @@ return view.extend({
 				])
 			]);
 		}, o, this);
-		this.pollData;
 
 		/*
 			tabbed config section
@@ -205,6 +200,7 @@ return view.extend({
 		s.addremove = false;
 		s.tab('general', _('General Settings'));
 		s.tab('additional', _('Additional Settings'));
+		s.tab('firewall', _('Firewall Settings'));
 		s.tab('adv_dns', _('Advanced DNS Settings'));
 		s.tab('adv_report', _('Advanced Report Settings'));
 		s.tab('adv_email', _('Advanced E-Mail Settings'));
@@ -231,27 +227,8 @@ return view.extend({
 		o.datatype = 'range(1,300)';
 		o.rmempty = true;
 
-		o = s.taboption('general', form.Flag, 'adb_dnsforce', _('Force Local DNS'), _('Redirect all DNS queries from specified zones to the local DNS resolver, applies to UDP and TCP protocol.'));
-		o.rmempty = false;
-
-		o = s.taboption('general', widgets.ZoneSelect, 'adb_zonelist', _('Forced Zones'), _('Firewall source zones that should be forced locally.'));
-		o.depends('adb_dnsforce', '1');
-		o.multiple = true;
-		o.nocreate = true;
-		o.rmempty = true;
-
-		o = s.taboption('general', form.DynamicList, 'adb_portlist', _('Forced Ports'), _('Firewall ports that should be forced locally.'));
-		o.depends('adb_dnsforce', '1');
-		o.multiple = true;
-		o.nocreate = false;
-		o.datatype = 'port';
-		o.value('53');
-		o.value('853');
-		o.value('5353');
-		o.rmempty = true;
-
 		o = s.taboption('general', form.Flag, 'adb_tld', _('TLD Compression'), _('The top level domain compression removes thousands of needless host entries from the final DNS blocklist.'));
-		o.default = 1
+		o.default = 1;
 		o.rmempty = true;
 
 		o = s.taboption('general', form.Flag, 'adb_safesearch', _('Enable SafeSearch'), _('Enforcing SafeSearch for google, bing, brave, duckduckgo, yandex, youtube and pixabay.'));
@@ -292,6 +269,16 @@ return view.extend({
 		o = s.taboption('additional', form.Flag, 'adb_debug', _('Verbose Debug Logging'), _('Enable verbose debug logging in case of any processing errors.'));
 		o.rmempty = false;
 
+		o = s.taboption('additional', form.ListValue, 'adb_cores', _('CPU Cores'), _('Limit the cpu cores used by adblock to save RAM, autodetected by default.'));
+		o.value('1');
+		o.value('2');
+		o.value('4');
+		o.value('8');
+		o.value('16');
+		o.placeholder = _('-- default --');
+		o.optional = true;
+		o.rmempty = true;
+
 		o = s.taboption('additional', form.ListValue, 'adb_nicelimit', _('Nice Level'), _('The selected priority will be used for adblock background processing.'));
 		o.value('-20', _('Highest Priority'));
 		o.value('-10', _('High Priority'));
@@ -320,7 +307,272 @@ return view.extend({
 		o.rmempty = true;
 
 		o = s.taboption('additional', form.Flag, 'adb_fetchinsecure', _('Download Insecure'), _('Don\'t check SSL server certificates during download.'));
-		o.default = 0
+		o.default = 0;
+		o.rmempty = true;
+
+		/*
+			firewall settings tab
+		*/
+		o = s.taboption('firewall', form.DummyValue, '_fw_sub1');
+		o.rawhtml = true;
+		o.default = '<em style="color:#37c;font-weight:bold;">' + _('Changes on this tab needs an adblock service restart to take effect.') + '</em>'
+			+ '<hr style="width: 200px; height: 1px;" />'
+			+ '<em style="color:#37c;font-weight:bold;">' + _('External Unfiltered DNS Policy (MAC-/Interface‑based DNS bypass)') + '</em>';
+
+		o = s.taboption('firewall', form.Flag, 'adb_nftallow', _('Enable Unfiltered DNS Routing'), _('Routes selected MACs or interfaces to an unfiltered external DNS resolver, bypassing local adblock.'));
+		o.rmempty = false;
+
+		o = s.taboption('firewall', form.DynamicList, 'adb_nftmacallow', _('MAC DNS Filter Targets'), _('Devices with listed MAC addresses will always use the configured unfiltered DNS server.'));
+		o.depends('adb_nftallow', '1');
+		o.datatype = 'macaddr';
+		o.placeholder = '00:11:22:33:44:55';
+		o.multiple = true;
+		o.optional = true;
+		o.rmempty = true;
+
+		o = s.taboption('firewall', widgets.DeviceSelect, 'adb_nftdevallow', _('Interface DNS Filter Targets'), _('Entire interfaces or VLANs will be routed to the unfiltered DNS server.'));
+		o.depends('adb_nftallow', '1');
+		o.multiple = true;
+		o.nocreate = true;
+		o.optional = true;
+		o.rmempty = true;
+
+		o = s.taboption('firewall', form.Value, 'adb_allowdnsv4', _('IPv4 DNS Resolver'), _('External IPv4 DNS resolver applied to MACs and interfaces using the unfiltered DNS policy.'));
+		o.depends('adb_nftallow', '1');
+		o.datatype = 'ip4addr("nomask")';
+		o.value('86.54.11.100', _('DNS4EU (unfiltered)'));
+		o.value('94.140.14.140', _('AdGuard (unfiltered)'));
+		o.value('76.76.2.0', _('Control D (unfiltered)'));
+		o.value('1.1.1.1', _('Cloudflare (unfiltered)'));
+		o.value('9.9.9.10', _('Quad9 (unfiltered)'));
+		o.value('185.150.99.255', _('Digitale Gesellschaft (unfiltered)'));
+		o.default = '86.54.11.100';
+		o.rmempty = true;
+
+		o = s.taboption('firewall', form.Value, 'adb_allowdnsv6', _('IPv6 DNS Resolver'), _('External IPv6 DNS resolver applied to MACs and interfaces using the unfiltered DNS policy.'));
+		o.depends('adb_nftallow', '1');
+		o.datatype = 'ip6addr("nomask")';
+		o.value('2a13:1001::86:54:11:100', _('DNS4EU (unfiltered)'));
+		o.value('2a10:50c0::1:ff', _('AdGuard (unfiltered)'));
+		o.value('2606:1a40::', _('Control D (unfiltered)'));
+		o.value('2606:4700:4700::1111', _('Cloudflare (unfiltered)'));
+		o.value('2620:fe::10', _('Quad9 (unfiltered)'));
+		o.value('2a07:6b47:6b47::255', _('Digitale Gesellschaft (unfiltered)'));
+		o.default = '2a13:1001::86:54:11:100';
+		o.rmempty = true;
+
+		o = s.taboption('firewall', form.DummyValue, '_fw_sub2');
+		o.rawhtml = true;
+		o.default = '<hr style="width: 200px; height: 1px;" /><em style="color:#37c;font-weight:bold;">' + _('External Filtered DNS Policy (MAC-/Interface‑based DNS bypass)') + '</em>';
+
+		o = s.taboption('firewall', form.Flag, 'adb_nftblock', _('Enable Filtered DNS Routing'), _('Routes selected MACs or interfaces to a filtered external DNS resolver, bypassing local adblock.'));
+		o.rmempty = false;
+
+		o = s.taboption('firewall', form.DynamicList, 'adb_nftmacblock', _('MAC DNS Filter Targets'), _('Devices with listed MAC addresses will always use the configured filtered DNS server.'));
+		o.depends('adb_nftblock', '1');
+		o.datatype = 'macaddr';
+		o.placeholder = '00:11:22:33:44:55';
+		o.multiple = true;
+		o.optional = true;
+		o.rmempty = true;
+
+		o = s.taboption('firewall', widgets.DeviceSelect, 'adb_nftdevblock', _('Interface DNS Filter Targets'), _('Entire interfaces or VLANs will be routed to the filtered DNS server.'));
+		o.depends('adb_nftblock', '1');
+		o.multiple = true;
+		o.nocreate = true;
+		o.optional = true;
+		o.rmempty = true;
+
+		o = s.taboption('firewall', form.Value, 'adb_blockdnsv4', _('IPv4 DNS Resolver'), _('External IPv4 DNS resolver applied to MACs and interfaces using the filtered DNS policy.'));
+		o.depends('adb_nftblock', '1');
+		o.datatype = 'ip4addr("nomask")';
+		o.value('86.54.11.1', _('DNS4EU (protective)'));
+		o.value('86.54.11.12', _('DNS4EU (protective+family)'));
+		o.value('86.54.11.13', _('DNS4EU (protective+adblock)'));
+		o.value('86.54.11.11', _('DNS4EU (protective+family+adblock)'));
+		o.value('176.9.93.198', _('dnsforge (normal)'));
+		o.value('49.12.43.208', _('dnsforge (clean)'));
+		o.value('49.12.222.213', _('dnsforge (hard)'));
+		o.value('94.140.14.14', _('AdGuard (default)'));
+		o.value('94.140.14.15', _('AdGuard (family)'));
+		o.value('76.76.10.0', _('Control D (security)'));
+		o.value('76.76.10.10', _('Control D (family)'));
+		o.value('76.76.10.11', _('Control D (adblock)'));
+		o.value('1.1.1.2', _('Cloudflare (malware)'));
+		o.value('1.1.1.3', _('Cloudflare (malware+family)'));
+		o.value('9.9.9.9', _('Quad9 (malware)'));
+		o.default = '86.54.11.13';
+		o.rmempty = true;
+
+		o = s.taboption('firewall', form.Value, 'adb_blockdnsv6', _('IPv6 DNS Resolver'), _('External IPv6 DNS resolver applied to MACs and interfaces using the filtered DNS policy.'));
+		o.depends('adb_nftblock', '1');
+		o.datatype = 'ip6addr("nomask")';
+		o.value('2a13:1001::86:54:11:1', _('DNS4EU (protective)'));
+		o.value('2a13:1001::86:54:11:12', _('DNS4EU (protective+family)'));
+		o.value('2a13:1001::86:54:11:13', _('DNS4EU (protective+adblock)'));
+		o.value('2a13:1001::86:54:11:11', _('DNS4EU (protective+family+adblock)'));
+		o.value('2a01:4f8:151:34aa::198', _('dnsforge (normal)'));
+		o.value('2a01:4f8:c012:ed89::208', _('dnsforge (clean)'));
+		o.value('2a01:4f8:c17:2c61::213', _('dnsforge (hard)'));
+		o.value('2a10:50c0::ad1:ff', _('AdGuard (default)'));
+		o.value('2a10:50c0::bad1:ff', _('AdGuard (family)'));
+		o.value('2606:1a40:1::', _('Control D (security)'));
+		o.value('2606:1a40:1::1', _('Control D (family)'));
+		o.value('2606:1a40:1::2', _('Control D (adblock)'));
+		o.value('2606:4700:4700::1112', _('Cloudflare (malware)'));
+		o.value('2606:4700:4700::1113', _('Cloudflare (malware+family)'));
+		o.value('2620:fe::fe', _('Quad9 (malware)'));
+		o.default = '2a13:1001::86:54:11:13';
+		o.rmempty = true;
+
+		o = s.taboption('firewall', form.DummyValue, '_fw_sub3');
+		o.rawhtml = true;
+		o.default = '<hr style="width: 200px; height: 1px;" /><em style="color:#37c;font-weight:bold;">' + _('External Remote DNS Policy (temporary MAC‑based remote DNS bypass)') + '</em>';
+
+		o = s.taboption('firewall', form.Flag, 'adb_nftremote', _('Enable Remote DNS Routing'), _('Allows temporary access to an unfiltered external DNS resolver, bypassing local adblock.'));
+		o.rmempty = false;
+
+		o = s.taboption('firewall', form.DynamicList, 'adb_nftmacremote', _('MAC Remote Filter Targets'), _('Listed MAC addresses are allowed to use the remote DNS bypass.'));
+		o.depends('adb_nftremote', '1');
+		o.datatype = 'macaddr';
+		o.placeholder = '00:11:22:33:44:55';
+		o.multiple = true;
+		o.optional = true;
+		o.rmempty = true;
+
+		o = s.taboption('firewall', form.Value, 'adb_nftremotetimeout', _('Remote DNS Timeout'), _('Time limit in minutes for using the remote DNS bypass per listed MAC address.'));
+		o.depends('adb_nftremote', '1');
+		o.datatype = 'range(1,300)';
+		o.value('5', _('5 minutes'));
+		o.value('10', _('10 minutes'));
+		o.value('15', _('15 minutes'));
+		o.value('30', _('30 minutes'));
+		o.value('60', _('60 minutes'));
+		o.default = '15';
+		o.rmempty = true;
+
+		o = s.taboption('firewall', form.Value, 'adb_remotednsv4', _('IPv4 Remote DNS Resolver'), _('External IPv4 DNS resolver applied to MACs using the unfiltered remote DNS policy.'));
+		o.depends('adb_nftremote', '1');
+		o.datatype = 'ip4addr("nomask")';
+		o.value('86.54.11.100', _('DNS4EU (unfiltered)'));
+		o.value('94.140.14.140', _('AdGuard (unfiltered)'));
+		o.value('76.76.2.0', _('Control D (unfiltered)'));
+		o.value('1.1.1.1', _('Cloudflare (unfiltered)'));
+		o.value('9.9.9.10', _('Quad9 (unfiltered)'));
+		o.value('185.150.99.255', _('Digitale Gesellschaft (unfiltered)'));
+		o.default = '86.54.11.100';
+		o.rmempty = true;
+
+		o = s.taboption('firewall', form.Value, 'adb_remotednsv6', _('IPv6 Remote DNS Resolver'), _('External IPv6 DNS resolver applied to MACs using the unfiltered remote DNS policy.'));
+		o.depends('adb_nftremote', '1');
+		o.datatype = 'ip6addr("nomask")';
+		o.value('2a13:1001::86:54:11:100', _('DNS4EU (unfiltered)'));
+		o.value('2a10:50c0::1:ff', _('AdGuard (unfiltered)'));
+		o.value('2606:1a40::', _('Control D (unfiltered)'));
+		o.value('2606:4700:4700::1111', _('Cloudflare (unfiltered)'));
+		o.value('2620:fe::10', _('Quad9 (unfiltered)'));
+		o.value('2a07:6b47:6b47::255', _('Digitale Gesellschaft (unfiltered)'));
+		o.default = '2a13:1001::86:54:11:100';
+		o.rmempty = true;
+
+		const url = result[4];
+		if (url) {
+			const options = {
+				pixelSize: 2,
+				margin: 1,
+				ecLevel: 'M',
+				whiteColor: 'white',
+				blackColor: 'black'
+			};
+			const svg = uqr.renderSVG(url, options);
+			o = s.taboption('firewall', form.DummyValue, '_fw_qr', _('QRCode for Remote Access'));
+			o.rawhtml = true;
+			o.default = svg;
+		}
+
+		o = s.taboption('firewall', form.DummyValue, '_fw_sub4');
+		o.rawhtml = true;
+		o.default = '<hr style="width: 200px; height: 1px;" /><em style="color:#37c;font-weight:bold;">' + _('External DNS Bridge (Zero‑Downtime during DNS Restarts)') + '</em>';
+
+		o = s.taboption('firewall', form.Flag, 'adb_nftbridge', _('Enable DNS Bridge'), _('Enables a temporary DNS bridge to an external DNS resolver during local DNS restarts.'));
+		o.rmempty = false;
+
+		o = s.taboption('firewall', form.Value, 'adb_bridgednsv4', _('IPv4 DNS Resolver'), _('External IPv4 DNS resolver used during bridging.'));
+		o.depends('adb_nftbridge', '1');
+		o.datatype = 'ip4addr("nomask")';
+		o.value('86.54.11.1', _('DNS4EU (protective)'));
+		o.value('86.54.11.12', _('DNS4EU (protective+family)'));
+		o.value('86.54.11.13', _('DNS4EU (protective+adblock)'));
+		o.value('86.54.11.11', _('DNS4EU (protective+family+adblock)'));
+		o.value('176.9.93.198', _('dnsforge (normal)'));
+		o.value('49.12.43.208', _('dnsforge (clean)'));
+		o.value('49.12.222.213', _('dnsforge (hard)'));
+		o.value('94.140.14.14', _('AdGuard (default)'));
+		o.value('94.140.14.15', _('AdGuard (family)'));
+		o.value('76.76.10.0', _('Control D (security)'));
+		o.value('76.76.10.10', _('Control D (family)'));
+		o.value('76.76.10.11', _('Control D (adblock)'));
+		o.value('1.1.1.2', _('Cloudflare (malware)'));
+		o.value('1.1.1.3', _('Cloudflare (malware+family)'));
+		o.value('9.9.9.9', _('Quad9 (malware)'));
+		o.value('86.54.11.100', _('DNS4EU (unfiltered)'));
+		o.value('94.140.14.140', _('AdGuard (unfiltered)'));
+		o.value('76.76.2.0', _('Control D (unfiltered)'));
+		o.value('1.1.1.1', _('Cloudflare (unfiltered)'));
+		o.value('9.9.9.10', _('Quad9 (unfiltered)'));
+		o.value('185.150.99.255', _('Digitale Gesellschaft (unfiltered)'));
+		o.default = '86.54.11.13';
+		o.rmempty = true;
+
+		o = s.taboption('firewall', form.Value, 'adb_bridgednsv6', _('IPv6 DNS Resolver'), _('External IPv6 DNS resolver used during bridging.'));
+		o.depends('adb_nftbridge', '1');
+		o.datatype = 'ip6addr("nomask")';
+		o.value('2a13:1001::86:54:11:1', _('DNS4EU (protective)'));
+		o.value('2a13:1001::86:54:11:12', _('DNS4EU (protective+family)'));
+		o.value('2a13:1001::86:54:11:13', _('DNS4EU (protective+adblock)'));
+		o.value('2a13:1001::86:54:11:11', _('DNS4EU (protective+family+adblock)'));
+		o.value('2a01:4f8:151:34aa::198', _('dnsforge (normal)'));
+		o.value('2a01:4f8:c012:ed89::208', _('dnsforge (clean)'));
+		o.value('2a01:4f8:c17:2c61::213', _('dnsforge (hard)'));
+		o.value('2a10:50c0::ad1:ff', _('AdGuard (default)'));
+		o.value('2a10:50c0::bad1:ff', _('AdGuard (family)'));
+		o.value('2606:1a40:1::', _('Control D (security)'));
+		o.value('2606:1a40:1::1', _('Control D (family)'));
+		o.value('2606:1a40:1::2', _('Control D (adblock)'));
+		o.value('2606:4700:4700::1112', _('Cloudflare (malware)'));
+		o.value('2606:4700:4700::1113', _('Cloudflare (malware+family)'));
+		o.value('2620:fe::fe', _('Quad9 (malware)'));
+		o.value('2a13:1001::86:54:11:100', _('DNS4EU (unfiltered)'));
+		o.value('2a10:50c0::1:ff', _('AdGuard (unfiltered)'));
+		o.value('2606:1a40::', _('Control D (unfiltered)'));
+		o.value('2606:4700:4700::1111', _('Cloudflare (unfiltered)'));
+		o.value('2620:fe::10', _('Quad9 (unfiltered)'));
+		o.value('2a07:6b47:6b47::255', _('Digitale Gesellschaft (unfiltered)'));
+		o.default = '2a13:1001::86:54:11:13';
+		o.rmempty = true;
+
+		o = s.taboption('firewall', form.DummyValue, '_fw_sub5');
+		o.rawhtml = true;
+		o.default = '<hr style="width: 200px; height: 1px;" /><em style="color:#37c;font-weight:bold;">' + _('Local DNS Enforcement') + '</em>';
+
+		o = s.taboption('firewall', form.Flag, 'adb_nftforce', _('Force Local DNS'), _('Redirect all local DNS queries from specified LAN zones to the local DNS resolver, applies to UDP and TCP protocol.'));
+		o.rmempty = false;
+
+		o = s.taboption('firewall', widgets.DeviceSelect, 'adb_nftdevforce', _('Forced Devices/VLANs'), _('Firewall LAN Devices/VLANs that should be forced locally.'));
+		o.depends('adb_nftforce', '1');
+		o.multiple = true;
+		o.nocreate = true;
+		o.optional = true;
+		o.rmempty = true;
+
+		o = s.taboption('firewall', form.DynamicList, 'adb_nftportforce', _('Forced Ports'), _('Firewall ports that should be forced locally.'));
+		o.depends('adb_nftforce', '1');
+		o.multiple = true;
+		o.nocreate = false;
+		o.datatype = 'port';
+		o.value('53');
+		o.value('853');
+		o.value('5353');
 		o.rmempty = true;
 
 		/*
@@ -355,11 +607,11 @@ return view.extend({
 		o = s.taboption('adv_dns', form.Value, 'adb_dnsdir', _('DNS Directory'), _('Overwrite the default target directory for the generated blocklist.'));
 		o.rmempty = true;
 
-		o = s.taboption('adv_dns', form.ListValue, 'adb_dnsinstance', _('DNS Instance'), _('Set the dns backend instance used by adblock.'));
+		o = s.taboption('adv_dns', form.Value, 'adb_dnsinstance', _('DNS Instance'), _('Set the dns backend instance used by adblock.'));
 		o.depends('adb_dns', 'dnsmasq');
-		o.value('0', _('First instance (default)'));
+		o.value('0', _('First instance'));
 		o.value('1', _('Second instance'));
-		o.value('2', _('Third instance'));
+		o.default = '0';
 		o.optional = true;
 		o.rmempty = true;
 
@@ -368,26 +620,7 @@ return view.extend({
 		o.datatype = 'range(5,60)';
 		o.rmempty = true;
 
-		o = s.taboption('adv_dns', form.DynamicList, 'adb_denyip', _('Block Local Client IPs'), _('Block all requests of certain DNS clients based on their IP address (RPZ-CLIENT-IP).'));
-		o.datatype = 'or(ip4addr("nomask"),ip6addr("nomask"))';
-		o.depends('adb_dns', 'bind');
-		o.optional = true;
-		o.rmempty = true;
-
-		o = s.taboption('adv_dns', form.DynamicList, 'adb_allowip', _('Allow Local Client IPs'), _('Allow all requests of certain DNS clients based on their IP address (RPZ-CLIENT-IP).'));
-		o.datatype = 'or(ip4addr("nomask"),ip6addr("nomask"))';
-		o.depends('adb_dns', 'bind');
-		o.optional = true;
-		o.rmempty = true;
-
-		o = s.taboption('adv_dns', form.Flag, 'adb_jail', _('Jail Blocklist'), _('Builds an additional restrictive DNS blocklist to block access to all domains except those listed in the allowlist. \
-			You can use this restrictive blocklist e.g. for guest wifi or kidsafe configurations.'));
-		o.rmempty = true;
-
-		o = s.taboption('adv_dns', form.Value, 'adb_jaildir', _('Jail Directory'), _('Target directory for the generated jail blocklist. \
-			If this directory points to your DNS directory, the jail blocklist replaces your default blocklist.'));
-		o.depends('adb_jail', '1');
-		o.placeholder = '/tmp';
+		o = s.taboption('adv_dns', form.Flag, 'adb_jail', _('Jail Mode'), _('Only domains on the allowlist are permitted, all other DNS requests are rejected.'));
 		o.rmempty = true;
 
 		/*
@@ -397,10 +630,6 @@ return view.extend({
 		o.rawhtml = true;
 		o.default = '<em style="color:#37c;font-weight:bold;">' + _('Changes on this tab needs an adblock service restart to take effect.') + '</em>'
 			+ '<hr style="width: 200px; height: 1px;" />';
-
-		o = s.taboption('adv_report', form.DummyValue, '_sub');
-		o.rawhtml = true;
-		o.default = '<em><b>Changes on this tab needs a full adblock service restart to take effect.</b></em>';
 
 		o = s.taboption('adv_report', widgets.DeviceSelect, 'adb_repiface', _('Report Interface'), _('List of available network devices used by tcpdump.'));
 		o.nocreate = false;
@@ -420,14 +649,17 @@ return view.extend({
 		o.datatype = 'range(1,10)';
 		o.rmempty = true;
 
-		o = s.taboption('adv_report', form.Value, 'adb_replisten', _('Report Ports'), _('Space separated list of ports used by tcpdump.'));
+		o = s.taboption('adv_report', form.DynamicList, 'adb_repport', _('Report Ports'), _('The list of ports used by tcpdump.'));
+		o.datatype = 'port';
 		o.placeholder = '53';
+		o.multiple = true;
+		o.optional = true;
 		o.rmempty = true;
 
 		o = s.taboption('adv_report', form.Flag, 'adb_represolve', _('Resolve IPs'), _('Resolve reporting IP addresses by using reverse DNS (PTR) lookups.'));
 		o.rmempty = true;
 
-		o = s.taboption('adv_report', form.Flag, 'adb_map', _('GeoIP Map'), _('Enable a GeoIP map that shows the geographical location of the blocked domains. This requires external requests to get the map tiles and geolocation data.'));
+		o = s.taboption('adv_report', form.Flag, 'adb_map', _('GeoIP Map'), _('Enable a GeoIP map that shows the geographical location of the blocked domains.'));
 		o.optional = true;
 		o.rmempty = true;
 
@@ -454,23 +686,24 @@ return view.extend({
 		/*
 			feed selection tab
 		*/
-		let feed, feeds, chain, descr;
-		if (result && Object.keys(result).length) {
-			if (result[0]) {
-				try {
-					feeds = JSON.parse(result[0]);
-				} catch (e) {
-					ui.addNotification(null, E('p', _('Unable to parse the custom feed file!')), 'error');
-				}
-			}
-			if (result[1] && (!feeds || (feeds && !Object.keys(feeds).length))) {
-				try {
-					feeds = JSON.parse(result[1]);
-				} catch (e) {
-					ui.addNotification(null, E('p', _('Unable to parse the default feed file!')), 'error');
-				}
+		let feed, chain, descr;
+		let feeds = null;
+
+		if (result[0] && result[0].trim() !== "") {
+			try {
+				feeds = JSON.parse(result[0]);
+			} catch (e) {
+				ui.addNotification(null, E('p', _('Unable to parse the custom feed file!')), 'error');
 			}
 		}
+		if (!feeds && result[1] && result[1].trim() !== "") {
+			try {
+				feeds = JSON.parse(result[1]);
+			} catch (e) {
+				ui.addNotification(null, E('p', _('Unable to parse the default feed file!')), 'error');
+			}
+		}
+
 		o = s.taboption('feeds', form.DummyValue, '_sub');
 		o.rawhtml = true;
 		o.default = '<em style="color:#37c;font-weight:bold;">' + _('Changes on this tab needs an adblock service reload to take effect.') + '</em>'
@@ -481,8 +714,8 @@ return view.extend({
 			o = s.taboption('feeds', form.MultiValue, 'adb_feed', _('Blocklist Feed'));
 			for (let i = 0; i < Object.keys(feeds).length; i++) {
 				feed = Object.keys(feeds)[i].trim();
-				chain = feeds[feed].size.trim() || 'in';
-				descr = feeds[feed].descr.trim() || '-';
+				chain = feeds[feed].size?.trim() || 'in';
+				descr = feeds[feed].descr?.trim() || '-';
 				o.value(feed, feed + ' (' + chain + ', ' + descr + ')');
 			}
 			o.optional = true;
@@ -492,80 +725,93 @@ return view.extend({
 		/*
 			prepare category data
 		*/
-		var code, category, list, path, categories = [];
-		if (result[2]) {
-			categories = result[2].trim().split('\n');
-		}
+		const categories = result[2] ? result[2].trim().split('\n') : [];
 
-		o = s.taboption('feeds', form.DummyValue, '_sub');
-		o.rawhtml = true;
-		o.default = '<hr style="width: 200px; height: 1px;" /><em style="color:#37c;font-weight:bold;">' + _('UTCapitole Archive Selection') + '</em>';
-
-		o = s.taboption('feeds', form.DynamicList, 'adb_utc_feed', _('Categories'));
-		for (var i = 0; i < categories.length; i++) {
-			code = categories[i].match(/^(\w+);/)[1].trim();
-			if (code === 'utc') {
-				category = categories[i].match(/^\w+;(.*$)/)[1].trim();
-				o.value(category);
-			}
-		}
-		o.optional = true;
-		o.rmempty = true;
-
-		o = s.taboption('feeds', form.DummyValue, '_sub');
-		o.rawhtml = true;
-		o.default = '<hr style="width: 200px; height: 1px;" /><em style="color:#37c;font-weight:bold;">' + _('StevenBlack List Selection') + '</em>';
-
-		o = s.taboption('feeds', form.DynamicList, 'adb_stb_feed', _('Categories'));
-		for (var i = 0; i < categories.length; i++) {
-			code = categories[i].match(/^(\w+);/)[1].trim();
-			if (code === 'stb') {
-				list = categories[i].match(/^\w+;(.*);/)[1].trim();
-				path = categories[i].match(/^.*;(.*$)/)[1].trim();
-				o.value(path, list);
-			}
-		}
-		o.optional = true;
-		o.rmempty = true;
-
-		o = s.taboption('feeds', form.DummyValue, '_sub');
-		o.rawhtml = true;
-		o.default = '<hr style="width: 200px; height: 1px;" /><em style="color:#37c;font-weight:bold;">' + _('Hagezi List Selection') + '</em>';
-
-		o = s.taboption('feeds', form.DynamicList, 'adb_hag_feed', _('Categories'));
-		for (var i = 0; i < categories.length; i++) {
-			code = categories[i].match(/^(\w+);/)[1].trim();
-			if (code === 'hag') {
-				list = categories[i].match(/^\w+;(.*);/)[1].trim();
-				path = categories[i].match(/^.*;(.*$)/)[1].trim();
-				o.value(path, list);
-			}
-		}
-		o.optional = true;
-		o.rmempty = true;
-
-		o = s.taboption('feeds', form.DummyValue, '_sub');
+		o = s.taboption('feeds', form.DummyValue, '_feeds1');
 		o.rawhtml = true;
 		o.default = '<hr style="width: 200px; height: 1px;" /><em style="color:#37c;font-weight:bold;">' + _('1Hosts List Selection') + '</em>';
 
 		o = s.taboption('feeds', form.DynamicList, 'adb_hst_feed', _('Categories'));
-		for (var i = 0; i < categories.length; i++) {
-			code = categories[i].match(/^(\w+);/)[1].trim();
-			if (code === 'hst') {
-				list = categories[i].match(/^\w+;(.*);/)[1].trim();
-				path = categories[i].match(/^.*;(.*$)/)[1].trim();
-				o.value(path, list);
+		for (let i = 0; i < categories.length; i++) {
+			const cat = categories[i].match(/^(\w+);(.*?);(.*)$/);
+			if (!cat) continue;
+			if (cat[1].trim() === 'hst') {
+				o.value(cat[3].trim(), cat[2].trim());
 			}
 		}
 		o.optional = true;
 		o.rmempty = true;
 
+		o = s.taboption('feeds', form.DummyValue, '_feeds2');
+		o.rawhtml = true;
+		o.default = '<hr style="width: 200px; height: 1px;" /><em style="color:#37c;font-weight:bold;">' + _('Hagezi List Selection') + '</em>';
+
+		o = s.taboption('feeds', form.DynamicList, 'adb_hag_feed', _('Categories'));
+		for (let i = 0; i < categories.length; i++) {
+			const cat = categories[i].match(/^(\w+);(.*?);(.*)$/);
+			if (!cat) continue;
+			if (cat[1].trim() === 'hag') {
+				o.value(cat[3].trim(), cat[2].trim());
+			}
+		}
+		o.optional = true;
+		o.rmempty = true;
+
+		o = s.taboption('feeds', form.DummyValue, '_feeds3');
+		o.rawhtml = true;
+		o.default = '<hr style="width: 200px; height: 1px;" /><em style="color:#37c;font-weight:bold;">' + _('IPFire List Selection') + '</em>';
+
+		o = s.taboption('feeds', form.DynamicList, 'adb_ipf_feed', _('Categories'));
+		for (let i = 0; i < categories.length; i++) {
+			const cat = categories[i].match(/^(\w+);(.*?);(.*)$/);
+			if (!cat) continue;
+			if (cat[1].trim() === 'ipf') {
+				o.value(cat[3].trim(), cat[2].trim());
+			}
+		}
+		o.optional = true;
+		o.rmempty = true;
+
+		o = s.taboption('feeds', form.DummyValue, '_feeds4');
+		o.rawhtml = true;
+		o.default = '<hr style="width: 200px; height: 1px;" /><em style="color:#37c;font-weight:bold;">' + _('StevenBlack List Selection') + '</em>';
+
+		o = s.taboption('feeds', form.DynamicList, 'adb_stb_feed', _('Categories'));
+		for (let i = 0; i < categories.length; i++) {
+			const cat = categories[i].match(/^(\w+);(.*?);(.*)$/);
+			if (!cat) continue;
+			if (cat[1].trim() === 'stb') {
+				o.value(cat[3].trim(), cat[2].trim());
+			}
+		}
+		o.optional = true;
+		o.rmempty = true;
+
+		o = s.taboption('feeds', form.DummyValue, '_feeds5');
+		o.rawhtml = true;
+		o.default = '<hr style="width: 200px; height: 1px;" /><em style="color:#37c;font-weight:bold;">' + _('UTCapitole Archive Selection') + '</em>';
+
+		o = s.taboption('feeds', form.DynamicList, 'adb_utc_feed', _('Categories'));
+		for (let i = 0; i < categories.length; i++) {
+			const cat = categories[i].match(/^(\w+);(.*)$/);
+			if (!cat) continue;
+			if (cat[1].trim() === 'utc') {
+				o.value(cat[2].trim());
+			}
+		}
+		o.optional = true;
+		o.rmempty = true;
+
+		/*
+			action buttons
+		*/
 		s = m.section(form.NamedSection, 'global');
 		s.render = L.bind(function () {
 			return E('div', { 'class': 'cbi-page-actions' }, [
 				E('button', {
 					'class': 'btn cbi-button cbi-button-negative important',
 					'style': 'float:none;margin-right:.4em;',
+					'title': 'Stop',
 					'click': function () {
 						return handleAction('stop');
 					}
@@ -574,6 +820,7 @@ return view.extend({
 					'class': 'btn cbi-button cbi-button-apply important',
 					'style': 'float:none;margin-right:.4em;',
 					'id': 'btn_suspend',
+					'title': 'Suspend/Resume',
 					'click': function () {
 						return handleAction('suspend');
 					}
@@ -581,6 +828,7 @@ return view.extend({
 				E('button', {
 					'class': 'btn cbi-button cbi-button-positive important',
 					'style': 'float:none;margin-right:.4em;',
+					'title': 'Save & Reload',
 					'click': function () {
 						return handleAction('reload');
 					}
@@ -588,11 +836,12 @@ return view.extend({
 				E('button', {
 					'class': 'btn cbi-button cbi-button-positive important',
 					'style': 'float:none',
+					'title': 'Save & Restart',
 					'click': function () {
-						handleAction('restart');
+						return handleAction('restart');
 					}
 				}, [_('Save & Restart')])
-			])
+			]);
 		});
 		return m.render();
 	},

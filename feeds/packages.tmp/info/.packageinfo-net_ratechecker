@@ -5,7 +5,7 @@ Version: 2020.01.30~a2b8b958548bacdb69ffac3aa033f519093415f7-r2
 Depends: +libc +libevent2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ratechecker-any
 Section: net
 Category: Network
 Repository: base

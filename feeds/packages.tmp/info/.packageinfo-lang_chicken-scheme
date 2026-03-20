@@ -5,7 +5,7 @@ Version: 5.2.0-r2
 Depends: +libc 
 Conflicts: chicken-scheme-full
 Menu-Depends: 
-Provides: 
+Provides: @chicken-scheme-interpreter-any
 Section: lang
 Category: Languages
 Repository: base
@@ -17,7 +17,7 @@ LicenseFiles: LICENSE
 URL: https://call-cc.org
 ABI-Version: 11
 Type: ipkg
-Description:   Chicken is an implementation of the Scheme language. It is portable, efficient, and supports 
+Description:   Chicken is an implementation of the Scheme language. It is portable, efficient, and supports
   the R5RS and R7RS (work in progress) standards, and many extensions.
   Chicken can be used as a scripting language to automate tasks.
   This package contains the interpreter, 'csi', only --
@@ -27,10 +27,10 @@ Description:   Chicken is an implementation of the Scheme language. It is portab
 
 Package: chicken-scheme-full
 Version: 5.2.0-r2
-Depends: +libc 
+Depends: +libc gcc coreutils-install
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @chicken-scheme-full-any
 Section: lang
 Category: Languages
 Repository: base
@@ -42,7 +42,7 @@ LicenseFiles: LICENSE
 URL: https://call-cc.org
 ABI-Version: 11
 Type: ipkg
-Description:   Chicken is an implementation of the Scheme language. It is portable, efficient, and supports 
+Description:   Chicken is an implementation of the Scheme language. It is portable, efficient, and supports
   the R5RS and R7RS (work in progress) standards, and many extensions.
   Chicken can be used as a scripting language to automate tasks.
   This package contains the interpreter, 'csi'; the compiler, 'csc';

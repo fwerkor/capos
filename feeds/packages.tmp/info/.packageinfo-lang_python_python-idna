@@ -1,21 +1,21 @@
 Source-Makefile: feeds/packages/lang/python/python-idna/Makefile
-Build-Depends: python-flit-core/host
-Build-Depends/host: python3/host python-build/host python-installer/host python-flit-core/host
+Build-Depends: python3/host python-setuptools/host python-flit-core/host
+Build-Depends/host: python3/host python-setuptools/host python-build/host python-installer/host python-flit-core/host
 Build-Types: host
 
 Package: python3-idna
 Submenu: Python
-Version: 3.6-r2
+Version: 3.11-r1
 Depends: +libc +python3-light +python3-codecs
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-idna-any
 Section: lang
 Category: Languages
 Repository: base
 Title: IDNA library
 Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: idna-3.6.tar.gz
+Source: idna-3.11.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE.md
 URL: https://github.com/kjd/idna
@@ -28,17 +28,17 @@ from the earlier standard from 2003.
 
 Package: python3-idna-src
 Submenu: Python
-Version: 3.6-r2
+Version: 3.11-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-idna-src-any
 Section: lang
 Category: Languages
 Repository: base
 Title: IDNA library (sources)
 Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: idna-3.6.tar.gz
+Source: idna-3.11.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE.md
 URL: https://github.com/kjd/idna

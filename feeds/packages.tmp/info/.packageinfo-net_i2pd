@@ -1,18 +1,19 @@
 Source-Makefile: feeds/packages/net/i2pd/Makefile
+Build-Depends: boost
 
 Package: i2pd
-Version: 2.54.0-r1
-Depends: +libc +libopenssl +boost +boost-system +boost-program_options +libatomic +zlib
+Version: 2.58.0-r2
+Depends: +libc +libopenssl +boost +boost-program_options +libatomic +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @i2pd-any
 Section: net
 Category: Network
 Repository: base
 Title: full-featured C++ implementation of I2P client
 Maintainer: David Yang <mmyangfl@gmail.com>
 Require-User: i2pd:i2pd
-Source: i2pd-2.54.0.tar.gz
+Source: i2pd-2.58.0.tar.zst
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:i2pd:i2pd

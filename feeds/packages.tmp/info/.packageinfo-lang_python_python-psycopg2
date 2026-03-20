@@ -6,7 +6,7 @@ Version: 2.9.7-r1
 Depends: +libc +python3-light +python3-decimal +python3-logging +python3-uuid +libpq
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-psycopg2-any
 Section: lang
 Category: Languages
 Repository: base
@@ -27,7 +27,7 @@ Version: 2.9.7-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-psycopg2-src-any
 Section: lang
 Category: Languages
 Repository: base

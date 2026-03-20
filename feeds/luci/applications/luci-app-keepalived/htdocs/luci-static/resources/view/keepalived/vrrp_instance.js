@@ -6,23 +6,24 @@
 'require tools.widgets as widgets';
 
 return view.extend({
-	load: function() {
+	load() {
 		return Promise.all([
 			network.getDevices(),
 			uci.load('keepalived'),
 		]);
 	},
 
-	renderGeneralTab: function(s) {
-		var o, ipaddress;
+	renderGeneralTab(s) {
+		let o, ipaddress;
 
 		o = s.taboption('general',form.Value, 'name', _('Name'));
 		o.rmempty = false;
 		o.optional = false;
 
 		o = s.taboption('general', form.ListValue, 'state', _('State'),
-			_('Initial State. As soon as the other machine(s) come up,') +
-			_('an election will be held and the machine with the highest "priority" will become MASTER.'));
+			_('Initial State.') + ' ' +
+			_('As soon as the other machine(s) come up, an election will be held.') + ' ' +
+			_('The machine with the highest "priority" will become MASTER.'));
 		o.value('MASTER', _('Master'));
 		o.value('BACKUP', _('Backup'));
 		o.optional = false;
@@ -61,8 +62,7 @@ return view.extend({
 		o.value('60');
 
 		o = s.taboption('general', form.Flag, 'nopreempt', _('Disable Preempt'),
-			_('Allows the lower priority machine to maintain the master role,') +
-			_('even when a higher priority machine comes back online.') + ' ' +
+			_('Allows the lower priority machine to maintain the master role, even when a higher priority machine comes back online.') + ' ' +
 			_('For this to work, the initial state of this entry must be BACKUP.'));
 		o.optional = true;
 		o.default = false;
@@ -72,7 +72,7 @@ return view.extend({
 			_('Addresses add|del on change to MASTER, to BACKUP.') + ' ' +
 			_('With the same entries on other machines, the opposite transition will be occurring.'));
 		if (ipaddress != '') {
-			for (var i = 0; i < ipaddress.length; i++) {
+			for (let i = 0; i < ipaddress.length; i++) {
 				o.value(ipaddress[i]['name']);
 			}
 		}
@@ -80,27 +80,27 @@ return view.extend({
 		o.optional = false;
 	},
 
-	renderPeerTab: function(s, netDevs) {
-		var o;
+	renderPeerTab(s, netDevs) {
+		let o;
 
 		o = s.taboption('peer', form.ListValue, 'unicast_src_ip', _('Unicast Source IP'),
 			_('Default IP for binding vrrpd is the primary IP on interface'));
 		o.datatype = 'ipaddr';
 		o.optional = true;
 		o.modalonly = true;
-		for (var i = 0; i < netDevs.length; i++) {
-			var addrs = netDevs[i].getIPAddrs();
-			for (var j = 0; j < addrs.length; j++) {
+		for (let i = 0; i < netDevs.length; i++) {
+			let addrs = netDevs[i].getIPAddrs();
+			for (let j = 0; j < addrs.length; j++) {
 				o.value(addrs[j].split('/')[0]);
 			}
 		}
 
-		var peers = uci.sections('keepalived', 'peer');
+		let peers = uci.sections('keepalived', 'peer');
 		o = s.taboption('peer', form.DynamicList, 'unicast_peer', _('Peer'),
 			_('Do not send VRRP adverts over VRRP multicast group.') + ' ' +
 			_('Instead it sends adverts to the following list of ip addresses using unicast design fashion'));
 		if (peers != '') {
-			for (var i = 0; i < peers.length; i++) {
+			for (let i = 0; i < peers.length; i++) {
 				o.value(peers[i]['name']);
 			}
 		}
@@ -124,8 +124,8 @@ return view.extend({
 		o.depends({ 'auth_type' : 'PASS' });
 	},
 
-	renderGARPTab: function(s) {
-		var o;
+	renderGARPTab(s) {
+		let o;
 
 		o = s.taboption('garp', form.ListValue, 'garp_master_delay', _('GARP Delay'),
 			_('Gratuitous Master Delay in seconds'));
@@ -172,8 +172,8 @@ return view.extend({
 		o.value('60');
 	},
 
-	renderAdvancedTab: function(s) {
-		var o;
+	renderAdvancedTab(s) {
+		let o;
 
 		o = s.taboption('advanced', form.Value, 'use_vmac', _('Use VMAC'),
 			_('Use VRRP Virtual MAC'));
@@ -182,7 +182,7 @@ return view.extend({
 		o.modalonly = true;
 
 		o = s.taboption('advanced', form.Flag, 'vmac_xmit_base', _('Use VMAC Base'),
-			_('Send/Recv VRRP messages from base interface instead of VMAC interfac'));
+			_('Send/Recv VRRP messages from base interface instead of VMAC interface'));
 		o.default = false;
 		o.optional = true;
 		o.modalonly = true;
@@ -234,9 +234,9 @@ return view.extend({
 		o.modalonly = true;
 	},
 
-	renderTrackingTab: function(s) {
-		var o;
-		var ipaddress, routes, interfaces, scripts;
+	renderTrackingTab(s) {
+		let o;
+		let ipaddress, routes, interfaces, scripts;
 
 		ipaddress = uci.sections('keepalived', 'ipaddress');
 		routes = uci.sections('keepalived', 'route');
@@ -244,11 +244,12 @@ return view.extend({
 		scripts = uci.sections('keepalived', 'track_script');
 
 		o = s.taboption('tracking', form.DynamicList, 'virtual_ipaddress_excluded', _('Exclude Virtual IP Address'),
-			_('VRRP IP excluded from VRRP. For cases with large numbers (eg 200) of IPs on the same interface.') + ' ' +
+			_('VRRP IP excluded from VRRP.') + ' ' +
+			_('For cases with large numbers (eg 200) of IPs on the same interface.') + ' ' +
 			_('To decrease the number of packets sent in adverts, you can exclude most IPs from adverts.'));
 		o.modalonly = true;
 		if (ipaddress != '') {
-			for (var i = 0; i < ipaddress.length; i++) {
+			for (let i = 0; i < ipaddress.length; i++) {
 				o.value(ipaddress[i]['name']);
 			}
 		}
@@ -257,7 +258,7 @@ return view.extend({
 			_('Routes add|del when changing to MASTER, to BACKUP'));
 		o.modalonly = true;
 		if (routes != '') {
-			for (var i = 0; i < routes.length; i++) {
+			for (let i = 0; i < routes.length; i++) {
 				o.value(routes[i]['name']);
 			}
 		}
@@ -266,7 +267,7 @@ return view.extend({
 			_('Go to FAULT state if any of these go down'));
 		o.modalonly = true;
 		if (interfaces != '') {
-			for (var i = 0; i < interfaces.length; i++) {
+			for (let i = 0; i < interfaces.length; i++) {
 				o.value(interfaces[i]['name']);
 			}
 		}
@@ -275,15 +276,14 @@ return view.extend({
 			_('Go to FAULT state if any of these go down, if unweighted'));
 		o.modalonly = true;
 		if (scripts != '') {
-			for (var i = 0; i < scripts.length; i++) {
+			for (let i = 0; i < scripts.length; i++) {
 				o.value(scripts[i]['name']);
 			}
 		}
 	},
 
-	render: function(data) {
-		var netDevs = data[0];
-		let m, s, o;
+	render([netDevs]) {
+		let m, s;
 
 		m = new form.Map('keepalived');
 
@@ -293,11 +293,11 @@ return view.extend({
 		s.addremove = true;
 		s.nodescriptions = true;
 
-		o = s.tab('general', _('General'));
-		o = s.tab('peer', _('Peer'));
-		o = s.tab('tracking', _('Tracking'));
-		o = s.tab('garp', _('GARP'));
-		o = s.tab('advanced', _('Advanced'));
+		s.tab('general', _('General'));
+		s.tab('peer', _('Peer'));
+		s.tab('tracking', _('Tracking'));
+		s.tab('garp', _('GARP'));
+		s.tab('advanced', _('Advanced'));
 
 		this.renderGeneralTab(s);
 		this.renderPeerTab(s, netDevs);

@@ -1,0 +1,26 @@
+Source-Makefile: feeds/video/games/gzdoom/Makefile
+Build-Depends: gzdoom/host vulkan-loader
+Build-Types: host
+
+Package: gzdoom
+Version: 4.14.2-r1
+Depends: +libc +alsa-lib +glib2 +libatomic +libbz2 +libstdcpp +libzmusic +libvpx +libsdl2 +USE_MUSL:musl-fts @(ARCH_64BIT||BROKEN)
+Conflicts: 
+Menu-Depends: 
+Provides: @gzdoom-any
+Section: games
+Category: Games
+Repository: base
+Title: GZDoom
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: g4.14.2.zip
+License: GPL-3.0-or-later BSD-3-Clause
+LicenseFiles: LICENSE
+URL: https://zdoom.org/
+Type: ipkg
+Description:  ZDoom is a family of enhanced ports of the Doom engine for running on modern
+ operating systems. Use this port of DOOM on systems with some sort of hardware
+ 3D acceleration support.
+@@
+
+

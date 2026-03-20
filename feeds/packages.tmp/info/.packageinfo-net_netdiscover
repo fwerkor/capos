@@ -5,7 +5,7 @@ Version: 0.3_beta7-r2
 Depends: +libc +libpcap +libnet-1.2.x +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @netdiscover-any
 Section: net
 Category: Network
 Repository: base

@@ -59,8 +59,9 @@
 		regulator-name = "usb_vbus";
 		regulator-min-microvolt = <5000000>;
 		regulator-max-microvolt = <5000000>;
-		enable-active-high;
+		regulator-always-on;
 		gpios = <&gpio 19 GPIO_ACTIVE_HIGH>;
+		enable-active-high;
 	};
 };
 
@@ -81,14 +82,14 @@
 &gpio {
 	gpio_ext_lna0 {
 		gpio-hog;
-		gpios = <14 0>;
+		gpios = <14 GPIO_ACTIVE_HIGH>;
 		output-high;
 		line-name = "c301:ext:lna0";
 	};
 
 	gpio_ext_lna1 {
 		gpio-hog;
-		gpios = <15 0>;
+		gpios = <15 GPIO_ACTIVE_HIGH>;
 		output-high;
 		line-name = "c301:ext:lna1";
 	};
@@ -208,7 +209,6 @@
 
 &usb_phy {
 	status = "okay";
-	phy-supply = <&usb_vbus>;
 };
 
 &pcie {

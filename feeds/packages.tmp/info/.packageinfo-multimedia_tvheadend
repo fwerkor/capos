@@ -7,7 +7,7 @@ Version: 2025.06.04~0f74b0ab0a3b96d87da04d9c778142ecfb370a1d-r1
 Depends: +libc +librt +libffi +libopenssl +BUILD_NLS:libiconv-full +zlib +TVHEADEND_AVAHI_SUPPORT:libavahi-client +TVHEADEND_REGEX_PCRE2:libpcre2 +BUILD_PATENTED&&TVHEADEND_CSA:libdvbcsa
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tvheadend-any
 Section: multimedia
 Category: Multimedia
 Repository: base

@@ -6,7 +6,7 @@ Version: 0.7.1-r1
 Depends: +libc +python3-light +python3-xml
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-defusedxml-any
 Section: lang
 Category: Languages
 Repository: base
@@ -27,7 +27,7 @@ Version: 0.7.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-defusedxml-src-any
 Section: lang
 Category: Languages
 Repository: base

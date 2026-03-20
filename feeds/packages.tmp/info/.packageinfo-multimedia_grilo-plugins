@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/multimedia/grilo-plugins/Makefile
 
 Package: grilo-plugins
 Menu: 1
-Version: 0.3.16-r2
+Version: 0.3.17-r1
 Depends: +libc +grilo +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @grilo-plugins-any
 Section: multimedia
 Category: Multimedia
 Repository: base
 Title: Plugins for the Grilo framework
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: grilo-plugins-0.3.16.tar.xz
+Source: grilo-plugins-0.3.17.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 URL: https://wiki.gnome.org/Projects/Grilo
@@ -21,17 +21,17 @@ Description: Plugins for the Grilo framework
 @@
 
 Package: grilo-plugins-chromaprint
-Version: 0.3.16-r2
+Version: 0.3.17-r1
 Depends: +libc grilo-plugins +libgstreamer1
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @grilo-plugins-chromaprint-any
 Section: multimedia
 Category: Multimedia
 Repository: base
 Title: Chromaprint plugin
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: grilo-plugins-0.3.16.tar.xz
+Source: grilo-plugins-0.3.17.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 URL: https://wiki.gnome.org/Projects/Grilo
@@ -40,17 +40,17 @@ Description: Chromaprint plugin
 @@
 
 Package: grilo-plugins-dleyna
-Version: 0.3.16-r2
+Version: 0.3.17-r1
 Depends: +libc grilo-plugins
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @grilo-plugins-dleyna-any
 Section: multimedia
 Category: Multimedia
 Repository: base
 Title: DLNA sharing plugin
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: grilo-plugins-0.3.16.tar.xz
+Source: grilo-plugins-0.3.17.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 URL: https://wiki.gnome.org/Projects/Grilo
@@ -59,17 +59,17 @@ Description: DLNA sharing plugin
 @@
 
 Package: grilo-plugins-dmap
-Version: 0.3.16-r2
+Version: 0.3.17-r1
 Depends: +libc grilo-plugins libdmapsharing
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @grilo-plugins-dmap-any
 Section: multimedia
 Category: Multimedia
 Repository: base
 Title: DAAP and DPAP sharing plugin
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: grilo-plugins-0.3.16.tar.xz
+Source: grilo-plugins-0.3.17.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 URL: https://wiki.gnome.org/Projects/Grilo
@@ -78,17 +78,17 @@ Description: DAAP and DPAP sharing plugin
 @@
 
 Package: grilo-plugins-gravatar
-Version: 0.3.16-r2
+Version: 0.3.17-r1
 Depends: +libc grilo-plugins
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @grilo-plugins-gravatar-any
 Section: multimedia
 Category: Multimedia
 Repository: base
 Title: Gravatar provider plugin
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: grilo-plugins-0.3.16.tar.xz
+Source: grilo-plugins-0.3.17.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 URL: https://wiki.gnome.org/Projects/Grilo
@@ -97,17 +97,17 @@ Description: Gravatar provider plugin
 @@
 
 Package: grilo-plugins-magnatune
-Version: 0.3.16-r2
+Version: 0.3.17-r1
 Depends: +libc grilo-plugins
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @grilo-plugins-magnatune-any
 Section: multimedia
 Category: Multimedia
 Repository: base
 Title: Magnatune sharing plugin
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: grilo-plugins-0.3.16.tar.xz
+Source: grilo-plugins-0.3.17.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 URL: https://wiki.gnome.org/Projects/Grilo
@@ -116,17 +116,17 @@ Description: Magnatune sharing plugin
 @@
 
 Package: grilo-plugins-metadata-store
-Version: 0.3.16-r2
+Version: 0.3.17-r1
 Depends: +libc grilo-plugins
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @grilo-plugins-metadata-store-any
 Section: multimedia
 Category: Multimedia
 Repository: base
 Title: Metadata Store plugin
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: grilo-plugins-0.3.16.tar.xz
+Source: grilo-plugins-0.3.17.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 URL: https://wiki.gnome.org/Projects/Grilo
@@ -134,37 +134,18 @@ Type: ipkg
 Description: Metadata Store plugin
 @@
 
-Package: grilo-plugins-raitv
-Version: 0.3.16-r2
-Depends: +libc grilo-plugins
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: multimedia
-Category: Multimedia
-Repository: base
-Title: Rai.tv sharing plugin
-Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: grilo-plugins-0.3.16.tar.xz
-License: LGPL-2.1-or-later
-LicenseFiles: COPYING
-URL: https://wiki.gnome.org/Projects/Grilo
-Type: ipkg
-Description: Rai.tv sharing plugin
-@@
-
 Package: grilo-plugins-shoutcast
-Version: 0.3.16-r2
+Version: 0.3.17-r1
 Depends: +libc grilo-plugins
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @grilo-plugins-shoutcast-any
 Section: multimedia
 Category: Multimedia
 Repository: base
 Title: SHOUTcast sharing plugin
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: grilo-plugins-0.3.16.tar.xz
+Source: grilo-plugins-0.3.17.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 URL: https://wiki.gnome.org/Projects/Grilo
@@ -173,17 +154,17 @@ Description: SHOUTcast sharing plugin
 @@
 
 Package: grilo-plugins-tmdb
-Version: 0.3.16-r2
+Version: 0.3.17-r1
 Depends: +libc grilo-plugins +json-glib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @grilo-plugins-tmdb-any
 Section: multimedia
 Category: Multimedia
 Repository: base
 Title: TMDb plugin
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: grilo-plugins-0.3.16.tar.xz
+Source: grilo-plugins-0.3.17.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 URL: https://wiki.gnome.org/Projects/Grilo

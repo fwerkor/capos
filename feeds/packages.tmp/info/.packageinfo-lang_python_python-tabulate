@@ -1,0 +1,51 @@
+Source-Makefile: feeds/packages/lang/python/python-tabulate/Makefile
+Build-Depends: python-setuptools-scm/host
+Build-Depends/host: python3/host python-build/host python-installer/host python-wheel/host python-setuptools-scm/host
+Build-Types: host
+
+Package: python3-tabulate
+Submenu: Python
+Version: 0.9.0-r1
+Depends: +libc +python3-light
+Conflicts: 
+Menu-Depends: 
+Provides: @python3-tabulate-any
+Section: lang
+Category: Languages
+Repository: base
+Title: Pretty-print tabular data
+Maintainer: Austin Lane <vidplace7@gmail.com>
+Source: tabulate-0.9.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://pypi.org/project/tabulate
+Type: ipkg
+Description: Pretty-print tabular data
+@@
+
+Package: python3-tabulate-src
+Submenu: Python
+Version: 0.9.0-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @python3-tabulate-src-any
+Section: lang
+Category: Languages
+Repository: base
+Title: Pretty-print tabular data (sources)
+Maintainer: Austin Lane <vidplace7@gmail.com>
+Source: tabulate-0.9.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://pypi.org/project/tabulate
+Type: ipkg
+Description:     Pretty-print tabular data
+
+    This package contains the Python source files for python3-tabulate.
+@@
+Config:
+    depends on PACKAGE_python3-tabulate
+@@
+
+

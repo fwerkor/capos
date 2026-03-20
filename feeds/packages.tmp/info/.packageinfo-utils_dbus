@@ -1,17 +1,18 @@
 Source-Makefile: feeds/packages/utils/dbus/Makefile
 
 Package: libdbus
-Version: 1.14.10-r1
+Version: 1.16.2-r3
 Depends: +libc +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libdbus-any
 Section: utils
 Category: Libraries
 Repository: base
 Title: Simple interprocess messaging system (library)
 Maintainer: Robert Marko <robimarko@gmail.com>
-Source: dbus-1.14.10.tar.xz
+Require-User: dbus=91:dbus=91
+Source: dbus-1.16.2.tar.xz
 License: AFL-2.1
 CPE-ID: cpe:/a:freedesktop:dbus
 URL: https://dbus.freedesktop.org/
@@ -20,17 +21,18 @@ Description: Simple interprocess messaging system (library)
 @@
 
 Package: dbus
-Version: 1.14.10-r1
+Version: 1.16.2-r3
 Depends: +libc +libexpat +libdbus
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dbus-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: Simple interprocess messaging system (daemon)
 Maintainer: Robert Marko <robimarko@gmail.com>
-Source: dbus-1.14.10.tar.xz
+Require-User: dbus=91:dbus=91
+Source: dbus-1.16.2.tar.xz
 License: AFL-2.1
 CPE-ID: cpe:/a:freedesktop:dbus
 URL: https://dbus.freedesktop.org/
@@ -42,17 +44,18 @@ Config:
 @@
 
 Package: dbus-utils
-Version: 1.14.10-r1
+Version: 1.16.2-r3
 Depends: +libc +dbus
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dbus-utils-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: Simple interprocess messaging system (utilities)
 Maintainer: Robert Marko <robimarko@gmail.com>
-Source: dbus-1.14.10.tar.xz
+Require-User: dbus=91:dbus=91
+Source: dbus-1.16.2.tar.xz
 License: AFL-2.1
 CPE-ID: cpe:/a:freedesktop:dbus
 URL: https://dbus.freedesktop.org/

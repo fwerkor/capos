@@ -2,11 +2,11 @@ Source-Makefile: feeds/packages/net/ddns-scripts/Makefile
 
 Package: ddns-scripts
 Submenu: IP Addresses and Names
-Version: 2.8.2-r64
-Depends: +libc +ddns-scripts-services
+Version: 2.8.2-r90
+Depends: +libc +ddns-scripts-services +resolveip +ip
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ddns-scripts-any
 Section: net
 Category: Network
 Repository: base
@@ -24,17 +24,17 @@ Description:   Dynamic DNS Client scripts (with IPv6 support)
   - Proxy server support
   - log file support
   - support to run once
-  Version: 2.8.2-64
+  Version: 2.8.2-90
   Info   : https://openwrt.org/docs/guide-user/services/ddns/client
 @@
 
 Package: ddns-scripts-services
 Submenu: IP Addresses and Names
-Version: 2.8.2-r64
+Version: 2.8.2-r90
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: ddns-scripts_service
+Provides: @ddns-scripts-services-any ddns-scripts_service
 Section: net
 Category: Network
 Repository: base
@@ -48,11 +48,11 @@ Description:   Dynamic DNS Client definitions for supported services
 
 Package: ddns-scripts-utils
 Submenu: IP Addresses and Names
-Version: 2.8.2-r64
+Version: 2.8.2-r90
 Depends: +libc ddns-scripts
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ddns-scripts-utils-any
 Section: net
 Category: Network
 Repository: base
@@ -66,11 +66,11 @@ Description:   Dynamic DNS Client utility scripts for config files
 
 Package: ddns-scripts-luadns
 Submenu: IP Addresses and Names
-Version: 2.8.2-r64
+Version: 2.8.2-r90
 Depends: +libc ddns-scripts +curl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ddns-scripts-luadns-any
 Section: net
 Category: Network
 Repository: base
@@ -84,11 +84,11 @@ Description:   Dynamic DNS Client scripts extension for LuaDNS API v1 (require c
 
 Package: ddns-scripts-cloudflare
 Submenu: IP Addresses and Names
-Version: 2.8.2-r64
+Version: 2.8.2-r90
 Depends: +libc ddns-scripts +curl
 Conflicts: 
 Menu-Depends: 
-Provides: ddns-scripts_cloudflare.com-v4
+Provides: @ddns-scripts-cloudflare-any ddns-scripts_cloudflare.com-v4
 Section: net
 Category: Network
 Repository: base
@@ -102,11 +102,11 @@ Description:   Dynamic DNS Client scripts extension for cloudflare.com API v4 (r
 
 Package: ddns-scripts-gcp
 Submenu: IP Addresses and Names
-Version: 2.8.2-r64
+Version: 2.8.2-r90
 Depends: +libc ddns-scripts +curl +openssl-util
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ddns-scripts-gcp-any
 Section: net
 Category: Network
 Repository: base
@@ -120,11 +120,11 @@ Description:   Dynamic DNS Client scripts extension for Google Cloud DNS API v1 
 
 Package: ddns-scripts-freedns
 Submenu: IP Addresses and Names
-Version: 2.8.2-r64
+Version: 2.8.2-r90
 Depends: +libc ddns-scripts +curl
 Conflicts: 
 Menu-Depends: 
-Provides: ddns-scripts_freedns_42_pl
+Provides: @ddns-scripts-freedns-any ddns-scripts_freedns_42_pl
 Section: net
 Category: Network
 Repository: base
@@ -138,11 +138,11 @@ Description:   Dynamic DNS Client scripts extension for 'freedns.42.pl'.
 
 Package: ddns-scripts-godaddy
 Submenu: IP Addresses and Names
-Version: 2.8.2-r64
+Version: 2.8.2-r90
 Depends: +libc ddns-scripts +curl
 Conflicts: 
 Menu-Depends: 
-Provides: ddns-scripts_godaddy.com-v1
+Provides: @ddns-scripts-godaddy-any ddns-scripts_godaddy.com-v1
 Section: net
 Category: Network
 Repository: base
@@ -154,13 +154,49 @@ Type: ipkg
 Description:   Dynamic DNS Client scripts extension for 'godaddy.com API v1'.
 @@
 
-Package: ddns-scripts-digitalocean
+Package: ddns-scripts-hetzner-cloud
 Submenu: IP Addresses and Names
-Version: 2.8.2-r64
+Version: 2.8.2-r90
 Depends: +libc ddns-scripts +curl
 Conflicts: 
 Menu-Depends: 
-Provides: ddns-scripts_digitalocean.com-v2
+Provides: @ddns-scripts-hetzner-cloud-any ddns-scripts_hetzner-cloud
+Section: net
+Category: Network
+Repository: base
+Title: Extension for hetzner.cloud API
+Maintainer: 
+Source: 
+License: GPL-2.0
+Type: ipkg
+Description:   Dynamic DNS Client scripts extension for 'hetzner.cloud API'.
+@@
+
+Package: ddns-scripts-namesilo
+Submenu: IP Addresses and Names
+Version: 2.8.2-r90
+Depends: +libc ddns-scripts +curl
+Conflicts: 
+Menu-Depends: 
+Provides: @ddns-scripts-namesilo-any ddns-scripts_namesilo.com-v1
+Section: net
+Category: Network
+Repository: base
+Title: Extension for namesilo.com API v1
+Maintainer: 
+Source: 
+License: GPL-2.0
+Type: ipkg
+Description:   Dynamic DNS Client scripts extension for 'namesilo.com API v1'.
+@@
+
+Package: ddns-scripts-digitalocean
+Submenu: IP Addresses and Names
+Version: 2.8.2-r90
+Depends: +libc ddns-scripts +curl
+Conflicts: 
+Menu-Depends: 
+Provides: @ddns-scripts-digitalocean-any ddns-scripts_digitalocean.com-v2
 Section: net
 Category: Network
 Repository: base
@@ -181,11 +217,11 @@ Description:   Dynamic DNS Client scripts extension for digitalocean.com API v2.
 
 Package: ddns-scripts-dnspod
 Submenu: IP Addresses and Names
-Version: 2.8.2-r64
+Version: 2.8.2-r90
 Depends: +libc ddns-scripts +curl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ddns-scripts-dnspod-any
 Section: net
 Category: Network
 Repository: base
@@ -199,11 +235,11 @@ Description:   Dynamic DNS Client scripts extension for dnspod.cn API (require c
 
 Package: ddns-scripts-dnspod-v3
 Submenu: IP Addresses and Names
-Version: 2.8.2-r64
+Version: 2.8.2-r90
 Depends: +libc ddns-scripts +curl +openssl-util
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ddns-scripts-dnspod-v3-any
 Section: net
 Category: Network
 Repository: base
@@ -217,11 +253,11 @@ Description:   Dynamic DNS Client scripts extension for dnspod.tencentcloudapi.c
 
 Package: ddns-scripts-noip
 Submenu: IP Addresses and Names
-Version: 2.8.2-r64
+Version: 2.8.2-r90
 Depends: +libc ddns-scripts
 Conflicts: 
 Menu-Depends: 
-Provides: ddns-scripts_no-ip_com
+Provides: @ddns-scripts-noip-any ddns-scripts_no-ip_com
 Section: net
 Category: Network
 Repository: base
@@ -235,11 +271,11 @@ Description:   Dynamic DNS Client scripts extension for 'no-ip.com'.
 
 Package: ddns-scripts-nsupdate
 Submenu: IP Addresses and Names
-Version: 2.8.2-r64
+Version: 2.8.2-r90
 Depends: +libc ddns-scripts +bind-client
 Conflicts: 
 Menu-Depends: 
-Provides: ddns-scripts_nsupdate
+Provides: @ddns-scripts-nsupdate-any ddns-scripts_nsupdate
 Section: net
 Category: Network
 Repository: base
@@ -259,11 +295,11 @@ Description:   Dynamic DNS Client scripts extension for direct updates using bin
 
 Package: ddns-scripts-route53
 Submenu: IP Addresses and Names
-Version: 2.8.2-r64
+Version: 2.8.2-r90
 Depends: +libc ddns-scripts +curl +openssl-util
 Conflicts: 
 Menu-Depends: 
-Provides: ddns-scripts_route53-v1
+Provides: @ddns-scripts-route53-any ddns-scripts_route53-v1
 Section: net
 Category: Network
 Repository: base
@@ -282,11 +318,11 @@ Description:   Dynamic DNS Client scripts extension for Amazon AWS 'route53 API 
 
 Package: ddns-scripts-cnkuai
 Submenu: IP Addresses and Names
-Version: 2.8.2-r64
+Version: 2.8.2-r90
 Depends: +libc ddns-scripts +curl +giflib-utils
 Conflicts: 
 Menu-Depends: 
-Provides: ddns-scripts_cnkuai_cn
+Provides: @ddns-scripts-cnkuai-any ddns-scripts_cnkuai_cn
 Section: net
 Category: Network
 Repository: base
@@ -304,11 +340,11 @@ Description:   Dynamic DNS Client scripts extension for 'cnkuai.cn'.
 
 Package: ddns-scripts-gandi
 Submenu: IP Addresses and Names
-Version: 2.8.2-r64
+Version: 2.8.2-r90
 Depends: +libc ddns-scripts +curl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ddns-scripts-gandi-any
 Section: net
 Category: Network
 Repository: base
@@ -323,13 +359,35 @@ Description:   Dynamic DNS Client scripts extension for 'gandi.net'.
   'option password' to be a valid API key for gandi.net
 @@
 
-Package: ddns-scripts-pdns
+Package: ddns-scripts-beget
 Submenu: IP Addresses and Names
-Version: 2.8.2-r64
+Version: 2.8.2-r90
 Depends: +libc ddns-scripts +curl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ddns-scripts-beget-any
+Section: net
+Category: Network
+Repository: base
+Title: Beget API
+Maintainer: 
+Source: 
+License: GPL-2.0
+Type: ipkg
+Description:   Dynamic DNS Client scripts extension for 'beget.com'.
+  It requires:
+  'option domain' to contain the domain
+  'option username' to be a valid username for beget.com
+  'option password' to be a valid API key for beget.com
+@@
+
+Package: ddns-scripts-pdns
+Submenu: IP Addresses and Names
+Version: 2.8.2-r90
+Depends: +libc ddns-scripts +curl
+Conflicts: 
+Menu-Depends: 
+Provides: @ddns-scripts-pdns-any
 Section: net
 Category: Network
 Repository: base
@@ -345,13 +403,36 @@ Description:   Dynamic DNS Client scripts extension for 'PowerDNS' via API.
   'option password' to be a valid API key for the PowerDNS webserver
 @@
 
+Package: ddns-scripts-scaleway
+Submenu: IP Addresses and Names
+Version: 2.8.2-r90
+Depends: +libc ddns-scripts +curl
+Conflicts: 
+Menu-Depends: 
+Provides: @ddns-scripts-scaleway-any
+Section: net
+Category: Network
+Repository: base
+Title: Extension for Scaleway DNS API
+Maintainer: 
+Source: 
+License: GPL-2.0
+Type: ipkg
+Description:   Dynamic DNS Client scripts extension for Scaleway.
+  Parameters:
+  'option username'  The zone in which the RR is to be set
+  'option password'  The Scaleway API token with sufficient access rights
+  'option domain'    The domain to be updated
+  'option param_opt' (Optional) The TTL of the RR
+@@
+
 Package: ddns-scripts-transip
 Submenu: IP Addresses and Names
-Version: 2.8.2-r64
+Version: 2.8.2-r90
 Depends: +libc ddns-scripts +curl +openssl-util +!BUSYBOX_CONFIG_MKTEMP:coreutils-mktemp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ddns-scripts-transip-any
 Section: net
 Category: Network
 Repository: base
@@ -372,11 +453,11 @@ Description:   Dynamic DNS Client scripts extension for 'transip.nl'.
 
 Package: ddns-scripts-ns1
 Submenu: IP Addresses and Names
-Version: 2.8.2-r64
+Version: 2.8.2-r90
 Depends: +libc ddns-scripts +curl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ddns-scripts-ns1-any
 Section: net
 Category: Network
 Repository: base
@@ -393,11 +474,11 @@ Description:   Dynamic DNS Client scripts extension for 'ns1.com'.
 
 Package: ddns-scripts-one
 Submenu: IP Addresses and Names
-Version: 2.8.2-r64
+Version: 2.8.2-r90
 Depends: +libc ddns-scripts +curl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ddns-scripts-one-any
 Section: net
 Category: Network
 Repository: base
@@ -406,16 +487,20 @@ Maintainer:
 Source: 
 License: GPL-2.0
 Type: ipkg
-Description: Extension for one.com Control Panel
+Description: 	Dynamic DNS Client scripts extension for 'one.com'.
+	It requires:
+	'option username' to be a valid Email for one.com Control Panel
+	'option password' to be the matching one.com Control Panel password
+	'option domain' to contain the domain / subdomain
 @@
 
 Package: ddns-scripts-porkbun
 Submenu: IP Addresses and Names
-Version: 2.8.2-r64
+Version: 2.8.2-r90
 Depends: +libc ddns-scripts +curl
 Conflicts: 
 Menu-Depends: 
-Provides: ddns-scripts_porkbun.com-v3
+Provides: @ddns-scripts-porkbun-any ddns-scripts_porkbun.com-v3
 Section: net
 Category: Network
 Repository: base
@@ -433,11 +518,11 @@ Description: 	Dynamic DNS Client scripts extension for porkbun.com API v3 (requi
 
 Package: ddns-scripts-huaweicloud
 Submenu: IP Addresses and Names
-Version: 2.8.2-r64
+Version: 2.8.2-r90
 Depends: +libc ddns-scripts +curl +openssl-util
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ddns-scripts-huaweicloud-any
 Section: net
 Category: Network
 Repository: base
@@ -447,6 +532,24 @@ Source:
 License: GPL-2.0
 Type: ipkg
 Description:   Dynamic DNS Client scripts extension for huaweicloud.com API (require curl and openssl)
+@@
+
+Package: ddns-scripts-aliyun
+Submenu: IP Addresses and Names
+Version: 2.8.2-r90
+Depends: +libc ddns-scripts +curl +openssl-util
+Conflicts: 
+Menu-Depends: 
+Provides: @ddns-scripts-aliyun-any
+Section: net
+Category: Network
+Repository: base
+Title: Extension for Aliyun DNS API
+Maintainer: 
+Source: 
+License: GPL-2.0
+Type: ipkg
+Description: 	Dynamic DNS Client scripts extension for aliyun.com API
 @@
 
 

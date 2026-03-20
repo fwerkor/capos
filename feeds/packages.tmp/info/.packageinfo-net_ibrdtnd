@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/net/ibrdtnd/Makefile
 
 Package: ibrdtnd
-Version: 1.0.1-r7
+Version: 1.0.1-r8
 Depends: +libc +dtndht +ibrdtn +libsqlite3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ibrdtnd-any
 Section: net
 Category: Network
 Repository: base

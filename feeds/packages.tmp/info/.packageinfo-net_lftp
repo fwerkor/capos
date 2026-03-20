@@ -2,11 +2,11 @@ Source-Makefile: feeds/packages/net/lftp/Makefile
 
 Package: lftp
 Submenu: File Transfer
-Version: 4.9.2-r2
+Version: 4.9.2-r3
 Depends: +libc +libncurses +libopenssl +libreadline +libstdcpp +libexpat +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lftp-any
 Section: net
 Category: Network
 Repository: base

@@ -347,6 +347,7 @@ small {
 	height: calc(100% - 4rem);
 	background-color: var(--menu-bg-color);
 	transition: visibility 400ms, width 400ms;
+	z-index: 800;
 }
 
 .main-right {
@@ -369,7 +370,9 @@ small {
 	float: left;
 }
 
-.nowrap:not(.td) {
+.nowrap:not(.td span) {
+/*	Sometimes you need to wrap: badges on narrow screens look weird 
+	and nowrap defeats other width constraints, so exclude span */
 	white-space: nowrap;
 }
 
@@ -498,36 +501,36 @@ header > .fill > .container > .status > * {
 
 .alert-message.notice,
 .label.notice {
-	background-color: var(--notice-color);
-	color: var(--on-notice-color);
+	background-color: var(--notice-color) !important;
+	color: var(--on-notice-color) !important;
 }
 
 .alert-message.danger,
 .btn.danger,
 .label.danger {
-	background-color: var(--danger-color);
-	color: var(--on-danger-color);
+	background-color: var(--danger-color) !important;
+	color: var(--on-danger-color) !important;
 }
 
 .alert-message.warning,
 .btn.warning,
 .label.warning {
-	background-color: var(--warning-color);
-	color: var(--on-warning-color);
+	background-color: var(--warning-color) !important;
+	color: var(--on-warning-color) !important;
 }
 
 .alert-message.success,
 .btn.success,
 .label.success {
-	background-color: var(--success-color);
-	color: var(--on-success-color);
+	background-color: var(--success-color) !important;
+	color: var(--on-success-color) !important;
 }
 
 .alert-message.error,
 .btn.error,
 .label.error {
-	background-color: var(--on-error-color);
-	color: var(--error-color);
+	background-color: var(--error-color) !important;
+	color: var(--on-error-color) !important;
 }
 
 [data-indicator]:not([data-style="inactive"]) {
@@ -537,6 +540,17 @@ header > .fill > .container > .status > * {
 .container .alert,
 .container .alert-message {
 	margin-top: 1rem;
+}
+
+/* Fix for table text in notifications - ensures table content inherits notification colors */
+.alert-message.notice table,
+.alert-message.notice .table,
+.alert-message.notice td,
+.alert-message.notice th,
+.alert-message.notice .td,
+.alert-message.notice .th {
+	color: var(--on-notice-color) !important;
+	background: transparent !important;
 }
 
 .main > .main-left > .nav {
@@ -1254,6 +1268,7 @@ td > table > tbody > tr > td,
 	display: inline-block;
 	width: 100%;
 	padding: .35rem 1rem .2rem 1rem;
+	align-items: baseline;
 }
 
 .cbi-value ul {
@@ -1301,30 +1316,20 @@ td > table > tbody > tr > td,
 }
 
 .td[data-title]::before {
-	font-weight: bold;
-	display: none;
-	padding: .25rem 0;
-	content: attr(data-title) ":\20";
-	text-align: left;
-	white-space: nowrap;
+	content: none;
 }
 
 .tr.placeholder .td[data-title]::before {
 	display: none;
 }
 
+.tr.cbi-section-table-titles {
+	font-weight: bold;
+}
+
 .tr[data-title]::before,
 .tr.cbi-section-table-titles.named::before {
-	font-weight: bold;
-	display: table-cell;
-	align-self: center;
-	flex: 1 1 5%;
-	padding: .25rem;
-	content: attr(data-title) "\20";
-	text-align: center;
-	vertical-align: middle;
-	white-space: normal;
-	word-wrap: break-word;
+	content: none;
 }
 
 .cbi-rowstyle-1 {
@@ -1593,6 +1598,14 @@ body:not(.Interfaces) .cbi-rowstyle-2:first-child {
 	color: var(--main-menu-color);
 }
 
+.cbi-dropdown.btn.cbi-button.cbi-button-positive.important > ul > li[display] {
+	color: var(--white-color);
+}
+
+.cbi-dropdown[open] > ul.dropdown > li[tabindex] {
+	color: var(--black-color) !important;
+}
+
 .cbi-dropdown > ul > li[display],
 .cbi-dropdown[open] > ul.preview,
 .cbi-dropdown[open] > ul.dropdown > li,
@@ -1625,6 +1638,7 @@ body:not(.Interfaces) .cbi-rowstyle-2:first-child {
 
 .cbi-dropdown[open] > ul.dropdown > li[selected] {
 	background: #b0d0f0;
+	color: var(--black-color);
 }
 
 .cbi-dropdown[open] > ul.dropdown > li.focus,
@@ -1635,6 +1649,7 @@ body:not(.Interfaces) .cbi-rowstyle-2:first-child {
 .cbi-dropdown[open] > ul.dropdown > li:last-child {
 	margin-bottom: 0;
 	border-bottom: 0;
+	color: var(--black-color);
 }
 
 .cbi-dropdown[open] > ul.dropdown > li[unselectable] {
@@ -1781,13 +1796,14 @@ body:not(.Interfaces) .cbi-rowstyle-2:first-child {
 .modal .button-row {
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
-.modal .button-row > :not(:last-child) {
+.modal .button-row > button:not(:first-of-type) {
 	margin-right: .5em;
 }
 
-.modal .button-row > :first-child {
+.modal .button-row > button:first-of-type {
 	margin-right: auto;
 }
 
@@ -1947,7 +1963,6 @@ td > .ifacebadge,
 
 #syslog {
 	font-size: small;
-	overflow-y: hidden;
 	width: 100%;
 	min-height: 15rem;
 	padding: 1rem;
@@ -2069,6 +2084,11 @@ td > .ifacebadge,
 
 .ifacebox-body {
 	padding: .25em;
+}
+
+#cbi-network-interface .ifacebox img {
+	width: 24px;
+	height: 24px;
 }
 
 .cbi-image-button {

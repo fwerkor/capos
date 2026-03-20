@@ -5,7 +5,7 @@ Version: 4
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @io-any
 Section: utils
 Category: Utilities
 Repository: base

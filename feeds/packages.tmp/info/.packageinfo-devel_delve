@@ -6,7 +6,7 @@ Version: 1.24.0-r1
 Depends: +libc @(aarch64||i386||x86_64)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @delve-any
 Section: devel
 Category: Development
 Repository: base

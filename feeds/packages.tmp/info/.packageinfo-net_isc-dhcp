@@ -2,11 +2,11 @@ Source-Makefile: feeds/packages/net/isc-dhcp/Makefile
 
 Package: isc-dhcp-relay-ipv4
 Submenu: IP Addresses and Names
-Version: 4.4.3_p1-r8
+Version: 4.4.3_p1-r13
 Depends: +libc +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @isc-dhcp-relay-ipv4-any
 Build-Variant: ipv4
 Section: net
 Category: Network
@@ -27,11 +27,11 @@ Description:  provides a means for relaying DHCP and BOOTP requests from a subne
 
 Package: isc-dhcp-server-ipv4
 Submenu: IP Addresses and Names
-Version: 4.4.3_p1-r8
+Version: 4.4.3_p1-r13
 Depends: +libc +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @isc-dhcp-server-ipv4-any
 Build-Variant: ipv4
 Section: net
 Category: Network
@@ -51,11 +51,11 @@ Description:  implements the Dynamic Host Configuration Protocol (DHCP) and the 
 
 Package: isc-dhcp-dyndns
 Submenu: IP Addresses and Names
-Version: 4.4.3_p1-r8
-Depends: +libc +zlib @(PACKAGE_isc-dhcp-server-ipv4||PACKAGE_isc-dhcp-server-ipv6) +bind-server +bind-client
+Version: 4.4.3_p1-r13
+Depends: +libc +zlib @(PACKAGE_isc-dhcp-server-ipv4||PACKAGE_isc-dhcp-server-ipv6) +bind-server +bind-rndc +bind-client
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @isc-dhcp-dyndns-any
 Section: net
 Category: Network
 Repository: base
@@ -73,11 +73,11 @@ Description:  implements the Dynamic Host Configuration Protocol (DHCP) and the 
 
 Package: isc-dhcp-client-ipv4
 Submenu: IP Addresses and Names
-Version: 4.4.3_p1-r8
+Version: 4.4.3_p1-r13
 Depends: +libc +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @isc-dhcp-client-ipv4-any
 Build-Variant: ipv4
 Section: net
 Category: Network
@@ -98,11 +98,11 @@ Description:  provides a means for configuring one or more network interfaces us
 
 Package: isc-dhcp-omshell-ipv4
 Submenu: IP Addresses and Names
-Version: 4.4.3_p1-r8
+Version: 4.4.3_p1-r13
 Depends: +libc +isc-dhcp-server-ipv4
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @isc-dhcp-omshell-ipv4-any
 Build-Variant: ipv4
 Section: net
 Category: Network
@@ -122,11 +122,11 @@ Description:  provides an interactive way to connect to, query, and possibly cha
 
 Package: isc-dhcp-relay-ipv6
 Submenu: IP Addresses and Names
-Version: 4.4.3_p1-r8
+Version: 4.4.3_p1-r13
 Depends: +libc +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @isc-dhcp-relay-ipv6-any
 Build-Variant: ipv6
 Section: net
 Category: Network
@@ -147,11 +147,11 @@ Description:  provides a means for relaying DHCP and BOOTP requests from a subne
 
 Package: isc-dhcp-server-ipv6
 Submenu: IP Addresses and Names
-Version: 4.4.3_p1-r8
+Version: 4.4.3_p1-r13
 Depends: +libc +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @isc-dhcp-server-ipv6-any
 Build-Variant: ipv6
 Section: net
 Category: Network
@@ -171,11 +171,11 @@ Description:  implements the Dynamic Host Configuration Protocol (DHCP) and the 
 
 Package: isc-dhcp-client-ipv6
 Submenu: IP Addresses and Names
-Version: 4.4.3_p1-r8
+Version: 4.4.3_p1-r13
 Depends: +libc +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @isc-dhcp-client-ipv6-any
 Build-Variant: ipv6
 Section: net
 Category: Network
@@ -196,11 +196,11 @@ Description:  provides a means for configuring one or more network interfaces us
 
 Package: isc-dhcp-omshell-ipv6
 Submenu: IP Addresses and Names
-Version: 4.4.3_p1-r8
+Version: 4.4.3_p1-r13
 Depends: +libc +isc-dhcp-server-ipv6
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @isc-dhcp-omshell-ipv6-any
 Build-Variant: ipv6
 Section: net
 Category: Network

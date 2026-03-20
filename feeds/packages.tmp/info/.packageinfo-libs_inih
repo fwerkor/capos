@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/libs/inih/Makefile
 
 Package: libinih
-Version: 61-r1
+Version: 62-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libinih-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Simple .INI file parser in C
 Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
-Source: inih-61.tar.zst
+Source: inih-62.tar.zst
 License: BSD-3-Clause
 LicenseFiles: LICENSE.txt
 URL: https://github.com/benhoyt/inih
@@ -25,17 +25,17 @@ Description:   inih (INI Not Invented Here) is a simple .INI file parser written
 @@
 
 Package: libinireader
-Version: 61-r1
+Version: 62-r1
 Depends: +libc +libinih +libstdcpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libinireader-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: C++ library and API for inih
 Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
-Source: inih-61.tar.zst
+Source: inih-62.tar.zst
 License: BSD-3-Clause
 LicenseFiles: LICENSE.txt
 URL: https://github.com/benhoyt/inih

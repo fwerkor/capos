@@ -5,7 +5,7 @@ Version: 2025.06.15~125fff7fab6b0f58a17fe1eb1d0a9622d457f6b1-r1
 Depends: +libc +tc +kmod-ifb +ucode-mod-log
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ratelimit-any
 Section: net
 Category: Network
 Repository: base

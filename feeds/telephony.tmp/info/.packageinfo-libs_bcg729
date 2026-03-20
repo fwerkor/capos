@@ -6,7 +6,7 @@ Version: 1.1.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bcg729-any
 Section: libs
 Category: Libraries
 Repository: base

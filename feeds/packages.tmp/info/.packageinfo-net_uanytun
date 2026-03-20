@@ -2,11 +2,11 @@ Source-Makefile: feeds/packages/net/uanytun/Makefile
 
 Package: uanytun
 Submenu: VPN
-Version: 0.3.7-r2
+Version: 0.3.7-r3
 Depends: +libc +kmod-tun +libgcrypt
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @uanytun-any
 Build-Variant: gcrypt
 Section: net
 Category: Network
@@ -33,11 +33,11 @@ Description: uAnytun is a tiny implementation of SATP the secure anycast tunneli
 
 Package: uanytun-nettle
 Submenu: VPN
-Version: 0.3.7-r2
+Version: 0.3.7-r3
 Depends: +libc +kmod-tun +libnettle
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @uanytun-nettle-any
 Build-Variant: nettle
 Section: net
 Category: Network
@@ -64,11 +64,11 @@ Description: uAnytun is a tiny implementation of SATP the secure anycast tunneli
 
 Package: uanytun-sslcrypt
 Submenu: VPN
-Version: 0.3.7-r2
+Version: 0.3.7-r3
 Depends: +libc +kmod-tun +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @uanytun-sslcrypt-any
 Build-Variant: sslcrypt
 Section: net
 Category: Network
@@ -95,11 +95,11 @@ Description: uAnytun is a tiny implementation of SATP the secure anycast tunneli
 
 Package: uanytun-nocrypt
 Submenu: VPN
-Version: 0.3.7-r2
+Version: 0.3.7-r3
 Depends: +libc +kmod-tun
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @uanytun-nocrypt-any
 Build-Variant: nocrypt
 Section: net
 Category: Network

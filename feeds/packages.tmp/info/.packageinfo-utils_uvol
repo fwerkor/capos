@@ -2,11 +2,11 @@ Source-Makefile: feeds/packages/utils/uvol/Makefile
 
 Package: autopart
 Submenu: Disc
-Version: 0.9-r3
+Version: 1.0-r1
 Depends: +libc +lvm2 +partx-utils +sfdisk
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @autopart-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -20,11 +20,11 @@ Description:  Automatically allocate and initialize a partition for LVM on first
 
 Package: uvol
 Submenu: Disc
-Version: 0.9-r3
+Version: 1.0-r1
 Depends: +libc +blockd +ucode +ucode-mod-fs +ucode-mod-math +ucode-mod-uci
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @uvol-any
 Section: utils
 Category: Utilities
 Repository: base

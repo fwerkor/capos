@@ -5,7 +5,7 @@ Version: 1.3-r1
 Depends: +libc +libpcap
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libnet-1.2.x-any
 Section: libs
 Category: Libraries
 Repository: base

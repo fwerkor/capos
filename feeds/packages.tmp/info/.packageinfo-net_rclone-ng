@@ -6,7 +6,7 @@ Version: 0.5.0-r1
 Depends: +libc +rclone-config
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rclone-ng-any
 Section: net
 Category: Network
 Repository: base

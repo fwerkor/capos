@@ -60,7 +60,7 @@ Date:   Sun Sep 22 16:34:05 2024 -0400
  	}
 --- a/drivers/dahdi/wctdm.c
 +++ b/drivers/dahdi/wctdm.c
-@@ -623,11 +623,11 @@ static int __wait_access(struct wctdm *w
+@@ -628,11 +628,11 @@ static int __wait_access(struct wctdm *w
      unsigned char data = 0;
      int count = 0;
  
@@ -74,7 +74,7 @@ Date:   Sun Sep 22 16:34:05 2024 -0400
  	 {
  		data = __wctdm_getreg(wc, card, I_STATUS);
  
-@@ -636,7 +636,7 @@ static int __wait_access(struct wctdm *w
+@@ -641,7 +641,7 @@ static int __wait_access(struct wctdm *w
  
  	 }
  

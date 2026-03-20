@@ -164,6 +164,10 @@ msgstr "Acordă acces la UCI pentru luci-app-nut"
 msgid "Host"
 msgstr "Gazdă"
 
+#: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_monitor.js:69
+msgid "Host Sync"
+msgstr ""
+
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_cgi.js:24
 msgid "Hostname or IP address"
 msgstr "Numele de gazdă sau adresa IP"
@@ -172,10 +176,6 @@ msgstr "Numele de gazdă sau adresa IP"
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_monitor.js:188
 msgid "Hostname or address of UPS"
 msgstr "Numele de gazdă sau adresa UPS-ului"
-
-#: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_monitor.js:69
-msgid "Hot Sync"
-msgstr "Sincronizare la cald"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:68
 msgid "IP Address"
@@ -515,6 +515,15 @@ msgstr "Comunicare sincronă"
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:145
 msgid "The name of this section will be used as UPS name elsewhere"
 msgstr "Numele acestei secțiuni va fi folosit ca nume UPS în altă parte"
+
+#: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:157
+#: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:193
+#: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:196
+#: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:247
+msgid ""
+"This is passed through to the driver, so make sure your driver supports this "
+"option"
+msgstr ""
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:125
 msgid "Time in seconds between driver start retry attempts."

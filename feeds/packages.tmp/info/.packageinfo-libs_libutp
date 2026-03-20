@@ -5,7 +5,7 @@ Version: 2023.02.14~c95738b1a6644b919e5b64d3ea9736cfc5894e0b-r1
 Depends: +libc +libstdcpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libutp-any
 Section: libs
 Category: Libraries
 Repository: base

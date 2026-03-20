@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/libs/liblo/Makefile
 
 Package: liblo
 Submenu: Sound
-Version: 0.31-r2
+Version: 0.34-r2
 Depends: +libc +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @liblo-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Lightweight Open Sound Control (OSC) library
 Maintainer: 
-Source: liblo-0.31.tar.gz
+Source: liblo-0.34.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 URL: http://liblo.sourceforge.net/
@@ -21,17 +21,17 @@ Description: Lightweight Open Sound Control (OSC) library
 @@
 
 Package: liblo-utils
-Version: 0.31-r2
+Version: 0.34-r2
 Depends: +libc +liblo
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @liblo-utils-any
 Section: opt
 Category: Sound
 Repository: base
 Title: Lightweight Open Sound Control (OSC) utilities
 Maintainer: 
-Source: liblo-0.31.tar.gz
+Source: liblo-0.34.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 URL: http://liblo.sourceforge.net/

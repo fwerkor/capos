@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2025-09-08 17:09+0000\n"
+"PO-Revision-Date: 2026-03-02 04:27+0000\n"
 "Last-Translator: Aindriú Mac Giolla Eoin <aindriu80@gmail.com>\n"
 "Language-Team: Irish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsnut/ga/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : (n>2 && n<7) ? 2 :"
 "(n>6 && n<11) ? 3 : 4;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.16.1-dev\n"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_monitor.js:16
 msgid "%s is mutually exclusive to other choices"
@@ -161,6 +161,10 @@ msgstr "Rochtain UCI a dheonú do luci-app-nut"
 msgid "Host"
 msgstr "Óstach"
 
+#: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_monitor.js:69
+msgid "Host Sync"
+msgstr "Sioncrónú Óstach"
+
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_cgi.js:24
 msgid "Hostname or IP address"
 msgstr "Ainm óstach nó seoladh IP"
@@ -169,10 +173,6 @@ msgstr "Ainm óstach nó seoladh IP"
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_monitor.js:188
 msgid "Hostname or address of UPS"
 msgstr "Ainm óstach nó seoladh UPS"
-
-#: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_monitor.js:69
-msgid "Hot Sync"
-msgstr "Syncrónú Te"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:68
 msgid "IP Address"
@@ -185,7 +185,7 @@ msgstr "Má tá an liosta seo folamh ní mór duit %s a dhéanamh"
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_monitor.js:11
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_monitor.js:16
 msgid "Ignore"
-msgstr "Neamhaird"
+msgstr "Déan neamhaird de"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:172
 msgid "Ignore Low Battery"
@@ -421,7 +421,7 @@ msgstr "Luach cumhachta"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:60
 msgid "Primary"
-msgstr "Máistir"
+msgstr "Príomhúil"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:234
 msgid "Product (regex)"
@@ -451,7 +451,7 @@ msgstr "Rith tiománaithe i dtimpeallacht chroot (2)"
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:87
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:139
 msgid "RunAs User"
-msgstr "Úsáideoir RuNAS"
+msgstr "RithMar Úsáideoir"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:153
 msgid "SNMP Community"
@@ -510,6 +510,17 @@ msgstr "Cumarsáid Sioncrónach"
 msgid "The name of this section will be used as UPS name elsewhere"
 msgstr "Úsáidfear ainm an chuid seo mar ainm UPS in áiteanna eile"
 
+#: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:157
+#: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:193
+#: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:196
+#: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:247
+msgid ""
+"This is passed through to the driver, so make sure your driver supports this "
+"option"
+msgstr ""
+"Cuirtear seo ar aghaidh chuig an tiománaí, mar sin déan cinnte go dtacaíonn "
+"do thiománaí leis an rogha seo"
+
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:125
 msgid "Time in seconds between driver start retry attempts."
 msgstr "Am i soicindí idir iarrachtaí arís a thosú le tiománaí."
@@ -524,7 +535,7 @@ msgstr "Sclábhaí UPS"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_monitor.js:151
 msgid "UPS Primary"
-msgstr "Máistir UPS"
+msgstr "UPS príomhúil"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:79
 msgid "UPS Server Global Settings"
@@ -582,7 +593,7 @@ msgstr "Fíoraigh gach nasc le SSL"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_server.js:184
 msgid "Workaround for buggy firmware"
-msgstr "Réiteach le haghaidh firmware buggy"
+msgstr "Réiteach le haghaidh dochtearraí fabhtúil"
 
 #: applications/luci-app-nut/htdocs/luci-static/resources/view/nut/nut_monitor.js:10
 msgid "Write to syslog"

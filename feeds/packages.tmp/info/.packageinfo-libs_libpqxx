@@ -6,7 +6,7 @@ Version: 7.9.2-r1
 Depends: +libc +libpq +libstdcpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libpqxx-any
 Section: libs
 Category: Libraries
 Repository: base

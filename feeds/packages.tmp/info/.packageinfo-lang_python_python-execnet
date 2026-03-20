@@ -7,7 +7,7 @@ Version: 2.0.2-r1
 Depends: +libc +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-execnet-any
 Section: lang
 Category: Languages
 Repository: base
@@ -28,7 +28,7 @@ Version: 2.0.2-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-execnet-src-any
 Section: lang
 Category: Languages
 Repository: base

@@ -7,7 +7,7 @@ Version: 4.1.0-r1
 Depends: +libc +python3-light +python3-urllib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-platformdirs-any
 Section: lang
 Category: Languages
 Repository: base
@@ -32,7 +32,7 @@ Version: 4.1.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-platformdirs-src-any
 Section: lang
 Category: Languages
 Repository: base

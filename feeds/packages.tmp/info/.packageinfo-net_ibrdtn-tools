@@ -5,7 +5,7 @@ Version: 1.0.1-r4
 Depends: +libc +ibrdtn +libarchive
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ibrdtn-tools-any
 Section: net
 Category: Network
 Repository: base

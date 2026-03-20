@@ -5,7 +5,7 @@ Version: 2.0.3-r1
 Depends: +libc +libshout +libxml2 +zlib +libogg +libvorbis +alsa-lib +BUILD_NLS:libiconv-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ices-any
 Section: sound
 Category: Sound
 Repository: base

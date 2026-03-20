@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/lang/python/python-pyfuse3/Makefile
 
 Package: python3-pyfuse3
 Submenu: Python
-Version: 3.3.0-r1
+Version: 3.4.1-r1
 Depends: +libc +python3-light +python3-asyncio +python3-logging +python3-trio +libfuse3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pyfuse3-any
 Section: lang
 Category: Languages
 Repository: base
 Title: libfuse 3 bindings with async I/O support
 Maintainer: Julien Malik <julien.malik@paraiso.me>
-Source: pyfuse3-3.3.0.tar.gz
+Source: pyfuse3-3.4.1.tar.gz
 License: LGPL-2.0-or-later
 LicenseFiles: LICENSE
 URL: https://github.com/libfuse/pyfuse3
@@ -25,17 +25,17 @@ Description:   pyfuse3 is a set of Python 3 bindings for libfuse 3.
 
 Package: python3-pyfuse3-src
 Submenu: Python
-Version: 3.3.0-r1
+Version: 3.4.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-pyfuse3-src-any
 Section: lang
 Category: Languages
 Repository: base
 Title: libfuse 3 bindings with async I/O support (sources)
 Maintainer: Julien Malik <julien.malik@paraiso.me>
-Source: pyfuse3-3.3.0.tar.gz
+Source: pyfuse3-3.4.1.tar.gz
 License: LGPL-2.0-or-later
 LicenseFiles: LICENSE
 URL: https://github.com/libfuse/pyfuse3

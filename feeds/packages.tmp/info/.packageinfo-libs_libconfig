@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/libs/libconfig/Makefile
 
 Package: libconfig
-Version: 1.7.3-r1
+Version: 1.8.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libconfig-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Configuration File Library
 Maintainer: Felix Fietkau <nbd@nbd.name>
-Source: libconfig-1.7.3.tar.gz
+Source: libconfig-1.8.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING.LIB
 URL: https://hyperrealm.github.io/libconfig/

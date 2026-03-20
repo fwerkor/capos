@@ -2,19 +2,20 @@ Source-Makefile: feeds/packages/lang/python/django-restframework/Makefile
 
 Package: python3-django-restframework
 Submenu: Python
-Version: 3.15.2-r1
+Version: 3.16.1-r1
 Depends: +libc +python3 +django
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-django-restframework-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Web APIs for Django, made easy.
 Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
-Source: djangorestframework-3.15.2.tar.gz
+Source: djangorestframework-3.16.1.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE.md
+CPE-ID: cpe:/a:django-rest-framework:django_rest_framework
 URL: https://www.django-rest-framework.org
 Type: ipkg
 Description:   Web APIs for Django, made easy.
@@ -22,19 +23,20 @@ Description:   Web APIs for Django, made easy.
 
 Package: python3-django-restframework-src
 Submenu: Python
-Version: 3.15.2-r1
+Version: 3.16.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-django-restframework-src-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Web APIs for Django, made easy. (sources)
 Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
-Source: djangorestframework-3.15.2.tar.gz
+Source: djangorestframework-3.16.1.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE.md
+CPE-ID: cpe:/a:django-rest-framework:django_rest_framework
 URL: https://www.django-rest-framework.org
 Type: ipkg
 Description:       Web APIs for Django, made easy.

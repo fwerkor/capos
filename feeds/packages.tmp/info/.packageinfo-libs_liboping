@@ -5,7 +5,7 @@ Version: 1.10.0-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @liboping-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -24,7 +24,7 @@ Version: 1.10.0-r3
 Depends: +libc +liboping
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @oping-any
 Section: net
 Category: Network
 Repository: base
@@ -43,7 +43,7 @@ Version: 1.10.0-r3
 Depends: +libc +liboping +libncurses
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @noping-any
 Section: net
 Category: Network
 Repository: base

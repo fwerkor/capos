@@ -6,7 +6,7 @@ Version: 3.37-r1
 Depends: +libc +libaio +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @fio-any
 Section: utils
 Category: Utilities
 Repository: base

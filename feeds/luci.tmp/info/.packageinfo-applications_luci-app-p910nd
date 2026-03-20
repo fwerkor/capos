@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base +p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-p910nd-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -26,7 +26,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-ar-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -45,7 +45,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-bg-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -64,7 +64,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-bn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -83,7 +83,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-ca-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -102,7 +102,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-cs-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -121,7 +121,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-da-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -140,7 +140,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-de-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -159,7 +159,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-el-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -178,7 +178,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-es-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -197,7 +197,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-fi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -216,7 +216,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-fr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -235,7 +235,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-ga-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -254,7 +254,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-he-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -273,7 +273,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-hi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -292,7 +292,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-hu-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -311,7 +311,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-it-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -330,7 +330,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-ja-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -349,7 +349,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-ko-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -368,7 +368,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-lt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -387,7 +387,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-mr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -406,7 +406,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-ms-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -425,7 +425,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-no-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -444,7 +444,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-nl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -463,7 +463,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-pl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -482,7 +482,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-pt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -501,7 +501,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -520,7 +520,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-ro-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -539,7 +539,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-ru-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -558,7 +558,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-sk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -577,7 +577,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-sv-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -590,13 +590,32 @@ Hidden: 1
 Description:     Translation for luci-app-p910nd - Svenska (Swedish)
 @@
 
+Package: luci-i18n-p910nd-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-p910nd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-p910nd-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-p910nd - ta translation
+Maintainer: Paul Donald <newtwen@gmail.com>, Jo-Philipp Wich <jo@mein.io>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-p910nd - Tamil (Tamil)
+@@
+
 Package: luci-i18n-p910nd-tr
 Default: LUCI_LANG_tr||(ALL&&m)
 Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-tr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -615,7 +634,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-uk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -634,7 +653,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-vi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -653,7 +672,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -672,7 +691,7 @@ Version: x
 Depends: +libc luci-app-p910nd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-p910nd-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base

@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/lang/perl/perl-http-message/Makefile
+
+Package: perl-http-message
+Submenu: Perl
+Version: 7.00.5.40-r1
+Depends: +libc perl +perlbase-base +perlbase-compress +perlbase-encode +perlbase-essential +perlbase-io +perlbase-mime +perl-clone +perl-encode-locale +perl-http-date +perl-io-html +perl-lwp-mediatypes +perl-uri
+Conflicts: 
+Menu-Depends: 
+Provides: @perl-http-message-any
+Section: lang
+Category: Languages
+Repository: base
+Title: HTTP style messages
+Maintainer: Jens Wagner <jens@wagner2013.de>
+Source: HTTP-Message-7.00.tar.gz
+License: GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE
+URL: https://metacpan.org/pod/HTTP::Message
+Type: ipkg
+Description:   An HTTP::Message object contains some headers and a content body.
+@@
+
+

@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-theme-openwrt-any
 Section: luci
 Category: LuCI
 Repository: base

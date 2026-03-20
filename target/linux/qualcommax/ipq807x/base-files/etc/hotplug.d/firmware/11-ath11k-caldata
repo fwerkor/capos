@@ -9,6 +9,13 @@ board=$(board_name)
 case "$FIRMWARE" in
 "ath11k/IPQ8074/hw2.0/cal-ahb-c000000.wifi.bin")
 	case "$board" in
+	aliyun,ap8220)
+		caldata_extract "0:art" 0x1000 0x20000
+		addr=$(mtd_get_mac_text product_info 0x4b)
+		ath11k_patch_mac $addr 0
+		ath11k_patch_mac $(macaddr_add $addr 8) 1
+		ath11k_set_macflag
+		;;
 	asus,rt-ax89x)
 		CI_UBIPART="UBI_DEV"
 		caldata_extract_ubi "Factory" 0x1000 0x20000
@@ -38,7 +45,7 @@ case "$FIRMWARE" in
 		;;
 	linksys,mx4200v2)
 		caldata_extract "0:art" 0x1000 0x20000
-		label_mac=$(mtd_get_mac_ascii devinfo hw_mac_addr)
+		label_mac=$(get_mac_label)
 		ath11k_patch_mac $(macaddr_add $label_mac 2) 0
 		ath11k_patch_mac $(macaddr_add $label_mac 1) 1
 		ath11k_patch_mac $(macaddr_add $label_mac 3) 2
@@ -47,7 +54,7 @@ case "$FIRMWARE" in
 		;;
 	linksys,mx4300)
 		caldata_extract "0:art" 0x1000 0x20000
-		label_mac=$(mtd_get_mac_ascii devinfo hw_mac_addr)
+		label_mac=$(get_mac_label)
 		ath11k_patch_mac $(macaddr_add $label_mac 2) 0
 		ath11k_patch_mac $(macaddr_add $label_mac 1) 1
 		ath11k_patch_mac $(macaddr_add $label_mac 3) 2
@@ -89,6 +96,14 @@ case "$FIRMWARE" in
 	spectrum,sax1v1k)
 		caldata_extract_mmc "0:ART" 0x1000 0x20000
 		;;
+	tplink,deco-x80-5g)
+		caldata_extract "0:art" 0x1000 0x20000
+		label_mac=$(get_mac_binary /tmp/factory_data/default-mac 0)
+		ath11k_patch_mac $(macaddr_add $label_mac -1) 0
+		ath11k_patch_mac $(macaddr_add $label_mac -2) 1
+		ath11k_set_macflag
+		;;
+	tplink,eap620hd-v1|\
 	tplink,eap660hd-v1)
 		caldata_from_file "/tmp/factory_data/radio" 0 0x20000
 		label_mac=$(get_mac_binary /tmp/factory_data/default-mac 0)
@@ -109,6 +124,13 @@ case "$FIRMWARE" in
 		ath11k_patch_mac $(macaddr_add $label_mac 3) 0
 		ath11k_patch_mac $(macaddr_add $label_mac 2) 1
 		ath11k_patch_mac $(macaddr_add $label_mac 4) 2
+		ath11k_set_macflag
+		;;
+	zyxel,nwa210ax)
+		caldata_extract "0:art" 0x1000 0x20000
+		label_mac=$(get_mac_label)
+		ath11k_patch_mac $(macaddr_add $label_mac 3) 0
+		ath11k_patch_mac $(macaddr_add $label_mac 2) 1
 		ath11k_set_macflag
 		;;
 	esac

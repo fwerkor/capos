@@ -5,7 +5,7 @@ Version: 2019-11-27-r4d3b6faee428e3bd9f44ab6a3d70585ec50484a1
 Depends: +libc @PACKAGE_ATH_DEBUG @PACKAGE_ATH_SPECTRAL
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @fft-eval-any
 Section: utils
 Category: Utilities
 Repository: base

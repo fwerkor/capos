@@ -6,7 +6,7 @@ Version: 1.4.0-r1
 Depends: +libc +python3-paho-mqtt +python3-yaml +python3-influxdb +python3-jsonpath-ng +python3-schema
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bigclown-mqtt2influxdb-any
 Section: utils
 Category: Utilities
 Repository: base

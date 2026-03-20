@@ -5,7 +5,7 @@ Version: 4.9-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @sed-any
 Section: utils
 Category: Utilities
 Repository: base

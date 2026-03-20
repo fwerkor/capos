@@ -2,11 +2,11 @@ Source-Makefile: feeds/packages/net/vsftpd/Makefile
 
 Package: vsftpd
 Submenu: File Transfer
-Version: 3.0.5-r2
+Version: 3.0.5-r6
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @vsftpd-any
 Build-Variant: notls
 Section: net
 Category: Network
@@ -23,11 +23,11 @@ Description: Fast and secure FTP server (no TLS)
 
 Package: vsftpd-tls
 Submenu: File Transfer
-Version: 3.0.5-r2
+Version: 3.0.5-r6
 Depends: +libc +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @vsftpd-tls-any
 Build-Variant: tls
 Section: net
 Category: Network

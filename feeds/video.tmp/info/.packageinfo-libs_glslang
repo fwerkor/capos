@@ -1,0 +1,23 @@
+Source-Makefile: feeds/video/libs/glslang/Makefile
+Build-Types: host
+
+Package: glslang
+Version: 15.4.0-r1
+Depends: +libc +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: @glslang-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: GLSL/ESSL, HLSL and SPIR-V generator
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: glslang-15.4.0.tar.gz
+License: BSD-3-Clause BSD-2-Clause MIT Apache GPL-3.0-or-later
+LicenseFiles: LICENSE.txt
+URL: https://github.com/KhronosGroup/glslang
+Type: ipkg
+Description: Khronos-reference front end for GLSL/ESSL, partial front end for HLSL, and a SPIR-V generator.
+@@
+
+

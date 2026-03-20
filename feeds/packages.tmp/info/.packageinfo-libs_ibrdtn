@@ -6,7 +6,7 @@ Version: 1.0.1-r4
 Depends: +libc +ibrcommon +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ibrdtn-any
 Section: libs
 Category: Libraries
 Repository: base

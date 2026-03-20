@@ -5,7 +5,7 @@ Version: 1.0.0-r1
 Depends: +libc +jshn +jsonfilter
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @slide-switch-any
 Section: utils
 Category: Utilities
 Repository: base

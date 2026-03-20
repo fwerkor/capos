@@ -4,17 +4,17 @@ Build-Types: host
 
 Package: python3-jinja2
 Submenu: Python
-Version: 3.1.2-r1
+Version: 3.1.6-r1
 Depends: +libc +python3-light +python3-asyncio +python3-logging +python3-urllib +python3-markupsafe
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-jinja2-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Very fast and expressive template engine
 Maintainer: Michal Vasilek <michal.vasilek@nic.cz>
-Source: Jinja2-3.1.2.tar.gz
+Source: jinja2-3.1.6.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE.rst
 CPE-ID: cpe:/a:pocoo:jinja2
@@ -27,17 +27,17 @@ environment, widely used and BSD licensed.
 
 Package: python3-jinja2-src
 Submenu: Python
-Version: 3.1.2-r1
+Version: 3.1.6-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-jinja2-src-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Very fast and expressive template engine (sources)
 Maintainer: Michal Vasilek <michal.vasilek@nic.cz>
-Source: Jinja2-3.1.2.tar.gz
+Source: jinja2-3.1.6.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE.rst
 CPE-ID: cpe:/a:pocoo:jinja2

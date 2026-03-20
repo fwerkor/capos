@@ -5,7 +5,7 @@ Version: 1.8-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libndp-any
 Section: net
 Category: Network
 Repository: base
@@ -24,7 +24,7 @@ Version: 1.8-r1
 Depends: +libc +libndp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ndptool-any
 Section: net
 Category: Network
 Repository: base

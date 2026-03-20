@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/lang/perl/perl-future-asyncawait/Makefile
+
+Package: perl-future-asyncawait
+Submenu: Perl
+Version: 0.70.5.40-r2
+Depends: +libc perl +perl-future +perl-xs-parse-keyword +perl-xs-parse-sublike +perlbase-xsloader +perlbase-scalar
+Conflicts: 
+Menu-Depends: 
+Provides: @perl-future-asyncawait-any
+Section: lang
+Category: Languages
+Repository: base
+Title: Deferred subroutine syntax for futures in Perl
+Maintainer: Jens Wagner <jens@wagner2013.de>
+Source: Future-AsyncAwait-0.70.tar.gz
+License: GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE
+URL: https://metacpan.org/pod/Future::AsyncAwait
+Type: ipkg
+Description:   This module provides syntax for deferring and resuming subroutines while
+  waiting for Futures to complete.
+  The new syntax takes the form of two new keywords, async and await.
+@@
+
+

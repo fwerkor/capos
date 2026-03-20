@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/libs/libmanette/Makefile
+
+Package: libmanette
+Version: 0.2.12-r1
+Depends: +libc +glib2 +libgudev +hidapi
+Conflicts: 
+Menu-Depends: 
+Provides: @libmanette-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: The simple GObject game controller library.
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: libmanette-0.2.12.tar.xz
+License: MIT
+LicenseFiles: COPYING
+URL: https://gitlab.gnome.org/GNOME/libmanette
+Type: ipkg
+Description:  libmanette offers painless access to game controllers, from any programming
+ language and with little dependencies.
+@@
+
+

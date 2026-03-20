@@ -5,7 +5,7 @@ Version: 25.02-r1
 Depends: +libc +librtlsdr +rtl-sdr +libtool-bin
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rtl_433-any
 Build-Variant: nossl
 Section: utils
 Category: Utilities
@@ -28,7 +28,7 @@ Version: 25.02-r1
 Depends: +libc +librtlsdr +rtl-sdr +libtool-bin +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rtl_433-ssl-any
 Build-Variant: ssl
 Section: utils
 Category: Utilities

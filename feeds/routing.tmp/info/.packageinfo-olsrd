@@ -3,11 +3,11 @@ Source-Makefile: feeds/routing/olsrd/Makefile
 Package: olsrd
 Menu: 1
 Submenu: Routing and Redirection
-Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r1
+Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r2
 Depends: +libc +libpthread +libubus +iptables +IPV6:ip6tables
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @olsrd-any
 Section: net
 Category: Network
 Repository: base
@@ -22,11 +22,11 @@ Description: OLSR (Optimized Link State Routing) daemon
 
 Package: olsrd-mod-arprefresh
 Submenu: Routing and Redirection
-Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r1
+Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r2
 Depends: +libc olsrd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @olsrd-mod-arprefresh-any
 Section: net
 Category: Network
 Repository: base
@@ -41,11 +41,11 @@ Description: Kernel ARP cache refresh plugin
 
 Package: olsrd-mod-dot-draw
 Submenu: Routing and Redirection
-Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r1
+Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r2
 Depends: +libc olsrd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @olsrd-mod-dot-draw-any
 Section: net
 Category: Network
 Repository: base
@@ -60,11 +60,11 @@ Description: Dot topology information plugin
 
 Package: olsrd-mod-filtergw
 Submenu: Routing and Redirection
-Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r1
+Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r2
 Depends: +libc olsrd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @olsrd-mod-filtergw-any
 Section: net
 Category: Network
 Repository: base
@@ -79,11 +79,11 @@ Description: Filter Gateway plugin
 
 Package: olsrd-mod-bmf
 Submenu: Routing and Redirection
-Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r1
+Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r2
 Depends: +libc olsrd +kmod-tun
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @olsrd-mod-bmf-any
 Section: net
 Category: Network
 Repository: base
@@ -98,11 +98,11 @@ Description: Basic multicast forwarding plugin
 
 Package: olsrd-mod-dyn-gw
 Submenu: Routing and Redirection
-Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r1
+Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r2
 Depends: +libc olsrd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @olsrd-mod-dyn-gw-any
 Section: net
 Category: Network
 Repository: base
@@ -117,11 +117,11 @@ Description: Dynamic internet gateway plugin
 
 Package: olsrd-mod-dyn-gw-plain
 Submenu: Routing and Redirection
-Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r1
+Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r2
 Depends: +libc olsrd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @olsrd-mod-dyn-gw-plain-any
 Section: net
 Category: Network
 Repository: base
@@ -136,11 +136,11 @@ Description: Dynamic internet gateway plain plugin
 
 Package: olsrd-mod-httpinfo
 Submenu: Routing and Redirection
-Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r1
+Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r2
 Depends: +libc olsrd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @olsrd-mod-httpinfo-any
 Section: net
 Category: Network
 Repository: base
@@ -155,11 +155,11 @@ Description: Small informative web server plugin
 
 Package: olsrd-mod-jsoninfo
 Submenu: Routing and Redirection
-Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r1
+Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r2
 Depends: +libc olsrd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @olsrd-mod-jsoninfo-any
 Section: net
 Category: Network
 Repository: base
@@ -174,11 +174,11 @@ Description: Small informative plugin with JSON output
 
 Package: olsrd-mod-netjson
 Submenu: Routing and Redirection
-Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r1
+Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r2
 Depends: +libc olsrd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @olsrd-mod-netjson-any
 Section: net
 Category: Network
 Repository: base
@@ -193,11 +193,11 @@ Description: netjson plugin with JSON output
 
 Package: olsrd-mod-mdns
 Submenu: Routing and Redirection
-Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r1
+Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r2
 Depends: +libc olsrd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @olsrd-mod-mdns-any
 Section: net
 Category: Network
 Repository: base
@@ -212,11 +212,11 @@ Description: MDNS/Zeroconf/Bonjour packet distribution
 
 Package: olsrd-mod-nameservice
 Submenu: Routing and Redirection
-Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r1
+Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r2
 Depends: +libc olsrd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @olsrd-mod-nameservice-any
 Section: net
 Category: Network
 Repository: base
@@ -231,11 +231,11 @@ Description: Lightweight hostname resolver plugin
 
 Package: olsrd-mod-p2pd
 Submenu: Routing and Redirection
-Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r1
+Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r2
 Depends: +libc olsrd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @olsrd-mod-p2pd-any
 Section: net
 Category: Network
 Repository: base
@@ -250,11 +250,11 @@ Description: Peer to Peer Discovery plugin
 
 Package: olsrd-mod-pgraph
 Submenu: Routing and Redirection
-Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r1
+Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r2
 Depends: +libc olsrd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @olsrd-mod-pgraph-any
 Section: net
 Category: Network
 Repository: base
@@ -269,11 +269,11 @@ Description: output network topology for pgraph
 
 Package: olsrd-mod-pud
 Submenu: Routing and Redirection
-Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r1
+Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r2
 Depends: +libc olsrd +libgps
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @olsrd-mod-pud-any
 Section: net
 Category: Network
 Repository: base
@@ -288,11 +288,11 @@ Description: Position Update Distribution plugin
 
 Package: olsrd-mod-quagga
 Submenu: Routing and Redirection
-Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r1
+Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r2
 Depends: +libc olsrd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @olsrd-mod-quagga-any
 Section: net
 Category: Network
 Repository: base
@@ -307,11 +307,11 @@ Description: Quagga plugin
 
 Package: olsrd-mod-secure
 Submenu: Routing and Redirection
-Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r1
+Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r2
 Depends: +libc olsrd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @olsrd-mod-secure-any
 Section: net
 Category: Network
 Repository: base
@@ -326,11 +326,11 @@ Description: Message signing plugin to secure routing domain
 
 Package: olsrd-mod-sgwdynspeed
 Submenu: Routing and Redirection
-Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r1
+Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r2
 Depends: +libc olsrd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @olsrd-mod-sgwdynspeed-any
 Section: net
 Category: Network
 Repository: base
@@ -345,11 +345,11 @@ Description: Smart Gateway dynamic speed plugin
 
 Package: olsrd-mod-txtinfo
 Submenu: Routing and Redirection
-Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r1
+Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r2
 Depends: +libc olsrd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @olsrd-mod-txtinfo-any
 Section: net
 Category: Network
 Repository: base
@@ -364,11 +364,11 @@ Description: Small informative web server plugin
 
 Package: olsrd-mod-watchdog
 Submenu: Routing and Redirection
-Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r1
+Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r2
 Depends: +libc olsrd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @olsrd-mod-watchdog-any
 Section: net
 Category: Network
 Repository: base
@@ -383,11 +383,11 @@ Description: Watchdog plugin
 
 Package: olsrd-utils
 Submenu: Routing and Redirection
-Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r1
+Version: 2024.06.09~d72be9ad60f65dda28a0543b4ffff8cd9a5da2d7-r2
 Depends: +libc olsrd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @olsrd-utils-any
 Section: net
 Category: Network
 Repository: base

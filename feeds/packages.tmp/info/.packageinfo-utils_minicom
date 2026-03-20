@@ -6,7 +6,7 @@ Version: 2.9-r1
 Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +libncurses
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @minicom-any
 Section: utils
 Category: Utilities
 Repository: base

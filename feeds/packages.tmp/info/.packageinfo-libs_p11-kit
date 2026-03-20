@@ -5,7 +5,7 @@ Version: 0.25.3-r1
 Depends: +libc +libtasn1 +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @p11-kit-any
 Section: libs
 Category: Libraries
 Repository: base

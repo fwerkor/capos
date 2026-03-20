@@ -7,10 +7,17 @@
 'require network';
 'require firewall';
 
-var callGetBuiltinEthernetPorts = rpc.declare({
+const callGetBuiltinEthernetPorts = rpc.declare({
 	object: 'luci',
 	method: 'getBuiltinEthernetPorts',
 	expect: { result: [] }
+});
+
+const callNetworkDeviceStatus = rpc.declare({
+	object: 'network.device',
+	method: 'status',
+	params: [ 'name' ],
+	expect: { '': {} }
 });
 
 function isString(v)
@@ -21,7 +28,7 @@ function isString(v)
 function resolveVLANChain(ifname, bridges, mapping)
 {
 	while (!mapping[ifname]) {
-		var m = ifname.match(/^(.+)\.([^.]+)$/);
+		const m = ifname.match(/^(.+)\.([^.]+)$/);
 
 		if (!m)
 			break;
@@ -45,24 +52,24 @@ function resolveVLANChain(ifname, bridges, mapping)
 
 function buildVLANMappings(mapping)
 {
-	var bridge_vlans = uci.sections('network', 'bridge-vlan'),
-	    vlan_devices = uci.sections('network', 'device'),
-	    interfaces = uci.sections('network', 'interface'),
-	    bridges = {};
+	const bridge_vlans = uci.sections('network', 'bridge-vlan');
+	const vlan_devices = uci.sections('network', 'device');
+	const interfaces = uci.sections('network', 'interface');
+	const bridges = {};
 
 	/* find bridge VLANs */
-	for (var i = 0, s; (s = bridge_vlans[i]) != null; i++) {
+	for (let i = 0, s; (s = bridge_vlans[i]) != null; i++) {
 		if (!isString(s.device) || !/^[0-9]{1,4}$/.test(s.vlan) || +s.vlan > 4095)
 			continue;
 
-		var aliases = L.toArray(s.alias),
-		    ports = L.toArray(s.ports),
-		    br = bridges[s.device] = (bridges[s.device] || { ports: [], vlans: {}, vlan_filtering: true });
+		const aliases = L.toArray(s.alias);
+		const ports = L.toArray(s.ports);
+		const br = bridges[s.device] = (bridges[s.device] || { ports: [], vlans: {}, vlan_filtering: true });
 
 		br.vlans[s.vlan] = [];
 
-		for (var j = 0; j < ports.length; j++) {
-			var port = ports[j].replace(/:[ut*]+$/, '');
+		for (let p of ports) {
+			const port = p.replace(/:[ut*]+$/, '');
 
 			if (br.ports.indexOf(port) === -1)
 				br.ports.push(port);
@@ -70,28 +77,28 @@ function buildVLANMappings(mapping)
 			br.vlans[s.vlan].push(port);
 		}
 
-		for (var j = 0; j < aliases.length; j++)
-			if (aliases[j] != s.vlan)
-				br.vlans[aliases[j]] = br.vlans[s.vlan];
+		for (let a of aliases)
+			if (a != s.vlan)
+				br.vlans[a] = br.vlans[s.vlan];
 	}
 
 	/* find bridges, VLAN devices */
-	for (var i = 0, s; (s = vlan_devices[i]) != null; i++) {
+	for (let i = 0, s; (s = vlan_devices[i]) != null; i++) {
 		if (s.type == 'bridge') {
 			if (!isString(s.name))
 				continue;
 
-			var ports = L.toArray(s.ports),
-			    br = bridges[s.name] || (bridges[s.name] = { ports: [], vlans: {}, vlan_filtering: false });
+			const ports = L.toArray(s.ports);
+			const br = bridges[s.name] || (bridges[s.name] = { ports: [], vlans: {}, vlan_filtering: false });
 
 			if (s.vlan_filtering == '0')
 				br.vlan_filtering = false;
 			else if (s.vlan_filtering == '1')
 				br.vlan_filtering = true;
 
-			for (var j = 0; j < ports.length; j++)
-				if (br.ports.indexOf(ports[j]) === -1)
-					br.ports.push(ports[j]);
+			for (let p of ports)
+				if (br.ports.indexOf(p) === -1)
+					br.ports.push(p);
 
 			mapping[s.name] = br.ports;
 		}
@@ -120,17 +127,17 @@ function buildVLANMappings(mapping)
 	}
 
 	/* resolve VLAN tagged interfaces in bridge ports */
-	for (var brname in bridges) {
-		for (var i = 0; i < bridges[brname].ports.length; i++)
-			resolveVLANChain(bridges[brname].ports[i], bridges, mapping);
+	for (let brname in bridges) {
+		for (let bp of bridges[brname].ports)
+			resolveVLANChain(bp, bridges, mapping);
 
-		for (var vid in bridges[brname].vlans)
-			for (var i = 0; i < bridges[brname].vlans[vid].length; i++)
-				resolveVLANChain(bridges[brname].vlans[vid][i], bridges, mapping);
+		for (let vid in bridges[brname].vlans)
+			for (let v of bridges[brname].vlans[vid])
+				resolveVLANChain(v, bridges, mapping);
 	}
 
 	/* find implicit VLAN devices */
-	for (var i = 0, s; (s = interfaces[i]) != null; i++) {
+	for (let i = 0, s; (s = interfaces[i]) != null; i++) {
 		if (!isString(s.device))
 			continue;
 
@@ -140,16 +147,16 @@ function buildVLANMappings(mapping)
 
 function resolveVLANPorts(ifname, mapping, seen)
 {
-	var ports = [];
+	const ports = [];
 
 	if (!seen)
 		seen = {};
 
 	if (mapping[ifname]) {
-		for (var i = 0; i < mapping[ifname].length; i++) {
-			if (!seen[mapping[ifname][i]]) {
-				seen[mapping[ifname][i]] = true;
-				ports.push.apply(ports, resolveVLANPorts(mapping[ifname][i], mapping, seen));
+		for (let m of mapping[ifname]) {
+			if (!seen[m]) {
+				seen[m] = true;
+				ports.push.apply(ports, resolveVLANPorts(m, mapping, seen));
 			}
 		}
 	}
@@ -161,47 +168,47 @@ function resolveVLANPorts(ifname, mapping, seen)
 }
 
 function buildInterfaceMapping(zones, networks) {
-	var vlanmap = {},
-	    portmap = {},
-	    netmap = {};
+	const vlanmap = {};
+	const portmap = {};
+	const netmap = {};
 
 	buildVLANMappings(vlanmap);
 
-	for (var i = 0; i < networks.length; i++) {
-		var l3dev = networks[i].getDevice();
+	for (let net of networks) {
+		const l3dev = net.getDevice();
 
 		if (!l3dev)
 			continue;
 
-		var ports = resolveVLANPorts(l3dev.getName(), vlanmap);
+		const ports = resolveVLANPorts(l3dev.getName(), vlanmap);
 
-		for (var j = 0; j < ports.length; j++) {
-			portmap[ports[j]] = portmap[ports[j]] || { networks: [], zones: [] };
-			portmap[ports[j]].networks.push(networks[i]);
+		for (let p of ports) {
+			portmap[p] = portmap[p] || { networks: [], zones: [] };
+			portmap[p].networks.push(net);
 		}
 
-		netmap[networks[i].getName()] = networks[i];
+		netmap[net.getName()] = net;
 	}
 
-	for (var i = 0; i < zones.length; i++) {
-		var networknames = zones[i].getNetworks();
+	for (let z of zones) {
+		const networknames = z.getNetworks();
 
-		for (var j = 0; j < networknames.length; j++) {
-			if (!netmap[networknames[j]])
+		for (let nn of networknames) {
+			if (!netmap[nn])
 				continue;
 
-			var l3dev = netmap[networknames[j]].getDevice();
+			const l3dev = netmap[nn].getDevice();
 
 			if (!l3dev)
 				continue;
 
-			var ports = resolveVLANPorts(l3dev.getName(), vlanmap);
+			const ports = resolveVLANPorts(l3dev.getName(), vlanmap);
 
-			for (var k = 0; k < ports.length; k++) {
-				portmap[ports[k]] = portmap[ports[k]] || { networks: [], zones: [] };
+			for (let p of ports) {
+				portmap[p] = portmap[p] || { networks: [], zones: [] };
 
-				if (portmap[ports[k]].zones.indexOf(zones[i]) === -1)
-					portmap[ports[k]].zones.push(zones[i]);
+				if (portmap[p].zones.indexOf(z) === -1)
+					portmap[p].zones.push(z);
 			}
 		}
 	}
@@ -211,8 +218,8 @@ function buildInterfaceMapping(zones, networks) {
 
 function formatSpeed(carrier, speed, duplex) {
 	if ((speed > 0) && duplex) {
-		var d = (duplex == 'half') ? '\u202f(H)' : '',
-		    e = E('span', { 'title': _('Speed: %d Mibit/s, Duplex: %s').format(speed, duplex) });
+		const d = (duplex == 'half') ? '\u202f(H)' : '';
+		const e = E('span', { 'title': _('Speed: %d Mbit/s, Duplex: %s').format(speed, duplex) });
 
 		switch (true) {
 		case (speed < 1000):
@@ -236,10 +243,52 @@ function formatSpeed(carrier, speed, duplex) {
 	return carrier ? _('Connected') : _('no link');
 }
 
-function formatStats(portdev) {
-	var stats = portdev._devstate('stats') || {};
+function getPSEStatus(pse) {
+	if (!pse)
+		return null;
 
-	return ui.itemlist(E('span'), [
+	const status = pse['c33-power-status'] || pse['podl-power-status'],
+	    power = pse['c33-actual-power'];
+
+	return {
+		status: status,
+		power: power,
+		isDelivering: status === 'delivering' && power > 0
+	};
+}
+
+function formatPSEPower(pse) {
+	if (!pse)
+		return null;
+
+	const status = pse['c33-power-status'] || pse['podl-power-status'],
+	    power = pse['c33-actual-power'];
+
+	if (status === 'delivering' && power) {
+		const watts = (power / 1000).toFixed(1);
+		/* Format: "⚡ 15.4 W" - lightning bolt + narrow space + watts + narrow space + W */
+		return E('span', { 'style': 'color:#000' },
+			[ '\u26a1\ufe0e\u202f%s\u202fW'.format(watts) ]);
+	}
+	else if (status === 'searching') {
+		return E('span', { 'style': 'color:#000' },
+			[ '\u26a1\ufe0e\u202f' + _('searching') ]);
+	}
+	else if (status === 'fault' || status === 'otherfault' || status === 'error') {
+		return E('span', { 'style': 'color:#d9534f' },
+			[ '\u26a1\ufe0e\u202f' + _('fault') ]);
+	}
+	else if (status === 'disabled') {
+		return E('span', { 'style': 'color:#888' },
+			[ '\u26a1\ufe0e\u202f' + _('off') ]);
+	}
+
+	return null;
+}
+
+function formatStats(portdev, pse) {
+	const stats = portdev._devstate('stats') || {};
+	const items = [
 		_('Received bytes'), '%1024mB'.format(stats.rx_bytes),
 		_('Received packets'), '%1000mPkts.'.format(stats.rx_packets),
 		_('Received multicast'), '%1000mPkts.'.format(stats.multicast),
@@ -252,12 +301,32 @@ function formatStats(portdev) {
 		_('Transmit dropped'), '%1000mPkts.'.format(stats.tx_dropped),
 
 		_('Collisions seen'), stats.collisions
-	]);
+	];
+
+	if (pse) {
+		const status = pse['c33-power-status'] || pse['podl-power-status'],
+		    power = pse['c33-actual-power'],
+		    powerClass = pse['c33-power-class'],
+		    powerLimit = pse['c33-available-power-limit'];
+
+		items.push(_('PoE status'), status || _('unknown'));
+
+		if (power)
+			items.push(_('PoE power'), '%.1f W'.format(power / 1000));
+
+		if (powerClass)
+			items.push(_('PoE class'), powerClass);
+
+		if (powerLimit)
+			items.push(_('PoE limit'), '%.1f W'.format(powerLimit / 1000));
+	}
+
+	return ui.itemlist(E('span'), items);
 }
 
 function renderNetworkBadge(network, zonename) {
-	var l3dev = network.getDevice();
-	var span = E('span', { 'class': 'ifacebadge', 'style': 'margin:.125em 0' }, [
+	const l3dev = network.getDevice();
+	const span = E('span', { 'class': 'ifacebadge', 'style': 'margin:.125em 0' }, [
 		E('span', {
 			'class': 'zonebadge',
 			'title': zonename ? _('Part of zone %q').format(zonename) : _('No zone assigned'),
@@ -278,18 +347,21 @@ function renderNetworkBadge(network, zonename) {
 }
 
 function renderNetworksTooltip(pmap) {
-	var res = [ null ],
-	    zmap = {};
+	const res = [ null ];
+	const zmap = {};
 
-	for (var i = 0; pmap && i < pmap.zones.length; i++) {
-		var networknames = pmap.zones[i].getNetworks();
+	const zones = (pmap && Array.isArray(pmap.zones)) ? pmap.zones : [];
+	const networks = (pmap && Array.isArray(pmap.networks)) ? pmap.networks : [];
 
-		for (var k = 0; k < networknames.length; k++)
-			zmap[networknames[k]] = pmap.zones[i].getName();
+	for (let pmz of zones) {
+		const networknames = pmz.getNetworks();
+
+		for (let nn of networknames)
+			zmap[nn] = pmz.getName();
 	}
 
-	for (var i = 0; pmap && i < pmap.networks.length; i++)
-		res.push(E('br'), renderNetworkBadge(pmap.networks[i], zmap[pmap.networks[i].getName()]));
+	for (let pmn of networks)
+		res.push(E('br'), renderNetworkBadge(pmn, zmap[pmn.getName()]));
 
 	if (res.length > 1)
 		res[0] = N_((res.length - 1) / 2, 'Part of network:', 'Part of networks:');
@@ -302,23 +374,64 @@ function renderNetworksTooltip(pmap) {
 return baseclass.extend({
 	title: _('Port status'),
 
-	load: function() {
+	load() {
 		return Promise.all([
 			L.resolveDefault(callGetBuiltinEthernetPorts(), []),
 			L.resolveDefault(fs.read('/etc/board.json'), '{}'),
 			firewall.getZones(),
 			network.getNetworks(),
 			uci.load('network')
-		]);
+		]).then((data) => {
+			/* Get all known port names from builtin ports or board.json */
+			const builtinPorts = data[0] || [];
+			const board = JSON.parse(data[1] || '{}');
+			const allPorts = new Set();
+
+			/* Collect port names from builtin ethernet ports */
+			builtinPorts.forEach((port) => {
+				if (port.device)
+					allPorts.add(port.device);
+			});
+
+			/* Collect port names from board.json if no builtin ports */
+			if (allPorts.size === 0 && board.network) {
+				['lan', 'wan'].forEach((role) => {
+					if (board.network[role]) {
+						if (Array.isArray(board.network[role].ports))
+							board.network[role].ports.forEach((p) => allPorts.add(p));
+						else if (board.network[role].device)
+							allPorts.add(board.network[role].device);
+					}
+				});
+			}
+
+			/* Query PSE status from netifd for all known ports */
+			const psePromises = Array.from(allPorts).map((devname) => {
+				return L.resolveDefault(callNetworkDeviceStatus(devname), {}).then((status) => {
+					return { name: devname, pse: status.pse || null };
+				});
+			});
+
+			return Promise.all(psePromises).then((pseResults) => {
+				const pseMap = {};
+				pseResults.forEach((r) => {
+					if (r.pse)
+						pseMap[r.name] = r.pse;
+				});
+				data.push(pseMap);
+				return data;
+			});
+		});
 	},
 
-	render: function(data) {
+	render(data) {
 		if (L.hasSystemFeature('swconfig'))
 			return null;
 
-		var board = JSON.parse(data[1]),
-		    known_ports = [],
-		    port_map = buildInterfaceMapping(data[2], data[3]);
+		const board = JSON.parse(data[1]),
+		      port_map = buildInterfaceMapping(data[2], data[3]),
+		      pseMap = data[5] || {};
+		let known_ports = [];
 
 		if (Array.isArray(data[0]) && data[0].length > 0) {
 			known_ports = data[0].map(port => ({
@@ -328,7 +441,7 @@ return baseclass.extend({
 		}
 		else {
 			if (L.isObject(board) && L.isObject(board.network)) {
-				for (var k = 'lan'; k != null; k = (k == 'lan') ? 'wan' : null) {
+				for (let k = 'lan'; k != null; k = (k == 'lan') ? 'wan' : null) {
 					if (!L.isObject(board.network[k]))
 						continue;
 
@@ -354,16 +467,40 @@ return baseclass.extend({
 		});
 
 		return E('div', { 'style': 'display:grid;grid-template-columns:repeat(auto-fit, minmax(70px, 1fr));margin-bottom:1em' }, known_ports.map(function(port) {
-			var speed = port.netdev.getSpeed(),
-			    duplex = port.netdev.getDuplex(),
-			    carrier = port.netdev.getCarrier(),
-			    pmap = port_map[port.netdev.getName()],
-			    pzones = (pmap && pmap.zones.length) ? pmap.zones.sort(function(a, b) { return L.naturalCompare(a.getName(), b.getName()) }) : [ null ];
+			const speed = port.netdev.getSpeed();
+			const duplex = port.netdev.getDuplex();
+			const carrier = port.netdev.getCarrier();
+			const pmap = port_map[port.netdev.getName()];
+			const pzones = (pmap && pmap.zones.length) ? pmap.zones.sort((a, b) => L.naturalCompare(a.getName(), b.getName())) : [ null ];
+			const pse = pseMap[port.device];
+			const pseInfo = getPSEStatus(pse);
+			const psePower = formatPSEPower(pse);
+
+			/* Select port icon based on carrier and PSE status */
+			let portIcon;
+			if (pseInfo && pseInfo.isDelivering) {
+				portIcon = carrier ? 'pse_up' : 'pse_down';
+			} else {
+				portIcon = carrier ? 'up' : 'down';
+			}
+
+			const statsContent = [
+				'\u25b2\u202f%1024.1mB'.format(port.netdev.getTXBytes()),
+				E('br'),
+				'\u25bc\u202f%1024.1mB'.format(port.netdev.getRXBytes())
+			];
+
+			if (psePower) {
+				statsContent.push(E('br'));
+				statsContent.push(psePower);
+			}
+
+			statsContent.push(E('span', { 'class': 'cbi-tooltip' }, formatStats(port.netdev, pse)));
 
 			return E('div', { 'class': 'ifacebox', 'style': 'margin:.25em;min-width:70px;max-width:100px' }, [
 				E('div', { 'class': 'ifacebox-head', 'style': 'font-weight:bold' }, [ port.netdev.getName() ]),
 				E('div', { 'class': 'ifacebox-body' }, [
-					E('img', { 'src': L.resource('icons/port_%s.svg').format(carrier ? 'up' : 'down') }),
+					E('img', { 'src': L.resource('icons/port_%s.svg').format(portIcon) }),
 					E('br'),
 					formatSpeed(carrier, speed, duplex)
 				]),
@@ -377,12 +514,7 @@ return baseclass.extend({
 					E('span', { 'class': 'cbi-tooltip left' }, [ renderNetworksTooltip(pmap) ])
 				]),
 				E('div', { 'class': 'ifacebox-body' }, [
-					E('div', { 'class': 'cbi-tooltip-container', 'style': 'text-align:left;font-size:80%' }, [
-						'\u25b2\u202f%1024.1mB'.format(port.netdev.getTXBytes()),
-						E('br'),
-						'\u25bc\u202f%1024.1mB'.format(port.netdev.getRXBytes()),
-						E('span', { 'class': 'cbi-tooltip' }, formatStats(port.netdev))
-					]),
+					E('div', { 'class': 'cbi-tooltip-container', 'style': 'text-align:left;font-size:80%' }, statsContent)
 				])
 			]);
 		}));

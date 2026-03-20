@@ -6,7 +6,7 @@ Version: 1.4.5-r1
 Depends: +libc +glib2 +libncurses +libpthread +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @irssi-any
 Section: net
 Category: Network
 Repository: base

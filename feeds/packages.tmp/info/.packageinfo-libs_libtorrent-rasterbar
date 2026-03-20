@@ -6,7 +6,7 @@ Version: 2.0.11-r2
 Depends: +libc +libopenssl +libatomic +libstdcpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libtorrent-rasterbar-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -27,7 +27,7 @@ Version: 2.0.11-r2
 Depends: +libc +libtorrent-rasterbar +boost-python3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-libtorrent-any
 Section: lang
 Category: Languages
 Repository: base

@@ -5,7 +5,7 @@ Version: 0.1.0-r1
 Depends: +libc +liblua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ethtool-lua-any
 Section: libs
 Category: Libraries
 Repository: base

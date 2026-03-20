@@ -7,7 +7,7 @@ Version: 1.4.23-r5
 Depends: +libc +zlib +libncurses +libreadline
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @gnupg-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -34,7 +34,7 @@ Version: 1.4.23-r5
 Depends: +libc +zlib +libncurses +libreadline
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @gpgv-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -58,7 +58,7 @@ Version: 1.4.23-r5
 Depends: +libc gnupg +libcurl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @gnupg-utils-any
 Section: utils
 Category: Utilities
 Repository: base

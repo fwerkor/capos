@@ -6,7 +6,7 @@ Version: 1.31.7-r1
 Depends: +libc +python3 +python3-dateutil +python3-jmespath +python3-urllib3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-botocore-any
 Section: lang
 Category: Languages
 Repository: base
@@ -27,7 +27,7 @@ Version: 1.31.7-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-botocore-src-any
 Section: lang
 Category: Languages
 Repository: base

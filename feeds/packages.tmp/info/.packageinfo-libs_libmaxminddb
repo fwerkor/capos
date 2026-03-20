@@ -5,7 +5,7 @@ Version: 1.11.0-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libmaxminddb-any
 Section: libs
 Category: Libraries
 Repository: base

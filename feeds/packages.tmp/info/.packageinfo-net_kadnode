@@ -7,7 +7,7 @@ Version: 2.4.1-r1
 Depends: +libc +KADNODE_ENABLE_BOB:libmbedtls +KADNODE_ENABLE_TLS:libmbedtls +KADNODE_ENABLE_UPNP:libminiupnpc +KADNODE_ENABLE_NATPMP:libnatpmp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kadnode-any
 Section: net
 Category: Network
 Repository: base

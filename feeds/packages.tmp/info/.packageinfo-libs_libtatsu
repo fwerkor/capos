@@ -1,0 +1,28 @@
+Source-Makefile: feeds/packages/libs/libtatsu/Makefile
+
+Package: libtatsu
+Submenu: libimobiledevice
+Version: 1.0.5-r1
+Depends: +libc +libcurl +libplist
+Conflicts: 
+Menu-Depends: 
+Provides: @libtatsu-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: Handle communication with Apple's Tatsu Signing Server (TSS)
+Maintainer: Georgi Valkov <gvalkov@gmail.com>
+Source: libtatsu-1.0.5.tar.bz2
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+URL: https://www.libimobiledevice.org/
+Type: ipkg
+Description:     libtatsu is part of the libimobiledevice project.
+  The main purpose is to allow creating TSS request payloads,
+  sending them to Apple's TSS server, and retrieving and processing the
+  response. The code was originally part of idevicerestore and has been split
+  out to its own library, while obviously idevicerestore will remain the main
+  consumer.
+@@
+
+

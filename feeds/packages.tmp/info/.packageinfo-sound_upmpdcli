@@ -6,7 +6,7 @@ Version: 1.8.11-r1
 Depends: +libc +libupnpp +libmpdclient +jsoncpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @upmpdcli-any
 Section: sound
 Category: Sound
 Repository: base

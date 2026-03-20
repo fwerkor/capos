@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base +luci-mod-status +luci-mod-system +luci-mod-network
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-mod-admin-full-any
 Section: luci
 Category: LuCI
 Repository: base

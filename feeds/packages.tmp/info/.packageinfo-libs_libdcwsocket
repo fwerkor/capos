@@ -6,7 +6,7 @@ Version: 1.1.0-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libdcwsocket-any
 Section: libs
 Category: Libraries
 Repository: base

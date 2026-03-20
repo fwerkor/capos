@@ -1,0 +1,22 @@
+Source-Makefile: feeds/video/frameworks/qt5/qt5graphicaleffects/Makefile
+
+Package: qt5graphicaleffects
+Submenu: Frameworks and Toolkits
+Version: 5.15.16-r1
+Depends: +libc +qt5quick-quick @BROKEN
+Conflicts: 
+Menu-Depends: 
+Provides: @qt5graphicaleffects-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: qt5graphicaleffects
+Maintainer: Mirko Vogt <mirko-openwrt@nanl.de>
+Source: qtgraphicaleffects-everywhere-opensource-src-5.15.16.tar.xz
+License: LGPL-3.0-or-commercial
+URL: http://qt.io
+Type: ipkg
+Description: qt5graphicaleffects
+@@
+
+

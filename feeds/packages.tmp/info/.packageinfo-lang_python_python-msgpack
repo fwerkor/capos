@@ -1,19 +1,19 @@
 Source-Makefile: feeds/packages/lang/python/python-msgpack/Makefile
-Build-Depends: python-cython/host
+Build-Depends: python3/host python-setuptools/host python-cython/host
 
 Package: python3-msgpack
 Submenu: Python
-Version: 1.0.7-r1
+Version: 1.1.2-r1
 Depends: +libc +python3-light +libstdcpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-msgpack-any
 Section: lang
 Category: Languages
 Repository: base
 Title: MessagePack serializer
 Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
-Source: msgpack-1.0.7.tar.gz
+Source: msgpack-1.1.2.tar.gz
 License: Apache-2.0
 LicenseFiles: COPYING
 URL: https://msgpack.org/
@@ -24,17 +24,17 @@ Description:   MessagePack is an efficient binary serialization format.
 
 Package: python3-msgpack-src
 Submenu: Python
-Version: 1.0.7-r1
+Version: 1.1.2-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-msgpack-src-any
 Section: lang
 Category: Languages
 Repository: base
 Title: MessagePack serializer (sources)
 Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
-Source: msgpack-1.0.7.tar.gz
+Source: msgpack-1.1.2.tar.gz
 License: Apache-2.0
 LicenseFiles: COPYING
 URL: https://msgpack.org/

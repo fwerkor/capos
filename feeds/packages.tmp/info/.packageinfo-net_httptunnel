@@ -5,7 +5,7 @@ Version: 3.3-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @httptunnel-any
 Section: net
 Category: Network
 Repository: base

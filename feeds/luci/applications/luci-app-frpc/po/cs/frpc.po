@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-10-30 21:46+0000\n"
+"PO-Revision-Date: 2026-03-08 17:30+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsfrpc/cs/>\n"
@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:214
 msgid "Add new proxy..."
@@ -87,6 +87,14 @@ msgstr ""
 "spustitelného souboru pomocí statik.<br />Ve výchozím stavu je tato hodnota "
 "„“."
 
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:72
+msgid "Bind addr"
+msgstr "Adresa, na kterou navázat"
+
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:73
+msgid "Bind port"
+msgstr "Port, na který navázat"
+
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:190
 msgid "Collecting data ..."
 msgstr "Shromažďování dat…"
@@ -145,7 +153,7 @@ msgid "HTTP Settings"
 msgstr "Nastavení pro HTTP"
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:64
-#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:78
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:80
 msgid "HTTP password"
 msgstr "HTTP heslo"
 
@@ -154,7 +162,7 @@ msgid "HTTP proxy"
 msgstr "HTTP proxy"
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:63
-#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:77
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:79
 msgid "HTTP user"
 msgstr "HTTP uživatel"
 
@@ -207,7 +215,7 @@ msgstr "Pokud je remote_port 0, frps vám přiřadí náhodný port"
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:48
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:224
 msgid "Local IP"
-msgstr "Lokální IP"
+msgstr "Lokální IP adresa"
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:49
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:225
@@ -292,15 +300,12 @@ msgid "NOT RUNNING"
 msgstr "NESPUŠTĚNÉ"
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:15
-msgid ""
-"OS environments pass to frp for config file template, see <a href=\"https://"
-"github.com/fatedier/frp#configuration-file-template\">frp README</a>"
+msgid "OS environments pass to frp for config file template, see %s."
 msgstr ""
-"Prostředí operačního systému, které předat frp pro šablonu souboru s "
-"nastaveními – viz <a href=\"https://github.com/fatedier/frp#configuration-"
-"file-template\">frp README</a>"
+"Předávání proměnných prostředí OS k předání do frp pro šablonu souboru s "
+"nastaveními – viz %s."
 
-#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:76
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:78
 msgid "Plugin"
 msgstr "Zásuvný modul"
 
@@ -315,12 +320,12 @@ msgstr "Protokol"
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:36
 msgid ""
 "Protocol specifies the protocol to use when interacting with the server. "
-"Valid values are \"tcp\", \"kcp\", and \"websocket\".<br />By default, this "
-"value is \"tcp\"."
+"Valid values are \"tcp\", \"kcp\", \"quic\" and \"websocket\".<br />By "
+"default, this value is \"tcp\"."
 msgstr ""
-"Protokol určuje který použít při interakci se serverem. Platnými hodnotami "
-"jsou „tcp“, „kcp“ a „websocket“.<br />Ve výchozím stavu je tato hodnota "
-"„tcp“."
+"„Protokol“ určuje protokol, který použít při interakci se serverem. Platnými "
+"hodnotami jsou „tcp“, „kcp“, „quic“ a „websocket“.<br />Ve výchozím stavu je "
+"tato hodnota „tcp“."
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:210
 msgid "Proxy Settings"
@@ -339,11 +344,11 @@ msgstr "Typ proxy"
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:45
 msgid ""
 "ProxyType specifies the type of this proxy. Valid values include \"tcp\", "
-"\"udp\", \"http\", \"https\", \"stcp\", and \"xtcp\".<br />By default, this "
+"\"udp\", \"http\", \"https\", \"stcp\" and \"xtcp\".<br />By default, this "
 "value is \"tcp\"."
 msgstr ""
-"ProxyType určuje typ této proxy. Platnými hodnotami jsou „tcp“, „udp“, "
-"„http“, „https“, „stcp“, a „xtcp“.<br />Ve výchozím stavu je tato hodnota "
+"ProxyType určuje typ této proxy. Mezi platné hodnoty patří „tcp“, „udp“, "
+"„http“, „https“, „stcp“ a „xtcp“.<br />Ve výchozím stavu je tato hodnota "
 "„tcp“."
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:163
@@ -371,11 +376,11 @@ msgstr "Spustit proces služby s oprávněními skupiny"
 msgid "Run daemon as user"
 msgstr "Spustit proces služby pod uživatelskými oprávněními"
 
-#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:80
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:82
 msgid "SOCKS5 password"
 msgstr "SOCKS5 heslo"
 
-#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:79
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:81
 msgid "SOCKS5 user"
 msgstr "SOCKS5 uživatel"
 
@@ -407,7 +412,7 @@ msgstr ""
 "ServerPort určuje port, na kterém se na serveru připojit.<br />Ve výchozím "
 "stavu je tato hodnota 7000."
 
-#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:72
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:74
 msgid "Sk"
 msgstr "Sk"
 
@@ -430,10 +435,11 @@ msgstr "TLS"
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:37
 msgid ""
-"TLSEnable specifies whether or not TLS should be used when communicating "
+"TLS Enable specifies whether or not TLS should be used when communicating "
 "with the server."
 msgstr ""
-"TLSEnable určuje zda má či nemá být při komunikaci se serverem používáno TLS."
+"„Zapnout TLS“ určuje zda má či nemá být TLS použito při komunikaci se "
+"serverem."
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:33
 msgid ""
@@ -469,7 +475,7 @@ msgstr ""
 "server. Aby uspělo je třeba, aby server měl odpovídající token. <br />Ve "
 "výchozím stavu je tato hodnota „“."
 
-#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:81
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:83
 msgid "Unix domain socket path"
 msgstr "Popis umístění soketu unixové domény"
 

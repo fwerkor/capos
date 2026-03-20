@@ -6,7 +6,7 @@ Version: 3.26.6-r1
 Depends: +libc +glib2 +libxml2 +shared-mime-info
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @totem-pl-parser-any
 Section: libs
 Category: Libraries
 Repository: base

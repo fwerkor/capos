@@ -5,7 +5,7 @@ Version: 1.5.2-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopus-any
 Section: libs
 Category: Libraries
 Repository: base

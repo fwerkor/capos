@@ -7,7 +7,7 @@ Version: 5.2.8-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @shorewall-core-any
 Section: net
 Category: Network
 Repository: base

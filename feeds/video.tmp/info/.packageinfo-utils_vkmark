@@ -1,0 +1,24 @@
+Source-Makefile: feeds/video/utils/vkmark/Makefile
+Build-Depends: glm
+
+Package: vkmark
+Submenu: Video
+Version: 2025.06.25~2c5f020005a597fb4b7d9ed1eaa1bf40e466bf01-r1
+Depends: +libc +libstdcpp +libassimp +libdrm +libmesa +libwayland +vulkan-loader
+Conflicts: 
+Menu-Depends: 
+Provides: @vkmark-any
+Section: utils
+Category: Utilities
+Repository: base
+Title: Vulkan benchmark
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: vkmark-2025.06.25~2c5f020005a597fb4b7d9ed1eaa1bf40e466bf01.tar.zst
+License: LGPL-2.1
+LicenseFiles: COPYING-LGPL2.1
+URL: https://github.com/vkmark/vkmark
+Type: ipkg
+Description: vkmark is an extensible Vulkan benchmarking suite with targeted, configurable scenes.
+@@
+
+

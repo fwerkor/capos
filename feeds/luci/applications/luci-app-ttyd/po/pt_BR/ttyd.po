@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-06-24 23:51+0000\n"
-"Last-Translator: Janderson Vieira Santos <jandersonvs79@gmail.com>\n"
+"PO-Revision-Date: 2026-03-09 19:11+0000\n"
+"Last-Translator: Volenski <volenski@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "openwrt/luciapplicationsttyd/pt_BR/>\n"
 "Language: pt_BR\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.6-rc\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:65
 msgid "Accept only one client and exit on disconnection"
@@ -23,16 +23,12 @@ msgid "Allow URL args"
 msgstr "Permitir args URL"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:49
-msgid ""
-"Allow client to send command line arguments in URL (eg: http://"
-"localhost:7681?arg=foo&arg=bar)"
+msgid "Allow client to send command line arguments in URL (eg: %s)"
 msgstr ""
-"Permitir que o cliente envie argumentos de linha de comando na URL (ex: "
-"http://localhost:7681?arg=foo&arg=bar)"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:20
 msgid "Bind to UNIX domain socket instead of IP port"
-msgstr ""
+msgstr "Vincule ao socket de domínio UNIX em vez da porta IP"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:59
 msgid "Check origin"
@@ -48,7 +44,7 @@ msgstr "Comando"
 
 #: applications/luci-app-ttyd/root/usr/share/luci/menu.d/luci-app-ttyd.json:23
 msgid "Config"
-msgstr "Configuração"
+msgstr "Config"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:37
 msgid "Credential"
@@ -64,7 +60,7 @@ msgstr "Caminho personalizado do index.html"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:82
 msgid "Debug"
-msgstr "Depuração"
+msgstr "Depuração (Debug)"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:51
 msgid "Do not allow clients to write to the TTY"
@@ -112,7 +108,7 @@ msgstr "Índice"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:86
 msgid "Info"
-msgstr "Informação"
+msgstr "Informação (Info)"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:27
 msgid "Interface"

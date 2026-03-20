@@ -7,7 +7,7 @@ Version: 2.4.65-r1
 Depends: +libc +libapr +libaprutil +libpcre2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @apache-any
 Section: net
 Category: Network
 Repository: base
@@ -34,7 +34,7 @@ Version: 2.4.65-r1
 Depends: +libc apache +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @apache-ab-any
 Section: net
 Category: Network
 Repository: base
@@ -60,7 +60,7 @@ Version: 2.4.65-r1
 Depends: +libc apache
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @apache-error-any
 Section: net
 Category: Network
 Repository: base
@@ -86,7 +86,7 @@ Version: 2.4.65-r1
 Depends: +libc apache
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @apache-icons-any
 Section: net
 Category: Network
 Repository: base
@@ -112,7 +112,7 @@ Version: 2.4.65-r1
 Depends: +libc apache
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @apache-suexec-any
 Section: net
 Category: Network
 Repository: base
@@ -138,7 +138,7 @@ Version: 2.4.65-r1
 Depends: +libc apache
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @apache-utils-any
 Section: net
 Category: Network
 Repository: base
@@ -164,7 +164,7 @@ Version: 2.4.65-r1
 Depends: +libc apache +PACKAGE_apache-mod-deflate:zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @apache-mod-deflate-any
 Section: net
 Category: Network
 Repository: base
@@ -185,7 +185,7 @@ Version: 2.4.65-r1
 Depends: +libc apache +PACKAGE_apache-mod-http2:libnghttp2 +PACKAGE_apache-mod-http2:libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @apache-mod-http2-any
 Section: net
 Category: Network
 Repository: base
@@ -206,7 +206,7 @@ Version: 2.4.65-r1
 Depends: +libc apache +PACKAGE_apache-mod-ldap:libaprutil-ldap
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @apache-mod-ldap-any
 Section: net
 Category: Network
 Repository: base
@@ -227,7 +227,7 @@ Version: 2.4.65-r1
 Depends: +libc apache +PACKAGE_apache-mod-lua:liblua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @apache-mod-lua-any
 Section: net
 Category: Network
 Repository: base
@@ -248,7 +248,7 @@ Version: 2.4.65-r1
 Depends: +libc apache +PACKAGE_apache-mod-md:libcurl +PACKAGE_apache-mod-md:jansson +PACKAGE_apache-mod-md:libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @apache-mod-md-any
 Section: net
 Category: Network
 Repository: base
@@ -269,7 +269,7 @@ Version: 2.4.65-r1
 Depends: +libc apache
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @apache-mod-proxy-any
 Section: net
 Category: Network
 Repository: base
@@ -290,7 +290,7 @@ Version: 2.4.65-r1
 Depends: +libc apache +PACKAGE_apache-mod-proxy-html:apache-mod-proxy +PACKAGE_apache-mod-proxy-html:libxml2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @apache-mod-proxy-html-any
 Section: net
 Category: Network
 Repository: base
@@ -311,7 +311,7 @@ Version: 2.4.65-r1
 Depends: +libc apache +PACKAGE_apache-mod-session-crypto:libaprutil-crypto-openssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @apache-mod-session-crypto-any
 Section: net
 Category: Network
 Repository: base
@@ -332,7 +332,7 @@ Version: 2.4.65-r1
 Depends: +libc apache +PACKAGE_apache-mod-ssl:libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @apache-mod-ssl-any
 Section: net
 Category: Network
 Repository: base
@@ -353,7 +353,7 @@ Version: 2.4.65-r1
 Depends: +libc apache +PACKAGE_apache-mod-suexec:apache-suexec
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @apache-mod-suexec-any
 Section: net
 Category: Network
 Repository: base
@@ -374,7 +374,7 @@ Version: 2.4.65-r1
 Depends: +libc apache
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @apache-mod-webdav-any
 Section: net
 Category: Network
 Repository: base

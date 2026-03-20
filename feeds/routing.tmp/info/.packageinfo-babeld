@@ -6,7 +6,7 @@ Version: 1.13.1-r2
 Depends: +libc @IPV6 +libubus +libubox
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @babeld-any
 Section: net
 Category: Network
 Repository: base

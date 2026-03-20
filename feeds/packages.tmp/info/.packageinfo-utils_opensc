@@ -3,17 +3,17 @@ Build-Depends: pcsc-lite libtool
 
 Package: libopensc
 Menu: 1
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc +libopenssl +libpthread +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: OpenSC libraries for smart cards
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -26,17 +26,17 @@ Description:   OpenSC provides a set of libraries and utilities to work with sma
 @@
 
 Package: libopensc-pkcs11
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-pkcs11-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: OpenSC - PKCS11 provider
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -46,17 +46,17 @@ Description:   OpenSC PKCS#11 provider
 @@
 
 Package: libpkcs11-spy
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc +libopenssl +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libpkcs11-spy-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: PKCS11 spying wrapper
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -67,17 +67,17 @@ Description: PKCS11 spying wrapper
 
 Package: opensc-utils
 Menu: 1
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc +libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opensc-utils-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: OpenSC - tools for smart cards
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -87,17 +87,17 @@ Description:   OpenSC utilities
 @@
 
 Package: opensc-utils-cardos-tool
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc opensc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opensc-utils-cardos-tool-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: cardos-tool utility from opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -107,17 +107,17 @@ Description: cardos-tool utility from opensc
 @@
 
 Package: opensc-utils-cryptoflex-tool
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc opensc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opensc-utils-cryptoflex-tool-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: cryptoflex-tool utility from opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -127,17 +127,17 @@ Description: cryptoflex-tool utility from opensc
 @@
 
 Package: opensc-utils-dnie-tool
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc opensc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opensc-utils-dnie-tool-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: dnie-tool utility from opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -147,17 +147,17 @@ Description: dnie-tool utility from opensc
 @@
 
 Package: opensc-utils-dtrust-tool
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc opensc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opensc-utils-dtrust-tool-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: dtrust-tool utility from opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -167,17 +167,17 @@ Description: dtrust-tool utility from opensc
 @@
 
 Package: opensc-utils-egk-tool
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc opensc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opensc-utils-egk-tool-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: egk-tool utility from opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -187,17 +187,17 @@ Description: egk-tool utility from opensc
 @@
 
 Package: opensc-utils-eidenv
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc opensc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opensc-utils-eidenv-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: eidenv utility from opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -207,17 +207,17 @@ Description: eidenv utility from opensc
 @@
 
 Package: opensc-utils-gids-tool
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc opensc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opensc-utils-gids-tool-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: gids-tool utility from opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -227,17 +227,17 @@ Description: gids-tool utility from opensc
 @@
 
 Package: opensc-utils-goid-tool
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc opensc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opensc-utils-goid-tool-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: goid-tool utility from opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -247,17 +247,17 @@ Description: goid-tool utility from opensc
 @@
 
 Package: opensc-utils-iasecc-tool
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc opensc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opensc-utils-iasecc-tool-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: iasecc-tool utility from opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -267,17 +267,17 @@ Description: iasecc-tool utility from opensc
 @@
 
 Package: opensc-utils-netkey-tool
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc opensc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opensc-utils-netkey-tool-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: netkey-tool utility from opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -287,17 +287,17 @@ Description: netkey-tool utility from opensc
 @@
 
 Package: opensc-utils-openpgp-tool
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc opensc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opensc-utils-openpgp-tool-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: openpgp-tool utility from opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -307,17 +307,17 @@ Description: openpgp-tool utility from opensc
 @@
 
 Package: opensc-utils-opensc-asn1
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc opensc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opensc-utils-opensc-asn1-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: opensc-asn1 utility from opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -327,17 +327,17 @@ Description: opensc-asn1 utility from opensc
 @@
 
 Package: opensc-utils-opensc-explorer
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc opensc-utils +libncurses +libreadline
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opensc-utils-opensc-explorer-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: opensc-explorer utility from opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -347,17 +347,17 @@ Description: opensc-explorer utility from opensc
 @@
 
 Package: opensc-utils-opensc-tool
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc opensc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opensc-utils-opensc-tool-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: opensc-tool utility from opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -367,17 +367,17 @@ Description: opensc-tool utility from opensc
 @@
 
 Package: opensc-utils-piv-tool
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc opensc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opensc-utils-piv-tool-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: piv-tool utility from opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -387,17 +387,17 @@ Description: piv-tool utility from opensc
 @@
 
 Package: opensc-utils-pkcs11-register
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc opensc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opensc-utils-pkcs11-register-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: pkcs11-register utility from opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -407,17 +407,17 @@ Description: pkcs11-register utility from opensc
 @@
 
 Package: opensc-utils-pkcs11-tool
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc opensc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opensc-utils-pkcs11-tool-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: pkcs11-tool utility from opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -427,17 +427,17 @@ Description: pkcs11-tool utility from opensc
 @@
 
 Package: opensc-utils-pkcs15-crypt
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc opensc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opensc-utils-pkcs15-crypt-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: pkcs15-crypt utility from opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -447,17 +447,17 @@ Description: pkcs15-crypt utility from opensc
 @@
 
 Package: opensc-utils-pkcs15-init
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc opensc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opensc-utils-pkcs15-init-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: pkcs15-init utility from opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -467,17 +467,17 @@ Description: pkcs15-init utility from opensc
 @@
 
 Package: opensc-utils-pkcs15-tool
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc opensc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opensc-utils-pkcs15-tool-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: pkcs15-tool utility from opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -487,17 +487,17 @@ Description: pkcs15-tool utility from opensc
 @@
 
 Package: opensc-utils-sc-hsm-tool
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc opensc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opensc-utils-sc-hsm-tool-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: sc-hsm-tool utility from opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -507,17 +507,17 @@ Description: sc-hsm-tool utility from opensc
 @@
 
 Package: opensc-utils-westcos-tool
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc opensc-utils
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @opensc-utils-westcos-tool-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: westcos-tool utility from opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -527,17 +527,17 @@ Description: westcos-tool utility from opensc
 @@
 
 Package: libopensc-profile-asepcos
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-asepcos-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: asepcos card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -547,17 +547,17 @@ Description: asepcos card profile for opensc
 @@
 
 Package: libopensc-profile-authentic
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-authentic-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: authentic card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -567,17 +567,17 @@ Description: authentic card profile for opensc
 @@
 
 Package: libopensc-profile-cardos
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-cardos-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: cardos card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -587,17 +587,17 @@ Description: cardos card profile for opensc
 @@
 
 Package: libopensc-profile-cyberflex
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-cyberflex-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: cyberflex card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -607,17 +607,17 @@ Description: cyberflex card profile for opensc
 @@
 
 Package: libopensc-profile-entersafe
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-entersafe-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: entersafe card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -627,17 +627,17 @@ Description: entersafe card profile for opensc
 @@
 
 Package: libopensc-profile-epass2003
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-epass2003-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: epass2003 card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -647,17 +647,17 @@ Description: epass2003 card profile for opensc
 @@
 
 Package: libopensc-profile-flex
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-flex-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: flex card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -667,17 +667,17 @@ Description: flex card profile for opensc
 @@
 
 Package: libopensc-profile-gids
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-gids-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: gids card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -687,17 +687,17 @@ Description: gids card profile for opensc
 @@
 
 Package: libopensc-profile-ias-adele-admin1
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-ias-adele-admin1-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: ias_adele_admin1 card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -707,17 +707,17 @@ Description: ias_adele_admin1 card profile for opensc
 @@
 
 Package: libopensc-profile-ias-adele-admin2
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-ias-adele-admin2-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: ias_adele_admin2 card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -727,17 +727,17 @@ Description: ias_adele_admin2 card profile for opensc
 @@
 
 Package: libopensc-profile-ias-adele-common
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-ias-adele-common-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: ias_adele_common card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -747,17 +747,17 @@ Description: ias_adele_common card profile for opensc
 @@
 
 Package: libopensc-profile-iasecc-admin-eid
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-iasecc-admin-eid-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: iasecc_admin_eid card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -767,17 +767,17 @@ Description: iasecc_admin_eid card profile for opensc
 @@
 
 Package: libopensc-profile-iasecc-generic-oberthur
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-iasecc-generic-oberthur-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: iasecc_generic_oberthur card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -787,17 +787,17 @@ Description: iasecc_generic_oberthur card profile for opensc
 @@
 
 Package: libopensc-profile-iasecc-generic-pki
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-iasecc-generic-pki-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: iasecc_generic_pki card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -807,17 +807,17 @@ Description: iasecc_generic_pki card profile for opensc
 @@
 
 Package: libopensc-profile-iasecc
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-iasecc-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: iasecc card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -827,17 +827,17 @@ Description: iasecc card profile for opensc
 @@
 
 Package: libopensc-profile-isoApplet
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-isoApplet-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: isoApplet card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -847,17 +847,17 @@ Description: isoApplet card profile for opensc
 @@
 
 Package: libopensc-profile-muscle
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-muscle-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: muscle card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -867,17 +867,17 @@ Description: muscle card profile for opensc
 @@
 
 Package: libopensc-profile-myeid
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-myeid-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: myeid card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -887,17 +887,17 @@ Description: myeid card profile for opensc
 @@
 
 Package: libopensc-profile-oberthur
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-oberthur-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: oberthur card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -907,17 +907,17 @@ Description: oberthur card profile for opensc
 @@
 
 Package: libopensc-profile-openpgp
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-openpgp-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: openpgp card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -927,17 +927,17 @@ Description: openpgp card profile for opensc
 @@
 
 Package: libopensc-profile-pkcs15
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-pkcs15-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: pkcs15 card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -947,17 +947,17 @@ Description: pkcs15 card profile for opensc
 @@
 
 Package: libopensc-profile-rutoken-ecp
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-rutoken-ecp-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: rutoken_ecp card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -967,17 +967,17 @@ Description: rutoken_ecp card profile for opensc
 @@
 
 Package: libopensc-profile-rutoken-lite
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-rutoken-lite-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: rutoken_lite card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -987,17 +987,17 @@ Description: rutoken_lite card profile for opensc
 @@
 
 Package: libopensc-profile-rutoken
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-rutoken-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: rutoken card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -1007,17 +1007,17 @@ Description: rutoken card profile for opensc
 @@
 
 Package: libopensc-profile-sc-hsm
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-sc-hsm-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: sc-hsm card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -1027,17 +1027,17 @@ Description: sc-hsm card profile for opensc
 @@
 
 Package: libopensc-profile-setcos
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-setcos-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: setcos card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc
@@ -1047,17 +1047,17 @@ Description: setcos card profile for opensc
 @@
 
 Package: libopensc-profile-starcos
-Version: 0.25.1-r1
+Version: 0.26.1-r1
 Depends: +libc libopensc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopensc-profile-starcos-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: starcos card profile for opensc
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opensc-0.25.1.tar.gz
+Source: opensc-0.26.1.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:opensc_project:opensc

@@ -3,11 +3,11 @@ Build-Types: host
 
 Package: libyaml
 Submenu: Languages
-Version: 0.2.5-r1
+Version: 0.2.5-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libyaml-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -15,7 +15,7 @@ Title: Fast YAML 1.1 parser and emitter library
 Maintainer: 
 Source: yaml-0.2.5.tar.gz
 License: MIT
-LicenseFiles: COPYING
+LicenseFiles: License
 CPE-ID: cpe:/a:pyyaml_project:pyyaml
 URL: https://pyyaml.org/wiki/LibYAML
 Type: ipkg

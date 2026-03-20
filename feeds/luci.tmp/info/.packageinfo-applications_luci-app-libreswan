@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base +libreswan
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-libreswan-any
 Section: luci
 Category: LuCI
 Repository: base

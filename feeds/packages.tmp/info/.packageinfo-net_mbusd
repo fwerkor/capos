@@ -5,7 +5,7 @@ Version: 0.5.0-r4
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mbusd-any
 Section: net
 Category: Network
 Repository: base

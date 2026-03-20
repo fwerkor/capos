@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/lang/perl/perl-net-dns-sec/Makefile
+
+Package: perl-net-dns-sec
+Submenu: Perl
+Version: 1.26.5.40-r1
+Depends: +libc perl +perlbase-essential +perlbase-dynaloader +perlbase-file +perlbase-io +perlbase-mime +perl-net-dns +libopenssl
+Conflicts: 
+Menu-Depends: 
+Provides: @perl-net-dns-sec-any
+Section: lang
+Category: Languages
+Repository: base
+Title: DNSSEC extensions to Net::DNS
+Maintainer: Jens Wagner <jens@wagner2013.de>
+Source: Net-DNS-SEC-1.26.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://metacpan.org/pod/Net::DNS::SEC
+Type: ipkg
+Description:   This module extends Net::DNS to support DNSSEC
+@@
+
+

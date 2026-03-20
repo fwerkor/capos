@@ -5,7 +5,7 @@ Version: 2.3.3-r2
 Depends: +libc @PACKAGE_libslang2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libslang2-mod-base64-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -29,7 +29,7 @@ Version: 2.3.3-r2
 Depends: +libc @PACKAGE_libslang2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libslang2-mod-chksum-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -53,7 +53,7 @@ Version: 2.3.3-r2
 Depends: +libc @PACKAGE_libslang2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libslang2-mod-csv-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -77,7 +77,7 @@ Version: 2.3.3-r2
 Depends: +libc @PACKAGE_libslang2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libslang2-mod-fcntl-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -101,7 +101,7 @@ Version: 2.3.3-r2
 Depends: +libc @PACKAGE_libslang2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libslang2-mod-fork-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -125,7 +125,7 @@ Version: 2.3.3-r2
 Depends: +libc @PACKAGE_libslang2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libslang2-mod-histogram-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -149,7 +149,7 @@ Version: 2.3.3-r2
 Depends: +libc @PACKAGE_libslang2 +BUILD_NLS:libiconv-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libslang2-mod-iconv-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -173,7 +173,7 @@ Version: 2.3.3-r2
 Depends: +libc @PACKAGE_libslang2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libslang2-mod-json-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -197,7 +197,7 @@ Version: 2.3.3-r2
 Depends: +libc @PACKAGE_libslang2 +PACKAGE_libslang2-mod-onig:oniguruma
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libslang2-mod-onig-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -221,7 +221,7 @@ Version: 2.3.3-r2
 Depends: +libc @PACKAGE_libslang2 +PACKAGE_libslang2-mod-png:libpng
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libslang2-mod-png-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -245,7 +245,7 @@ Version: 2.3.3-r2
 Depends: +libc @PACKAGE_libslang2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libslang2-mod-rand-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -269,7 +269,7 @@ Version: 2.3.3-r2
 Depends: +libc @PACKAGE_libslang2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libslang2-mod-select-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -293,7 +293,7 @@ Version: 2.3.3-r2
 Depends: +libc @PACKAGE_libslang2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libslang2-mod-slsmg-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -317,7 +317,7 @@ Version: 2.3.3-r2
 Depends: +libc @PACKAGE_libslang2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libslang2-mod-socket-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -341,7 +341,7 @@ Version: 2.3.3-r2
 Depends: +libc @PACKAGE_libslang2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libslang2-mod-stats-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -365,7 +365,7 @@ Version: 2.3.3-r2
 Depends: +libc @PACKAGE_libslang2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libslang2-mod-sysconf-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -389,7 +389,7 @@ Version: 2.3.3-r2
 Depends: +libc @PACKAGE_libslang2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libslang2-mod-termios-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -413,7 +413,7 @@ Version: 2.3.3-r2
 Depends: +libc @PACKAGE_libslang2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libslang2-mod-varray-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -437,7 +437,7 @@ Version: 2.3.3-r2
 Depends: +libc @PACKAGE_libslang2 +PACKAGE_libslang2-mod-zlib:zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libslang2-mod-zlib-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -461,7 +461,7 @@ Version: 2.3.3-r2
 Depends: +libc +terminfo
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libslang2-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -483,7 +483,7 @@ Version: 2.3.3-r2
 Depends: +libc @PACKAGE_libslang2 +libslang2-mod-base64 +libslang2-mod-chksum +libslang2-mod-csv +libslang2-mod-fcntl +libslang2-mod-fork +libslang2-mod-histogram +libslang2-mod-iconv +libslang2-mod-json +libslang2-mod-onig +libslang2-mod-png +libslang2-mod-rand +libslang2-mod-select +libslang2-mod-slsmg +libslang2-mod-socket +libslang2-mod-stats +libslang2-mod-sysconf +libslang2-mod-termios +libslang2-mod-varray +libslang2-mod-zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libslang2-modules-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -507,7 +507,7 @@ Version: 2.3.3-r2
 Depends: +libc +libslang2 +libslang2-modules
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @slsh-any
 Section: lang
 Category: Languages
 Repository: base

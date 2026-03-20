@@ -1,17 +1,17 @@
 Source-Makefile: feeds/telephony/libs/libpri/Makefile
 
 Package: libpri
-Version: 1.6.0-r4
+Version: 1.6.1-r1
 Depends: +libc +dahdi-tools-libtonezone
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libpri-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: libpri Primary Rate ISDN implementation
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: libpri-1.6.0.tar.gz
+Source: libpri-1.6.1.tar.gz
 URL: http://www.asterisk.org/
 Type: ipkg
 Description: 	libpri is a C implementation of the Primary Rate ISDN specification. It was

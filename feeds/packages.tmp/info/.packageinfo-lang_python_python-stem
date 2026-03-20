@@ -6,7 +6,7 @@ Version: 1.8.2-r1
 Depends: +libc +python3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-stem-any
 Section: lang
 Category: Languages
 Repository: base
@@ -27,7 +27,7 @@ Version: 1.8.2-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-stem-src-any
 Section: lang
 Category: Languages
 Repository: base

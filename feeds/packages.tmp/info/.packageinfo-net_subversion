@@ -6,12 +6,12 @@ Version: 1.14.5-r1
 Depends: +libc +PACKAGE_unixodbc:unixodbc +libaprutil +libmagic +libsqlite3 +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @subversion-libs-any
 Section: net
 Category: Network
 Repository: base
 Title: subversion libs
-Maintainer: Aleksey Vasilenko <aleksey.vasilenko@gmail.com>
+Maintainer: 
 Source: subversion-1.14.5.tar.bz2
 License: Apache-2.0
 LicenseFiles: LICENSE
@@ -32,12 +32,12 @@ Version: 1.14.5-r1
 Depends: +libc +subversion-libs
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @subversion-client-any
 Section: net
 Category: Network
 Repository: base
 Title: subversion client tools
-Maintainer: Aleksey Vasilenko <aleksey.vasilenko@gmail.com>
+Maintainer: 
 Source: subversion-1.14.5.tar.bz2
 License: Apache-2.0
 LicenseFiles: LICENSE
@@ -58,12 +58,12 @@ Version: 1.14.5-r1
 Depends: +libc +subversion-libs
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @subversion-server-any
 Section: net
 Category: Network
 Repository: base
 Title: subversion server
-Maintainer: Aleksey Vasilenko <aleksey.vasilenko@gmail.com>
+Maintainer: 
 Source: subversion-1.14.5.tar.bz2
 License: Apache-2.0
 LicenseFiles: LICENSE

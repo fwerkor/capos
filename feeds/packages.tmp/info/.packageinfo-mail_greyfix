@@ -5,7 +5,7 @@ Version: 0.4.0-r1
 Depends: +libc +libdb47
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @greyfix-any
 Section: mail
 Category: Mail
 Repository: base

@@ -6,7 +6,7 @@ Version: 0.1.5-r3
 Depends: +libc +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ntripcaster-any
 Section: net
 Category: Network
 Repository: base

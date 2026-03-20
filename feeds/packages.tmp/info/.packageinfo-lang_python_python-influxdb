@@ -6,7 +6,7 @@ Version: 5.3.1-r1
 Depends: +libc +python3-light +python3-requests +python3-pytz +python3-six +python3-dateutil +python3-msgpack
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-influxdb-any
 Section: lang
 Category: Languages
 Repository: base
@@ -26,7 +26,7 @@ Version: 5.3.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-influxdb-src-any
 Section: lang
 Category: Languages
 Repository: base

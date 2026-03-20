@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/net/restic-rest-server/Makefile
 Build-Depends: golang/host
 
 Package: restic-rest-server
-Version: 0.12.1-r1
+Version: 0.13.0-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @restic-rest-server-any
 Section: net
 Category: Network
 Repository: base
 Title: restic REST server
 Maintainer: Tom Stöveken <tom@naaa.de>
-Source: rest-server-0.12.1.tar.gz
+Source: rest-server-0.13.0.tar.gz
 License: BSD-2-Clause
 LicenseFiles: LICENSE
 URL: http://github.com/restic/rest-server

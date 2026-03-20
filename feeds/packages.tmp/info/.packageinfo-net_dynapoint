@@ -6,7 +6,7 @@ Version: 3
 Depends: +libc +lua +libubus-lua +libuci-lua +libubox-lua +luci-lib-nixio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dynapoint-any
 Section: net
 Category: Network
 Repository: base

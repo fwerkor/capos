@@ -1,0 +1,183 @@
+Source-Makefile: feeds/telephony/net/baresip-apps/Makefile
+
+Package: baresip-app-auloop
+Submenu: Telephony
+Version: 0~0b25d61247f3e8d15071b09223e35f8806dacad8-r1
+Depends: +libc +baresip
+Conflicts: 
+Menu-Depends: 
+Provides: @baresip-app-auloop-any
+Section: net
+Category: Network
+Repository: base
+Title: Audio Looping
+Maintainer: Daniel Danzberger <dd@embedd.com>
+Source: baresip-apps-0b25d61247f3e8d15071b09223e35f8806dacad8.tar.gz
+License: BSD-3-Clause
+LicenseFiles: docs/COPYING
+URL: https://github.com/baresip/baresip-apps
+Type: ipkg
+Description: Audio Looping
+@@
+
+Package: baresip-app-autotest
+Submenu: Telephony
+Version: 0~0b25d61247f3e8d15071b09223e35f8806dacad8-r1
+Depends: +libc +baresip
+Conflicts: 
+Menu-Depends: 
+Provides: @baresip-app-autotest-any
+Section: net
+Category: Network
+Repository: base
+Title: Auto Test Module
+Maintainer: Daniel Danzberger <dd@embedd.com>
+Source: baresip-apps-0b25d61247f3e8d15071b09223e35f8806dacad8.tar.gz
+License: BSD-3-Clause
+LicenseFiles: docs/COPYING
+URL: https://github.com/baresip/baresip-apps
+Type: ipkg
+Description: Auto Test Module
+@@
+
+Package: baresip-app-b2bua
+Submenu: Telephony
+Version: 0~0b25d61247f3e8d15071b09223e35f8806dacad8-r1
+Depends: +libc +baresip
+Conflicts: 
+Menu-Depends: 
+Provides: @baresip-app-b2bua-any
+Section: net
+Category: Network
+Repository: base
+Title: Back-to-Back User-Agent
+Maintainer: Daniel Danzberger <dd@embedd.com>
+Source: baresip-apps-0b25d61247f3e8d15071b09223e35f8806dacad8.tar.gz
+License: BSD-3-Clause
+LicenseFiles: docs/COPYING
+URL: https://github.com/baresip/baresip-apps
+Type: ipkg
+Description: Back-to-Back User-Agent
+@@
+
+Package: baresip-app-intercom
+Submenu: Telephony
+Version: 0~0b25d61247f3e8d15071b09223e35f8806dacad8-r1
+Depends: +libc +baresip
+Conflicts: 
+Menu-Depends: 
+Provides: @baresip-app-intercom-any
+Section: net
+Category: Network
+Repository: base
+Title: Intercom Module
+Maintainer: Daniel Danzberger <dd@embedd.com>
+Source: baresip-apps-0b25d61247f3e8d15071b09223e35f8806dacad8.tar.gz
+License: BSD-3-Clause
+LicenseFiles: docs/COPYING
+URL: https://github.com/baresip/baresip-apps
+Type: ipkg
+Description: Intercom Module
+@@
+
+Package: baresip-app-kaoptions
+Submenu: Telephony
+Version: 0~0b25d61247f3e8d15071b09223e35f8806dacad8-r1
+Depends: +libc +baresip
+Conflicts: 
+Menu-Depends: 
+Provides: @baresip-app-kaoptions-any
+Section: net
+Category: Network
+Repository: base
+Title: Keepalive via SIP OPTIONS message
+Maintainer: Daniel Danzberger <dd@embedd.com>
+Source: baresip-apps-0b25d61247f3e8d15071b09223e35f8806dacad8.tar.gz
+License: BSD-3-Clause
+LicenseFiles: docs/COPYING
+URL: https://github.com/baresip/baresip-apps
+Type: ipkg
+Description: Keepalive via SIP OPTIONS message
+@@
+
+Package: baresip-app-multicast
+Submenu: Telephony
+Version: 0~0b25d61247f3e8d15071b09223e35f8806dacad8-r1
+Depends: +libc +baresip
+Conflicts: 
+Menu-Depends: 
+Provides: @baresip-app-multicast-any
+Section: net
+Category: Network
+Repository: base
+Title: Mulitcast Support
+Maintainer: Daniel Danzberger <dd@embedd.com>
+Source: baresip-apps-0b25d61247f3e8d15071b09223e35f8806dacad8.tar.gz
+License: BSD-3-Clause
+LicenseFiles: docs/COPYING
+URL: https://github.com/baresip/baresip-apps
+Type: ipkg
+Description: Mulitcast Support
+@@
+
+Package: baresip-app-parcall
+Submenu: Telephony
+Version: 0~0b25d61247f3e8d15071b09223e35f8806dacad8-r1
+Depends: +libc +baresip
+Conflicts: 
+Menu-Depends: 
+Provides: @baresip-app-parcall-any
+Section: net
+Category: Network
+Repository: base
+Title: Parallel call module
+Maintainer: Daniel Danzberger <dd@embedd.com>
+Source: baresip-apps-0b25d61247f3e8d15071b09223e35f8806dacad8.tar.gz
+License: BSD-3-Clause
+LicenseFiles: docs/COPYING
+URL: https://github.com/baresip/baresip-apps
+Type: ipkg
+Description: Parallel call module
+@@
+
+Package: baresip-app-qualify
+Submenu: Telephony
+Version: 0~0b25d61247f3e8d15071b09223e35f8806dacad8-r1
+Depends: +libc +baresip
+Conflicts: 
+Menu-Depends: 
+Provides: @baresip-app-qualify-any
+Section: net
+Category: Network
+Repository: base
+Title: Pinging of peer in CALL_STATE_INCOMING via SIP OPTIONS
+Maintainer: Daniel Danzberger <dd@embedd.com>
+Source: baresip-apps-0b25d61247f3e8d15071b09223e35f8806dacad8.tar.gz
+License: BSD-3-Clause
+LicenseFiles: docs/COPYING
+URL: https://github.com/baresip/baresip-apps
+Type: ipkg
+Description: Pinging of peer in CALL_STATE_INCOMING via SIP OPTIONS
+@@
+
+Package: baresip-app-vidloop
+Submenu: Telephony
+Version: 0~0b25d61247f3e8d15071b09223e35f8806dacad8-r1
+Depends: +libc +baresip
+Conflicts: 
+Menu-Depends: 
+Provides: @baresip-app-vidloop-any
+Section: net
+Category: Network
+Repository: base
+Title: Video Loop
+Maintainer: Daniel Danzberger <dd@embedd.com>
+Source: baresip-apps-0b25d61247f3e8d15071b09223e35f8806dacad8.tar.gz
+License: BSD-3-Clause
+LicenseFiles: docs/COPYING
+URL: https://github.com/baresip/baresip-apps
+Type: ipkg
+Description: Video Loop
+@@
+
+

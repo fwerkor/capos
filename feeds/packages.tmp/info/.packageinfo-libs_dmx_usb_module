@@ -6,7 +6,7 @@ Version: <LINUX_VERSION>.19.12.1-r2
 Depends: kmod-usb-serial
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kmod-usb-serial-dmx_usb_module-any
 Section: kernel
 Category: Kernel modules
 Title: Support for FTDI RS485 based DMX modules

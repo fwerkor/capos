@@ -6,12 +6,12 @@ Version: 0.16-r3
 Depends: +libc +libstdcpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libctb-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Communications toolbox - ctb
-Maintainer: Sebastian Kemper <sebastian_ml@gmx.net>
+Maintainer: 
 Source: libctb-0.16.tar.gz
 License: LGPL
 LicenseFiles: build/COPYING

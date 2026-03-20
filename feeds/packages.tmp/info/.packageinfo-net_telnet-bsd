@@ -5,7 +5,7 @@ Version: 1.2-r1
 Depends: +libc +libncurses
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @telnet-bsd-any
 Section: net
 Category: Network
 Repository: base

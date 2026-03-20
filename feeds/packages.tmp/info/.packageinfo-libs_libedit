@@ -5,7 +5,7 @@ Version: 20250104.3.1-r1
 Depends: +libc +libncurses
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libedit-any
 Section: libs
 Category: Libraries
 Repository: base

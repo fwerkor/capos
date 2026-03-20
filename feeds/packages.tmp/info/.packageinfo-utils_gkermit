@@ -5,7 +5,7 @@ Version: 1.00-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @gkermit-any
 Section: utils
 Category: Utilities
 Repository: base

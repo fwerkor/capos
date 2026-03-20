@@ -5,7 +5,7 @@ Version: 20231119-r2
 Depends: +libc +ip
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @external-protocol-any
 Section: net
 Category: Network
 Repository: base

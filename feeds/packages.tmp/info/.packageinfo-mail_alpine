@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/mail/alpine/Makefile
 
 Package: alpine
-Version: 2.25-r3
-Depends: +libc +libopenssl +libncurses +libpthread +libpam +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +libopenssl
+Version: 2.25-r5
+Depends: +libc +USE_GLIBC:libcrypt-compat +libopenssl +libncurses +libpthread +libpam +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @alpine-any
 Build-Variant: ssl
 Section: mail
 Category: Mail
@@ -26,11 +26,11 @@ Description:  Alpine (Alternatively Licensed Program for Internet News and Email
 @@
 
 Package: alpine-nossl
-Version: 2.25-r3
-Depends: +libc +libopenssl +libncurses +libpthread +libpam +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full @BROKEN
+Version: 2.25-r5
+Depends: +libc +USE_GLIBC:libcrypt-compat +libopenssl +libncurses +libpthread +libpam +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full @BROKEN
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @alpine-nossl-any
 Build-Variant: nossl
 Section: mail
 Category: Mail

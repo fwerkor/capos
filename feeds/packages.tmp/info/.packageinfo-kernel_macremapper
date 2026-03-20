@@ -6,7 +6,7 @@ Version: <LINUX_VERSION>.1.1.0-r2
 Depends: +kmod-cfg80211 +kmod-br-netfilter
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kmod-macremapper-any
 Section: kernel
 Category: Kernel modules
 Title: Dual Channel Wi-Fi macremapper Module

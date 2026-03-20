@@ -5,7 +5,7 @@ Version: 5.3.128-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @openpgm-any
 Section: libs
 Category: Libraries
 Repository: base

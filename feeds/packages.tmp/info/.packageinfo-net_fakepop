@@ -5,7 +5,7 @@ Version: 11-r2
 Depends: +libc +glib2 +xinetd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @fakepop-any
 Section: net
 Category: Network
 Repository: base

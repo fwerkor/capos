@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-lib-base +luci-lua-runtime
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-lib-httpprotoutils-any
 Section: luci
 Category: LuCI
 Repository: base

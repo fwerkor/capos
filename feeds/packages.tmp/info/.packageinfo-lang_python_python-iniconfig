@@ -7,7 +7,7 @@ Version: 2.0.0-r1
 Depends: +libc +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-iniconfig-any
 Section: lang
 Category: Languages
 Repository: base
@@ -27,7 +27,7 @@ Version: 2.0.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-iniconfig-src-any
 Section: lang
 Category: Languages
 Repository: base

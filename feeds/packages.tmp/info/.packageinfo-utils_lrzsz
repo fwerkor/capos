@@ -5,7 +5,7 @@ Version: 0.12.21-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lrzsz-any
 Section: utils
 Category: Utilities
 Repository: base

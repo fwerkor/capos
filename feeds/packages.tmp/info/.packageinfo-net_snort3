@@ -3,17 +3,18 @@ Source-Makefile: feeds/packages/net/snort3/Makefile
 Package: snort3
 Menu: 1
 Submenu: Firewall
-Version: 3.9.5.0-r5
-Depends: +libc +libstdcpp +libdaq3 +libdnet +libopenssl +libpcap +libpcre2 +libpthread +libuuid +zlib +libhwloc +USE_MUSL:libtirpc @HAS_LUAJIT_ARCH +luajit +libatomic +kmod-nft-queue +liblzma +ucode +ucode-mod-fs +ucode-mod-uci +PACKAGE_gperftools-runtime:gperftools-runtime +PACKAGE_hyperscan-runtime:hyperscan-runtime
+Version: 3.10.0.0-r1
+Depends: +libc +libstdcpp +libdaq3 +libdnet +libopenssl +libpcap +libpcre2 +libpthread +libuuid +zlib +libhwloc +USE_MUSL:libtirpc @HAS_LUAJIT_ARCH +luajit +libatomic +kmod-nft-queue +liblzma +ucode +ucode-mod-fs +ucode-mod-uci +PACKAGE_gperftools:gperftools +PACKAGE_vectorscan:vectorscan
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @snort3-any
 Section: net
 Category: Network
 Repository: base
 Title: Lightweight Network Intrusion Detection System
 Maintainer: W. Michael Petullo <mike@flyn.org>, John Audia <therealgraysky@proton.me>
-Source: snort3-3.9.5.0.tar.gz
+Require-User: snort=975:snort=975
+Source: snort3-3.10.0.0.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:snort:snort
@@ -24,6 +25,14 @@ Description:   Snort is an open source network intrusion detection and preventio
   and packet logging on IP networks.  It utilizes a combination of protocol
   analysis and pattern matching in order to detect anomalies, misuse and
   attacks.
+
+  Note:
+    When compiling from source, and if your target supports them, optionally
+    enable runtime dependencies for improved performance:
+      - gperftools
+      - vectorscan
+    These are not enabled by default and must be manually selected in menuconfig
+    to take advantage of their benefits.
 @@
 
 

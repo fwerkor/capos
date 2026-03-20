@@ -6,7 +6,7 @@ Version: 1.0.1-r1
 Depends: +libc +python3-click +python3-light +python3-logging
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-dotenv-any
 Section: lang
 Category: Languages
 Repository: base
@@ -28,7 +28,7 @@ Version: 1.0.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-dotenv-src-any
 Section: lang
 Category: Languages
 Repository: base

@@ -7,7 +7,7 @@ Version: 0.5.12-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) @IPV6 +kmod-tun
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @yggdrasil-any
 Section: net
 Category: Network
 Repository: base

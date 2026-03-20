@@ -5,7 +5,7 @@ Version: 3.2.5-r1
 Depends: +libc +libelf
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @at-any
 Section: utils
 Category: Utilities
 Repository: base

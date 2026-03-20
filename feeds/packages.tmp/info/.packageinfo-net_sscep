@@ -5,7 +5,7 @@ Version: 0.10.0-r1
 Depends: +libc +libopenssl +openssl-util
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @sscep-any
 Section: net
 Category: Network
 Repository: base

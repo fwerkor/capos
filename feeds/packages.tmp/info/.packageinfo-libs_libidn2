@@ -6,7 +6,7 @@ Version: 2.3.7-r1
 Depends: +libc +libidn2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @idn2-any
 Section: net
 Category: Network
 Repository: base
@@ -33,7 +33,7 @@ Version: 2.3.7-r1
 Depends: +libc +libunistring +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libidn2-any
 Section: libs
 Category: Libraries
 Repository: base

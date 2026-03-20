@@ -6,7 +6,7 @@ Version: 0.0.3-r2
 Depends: +libc +libgee +libgstreamer1 +loudmouth @TARGET_bcm27xx
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lcdringer-any
 Section: network
 Category: Network
 Repository: base

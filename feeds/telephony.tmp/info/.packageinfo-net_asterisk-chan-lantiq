@@ -6,7 +6,7 @@ Version: 2021.09.11~2f029ec8778420538c8151c6aceba0f7b44b07c9-r4
 Depends: +libc +asterisk +kmod-ltq-vmmc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @asterisk-chan-lantiq-any
 Section: net
 Category: Network
 Title: Lantiq channel driver

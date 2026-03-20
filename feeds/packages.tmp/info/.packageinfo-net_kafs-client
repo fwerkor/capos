@@ -6,7 +6,7 @@ Version: 0.5~9957339e-r2
 Depends: +libc +keyutils +krb5-libs +kmod-fs-afs +kmod-crypto-user
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kafs-client-any
 Section: net
 Category: Network
 Repository: base

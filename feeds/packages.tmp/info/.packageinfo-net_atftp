@@ -2,11 +2,11 @@ Source-Makefile: feeds/packages/net/atftp/Makefile
 
 Package: atftp
 Submenu: File Transfer
-Version: 0.8.0-r3
+Version: 0.8.0-r5
 Depends: +libc +libreadline +libncurses
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @atftp-any
 Section: net
 Category: Network
 Repository: base
@@ -22,11 +22,11 @@ Description: TFTP client
 
 Package: atftpd
 Submenu: File Transfer
-Version: 0.8.0-r3
+Version: 0.8.0-r5
 Depends: +libc +libpcre2 +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @atftpd-any
 Section: net
 Category: Network
 Repository: base

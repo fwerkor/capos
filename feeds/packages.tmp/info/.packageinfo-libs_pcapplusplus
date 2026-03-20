@@ -5,7 +5,7 @@ Version: 21.11-r1
 Depends: +libc +libpcap +libstdcpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pcapplusplus-any
 Section: net
 Category: Network
 Repository: base

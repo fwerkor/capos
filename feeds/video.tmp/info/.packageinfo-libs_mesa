@@ -1,0 +1,542 @@
+Source-Makefile: feeds/video/libs/mesa/Makefile
+Build-Depends: glslang/host python3/host libva vulkan-headers MESA_USE_LLVM:llvm MESA_USE_LLVM:mesa/host
+Build-Depends/host: python3/host spirv-tools/host llvm
+Build-Types: host
+
+Package: mesa3d
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic
+Conflicts: 
+Menu-Depends: 
+Provides: @mesa3d-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Hidden: 1
+Description: Mesa3D
+@@
+Config:
+config HAVE_MESA
+	bool
+	default y
+
+config MESA_USE_LLVM
+	bool "Use LLVM to build MESA"
+	depends on aarch64||arm||i386||i686||loongarch64||mips||mipsel||mips64||mips64el||riscv64||x86_64
+	default y
+@@
+
+Package: libmesa-amd
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libstdcpp +zlib +libdrm +libsensors +libwayland +libzstd +wayland-protocols +libdrm-amdgpu +libdrm-radeon +libelf @MESA_USE_LLVM
+Conflicts: 
+Menu-Depends: 
+Provides: @libmesa-amd-any libmesa
+Build-Variant: amd
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D OpenGL and friends (AMD)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: A collection of drivers for AMD Radeon dedicated GPUs.
+
+AMD R300
+
+The R300 driver supports AMD's Radeon R300 GPU series.
+
+AMD R600
+
+The R600 driver supports AMD's Radeon HD 2000 GPU series. It's
+officially supported by AMD.
+
+AMD RadeonSI
+
+The RadeonSI OpenGL driver supports AMD's Southern Island GPUs and
+later. It's officially supported by AMD.
+@@
+
+Package: libmesa-intel
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libstdcpp +zlib +libdrm +libsensors +libwayland +libzstd +wayland-protocols +libdrm-intel @(i386||i686||x86_64) @MESA_USE_LLVM
+Conflicts: 
+Menu-Depends: 
+Provides: @libmesa-intel-any libmesa
+Build-Variant: intel
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D OpenGL and friends (Intel)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: A collection of drivers for GPUs embedded in Intel's CPUs.
+
+Intel Iris
+
+The Iris driver supports Intel's Gen 8 hardware and later. It's
+officially supported by Intel and is their next-generation Linux OpenGL
+driver.
+
+Intel Crocus
+
+The Crocus driver supports Intel's Gen 7 hardware and earlier. It's
+based on Iris and the former i965 driver, but is not officially
+supported or endorsed by Intel.
+
+Intel i915
+
+The i915 driver supports older Intel i915 and i945 chipsets.
+@@
+
+Package: libmesa-tegra
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libstdcpp +zlib +libdrm +libsensors +libwayland +libzstd +wayland-protocols +libdrm-tegra @(aarch64||arm) @MESA_USE_LLVM
+Conflicts: 
+Menu-Depends: 
+Provides: @libmesa-tegra-any libmesa
+Build-Variant: tegra
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D OpenGL and friends (NVIDIA Tegra)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: The Nouveau driver built for GPUs embedded in the Tegra SoC family. It's
+a reverse-engineered, community-developed driver, and is not endorsed by
+NVIDIA.
+@@
+
+Package: libmesa-etnaviv
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libstdcpp +zlib +libdrm +libsensors +libwayland +libzstd +wayland-protocols +libdrm-etnaviv @(aarch64||arm||mips||mips64||mipsel||mips64el||riscv64)
+Conflicts: 
+Menu-Depends: 
+Provides: @libmesa-etnaviv-any libmesa
+Build-Variant: etnaviv
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D OpenGL and friends (Vivante)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: The Etnaviv driver supports the Vivante GCxxx series of embedded GPUs.
+It's a reverse-engineered, community-developed driver, and is not
+endorsed by Vivante.
+@@
+
+Package: libmesa-broadcom
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libstdcpp +zlib +libdrm +libsensors +libwayland +libzstd +wayland-protocols +libarchive @(aarch64||arm) @HAS_FPU
+Conflicts: 
+Menu-Depends: 
+Provides: @libmesa-broadcom-any libmesa
+Build-Variant: broadcom
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D OpenGL and friends (Broadcom)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: Mesa’s VC4 graphics driver supports multiple implementations of
+Broadcom's VideoCore IV GPU. It is notably used in the Raspberry Pi 0
+through Raspberry Pi 3 hardware.
+Along with GLES 2.0, the Mesa driver also exposes OpenGL 2.1, which is
+mostly correct but with a few caveats.
+
+Mesa’s V3D graphics driver stack includes a conformant GLES3.1 driver
+called V3D, notably used on the Raspberry Pi 4 and Raspberry Pi 5.
+
+This package contains both, VC4 and V3D drivers and covers all
+RaspberryPi boards.
+@@
+
+Package: libmesa-nouveau
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libstdcpp +zlib +libdrm +libsensors +libwayland +libzstd +wayland-protocols +libdrm-nouveau @MESA_USE_LLVM
+Conflicts: 
+Menu-Depends: 
+Provides: @libmesa-nouveau-any libmesa
+Build-Variant: nouveau
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D OpenGL and friends (NVIDIA)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: The Nouveau drivers supports a large set of NVIDIA chips, ranging from
+NV04 found in the Riva TNT card to NVF0 found in the GeForce GTX 780.
+It's a reverse-engineered, community-developed driver, and is not
+endorsed by NVIDIA.
+@@
+
+Package: libmesa-lima
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libstdcpp +zlib +libdrm +libsensors +libwayland +libzstd +wayland-protocols @(aarch64||arm)
+Conflicts: 
+Menu-Depends: 
+Provides: @libmesa-lima-any libmesa
+Build-Variant: lima
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D OpenGL and friends (ARM Mali Utgard)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: Lima is an open source graphics driver which supports Mali Utgard
+(Mali-4xx) embedded GPUs from ARM. It's a reverse-engineered,
+community-developed driver, and is not endorsed by ARM. Lima was
+upstreamed in Mesa 19.1 and Linux kernel 5.2.
+
+Product         Architecture    Status
+Mali-400        Utgard          Supported
+Mali-450        Utgard          Supported
+Mali-470        Utgard          Unsupported
+
+Newer Mali chips based on the Midgard/Bifrost architectures (Mali T or G
+series) are handled by the Panfrost driver, not Lima.
+@@
+
+Package: libmesa-panfrost
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libstdcpp +zlib +libdrm +libsensors +libwayland +libzstd +wayland-protocols @(aarch64||arm) @MESA_USE_LLVM
+Conflicts: 
+Menu-Depends: 
+Provides: @libmesa-panfrost-any libmesa
+Build-Variant: panfrost
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D OpenGL and friends (ARM Mali Midgard and later)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: The Panfrost driver stack includes an OpenGL ES implementation for Arm
+Mali GPUs based on the Midgard, Bifrost and Valhall microarchitectures.
+It is conformant on Mali-G52, Mali-G57 and Mali-G610, but non-conformant
+on other GPUs. The following hardware is currently supported:
+
+Models                          Architecture    OpenGL ES       OpenGL
+T600, T620, T720                Midgard (v4)    2.0             2.1
+T760, T820, T830 T860, T880     Midgard (v5)    3.1             3.1
+G72                             Bifrost (v6)    3.1             3.1
+G31, G51, G52, G76              Bifrost (v7)    3.1             3.1
+G57                             Valhall (v9)    3.1             3.1
+G310, G610                      Valhall (v10)   3.1             3.1
+
+Other Midgard and Bifrost chips (e.g. G71) are not yet supported.
+@@
+
+Package: libmesa-virgl
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libstdcpp +zlib +libdrm +libsensors +libwayland +libzstd +wayland-protocols
+Conflicts: 
+Menu-Depends: 
+Provides: @libmesa-virgl-any libmesa
+Build-Variant: virgl
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D OpenGL and friends (VirtIO GL)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: VirGL is a virtual 3D GPU for use inside QEMU virtual machines, that
+allows the guest operating system to use the capabilities of the host
+GPU to accelerate 3D rendering. The plan is to have a guest GPU that is
+fully independent of the host GPU.
+@@
+
+Package: libmesa-zink
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libstdcpp +zlib +libdrm +libsensors +libwayland +libzstd +wayland-protocols @MESA_USE_LLVM
+Conflicts: 
+Menu-Depends: 
+Provides: @libmesa-zink-any libmesa
+Build-Variant: vulkan
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D OpenGL and friends (Zink GL via Vulkan)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: The Zink driver is a Gallium driver that emits Vulkan API calls instead
+of targeting a specific GPU architecture. This can be used to get full
+desktop OpenGL support on devices that only support Vulkan.
+@@
+
+Package: libmesa-softpipe
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libstdcpp +zlib +libdrm +libsensors +libwayland +libzstd +wayland-protocols
+Conflicts: 
+Menu-Depends: 
+Provides: @libmesa-softpipe-any libmesa
+Build-Variant: softpipe
+Default-Variant: softpipe
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D OpenGL and friends (Softpipe)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: The Softpipe driver is a reference software rasterizer; it's slow but
+accurate. It's mostly useful for testing, and on systems that lack
+support for LLVM.
+@@
+
+Package: libmesa-llvmpipe
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libstdcpp +zlib +libdrm +libsensors +libwayland +libzstd +wayland-protocols @MESA_USE_LLVM
+Conflicts: 
+Menu-Depends: 
+Provides: @libmesa-llvmpipe-any libmesa
+Build-Variant: llvmpipe
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D OpenGL and friends (LLVMpipe)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: The Gallium LLVMpipe driver is a software rasterizer that uses LLVM to
+do runtime code generation. Shaders, point/line/triangle rasterization
+and vertex processing are implemented with LLVM IR which is translated
+to native CPU machine code. Also, the driver is multithreaded to take
+advantage of multiple CPU cores (up to 32 at this time). It's the
+fastest software rasterizer for Mesa.
+@@
+
+Package: libvulkan-broadcom
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libdrm +libexpat +libstdcpp +libudev +libwayland +libzstd +zlib @(arm||aarch64) @HAS_FPU
+Conflicts: 
+Menu-Depends: 
+Provides: @libvulkan-broadcom-any
+Build-Variant: vulkan
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D Broadcom Vulkan driver
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: V3DV Vulkan graphics driver, notably used on the Raspberry Pi 4 and
+Raspberry Pi 5.
+@@
+
+Package: libvulkan-imagination
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libatomic +libdrm +libexpat +libstdcpp +libudev +libwayland +libzstd +zlib @(aarch64||arm||mips||mips64||mipsel||mips64el||riscv64)
+Conflicts: 
+Menu-Depends: 
+Provides: @libvulkan-imagination-any
+Build-Variant: vulkan
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D Imagination PowerVR driver (EXPERIMENTAL)
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: PowerVR is a Vulkan driver for Imagination Technologies PowerVR GPUs,
+starting with those based on the Rogue architecture.
+
+The driver is not yet fully conformant so it requires exporting
+PVR_I_WANT_A_BROKEN_VULKAN_DRIVER=1 to the environment before running
+any Vulkan content.
+
+The following hardware is currently in active development:
+
+Product         Series          B.V.N.C         Vulkan  Conformant
+GX6250          Series 6XT      4.40.2.51       1.0     No
+AXE-1-16M       A-Series        33.15.11.3      1.0     No
+BXS-4-64        B-Series        36.53.104.796   1.0     No
+@@
+
+Package: libvulkan-intel
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libdrm-intel +libexpat +libstdcpp +libudev +libwayland +libzstd +zlib @(i386||i686||x86_64) @MESA_USE_LLVM
+Conflicts: 
+Menu-Depends: 
+Provides: @libvulkan-intel-any
+Build-Variant: vulkan
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D Intel Gen9+ Vulkan driver
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: Intel ANV for Skylake "Gen9" and newer graphics. It's officially
+supported by Intel and is their official Vulkan driver for Linux.
+@@
+
+Package: libvulkan-intel-hasvk
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libdrm-intel +libexpat +libstdcpp +libudev +libwayland +libzstd +zlib @(i386||i686||x86_64) @MESA_USE_LLVM
+Conflicts: 
+Menu-Depends: 
+Provides: @libvulkan-intel-hasvk-any
+Build-Variant: vulkan
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D Intel Gen7/Gen8 Vulkan driver
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: The ANV vulkan driver supports Intel's Gen 7/8 hardware. It's officially
+supported by Intel and is their official Vulkan driver for Linux.
+@@
+
+Package: libvulkan-lvp
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libatomic +libdrm +libstdcpp +libudev +libwayland +libzstd +zlib @MESA_USE_LLVM
+Conflicts: 
+Menu-Depends: 
+Provides: @libvulkan-lvp-any
+Build-Variant: vulkan
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D LLVM JIT CPU rendering Vulkan driver
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: The Vulkan LLVMpipe driver is a software rasterizer that uses LLVM to do
+runtime code generation.
+@@
+
+Package: libvulkan-nouveau
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64) @MESA_USE_LLVM @BROKEN
+Conflicts: 
+Menu-Depends: 
+Provides: @libvulkan-nouveau-any
+Build-Variant: vulkan
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D nouveau Vulkan driver for nVidia GPUs
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: NVK is a Vulkan driver for NVIDIA GPUs.
+
+NVK currently supports Turing (RTX 20XX and GTX 16XX) and later GPUs.
+Eventually, we plan to support as far back as Kepler (GeForce 600 and
+700 series) GPUs but anything pre-Turing is currently disabled by
+default.
+@@
+
+Package: libvulkan-panfrost
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libdrm +libexpat +libstdcpp +libudev +libwayland +libzstd +zlib @(arm||aarch64) @MESA_USE_LLVM
+Conflicts: 
+Menu-Depends: 
+Provides: @libvulkan-panfrost-any
+Build-Variant: vulkan
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D ARM Mali Midgard/Bifrost/Valhall Vulkan driver
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: The PanVk driver is an Open Source Vulkan driver for ARM Mali Midgard
+and Bifrost GPUs.
+@@
+
+Package: libvulkan-radeon
+Submenu: Video
+Version: 25.2.4-r2
+Depends: +libc +libatomic +libdrm-amdgpu +libelf +libexpat +libstdcpp +libudev +libwayland +libzstd +zlib @MESA_USE_LLVM
+Conflicts: 
+Menu-Depends: 
+Provides: @libvulkan-radeon-any
+Build-Variant: vulkan
+Section: libs
+Category: Libraries
+Repository: base
+Title: Mesa3D AMD Radeon Vulkan driver
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: mesa-25.2.4.tar.xz
+License: BSD-3-Clause
+URL: https://www.mesa3d.org
+Type: ipkg
+Description: RADV is a Vulkan driver for AMD GCN/RDNA GPUs.
+@@
+
+

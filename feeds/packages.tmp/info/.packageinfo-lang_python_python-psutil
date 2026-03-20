@@ -6,7 +6,7 @@ Version: 5.9.5-r1
 Depends: +libc +python3-light
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-psutil-any
 Section: lang
 Category: Languages
 Repository: base
@@ -28,7 +28,7 @@ Version: 5.9.5-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-psutil-src-any
 Section: lang
 Category: Languages
 Repository: base

@@ -7,12 +7,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=gdb
-PKG_VERSION:=15.2
-PKG_RELEASE:=2
+PKG_VERSION:=16.3
+PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
 PKG_SOURCE_URL:=@GNU/gdb
-PKG_HASH:=83350ccd35b5b5a0cba6b334c41294ea968158c573940904f00b92f76345314d
+PKG_HASH:=bcfcd095528a987917acf9fff3f1672181694926cc18d609c99d0042c00224c5
 PKG_CPE_ID:=cpe:/a:gnu:gdb
 GDB_DIR:=$(PKG_NAME)-$(PKG_VERSION)
 
@@ -55,8 +55,6 @@ ifneq ($(CONFIG_GDB_PYTHON),)
 else
   HOST_CONFIGURE_ARGS+= --without-python
 endif
-
-HOST_CFLAGS += -std=gnu17
 
 define Host/Install
 	mkdir -p $(TOOLCHAIN_DIR)/bin

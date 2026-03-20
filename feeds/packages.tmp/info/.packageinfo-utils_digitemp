@@ -1,18 +1,19 @@
 Source-Makefile: feeds/packages/utils/digitemp/Makefile
 
 Package: digitemp
-Version: 3.7.2-r2
+Version: 3.7.2-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @digitemp-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: DigiTemp is a simple to use program for reading values from 1-wire devices. (serial version)
 Maintainer: Jasper Scholte <NightNL@outlook.com>
-Source: digitemp-3.7.2.tar.gz
+Source: digitemp-3.7.2.tar.zst
 License: GPL-2.0-or-later
+LicenseFiles: COPYING
 URL: https://www.digitemp.com
 Type: ipkg
 Description: 	DigiTemp is a simple to use program for reading values from 1-wire devices.
@@ -22,18 +23,19 @@ Description: 	DigiTemp is a simple to use program for reading values from 1-wire
 @@
 
 Package: digitemp-usb
-Version: 3.7.2-r2
+Version: 3.7.2-r3
 Depends: +libc +libusb-compat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @digitemp-usb-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: DigiTemp is a simple to use program for reading values from 1-wire devices. (USB version)
 Maintainer: Jasper Scholte <NightNL@outlook.com>
-Source: digitemp-3.7.2.tar.gz
+Source: digitemp-3.7.2.tar.zst
 License: GPL-2.0-or-later
+LicenseFiles: COPYING
 URL: https://www.digitemp.com
 Type: ipkg
 Description: 	DigiTemp is a simple to use program for reading values from 1-wire devices.

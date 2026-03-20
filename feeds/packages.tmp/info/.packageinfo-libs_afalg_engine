@@ -5,17 +5,17 @@ MOD_TYPE='engine'; MOD_NAME='afalg'; MOD_DIR='/usr/lib/engines-3' OSSL_PKG='libo
 Package: libopenssl-afalg_sync
 Menu: 1
 Submenu: SSL
-Version: 1.2.1-r1
+Version: 1.2.2-r1
 Depends: +libc libopenssl +libopenssl-conf @OPENSSL_ENGINE @!OPENSSL_ENGINE_BUILTIN_AFALG +kmod-crypto-user
 Conflicts: libopenssl-afalg
 Menu-Depends: 
-Provides: 
+Provides: @libopenssl-afalg_sync-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: AF_ALG engine using sync crypto API
 Maintainer: Eneas U de Queiroz <cotequeiroz@gmail.com>
-Source: afalg_engine-1.2.1.tar.gz
+Source: afalg_engine-1.2.2.tar.gz
 License: Apache-2.0
 LicenseFiles: LICENSE
 URL: https://github.com/cotequeiroz/afalg_engine

@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/libs/libjpeg-turbo/Makefile
 
 Package: libjpeg-turbo
-Version: 3.0.3-r1
+Version: 3.1.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: libjpeg
+Provides: @libjpeg-turbo-any libjpeg
 Section: libs
 Category: Libraries
 Repository: base
 Title: libjpeg-turbo runtime library
 Maintainer: Rosen Penev <rosenp@gmail.com>
-Source: libjpeg-turbo-3.0.3.tar.gz
+Source: libjpeg-turbo-3.1.1.tar.gz
 License: BSD-3-Clause IJG zlib
 LicenseFiles: LICENSE.md
 CPE-ID: cpe:/a:libjpeg-turbo:libjpeg-turbo
@@ -22,17 +22,17 @@ Description: 	libjpeg-turbo is a speed focused fork of libjpeg.
 
 Package: libjpeg-turbo-utils
 Submenu: Image Manipulation
-Version: 3.0.3-r1
+Version: 3.1.1-r1
 Depends: +libc +libjpeg-turbo
 Conflicts: 
 Menu-Depends: 
-Provides: jpeg-tools
+Provides: @libjpeg-turbo-utils-any jpeg-tools
 Section: utils
 Category: Utilities
 Repository: base
 Title: libjpeg-turbo manipulation tools
 Maintainer: Rosen Penev <rosenp@gmail.com>
-Source: libjpeg-turbo-3.0.3.tar.gz
+Source: libjpeg-turbo-3.1.1.tar.gz
 License: BSD-3-Clause IJG zlib
 LicenseFiles: LICENSE.md
 CPE-ID: cpe:/a:libjpeg-turbo:libjpeg-turbo

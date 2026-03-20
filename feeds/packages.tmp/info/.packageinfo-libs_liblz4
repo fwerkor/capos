@@ -7,7 +7,7 @@ Version: 1.10.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @liblz4-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -33,7 +33,7 @@ Version: 1.10.0-r1
 Depends: +libc +liblz4
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lz4-any
 Section: utils
 Category: Utilities
 Repository: base

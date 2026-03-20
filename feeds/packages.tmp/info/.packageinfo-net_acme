@@ -5,7 +5,7 @@ Version: 4.0.0
 Depends: +libc +acme-acmesh
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @acme-any
 Section: net
 Category: Network
 Repository: base

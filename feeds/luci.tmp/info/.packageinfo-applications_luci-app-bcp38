@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base +bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-bcp38-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -26,7 +26,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-ar-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -45,7 +45,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-bg-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -64,7 +64,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-bn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -83,7 +83,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-ca-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -102,7 +102,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-cs-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -121,7 +121,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-da-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -140,7 +140,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-de-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -159,7 +159,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-el-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -178,7 +178,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-es-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -191,13 +191,32 @@ Hidden: 1
 Description:     Translation for luci-app-bcp38 - Español (Spanish)
 @@
 
+Package: luci-i18n-bcp38-fa
+Default: LUCI_LANG_fa||(ALL&&m)
+Version: x
+Depends: +libc luci-app-bcp38
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-bcp38-fa-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-bcp38 - fa translation
+Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-bcp38 - Farsi (Persian)
+@@
+
 Package: luci-i18n-bcp38-fi
 Default: LUCI_LANG_fi||(ALL&&m)
 Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-fi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -216,7 +235,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-fr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -235,7 +254,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-ga-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -254,7 +273,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-he-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -273,7 +292,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-hi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -292,7 +311,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-hu-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -311,7 +330,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-it-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -330,7 +349,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-ja-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -349,7 +368,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-ko-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -368,7 +387,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-lt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -387,7 +406,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-mr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -406,7 +425,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-ms-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -425,7 +444,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-no-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -444,7 +463,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-nl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -463,7 +482,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-pl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -482,7 +501,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-pt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -501,7 +520,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -520,7 +539,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-ro-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -539,7 +558,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-ru-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -558,7 +577,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-sk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -577,7 +596,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-sv-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -590,13 +609,32 @@ Hidden: 1
 Description:     Translation for luci-app-bcp38 - Svenska (Swedish)
 @@
 
+Package: luci-i18n-bcp38-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-bcp38
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-bcp38-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-bcp38 - ta translation
+Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-bcp38 - Tamil (Tamil)
+@@
+
 Package: luci-i18n-bcp38-tr
 Default: LUCI_LANG_tr||(ALL&&m)
 Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-tr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -615,7 +653,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-uk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -634,7 +672,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-vi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -653,7 +691,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-yua-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -672,7 +710,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -691,7 +729,7 @@ Version: x
 Depends: +libc luci-app-bcp38
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-bcp38-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base

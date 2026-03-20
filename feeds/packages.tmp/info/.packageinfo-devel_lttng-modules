@@ -6,7 +6,7 @@ Version: <LINUX_VERSION>.2.13.9-r1
 Depends: @!TARGET_uml @KERNEL_FTRACE_SYSCALLS @KERNEL_KPROBES
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kmod-lttng-any
 Section: kernel
 Category: Kernel modules
 Title: Linux Trace Toolkit: next generation (kernel modules)

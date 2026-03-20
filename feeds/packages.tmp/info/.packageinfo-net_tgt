@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/net/tgt/Makefile
 
 Package: tgt
-Version: 1.0.93-r2
-Depends: +libc +libpthread +libaio
+Version: 1.0.97-r1
+Depends: +libc +libpthread +!PACKAGE_tgt_without_aio:libaio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tgt-any
 Section: net
 Category: Network
 Repository: base
 Title: userspace iSCSI target
 Maintainer: Maxim Storchak <m.storchak@gmail.com>
-Source: tgt-1.0.93.tar.gz
+Source: tgt-1.0.97.tar.gz
 License: GPL-2.0-only
 CPE-ID: cpe:/a:zaal:tgt
 URL: https://github.com/fujita/tgt
@@ -20,6 +20,22 @@ Description: The Linux target framework (tgt) is a user space SCSI target framew
 that supports the iSCSI and iSER transport protocols and that also
 supports multiple methods for accessing block storage. Tgt consists of
 user-space daemon and tools.
+@@
+Config:
+	config PACKAGE_tgt_without_aio
+	depends on PACKAGE_tgt
+	bool "Build without AIO support"
+	default n
+	help
+		Disable aio bs type, don't depend on libaio
+
+
+	config PACKAGE_tgt_without_sheepdog
+	depends on PACKAGE_tgt
+	bool "Build without Sheepdog support"
+	default y
+	help
+		Disable sheepdog bs type to save some space
 @@
 
 

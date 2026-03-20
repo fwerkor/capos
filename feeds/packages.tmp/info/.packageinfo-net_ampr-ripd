@@ -6,7 +6,7 @@ Version: 2.4.2-r2
 Depends: +libc +kmod-ipip +ip
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ampr-ripd-any
 Section: net
 Category: Network
 Repository: base

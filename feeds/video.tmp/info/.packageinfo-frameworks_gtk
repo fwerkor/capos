@@ -1,0 +1,73 @@
+Source-Makefile: feeds/video/frameworks/gtk/Makefile
+Build-Depends: gst1-plugins-base gst1-plugins-bad
+
+Package: libgtk
+Submenu: Frameworks and Toolkits
+Version: 4.18.6-r1
+Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +fribidi +glib2 +harfbuzz +libcairo +libepoxy +libgdk-pixbuf +libgraphene +libgstreamer1 +libgst1player +libpango +libxkbcommon
+Conflicts: 
+Menu-Depends: 
+Provides: @libgtk-any
+Section: video-frameworks
+Category: Video
+Repository: base
+Title: GTK library
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gtk-4.18.6.tar.xz
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnome:gtk
+URL: http://www.gtk.org/
+Type: ipkg
+Description:   The GTK Project - A free and open-source cross-platform widget toolkit
+
+  Shared library and basic files needed at runtime.
+@@
+
+Package: libgtk-demos
+Submenu: Video
+Version: 4.18.6-r1
+Depends: +libc +libgtk
+Conflicts: 
+Menu-Depends: 
+Provides: @libgtk-demos-any
+Section: utils
+Category: Utilities
+Repository: base
+Title: GTK demos
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gtk-4.18.6.tar.xz
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnome:gtk
+URL: http://www.gtk.org/
+Type: ipkg
+Description:   The GTK Project - A free and open-source cross-platform widget toolkit
+
+  Demo programs which come with the GTK library.
+@@
+
+Package: libgtk-utils
+Submenu: Video
+Version: 4.18.6-r1
+Depends: +libc +libgtk
+Conflicts: 
+Menu-Depends: 
+Provides: @libgtk-utils-any
+Section: utils
+Category: Utilities
+Repository: base
+Title: GTK utils
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: gtk-4.18.6.tar.xz
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+CPE-ID: cpe:/a:gnome:gtk
+URL: http://www.gtk.org/
+Type: ipkg
+Description:   The GTK Project - A free and open-source cross-platform widget toolkit
+
+  Utility programs which come with the GTK library.
+@@
+
+

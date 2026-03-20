@@ -1,0 +1,14 @@
+diff --git a/src/src.pro b/src/src.pro
+index 5c256ea..3c4012a 100644
+--- a/src/src.pro
++++ b/src/src.pro
+@@ -17,7 +17,8 @@ qtHaveModule(widgets) {
+ }
+ 
+ SUBDIRS += linguist \
+-    qtattributionsscanner
++    qtattributionsscanner \
++    kmap2qmap
+ 
+ qtConfig(library) {
+     !android|android_app: SUBDIRS += qtplugininfo

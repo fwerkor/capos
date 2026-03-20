@@ -6,7 +6,7 @@ Version: 2025c-r1
 Depends: +libc +zoneinfo-core
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @zoneinfo-simple-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -24,7 +24,7 @@ Version: 2025c-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @zoneinfo-core-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -42,7 +42,7 @@ Version: 2025c-r1
 Depends: +libc +zoneinfo-core
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @zoneinfo-africa-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -60,7 +60,7 @@ Version: 2025c-r1
 Depends: +libc +zoneinfo-core
 Conflicts: 
 Menu-Depends: 
-Provides: zoneinfo-northamerica zoneinfo-southamerica
+Provides: @zoneinfo-america-any zoneinfo-northamerica zoneinfo-southamerica
 Section: utils
 Category: Utilities
 Repository: base
@@ -78,7 +78,7 @@ Version: 2025c-r1
 Depends: +libc +zoneinfo-core
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @zoneinfo-poles-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -96,7 +96,7 @@ Version: 2025c-r1
 Depends: +libc +zoneinfo-core
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @zoneinfo-asia-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -114,7 +114,7 @@ Version: 2025c-r1
 Depends: +libc +zoneinfo-core
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @zoneinfo-atlantic-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -132,7 +132,7 @@ Version: 2025c-r1
 Depends: +libc +zoneinfo-core
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @zoneinfo-australia-nz-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -150,7 +150,7 @@ Version: 2025c-r1
 Depends: +libc +zoneinfo-core
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @zoneinfo-pacific-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -168,7 +168,7 @@ Version: 2025c-r1
 Depends: +libc +zoneinfo-core
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @zoneinfo-europe-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -186,7 +186,7 @@ Version: 2025c-r1
 Depends: +libc +zoneinfo-core
 Conflicts: 
 Menu-Depends: 
-Provides: zoneinfo-india
+Provides: @zoneinfo-indian-any zoneinfo-india
 Section: utils
 Category: Utilities
 Repository: base
@@ -204,7 +204,7 @@ Version: 2025c-r1
 Depends: +libc +zoneinfo-core +zoneinfo-africa +zoneinfo-america +zoneinfo-poles +zoneinfo-asia +zoneinfo-atlantic +zoneinfo-australia-nz +zoneinfo-pacific +zoneinfo-europe +zoneinfo-indian
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @zoneinfo-all-any
 Section: utils
 Category: Utilities
 Repository: base

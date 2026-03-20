@@ -1,18 +1,18 @@
 Source-Makefile: feeds/packages/sound/shairport-sync/Makefile
 
 Package: shairport-sync-openssl
-Version: 4.3.2-r6
+Version: 4.3.6-r2
 Depends: +libc @AUDIO_SUPPORT +libpthread +alsa-lib +libconfig +libdaemon +libpopt +libplist +libsodium +libgcrypt +libffmpeg-full +libuuid +nqptp +libmosquitto +libopenssl +libavahi-client +libsoxr
 Conflicts: 
 Menu-Depends: 
-Provides: shairport-sync
+Provides: @shairport-sync-openssl-any shairport-sync
 Build-Variant: openssl
 Section: sound
 Category: Sound
 Repository: base
 Title: AirPlay compatible audio player (openssl)
 Maintainer: Ted Hess <thess@kitschensync.net>, Mike Brady <mikebrady@eircom.net>
-Source: shairport-sync-4.3.2.tar.gz
+Source: shairport-sync-4.3.6.tar.gz
 License: MIT
 LicenseFiles: COPYING LICENSES shairport.c
 URL: https://github.com/mikebrady/shairport-sync
@@ -28,11 +28,11 @@ Description:   Shairport Sync plays audio from iTunes and AirPlay sources, inclu
 @@
 
 Package: shairport-sync-mbedtls
-Version: 4.3.2-r6
+Version: 4.3.6-r2
 Depends: +libc @AUDIO_SUPPORT +libpthread +alsa-lib +libconfig +libdaemon +libpopt +libplist +libsodium +libgcrypt +libffmpeg-full +libuuid +nqptp +libmosquitto +libmbedtls +libavahi-client +libsoxr
 Conflicts: 
 Menu-Depends: 
-Provides: shairport-sync
+Provides: @shairport-sync-mbedtls-any shairport-sync
 Build-Variant: mbedtls
 Default-Variant: mbedtls
 Section: sound
@@ -40,7 +40,7 @@ Category: Sound
 Repository: base
 Title: AirPlay compatible audio player (mbed TLS)
 Maintainer: Ted Hess <thess@kitschensync.net>, Mike Brady <mikebrady@eircom.net>
-Source: shairport-sync-4.3.2.tar.gz
+Source: shairport-sync-4.3.6.tar.gz
 License: MIT
 LicenseFiles: COPYING LICENSES shairport.c
 URL: https://github.com/mikebrady/shairport-sync
@@ -56,18 +56,18 @@ Description:   Shairport Sync plays audio from iTunes and AirPlay sources, inclu
 @@
 
 Package: shairport-sync-mini
-Version: 4.3.2-r6
+Version: 4.3.6-r2
 Depends: +libc @AUDIO_SUPPORT +libpthread +alsa-lib +libconfig +libdaemon +libpopt +libplist +libsodium +libgcrypt +libffmpeg-full +libuuid +nqptp +libmosquitto +libmbedtls
 Conflicts: 
 Menu-Depends: 
-Provides: shairport-sync
+Provides: @shairport-sync-mini-any shairport-sync
 Build-Variant: mini
 Section: sound
 Category: Sound
 Repository: base
 Title: AirPlay compatible audio player (minimal)
 Maintainer: Ted Hess <thess@kitschensync.net>, Mike Brady <mikebrady@eircom.net>
-Source: shairport-sync-4.3.2.tar.gz
+Source: shairport-sync-4.3.6.tar.gz
 License: MIT
 LicenseFiles: COPYING LICENSES shairport.c
 URL: https://github.com/mikebrady/shairport-sync

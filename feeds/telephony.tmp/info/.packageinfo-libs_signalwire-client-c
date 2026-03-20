@@ -2,17 +2,17 @@ Source-Makefile: feeds/telephony/libs/signalwire-client-c/Makefile
 
 Package: signalwire-client-c
 Submenu: Telephony
-Version: 2.0.0-r1
+Version: 2.0.3-r1
 Depends: +libc +libatomic +libks +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @signalwire-client-c-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: SignalWire C client library
-Maintainer: Sebastian Kemper <sebastian_ml@gmx.net>
-Source: signalwire-c-2.0.0.tar.gz
+Maintainer: 
+Source: signalwire-client-c-2.0.3.tar.zst
 License: MIT
 LicenseFiles: copyright
 URL: https://github.com/signalwire/signalwire-c

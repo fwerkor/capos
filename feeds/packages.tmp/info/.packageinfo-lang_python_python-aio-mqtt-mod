@@ -1,18 +1,19 @@
 Source-Makefile: feeds/packages/lang/python/python-aio-mqtt-mod/Makefile
+Build-Depends: python-setuptools/host
 
 Package: python3-aio-mqtt-mod
 Submenu: Python
-Version: 0.3.4-r1
+Version: 0.4.0-r1
 Depends: +libc +python3-light +python3-asyncio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-aio-mqtt-mod-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Asynchronous MQTT client
 Maintainer: Quintin Hill <stuff@quintin.me.uk>
-Source: aio-mqtt-mod-0.3.4.tar.gz
+Source: aio_mqtt_mod-0.4.0.tar.gz
 License: Apache-2.0
 LicenseFiles: LICENSE
 URL: https://github.com/devbis/aio-mqtt
@@ -22,17 +23,17 @@ Description:   Asynchronous MQTT client for 3.1.1 protocol version (mod).
 
 Package: python3-aio-mqtt-mod-src
 Submenu: Python
-Version: 0.3.4-r1
+Version: 0.4.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-aio-mqtt-mod-src-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Asynchronous MQTT client (sources)
 Maintainer: Quintin Hill <stuff@quintin.me.uk>
-Source: aio-mqtt-mod-0.3.4.tar.gz
+Source: aio_mqtt_mod-0.4.0.tar.gz
 License: Apache-2.0
 LicenseFiles: LICENSE
 URL: https://github.com/devbis/aio-mqtt

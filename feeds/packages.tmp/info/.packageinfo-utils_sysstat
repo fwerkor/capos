@@ -5,7 +5,7 @@ Version: 12.7.5-r2
 Depends: +libc +BUILD_NLS:libintl-full +xz-utils +xz
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @sysstat-any
 Section: utils
 Category: Utilities
 Repository: base

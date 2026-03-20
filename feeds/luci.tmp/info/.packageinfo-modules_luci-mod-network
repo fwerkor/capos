@@ -4,10 +4,10 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 Package: luci-mod-network
 Submenu: 2. Modules
 Version: x
-Depends: +libc +luci-base +rpcd-mod-iwinfo
+Depends: +libc +luci-base +rpcd-mod-iwinfo +luci-lib-uqr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-mod-network-any
 Section: luci
 Category: LuCI
 Repository: base

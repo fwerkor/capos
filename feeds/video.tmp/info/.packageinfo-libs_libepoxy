@@ -1,0 +1,23 @@
+Source-Makefile: feeds/video/libs/libepoxy/Makefile
+
+Package: libepoxy
+Submenu: Video
+Version: 1.5.10-r1
+Depends: +libc +libmesa
+Conflicts: 
+Menu-Depends: 
+Provides: @libepoxy-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: Epoxy OpenGL function pointer management
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: libepoxy-1.5.10.tar.gz
+License: MIT
+LicenseFiles: COPYING
+URL: https://github.com/anholt/libepoxy
+Type: ipkg
+Description:  Epoxy is a library for handling OpenGL function pointer management for you.
+@@
+
+

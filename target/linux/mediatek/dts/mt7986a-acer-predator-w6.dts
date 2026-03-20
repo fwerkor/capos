@@ -156,13 +156,17 @@
 	eeprom_factory_a0000: eeprom@a0000 {
 		reg = <0xa0000 0x1000>;
 	};
+
+	precal_factory_a1010: precal@a1010 {
+		reg = <0xa1010 0x62810>;
+	};
 };
 
 &slot0 {
 	radio0: mt7915@0,0 {
 		reg = <0x0000 0 0 0 0>;
-		nvmem-cells = <&eeprom_factory_a0000>;
-		nvmem-cell-names = "eeprom";
+		nvmem-cells = <&eeprom_factory_a0000>, <&precal_factory_a1010>;
+		nvmem-cell-names = "eeprom", "precal";
 	};
 };
 
@@ -186,8 +190,23 @@
 		reset-gpios = <&pio 6 GPIO_ACTIVE_LOW>;
 		reset-assert-us = <10000>;
 		reset-deassert-us = <10000>;
-		/* LED0: nc ; LED1: nc ; LED2: amber ; LED3: green */
-		mxl,led-config = <0x0 0x0 0x370 0x380>;
+
+		leds {
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			led@2 {
+				reg = <2>;
+				color = <LED_COLOR_ID_AMBER>;
+				function = LED_FUNCTION_WAN;
+			};
+
+			led@3 {
+				reg = <3>;
+				color = <LED_COLOR_ID_GREEN>;
+				function = LED_FUNCTION_WAN;
+			};
+		};
 	};
 };
 

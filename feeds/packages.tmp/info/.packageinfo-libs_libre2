@@ -5,7 +5,7 @@ Version: 2023.02.01~b025c6a3ae05995660e3b882eb3277f4399ced1a-r1
 Depends: +libc +libstdcpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @re2-any
 Section: libs
 Category: Libraries
 Repository: base

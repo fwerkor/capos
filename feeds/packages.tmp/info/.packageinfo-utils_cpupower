@@ -1,0 +1,21 @@
+Source-Makefile: feeds/packages/utils/cpupower/Makefile
+
+Package: cpupower
+Version: <LINUX_VERSION>-r1
+Depends: +libc +libpci
+Conflicts: 
+Menu-Depends: 
+Provides: @cpupower-any
+Section: utils
+Category: Utilities
+Repository: base
+Title: Shows and sets processor power related values
+Maintainer: John Audia <therealgraysky@proton.me>
+Source: 
+License: GPL-2.0-only
+URL: https://www.kernel.org
+Type: ipkg
+Description:   Linux kernel tool to examine and to tune power saving related features of the processor
+@@
+
+

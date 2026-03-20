@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/perl/perl-struct-dumb/Makefile
+
+Package: perl-struct-dumb
+Submenu: Perl
+Version: 0.14.5.40-r1
+Depends: +libc perl +perlbase-essential +perlbase-scalar
+Conflicts: 
+Menu-Depends: 
+Provides: @perl-struct-dumb-any
+Section: lang
+Category: Languages
+Repository: base
+Title: Make simple lightweight record-like structures
+Maintainer: Jens Wagner <jens@wagner2013.de>
+Source: Struct-Dumb-0.14.tar.gz
+License: GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE
+URL: https://metacpan.org/pod/Struct::Dumb
+Type: ipkg
+Description:   Struct::Dumb creates record-like structure types,
+  similar to the struct keyword in C, C++ or Record in Pascal.
+@@
+
+

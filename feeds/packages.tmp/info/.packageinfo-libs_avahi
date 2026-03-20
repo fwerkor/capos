@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/libs/avahi/Makefile
 
 Package: libavahi-client
-Version: 0.8-r9
+Version: 0.8-r10
 Depends: +libc +avahi-dbus-daemon
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libavahi-client-any
 Build-Variant: dbus
 Section: libs
 Category: Libraries
 Repository: base
 Title: An mDNS/DNS-SD implementation (libavahi-client library)
-Maintainer: Ted Hess <thess@kitschensync.net>
+Maintainer: 
 Source: avahi-0.8.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: LICENSE
@@ -36,17 +36,17 @@ Description:  Avahi is an mDNS/DNS-SD (aka RendezVous/Bonjour/ZeroConf)
 
 Package: avahi-utils
 Submenu: IP Addresses and Names
-Version: 0.8-r9
+Version: 0.8-r10
 Depends: +libc +libavahi-client +libgdbm
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @avahi-utils-any
 Build-Variant: dbus
 Section: net
 Category: Network
 Repository: base
 Title: An mDNS/DNS-SD implementation (utilities)
-Maintainer: Ted Hess <thess@kitschensync.net>
+Maintainer: 
 Source: avahi-0.8.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: LICENSE
@@ -70,17 +70,17 @@ Description:  Avahi is an mDNS/DNS-SD (aka RendezVous/Bonjour/ZeroConf)
 @@
 
 Package: libavahi-dbus-support
-Version: 0.8-r9
+Version: 0.8-r10
 Depends: +libc +dbus
 Conflicts: 
 Menu-Depends: 
-Provides: libavahi
+Provides: @libavahi-dbus-support-any libavahi
 Build-Variant: dbus
 Section: libs
 Category: Libraries
 Repository: base
 Title: An mDNS/DNS-SD implementation (D-Bus support)
-Maintainer: Ted Hess <thess@kitschensync.net>
+Maintainer: 
 Source: avahi-0.8.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: LICENSE
@@ -114,17 +114,17 @@ Description:  Avahi is an mDNS/DNS-SD (aka RendezVous/Bonjour/ZeroConf)
 @@
 
 Package: libavahi-nodbus-support
-Version: 0.8-r9
+Version: 0.8-r10
 Depends: +libc +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: libavahi
+Provides: @libavahi-nodbus-support-any libavahi
 Build-Variant: nodbus
 Section: libs
 Category: Libraries
 Repository: base
 Title: An mDNS/DNS-SD implementation (No D-Bus)
-Maintainer: Ted Hess <thess@kitschensync.net>
+Maintainer: 
 Source: avahi-0.8.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: LICENSE
@@ -152,16 +152,17 @@ Description:  Avahi is an mDNS/DNS-SD (aka RendezVous/Bonjour/ZeroConf)
 
 Package: avahi-autoipd
 Submenu: IP Addresses and Names
-Version: 0.8-r9
+Version: 0.8-r10
 Depends: +libc +libdaemon
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @avahi-autoipd-any
 Section: net
 Category: Network
 Repository: base
 Title: IPv4LL network address configuration daemon
-Maintainer: Ted Hess <thess@kitschensync.net>
+Maintainer: 
+Require-User: avahi=105:avahi=105
 Source: avahi-0.8.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: LICENSE
@@ -187,17 +188,18 @@ Description:  Avahi is an mDNS/DNS-SD (aka RendezVous/Bonjour/ZeroConf)
 
 Package: avahi-dbus-daemon
 Submenu: IP Addresses and Names
-Version: 0.8-r9
+Version: 0.8-r10
 Depends: +libc +libavahi-dbus-support +libexpat +librt +libdaemon
 Conflicts: 
 Menu-Depends: 
-Provides: avahi-daemon
+Provides: @avahi-dbus-daemon-any avahi-daemon
 Build-Variant: dbus
 Section: net
 Category: Network
 Repository: base
 Title: An mDNS/DNS-SD implementation (daemon)
-Maintainer: Ted Hess <thess@kitschensync.net>
+Maintainer: 
+Require-User: avahi=105:avahi=105
 Source: avahi-0.8.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: LICENSE
@@ -219,17 +221,17 @@ Description:  Avahi is an mDNS/DNS-SD (aka RendezVous/Bonjour/ZeroConf)
 
 Package: avahi-nodbus-daemon
 Submenu: IP Addresses and Names
-Version: 0.8-r9
+Version: 0.8-r10
 Depends: +libc +libavahi-nodbus-support +libexpat +librt +libdaemon
 Conflicts: 
 Menu-Depends: 
-Provides: avahi-daemon
+Provides: @avahi-nodbus-daemon-any avahi-daemon
 Build-Variant: nodbus
 Section: net
 Category: Network
 Repository: base
 Title: An mDNS/DNS-SD implementation (daemon)
-Maintainer: Ted Hess <thess@kitschensync.net>
+Maintainer: 
 Require-User: avahi=105:avahi=105
 Source: avahi-0.8.tar.gz
 License: LGPL-2.1-or-later
@@ -252,16 +254,16 @@ Description:  Avahi is an mDNS/DNS-SD (aka RendezVous/Bonjour/ZeroConf)
 
 Package: avahi-daemon-service-http
 Submenu: IP Addresses and Names
-Version: 0.8-r9
+Version: 0.8-r10
 Depends: +libc +avahi-daemon
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @avahi-daemon-service-http-any
 Section: net
 Category: Network
 Repository: base
 Title: Announce HTTP service
-Maintainer: Ted Hess <thess@kitschensync.net>
+Maintainer: 
 Source: avahi-0.8.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: LICENSE
@@ -283,16 +285,16 @@ Description:  Avahi is an mDNS/DNS-SD (aka RendezVous/Bonjour/ZeroConf)
 
 Package: avahi-daemon-service-ssh
 Submenu: IP Addresses and Names
-Version: 0.8-r9
+Version: 0.8-r10
 Depends: +libc +avahi-daemon
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @avahi-daemon-service-ssh-any
 Section: net
 Category: Network
 Repository: base
 Title: Announce SSH service
-Maintainer: Ted Hess <thess@kitschensync.net>
+Maintainer: 
 Source: avahi-0.8.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: LICENSE
@@ -314,16 +316,17 @@ Description:  Avahi is an mDNS/DNS-SD (aka RendezVous/Bonjour/ZeroConf)
 
 Package: avahi-dnsconfd
 Submenu: IP Addresses and Names
-Version: 0.8-r9
+Version: 0.8-r10
 Depends: +libc +libavahi +libdaemon +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @avahi-dnsconfd-any
 Section: net
 Category: Network
 Repository: base
 Title: A Unicast DNS server using avahi-daemon
-Maintainer: Ted Hess <thess@kitschensync.net>
+Maintainer: 
+Require-User: avahi=105:avahi=105
 Source: avahi-0.8.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: LICENSE

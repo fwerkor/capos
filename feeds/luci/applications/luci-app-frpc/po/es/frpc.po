@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-11-11 08:51+0000\n"
-"Last-Translator: Salvador Peña <salvadorp74@hotmail.com>\n"
+"PO-Revision-Date: 2026-02-27 01:00+0000\n"
+"Last-Translator: Franco Castillo <castillofrancodamian@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsfrpc/es/>\n"
 "Language: es\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.16.1-dev\n"
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:214
 msgid "Add new proxy..."
@@ -90,6 +90,14 @@ msgstr ""
 "cargarán desde el ejecutable incluido usando statik.<br />Por defecto, este "
 "valor es \"\"."
 
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:72
+msgid "Bind addr"
+msgstr "Dir. de enlace"
+
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:73
+msgid "Bind port"
+msgstr "Puerto de enlace"
+
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:190
 msgid "Collecting data ..."
 msgstr "Recopilando los datos..."
@@ -149,7 +157,7 @@ msgid "HTTP Settings"
 msgstr "Configuración HTTP"
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:64
-#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:78
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:80
 msgid "HTTP password"
 msgstr "Contraseña HTTP"
 
@@ -158,7 +166,7 @@ msgid "HTTP proxy"
 msgstr "Proxy HTTP"
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:63
-#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:77
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:79
 msgid "HTTP user"
 msgstr "Usuario HTTP"
 
@@ -299,15 +307,12 @@ msgid "NOT RUNNING"
 msgstr "NO EN EJECUCIÓN"
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:15
-msgid ""
-"OS environments pass to frp for config file template, see <a href=\"https://"
-"github.com/fatedier/frp#configuration-file-template\">frp README</a>"
+msgid "OS environments pass to frp for config file template, see %s."
 msgstr ""
-"Los entornos de SO pasan a frp para la plantilla del archivo de "
-"configuración, véase <a href=\"https://github.com/fatedier/frp#configuration-"
-"file-template\">frp LEAME</a>"
+"Los entornos del sistema operativo pasan a frp para la plantilla del archivo "
+"de configuración, consulte %s."
 
-#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:76
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:78
 msgid "Plugin"
 msgstr "Complemento"
 
@@ -322,12 +327,12 @@ msgstr "Protocolo"
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:36
 msgid ""
 "Protocol specifies the protocol to use when interacting with the server. "
-"Valid values are \"tcp\", \"kcp\", and \"websocket\".<br />By default, this "
-"value is \"tcp\"."
+"Valid values are \"tcp\", \"kcp\", \"quic\" and \"websocket\".<br />By "
+"default, this value is \"tcp\"."
 msgstr ""
-"Protocolo especifica el protocolo que se utilizará al interactuar con el "
-"servidor. Los valores válidos son \"tcp\", \"kcp\" y \"websocket\".<br />De "
-"manera predeterminada, este valor es \"tcp\"."
+"El protocolo especifica el protocolo que se usará al interactuar con el "
+"servidor. Los valores válidos son \"tcp\", \"kcp\", \"quic\" y \"websocket\"."
+"<br />Por defecto, este valor es \"tcp\"."
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:210
 msgid "Proxy Settings"
@@ -346,12 +351,12 @@ msgstr "Tipo del proxy"
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:45
 msgid ""
 "ProxyType specifies the type of this proxy. Valid values include \"tcp\", "
-"\"udp\", \"http\", \"https\", \"stcp\", and \"xtcp\".<br />By default, this "
+"\"udp\", \"http\", \"https\", \"stcp\" and \"xtcp\".<br />By default, this "
 "value is \"tcp\"."
 msgstr ""
-"ProxyType especifica el tipo de este proxy. Los valores válidos incluyen "
-"\"tcp\", \"udp\", \"http\", \"https\", \"stcp\" y \"xtcp\".<br />Por "
-"defecto, este valor es \"tcp\"."
+"ProxyType especifica el tipo de este proxy. Los valores válidos son \"tcp\", "
+"\"udp\", \"http\", \"https\", \"stcp\" y \"xtcp\".<br />De forma "
+"predeterminada, este valor es \"tcp\"."
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:163
 msgid "RUNNING"
@@ -378,11 +383,11 @@ msgstr "Ejecutar demonio como grupo"
 msgid "Run daemon as user"
 msgstr "Ejecutar demonio como usuario"
 
-#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:80
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:82
 msgid "SOCKS5 password"
 msgstr "Contraseña para SOCKS5"
 
-#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:79
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:81
 msgid "SOCKS5 user"
 msgstr "Usuario de SOCKS5"
 
@@ -414,7 +419,7 @@ msgstr ""
 "ServerPort especifica el puerto para conectarse al servidor.<br />Por "
 "defecto, este valor es 7000."
 
-#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:72
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:74
 msgid "Sk"
 msgstr "Sk"
 
@@ -437,10 +442,10 @@ msgstr "TLS"
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:37
 msgid ""
-"TLSEnable specifies whether or not TLS should be used when communicating "
+"TLS Enable specifies whether or not TLS should be used when communicating "
 "with the server."
 msgstr ""
-"TLSEnable especifica si TLS debe usarse o no cuando se comunica con el "
+"Activar TLS especifica si se debe utilizar o no TLS al comunicarse con el "
 "servidor."
 
 #: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:33
@@ -477,7 +482,7 @@ msgstr ""
 "enviar al servidor. El servidor debe tener un token coincidente para que la "
 "autorización tenga éxito.<br />Por defecto, este valor es \"\"."
 
-#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:81
+#: applications/luci-app-frpc/htdocs/luci-static/resources/view/frpc.js:83
 msgid "Unix domain socket path"
 msgstr "Ruta del socket del dominio Unix"
 

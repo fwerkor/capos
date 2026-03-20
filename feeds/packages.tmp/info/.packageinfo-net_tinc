@@ -7,7 +7,7 @@ Version: 1.1_pre18-r4
 Depends: +libc +kmod-tun +liblzo +libopenssl +librt +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tinc-any
 Section: net
 Category: Network
 Repository: base

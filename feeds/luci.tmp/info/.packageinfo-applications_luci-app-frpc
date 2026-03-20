@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base +frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-frpc-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -26,12 +26,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-ar-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - ar translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -45,12 +45,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-bg-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - bg translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -64,12 +64,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-bn-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - bn translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -83,12 +83,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-ca-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - ca translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -102,12 +102,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-cs-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - cs translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -121,12 +121,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-da-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - da translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -140,12 +140,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-de-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - de translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -159,12 +159,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-el-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - el translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -178,12 +178,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-es-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - es translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -197,12 +197,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-fi-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - fi translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -216,12 +216,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-fr-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - fr translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -235,12 +235,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-ga-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - ga translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -254,12 +254,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-he-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - he translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -273,12 +273,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-hi-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - hi translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -292,12 +292,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-hu-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - hu translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -311,12 +311,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-it-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - it translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -330,12 +330,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-ja-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - ja translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -349,12 +349,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-ko-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - ko translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -368,12 +368,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-lt-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - lt translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -387,12 +387,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-mr-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - mr translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -406,12 +406,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-ms-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - ms translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -425,12 +425,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-no-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - no translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -444,12 +444,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-nl-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - nl translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -463,12 +463,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-pl-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - pl translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -482,12 +482,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-pt-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - pt translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -501,12 +501,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - pt-br translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -520,12 +520,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-ro-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - ro translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -539,12 +539,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-ru-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - ru translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -558,12 +558,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-sk-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - sk translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -577,17 +577,36 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-sv-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - sv translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-frpc - Svenska (Swedish)
+@@
+
+Package: luci-i18n-frpc-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-frpc
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-frpc-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-frpc - ta translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-frpc - Tamil (Tamil)
 @@
 
 Package: luci-i18n-frpc-tr
@@ -596,12 +615,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-tr-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - tr translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -615,12 +634,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-uk-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - uk translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -634,12 +653,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-vi-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - vi translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -653,12 +672,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - zh-cn translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -672,12 +691,12 @@ Version: x
 Depends: +libc luci-app-frpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-frpc-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-frpc - zh-tw translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
+Maintainer: 
 Source: 
 License: Apache-2.0
 Type: ipkg

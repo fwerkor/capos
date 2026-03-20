@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +luci-base +dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-dcwapd-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -26,7 +26,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-ar-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -45,7 +45,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-bg-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -64,7 +64,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-bn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -83,7 +83,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-ca-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -102,7 +102,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-cs-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -121,7 +121,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-da-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -140,7 +140,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-de-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -159,7 +159,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-el-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -178,7 +178,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-es-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -191,13 +191,32 @@ Hidden: 1
 Description:     Translation for luci-app-dcwapd - Español (Spanish)
 @@
 
+Package: luci-i18n-dcwapd-fa
+Default: LUCI_LANG_fa||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dcwapd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dcwapd-fa-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dcwapd - fa translation
+Maintainer: Carey Sonsino <csonsino@gmail.com>, Paul Donald <newtwen+github@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dcwapd - Farsi (Persian)
+@@
+
 Package: luci-i18n-dcwapd-fi
 Default: LUCI_LANG_fi||(ALL&&m)
 Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-fi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -216,7 +235,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-fr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -235,7 +254,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-ga-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -254,7 +273,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-he-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -273,7 +292,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-hi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -292,7 +311,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-hu-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -311,7 +330,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-it-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -330,7 +349,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-ja-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -349,7 +368,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-ko-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -368,7 +387,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-lt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -387,7 +406,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-mr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -406,7 +425,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-ms-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -425,7 +444,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-no-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -444,7 +463,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-nl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -463,7 +482,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-pl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -482,7 +501,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-pt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -501,7 +520,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -520,7 +539,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-ro-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -539,7 +558,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-ru-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -558,7 +577,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-sk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -577,7 +596,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-sv-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -590,13 +609,32 @@ Hidden: 1
 Description:     Translation for luci-app-dcwapd - Svenska (Swedish)
 @@
 
+Package: luci-i18n-dcwapd-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-dcwapd
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-dcwapd-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dcwapd - ta translation
+Maintainer: Carey Sonsino <csonsino@gmail.com>, Paul Donald <newtwen+github@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dcwapd - Tamil (Tamil)
+@@
+
 Package: luci-i18n-dcwapd-tr
 Default: LUCI_LANG_tr||(ALL&&m)
 Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-tr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -615,7 +653,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-uk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -634,7 +672,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-vi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -653,7 +691,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-yua-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -672,7 +710,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -691,7 +729,7 @@ Version: x
 Depends: +libc luci-app-dcwapd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-dcwapd-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base

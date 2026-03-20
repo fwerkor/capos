@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/net/udpspeeder/Makefile
 
 Package: UDPspeeder
-Version: 20230206.0-r2
+Version: 20230206.0-r3
 Depends: +libc +libstdcpp +librt +libatomic
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @UDPspeeder-any
 Section: net
 Category: Network
 Repository: base

@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/admin/schroot/Makefile
 
 Package: schroot
-Version: 1.6.13-r3
+Version: 1.6.13-r4
 Depends: +libc +BUILD_NLS:libiconv-full +boost +boost-filesystem +boost-iostreams +boost-program_options +boost-regex +SCHROOT_BTRFS:btrfs-progs +SCHROOT_LOOPBACK:losetup +SCHROOT_LVM:lvm2 +SCHROOT_UUID:libuuid +BUILD_NLS:libintl-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @schroot-any
 Section: admin
 Category: Administration
 Repository: base

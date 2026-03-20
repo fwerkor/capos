@@ -6,7 +6,7 @@ Version: 0.3.1-r2
 Depends: +libc +libconfig +libprotobuf-c +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @umurmur-openssl-any
 Build-Variant: openssl
 Section: net
 Category: Network
@@ -28,7 +28,7 @@ Version: 0.3.1-r2
 Depends: +libc +libconfig +libprotobuf-c +libmbedtls
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @umurmur-mbedtls-any
 Build-Variant: mbedtls
 Section: net
 Category: Network

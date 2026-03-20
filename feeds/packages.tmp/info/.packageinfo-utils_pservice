@@ -5,7 +5,7 @@ Version: 2017.08.29-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pservice-any
 Section: utils
 Category: Utilities
 Repository: base

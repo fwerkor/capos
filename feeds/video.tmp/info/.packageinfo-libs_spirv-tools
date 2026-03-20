@@ -1,0 +1,26 @@
+Source-Makefile: feeds/video/libs/spirv-tools/Makefile
+Build-Depends: spirv-headers
+Build-Depends/host: spirv-headers/host
+Build-Types: host
+
+Package: spirv-tools
+Version: 1.4.328.0
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @spirv-tools-any
+Section: devel
+Category: Development
+Repository: base
+Title: SPIR-V Tools
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: SPIRV-Tools-vulkan-sdk-1.4.328.0.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/KhronosGroup/SPIRV-Tools
+Type: ipkg
+Build-Only: 1
+Description: The LLVM Project is a collection of modular and reusable compiler and toolchain technologies.
+@@
+
+

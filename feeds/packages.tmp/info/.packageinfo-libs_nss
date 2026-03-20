@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/libs/nss/Makefile
 
 Package: nss-utils
-Version: 3.93-r1
+Version: 3.112-r1
 Depends: +libc +libnss
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @nss-utils-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: Utilities for Mozilla's SSL and TLS implementation
 Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
-Source: nss-3.93.tar.gz
+Source: nss-3.112.tar.gz
 License: MPL-2.0
 LicenseFiles: nss/COPYING
 CPE-ID: cpe:/a:mozilla:network_security_services
@@ -22,17 +22,17 @@ Description: Utilities for Mozilla's SSL and TLS implementation
 
 Package: libnss
 Submenu: SSL
-Version: 3.93-r1
+Version: 3.112-r1
 Depends: +libc +libpthread +libsqlite3 +nspr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libnss-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Mozilla's SSL and TLS implementation
 Maintainer: Lucian Cristian <lucian.cristian@gmail.com>
-Source: nss-3.93.tar.gz
+Source: nss-3.112.tar.gz
 License: MPL-2.0
 LicenseFiles: nss/COPYING
 CPE-ID: cpe:/a:mozilla:network_security_services

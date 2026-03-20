@@ -7,7 +7,7 @@ Version: 23.1.0-r1
 Depends: +libc +python3-light +python3-attrs +python3-cryptography +python3-pyasn1 +python3-pyasn1-modules
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-service-identity-any
 Section: lang
 Category: Languages
 Repository: base
@@ -28,7 +28,7 @@ Version: 23.1.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-service-identity-src-any
 Section: lang
 Category: Languages
 Repository: base

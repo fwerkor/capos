@@ -8,7 +8,7 @@ Version: 1.3.0-r1
 Depends: +libc +python3-light +python3-logging
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-build-any
 Section: lang
 Category: Languages
 Repository: base
@@ -32,7 +32,7 @@ Version: 1.3.0-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-build-src-any
 Section: lang
 Category: Languages
 Repository: base

@@ -1,20 +1,20 @@
 Source-Makefile: feeds/packages/libs/cjson/Makefile
 
 Package: cJSON
-Version: 1.7.17-r1
+Version: 1.7.19-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @cJSON-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Ultralightweight JSON parser in ANSI C
 Maintainer: Karl Palsson <karlp@etactica.com>
-Source: cJSON-1.7.17.tar.gz
+Source: cJSON-1.7.19.tar.gz
 License: MIT
 LicenseFiles: LICENSE
-CPE-ID: cpe:/a:cjson_project:cjson
+CPE-ID: cpe:/a:davegamble:cjson
 URL: https://github.com/DaveGamble/cJSON
 Type: ipkg
 Description:  Ultralightweight JSON parser in ANSI C.

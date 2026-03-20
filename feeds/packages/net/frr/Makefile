@@ -7,19 +7,18 @@
 
 include $(TOPDIR)/rules.mk
 PKG_NAME:=frr
-PKG_VERSION:=10.2.1
-PKG_RELEASE:=2
-PKG_SOURCE_DATE:=2025-01-29
+PKG_VERSION:=10.4.1
+PKG_RELEASE:=1
 
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_SOURCE_DATE).tar.gz
-PKG_SOURCE_VERSION:=05f9d44340755e5ca612e4852b710f4037254e7b
-PKG_SOURCE_URL:=https://codeload.github.com/FRRouting/frr/tar.gz/$(PKG_SOURCE_VERSION)?
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
+PKG_SOURCE_URL:=https://codeload.github.com/FRRouting/frr/tar.gz/$(PKG_NAME)-$(PKG_VERSION)?
+PKG_HASH:=8e4003eaba168626c5ea7a6735f2c85c87b04214e6f8c8f2715b21f8ae40970b
 
-PKG_HASH:=8873e1f638fc4457a30227181e3fd26414795e63dbb11911c2e669876589f228
+
 PKG_MAINTAINER:=Lucian Cristian <lucian.cristian@gmail.com>
 
-PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_SOURCE_VERSION)
-HOST_BUILD_DIR:=$(BUILD_DIR_HOST)/$(PKG_NAME)-$(PKG_SOURCE_VERSION)
+PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_NAME)-$(PKG_VERSION)
+HOST_BUILD_DIR:=$(BUILD_DIR_HOST)/$(PKG_NAME)-$(PKG_NAME)-$(PKG_VERSION)
 
 PKG_LICENSE:=GPL-2.0-only LGPL-2.1-only
 PKG_CPE_ID:=cpe:/a:ffrouting:ffrouting
@@ -132,7 +131,7 @@ define BuildDaemon
 ifeq ($(1),bgpd)
 	KCONFIG:=CONFIG_TCP_MD5SIG=y
 endif
-	DEPENDS+=$(2)
+	DEPENDS+=$(2) +frr-watchfrr +frr-zebra
     endef
 #	if [ "$(1)" == "bfdd" ]; then \
 #	export HAVE_BFDD == 1 ; fi
@@ -215,8 +214,9 @@ define Package/frr-watchfrr/install
 endef
 
 define Package/frr-zebra/install
-	$(INSTALL_DIR) $(1)/usr/sbin
+	$(INSTALL_DIR) $(1)/usr/sbin $(1)/usr/lib
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/zebra $(1)/usr/sbin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/lib/libmlag_pb.so* $(1)/usr/lib/
 endef
 
 define Package/frr-pythontools/install

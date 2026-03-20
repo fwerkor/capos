@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/lang/perl/perl-clone/Makefile
+
+Package: perl-clone
+Submenu: Perl
+Version: 0.47.5.40-r1
+Depends: +libc perl +perlbase-autoloader +perlbase-essential +perlbase-xsloader
+Conflicts: 
+Menu-Depends: 
+Provides: @perl-clone-any
+Section: lang
+Category: Languages
+Repository: base
+Title: Recursively copy Perl datatypes
+Maintainer: Jens Wagner <jens@wagner2013.de>
+Source: Clone-0.47.tar.gz
+License: GPL-1.0-or-later Artistic-1.0-Perl
+URL: https://metacpan.org/pod/Clone
+Type: ipkg
+Description:   This module provides a clone() method to make recursive copies.
+@@
+
+

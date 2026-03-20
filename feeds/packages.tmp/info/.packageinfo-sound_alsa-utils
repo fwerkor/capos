@@ -5,7 +5,7 @@ Version: 1.2.11-r1
 Depends: +libc +alsa-lib +alsa-ucm-conf +libncursesw +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @alsa-utils-any
 Section: sound
 Category: Sound
 Repository: base
@@ -24,7 +24,7 @@ Version: 1.2.11-r1
 Depends: +libc +alsa-lib +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @alsa-utils-seq-any
 Section: sound
 Category: Sound
 Repository: base
@@ -43,7 +43,7 @@ Version: 1.2.11-r1
 Depends: +libc +alsa-lib +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @alsa-utils-tests-any
 Section: sound
 Category: Sound
 Repository: base

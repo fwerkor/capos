@@ -5,7 +5,7 @@ Version: 15-r1
 Depends: +libc +libhttp-parser +jose
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @tang-any
 Section: utils
 Category: Extra packages
 Repository: base

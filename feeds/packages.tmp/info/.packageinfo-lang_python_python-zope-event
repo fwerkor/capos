@@ -7,7 +7,7 @@ Version: 6.1-r1
 Depends: +libc +python3-light +python3-logging
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-zope-event-any
 Section: lang
 Category: Languages
 Repository: base
@@ -29,7 +29,7 @@ Version: 6.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-zope-event-src-any
 Section: lang
 Category: Languages
 Repository: base

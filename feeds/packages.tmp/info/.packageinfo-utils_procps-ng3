@@ -5,7 +5,7 @@ Version: 3.3.17-r1
 Depends: +libc +libncurses
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @procps-ng3-any
 Section: utils
 Category: Utilities
 Repository: base

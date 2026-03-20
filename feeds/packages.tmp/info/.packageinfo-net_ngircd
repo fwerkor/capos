@@ -6,7 +6,7 @@ Version: 26.1-r1
 Depends: +libc +zlib +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ngircd-any
 Build-Variant: ssl
 Section: net
 Category: Network
@@ -32,7 +32,7 @@ Version: 26.1-r1
 Depends: +libc +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ngircd-nossl-any
 Build-Variant: nossl
 Section: net
 Category: Network

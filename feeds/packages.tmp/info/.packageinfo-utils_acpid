@@ -5,7 +5,7 @@ Version: 2.0.34-r1
 Depends: +libc +kmod-input-evdev
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @acpid-any
 Section: utils
 Category: Utilities
 Repository: base

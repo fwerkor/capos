@@ -7,7 +7,7 @@ Version: 7
 Depends: +libc +binutils +libstdcpp +libzstd @!arc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @gcc-any
 Section: devel
 Category: Development
 Repository: base

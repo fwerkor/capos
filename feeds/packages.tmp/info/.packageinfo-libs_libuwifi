@@ -5,7 +5,7 @@ Version: 2024.03.27~9006d3b379927854fb077e1013ed297b66920547-r1
 Depends: +libc +libradiotap +libnl-tiny
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libuwifi-any
 Section: libs
 Category: Libraries
 Repository: base

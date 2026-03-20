@@ -6,7 +6,7 @@ Version: 5.5.1-r1
 Depends: +libc +python3-light +python3-flask +python3-socketio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-flask-socketio-any
 Section: lang
 Category: Languages
 Repository: base
@@ -27,7 +27,7 @@ Version: 5.5.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-flask-socketio-src-any
 Section: lang
 Category: Languages
 Repository: base

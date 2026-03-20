@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/utils/rpcd-mod-lxc/Makefile
 
 Package: rpcd-mod-lxc
-Version: 20201208
+Version: 20250823
 Depends: +libc +rpcd +liblxc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rpcd-mod-lxc-any
 Section: libs
 Category: Libraries
 Repository: base

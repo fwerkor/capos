@@ -6,7 +6,7 @@ Version: 6.10-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @ragel-any
 Section: devel
 Category: Development
 Repository: base

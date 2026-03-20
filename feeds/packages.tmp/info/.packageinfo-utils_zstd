@@ -7,12 +7,12 @@ Version: 1.5.7-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libzstd-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: zstd library.
-Maintainer: Aleksey Vasilenko <aleksey.vasilenko@gmail.com>
+Maintainer: 
 Source: zstd-1.5.7.tar.gz
 License: GPL-2.0-or-later
 LicenseFiles: COPYING
@@ -37,12 +37,12 @@ Version: 1.5.7-r1
 Depends: +libc +libzstd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @zstd-any
 Section: utils
 Category: Utilities
 Repository: base
 Title: Fast real-time compression algorithm.
-Maintainer: Aleksey Vasilenko <aleksey.vasilenko@gmail.com>
+Maintainer: 
 Source: zstd-1.5.7.tar.gz
 License: GPL-2.0-or-later
 LicenseFiles: COPYING

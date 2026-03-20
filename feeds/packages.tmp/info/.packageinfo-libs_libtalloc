@@ -6,7 +6,7 @@ Version: 2.4.2-r1
 Depends: +libc +libattr
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libtalloc-any
 Section: libs
 Category: Libraries
 Repository: base

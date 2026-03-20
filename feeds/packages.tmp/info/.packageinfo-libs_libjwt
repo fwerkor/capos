@@ -5,7 +5,7 @@ Version: 1.17.1-r1
 Depends: +libc +libopenssl +jansson
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libjwt-any
 Section: libs
 Category: Libraries
 Repository: base

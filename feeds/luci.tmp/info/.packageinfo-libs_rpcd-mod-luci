@@ -6,7 +6,7 @@ Version: 20240305-r1
 Depends: +libc +rpcd +libubox +libubus +libnl-tiny
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @rpcd-mod-luci-any
 Section: libs
 Category: Libraries
 Repository: base

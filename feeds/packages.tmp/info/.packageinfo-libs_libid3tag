@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/libs/libid3tag/Makefile
 
 Package: libid3tag
-Version: 0.16.3-r1
+Version: 0.16.3-r2
 Depends: +libc +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libid3tag-any
 Section: libs
 Category: Libraries
 Repository: base

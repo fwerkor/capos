@@ -3,17 +3,17 @@ Build-Depends: unixodbc/host protobuf-c/host
 
 Package: pdns-backend-geoip
 Submenu: IP Addresses and Names
-Version: 4.9.2-r1
+Version: 4.9.7-r1
 Depends: +libc +libatomic pdns +libmaxminddb +libyaml-cpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pdns-backend-geoip-any
 Section: net
 Category: Network
 Repository: base
 Title: PowerDNS Authoritative Server (geoip)
 Maintainer: Peter van Dijk <peter.van.dijk@powerdns.com>, Remi Gacogne <remi.gacogne@powerdns.com>
-Source: pdns-4.9.2.tar.bz2
+Source: pdns-4.9.7.tar.bz2
 License: GPL-2.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:powerdns:authoritative
@@ -30,17 +30,17 @@ Description:    PowerDNS is a versatile nameserver which supports a large number
 
 Package: pdns-backend-mysql
 Submenu: IP Addresses and Names
-Version: 4.9.2-r1
+Version: 4.9.7-r1
 Depends: +libc +libatomic pdns +libmysqlclient
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pdns-backend-mysql-any
 Section: net
 Category: Network
 Repository: base
 Title: PowerDNS Authoritative Server (mysql)
 Maintainer: Peter van Dijk <peter.van.dijk@powerdns.com>, Remi Gacogne <remi.gacogne@powerdns.com>
-Source: pdns-4.9.2.tar.bz2
+Source: pdns-4.9.7.tar.bz2
 License: GPL-2.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:powerdns:authoritative
@@ -57,17 +57,17 @@ Description:    PowerDNS is a versatile nameserver which supports a large number
 
 Package: pdns-backend-odbc
 Submenu: IP Addresses and Names
-Version: 4.9.2-r1
+Version: 4.9.7-r1
 Depends: +libc +libatomic pdns +unixodbc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pdns-backend-odbc-any
 Section: net
 Category: Network
 Repository: base
 Title: PowerDNS Authoritative Server (odbc)
 Maintainer: Peter van Dijk <peter.van.dijk@powerdns.com>, Remi Gacogne <remi.gacogne@powerdns.com>
-Source: pdns-4.9.2.tar.bz2
+Source: pdns-4.9.7.tar.bz2
 License: GPL-2.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:powerdns:authoritative
@@ -84,17 +84,17 @@ Description:    PowerDNS is a versatile nameserver which supports a large number
 
 Package: pdns-backend-pgsql
 Submenu: IP Addresses and Names
-Version: 4.9.2-r1
+Version: 4.9.7-r1
 Depends: +libc +libatomic pdns +libpq
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pdns-backend-pgsql-any
 Section: net
 Category: Network
 Repository: base
 Title: PowerDNS Authoritative Server (pgsql)
 Maintainer: Peter van Dijk <peter.van.dijk@powerdns.com>, Remi Gacogne <remi.gacogne@powerdns.com>
-Source: pdns-4.9.2.tar.bz2
+Source: pdns-4.9.7.tar.bz2
 License: GPL-2.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:powerdns:authoritative
@@ -111,17 +111,17 @@ Description:    PowerDNS is a versatile nameserver which supports a large number
 
 Package: pdns-backend-sqlite3
 Submenu: IP Addresses and Names
-Version: 4.9.2-r1
+Version: 4.9.7-r1
 Depends: +libc +libatomic pdns +libsqlite3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pdns-backend-sqlite3-any
 Section: net
 Category: Network
 Repository: base
 Title: PowerDNS Authoritative Server (sqlite3)
 Maintainer: Peter van Dijk <peter.van.dijk@powerdns.com>, Remi Gacogne <remi.gacogne@powerdns.com>
-Source: pdns-4.9.2.tar.bz2
+Source: pdns-4.9.7.tar.bz2
 License: GPL-2.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:powerdns:authoritative
@@ -138,17 +138,17 @@ Description:    PowerDNS is a versatile nameserver which supports a large number
 
 Package: pdns-backend-ldap
 Submenu: IP Addresses and Names
-Version: 4.9.2-r1
+Version: 4.9.7-r1
 Depends: +libc +libatomic pdns +libopenldap +krb5-libs
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pdns-backend-ldap-any
 Section: net
 Category: Network
 Repository: base
 Title: PowerDNS Authoritative Server (ldap)
 Maintainer: Peter van Dijk <peter.van.dijk@powerdns.com>, Remi Gacogne <remi.gacogne@powerdns.com>
-Source: pdns-4.9.2.tar.bz2
+Source: pdns-4.9.7.tar.bz2
 License: GPL-2.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:powerdns:authoritative
@@ -165,17 +165,17 @@ Description:    PowerDNS is a versatile nameserver which supports a large number
 
 Package: pdns-backend-lua2
 Submenu: IP Addresses and Names
-Version: 4.9.2-r1
+Version: 4.9.7-r1
 Depends: +libc +libatomic pdns +lua +liblua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pdns-backend-lua2-any
 Section: net
 Category: Network
 Repository: base
 Title: PowerDNS Authoritative Server (lua2)
 Maintainer: Peter van Dijk <peter.van.dijk@powerdns.com>, Remi Gacogne <remi.gacogne@powerdns.com>
-Source: pdns-4.9.2.tar.bz2
+Source: pdns-4.9.7.tar.bz2
 License: GPL-2.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:powerdns:authoritative
@@ -192,17 +192,17 @@ Description:    PowerDNS is a versatile nameserver which supports a large number
 
 Package: pdns-backend-pipe
 Submenu: IP Addresses and Names
-Version: 4.9.2-r1
+Version: 4.9.7-r1
 Depends: +libc +libatomic pdns
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pdns-backend-pipe-any
 Section: net
 Category: Network
 Repository: base
 Title: PowerDNS Authoritative Server (pipe)
 Maintainer: Peter van Dijk <peter.van.dijk@powerdns.com>, Remi Gacogne <remi.gacogne@powerdns.com>
-Source: pdns-4.9.2.tar.bz2
+Source: pdns-4.9.7.tar.bz2
 License: GPL-2.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:powerdns:authoritative
@@ -219,17 +219,17 @@ Description:    PowerDNS is a versatile nameserver which supports a large number
 
 Package: pdns-backend-remote
 Submenu: IP Addresses and Names
-Version: 4.9.2-r1
+Version: 4.9.7-r1
 Depends: +libc +libatomic pdns
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pdns-backend-remote-any
 Section: net
 Category: Network
 Repository: base
 Title: PowerDNS Authoritative Server (remote)
 Maintainer: Peter van Dijk <peter.van.dijk@powerdns.com>, Remi Gacogne <remi.gacogne@powerdns.com>
-Source: pdns-4.9.2.tar.bz2
+Source: pdns-4.9.7.tar.bz2
 License: GPL-2.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:powerdns:authoritative
@@ -246,17 +246,17 @@ Description:    PowerDNS is a versatile nameserver which supports a large number
 
 Package: pdns
 Submenu: IP Addresses and Names
-Version: 4.9.2-r1
+Version: 4.9.7-r1
 Depends: +libc +libatomic +boost +boost-program_options +libcurl +liblua +libopenssl +libsqlite3 +p11-kit
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pdns-any
 Section: net
 Category: Network
 Repository: base
 Title: PowerDNS Authoritative Server
 Maintainer: Peter van Dijk <peter.van.dijk@powerdns.com>, Remi Gacogne <remi.gacogne@powerdns.com>
-Source: pdns-4.9.2.tar.bz2
+Source: pdns-4.9.7.tar.bz2
 License: GPL-2.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:powerdns:authoritative
@@ -309,17 +309,17 @@ Config:
 
 Package: pdns-tools
 Submenu: IP Addresses and Names
-Version: 4.9.2-r1
+Version: 4.9.7-r1
 Depends: +libc +libatomic +boost +boost-program_options +libcurl +libmbedtls +libopenssl +p11-kit +protobuf
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pdns-tools-any
 Section: net
 Category: Network
 Repository: base
 Title: Tools for DNS debugging by PowerDNS
 Maintainer: Peter van Dijk <peter.van.dijk@powerdns.com>, Remi Gacogne <remi.gacogne@powerdns.com>
-Source: pdns-4.9.2.tar.bz2
+Source: pdns-4.9.7.tar.bz2
 License: GPL-2.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:powerdns:authoritative
@@ -347,17 +347,17 @@ Description:   PowerDNS is a versatile nameserver which supports a large number
 
 Package: pdns-ixfrdist
 Submenu: IP Addresses and Names
-Version: 4.9.2-r1
+Version: 4.9.7-r1
 Depends: +libc +libatomic +boost +boost-program_options +libopenssl +libyaml-cpp +p11-kit +protobuf
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pdns-ixfrdist-any
 Section: net
 Category: Network
 Repository: base
 Title: Redistribute zones via AXFR and IXFR
 Maintainer: Peter van Dijk <peter.van.dijk@powerdns.com>, Remi Gacogne <remi.gacogne@powerdns.com>
-Source: pdns-4.9.2.tar.bz2
+Source: pdns-4.9.7.tar.bz2
 License: GPL-2.0-only
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:powerdns:authoritative

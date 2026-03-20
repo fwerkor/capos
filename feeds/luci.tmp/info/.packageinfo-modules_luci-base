@@ -5,10 +5,10 @@ Build-Types: host
 Package: luci-base
 Submenu: 2. Modules
 Version: x
-Depends: +libc +rpcd +rpcd-mod-file +rpcd-mod-luci +rpcd-mod-ucode +cgi-io +ucode +ucode-mod-fs +ucode-mod-uci +ucode-mod-ubus +ucode-mod-math +ucode-mod-html +liblucihttp-ucode
+Depends: +libc +rpcd +rpcd-mod-file +rpcd-mod-luci +rpcd-mod-ucode +cgi-io +ucode +ucode-mod-fs +ucode-mod-log +ucode-mod-uci +ucode-mod-ubus +ucode-mod-math +ucode-mod-html +liblucihttp-ucode
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-base-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -40,7 +40,7 @@ Config:
 	   tristate "Arabic (ar)"  
 
      config LUCI_LANG_bg
-	   tristate "Bulgarian (bg)" 
+	   tristate "Bulgarian (bg)"  
 
      config LUCI_LANG_bn_BD
 	   tristate "Bengali (bn_BD)" 
@@ -91,13 +91,13 @@ Config:
 	   tristate "Italian (it)" 
 
      config LUCI_LANG_ja
-	   tristate "Japanese (ja)" 
+	   tristate "Japanese (ja)"  
 
      config LUCI_LANG_ko
 	   tristate "Korean (ko)" 
 
      config LUCI_LANG_lt
-	   tristate "Lithuanian (lt)"  
+	   tristate "Lithuanian (lt)"   
 
      config LUCI_LANG_mr
 	   tristate "Marathi (mr)" 
@@ -132,6 +132,9 @@ Config:
      config LUCI_LANG_sv
 	   tristate "Swedish (sv)" 
 
+     config LUCI_LANG_ta
+	   tristate "Tamil (ta)" 
+
      config LUCI_LANG_tr
 	   tristate "Turkish (tr)" 
 
@@ -159,7 +162,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-ar-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -179,7 +182,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-bg-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -199,7 +202,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-bn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -219,7 +222,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-ca-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -239,7 +242,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-cs-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -259,7 +262,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-da-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -279,7 +282,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-de-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -299,7 +302,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-el-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -319,7 +322,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-es-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -339,7 +342,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-fa-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -359,7 +362,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-fi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -379,7 +382,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-fil-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -399,7 +402,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-fr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -419,7 +422,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-ga-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -439,7 +442,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-he-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -459,7 +462,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-hi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -479,7 +482,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-hu-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -499,7 +502,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-it-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -519,7 +522,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-ja-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -539,7 +542,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-ko-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -559,7 +562,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-lt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -579,7 +582,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-mr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -599,7 +602,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-ms-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -619,7 +622,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-no-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -639,7 +642,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-nl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -659,7 +662,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-pl-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -679,7 +682,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-pt-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -699,7 +702,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -719,7 +722,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-ro-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -739,7 +742,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-ru-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -759,7 +762,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-sk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -779,7 +782,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-sv-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -793,13 +796,33 @@ Hidden: 1
 Description:     Translation for luci-base - Svenska (Swedish)
 @@
 
+Package: luci-i18n-base-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-base
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-base-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-base - ta translation
+Maintainer: 
+Source: 
+License: Apache-2.0
+LicenseFiles: LICENSE NOTICE
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-base - Tamil (Tamil)
+@@
+
 Package: luci-i18n-base-tr
 Default: LUCI_LANG_tr||(ALL&&m)
 Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-tr-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -819,7 +842,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-uk-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -839,7 +862,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-vi-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -859,7 +882,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-yua-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -879,7 +902,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -899,7 +922,7 @@ Version: x
 Depends: +libc luci-base
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-base-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base

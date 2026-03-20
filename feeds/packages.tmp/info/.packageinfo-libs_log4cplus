@@ -6,7 +6,7 @@ Version: 2.1.1-r1
 Depends: +libc +libstdcpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @log4cplus-any
 Section: libs
 Category: Libraries
 Repository: base

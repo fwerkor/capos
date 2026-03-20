@@ -6,7 +6,7 @@ Version: 3.14.2-r1
 Depends: +libc +libev +PACKAGE_libuhttpd-openssl:libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: libuhttpd
+Provides: @libuhttpd-openssl-any libuhttpd
 Build-Variant: openssl
 Section: libs
 Category: Libraries
@@ -27,7 +27,7 @@ Version: 3.14.2-r1
 Depends: +libc +libev +PACKAGE_libuhttpd-mbedtls:libmbedtls +PACKAGE_libuhttpd-mbedtls:zlib
 Conflicts: 
 Menu-Depends: 
-Provides: libuhttpd
+Provides: @libuhttpd-mbedtls-any libuhttpd
 Build-Variant: mbedtls
 Section: libs
 Category: Libraries
@@ -48,7 +48,7 @@ Version: 3.14.2-r1
 Depends: +libc +libev +PACKAGE_libuhttpd-wolfssl:libwolfssl
 Conflicts: 
 Menu-Depends: 
-Provides: libuhttpd
+Provides: @libuhttpd-wolfssl-any libuhttpd
 Build-Variant: wolfssl
 Section: libs
 Category: Libraries
@@ -69,7 +69,7 @@ Version: 3.14.2-r1
 Depends: +libc +libev
 Conflicts: 
 Menu-Depends: 
-Provides: libuhttpd
+Provides: @libuhttpd-nossl-any libuhttpd
 Build-Variant: nossl
 Section: libs
 Category: Libraries

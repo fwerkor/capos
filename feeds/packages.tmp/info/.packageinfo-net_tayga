@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/net/tayga/Makefile
+
+Package: tayga
+Version: 0.9.5-r1
+Depends: +libc +ip @IPV6 +kmod-tun
+Conflicts: 
+Menu-Depends: 
+Provides: @tayga-any
+Section: net
+Category: Network
+Repository: base
+Title: Out-of-kernel stateless NAT64 implementation
+Maintainer: Ondrej Caletka <ondrej@caletka.cz>
+Source: tayga-0.9.5.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+URL: https://github.com/apalrd/tayga/
+Type: ipkg
+Description:   TAYGA is an out-of-kernel stateless NAT64 implementation for
+  Linux.  It uses the TUN driver to exchange packets with the
+  kernel, which is the same driver used by OpenVPN and QEMU/KVM.
+@@
+
+

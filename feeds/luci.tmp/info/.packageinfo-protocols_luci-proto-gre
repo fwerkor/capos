@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +gre
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-proto-gre-any
 Section: luci
 Category: LuCI
 Repository: base

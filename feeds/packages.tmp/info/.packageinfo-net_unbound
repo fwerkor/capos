@@ -6,7 +6,7 @@ Version: 1.24.2-r1
 Depends: +libc +ca-bundle +libopenssl +@OPENSSL_WITH_EC +libunbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @unbound-daemon-any
 Section: net
 Category: Network
 Repository: base
@@ -31,7 +31,7 @@ Version: 1.24.2-r1
 Depends: +libc +ca-bundle +libopenssl +@OPENSSL_WITH_EC +PACKAGE_libunbound_dnscrypt:libsodium +PACKAGE_libunbound_ipset:libmnl +PACKAGE_libunbound_libevent:libevent2 +PACKAGE_libunbound_libpthread:libpthread +PACKAGE_libunbound_nghttp2:libnghttp2 +PACKAGE_libunbound_pythonmodule:python3-base +PACKAGE_libunbound_dnstap:libprotobuf-c
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libunbound-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -83,7 +83,7 @@ Version: 1.24.2-r1
 Depends: +libc +ca-bundle +libopenssl +@OPENSSL_WITH_EC +unbound-daemon +libexpat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @unbound-anchor-any
 Section: net
 Category: Network
 Repository: base
@@ -105,7 +105,7 @@ Version: 1.24.2-r1
 Depends: +libc +ca-bundle +libopenssl +@OPENSSL_WITH_EC +unbound-daemon
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @unbound-checkconf-any
 Section: net
 Category: Network
 Repository: base
@@ -127,7 +127,7 @@ Version: 1.24.2-r1
 Depends: +libc +ca-bundle +libopenssl +@OPENSSL_WITH_EC +unbound-daemon
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @unbound-control-any
 Section: net
 Category: Network
 Repository: base
@@ -149,7 +149,7 @@ Version: 1.24.2-r1
 Depends: +libc +ca-bundle +libopenssl +@OPENSSL_WITH_EC +unbound-control +openssl-util
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @unbound-control-setup-any
 Section: net
 Category: Network
 Repository: base
@@ -171,7 +171,7 @@ Version: 1.24.2-r1
 Depends: +libc +ca-bundle +libopenssl +@OPENSSL_WITH_EC +libunbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @unbound-host-any
 Section: net
 Category: Network
 Repository: base

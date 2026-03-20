@@ -6,7 +6,7 @@ Version: 0.4-r3
 Depends: +libc +libjson-c +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @prince-any
 Section: net
 Category: Network
 Repository: base

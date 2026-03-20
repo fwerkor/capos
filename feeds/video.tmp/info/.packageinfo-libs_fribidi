@@ -1,0 +1,23 @@
+Source-Makefile: feeds/video/libs/fribidi/Makefile
+
+Package: fribidi
+Submenu: Video
+Version: 1.0.16-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: @fribidi-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: fribidi
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: fribidi-1.0.16.tar.xz
+License: LGPL-2.1
+LicenseFiles: COPYING
+URL: https://github.com/fribidi/fribidi
+Type: ipkg
+Description: fribidi
+@@
+
+

@@ -6,7 +6,7 @@ Version: 2.3.21-r1
 Depends: +libc +DOVECOT_GSSAPI:krb5-libs +DOVECOT_LDAP:libopenldap +DOVECOT_MYSQL:libmysqlclient +DOVECOT_PGSQL:libpq +DOVECOT_SQLITE:libsqlite3 +libopenssl +librt +zlib +libbz2 +libcap +DOVECOT_ICU:icu +BUILD_NLS:libiconv-full
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dovecot-any
 Section: mail
 Category: Mail
 Repository: base
@@ -31,7 +31,7 @@ Version: 2.3.21-r1
 Depends: +libc +dovecot
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @dovecot-utils-any
 Section: mail
 Category: Mail
 Repository: base

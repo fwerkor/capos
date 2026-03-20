@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/libs/libcli/Makefile
 
 Package: libcli
-Version: 1.10.7
-Depends: +libc 
+Version: 1.10.7-r2
+Depends: +libc +USE_GLIBC:libcrypt-compat
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libcli-any
 Section: libs
 Category: Libraries
 Repository: base

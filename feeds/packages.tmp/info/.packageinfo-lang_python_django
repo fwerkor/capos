@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/lang/python/django/Makefile
 
 Package: python3-django
 Submenu: Python
-Version: 5.1.14-r1
+Version: 6.0.2-r1
 Depends: +libc +python3 +python3-pytz +python3-sqlparse +python3-asgiref
 Conflicts: python3-django1
 Menu-Depends: 
-Provides: django
+Provides: @python3-django-any django
 Section: lang
 Category: Languages
 Repository: base
 Title: The web framework for perfectionists with deadlines.
 Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>, Peter Stadler <peter.stadler@student.uibk.ac.at>
-Source: Django-5.1.14.tar.gz
+Source: django-6.0.2.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE LICENSE.python
 CPE-ID: cpe:/a:djangoproject:django
@@ -23,17 +23,17 @@ Description:     The web framework for perfectionists with deadlines.
 
 Package: python3-django-src
 Submenu: Python
-Version: 5.1.14-r1
+Version: 6.0.2-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-django-src-any
 Section: lang
 Category: Languages
 Repository: base
 Title: The web framework for perfectionists with deadlines. (sources)
 Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>, Peter Stadler <peter.stadler@student.uibk.ac.at>
-Source: Django-5.1.14.tar.gz
+Source: django-6.0.2.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE LICENSE.python
 CPE-ID: cpe:/a:djangoproject:django

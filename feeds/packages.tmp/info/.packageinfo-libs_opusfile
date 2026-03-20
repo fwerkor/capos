@@ -5,7 +5,7 @@ Version: 0.12-r2
 Depends: +libc +libogg +libopus +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopusfile-any
 Section: libs
 Category: Libraries
 Repository: base

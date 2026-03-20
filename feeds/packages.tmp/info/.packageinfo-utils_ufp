@@ -1,0 +1,40 @@
+Source-Makefile: feeds/packages/utils/ufp/Makefile
+Build-Depends: ufp/host
+Build-Depends/host: ucode/host libubox/host
+Build-Types: host
+
+Package: ufp
+Version: 2025.09.23~7d9f3beeac9fe7f4bbc339ea1f41cc485e5d6b97-r1
+Depends: +libc +ucode +ucode-mod-fs +ucode-mod-struct +libubox +udhcpsnoop +unetmsg
+Conflicts: 
+Menu-Depends: 
+Provides: @ufp-any
+Section: utils
+Category: Utilities
+Repository: base
+Title: Device fingerprinting daemon
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: ufp-2025.09.23~7d9f3beeac9fe7f4bbc339ea1f41cc485e5d6b97.tar.zst
+License: GPL-2.0
+Type: ipkg
+Description: Device fingerprinting daemon
+@@
+
+Package: ufp-neigh
+Version: 2025.09.23~7d9f3beeac9fe7f4bbc339ea1f41cc485e5d6b97-r1
+Depends: +libc +ufp
+Conflicts: 
+Menu-Depends: 
+Provides: @ufp-neigh-any
+Section: utils
+Category: Utilities
+Repository: base
+Title: Device fingerprinting daemon (OUI plugin)
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: ufp-2025.09.23~7d9f3beeac9fe7f4bbc339ea1f41cc485e5d6b97.tar.zst
+License: GPL-2.0
+Type: ipkg
+Description: Device fingerprinting daemon (OUI plugin)
+@@
+
+

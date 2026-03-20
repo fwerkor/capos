@@ -5,7 +5,7 @@ Version: 14.5.1.1-r1
 Depends: +libc +lame-lib +libmad +libid3tag +libmagic +libvorbis +alsa-lib +libflac +libopus +libopusfile +libwavpack
 Conflicts: 
 Menu-Depends: 
-Provides: sox
+Provides: @sox_ng-any sox
 Section: sound
 Category: Sound
 Repository: base

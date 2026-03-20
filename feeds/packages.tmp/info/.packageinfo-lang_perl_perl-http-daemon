@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/perl/perl-http-daemon/Makefile
+
+Package: perl-http-daemon
+Submenu: Perl
+Version: 6.16.5.40-r1
+Depends: +libc perl +perlbase-essential +perlbase-io +perlbase-socket +perl-http-date +perl-http-message +perl-lwp-mediatypes
+Conflicts: 
+Menu-Depends: 
+Provides: @perl-http-daemon-any
+Section: lang
+Category: Languages
+Repository: base
+Title: A simple http server class
+Maintainer: Jens Wagner <jens@wagner2013.de>
+Source: HTTP-Daemon-6.16.tar.gz
+License: GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE
+URL: https://metacpan.org/pod/HTTP::Daemon
+Type: ipkg
+Description:   Instances of the HTTP::Daemon class are HTTP/1.1 servers
+  that listen on a socket for incoming requests.
+@@
+
+

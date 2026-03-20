@@ -6,7 +6,7 @@ Version: 2.2.8-r1
 Depends: +libc +libminiupnpc
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @miniupnpc-any
 Section: net
 Category: Network
 Repository: base
@@ -26,7 +26,7 @@ Version: 2.2.8-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libminiupnpc-any
 Section: libs
 Category: Libraries
 Repository: base

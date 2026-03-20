@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/libs/pthsem/Makefile
 
 Package: pthsem
-Version: 2.0.8-r7
+Version: 2.0.8-r8
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @pthsem-any
 Section: libs
 Category: Libraries
 Repository: base

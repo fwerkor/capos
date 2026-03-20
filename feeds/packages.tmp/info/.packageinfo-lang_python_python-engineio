@@ -6,7 +6,7 @@ Version: 4.5.1-r1
 Depends: +libc +python3-light +python3-asyncio +python3-logging +python3-openssl +python3-urllib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-engineio-any
 Section: lang
 Category: Languages
 Repository: base
@@ -27,7 +27,7 @@ Version: 4.5.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-engineio-src-any
 Section: lang
 Category: Languages
 Repository: base

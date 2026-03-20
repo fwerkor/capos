@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/net/mosquitto/Makefile
 
 Package: mosquitto-ssl
-Version: 2.0.18-r3
+Version: 2.0.22-r1
 Depends: +libc +librt +libopenssl +MOSQUITTO_LWS:libwebsockets-openssl +MOSQUITTO_DYNAMIC_SECURITY:cJSON
 Conflicts: 
 Menu-Depends: 
-Provides: mosquitto
+Provides: @mosquitto-ssl-any mosquitto
 Build-Variant: ssl
 Section: net
 Category: Network
@@ -13,7 +13,7 @@ Repository: base
 Title: mosquitto - an MQTT message broker (with SSL support)
 Maintainer: Karl Palsson <karlp@etactica.com>
 Require-User: mosquitto=200:mosquitto=200
-Source: mosquitto-2.0.18.tar.gz
+Source: mosquitto-2.0.22.tar.gz
 License: EPL-2.0
 LicenseFiles: LICENSE.txt
 CPE-ID: cpe:/a:eclipse:mosquitto
@@ -32,11 +32,11 @@ Config:
 @@
 
 Package: mosquitto-nossl
-Version: 2.0.18-r3
+Version: 2.0.22-r1
 Depends: +libc +librt
 Conflicts: 
 Menu-Depends: 
-Provides: mosquitto
+Provides: @mosquitto-nossl-any mosquitto
 Build-Variant: nossl
 Section: net
 Category: Network
@@ -44,7 +44,7 @@ Repository: base
 Title: mosquitto - an MQTT message broker (without SSL support)
 Maintainer: Karl Palsson <karlp@etactica.com>
 Require-User: mosquitto=200:mosquitto=200
-Source: mosquitto-2.0.18.tar.gz
+Source: mosquitto-2.0.22.tar.gz
 License: EPL-2.0
 LicenseFiles: LICENSE.txt
 CPE-ID: cpe:/a:eclipse:mosquitto
@@ -59,11 +59,11 @@ This package also includes some basic support for configuring via UCI
 @@
 
 Package: libmosquitto-ssl
-Version: 2.0.18-r3
+Version: 2.0.22-r1
 Depends: +libc +libpthread +librt +libcares +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: libmosquitto
+Provides: @libmosquitto-ssl-any libmosquitto
 Build-Variant: ssl
 Section: libs
 Category: Libraries
@@ -71,7 +71,7 @@ Repository: base
 Title: mosquitto - client library (With SSL Support)
 Maintainer: Karl Palsson <karlp@etactica.com>
 Require-User: mosquitto=200:mosquitto=200
-Source: mosquitto-2.0.18.tar.gz
+Source: mosquitto-2.0.22.tar.gz
 License: EPL-2.0
 LicenseFiles: LICENSE.txt
 CPE-ID: cpe:/a:eclipse:mosquitto
@@ -87,11 +87,11 @@ server, in addition to Mosquitto.
 @@
 
 Package: libmosquitto-nossl
-Version: 2.0.18-r3
+Version: 2.0.22-r1
 Depends: +libc +libpthread +librt +libcares
 Conflicts: 
 Menu-Depends: 
-Provides: libmosquitto
+Provides: @libmosquitto-nossl-any libmosquitto
 Build-Variant: nossl
 Section: libs
 Category: Libraries
@@ -99,7 +99,7 @@ Repository: base
 Title: mosquitto - client library (Without SSL Support)
 Maintainer: Karl Palsson <karlp@etactica.com>
 Require-User: mosquitto=200:mosquitto=200
-Source: mosquitto-2.0.18.tar.gz
+Source: mosquitto-2.0.22.tar.gz
 License: EPL-2.0
 LicenseFiles: LICENSE.txt
 CPE-ID: cpe:/a:eclipse:mosquitto
@@ -115,17 +115,17 @@ server, in addition to Mosquitto.
 @@
 
 Package: libmosquittopp
-Version: 2.0.18-r3
+Version: 2.0.22-r1
 Depends: +libc libmosquitto +libstdcpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libmosquittopp-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: mosquitto - client c++ library
 Maintainer: 
-Source: mosquitto-2.0.18.tar.gz
+Source: mosquitto-2.0.22.tar.gz
 License: EPL-2.0
 LicenseFiles: LICENSE.txt
 CPE-ID: cpe:/a:eclipse:mosquitto
@@ -134,11 +134,11 @@ Description:  C++ Library wrapper for libmosquitto.
 @@
 
 Package: mosquitto-client-ssl
-Version: 2.0.18-r3
+Version: 2.0.22-r1
 Depends: +libc +librt +libcares +cJSON +libmosquitto-ssl
 Conflicts: 
 Menu-Depends: 
-Provides: mosquitto-client
+Provides: @mosquitto-client-ssl-any mosquitto-client
 Build-Variant: ssl
 Section: net
 Category: Network
@@ -146,7 +146,7 @@ Repository: base
 Title: mosquitto - client tools (With SSL support)
 Maintainer: Karl Palsson <karlp@etactica.com>
 Require-User: mosquitto=200:mosquitto=200
-Source: mosquitto-2.0.18.tar.gz
+Source: mosquitto-2.0.22.tar.gz
 License: EPL-2.0
 LicenseFiles: LICENSE.txt
 CPE-ID: cpe:/a:eclipse:mosquitto
@@ -159,11 +159,11 @@ and the mosquitto_ctrl tool.
 @@
 
 Package: mosquitto-client-nossl
-Version: 2.0.18-r3
+Version: 2.0.22-r1
 Depends: +libc +librt +libcares +cJSON +libmosquitto-nossl
 Conflicts: 
 Menu-Depends: 
-Provides: mosquitto-client
+Provides: @mosquitto-client-nossl-any mosquitto-client
 Build-Variant: nossl
 Section: net
 Category: Network
@@ -171,7 +171,7 @@ Repository: base
 Title: mosquitto - client tools (Without SSL support)
 Maintainer: Karl Palsson <karlp@etactica.com>
 Require-User: mosquitto=200:mosquitto=200
-Source: mosquitto-2.0.18.tar.gz
+Source: mosquitto-2.0.22.tar.gz
 License: EPL-2.0
 LicenseFiles: LICENSE.txt
 CPE-ID: cpe:/a:eclipse:mosquitto

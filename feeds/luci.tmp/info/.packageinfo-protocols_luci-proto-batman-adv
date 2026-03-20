@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +kmod-batman-adv
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-proto-batman-adv-any
 Section: luci
 Category: LuCI
 Repository: base

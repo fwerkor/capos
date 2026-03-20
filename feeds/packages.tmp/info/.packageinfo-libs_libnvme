@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/libs/libnvme/Makefile
 
 Package: libnvme
-Version: 1.9-r1
-Depends: +libc +libjson-c
+Version: 1.15-r1
+Depends: +libc +libjson-c +liburing
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libnvme-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: C Library for NVM Express on Linux
 Maintainer: Luca Barbato <lu_zero@luminem.org>
-Source: libnvme-1.9.tar.gz
+Source: libnvme-1.15.tar.gz
 License: GPL-2.0-or-later
 LicenseFiles: LICENSE
 URL: https://github.com/linux-nvme/libnvme

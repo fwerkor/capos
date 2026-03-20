@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/libs/libuecc/Makefile
 
 Package: libuecc
-Version: 7-r2
+Version: 7-r3
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libuecc-any
 Section: libs
 Category: Libraries
 Repository: base

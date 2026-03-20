@@ -3,17 +3,17 @@ Build-Depends: libowfat
 
 Package: opentracker
 Submenu: BitTorrent
-Version: 2024.06.22~c854b3db9bf620e86481acfcc9fc31eba64bc8e6-r1
+Version: 2025.04.25~b20b0b89264e9d28ab873b8b1cc9ba73cdb58aeb-r1
 Depends: +libc +zlib +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: opentracker6
+Provides: @opentracker-any opentracker6
 Section: net
 Category: Network
 Repository: base
 Title: opentracker
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: opentracker-2024.06.22~c854b3db9bf620e86481acfcc9fc31eba64bc8e6.tar.zst
+Source: opentracker-2025.04.25~b20b0b89264e9d28ab873b8b1cc9ba73cdb58aeb.tar.zst
 License: Beerware
 URL: http://erdgeist.org/arts/software/opentracker/
 Type: ipkg

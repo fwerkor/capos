@@ -2,11 +2,11 @@ Source-Makefile: feeds/packages/net/stubby/Makefile
 
 Package: stubby
 Submenu: IP Addresses and Names
-Version: 0.4.3-r1
+Version: 0.4.3-r3
 Depends: +libc +libyaml +getdns +ca-certs
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @stubby-any
 Section: net
 Category: Network
 Repository: base

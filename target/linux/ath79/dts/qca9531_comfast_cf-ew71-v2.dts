@@ -15,6 +15,7 @@
 		led-boot = &led_wan;
 		led-failsafe = &led_wan;
 		led-upgrade = &led_wan;
+		label-mac-device = &eth1;
 	};
 
 	leds {
@@ -136,6 +137,10 @@
 &eth1 {
 	nvmem-cells = <&macaddr_art_0 0>;
 	nvmem-cell-names = "mac-address";
+};
+
+&wdt {
+	status = "disabled";
 };
 
 &wmac {

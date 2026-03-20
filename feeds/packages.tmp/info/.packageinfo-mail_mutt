@@ -6,7 +6,7 @@ Version: 2.1.5-r2
 Depends: +libc +MUTT_HCACHE:libgdbm +MUTT_GNUTLS:libgnutls +MUTT_OPENSSL:libopenssl +libncursesw +MUTT_SASL:libsasl2 +terminfo +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mutt-any
 Section: mail
 Category: Mail
 Repository: base

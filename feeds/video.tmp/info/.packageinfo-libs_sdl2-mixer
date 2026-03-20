@@ -1,0 +1,22 @@
+Source-Makefile: feeds/video/libs/sdl2-mixer/Makefile
+
+Package: libsdl2-mixer
+Version: 2.8.1-r1
+Depends: +libc +libfluidsynth +libopusfile +libsdl2 +libwavpack +libxmp
+Conflicts: 
+Menu-Depends: 
+Provides: @libsdl2-mixer-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: SDL2 Mixer
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Source: SDL2_mixer-2.8.1.tar.gz
+License: BSD-3c
+LicenseFiles: COPYING LICENSE
+URL: https://www.libsdl.org/
+Type: ipkg
+Description:   SDL Audio Mixer library
+@@
+
+

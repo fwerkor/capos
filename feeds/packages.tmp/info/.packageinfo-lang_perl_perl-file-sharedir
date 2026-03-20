@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/perl/perl-file-sharedir/Makefile
+
+Package: perl-file-sharedir
+Submenu: Perl
+Version: 1.118.5.40-r1
+Depends: +libc perl +perlbase-essential +perlbase-file +perl-class-inspector
+Conflicts: 
+Menu-Depends: 
+Provides: @perl-file-sharedir-any
+Section: lang
+Category: Languages
+Repository: base
+Title: Locate per-dist and per-module shared files
+Maintainer: Jens Wagner <jens@wagner2013.de>
+Source: File-ShareDir-1.118.tar.gz
+License: GPL-1.0-or-later Artistic-1.0-Perl
+LicenseFiles: LICENSE
+URL: https://metacpan.org/pod/File::ShareDir
+Type: ipkg
+Description:   File::ShareDir locates shared files distributed with a Perl distribution
+  or module.
+@@
+
+

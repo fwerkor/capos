@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/mail/sendmail/Makefile
 Build-Depends: openssl
 
 Package: libmilter-sendmail
-Version: 8.16.1-r1
+Version: 8.18.1-r2
 Depends: +libc +libpthread
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libmilter-sendmail-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: The sendmail Mail Filter API (Milter) library
-Maintainer: Val Kulkov <val.kulkov@gmail.com>
-Source: sendmail.8.16.1.tar.gz
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: sendmail.8.18.1.tar.gz
 License: Sendmail
 LicenseFiles: LICENSE
 CPE-ID: cpe:/a:sendmail:sendmail

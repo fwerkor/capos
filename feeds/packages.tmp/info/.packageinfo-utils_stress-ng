@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/utils/stress-ng/Makefile
 
 Package: stress-ng
-Version: 0.18.05-r1
-Depends: +libc +zlib +libbsd +libaio +libsctp +libkmod +libatomic +libjpeg
+Version: 0.19.04-r1
+Depends: +libc +zlib +libbsd +libaio +libsctp +libkmod +libatomic +libjpeg +USE_GLIBC:libcrypt-compat
 Conflicts: 
 Menu-Depends: 
-Provides: stress
+Provides: @stress-ng-any stress
 Section: utils
 Category: Utilities
 Repository: base
 Title: stress-ng is a stress test utility
 Maintainer: Alexandru Ardelean <ardeleanalex@gmail.com>
-Source: stress-ng-0.18.05.tar.gz
+Source: stress-ng-0.19.04.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING
 URL: https://github.com/ColinIanKing/stress-ng

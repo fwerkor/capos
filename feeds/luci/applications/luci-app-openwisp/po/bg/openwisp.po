@@ -1,9 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2025-05-30 02:35+0000\n"
-"Last-Translator: 109247019824 "
-"<109247019824@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-03-15 08:27+0000\n"
+"Last-Translator: Daniel Konstantinov <bgshadow2010@gmail.com>\n"
 "Language-Team: Bulgarian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsopenwisp/bg/>\n"
 "Language: bg\n"
@@ -11,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:17
 msgid "Advanced Settings"
@@ -19,11 +18,11 @@ msgstr "Разширени настройки"
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:82
 msgid "Boot Delay"
-msgstr ""
+msgstr "Забавяне при стартиране"
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:100
 msgid "CA Cert"
-msgstr ""
+msgstr "CA сертификат"
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:97
 msgid "CA Path"
@@ -32,9 +31,7 @@ msgstr ""
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:12
 msgid ""
 "Configure, start and stop the OpenWISP agent on this device. Read more about "
-"configuration values: <a target='_blank' rel='noopener noreferrer' "
-"href='https://github.com/openwisp/openwisp-config'>https://github.com/"
-"openwisp/openwisp-config</a>"
+"configuration values: %s."
 msgstr ""
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:87
@@ -51,7 +48,7 @@ msgstr "Забранен"
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:27
 msgid "Enable"
-msgstr "Включване"
+msgstr "Активиране"
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:28
 msgid "Enable or disable the OpenWISP service."
@@ -166,8 +163,7 @@ msgid "The Key of this device in the OpenWISP server."
 msgstr ""
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:33
-msgid ""
-"The URL to the OpenWISP server. Example: https://openwisp2.mynetwork.com"
+msgid "The URL to the OpenWISP server. Example: %s"
 msgstr ""
 
 #: applications/luci-app-openwisp/htdocs/luci-static/resources/view/openwisp.js:20

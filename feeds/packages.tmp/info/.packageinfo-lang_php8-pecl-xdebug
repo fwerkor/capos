@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/lang/php8-pecl-xdebug/Makefile
 
 Package: php8-pecl-xdebug
 Submenu: PHP8
-Version: 3.3.1-r1
+Version: 3.4.7-r1
 Depends: +libc php8
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @php8-pecl-xdebug-any
 Section: lang
 Category: Languages
 Repository: base
 Title: Xdebug extension
 Maintainer: Michael Heimpold <mhei@heimpold.de>
-Source: xdebug-3.3.1.tgz
+Source: xdebug-3.4.7.tgz
 License: Xdebug
 LicenseFiles: LICENSE
 URL: http://pecl.php.net/

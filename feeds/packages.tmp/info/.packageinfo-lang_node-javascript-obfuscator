@@ -9,7 +9,7 @@ Version: 2.19.0-r3
 Depends: +libc +node
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @node-javascript-obfuscator-any
 Section: lang
 Category: Languages
 Repository: base

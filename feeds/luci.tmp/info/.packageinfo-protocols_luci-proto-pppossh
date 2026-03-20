@@ -7,7 +7,7 @@ Version: x
 Depends: +libc +pppossh
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-proto-pppossh-any
 Section: luci
 Category: LuCI
 Repository: base

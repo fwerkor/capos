@@ -7,7 +7,7 @@ Version: 6.10.1-r1
 Depends: +libc +liburcu +libuuid +libpthread +libblkid
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @xfs-admin-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -28,7 +28,7 @@ Version: 6.10.1-r1
 Depends: +libc +liburcu +libuuid +libpthread +libblkid +libinih
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @xfs-mkfs-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -49,7 +49,7 @@ Version: 6.10.1-r1
 Depends: +libc +liburcu +libuuid +libpthread +libblkid
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @xfs-fsck-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -70,7 +70,7 @@ Version: 6.10.1-r1
 Depends: +libc +liburcu +libuuid +libpthread +libblkid
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @xfs-growfs-any
 Section: utils
 Category: Utilities
 Repository: base

@@ -1,11 +1,12 @@
 Source-Makefile: feeds/packages/net/cifs-utils/Makefile
 
 Package: cifsmount
+Submenu: Filesystem
 Version: 6.11-r2
 Depends: +libc +kmod-fs-cifs
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @cifsmount-any
 Section: net
 Category: Network
 Repository: base
@@ -25,7 +26,7 @@ Version: 6.11-r2
 Depends: +libc +kmod-fs-cifs
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @smbinfo-any
 Section: net
 Category: Network
 Repository: base

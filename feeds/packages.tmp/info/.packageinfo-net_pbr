@@ -2,13 +2,11 @@ Source-Makefile: feeds/packages/net/pbr/Makefile
 
 Package: pbr
 Submenu: Routing and Redirection
-Version: 1.2.0-r6
+Version: 1.2.2-r10
 Depends: +libc +ip-full +jshn +jsonfilter +resolveip +!BUSYBOX_DEFAULT_AWK:gawk +!BUSYBOX_DEFAULT_GREP:grep +!BUSYBOX_DEFAULT_SED:sed +kmod-nft-core +kmod-nft-nat +nftables-json
 Conflicts: 
 Menu-Depends: 
-Provides: pbr
-Build-Variant: nftables
-Default-Variant: nftables
+Provides: @pbr-any
 Section: net
 Category: Network
 Repository: base
@@ -16,9 +14,9 @@ Title: Policy Based Routing Service with nft/nft set support
 Maintainer: Stan Grishin <stangri@melmac.ca>
 Source: 
 License: AGPL-3.0-or-later
-URL: https://github.com/stangri/pbr/
+URL: https://github.com/mossdef-org/pbr/
 Type: ipkg
-Description:     This service enables policy-based routing for WAN interfaces and various VPN tunnels.
+Description:   This service enables policy-based routing for WAN interfaces and various VPN tunnels.
   This version supports OpenWrt (23.05 and newer) with firewall4/nft.
 @@
 

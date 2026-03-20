@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/sound/espeak/Makefile
 
 Package: espeak
-Version: 1.48.04-r4
+Version: 1.48.04-r5
 Depends: +libc +portaudio
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @espeak-any
 Section: sound
 Category: Sound
 Repository: base

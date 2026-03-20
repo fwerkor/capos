@@ -1,21 +1,21 @@
 Source-Makefile: feeds/packages/libs/libssh/Makefile
 
 Package: libssh
-Version: 0.10.6-r2
+Version: 0.11.3-r1
 Depends: +libc +libpthread +librt +zlib +libmbedtls
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libssh-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: SSH library
-Maintainer: Mislav Novakovic <mislav.novakovic@sartura.hr>
-Source: libssh-0.10.6.tar.xz
+Maintainer: 
+Source: libssh-0.11.3.tar.xz
 License: LGPL-2.1-or-later BSD-2-Clause
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:libssh:libssh
-URL: https://www.libssh.org/files/0.10/
+URL: https://www.libssh.org/files/0.11/
 Type: ipkg
 Description:  libssh is a mulitplatform C library implementing the SSHv2 and SSHv1 protocol
  for client and server implementations.

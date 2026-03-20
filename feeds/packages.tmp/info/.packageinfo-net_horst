@@ -6,7 +6,7 @@ Version: 5.1-r4
 Depends: +libc +libncurses +libnl-tiny
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @horst-any
 Section: net
 Category: Network
 Repository: base

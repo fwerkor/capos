@@ -1,16 +1,16 @@
 Source-Makefile: feeds/packages/libs/czmq/Makefile
 
 Package: czmq
-Version: 4.2.1-r2
+Version: 4.2.1-r3
 Depends: +libc +libzmq +libuuid +libmicrohttpd +liblz4 +libcurl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @czmq-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: CZMQ High-level C binding for ZeroMQ
-Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Maintainer: 
 Source: czmq-4.2.1.tar.gz
 License: MPL-2.0
 LicenseFiles: LICENSE

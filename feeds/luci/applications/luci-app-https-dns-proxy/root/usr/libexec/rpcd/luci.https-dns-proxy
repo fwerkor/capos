@@ -9,10 +9,10 @@
 # ubus -S call luci.https-dns-proxy getInitStatus '{"name": "https-dns-proxy" }'
 # ubus -S call luci.https-dns-proxy getPlatformSupport '{"name": "https-dns-proxy" }'
 # ubus -S call luci.https-dns-proxy getProviders '{"name": "https-dns-proxy" }'
-# ubus -S call luci.https-dns-proxy getRuntime '{"name": "https-dns-proxy" }'
 
 readonly packageName="https-dns-proxy"
 readonly providersDir="/usr/share/${packageName}/providers"
+readonly providersJson="/usr/share/${packageName}/providers.json"
 
 . "${IPKG_INSTROOT}/lib/functions.sh"
 . "${IPKG_INSTROOT}/usr/share/libubox/jshn.sh"
@@ -50,7 +50,7 @@ get_init_status() {
 	local i ports
 	local version
 	name="$(basename "$1")"
-	name="${name:-$packageName}" 
+	name="${name:-${packageName}}" 
 	ports="$(ubus_get_ports)"
 	[ -z "$version" ] && version="$(get_version "$name")"
 	json_init
@@ -83,7 +83,7 @@ get_init_status() {
 get_platform_support() {
 	local name
 	name="$(basename "$1")"
-	name="${name:-$packageName}" 
+	name="${name:-${packageName}}" 
 	json_init
 	json_add_object "$name"
 	if check_http2; then
@@ -103,28 +103,32 @@ get_platform_support() {
 
 get_providers() {
 	local f
-	echo '{"https-dns-proxy":['
-	for f in "$providersDir"/*; do
-		cat "$f"
-		echo ','
-	done
-#	echo '{ "title": "Custom", "template": "{option}", "params": { "option": { "type": "text", }, }, },'
-	echo ']}'
+	echo '{"https-dns-proxy":'
+	if [ -s "$providersJson" ]; then
+		cat "$providersJson"
+	else
+		echo '['
+		for f in "$providersDir"/*; do
+			cat "$f"
+			echo ','
+		done
+		echo ']'
+	fi
+	echo '}'
 }
 
-get_runtime() { ubus call service list "{ 'verbose': true, 'name': '$1' }"; }
-
 set_init_action() {
-	local name="$1" action="$2" cmd
-	case $action in
+	local action="$2" cmd
+	[ "$(basename "$1")" = "$packageName" ] || { print_json_bool 'result' '0'; return 1; }
+		case $action in
 		enable|disable|start|stop|restart)
-			cmd="/etc/init.d/${name} ${action}"
+			cmd="/etc/init.d/${packageName} ${action}"
 		;;
 	esac
 	if [ -n "$cmd" ] && eval "$cmd" >/dev/null 2>&1; then
-		print_json_bool "result" '1'
+		print_json_bool 'result' '1'
 	else
-		print_json_bool "result" '0'
+		print_json_bool 'result' '0'
 	fi
 }
 
@@ -141,9 +145,6 @@ case "$1" in
 			json_add_string 'name' 'name'
 		json_close_object
 		json_add_object "getProviders"
-			json_add_string 'name' "name"
-		json_close_object
-		json_add_object "getRuntime"
 			json_add_string 'name' "name"
 		json_close_object
 		json_add_object "setInitAction"
@@ -182,13 +183,6 @@ case "$1" in
 				json_get_var name "name"
 				json_cleanup
 				get_providers "$name"
-				;;
-			getRuntime)
-				read -r input
-				json_load "$input"
-				json_get_var name "name"
-				json_cleanup
-				get_runtime "$name"
 				;;
 			setInitAction)
 				read -r input

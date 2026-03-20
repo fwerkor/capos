@@ -5,7 +5,7 @@ Version: 1.0.5-r4
 Depends: +libc +libmnl +libnfnetlink
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libnetfilter-queue-any
 Section: libs
 Category: Libraries
 Repository: base

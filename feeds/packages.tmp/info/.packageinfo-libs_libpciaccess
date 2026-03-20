@@ -5,7 +5,7 @@ Version: 0.18.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libpciaccess-any
 Section: libs
 Category: Libraries
 Repository: base

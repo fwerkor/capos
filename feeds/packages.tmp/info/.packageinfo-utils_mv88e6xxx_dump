@@ -5,7 +5,7 @@ Version: 2023.03.08~b4c5247ee8bb5512fb80081503aae183b35ed3c6-r1
 Depends: +libc @(TARGET_ath79||TARGET_imx||TARGET_kirkwood||TARGET_mvebu||TARGET_qoriq) +libmnl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @mv88e6xxx_dump-any
 Section: utils
 Category: Utilities
 Repository: base

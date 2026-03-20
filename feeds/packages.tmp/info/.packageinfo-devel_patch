@@ -5,7 +5,7 @@ Version: 2.8-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @patch-any
 Section: devel
 Category: Development
 Repository: base

@@ -1,11 +1,12 @@
 Source-Makefile: feeds/packages/libs/libcap-ng/Makefile
+Build-Types: host
 
 Package: libcap-ng
-Version: 0.8.4-r1
+Version: 0.8.4-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libcap-ng-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -21,11 +22,11 @@ Description: POSIX capabilities library library
 @@
 
 Package: libcap-ng-bin
-Version: 0.8.4-r1
+Version: 0.8.4-r2
 Depends: +libc libcap-ng
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libcap-ng-bin-any
 Section: libs
 Category: Libraries
 Repository: base

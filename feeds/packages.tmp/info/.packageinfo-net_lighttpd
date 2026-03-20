@@ -8,7 +8,7 @@ Version: 1.4.82-r1
 Depends: +libc +libpthread +LIGHTTPD_LOGROTATE:logrotate +LIGHTTPD_PCRE2:libpcre2 +LIGHTTPD_CRYPTOLIB_NETTLE:libnettle +LIGHTTPD_CRYPTOLIB_GNUTLS:libgnutls +LIGHTTPD_CRYPTOLIB_MBEDTLS:libmbedtls +LIGHTTPD_CRYPTOLIB_OPENSSL:libopenssl +LIGHTTPD_CRYPTOLIB_WOLFSSL:libwolfssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-any
 Section: net
 Category: Network
 Repository: base
@@ -93,7 +93,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd +LIGHTTPD_CRYPTOLIB_NETTLE:libnettle +LIGHTTPD_CRYPTOLIB_GNUTLS:libgnutls +LIGHTTPD_CRYPTOLIB_MBEDTLS:libmbedtls +LIGHTTPD_CRYPTOLIB_OPENSSL:libopenssl +LIGHTTPD_CRYPTOLIB_WOLFSSL:libwolfssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-auth-any
 Section: net
 Category: Network
 Repository: base
@@ -114,7 +114,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd lighttpd-mod-auth libdbi +LIGHTTPD_CRYPTOLIB_NETTLE:libnettle +LIGHTTPD_CRYPTOLIB_GNUTLS:libgnutls +LIGHTTPD_CRYPTOLIB_MBEDTLS:libmbedtls +LIGHTTPD_CRYPTOLIB_OPENSSL:libopenssl +LIGHTTPD_CRYPTOLIB_WOLFSSL:libwolfssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-authn_dbi-any
 Section: net
 Category: Network
 Repository: base
@@ -135,7 +135,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd lighttpd-mod-auth +LIGHTTPD_CRYPTOLIB_NETTLE:libnettle +LIGHTTPD_CRYPTOLIB_GNUTLS:libgnutls +LIGHTTPD_CRYPTOLIB_MBEDTLS:libmbedtls +LIGHTTPD_CRYPTOLIB_OPENSSL:libopenssl +LIGHTTPD_CRYPTOLIB_WOLFSSL:libwolfssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-authn_file-any
 Section: net
 Category: Network
 Repository: base
@@ -156,7 +156,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd lighttpd-mod-auth krb5-libs +LIGHTTPD_CRYPTOLIB_NETTLE:libnettle +LIGHTTPD_CRYPTOLIB_GNUTLS:libgnutls +LIGHTTPD_CRYPTOLIB_MBEDTLS:libmbedtls +LIGHTTPD_CRYPTOLIB_OPENSSL:libopenssl +LIGHTTPD_CRYPTOLIB_WOLFSSL:libwolfssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-authn_gssapi-any
 Section: net
 Category: Network
 Repository: base
@@ -177,7 +177,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd lighttpd-mod-auth libopenldap
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-authn_ldap-any
 Section: net
 Category: Network
 Repository: base
@@ -198,7 +198,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd lighttpd-mod-auth libpam
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-authn_pam-any
 Section: net
 Category: Network
 Repository: base
@@ -219,7 +219,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd lighttpd-mod-auth libsasl2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-authn_sasl-any
 Section: net
 Category: Network
 Repository: base
@@ -240,7 +240,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-accesslog-any
 Section: net
 Category: Network
 Repository: base
@@ -261,7 +261,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-ajp13-any
 Section: net
 Category: Network
 Repository: base
@@ -282,7 +282,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-cgi-any
 Section: net
 Category: Network
 Repository: base
@@ -303,7 +303,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd +PACKAGE_lighttpd-mod-deflate:zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-deflate-any
 Section: net
 Category: Network
 Repository: base
@@ -324,7 +324,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-extforward-any
 Section: net
 Category: Network
 Repository: base
@@ -345,7 +345,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd @LIGHTTPD_SSL +PACKAGE_lighttpd-mod-gnutls:libgnutls
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-gnutls-any
 Section: net
 Category: Network
 Repository: base
@@ -366,7 +366,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd +PACKAGE_lighttpd-mod-magnet:liblua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-magnet-any
 Section: net
 Category: Network
 Repository: base
@@ -387,7 +387,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd +PACKAGE_lighttpd-mod-maxminddb:libmaxminddb
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-maxminddb-any
 Section: net
 Category: Network
 Repository: base
@@ -408,7 +408,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd @LIGHTTPD_SSL +PACKAGE_lighttpd-mod-mbedtls:libmbedtls
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-mbedtls-any
 Section: net
 Category: Network
 Repository: base
@@ -429,7 +429,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd @LIGHTTPD_SSL +PACKAGE_lighttpd-mod-nss:libnss
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-nss-any
 Section: net
 Category: Network
 Repository: base
@@ -450,7 +450,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd @LIGHTTPD_SSL +PACKAGE_lighttpd-mod-openssl:libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-openssl-any
 Section: net
 Category: Network
 Repository: base
@@ -471,7 +471,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-proxy-any
 Section: net
 Category: Network
 Repository: base
@@ -492,7 +492,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd rrdtool1
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-rrdtool-any
 Section: net
 Category: Network
 Repository: base
@@ -513,7 +513,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-sockproxy-any
 Section: net
 Category: Network
 Repository: base
@@ -534,7 +534,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-ssi-any
 Section: net
 Category: Network
 Repository: base
@@ -555,7 +555,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-status-any
 Section: net
 Category: Network
 Repository: base
@@ -576,7 +576,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-userdir-any
 Section: net
 Category: Network
 Repository: base
@@ -597,7 +597,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-vhostdb-any
 Section: net
 Category: Network
 Repository: base
@@ -618,7 +618,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd lighttpd-mod-vhostdb +PACKAGE_lighttpd-mod-vhostdb_dbi:libdbi
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-vhostdb_dbi-any
 Section: net
 Category: Network
 Repository: base
@@ -639,7 +639,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd lighttpd-mod-vhostdb +PACKAGE_lighttpd-mod-vhostdb_ldap:libopenldap
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-vhostdb_ldap-any
 Section: net
 Category: Network
 Repository: base
@@ -660,7 +660,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd lighttpd-mod-vhostdb +PACKAGE_lighttpd-mod-vhostdb_mysql:libmariadb
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-vhostdb_mysql-any
 Section: net
 Category: Network
 Repository: base
@@ -681,7 +681,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd lighttpd-mod-vhostdb +PACKAGE_lighttpd-mod-vhostdb_pgsql:libpq
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-vhostdb_pgsql-any
 Section: net
 Category: Network
 Repository: base
@@ -702,7 +702,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd +PACKAGE_lighttpd-mod-webdav:libsqlite3 +PACKAGE_lighttpd-mod-webdav:libxml2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-webdav-any
 Section: net
 Category: Network
 Repository: base
@@ -723,7 +723,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-webdav_min-any
 Section: net
 Category: Network
 Repository: base
@@ -744,7 +744,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd @LIGHTTPD_SSL +PACKAGE_lighttpd-mod-wolfssl:libwolfssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-wolfssl-any
 Section: net
 Category: Network
 Repository: base
@@ -765,7 +765,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd +LIGHTTPD_CRYPTOLIB_NETTLE:libnettle +LIGHTTPD_CRYPTOLIB_GNUTLS:libgnutls +LIGHTTPD_CRYPTOLIB_MBEDTLS:libmbedtls +LIGHTTPD_CRYPTOLIB_OPENSSL:libopenssl +LIGHTTPD_CRYPTOLIB_WOLFSSL:libwolfssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-wstunnel-any
 Section: net
 Category: Network
 Repository: base
@@ -786,7 +786,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-access-any
 Section: net
 Category: Network
 Repository: base
@@ -807,7 +807,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-alias-any
 Section: net
 Category: Network
 Repository: base
@@ -828,7 +828,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-evhost-any
 Section: net
 Category: Network
 Repository: base
@@ -849,7 +849,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-expire-any
 Section: net
 Category: Network
 Repository: base
@@ -870,7 +870,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-fastcgi-any
 Section: net
 Category: Network
 Repository: base
@@ -891,7 +891,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd +LIGHTTPD_PCRE2:libpcre2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-redirect-any
 Section: net
 Category: Network
 Repository: base
@@ -912,7 +912,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd +LIGHTTPD_PCRE2:libpcre2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-rewrite-any
 Section: net
 Category: Network
 Repository: base
@@ -933,7 +933,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-scgi-any
 Section: net
 Category: Network
 Repository: base
@@ -954,7 +954,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-setenv-any
 Section: net
 Category: Network
 Repository: base
@@ -975,7 +975,7 @@ Version: 1.4.82-r1
 Depends: +libc lighttpd
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @lighttpd-mod-simple_vhost-any
 Section: net
 Category: Network
 Repository: base

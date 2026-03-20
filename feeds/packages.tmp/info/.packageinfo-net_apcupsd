@@ -6,7 +6,7 @@ Version: 3.14.14-r5
 Depends: +libc +libpthread +libusb-compat +libstdcpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @apcupsd-any
 Section: net
 Category: Network
 Repository: base
@@ -26,7 +26,7 @@ Version: 3.14.14-r5
 Depends: +libc +libpthread +libgd +libstdcpp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @apcupsd-cgi-any
 Section: net
 Category: Network
 Repository: base

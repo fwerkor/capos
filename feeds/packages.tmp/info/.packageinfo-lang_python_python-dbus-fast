@@ -7,7 +7,7 @@ Version: 2.21.1-r1
 Depends: +libc +python3-light +python3-async-timeout +python3-asyncio +python3-logging +python3-urllib +python3-xml
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-dbus-fast-any
 Section: lang
 Category: Languages
 Repository: base
@@ -29,7 +29,7 @@ Version: 2.21.1-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-dbus-fast-src-any
 Section: lang
 Category: Languages
 Repository: base

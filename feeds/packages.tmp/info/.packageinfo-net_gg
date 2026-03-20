@@ -6,7 +6,7 @@ Version: 0.2.19-r1
 Depends: +libc @(aarch64||arm||x86_64) +ca-bundle
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @gg-any
 Section: net
 Category: Network
 Repository: base

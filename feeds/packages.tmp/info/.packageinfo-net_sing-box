@@ -2,11 +2,11 @@ Source-Makefile: feeds/packages/net/sing-box/Makefile
 Build-Depends: golang/host
 
 Package: sing-box
-Version: 1.12.12-r1
+Version: 1.12.17-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) +ca-bundle +kmod-inet-diag +kmod-tun
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @sing-box-any
 Build-Variant: full
 Default-Variant: full
 Section: net
@@ -15,7 +15,7 @@ Repository: base
 Title: The universal proxy platform (full)
 Maintainer: Van Waholtz <brvphoenix@gmail.com>
 Require-User: sing-box=5566:sing-box=5566
-Source: sing-box-1.12.12.tar.gz
+Source: sing-box-1.12.17.tar.gz
 License: GPL-3.0-or-later
 LicenseFiles: LICENSE
 URL: https://sing-box.sagernet.org
@@ -69,11 +69,11 @@ Config:
 @@
 
 Package: sing-box-tiny
-Version: 1.12.12-r1
+Version: 1.12.17-r1
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) +ca-bundle +kmod-inet-diag +kmod-tun
 Conflicts: sing-box
 Menu-Depends: 
-Provides: sing-box
+Provides: @sing-box-tiny-any sing-box
 Build-Variant: tiny
 Section: net
 Category: Network
@@ -81,7 +81,7 @@ Repository: base
 Title: The universal proxy platform (tiny)
 Maintainer: Van Waholtz <brvphoenix@gmail.com>
 Require-User: sing-box=5566:sing-box=5566
-Source: sing-box-1.12.12.tar.gz
+Source: sing-box-1.12.17.tar.gz
 License: GPL-3.0-or-later
 LicenseFiles: LICENSE
 URL: https://sing-box.sagernet.org

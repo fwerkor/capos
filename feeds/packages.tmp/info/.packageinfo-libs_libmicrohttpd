@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/libs/libmicrohttpd/Makefile
 
 Package: libmicrohttpd-no-ssl
-Version: 1.0.1-r1
+Version: 1.0.2-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: libmicrohttpd
+Provides: @libmicrohttpd-no-ssl-any libmicrohttpd
 Build-Variant: nossl
 Default-Variant: nossl
 Section: libs
@@ -13,7 +13,7 @@ Category: Libraries
 Repository: base
 Title: GNU libmicrohttpd is an embbeded HTTP server library
 Maintainer: Alexander Couzens <lynxis@fe80.eu>
-Source: libmicrohttpd-1.0.1.tar.gz
+Source: libmicrohttpd-1.0.2.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:gnu:libmicrohttpd
@@ -23,18 +23,18 @@ Description: GNU libmicrohttpd is an embbeded HTTP server library
 @@
 
 Package: libmicrohttpd-ssl
-Version: 1.0.1-r1
+Version: 1.0.2-r1
 Depends: +libc +libgnutls
 Conflicts: 
 Menu-Depends: 
-Provides: libmicrohttpd
+Provides: @libmicrohttpd-ssl-any libmicrohttpd
 Build-Variant: ssl
 Section: libs
 Category: Libraries
 Repository: base
 Title: GNU libmicrohttpd is an embbeded HTTP and HTTPS server library
 Maintainer: Alexander Couzens <lynxis@fe80.eu>
-Source: libmicrohttpd-1.0.1.tar.gz
+Source: libmicrohttpd-1.0.2.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:gnu:libmicrohttpd

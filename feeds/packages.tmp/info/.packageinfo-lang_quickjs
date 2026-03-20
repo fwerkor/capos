@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/lang/quickjs/Makefile
+
+Package: quickjs
+Version: 2025.09.13-r1
+Depends: +libc +libatomic
+Conflicts: 
+Menu-Depends: 
+Provides: @quickjs-any
+Section: lang
+Category: Languages
+Repository: base
+Title: QuickJS JavaScript engine
+Maintainer: George Sapkin <george@sapk.in>
+Source: quickjs-2025-09-13-2.tar.xz
+License: MIT
+LicenseFiles: LICENSE
+CPE-ID: cpe:/a:quickjs_project:quickjs
+URL: https://bellard.org/quickjs
+Type: ipkg
+Description:   QuickJS is a small and embeddable JavaScript engine. It supports the
+  ES2023 specification including modules, asynchronous generators, proxies
+  and BigInt.
+@@
+
+

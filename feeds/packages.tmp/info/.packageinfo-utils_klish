@@ -6,7 +6,7 @@ Version: 2.2.3-r2
 Depends: +libc +libxml2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @klish-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -35,7 +35,7 @@ Version: 2.2.3-r2
 Depends: +libc klish
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @klish-xml-files-any
 Section: utils
 Category: Utilities
 Repository: base

@@ -1,17 +1,17 @@
 Source-Makefile: feeds/packages/net/openelp/Makefile
 
 Package: libopenelp
-Version: 0.9.2-r1
+Version: 0.9.3-r1
 Depends: +libc +libpcre2
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libopenelp-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Open Source EchoLink Proxy Library
 Maintainer: Scott K Logan <logans@cottsay.net>
-Source: openelp-0.9.2.tar.gz
+Source: openelp-0.9.3.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 URL: https://github.com/cottsay/openelp
@@ -21,17 +21,17 @@ Description:   Library backing OpenELP - an open source EchoLink proxy.
 @@
 
 Package: openelp
-Version: 0.9.2-r1
+Version: 0.9.3-r1
 Depends: +libc +libopenelp
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @openelp-any
 Section: net
 Category: Network
 Repository: base
 Title: Open Source EchoLink Proxy
 Maintainer: Scott K Logan <logans@cottsay.net>
-Source: openelp-0.9.2.tar.gz
+Source: openelp-0.9.3.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 URL: https://github.com/cottsay/openelp

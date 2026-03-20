@@ -5,7 +5,7 @@ Version: 1.1.2-r5
 Depends: +libc +bluez-libs +kmod-bluetooth
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bluelog-any
 Section: utils
 Category: Utilities
 Repository: base
@@ -27,7 +27,7 @@ Version: 1.1.2-r5
 Depends: +libc +bluez-libs +kmod-bluetooth bluelog
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @bluelog-live-any
 Section: utils
 Category: Utilities
 Repository: base

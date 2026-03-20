@@ -1,4 +1,5 @@
 Source-Makefile: feeds/packages/lang/python/python-toml/Makefile
+Build-Depends: python-setuptools/host
 
 Package: python3-toml
 Submenu: Python
@@ -6,7 +7,7 @@ Version: 0.10.2-r1
 Depends: +libc +python3-light +python3-decimal
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-toml-any
 Section: lang
 Category: Languages
 Repository: base
@@ -26,7 +27,7 @@ Version: 0.10.2-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-toml-src-any
 Section: lang
 Category: Languages
 Repository: base

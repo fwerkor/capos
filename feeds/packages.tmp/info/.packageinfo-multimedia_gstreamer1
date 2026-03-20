@@ -2,17 +2,17 @@ Source-Makefile: feeds/packages/multimedia/gstreamer1/Makefile
 Build-Depends: glib2/host gettext-full/host
 
 Package: libgst1check
-Version: 1.24.8-r1
+Version: 1.26.4-r1
 Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +libgstreamer1
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libgst1check-any
 Section: multimedia
 Category: Multimedia
 Repository: base
 Title: GStreamer check unit testing library (core)
 Maintainer: W. Michael Petullo <mike@flyn.org> Ted Hess <thess@kitschensync.net>
-Source: gstreamer-1.24.8.tar.xz
+Source: gstreamer-1.26.4.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:gstreamer_project:gstreamer
@@ -25,17 +25,17 @@ Description:     GStreamer open source multimedia framework
 @@
 
 Package: libgst1controller
-Version: 1.24.8-r1
+Version: 1.26.4-r1
 Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +libgstreamer1
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libgst1controller-any
 Section: multimedia
 Category: Multimedia
 Repository: base
 Title: GStreamer dynamic parameter control library (core)
 Maintainer: W. Michael Petullo <mike@flyn.org> Ted Hess <thess@kitschensync.net>
-Source: gstreamer-1.24.8.tar.xz
+Source: gstreamer-1.26.4.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:gstreamer_project:gstreamer
@@ -48,17 +48,17 @@ Description:     GStreamer open source multimedia framework
 @@
 
 Package: libgst1net
-Version: 1.24.8-r1
+Version: 1.26.4-r1
 Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +libgstreamer1
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libgst1net-any
 Section: multimedia
 Category: Multimedia
 Repository: base
 Title: GStreamer network classes library (core)
 Maintainer: W. Michael Petullo <mike@flyn.org> Ted Hess <thess@kitschensync.net>
-Source: gstreamer-1.24.8.tar.xz
+Source: gstreamer-1.26.4.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:gstreamer_project:gstreamer
@@ -71,17 +71,17 @@ Description:     GStreamer open source multimedia framework
 @@
 
 Package: libgstreamer1
-Version: 1.24.8-r1
-Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +glib2 +libpthread +libxml2
+Version: 1.26.4-r1
+Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +glib2 +libpthread +libxml2 +(powerpc||mips||mipsel):libatomic
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libgstreamer1-any
 Section: multimedia
 Category: Multimedia
 Repository: base
 Title: GStreamer library (core)
 Maintainer: W. Michael Petullo <mike@flyn.org> Ted Hess <thess@kitschensync.net>
-Source: gstreamer-1.24.8.tar.xz
+Source: gstreamer-1.26.4.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:gstreamer_project:gstreamer
@@ -94,17 +94,17 @@ Description:   GStreamer open source multimedia framework
 @@
 
 Package: gstreamer1-libs
-Version: 1.24.8-r1
+Version: 1.26.4-r1
 Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +ALL:gstreamer1
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @gstreamer1-libs-any
 Section: multimedia
 Category: Multimedia
 Repository: base
 Title: GStreamer core libraries
 Maintainer: W. Michael Petullo <mike@flyn.org> Ted Hess <thess@kitschensync.net>
-Source: gstreamer-1.24.8.tar.xz
+Source: gstreamer-1.26.4.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:gstreamer_project:gstreamer
@@ -144,17 +144,17 @@ Config:
 @@
 
 Package: gstreamer1-utils
-Version: 1.24.8-r1
+Version: 1.26.4-r1
 Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +libgstreamer1 +gstreamer1-libs
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @gstreamer1-utils-any
 Section: multimedia
 Category: Multimedia
 Repository: base
 Title: GStreamer utilities
 Maintainer: W. Michael Petullo <mike@flyn.org> Ted Hess <thess@kitschensync.net>
-Source: gstreamer-1.24.8.tar.xz
+Source: gstreamer-1.26.4.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:gstreamer_project:gstreamer
@@ -166,17 +166,17 @@ Description:   GStreamer open source multimedia framework
 @@
 
 Package: gstreamer1
-Version: 1.24.8-r1
+Version: 1.26.4-r1
 Depends: +libc +libgstreamer1 +libgst1check +libgst1controller +libgst1net
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @gstreamer1-any
 Section: multimedia
 Category: Multimedia
 Repository: base
 Title: GStreamer (All libraries)
 Maintainer: W. Michael Petullo <mike@flyn.org> Ted Hess <thess@kitschensync.net>
-Source: gstreamer-1.24.8.tar.xz
+Source: gstreamer-1.26.4.tar.xz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 CPE-ID: cpe:/a:gstreamer_project:gstreamer

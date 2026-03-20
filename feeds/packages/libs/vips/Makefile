@@ -6,12 +6,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=vips
-PKG_VERSION:=8.15.2
+PKG_VERSION:=8.17.1
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
 PKG_SOURCE_URL:=https://github.com/libvips/libvips/releases/download/v$(PKG_VERSION)
-PKG_HASH:=a2ab15946776ca7721d11cae3215f20f1f097b370ff580cd44fc0f19387aee84
+PKG_HASH:=4d8c3325922c5300253d7594507a8f1d3caf8eed70dfb66cc7eb2cbed65bb5ca
 
 PKG_MAINTAINER:=W. Michael Petullo <mike@flyn.org>
 PKG_LICENSE:=LGPL-2.1-or-later
@@ -34,7 +34,8 @@ define Package/vips
 endef
 
 MESON_ARGS += \
-	-Dgtk_doc=false \
+	-Ddocs=false \
+	-Dcpp-docs=false \
 	-Dintrospection=disabled \
 	-Danalyze=false \
 	-Dcfitsio=disabled \

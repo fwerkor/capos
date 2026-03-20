@@ -5,7 +5,7 @@ Version: 2.4.0-r1
 Depends: +libc +jq +bash +dnsmasq +ca-bundle +libustream-openssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @cache-domains-openssl-any
 Build-Variant: openssl
 Section: utils
 Category: Utilities
@@ -24,7 +24,7 @@ Version: 2.4.0-r1
 Depends: +libc +jq +bash +dnsmasq +ca-bundle +libustream-mbedtls
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @cache-domains-mbedtls-any
 Build-Variant: mbedtls
 Section: utils
 Category: Utilities
@@ -43,7 +43,7 @@ Version: 2.4.0-r1
 Depends: +libc +jq +bash +dnsmasq +ca-bundle +libustream-wolfssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @cache-domains-wolfssl-any
 Build-Variant: wolfssl
 Default-Variant: wolfssl
 Section: utils

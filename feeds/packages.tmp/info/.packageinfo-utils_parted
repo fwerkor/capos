@@ -1,11 +1,11 @@
 Source-Makefile: feeds/packages/utils/parted/Makefile
 
 Package: libparted
-Version: 3.6-r1
+Version: 3.6-r2
 Depends: +libc +libblkid +libuuid +PARTED_LVM2:libdevmapper
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libparted-any
 Section: libs
 Category: Libraries
 Repository: base
@@ -21,11 +21,11 @@ Description:   GNU Parted shared library
 
 Package: parted
 Submenu: Disc
-Version: 3.6-r1
+Version: 3.6-r2
 Depends: +libc +libparted +PARTED_READLINE:libreadline +PARTED_READLINE:libncurses
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @parted-any
 Section: utils
 Category: Utilities
 Repository: base

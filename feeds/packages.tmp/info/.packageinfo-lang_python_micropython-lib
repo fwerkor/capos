@@ -7,7 +7,7 @@ Version: 20241017~68e3e07bc7ab63931cead3854b2a114e9a084248-r1
 Depends: +libc +micropython
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @micropython-lib-any
 Section: lang
 Category: Languages
 Repository: base
@@ -30,7 +30,7 @@ Version: 20241017~68e3e07bc7ab63931cead3854b2a114e9a084248-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @micropython-lib-src-any
 Section: lang
 Category: Languages
 Repository: base
@@ -53,7 +53,7 @@ Version: 20241017~68e3e07bc7ab63931cead3854b2a114e9a084248-r1
 Depends: +libc +micropython +libpcre2 +librt +libsqlite3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @micropython-lib-unix-any
 Section: lang
 Category: Languages
 Repository: base
@@ -76,7 +76,7 @@ Version: 20241017~68e3e07bc7ab63931cead3854b2a114e9a084248-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @micropython-lib-unix-src-any
 Section: lang
 Category: Languages
 Repository: base

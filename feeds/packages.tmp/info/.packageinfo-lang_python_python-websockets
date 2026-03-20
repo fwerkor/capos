@@ -6,7 +6,7 @@ Version: 11.0.3-r1
 Depends: +libc +python3
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-websockets-any
 Section: lang
 Category: Languages
 Repository: base
@@ -31,7 +31,7 @@ Version: 11.0.3-r1
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-websockets-src-any
 Section: lang
 Category: Languages
 Repository: base

@@ -6,7 +6,7 @@ Version: 4.19.0-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libtasn1-any
 Section: libs
 Category: Libraries
 Repository: base

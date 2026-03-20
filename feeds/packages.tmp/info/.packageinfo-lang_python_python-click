@@ -8,7 +8,7 @@ Version: 8.1.7-r2
 Depends: +libc +python3-light +python3-urllib +python3-uuid
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-click-any
 Section: lang
 Category: Languages
 Repository: base
@@ -31,7 +31,7 @@ Version: 8.1.7-r2
 Depends: +libc 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @python3-click-src-any
 Section: lang
 Category: Languages
 Repository: base

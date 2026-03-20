@@ -1,12 +1,12 @@
 Source-Makefile: feeds/packages/utils/docker/Makefile
-Build-Depends: golang/host
+Build-Depends: golang/host dockerd
 
 Package: docker
-Version: 27.3.1-r1
+Version: 27.3.1-r2
 Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @docker-any
 Section: utils
 Category: Utilities
 Repository: base

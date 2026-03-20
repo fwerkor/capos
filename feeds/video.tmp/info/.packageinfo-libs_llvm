@@ -1,0 +1,97 @@
+Source-Makefile: feeds/video/libs/llvm/Makefile
+Build-Depends: llvm/host spirv-headers spirv-tools
+Build-Depends/host: spirv-headers/host spirv-tools/host
+Build-Types: host
+
+Package: llvm
+Version: 21.1.3
+Depends: +libc @(!arc&&!powerpc64&&!powerpc||BROKEN)
+Conflicts: 
+Menu-Depends: 
+Provides: @llvm-any
+Section: devel
+Category: Development
+Repository: base
+Title: LLVM
+Maintainer: 
+Source: llvm-project-21.1.3.src.tar.xz
+CPE-ID: cpe:/a:llvm:llvm
+URL: https://llvm.org/
+Type: ipkg
+Build-Only: 1
+Description: The LLVM Project is a collection of modular and reusable compiler and toolchain technologies.
+@@
+
+Package: libclang
+Version: 21.1.3
+Depends: +libc @(!arc&&!powerpc64&&!powerpc||BROKEN) +libatomic +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: @libclang-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: LLVM Clang library
+Maintainer: 
+Source: llvm-project-21.1.3.src.tar.xz
+CPE-ID: cpe:/a:llvm:llvm
+URL: https://llvm.org/
+Type: ipkg
+Description: LLVM Clang library
+@@
+
+Package: libclang-cpp
+Version: 21.1.3
+Depends: +libc @(!arc&&!powerpc64&&!powerpc||BROKEN) +libatomic +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: @libclang-cpp-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: LLVM Clang C++ library
+Maintainer: 
+Source: llvm-project-21.1.3.src.tar.xz
+CPE-ID: cpe:/a:llvm:llvm
+URL: https://llvm.org/
+Type: ipkg
+Description: LLVM Clang C++ library
+@@
+
+Package: liblto
+Version: 21.1.3
+Depends: +libc @(!arc&&!powerpc64&&!powerpc||BROKEN) +libatomic +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: @liblto-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: LLVM LTO library
+Maintainer: 
+Source: llvm-project-21.1.3.src.tar.xz
+CPE-ID: cpe:/a:llvm:llvm
+URL: https://llvm.org/
+Type: ipkg
+Description: LLVM LTO library
+@@
+
+Package: libremarks
+Version: 21.1.3
+Depends: +libc @(!arc&&!powerpc64&&!powerpc||BROKEN) +libatomic +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: @libremarks-any
+Section: libs
+Category: Libraries
+Repository: base
+Title: LLVM diagnostic remarks library
+Maintainer: 
+Source: llvm-project-21.1.3.src.tar.xz
+CPE-ID: cpe:/a:llvm:llvm
+URL: https://llvm.org/
+Type: ipkg
+Description: LLVM diagnostic remarks library
+@@
+
+

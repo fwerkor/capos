@@ -6,7 +6,7 @@ Version: 0.9.36-r1
 Depends: +libc +HASERL_with_lua:liblua
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @haserl-any
 Section: utils
 Category: Utilities
 Repository: base

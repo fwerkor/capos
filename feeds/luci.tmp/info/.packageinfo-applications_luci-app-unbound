@@ -4,10 +4,10 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 Package: luci-app-unbound
 Submenu: 3. Applications
 Version: x
-Depends: +libc +luci-base +luci-compat +unbound-daemon +luci-lua-runtime
+Depends: +libc +luci-base +unbound-daemon
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-app-unbound-any
 Section: luci
 Category: LuCI
 Repository: base
@@ -26,12 +26,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-ar-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - ar translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -45,12 +45,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-bg-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - bg translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -64,12 +64,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-bn-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - bn translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -83,12 +83,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-ca-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - ca translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -102,12 +102,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-cs-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - cs translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -121,12 +121,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-da-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - da translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -140,12 +140,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-de-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - de translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -159,12 +159,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-el-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - el translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -178,12 +178,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-es-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - es translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -197,12 +197,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-fi-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - fi translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -216,12 +216,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-fr-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - fr translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -235,12 +235,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-ga-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - ga translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -254,12 +254,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-he-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - he translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -273,12 +273,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-hi-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - hi translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -292,12 +292,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-hu-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - hu translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -311,12 +311,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-it-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - it translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -330,12 +330,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-ja-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - ja translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -349,12 +349,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-ko-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - ko translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -368,12 +368,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-lt-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - lt translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -387,12 +387,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-mr-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - mr translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -406,12 +406,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-ms-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - ms translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -425,12 +425,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-no-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - no translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -444,12 +444,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-nl-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - nl translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -463,12 +463,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-pl-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - pl translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -482,12 +482,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-pt-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - pt translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -501,12 +501,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-pt-br-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - pt-br translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -520,12 +520,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-ro-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - ro translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -539,12 +539,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-ru-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - ru translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -558,12 +558,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-sk-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - sk translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -577,17 +577,36 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-sv-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - sv translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-unbound - Svenska (Swedish)
+@@
+
+Package: luci-i18n-unbound-ta
+Default: LUCI_LANG_ta||(ALL&&m)
+Version: x
+Depends: +libc luci-app-unbound
+Conflicts: 
+Menu-Depends: 
+Provides: @luci-i18n-unbound-ta-any
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-unbound - ta translation
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
+Source: 
+License: Apache-2.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-unbound - Tamil (Tamil)
 @@
 
 Package: luci-i18n-unbound-tr
@@ -596,12 +615,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-tr-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - tr translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -615,12 +634,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-uk-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - uk translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -634,12 +653,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-vi-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - vi translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -653,12 +672,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-zh-cn-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - zh-cn translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg
@@ -672,12 +691,12 @@ Version: x
 Depends: +libc luci-app-unbound
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @luci-i18n-unbound-zh-tw-any
 Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-unbound - zh-tw translation
-Maintainer: Eric Luehrsen <ericluehrsen@hotmail.com>
+Maintainer: Eric Luehrsen <ericluehrsen@gmail.com>
 Source: 
 License: Apache-2.0
 Type: ipkg

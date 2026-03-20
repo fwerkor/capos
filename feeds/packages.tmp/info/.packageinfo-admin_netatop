@@ -6,7 +6,7 @@ Version: <LINUX_VERSION>.3.1-r1
 Depends: 
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @kmod-netatop-any
 Section: kernel
 Category: Kernel modules
 Title: netatop netfilter module
@@ -30,7 +30,7 @@ Version: 3.1-r1
 Depends: +libc +zlib +kmod-netatop
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @netatop-any
 Section: admin
 Category: Administration
 Repository: base

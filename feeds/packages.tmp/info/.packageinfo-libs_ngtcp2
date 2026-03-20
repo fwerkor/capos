@@ -1,23 +1,22 @@
 Source-Makefile: feeds/packages/libs/ngtcp2/Makefile
 
 Package: libngtcp2
-Version: 1.7.0-r1
-Depends: +libc +libnghttp3
+Version: 1.15.0-r1
+Depends: +libc +libopenssl
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libngtcp2-any
 Section: libs
 Category: Libraries
 Repository: base
 Title: Implementation of QUIC protocol
-Maintainer: Aleksey Vasilenko <aleksey.vasilenko@gmail.com>
-Source: ngtcp2-1.7.0.tar.xz
+Maintainer: 
+Source: ngtcp2-1.15.0.tar.xz
 License: MIT
 LicenseFiles: COPYING
 URL: https://nghttp2.org/ngtcp2
 Type: ipkg
-Description: ngtcp2 project is an effort to implement QUIC protocol which is now being
-discussed in IETF QUICWG for its standardization.
+Description: ngtcp2 project is an effort to implement IETF QUIC protocol
 @@
 
 

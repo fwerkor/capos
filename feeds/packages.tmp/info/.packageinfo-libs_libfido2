@@ -5,7 +5,7 @@ Version: 1.14.0-r1
 Depends: +libc +libcbor +libopenssl +libudev +zlib
 Conflicts: 
 Menu-Depends: 
-Provides: 
+Provides: @libfido2-any
 Section: libs
 Category: Libraries
 Repository: base
