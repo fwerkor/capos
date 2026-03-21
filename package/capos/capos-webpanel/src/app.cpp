@@ -320,7 +320,8 @@ std::string buildForwardRequest(const std::string& host, int port, const std::st
         auto value = entry.substr(eq + 1);
         std::replace(name.begin(), name.end(), '_', '-');
         std::transform(name.begin(), name.end(), name.begin(), [](unsigned char ch) { return static_cast<char>(std::tolower(ch)); });
-        if (name == "host" || name == "connection" || name == "accept-encoding" || name == "content-length") {
+        // Keep the panel session bound to the panel itself instead of exposing it to proxied apps.
+        if (name == "host" || name == "connection" || name == "accept-encoding" || name == "content-length" || name == "cookie") {
             continue;
         }
         std::transform(name.begin(), name.end(), name.begin(), [](unsigned char ch) { return static_cast<char>(ch == '-' ? '-' : std::toupper(ch)); });
