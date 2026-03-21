@@ -1,8 +1,8 @@
-# CapOS
-
-### A lightweight Linux server platform with a polished web desktop experience
-
 <div align="center">
+
+<h1>CapOS</h1>
+
+<h3>A lightweight Linux server platform with a polished web desktop experience</h3>
 
 <p>
   <a href="https://github.com/fwerkor/capos/actions/workflows/os-sanity.yml"><img src="https://img.shields.io/github/actions/workflow/status/fwerkor/capos/os-sanity.yml?branch=main&style=for-the-badge" alt="OS Sanity"></a>
@@ -20,8 +20,9 @@
 </p>
 
 <p>
+  <a href="https://capos.top"><strong>Website</strong></a> ·
   <a href="https://github.com/fwerkor/capos/releases"><strong>Download Releases</strong></a> ·
-  <a href="https://repo.capos.org"><strong>Package Repository</strong></a> ·
+  <a href="https://repo.capos.top"><strong>Package Repository</strong></a> ·
   <a href="https://github.com/fwerkor/capos/wiki/Quick-start-guide"><strong>Quick Start</strong></a> ·
   <a href="https://github.com/fwerkor/capos/wiki"><strong>Documentation</strong></a>
 </p>
@@ -87,7 +88,7 @@ More usage details are available in the [User Guide](https://github.com/fwerkor/
 | Resource | Link |
 | --- | --- |
 | Releases | [GitHub Releases](https://github.com/fwerkor/capos/releases) |
-| Package repository | [repo.capos.org](https://repo.capos.org) |
+| Package repository | [repo.capos.top](https://repo.capos.top) |
 | Quick start | [Wiki Quick Start Guide](https://github.com/fwerkor/capos/wiki/Quick-start-guide) |
 
 ## Development

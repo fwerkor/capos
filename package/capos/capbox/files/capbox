@@ -936,6 +936,99 @@ port_in_use_in_state() {
     return 1
 }
 
+portmap_rule_pid() {
+    local user="$1"
+    local app="$2"
+    local proto="$3"
+    local listen="$4"
+    local target="$5"
+    local pidfile pid
+
+    pidfile="$(portmap_pid_file "$user" "$app" "$proto" "$listen" "$target")"
+    [[ -f "$pidfile" ]] || return 1
+    pid="$(cat "$pidfile" 2>/dev/null || true)"
+    [[ -n "$pid" && "$pid" =~ ^[0-9]+$ ]] || return 1
+    kill -0 "$pid" 2>/dev/null || return 1
+    printf '%s\n' "$pid"
+}
+
+socket_inodes_for_port() {
+    local listen="$1"
+    local proto="$2"
+    local port_hex proc_file check_state
+
+    printf -v port_hex '%04X' "$listen"
+    case "$proto" in
+        tcp)
+            check_state="1"
+            for proc_file in /proc/net/tcp /proc/net/tcp6; do
+                [[ -r "$proc_file" ]] || continue
+                awk -v port="$port_hex" -v require_state="$check_state" '
+                    NR == 1 { next }
+                    {
+                        split($2, local, ":")
+                        if (toupper(local[2]) != port) {
+                            next
+                        }
+                        if (require_state == "1" && toupper($4) != "0A") {
+                            next
+                        }
+                        print $10
+                    }
+                ' "$proc_file"
+            done
+            ;;
+        udp)
+            for proc_file in /proc/net/udp /proc/net/udp6; do
+                [[ -r "$proc_file" ]] || continue
+                awk -v port="$port_hex" '
+                    NR == 1 { next }
+                    {
+                        split($2, local, ":")
+                        if (toupper(local[2]) == port) {
+                            print $10
+                        }
+                    }
+                ' "$proc_file"
+            done
+            ;;
+        *)
+            die "unsupported protocol: $proto"
+            ;;
+    esac
+}
+
+pid_owns_socket_inode() {
+    local pid="$1"
+    local inode="$2"
+    local fd target
+
+    [[ -n "$pid" && -d "/proc/$pid/fd" ]] || return 1
+    for fd in /proc/"$pid"/fd/*; do
+        [[ -e "$fd" ]] || continue
+        target="$(readlink "$fd" 2>/dev/null || true)"
+        [[ "$target" == "socket:[$inode]" ]] && return 0
+    done
+    return 1
+}
+
+host_port_in_use() {
+    local listen="$1"
+    local proto="$2"
+    local allowed_pid="${3:-}"
+    local inode
+
+    while IFS= read -r inode; do
+        [[ -n "$inode" ]] || continue
+        if [[ -n "$allowed_pid" ]] && pid_owns_socket_inode "$allowed_pid" "$inode"; then
+            continue
+        fi
+        return 0
+    done < <(socket_inodes_for_port "$listen" "$proto")
+
+    return 1
+}
+
 stop_portmap_rule() {
     local user="$1"
     local app="$2"
@@ -994,7 +1087,8 @@ start_portmap_rule() {
     sleep 0.05
     if ! kill -0 "$spid" 2>/dev/null; then
         wait "$spid" 2>/dev/null || true
-        die "failed to start port mapping for $app on port $listen/$proto"
+        echo "failed to start port mapping for $app on port $listen/$proto" >&2
+        return 1
     fi
 
     printf '%s\n' "$spid" > "$pidfile"
@@ -1025,7 +1119,7 @@ reconcile_portmaps() {
 
     while IFS=$'\t' read -r proto listen target; do
         [[ -n "$proto" ]] || continue
-        start_portmap_rule "$user" "$app" "$proto" "$listen" "$target"
+        start_portmap_rule "$user" "$app" "$proto" "$listen" "$target" || return 1
     done < <(jq -r '.[] | [.proto, (.listen|tostring), (.target_port|tostring)] | @tsv' "$state_file")
 }
 
@@ -1035,7 +1129,7 @@ set_portmap() {
     local listen="$3"
     local target="$4"
     local proto="$5"
-    local state_file tmp
+    local state_file tmp backup existing_pid reconcile_status
 
     app_is_installed "$user" "$app" || die "app is not installed: $app"
     [[ "$listen" =~ ^[0-9]+$ && "$target" =~ ^[0-9]+$ ]] || die "port values must be numeric"
@@ -1048,9 +1142,13 @@ set_portmap() {
     fi
 
     port_in_use_in_state "$listen" "$proto" "$user" "$app" && die "port already allocated in capbox state: $listen/$proto"
+    existing_pid="$(portmap_rule_pid "$user" "$app" "$proto" "$listen" "$target" || true)"
+    host_port_in_use "$listen" "$proto" "$existing_pid" && die "host port already in use: $listen/$proto"
 
     state_file="$(app_portmaps_path "$user" "$app")"
     tmp="$(mktemp)"
+    backup="$(mktemp)"
+    cp "$state_file" "$backup"
     jq \
         --arg proto "$proto" \
         --argjson listen "$listen" \
@@ -1062,7 +1160,17 @@ set_portmap() {
         end
     ' "$state_file" > "$tmp"
     mv "$tmp" "$state_file"
+    set +e
     reconcile_portmaps "$user" "$app"
+    reconcile_status=$?
+    set -e
+    if (( reconcile_status != 0 )); then
+        cp "$backup" "$state_file"
+        reconcile_portmaps "$user" "$app" || true
+        rm -f "$backup"
+        die "failed to apply port mapping for $app on port $listen/$proto"
+    fi
+    rm -f "$backup"
 }
 
 remove_portmap() {
