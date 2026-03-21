@@ -61,6 +61,38 @@ std::string requestScheme() {
     return "http";
 }
 
+std::string filterForwardCookies(const std::string& cookieHeader) {
+    std::stringstream stream(cookieHeader);
+    std::string item;
+    std::vector<std::string> kept;
+
+    while (std::getline(stream, item, ';')) {
+        const auto trimmed = trim(item);
+        if (trimmed.empty()) {
+            continue;
+        }
+        const auto pos = trimmed.find('=');
+        if (pos == std::string::npos) {
+            kept.push_back(trimmed);
+            continue;
+        }
+        const auto key = trim(trimmed.substr(0, pos));
+        if (key == kSessionCookieName) {
+            continue;
+        }
+        kept.push_back(trimmed);
+    }
+
+    std::ostringstream filtered;
+    for (size_t i = 0; i < kept.size(); ++i) {
+        if (i != 0) {
+            filtered << "; ";
+        }
+        filtered << kept[i];
+    }
+    return filtered.str();
+}
+
 std::string urlEncode(const std::string& input) {
     std::ostringstream out;
     for (unsigned char ch : input) {
@@ -343,8 +375,14 @@ std::string buildForwardRequest(const std::string& host, int port, const std::st
         auto value = entry.substr(eq + 1);
         std::replace(name.begin(), name.end(), '_', '-');
         std::transform(name.begin(), name.end(), name.begin(), [](unsigned char ch) { return static_cast<char>(std::tolower(ch)); });
-        // Keep the panel session bound to the panel itself instead of exposing it to proxied apps.
-        if (name == "host" || name == "connection" || name == "accept-encoding" || name == "content-length" || name == "cookie") {
+        if (name == "cookie") {
+            value = filterForwardCookies(value);
+            if (value.empty()) {
+                continue;
+            }
+        }
+        // Keep hop-by-hop headers and the panel-managed host header under proxy control.
+        if (name == "host" || name == "connection" || name == "accept-encoding" || name == "content-length") {
             continue;
         }
         std::transform(name.begin(), name.end(), name.begin(), [](unsigned char ch) { return static_cast<char>(ch == '-' ? '-' : std::toupper(ch)); });
