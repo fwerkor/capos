@@ -38,6 +38,29 @@ std::string proxyPrefix() {
     return "/cgi-bin/cap/app";
 }
 
+std::string requestScheme() {
+    auto scheme = getenvOrEmpty("REQUEST_SCHEME");
+    std::transform(scheme.begin(), scheme.end(), scheme.begin(), [](unsigned char ch) { return static_cast<char>(std::tolower(ch)); });
+    if (scheme == "http" || scheme == "https") {
+        return scheme;
+    }
+
+    auto https = getenvOrEmpty("HTTPS");
+    std::transform(https.begin(), https.end(), https.begin(), [](unsigned char ch) { return static_cast<char>(std::tolower(ch)); });
+    if (https == "on" || https == "1" || https == "yes" || https == "true") {
+        return "https";
+    }
+    if (https == "off" || https == "0" || https == "no" || https == "false") {
+        return "http";
+    }
+
+    if (getenvOrEmpty("SERVER_PORT") == "443") {
+        return "https";
+    }
+
+    return "http";
+}
+
 std::string urlEncode(const std::string& input) {
     std::ostringstream out;
     for (unsigned char ch : input) {
@@ -304,7 +327,7 @@ std::string buildForwardRequest(const std::string& host, int port, const std::st
     request << "Connection: close\r\n";
     request << "Accept-Encoding: identity\r\n";
     request << "X-Forwarded-Host: " << hostWithoutPort() << "\r\n";
-    request << "X-Forwarded-Proto: http\r\n";
+    request << "X-Forwarded-Proto: " << requestScheme() << "\r\n";
     request << "X-Forwarded-Prefix: " << proxyPrefix() << "\r\n";
 
     for (char** env = environ; env != nullptr && *env != nullptr; ++env) {
