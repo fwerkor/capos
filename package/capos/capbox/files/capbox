@@ -1119,7 +1119,7 @@ reconcile_portmaps() {
 
     while IFS=$'\t' read -r proto listen target; do
         [[ -n "$proto" ]] || continue
-        start_portmap_rule "$user" "$app" "$proto" "$listen" "$target"
+        start_portmap_rule "$user" "$app" "$proto" "$listen" "$target" || return 1
     done < <(jq -r '.[] | [.proto, (.listen|tostring), (.target_port|tostring)] | @tsv' "$state_file")
 }
 
@@ -1129,7 +1129,7 @@ set_portmap() {
     local listen="$3"
     local target="$4"
     local proto="$5"
-    local state_file tmp backup existing_pid
+    local state_file tmp backup existing_pid reconcile_status
 
     app_is_installed "$user" "$app" || die "app is not installed: $app"
     [[ "$listen" =~ ^[0-9]+$ && "$target" =~ ^[0-9]+$ ]] || die "port values must be numeric"
@@ -1160,7 +1160,11 @@ set_portmap() {
         end
     ' "$state_file" > "$tmp"
     mv "$tmp" "$state_file"
-    if ! reconcile_portmaps "$user" "$app"; then
+    set +e
+    reconcile_portmaps "$user" "$app"
+    reconcile_status=$?
+    set -e
+    if (( reconcile_status != 0 )); then
         cp "$backup" "$state_file"
         reconcile_portmaps "$user" "$app" || true
         rm -f "$backup"
