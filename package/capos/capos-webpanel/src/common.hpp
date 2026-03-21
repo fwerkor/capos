@@ -131,8 +131,8 @@ inline std::map<std::string, std::string> parseKv(const std::string& input) {
     return values;
 }
 
-inline std::map<std::string, std::string> parseCookies(const std::string& cookieHeader) {
-    std::map<std::string, std::string> cookies;
+inline std::vector<std::pair<std::string, std::string>> parseCookieList(const std::string& cookieHeader) {
+    std::vector<std::pair<std::string, std::string>> cookies;
     std::stringstream stream(cookieHeader);
     std::string item;
     while (std::getline(stream, item, ';')) {
@@ -143,8 +143,16 @@ inline std::map<std::string, std::string> parseCookies(const std::string& cookie
         const auto key = trim(item.substr(0, pos));
         const auto value = trim(item.substr(pos + 1));
         if (!key.empty()) {
-            cookies[key] = value;
+            cookies.emplace_back(key, value);
         }
+    }
+    return cookies;
+}
+
+inline std::map<std::string, std::string> parseCookies(const std::string& cookieHeader) {
+    std::map<std::string, std::string> cookies;
+    for (const auto& [key, value] : parseCookieList(cookieHeader)) {
+        cookies[key] = value;
     }
     return cookies;
 }
@@ -407,12 +415,15 @@ inline std::optional<Session> loadSessionById(const std::string& sessionId) {
 }
 
 inline std::optional<Session> currentSession() {
-    const auto cookies = parseCookies(getenvOrEmpty("HTTP_COOKIE"));
-    const auto it = cookies.find(kSessionCookieName);
-    if (it == cookies.end()) {
-        return std::nullopt;
+    for (const auto& [key, value] : parseCookieList(getenvOrEmpty("HTTP_COOKIE"))) {
+        if (key != kSessionCookieName) {
+            continue;
+        }
+        if (const auto session = loadSessionById(value); session.has_value()) {
+            return session;
+        }
     }
-    return loadSessionById(it->second);
+    return std::nullopt;
 }
 
 inline void deleteSession(const std::string& sessionId) {

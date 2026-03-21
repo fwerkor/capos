@@ -61,10 +61,11 @@ std::string requestScheme() {
     return "http";
 }
 
-std::string filterForwardCookies(const std::string& cookieHeader) {
+std::string filterForwardCookies(const std::string& cookieHeader, const std::string& panelSessionId) {
     std::stringstream stream(cookieHeader);
     std::string item;
     std::vector<std::string> kept;
+    bool removedPanelSessionCookie = false;
 
     while (std::getline(stream, item, ';')) {
         const auto trimmed = trim(item);
@@ -77,7 +78,9 @@ std::string filterForwardCookies(const std::string& cookieHeader) {
             continue;
         }
         const auto key = trim(trimmed.substr(0, pos));
-        if (key == kSessionCookieName) {
+        const auto value = trim(trimmed.substr(pos + 1));
+        if (!removedPanelSessionCookie && key == kSessionCookieName && value == panelSessionId) {
+            removedPanelSessionCookie = true;
             continue;
         }
         kept.push_back(trimmed);
@@ -351,7 +354,8 @@ std::optional<UpstreamResponse> fetchHttp(const std::string& host, int port, con
     return response;
 }
 
-std::string buildForwardRequest(const std::string& host, int port, const std::string& upstreamPath, const std::string& body) {
+std::string buildForwardRequest(const std::string& host, int port, const std::string& upstreamPath, const std::string& body,
+                                const std::string& panelSessionId) {
     std::ostringstream request;
     const auto method = getenvOrEmpty("REQUEST_METHOD").empty() ? "GET" : getenvOrEmpty("REQUEST_METHOD");
     request << method << ' ' << upstreamPath << " HTTP/1.1\r\n";
@@ -376,7 +380,7 @@ std::string buildForwardRequest(const std::string& host, int port, const std::st
         std::replace(name.begin(), name.end(), '_', '-');
         std::transform(name.begin(), name.end(), name.begin(), [](unsigned char ch) { return static_cast<char>(std::tolower(ch)); });
         if (name == "cookie") {
-            value = filterForwardCookies(value);
+            value = filterForwardCookies(value, panelSessionId);
             if (value.empty()) {
                 continue;
             }
@@ -504,7 +508,7 @@ int main() {
     }
 
     const auto requestBody = readRequestBody();
-    const auto requestText = buildForwardRequest(*host, static_cast<int>(*port), upstreamPath, requestBody);
+    const auto requestText = buildForwardRequest(*host, static_cast<int>(*port), upstreamPath, requestBody, session->id);
     auto response = fetchHttp(*host, static_cast<int>(*port), requestText);
     if (!response.has_value()) {
         sendHtml(502, renderStatusPage(selectedApp, info.output, "连接桌面应用失败，可能容器尚未完全启动，或目标服务没有监听声明的端口。"));
