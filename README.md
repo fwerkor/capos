@@ -1,8 +1,8 @@
-# CapOS
-
-### A lightweight Linux server platform with a polished web desktop experience
-
 <div align="center">
+
+<h1>CapOS</h1>
+
+<h3>A lightweight Linux server platform with a polished web desktop experience</h3>
 
 <p>
   <a href="https://github.com/fwerkor/capos/actions/workflows/os-sanity.yml"><img src="https://img.shields.io/github/actions/workflow/status/fwerkor/capos/os-sanity.yml?branch=main&style=for-the-badge" alt="OS Sanity"></a>
