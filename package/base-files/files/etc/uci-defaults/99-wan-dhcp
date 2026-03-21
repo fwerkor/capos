@@ -1,8 +1,6 @@
 #!/bin/sh
-# Server-oriented network defaults:
-# - Prefer WAN IPv4 DHCP + WAN6 DHCPv6 when WAN sections exist
-# - Fall back to LAN IPv4 DHCP on single-interface systems that only expose LAN
-# Safe policy: only modify existing sections; do not create new device topology.
+# Enable WAN IPv4 DHCP + WAN6 DHCPv6 (with prefix delegation) by default.
+# Safe policy: only modify existing sections; do not create new wan/wan6; do not touch device/ifname.
 
 changed=0
 has_wan=0
@@ -13,19 +11,6 @@ if uci -q get network.wan >/dev/null; then
     cur="$(uci -q get network.wan.proto)"
     if [ "$cur" != "dhcp" ]; then
         uci set network.wan.proto='dhcp'
-        changed=1
-    fi
-fi
-
-# Single-port / server fallback: no WAN section, but LAN exists.
-if [ "$has_wan" -eq 0 ] && uci -q get network.lan >/dev/null; then
-    lan_proto="$(uci -q get network.lan.proto)"
-    if [ "$lan_proto" != "dhcp" ]; then
-        uci set network.lan.proto='dhcp'
-        uci -q delete network.lan.ipaddr
-        uci -q delete network.lan.netmask
-        uci -q delete network.lan.gateway
-        uci -q delete network.lan.broadcast
         changed=1
     fi
 fi
@@ -66,8 +51,7 @@ if uci -q get network.wan6 >/dev/null; then
     fi
 fi
 
-# LAN: accept delegated prefix on routed targets, but avoid forcing it on
-# single-interface DHCP-client systems where LAN acts as the uplink.
+# LAN: accept delegated prefix only on routed targets with a real WAN
 if [ "$has_wan" -eq 1 ] && uci -q get network.lan >/dev/null; then
     ip6assign="$(uci -q get network.lan.ip6assign)"
     if [ -z "$ip6assign" ] || [ "$ip6assign" = "0" ]; then
