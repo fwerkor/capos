@@ -3,9 +3,11 @@
 # Safe policy: only modify existing sections; do not create new wan/wan6; do not touch device/ifname.
 
 changed=0
+has_wan=0
 
 # IPv4: wan -> dhcp
 if uci -q get network.wan >/dev/null; then
+    has_wan=1
     cur="$(uci -q get network.wan.proto)"
     if [ "$cur" != "dhcp" ]; then
         uci set network.wan.proto='dhcp'
@@ -49,8 +51,8 @@ if uci -q get network.wan6 >/dev/null; then
     fi
 fi
 
-# LAN: accept delegated prefix (many targets already have this)
-if uci -q get network.lan >/dev/null; then
+# LAN: accept delegated prefix only on routed targets with a real WAN
+if [ "$has_wan" -eq 1 ] && uci -q get network.lan >/dev/null; then
     ip6assign="$(uci -q get network.lan.ip6assign)"
     if [ -z "$ip6assign" ] || [ "$ip6assign" = "0" ]; then
         uci set network.lan.ip6assign='64'
