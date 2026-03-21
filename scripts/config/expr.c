@@ -694,6 +694,7 @@ struct expr *expr_eliminate_dups(struct expr *e)
 struct expr *expr_transform(struct expr *e)
 {
 	struct expr *tmp;
+	enum expr_type type;
 
 	if (!e)
 		return NULL;
@@ -767,30 +768,33 @@ struct expr *expr_transform(struct expr *e)
 			e = tmp;
 			e = expr_transform(e);
 			break;
-		case E_EQUAL:
-		case E_UNEQUAL:
-			// !a='x' -> a!='x'
-			tmp = e->left.expr;
-			free(e);
-			e = tmp;
-			e->type = e->type == E_EQUAL ? E_UNEQUAL : E_EQUAL;
-			break;
-		case E_LEQ:
-		case E_GEQ:
-			// !a<='x' -> a>'x'
-			tmp = e->left.expr;
-			free(e);
-			e = tmp;
-			e->type = e->type == E_LEQ ? E_GTH : E_LTH;
-			break;
-		case E_LTH:
-		case E_GTH:
-			// !a<'x' -> a>='x'
-			tmp = e->left.expr;
-			free(e);
-			e = tmp;
-			e->type = e->type == E_LTH ? E_GEQ : E_LEQ;
-			break;
+			case E_EQUAL:
+			case E_UNEQUAL:
+				// !a='x' -> a!='x'
+				tmp = e->left.expr;
+				type = tmp->type;
+				free(e);
+				e = tmp;
+				e->type = type == E_EQUAL ? E_UNEQUAL : E_EQUAL;
+				break;
+			case E_LEQ:
+			case E_GEQ:
+				// !a<='x' -> a>'x'
+				tmp = e->left.expr;
+				type = tmp->type;
+				free(e);
+				e = tmp;
+				e->type = type == E_LEQ ? E_GTH : E_LTH;
+				break;
+			case E_LTH:
+			case E_GTH:
+				// !a<'x' -> a>='x'
+				tmp = e->left.expr;
+				type = tmp->type;
+				free(e);
+				e = tmp;
+				e->type = type == E_LTH ? E_GEQ : E_LEQ;
+				break;
 		case E_OR:
 			// !(a || b) -> !a && !b
 			tmp = e->left.expr;
