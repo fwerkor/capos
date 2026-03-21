@@ -1,6 +1,10 @@
-<h1 align="center">FWERKOR CapOS Project</h1>
+<div align="center">
 
-<p align="center">
+# CapOS
+
+### A lightweight Linux server platform with a polished web desktop experience
+
+<p>
   <a href="https://github.com/fwerkor/capos/actions/workflows/os-sanity.yml"><img src="https://img.shields.io/github/actions/workflow/status/fwerkor/capos/os-sanity.yml?branch=main&style=for-the-badge" alt="OS Sanity"></a>
   <a href="https://github.com/fwerkor/capos/releases"><img src="https://img.shields.io/github/v/release/fwerkor/capos?include_prereleases&style=for-the-badge" alt="Releases"></a>
   <a href="https://github.com/fwerkor/capos/stargazers"><img src="https://img.shields.io/github/stars/fwerkor/capos?style=for-the-badge" alt="Stars"></a>
@@ -8,118 +12,152 @@
   <a href="https://github.com/fwerkor/capos/commits/main/"><img src="https://img.shields.io/github/last-commit/fwerkor/capos?style=for-the-badge" alt="Last Commit"></a>
 </p>
 
-![OpenWrt logo](include/logo.png)
+<img src="include/logo.png" alt="CapOS logo" width="220">
 
-**CapOS** is an open-source server operating system based on OpenWrt. 
-It aims to provide an easy-to-use Linux server operating system that is more suitable for both home and professional deployments. 
-We leverage the advantages of OpenWrt and incorporate a Webdesktop management interface, customizing CapOS into a full-featured server operating system.
+<p>
+  Built for people who want a compact, approachable, and capable server system.<br>
+  CapOS combines low resource usage, a browser-first management experience, and room to grow from simple setups to serious self-hosted workloads.
+</p>
 
-Maintained by **FWERKOR Team**, especially by **Castronaut**. 
+<p>
+  <a href="https://github.com/fwerkor/capos/releases"><strong>Download Releases</strong></a> ·
+  <a href="https://repo.capos.org"><strong>Package Repository</strong></a> ·
+  <a href="https://github.com/fwerkor/capos/wiki/Quick-start-guide"><strong>Quick Start</strong></a> ·
+  <a href="https://github.com/fwerkor/capos/wiki"><strong>Documentation</strong></a>
+</p>
 
-## Features
+</div>
 
-* **Highly Lightweight:** CapOS is built on OpenWrt, a Linux-based embedded operating system. It has a small footprint and can run on a variety of hardware, from routers to PCs. This lightweight design allows CapOS to run smoothly even on resource-constrained devices.
+> Maintained by the **FWERKOR Team**, especially **Castronaut**.
 
-* **Friendly Web User Interface:** CapOS provides a Webdesktop management interface, allowing you to control the server through a beautiful and easy-to-use interface in your browser. Users can easily manage system settings, monitor resources, and install software packages via the Web UI without requiring extensive Linux knowledge.
+## Why CapOS
 
-* **Highly Scalable:** Although lightweight, CapOS is highly scalable. Users can install and run many server applications and software packages as needed, according to their requirements. CapOS aims to strike a balance between lightweight design and practicality.
+CapOS is an open-source server operating system focused on clarity, efficiency, and day-to-day usability. It is designed for homelabs, learning environments, edge devices, and compact servers where a full management workflow matters just as much as raw functionality.
 
-* **Easy to Learn:** CapOS features a simple command-line interface and standardized Linux commands to simplify operations. The automated and simplified CLI makes it easy for beginners to get started with CapOS.
+Instead of feeling like a stripped-down build environment, CapOS aims to feel like a complete server platform from the moment it boots: easy to access, easy to manage, and flexible enough to expand as your needs change.
 
-* **Stable and Secure:** CapOS is developed based on the secure and stable Linux system OpenWrt, utilizing the latest kernel and software packages to maximize security and stability.
+## Highlights
 
-* **Open Source:** CapOS is released under the GPL license. Contributions from the open-source community are welcome to make CapOS even more lightweight, scalable, and user-friendly.
+<table>
+  <tr>
+    <td width="50%">
+      <h3>Lightweight by Design</h3>
+      <p>Runs with a small footprint and works well across a broad range of hardware, from compact devices to full PCs.</p>
+    </td>
+    <td width="50%">
+      <h3>Webdesktop Management</h3>
+      <p>Manage the system from a browser through a more visual, approachable interface for settings, packages, and system status.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <h3>Scales with Your Setup</h3>
+      <p>Start simple, then grow into richer services and more advanced workloads without leaving the same platform.</p>
+    </td>
+    <td width="50%">
+      <h3>Beginner-Friendly</h3>
+      <p>A clean command-line workflow and simplified management flow help new users get productive quickly.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <h3>Stable and Secure</h3>
+      <p>Built on a mature Linux foundation with a strong focus on dependable behavior and practical security defaults.</p>
+    </td>
+    <td width="50%">
+      <h3>Open Source</h3>
+      <p>Released under GPL-2.0 and open to community contributions, improvements, and ecosystem growth.</p>
+    </td>
+  </tr>
+</table>
 
-CapOS aims to provide an easy-to-use and practical Linux server operating system for learning and experimentation. The simplified web UI and CLI make getting started with CapOS easy. If you are looking for a lightweight yet scalable Linux server solution, try CapOS! The CapOS Community Edition is open and free for everyone. Your feedback and suggestions will help us improve CapOS.
+## Quick Overview
+
+| Area | Default |
+| --- | --- |
+| Web panel | `2000/tcp` (HTTP), `2020/tcp` (HTTPS) |
+| Remote access | `23/tcp` for Telnet before a root password is set, `22/tcp` for SSH |
+| Network mode | Uses `DHCP` and `DHCPv6` by default |
+| Firewall | Accepts inbound traffic from `LAN`; rejects inbound traffic from `WAN` except `2000/tcp` and `2020/tcp` |
+
+More usage details are available in the [User Guide](https://github.com/fwerkor/capos/wiki/User-guide).
 
 ## Downloads
 
-* [Github Releases](https://github.com/fwerkor/capos/releases)
-* [Repository](https://repo.capos.org)
-
-You can learn more at our [Wiki](https://github.com/fwerkor/capos/wiki/Quick-start-guide).
-
-## Useage
-
-Web panel is on `2000/tcp` (http) and `2020/tcp` (https). 
-
-Telnet is running on `23/tcp` before root password is set, and SSH runs on `22/tcp`.  
-
-Unlike OpenWRT, CapOS defaults to setting the network interface protocol to `DHCP` and `DHCPv6`.
-
-The firewall by default accepts inbound requests from the `LAN` and rejects inbound requests from the `WAN` except for `2000/tcp` and `2020/tcp`.
-
-Learn more at our [Wiki](https://github.com/fwerkor/capos/wiki/User-guide).
+| Resource | Link |
+| --- | --- |
+| Releases | [GitHub Releases](https://github.com/fwerkor/capos/releases) |
+| Package repository | [repo.capos.org](https://repo.capos.org) |
+| Quick start | [Wiki Quick Start Guide](https://github.com/fwerkor/capos/wiki/Quick-start-guide) |
 
 ## Development
 
-As an open-source project, CapOS encourages professional developers to contribute to its improvement and to develop applications for it.
+CapOS welcomes contributors, maintainers, and application developers. If you want to improve the platform or build apps around it, the best starting points are below.
 
-Learn more at our [Wiki](https://github.com/fwerkor/capos/wiki/Developer-guide).
+| Topic | Link |
+| --- | --- |
+| Developer guide | [CapOS Developer Guide](https://github.com/fwerkor/capos/wiki/Developer-guide) |
+| App development | [CAPP Development Guide](https://blog.fwerkor.com/archives/1123) |
+| Example project | [capp-helloworld](https://github.com/fwerkor/capp-helloworld) |
 
 ### Source Code Access
 
-To make repository access more convenient for users in different regions, CapOS provides the following source code repository endpoints:
+To make repository access easier across different regions, CapOS provides:
 
-* **Primary repository:** https://github.com/fwerkor/capos
-* **Read-only mirror (for users in Mainland China):** https://gitcode.com/fwerkor/capos
+- Primary repository: https://github.com/fwerkor/capos
+- Read-only mirror for users in Mainland China: https://gitcode.com/fwerkor/capos
 
-Please submit issues, discussions, and pull requests through the GitHub primary repository.
+Issues, discussions, and pull requests should be submitted through the GitHub primary repository.
 
-### Compile CapOS
+### Build from Source
 
-To build your own firmware you need a GNU/Linux, BSD or MacOSX system (case sensitive filesystem required). Cygwin is unsupported because of the lack of a case sensitive file system.
+To build your own firmware, use a GNU/Linux, BSD, or macOS system with a case-sensitive filesystem. Cygwin is not supported.
 
-You need the following tools to compile CapOS, the package names vary between distributions. A complete list with distribution specific packages can be found in OpenWrt's [Build System Setup](https://openwrt.org/docs/guide-developer/build-system/install-buildsystem) documentation. CapOS has provided a script that can automatically install dependencies on some system, but it is unstable so do it yourself if error occurs. 
+Required tools vary by distribution, but the typical dependency set includes:
 
-```
+```text
 binutils bzip2 diff find flex gawk gcc-6+ getopt grep install libc-dev libz-dev
 make4.1+ perl python3.7+ rsync subversion unzip which
 ```
 
-Now, you can simply follow these steps to build CapOS.
+An automatic dependency installer is available at `scripts/auto_install_dependencies.sh`, but manual installation is recommended if the script does not match your environment.
 
-Note that do not use root user.
+Build steps:
 
-1. Run `bash ./scripts/auto_install_dependencies.sh` to install dependencies on your system.
+1. Run `bash ./scripts/auto_install_dependencies.sh` to install dependencies.
+2. Run `make menuconfig` to choose the target platform, toolchain, and packages.
+3. Run `make` to build the firmware.
 
-2. Run `make menuconfig` to select your preferred configuration for the toolchain, target system & firmware packages. 
-
-3. Run `make` to build your firmware. This will download all sources, build the cross-compile toolchain and then cross-compile the GNU/Linux kernel & all chosen applications for your target system.
-
-### Develop Apps
-
-We are committed to simplifying the CapOS application development process as much as possible. You can read our [CAPP Development Guide](https://blog.fwerkor.com/archives/1123)
-
-We have provided some simple examples to help you quickly get started with CapOS application development.
-
-* [HelloWorld](https://github.com/fwerkor/capp-helloworld): A minimal example of building a web service from scratch using the Go programming language.
+Use a non-root user for builds.
 
 ## About
 
 ### Documentation
 
-* [GitHub Wiki](https://github.com/fwerkor/capos/wiki)
-* [FWERKOR Blog (For CapOS)](https://blog.fwerkor.com/category/capos)
+- [GitHub Wiki](https://github.com/fwerkor/capos/wiki)
+- [FWERKOR Blog](https://blog.fwerkor.com/category/capos)
 
 ### Community
 
-* [Github Issues](https://github.com/fwerkor/capos/issues): For bug feedback, feature update suggestions.
-* [Github Discussions](https://github.com/fwerkor/capos/discussions): For bug feedback, feature update suggestions.
+- [GitHub Issues](https://github.com/fwerkor/capos/issues) for bug reports and feature requests
+- [GitHub Discussions](https://github.com/fwerkor/capos/discussions) for questions, ideas, and community conversations
 
 ### License
 
-CapOS is licensed under GPL-2.0. 
+CapOS is licensed under **GPL-2.0**.
 
-### Status
+## Project Activity
 
 <p align="center">
-<img src="https://repobeats.axiom.co/api/embed/ed4a081fa92fc9600b18e5a14aaa4a6092da655c.svg" alt="Repobeats analytics image">
-<a href="https://www.star-history.com/#fwerkor/capos&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=fwerkor/capos&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=fwerkor/capos&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=fwerkor/capos&type=date&legend=top-left" />
- </picture>
-</a>
+  <img src="https://repobeats.axiom.co/api/embed/ed4a081fa92fc9600b18e5a14aaa4a6092da655c.svg" alt="Repobeats analytics image">
+</p>
+
+<p align="center">
+  <a href="https://www.star-history.com/#fwerkor/capos&type=date&legend=top-left">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=fwerkor/capos&type=date&theme=dark&legend=top-left" />
+      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=fwerkor/capos&type=date&legend=top-left" />
+      <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=fwerkor/capos&type=date&legend=top-left" />
+    </picture>
+  </a>
 </p>
