@@ -20,8 +20,9 @@
 </p>
 
 <p>
+  <a href="https://capos.top"><strong>Website</strong></a> ·
   <a href="https://github.com/fwerkor/capos/releases"><strong>Download Releases</strong></a> ·
-  <a href="https://repo.capos.org"><strong>Package Repository</strong></a> ·
+  <a href="https://repo.capos.top"><strong>Package Repository</strong></a> ·
   <a href="https://github.com/fwerkor/capos/wiki/Quick-start-guide"><strong>Quick Start</strong></a> ·
   <a href="https://github.com/fwerkor/capos/wiki"><strong>Documentation</strong></a>
 </p>
@@ -87,7 +88,7 @@ More usage details are available in the [User Guide](https://github.com/fwerkor/
 | Resource | Link |
 | --- | --- |
 | Releases | [GitHub Releases](https://github.com/fwerkor/capos/releases) |
-| Package repository | [repo.capos.org](https://repo.capos.org) |
+| Package repository | [repo.capos.top](https://repo.capos.top) |
 | Quick start | [Wiki Quick Start Guide](https://github.com/fwerkor/capos/wiki/Quick-start-guide) |
 
 ## Development
