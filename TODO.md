@@ -184,7 +184,96 @@
 - `architectures`
 - `extra_files`
 
-### 5.4 本轮新增建议扩展字段
+### 5.4 推荐的 1.1 增强字段与兼容策略
+
+原则：
+
+- `1.0` 旧格式继续兼容
+- `1.1` 在不破坏旧包的前提下引入更结构化的写法
+- `capbox` 内部统一做规范化，再进入安装和运行逻辑
+
+建议从以下几项开始增强：
+
+#### `network.publish`
+
+兼容旧写法：
+
+```yaml
+network:
+  publish:
+    - "8080:80"
+    - "5353:53/udp"
+```
+
+推荐新写法：
+
+```yaml
+network:
+  publish:
+    - listen: 8080
+      target: 80
+      proto: tcp
+    - listen: 5353
+      target: 53
+      proto: udp
+```
+
+这样更容易做权限检查、冲突检查和未来扩展描述字段。
+
+#### `container.environment`
+
+兼容旧写法：
+
+```yaml
+container:
+  environment:
+    - PUID=1000
+    - PGID=1000
+```
+
+推荐新写法：
+
+```yaml
+container:
+  environment:
+    PUID: "1000"
+    PGID: "1000"
+```
+
+或者：
+
+```yaml
+container:
+  environment:
+    - name: PUID
+      value: "1000"
+    - name: PGID
+      value: "1000"
+```
+
+#### `container.volumes.from`
+
+旧设计里写成 `container-name:/path` 不够贴合 CapOS 的“应用”语义，而且 `podman --volumes-from` 实际也是面向整个容器。
+
+推荐改成直接引用应用名：
+
+```yaml
+container:
+  volumes:
+    from:
+      - postgres
+```
+
+或者：
+
+```yaml
+container:
+  volumes:
+    from:
+      - app: postgres
+```
+
+#### `host.exec`
 
 为了支持“应用可在宿主机上以当前用户身份执行命令”，建议在 manifest 中扩展一段自定义能力声明：
 
@@ -197,6 +286,22 @@ host:
       - /usr/bin/rsync
 ```
 
+也推荐支持对象化写法，便于以后补描述、参数策略或提示文案：
+
+```yaml
+host:
+  exec:
+    enabled: true
+    allow:
+      - command: /usr/bin/du
+      - command: /usr/bin/rsync
+```
+
+#### 桌面入口规则
+
+- 桌面应用始终使用 `network.service` 作为显示入口
+- `network.management` 保留给应用自己的管理界面语义，不参与 WebPanel 的桌面显示选择
+
 说明：
 
 - 这不是容器直接拿宿主机 shell。
@@ -207,13 +312,14 @@ host:
 
 - `app.name` 必须匹配 `^[a-z0-9_]+$`
 - `app.name` 作为同一用户范围内唯一应用标识
-- `version` 必须存在，当前接受 `1.0`
+- `version` 必须存在，当前接受 `1.0` 和 `1.1`
 - 目标架构必须存在对应镜像 tar
 - 同一用户已安装同名应用时拒绝安装
 - `network.host=true` 时必须判定当前用户是否有权限
-- `network.publish` 中的端口必须逐项校验
+- `network.publish` 同时兼容字符串写法与对象写法，并逐项校验
 - `dependencies.capp` 必须校验是否已在同一用户下安装
-- `container.volumes.from` 只能引用当前用户下已存在应用
+- `container.environment` 同时兼容字符串数组、键值对象和 `{name,value}` 对象数组
+- `container.volumes.from` 只能引用当前用户下已存在应用，并推荐直接使用应用名
 - `host.exec.enabled=true` 时安装页必须标记为高风险能力
 
 ## 6. 多用户隔离与命名策略
@@ -453,21 +559,30 @@ host:
 
 ### 10.3 推荐实现
 
-两种备选：
+第一阶段先落地 HTTP token bridge，后续再考虑收敛到 Unix socket。
 
-#### 方案 A：`capbox hostexec run`
+#### 第一阶段：HTTP token bridge
 
-- 容器内通过某种桥接方式请求 `capbox`
-- `capbox` 校验应用身份、用户归属、命令白名单
-- 以该应用所属用户身份执行
+- 安装启用 `host.exec` 的应用时，为该应用生成独立 token
+- 容器启动时注入：
+  - `CAPOS_HOSTEXEC_URL`
+  - `CAPOS_HOSTEXEC_TOKEN_FILE`
+  - `CAPOS_HOSTEXEC_APP`
+  - `CAPOS_HOSTEXEC_USER`
+- 应用向 `/cgi-bin/cap/api/hostexec` 发起 `POST`
+- 通过 `X-CapOS-App`、`X-CapOS-User`、`X-CapOS-Token` 鉴权
+- 请求体第一行是绝对路径命令，后续每行一个参数
+- `capos-webpanel` 调用 `capbox hostexec invoke`
+- `capbox` 校验 token、应用归属、命令白名单，再以所属 Linux 用户身份执行
+- 返回 JSON：`ok / exit_code / success / output`
 
-#### 方案 B：per-user helper socket
+#### 第二阶段：per-user 或 per-app socket
 
 - 为每个用户暴露一个受控 Unix socket
 - 应用通过 socket 请求执行宿主机命令
 - socket 后面仍然由 `capbox` 统一处理
 
-建议先实现 A，后续再抽象为 socket 服务。
+HTTP bridge 先把能力跑通，socket 方案后续再优化安全性和体验。
 
 ### 10.4 建议限制项
 
@@ -659,10 +774,8 @@ host:
 
 显示入口优先级：
 
-- `management.https`
-- `management.http`
-- `service.https`
 - `service.http`
+- `service.https`
 
 ### 14.5 安装界面展示内容
 
@@ -694,10 +807,8 @@ host:
 
 优先级：
 
-- `management.https`
-- `management.http`
-- `service.https`
 - `service.http`
+- `service.https`
 
 ### 15.4 需要注意的问题
 

@@ -13,7 +13,7 @@ define Package/capos-webpanel
   SECTION:=capos
   CATEGORY:=CapOS
   TITLE:=CapOS Web Panel
-  DEPENDS:=+libstdcpp +luci +uhttpd
+  DEPENDS:=+libstdcpp +luci +uhttpd +capbox
 endef
 
 define Package/capos-webpanel/description
@@ -31,13 +31,13 @@ endef
 define Build/Compile
 	$(INSTALL_DIR) $(PKG_BUILD_DIR)/bin
 
-	$(TARGET_CXX) $(TARGET_CXXFLAGS) $(TARGET_CPPFLAGS) \
+	$(TARGET_CXX) $(TARGET_CXXFLAGS) $(TARGET_CPPFLAGS) -std=gnu++17 -I$(PKG_BUILD_DIR)/src \
 		-o $(PKG_BUILD_DIR)/bin/api $(PKG_BUILD_DIR)/src/api.cpp \
-		$(TARGET_LDFLAGS)
+		$(TARGET_LDFLAGS) -lcrypt
 
-	$(TARGET_CXX) $(TARGET_CXXFLAGS) $(TARGET_CPPFLAGS) \
+	$(TARGET_CXX) $(TARGET_CXXFLAGS) $(TARGET_CPPFLAGS) -std=gnu++17 -I$(PKG_BUILD_DIR)/src \
 		-o $(PKG_BUILD_DIR)/bin/app $(PKG_BUILD_DIR)/src/app.cpp \
-		$(TARGET_LDFLAGS)
+		$(TARGET_LDFLAGS) -lcrypt
 endef
 
 define Package/capos-webpanel/install

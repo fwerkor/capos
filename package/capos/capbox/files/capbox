@@ -1,137 +1,1619 @@
 #!/bin/bash
 
-declare -A MAP_PIDS
+set -euo pipefail
 
-# 用法：reload_portmap 'JSON_STRING'
-reload_portmap() {
-    local json="${1:-[]}"
-    local dep
-    for dep in jq podman nsenter socat; do
-        if ! command -v "$dep" >/dev/null 2>&1; then
-            echo "missing dependency: $dep" >&2
-            return 1
-        fi
-    done
+CAPBOX_STATE_DIR="${CAPBOX_STATE_DIR:-/var/lib/capbox}"
+CAPBOX_RUN_DIR="${CAPBOX_RUN_DIR:-/run/capbox}"
 
-    local tmp
-    if ! tmp=$(mktemp); then
-        echo "mktemp failed" >&2
-        return 1
-    fi
-
-    if ! printf '%s\n' "$json" > "$tmp"; then
-        echo "failed to write portmap payload" >&2
-        rm -f "$tmp"
-        return 1
-    fi
-
-    if ! jq -e 'type == "array"' "$tmp" >/dev/null 2>&1; then
-        echo "invalid portmap payload: expected a JSON array" >&2
-        rm -f "$tmp"
-        return 1
-    fi
-
-    local lines
-    if ! lines=$(jq -r '.[] | [(.proto // ""), (.listen // ""), (.container // ""), (.target_port // "")] | @tsv' "$tmp" 2>/dev/null); then
-        echo "invalid portmap payload: jq parse failed" >&2
-        rm -f "$tmp"
-        return 1
-    fi
-
-    # 清理已退出的旧映射进程，避免保留脏 PID。
-    local k pid
-    for k in "${!MAP_PIDS[@]}"; do
-        pid="${MAP_PIDS[$k]}"
-        if [[ -z "$pid" ]] || ! kill -0 "$pid" 2>/dev/null; then
-            unset "MAP_PIDS[$k]"
-        fi
-    done
-
-    local -A desired=()
-    local -a rules=()
-    local proto listen name tport key
-    while IFS=$'\t' read -r proto listen name tport; do
-        [[ -z "$proto$listen$name$tport" ]] && continue
-
-        if [[ "$proto" != "tcp" && "$proto" != "udp" ]]; then
-            echo "skip invalid proto: $proto" >&2
-            continue
-        fi
-        if [[ ! "$listen" =~ ^[0-9]+$ ]] || ((listen < 1 || listen > 65535)); then
-            echo "skip invalid listen port: $listen" >&2
-            continue
-        fi
-        if [[ ! "$tport" =~ ^[0-9]+$ ]] || ((tport < 1 || tport > 65535)); then
-            echo "skip invalid target port: $tport" >&2
-            continue
-        fi
-        if [[ -z "$name" || "$name" == "null" ]]; then
-            echo "skip invalid container name" >&2
-            continue
-        fi
-
-        key="${proto}:${listen}->${name}:${tport}"
-        desired["$key"]=1
-        rules+=("${proto}"$'\t'"${listen}"$'\t'"${name}"$'\t'"${tport}"$'\t'"${key}")
-    done <<< "$lines"
-
-    # 停掉配置里已不存在的映射。
-    for k in "${!MAP_PIDS[@]}"; do
-        if [[ -z "${desired[$k]:-}" ]]; then
-            pid="${MAP_PIDS[$k]}"
-            if [[ -n "$pid" ]]; then
-                kill "$pid" 2>/dev/null || true
-                wait "$pid" 2>/dev/null || true
-            fi
-            unset "MAP_PIDS[$k]"
-            echo "stopped $k"
-        fi
-    done
-
-    # 启动新增的映射。
-    local rule inspect running listen_arg target_arg nsenter_cmd spid
-    for rule in "${rules[@]}"; do
-        IFS=$'\t' read -r proto listen name tport key <<< "$rule"
-
-        pid="${MAP_PIDS[$key]:-}"
-        if [[ -n "$pid" ]] && kill -0 "$pid" 2>/dev/null; then
-            continue
-        fi
-        unset "MAP_PIDS[$key]"
-
-        if ! inspect=$(podman inspect -f '{{.State.Running}} {{.State.Pid}}' -- "$name" 2>/dev/null); then
-            echo "container inspect failed: $name" >&2
-            continue
-        fi
-        read -r running pid <<< "$inspect"
-        if [[ "$running" != "true" || ! "$pid" =~ ^[0-9]+$ || "$pid" == "0" ]]; then
-            echo "container not running: $name" >&2
-            continue
-        fi
-
-        if [[ "$proto" == "tcp" ]]; then
-            listen_arg="TCP-LISTEN:${listen},fork,reuseaddr"
-            target_arg="TCP:127.0.0.1:${tport}"
-        else
-            listen_arg="UDP-LISTEN:${listen},fork,reuseaddr"
-            target_arg="UDP:127.0.0.1:${tport}"
-        fi
-
-        printf -v nsenter_cmd 'nsenter -t %q -n socat STDIO %q' "$pid" "$target_arg"
-        socat "$listen_arg" EXEC:"$nsenter_cmd" &
-        spid=$!
-
-        # socat 可能因端口冲突等原因立即退出，检测后再记录 PID。
-        sleep 0.05
-        if ! kill -0 "$spid" 2>/dev/null; then
-            wait "$spid" 2>/dev/null || true
-            echo "failed to start portmap: $key" >&2
-            continue
-        fi
-
-        MAP_PIDS["$key"]=$spid
-        echo "started $key pid=$spid"
-    done
-
-    rm -f "$tmp"
+die() {
+    echo "$*" >&2
+    exit 1
 }
+
+need_cmd() {
+    local dep
+    for dep in "$@"; do
+        command -v "$dep" >/dev/null 2>&1 || die "missing dependency: $dep"
+    done
+}
+
+json_escape() {
+    jq -Rsa . <<< "${1:-}"
+}
+
+print_json() {
+    jq -n "$@"
+}
+
+require_root() {
+    [[ "$(id -u)" == "0" ]] || die "this command must run as root"
+}
+
+resolve_target_user() {
+    local requested="${1:-}"
+    if [[ -n "$requested" ]]; then
+        id -u "$requested" >/dev/null 2>&1 || die "unknown user: $requested"
+        printf '%s\n' "$requested"
+        return 0
+    fi
+
+    if [[ -n "${SUDO_USER:-}" ]]; then
+        printf '%s\n' "$SUDO_USER"
+        return 0
+    fi
+
+    if [[ -n "${USER:-}" ]]; then
+        id -u "$USER" >/dev/null 2>&1 || die "unknown user: $USER"
+        printf '%s\n' "$USER"
+        return 0
+    fi
+
+    die "unable to resolve target user"
+}
+
+user_uid() {
+    id -u "$1"
+}
+
+user_gid() {
+    id -g "$1"
+}
+
+user_home() {
+    awk -F: -v user="$1" '$1 == user { print $6; found = 1; exit } END { exit(found ? 0 : 1) }' /etc/passwd
+}
+
+user_shell() {
+    awk -F: -v user="$1" '$1 == user { print $7; found = 1; exit } END { exit(found ? 0 : 1) }' /etc/passwd
+}
+
+user_is_sudo() {
+    local user="$1"
+    local groups
+
+    [[ "$user" == "root" ]] && return 0
+
+    if command -v sudo >/dev/null 2>&1; then
+        if sudo -l -U "$user" >/dev/null 2>&1; then
+            return 0
+        fi
+    fi
+
+    groups="$(id -Gn "$user" 2>/dev/null || true)"
+    [[ " $groups " == *" sudo "* || " $groups " == *" wheel "* ]]
+}
+
+user_state_dir() {
+    local user="$1"
+    printf '%s/users/%s\n' "$CAPBOX_STATE_DIR" "$(user_uid "$user")"
+}
+
+user_apps_dir() {
+    local user="$1"
+    printf '%s/apps\n' "$(user_state_dir "$user")"
+}
+
+app_state_dir() {
+    local user="$1"
+    local app="$2"
+    printf '%s/%s\n' "$(user_apps_dir "$user")" "$app"
+}
+
+app_manifest_json_path() {
+    local user="$1"
+    local app="$2"
+    printf '%s/manifest.json\n' "$(app_state_dir "$user" "$app")"
+}
+
+app_manifest_yaml_path() {
+    local user="$1"
+    local app="$2"
+    printf '%s/manifest.yaml\n' "$(app_state_dir "$user" "$app")"
+}
+
+app_meta_path() {
+    local user="$1"
+    local app="$2"
+    printf '%s/meta.json\n' "$(app_state_dir "$user" "$app")"
+}
+
+app_portmaps_path() {
+    local user="$1"
+    local app="$2"
+    printf '%s/portmaps.json\n' "$(app_state_dir "$user" "$app")"
+}
+
+app_hostexec_path() {
+    local user="$1"
+    local app="$2"
+    printf '%s/hostexec.json\n' "$(app_state_dir "$user" "$app")"
+}
+
+app_hostexec_token_path() {
+    local user="$1"
+    local app="$2"
+    printf '%s/hostexec.token\n' "$(app_state_dir "$user" "$app")"
+}
+
+app_data_dir() {
+    local user="$1"
+    local app="$2"
+    printf '%s/data\n' "$(app_state_dir "$user" "$app")"
+}
+
+desktop_path() {
+    local user="$1"
+    printf '%s/desktop_app\n' "$(user_state_dir "$user")"
+}
+
+user_runtime_dir() {
+    local user="$1"
+    printf '%s/users/%s\n' "$CAPBOX_RUN_DIR" "$(user_uid "$user")"
+}
+
+app_runtime_dir() {
+    local user="$1"
+    local app="$2"
+    printf '%s/apps/%s\n' "$(user_runtime_dir "$user")" "$app"
+}
+
+app_portmap_runtime_dir() {
+    local user="$1"
+    local app="$2"
+    printf '%s/portmaps\n' "$(app_runtime_dir "$user" "$app")"
+}
+
+ensure_user_dirs() {
+    local user="$1"
+    mkdir -p "$(user_apps_dir "$user")" "$(user_runtime_dir "$user")"
+}
+
+ensure_app_dirs() {
+    local user="$1"
+    local app="$2"
+    mkdir -p "$(app_state_dir "$user" "$app")" "$(app_data_dir "$user" "$app")" "$(app_portmap_runtime_dir "$user" "$app")"
+    [[ -f "$(app_portmaps_path "$user" "$app")" ]] || printf '[]\n' > "$(app_portmaps_path "$user" "$app")"
+    [[ -f "$(app_hostexec_path "$user" "$app")" ]] || printf '{"enabled":false,"allow":[]}\n' > "$(app_hostexec_path "$user" "$app")"
+}
+
+generate_secret_token() {
+    if [[ -r /dev/urandom ]] && command -v od >/dev/null 2>&1; then
+        od -An -tx1 -N24 /dev/urandom | tr -d ' \n'
+        return 0
+    fi
+    printf '%s%s%s\n' "$(date +%s)" "$$" "$RANDOM" | sha256sum | awk '{print $1}'
+}
+
+ensure_app_hostexec_token() {
+    local user="$1"
+    local app="$2"
+    local token_path
+    token_path="$(app_hostexec_token_path "$user" "$app")"
+    if [[ ! -s "$token_path" ]]; then
+        umask 077
+        printf '%s\n' "$(generate_secret_token)" > "$token_path"
+    fi
+    chmod 0600 "$token_path"
+}
+
+validate_app_name() {
+    local app="$1"
+    [[ "$app" =~ ^[a-z0-9_]+$ ]] || die "invalid app name: $app"
+}
+
+map_machine_arch() {
+    case "${1:-$(uname -m)}" in
+        x86_64|amd64) printf 'amd64\n' ;;
+        aarch64|arm64) printf 'arm64\n' ;;
+        armv7l|armv7|armhf) printf 'armv7\n' ;;
+        armv6l|armv6) printf 'armv6\n' ;;
+        i386|i486|i586|i686) printf '386\n' ;;
+        *)
+            printf '%s\n' "${1:-$(uname -m)}"
+            ;;
+    esac
+}
+
+network_name_for_user() {
+    local user="$1"
+    printf 'capbox_u_%s\n' "$(user_uid "$user")"
+}
+
+container_name_for_app() {
+    local user="$1"
+    local app="$2"
+    printf 'capbox_u_%s_%s\n' "$(user_uid "$user")" "$app"
+}
+
+portmap_pid_file() {
+    local user="$1"
+    local app="$2"
+    local proto="$3"
+    local listen="$4"
+    local target="$5"
+    printf '%s/%s_%s_%s.pid\n' "$(app_portmap_runtime_dir "$user" "$app")" "$proto" "$listen" "$target"
+}
+
+app_is_installed() {
+    local user="$1"
+    local app="$2"
+    [[ -f "$(app_meta_path "$user" "$app")" && -f "$(app_manifest_json_path "$user" "$app")" ]]
+}
+
+manifest_value() {
+    local manifest="$1"
+    local expr="$2"
+    jq -r "$expr" "$manifest"
+}
+
+manifest_bool() {
+    local manifest="$1"
+    local expr="$2"
+    jq -e "$expr" "$manifest" >/dev/null 2>&1
+}
+
+manifest_risks_json() {
+    local manifest="$1"
+    jq -c '
+        []
+        + (if (.network.host // false) then ["host_network"] else [] end)
+        + (if ((.network.publish // []) | length) > 0 then ["publish_ports"] else [] end)
+        + (if (.container.privileges.enabled // false) then ["privileged_container"] else [] end)
+        + (if ((.container.privileges.capabilities // []) | length) > 0 then ["extra_capabilities"] else [] end)
+        + (if ((.container.devices // []) | length) > 0 then ["devices"] else [] end)
+        + (if ((.container.volumes.extra // []) | length) > 0 then ["host_mounts"] else [] end)
+        + (if (.host.exec.enabled // false) then ["host_exec"] else [] end)
+    ' "$manifest"
+}
+
+manifest_requires_sudo() {
+    local manifest="$1"
+    jq -e '
+        (.network.host // false)
+        or (.container.privileges.enabled // false)
+        or (((.container.privileges.capabilities // []) | length) > 0)
+        or (((.container.devices // []) | length) > 0)
+        or (((.container.volumes.extra // []) | length) > 0)
+    ' "$manifest" >/dev/null 2>&1
+}
+
+read_manifest_json_from_yaml() {
+    local yaml_path="$1"
+    local out_json="$2"
+    need_cmd yq
+    yq eval -o=json '.' "$yaml_path" > "$out_json"
+}
+
+extract_cpk() {
+    local cpk_file="$1"
+    local tmpdir="$2"
+    tar -xzf "$cpk_file" -C "$tmpdir"
+}
+
+find_cpk_manifest() {
+    local dir="$1"
+    local manifest_path
+    manifest_path="$(find "$dir" -maxdepth 2 -type f \( -name 'config.yaml' -o -name 'config.yml' \) | sort | head -n1 || true)"
+    [[ -n "$manifest_path" ]] || die "config.yaml not found in CPK"
+    printf '%s\n' "$manifest_path"
+}
+
+find_cpk_icon() {
+    local dir="$1"
+    find "$dir" -maxdepth 2 -type f \( -iname 'icon.png' -o -iname 'icon.jpg' -o -iname 'icon.jpeg' -o -iname 'icon.svg' -o -iname 'icon.webp' \) | sort | head -n1 || true
+}
+
+select_cpk_image() {
+    local unpack_dir="$1"
+    local manifest_json="$2"
+    local arch
+    local image_path
+
+    arch="$(map_machine_arch)"
+    if ! jq -e --arg arch "$arch" '((.build.architectures // []) | length) == 0 or ((.build.architectures // []) | index($arch) != null)' "$manifest_json" >/dev/null 2>&1; then
+        die "CPK does not support architecture: $arch"
+    fi
+
+    image_path="$(find "$unpack_dir" -maxdepth 2 -type f \( -name "image_${arch}.tar" -o -name "${arch}.tar" -o -name "*${arch}*.tar" \) | sort | head -n1 || true)"
+    [[ -n "$image_path" ]] || die "image tar for architecture $arch not found"
+    printf '%s\n' "$image_path"
+}
+
+ensure_manifest_shape() {
+    local manifest="$1"
+    local app_name
+    local version
+
+    app_name="$(manifest_value "$manifest" '.app.name // ""')"
+    version="$(manifest_value "$manifest" '.version // ""')"
+
+    [[ -n "$version" ]] || die "manifest version is required"
+    [[ "$version" == "1.0" || "$version" == "1.1" ]] || die "unsupported manifest version: $version"
+    [[ -n "$app_name" ]] || die "manifest app.name is required"
+    validate_app_name "$app_name"
+}
+
+manifest_publish_rules_tsv() {
+    local manifest="$1"
+    jq -r '
+        .network.publish // []
+        | .[]
+        | if type == "string" then
+            {
+                raw: .,
+                proto: (
+                    if test("/(tcp|udp)$") then
+                        capture("/(?<proto>tcp|udp)$").proto
+                    else
+                        "tcp"
+                    end
+                ),
+                mapping: sub("/(tcp|udp)$"; "")
+            }
+            | .parts = (.mapping | split(":"))
+            | [.raw, .proto, (.parts[0] // ""), (.parts[1] // "")]
+          elif type == "object" then
+            [
+                (tojson),
+                ((.proto // "tcp") | tostring),
+                ((.listen // .listen_port // "") | tostring),
+                ((.target // .target_port // "") | tostring)
+            ]
+          else
+            [(tojson), "tcp", "", ""]
+          end
+        | @tsv
+    ' "$manifest"
+}
+
+manifest_environment_items() {
+    local manifest="$1"
+    jq -r '
+        .container.environment // []
+        | if type == "array" then
+            .[]
+            | if type == "string" then
+                .
+              elif type == "object" then
+                if has("name") then
+                    "\(.name)=\((.value // "") | tostring)"
+                else
+                    to_entries[]
+                    | "\(.key)=\(.value | tostring)"
+                end
+              else
+                empty
+              end
+          elif type == "object" then
+            to_entries[]
+            | "\(.key)=\(.value | tostring)"
+          else
+            empty
+          end
+    ' "$manifest"
+}
+
+manifest_volume_from_refs() {
+    local manifest="$1"
+    jq -r '
+        .container.volumes.from // []
+        | .[]
+        | if type == "string" then
+            split(":")[0]
+          elif type == "object" then
+            (.app // .name // "")
+          else
+            empty
+          end
+    ' "$manifest"
+}
+
+validate_manifest_for_user() {
+    local manifest="$1"
+    local user="$2"
+    local app_name
+    local publish_raw publish_proto publish_listen publish_target
+    local dep
+
+    ensure_manifest_shape "$manifest"
+    app_name="$(manifest_value "$manifest" '.app.name // ""')"
+
+    if app_is_installed "$user" "$app_name"; then
+        die "app already installed for user $user: $app_name"
+    fi
+
+    if manifest_requires_sudo "$manifest" && ! user_is_sudo "$user"; then
+        die "app requires sudo privileges to install"
+    fi
+
+    if manifest_bool "$manifest" '.network.host // false' && ! user_is_sudo "$user"; then
+        die "host network apps may only be installed by sudo users"
+    fi
+
+    while IFS=$'\t' read -r publish_raw publish_proto publish_listen publish_target; do
+        [[ -z "$publish_raw" ]] && continue
+        validate_publish_mapping "$publish_listen" "$publish_target" "$publish_proto" "$user" "$publish_raw"
+    done < <(manifest_publish_rules_tsv "$manifest")
+
+    while IFS= read -r dep; do
+        [[ -z "$dep" ]] && continue
+        app_is_installed "$user" "$dep" || die "missing app dependency: $dep"
+    done < <(jq -r '.dependencies.capp // [] | .[]' "$manifest")
+
+    while IFS= read -r dep; do
+        [[ -z "$dep" ]] && continue
+        command -v opkg >/dev/null 2>&1 || die "opkg is required to verify package dependencies"
+        opkg status "$dep" >/dev/null 2>&1 || die "missing opkg dependency: $dep"
+    done < <(jq -r '.dependencies.opkg // [] | .[]' "$manifest")
+
+    while IFS= read -r dep; do
+        [[ -z "$dep" ]] && continue
+        validate_app_name "$dep"
+        app_is_installed "$user" "$dep" || die "missing shared-volume source app: $dep"
+    done < <(manifest_volume_from_refs "$manifest")
+}
+
+validate_publish_mapping() {
+    local listen="$1"
+    local target="$2"
+    local proto="$3"
+    local user="$4"
+    local raw="${5:-$listen:$target/$proto}"
+
+    [[ "$proto" == "tcp" || "$proto" == "udp" ]] || die "unsupported publish protocol: $raw"
+    [[ "$listen" =~ ^[0-9]+$ && "$target" =~ ^[0-9]+$ ]] || die "invalid publish ports: $raw"
+    ((listen >= 1 && listen <= 65535)) || die "listen port out of range: $listen"
+    ((target >= 1 && target <= 65535)) || die "target port out of range: $target"
+
+    if ((listen < 1024)) && ! user_is_sudo "$user"; then
+        die "low ports require sudo privileges: $listen"
+    fi
+}
+
+validate_publish_rule() {
+    local rule="$1"
+    local user="$2"
+    local proto listen target
+
+    proto="tcp"
+    if [[ "$rule" == */* ]]; then
+        proto="${rule##*/}"
+        rule="${rule%/*}"
+    fi
+
+    [[ "$rule" == *:* ]] || die "invalid publish rule: $rule"
+    listen="${rule%%:*}"
+    target="${rule##*:}"
+    validate_publish_mapping "$listen" "$target" "$proto" "$user" "$rule"
+}
+
+cpk_summary_json() {
+    local manifest="$1"
+    local cpk_file="$2"
+    local image_path="$3"
+    local icon_path="$4"
+    jq -n \
+        --arg cpk "$(basename "$cpk_file")" \
+        --arg arch "$(map_machine_arch)" \
+        --arg image "$(basename "$image_path")" \
+        --arg icon "$(basename "${icon_path:-}")" \
+        --argfile manifest "$manifest" \
+        --argjson risks "$(manifest_risks_json "$manifest")" '
+        {
+            ok: true,
+            cpk: {
+                file: $cpk,
+                arch: $arch,
+                image: $image,
+                icon: (if $icon == "" then null else $icon end)
+            },
+            app: {
+                name: ($manifest.app.name // null),
+                version: ($manifest.app.version // null),
+                nickname: ($manifest.app.nickname // null),
+                description: ($manifest.app.description // null)
+            },
+            permissions: {
+                host_network: ($manifest.network.host // false),
+                publish: ($manifest.network.publish // []),
+                privileged: ($manifest.container.privileges.enabled // false),
+                capabilities: ($manifest.container.privileges.capabilities // []),
+                devices: ($manifest.container.devices // []),
+                host_exec: ($manifest.host.exec.enabled // false)
+            },
+            risks: $risks,
+            manifest: $manifest
+        }
+    '
+}
+
+podman_network_ensure() {
+    local network_name="$1"
+    need_cmd podman
+    if ! podman network inspect "$network_name" >/dev/null 2>&1; then
+        podman network create "$network_name" >/dev/null
+    fi
+}
+
+podman_network_gateway() {
+    local network_name="$1"
+    need_cmd podman jq
+    podman network inspect "$network_name" 2>/dev/null | jq -r '
+        .[0].subnets[0].gateway
+        // .[0].subnets[0].Gateway
+        // .[0].Subnets[0].Gateway
+        // empty
+    ' | head -n1
+}
+
+podman_container_running() {
+    local container_name="$1"
+    podman inspect -f '{{.State.Running}}' "$container_name" 2>/dev/null | grep -qx 'true'
+}
+
+podman_container_ip() {
+    local container_name="$1"
+    podman inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' "$container_name" 2>/dev/null || true
+}
+
+current_unix_time() {
+    date +%s
+}
+
+copy_if_present() {
+    local src="$1"
+    local dst="$2"
+    [[ -n "$src" && -f "$src" ]] || return 0
+    cp "$src" "$dst"
+}
+
+detect_image_ref_from_load() {
+    local load_output="$1"
+    local image_ref
+
+    image_ref="$(awk -F': ' '/Loaded image/ {print $2}' <<< "$load_output" | tail -n1)"
+    [[ -n "$image_ref" ]] || image_ref="$(awk -F': ' '/Loaded image\(s\)/ {print $2}' <<< "$load_output" | tail -n1)"
+    [[ -n "$image_ref" ]] || die "unable to detect loaded image reference"
+    printf '%s\n' "$image_ref"
+}
+
+write_app_meta() {
+    local user="$1"
+    local app="$2"
+    local image_ref="$3"
+    local icon_name="$4"
+    local manifest="$5"
+    local container_name network_name installed_at
+
+    container_name="$(container_name_for_app "$user" "$app")"
+    network_name="$(network_name_for_user "$user")"
+    installed_at="$(current_unix_time)"
+
+    jq -n \
+        --arg owner "$user" \
+        --arg uid "$(user_uid "$user")" \
+        --arg app "$app" \
+        --arg container "$container_name" \
+        --arg network "$network_name" \
+        --arg image "$image_ref" \
+        --arg icon "$icon_name" \
+        --arg installed_at "$installed_at" \
+        --argfile manifest "$manifest" '
+        {
+            owner: $owner,
+            owner_uid: ($uid | tonumber),
+            app: $app,
+            container_name: $container,
+            network_name: $network,
+            image_ref: $image,
+            icon: (if $icon == "" then null else $icon end),
+            installed_at: ($installed_at | tonumber),
+            desktop: {
+                management_http: ($manifest.network.management.http // null),
+                management_https: ($manifest.network.management.https // null),
+                service_http: ($manifest.network.service.http // null),
+                service_https: ($manifest.network.service.https // null)
+            }
+        }
+    ' > "$(app_meta_path "$user" "$app")"
+}
+
+write_app_hostexec() {
+    local user="$1"
+    local app="$2"
+    local manifest="$3"
+
+    jq '
+        (.host.exec // {enabled: false, allow: []}) as $cfg
+        | {
+            enabled: ($cfg.enabled // false),
+            allow: (
+                ($cfg.allow // [])
+                | map(
+                    if type == "string" then
+                        .
+                    elif type == "object" then
+                        (.command // .path // "")
+                    else
+                        ""
+                    end
+                )
+                | map(select(length > 0))
+                | unique
+            )
+        }
+    ' "$manifest" > "$(app_hostexec_path "$user" "$app")"
+}
+
+hostexec_is_enabled() {
+    local user="$1"
+    local app="$2"
+    jq -e '.enabled // false' "$(app_hostexec_path "$user" "$app")" >/dev/null 2>&1
+}
+
+hostexec_token_matches() {
+    local user="$1"
+    local app="$2"
+    local token="$3"
+    [[ -n "$token" ]] || return 1
+    [[ -f "$(app_hostexec_token_path "$user" "$app")" ]] || return 1
+    [[ "$(tr -d '\r\n' < "$(app_hostexec_token_path "$user" "$app")")" == "$token" ]]
+}
+
+hostexec_is_allowed() {
+    local user="$1"
+    local app="$2"
+    local command_path="$3"
+    jq -e --arg cmd "$command_path" '.allow // [] | index($cmd) != null' "$(app_hostexec_path "$user" "$app")" >/dev/null 2>&1
+}
+
+hostexec_validate_request() {
+    local user="$1"
+    local app="$2"
+    local command_path="$3"
+
+    [[ -n "$command_path" ]] || die "missing command path"
+    app_is_installed "$user" "$app" || die "app is not installed: $app"
+    [[ "$command_path" = /* ]] || die "hostexec only allows absolute command paths"
+    [[ -x "$command_path" ]] || die "hostexec command is not executable: $command_path"
+    hostexec_is_enabled "$user" "$app" || die "hostexec is not enabled for app: $app"
+    hostexec_is_allowed "$user" "$app" "$command_path" || die "hostexec command is not allowed for app: $command_path"
+}
+
+run_as_user() {
+    local user="$1"
+    shift
+
+    if [[ "$(id -un)" == "$user" ]]; then
+        "$@"
+        return 0
+    fi
+
+    if command -v sudo >/dev/null 2>&1; then
+        sudo -u "$user" -- "$@"
+        return 0
+    fi
+
+    local quoted=""
+    local arg
+    for arg in "$@"; do
+        printf -v quoted '%s %q' "$quoted" "$arg"
+    done
+    quoted="${quoted# }"
+    su "$user" -s /bin/sh -c "$quoted"
+}
+
+append_hostexec_log() {
+    local user="$1"
+    local app="$2"
+    local line="$3"
+    printf '%s\n' "$line" >> "$(app_state_dir "$user" "$app")/hostexec.log"
+}
+
+render_app_info() {
+    local user="$1"
+    local app="$2"
+    local manifest meta container_name network_name running ip desktop_port desktop_scheme target_host
+    local portmaps='[]'
+
+    app_is_installed "$user" "$app" || die "app is not installed: $app"
+
+    manifest="$(app_manifest_json_path "$user" "$app")"
+    meta="$(app_meta_path "$user" "$app")"
+    container_name="$(manifest_value "$meta" '.container_name')"
+    network_name="$(manifest_value "$meta" '.network_name')"
+    running=false
+    ip=""
+
+    if command -v podman >/dev/null 2>&1 && podman inspect "$container_name" >/dev/null 2>&1; then
+        if podman_container_running "$container_name"; then
+            running=true
+            ip="$(podman_container_ip "$container_name")"
+        fi
+    fi
+
+    if [[ -f "$(app_portmaps_path "$user" "$app")" ]]; then
+        portmaps="$(cat "$(app_portmaps_path "$user" "$app")")"
+    fi
+
+    desktop_scheme="http"
+    desktop_port="$(jq -r '
+        .network.service.http
+        // empty
+    ' "$manifest")"
+    if [[ -z "$desktop_port" || "$desktop_port" == "null" ]]; then
+        desktop_port="$(jq -r '
+            .network.service.https
+            // empty
+        ' "$manifest")"
+        if [[ -n "$desktop_port" && "$desktop_port" != "null" ]]; then
+            desktop_scheme="https"
+        fi
+    fi
+
+    target_host="$ip"
+    if manifest_bool "$manifest" '.network.host // false'; then
+        target_host="127.0.0.1"
+    fi
+
+    jq -n \
+        --arg user "$user" \
+        --argfile manifest "$manifest" \
+        --argfile meta "$meta" \
+        --argjson running "$running" \
+        --arg ip "$ip" \
+        --arg target_host "$target_host" \
+        --arg desktop_scheme "$desktop_scheme" \
+        --arg desktop_port "$desktop_port" \
+        --argjson portmaps "$portmaps" '
+        {
+            ok: true,
+            owner: $user,
+            app: {
+                name: ($manifest.app.name // null),
+                version: ($manifest.app.version // null),
+                nickname: ($manifest.app.nickname // null),
+                description: ($manifest.app.description // null)
+            },
+            runtime: {
+                running: $running,
+                container_name: ($meta.container_name // null),
+                network_name: ($meta.network_name // null),
+                image_ref: ($meta.image_ref // null),
+                ip: (if $ip == "" then null else $ip end)
+            },
+            desktop: {
+                scheme: (if $desktop_port == "" or $desktop_port == "null" then null else $desktop_scheme end),
+                port: (if $desktop_port == "" or $desktop_port == "null" then null else ($desktop_port | tonumber) end),
+                target_host: (if $target_host == "" then null else $target_host end)
+            },
+            permissions: {
+                host_network: ($manifest.network.host // false),
+                host_exec: ($manifest.host.exec.enabled // false)
+            },
+            portmaps: $portmaps,
+            manifest: $manifest
+        }
+    '
+}
+
+create_container_from_manifest() {
+    local user="$1"
+    local manifest="$2"
+    local image_ref="$3"
+    local app_name container_name network_name cmd_value hostexec_gateway hostexec_host
+    local -a args
+
+    app_name="$(manifest_value "$manifest" '.app.name')"
+    container_name="$(container_name_for_app "$user" "$app_name")"
+    network_name="$(network_name_for_user "$user")"
+
+    podman inspect "$container_name" >/dev/null 2>&1 && die "container already exists: $container_name"
+
+    args=(create --name "$container_name" --hostname "$app_name" --label "io.capos.owner=$(user_uid "$user")" --label "io.capos.app=$app_name")
+
+    if manifest_bool "$manifest" '.network.host // false'; then
+        args+=(--network host)
+    else
+        podman_network_ensure "$network_name"
+        args+=(--network "$network_name" --network-alias "$app_name")
+    fi
+
+    if jq -e '.container.systemd // false' "$manifest" >/dev/null 2>&1; then
+        args+=(--systemd always)
+    fi
+
+    if jq -e '.container.privileges.enabled // false' "$manifest" >/dev/null 2>&1; then
+        args+=(--privileged)
+    fi
+
+    while IFS= read -r cap; do
+        [[ -n "$cap" ]] && args+=(--cap-add "$cap")
+    done < <(jq -r '.container.privileges.capabilities // [] | .[]' "$manifest")
+
+    if jq -e '(.container.privileges.allow_new_privs // false) | not' "$manifest" >/dev/null 2>&1; then
+        args+=(--security-opt no-new-privileges)
+    fi
+
+    if jq -e '.host.exec.enabled // false' "$manifest" >/dev/null 2>&1; then
+        ensure_app_hostexec_token "$user" "$app_name"
+        if manifest_bool "$manifest" '.network.host // false'; then
+            hostexec_host="127.0.0.1"
+        else
+            hostexec_host="capos.host"
+            hostexec_gateway="$(podman_network_gateway "$network_name")"
+            [[ -n "$hostexec_gateway" ]] || die "unable to resolve bridge gateway for hostexec"
+            args+=(--add-host "${hostexec_host}:${hostexec_gateway}")
+        fi
+        args+=(-v "$(app_hostexec_token_path "$user" "$app_name"):/run/capos_hostexec.token:ro")
+        args+=(-e "CAPOS_HOSTEXEC_URL=http://${hostexec_host}:2000/cgi-bin/cap/api/hostexec")
+        args+=(-e "CAPOS_HOSTEXEC_TOKEN_FILE=/run/capos_hostexec.token")
+        args+=(-e "CAPOS_HOSTEXEC_APP=${app_name}")
+        args+=(-e "CAPOS_HOSTEXEC_USER=${user}")
+    fi
+
+    while IFS= read -r env_item; do
+        [[ -n "$env_item" ]] && args+=(-e "$env_item")
+    done < <(manifest_environment_items "$manifest")
+
+    while IFS= read -r device; do
+        [[ -n "$device" ]] && args+=(--device "$device")
+    done < <(jq -r '.container.devices // [] | .[]' "$manifest")
+
+    while IFS= read -r mount_rule; do
+        [[ -n "$mount_rule" ]] && args+=(-v "$mount_rule")
+    done < <(jq -r '.container.volumes.extra // [] | .[]' "$manifest")
+
+    if [[ "$(manifest_value "$manifest" '.container.volumes.data // ""')" != "" ]]; then
+        args+=(-v "$(app_data_dir "$user" "$app_name"):$(manifest_value "$manifest" '.container.volumes.data')")
+    fi
+
+    while IFS= read -r ref_app; do
+        [[ -n "$ref_app" ]] && args+=(--volumes-from "$(container_name_for_app "$user" "$ref_app")")
+    done < <(manifest_volume_from_refs "$manifest")
+
+    if [[ "$(manifest_value "$manifest" '.container.tmpfs // ""')" != "" ]]; then
+        args+=(--tmpfs "$(manifest_value "$manifest" '.container.tmpfs')")
+    fi
+
+    if [[ "$(manifest_value "$manifest" '.container.resources.memory_reserved // ""')" != "" ]]; then
+        args+=(--memory-reservation "$(manifest_value "$manifest" '.container.resources.memory_reserved')")
+    fi
+
+    if [[ "$(manifest_value "$manifest" '.container.resources.shm_size // ""')" != "" ]]; then
+        args+=(--shm-size "$(manifest_value "$manifest" '.container.resources.shm_size')")
+    fi
+
+    if jq -e '.healthcheck.enabled // false' "$manifest" >/dev/null 2>&1; then
+        if [[ "$(manifest_value "$manifest" '.healthcheck.cmd // ""')" != "" ]]; then
+            args+=(--health-cmd "$(manifest_value "$manifest" '.healthcheck.cmd')")
+        fi
+        if [[ "$(manifest_value "$manifest" '.healthcheck.interval // ""')" != "" ]]; then
+            args+=(--health-interval "$(manifest_value "$manifest" '.healthcheck.interval')")
+        fi
+        if [[ "$(manifest_value "$manifest" '.healthcheck.timeout // ""')" != "" ]]; then
+            args+=(--health-timeout "$(manifest_value "$manifest" '.healthcheck.timeout')")
+        fi
+        if [[ "$(manifest_value "$manifest" '.healthcheck.start_period // ""')" != "" ]]; then
+            args+=(--health-start-period "$(manifest_value "$manifest" '.healthcheck.start_period')")
+        fi
+        if [[ "$(manifest_value "$manifest" '.healthcheck.retries // ""')" != "" ]]; then
+            args+=(--health-retries "$(manifest_value "$manifest" '.healthcheck.retries')")
+        fi
+    fi
+
+    cmd_value="$(manifest_value "$manifest" '.container.cmd.exe // ""')"
+    if [[ -n "$cmd_value" && "$cmd_value" != "null" ]]; then
+        args+=("$image_ref" /bin/sh -lc "$cmd_value")
+    else
+        args+=("$image_ref")
+    fi
+
+    podman "${args[@]}" >/dev/null
+    podman start "$container_name" >/dev/null
+}
+
+mapping_key() {
+    printf '%s:%s->%s\n' "$1" "$2" "$3"
+}
+
+port_in_use_in_state() {
+    local listen="$1"
+    local proto="$2"
+    local user="$3"
+    local app="$4"
+    local path
+
+    while IFS= read -r path; do
+        jq -e --argjson listen "$listen" --arg proto "$proto" --arg app "$app" --arg owner "$(user_uid "$user")" '
+            .[] | select(.listen == $listen and .proto == $proto)
+        ' "$path" >/dev/null 2>&1 || continue
+        if [[ "$(dirname "$path")" != "$(app_state_dir "$user" "$app")" ]]; then
+            return 0
+        fi
+    done < <(find "$CAPBOX_STATE_DIR/users" -path '*/portmaps.json' -type f 2>/dev/null || true)
+
+    return 1
+}
+
+stop_portmap_rule() {
+    local user="$1"
+    local app="$2"
+    local proto="$3"
+    local listen="$4"
+    local target="$5"
+    local pidfile pid
+
+    pidfile="$(portmap_pid_file "$user" "$app" "$proto" "$listen" "$target")"
+    [[ -f "$pidfile" ]] || return 0
+    pid="$(cat "$pidfile" 2>/dev/null || true)"
+    if [[ -n "$pid" ]] && kill -0 "$pid" 2>/dev/null; then
+        kill "$pid" 2>/dev/null || true
+        wait "$pid" 2>/dev/null || true
+    fi
+    rm -f "$pidfile"
+}
+
+start_portmap_rule() {
+    local user="$1"
+    local app="$2"
+    local proto="$3"
+    local listen="$4"
+    local target="$5"
+    local container_name inspect running container_pid pidfile listen_arg target_arg nsenter_cmd spid
+
+    need_cmd podman nsenter socat
+    container_name="$(container_name_for_app "$user" "$app")"
+    inspect="$(podman inspect -f '{{.State.Running}} {{.State.Pid}}' "$container_name" 2>/dev/null || true)"
+    [[ -n "$inspect" ]] || return 0
+    read -r running container_pid <<< "$inspect"
+    [[ "$running" == "true" ]] || return 0
+    [[ "$container_pid" =~ ^[0-9]+$ && "$container_pid" != "0" ]] || return 0
+
+    pidfile="$(portmap_pid_file "$user" "$app" "$proto" "$listen" "$target")"
+    if [[ -f "$pidfile" ]]; then
+        local existing_pid
+        existing_pid="$(cat "$pidfile" 2>/dev/null || true)"
+        if [[ -n "$existing_pid" ]] && kill -0 "$existing_pid" 2>/dev/null; then
+            return 0
+        fi
+        rm -f "$pidfile"
+    fi
+
+    if [[ "$proto" == "tcp" ]]; then
+        listen_arg="TCP-LISTEN:${listen},fork,reuseaddr"
+        target_arg="TCP:127.0.0.1:${target}"
+    else
+        listen_arg="UDP-LISTEN:${listen},fork,reuseaddr"
+        target_arg="UDP:127.0.0.1:${target}"
+    fi
+
+    printf -v nsenter_cmd 'nsenter -t %q -n socat STDIO %q' "$container_pid" "$target_arg"
+    socat "$listen_arg" EXEC:"$nsenter_cmd" >/dev/null 2>&1 &
+    spid=$!
+    sleep 0.05
+    if ! kill -0 "$spid" 2>/dev/null; then
+        wait "$spid" 2>/dev/null || true
+        die "failed to start port mapping for $app on port $listen/$proto"
+    fi
+
+    printf '%s\n' "$spid" > "$pidfile"
+}
+
+reconcile_portmaps() {
+    local user="$1"
+    local app="$2"
+    local state_file proto listen target pidfile
+
+    state_file="$(app_portmaps_path "$user" "$app")"
+    [[ -f "$state_file" ]] || return 0
+    mkdir -p "$(app_portmap_runtime_dir "$user" "$app")"
+
+    while IFS= read -r pidfile; do
+        local base state_proto state_listen state_target
+        base="$(basename "$pidfile" .pid)"
+        state_proto="${base%%_*}"
+        base="${base#*_}"
+        state_listen="${base%%_*}"
+        state_target="${base##*_}"
+        if ! jq -e --arg proto "$state_proto" --argjson listen "$state_listen" --argjson target "$state_target" '
+            .[] | select(.proto == $proto and .listen == $listen and .target_port == $target)
+        ' "$state_file" >/dev/null 2>&1; then
+            stop_portmap_rule "$user" "$app" "$state_proto" "$state_listen" "$state_target"
+        fi
+    done < <(find "$(app_portmap_runtime_dir "$user" "$app")" -type f -name '*.pid' 2>/dev/null || true)
+
+    while IFS=$'\t' read -r proto listen target; do
+        [[ -n "$proto" ]] || continue
+        start_portmap_rule "$user" "$app" "$proto" "$listen" "$target"
+    done < <(jq -r '.[] | [.proto, (.listen|tostring), (.target_port|tostring)] | @tsv' "$state_file")
+}
+
+set_portmap() {
+    local user="$1"
+    local app="$2"
+    local listen="$3"
+    local target="$4"
+    local proto="$5"
+    local state_file tmp
+
+    app_is_installed "$user" "$app" || die "app is not installed: $app"
+    [[ "$listen" =~ ^[0-9]+$ && "$target" =~ ^[0-9]+$ ]] || die "port values must be numeric"
+    ((listen >= 1 && listen <= 65535)) || die "listen port out of range"
+    ((target >= 1 && target <= 65535)) || die "target port out of range"
+    [[ "$proto" == "tcp" || "$proto" == "udp" ]] || die "unsupported protocol: $proto"
+
+    if ((listen < 1024)) && ! user_is_sudo "$user"; then
+        die "low ports require sudo privileges"
+    fi
+
+    port_in_use_in_state "$listen" "$proto" "$user" "$app" && die "port already allocated in capbox state: $listen/$proto"
+
+    state_file="$(app_portmaps_path "$user" "$app")"
+    tmp="$(mktemp)"
+    jq \
+        --arg proto "$proto" \
+        --argjson listen "$listen" \
+        --argjson target "$target" '
+        if any(.[]; .proto == $proto and .listen == $listen and .target_port == $target) then
+            .
+        else
+            . + [{proto: $proto, listen: $listen, target_port: $target}]
+        end
+    ' "$state_file" > "$tmp"
+    mv "$tmp" "$state_file"
+    reconcile_portmaps "$user" "$app"
+}
+
+remove_portmap() {
+    local user="$1"
+    local app="$2"
+    local listen="$3"
+    local target="$4"
+    local proto="$5"
+    local state_file tmp
+
+    app_is_installed "$user" "$app" || die "app is not installed: $app"
+    state_file="$(app_portmaps_path "$user" "$app")"
+    tmp="$(mktemp)"
+    jq \
+        --arg proto "$proto" \
+        --argjson listen "$listen" \
+        --argjson target "$target" '
+        map(select(.proto != $proto or .listen != $listen or .target_port != $target))
+    ' "$state_file" > "$tmp"
+    mv "$tmp" "$state_file"
+    stop_portmap_rule "$user" "$app" "$proto" "$listen" "$target"
+}
+
+install_publish_rules_from_manifest() {
+    local user="$1"
+    local app="$2"
+    local manifest="$3"
+    local raw proto listen target
+
+    while IFS=$'\t' read -r raw proto listen target; do
+        [[ -z "$raw" ]] && continue
+        set_portmap "$user" "$app" "$listen" "$target" "$proto"
+    done < <(manifest_publish_rules_tsv "$manifest")
+}
+
+cmd_user_info() {
+    local user
+    user="$(resolve_target_user "${1:-}")"
+    print_json \
+        --arg username "$user" \
+        --arg uid "$(user_uid "$user")" \
+        --arg gid "$(user_gid "$user")" \
+        --arg home "$(user_home "$user")" \
+        --arg shell "$(user_shell "$user")" \
+        --argjson is_sudo "$(if user_is_sudo "$user"; then echo true; else echo false; fi)" '
+        {
+            ok: true,
+            username: $username,
+            uid: ($uid | tonumber),
+            gid: ($gid | tonumber),
+            home: $home,
+            shell: $shell,
+            is_sudo: $is_sudo
+        }
+    '
+}
+
+cmd_cpk_inspect() {
+    local cpk_file="$1"
+    local tmpdir manifest_yaml manifest_json image_path icon_path
+    [[ -f "$cpk_file" ]] || die "CPK file not found: $cpk_file"
+    need_cmd tar jq yq
+    tmpdir="$(mktemp -d)"
+    trap 'rm -rf "$tmpdir"' RETURN
+    extract_cpk "$cpk_file" "$tmpdir"
+    manifest_yaml="$(find_cpk_manifest "$tmpdir")"
+    manifest_json="$tmpdir/manifest.json"
+    read_manifest_json_from_yaml "$manifest_yaml" "$manifest_json"
+    ensure_manifest_shape "$manifest_json"
+    image_path="$(select_cpk_image "$tmpdir" "$manifest_json")"
+    icon_path="$(find_cpk_icon "$tmpdir")"
+    cpk_summary_json "$manifest_json" "$cpk_file" "$image_path" "$icon_path"
+}
+
+cmd_cpk_validate() {
+    local cpk_file="$1"
+    local user="$2"
+    local tmpdir manifest_yaml manifest_json image_path icon_path
+    [[ -f "$cpk_file" ]] || die "CPK file not found: $cpk_file"
+    need_cmd tar jq yq
+    tmpdir="$(mktemp -d)"
+    trap 'rm -rf "$tmpdir"' RETURN
+    extract_cpk "$cpk_file" "$tmpdir"
+    manifest_yaml="$(find_cpk_manifest "$tmpdir")"
+    manifest_json="$tmpdir/manifest.json"
+    read_manifest_json_from_yaml "$manifest_yaml" "$manifest_json"
+    validate_manifest_for_user "$manifest_json" "$user"
+    image_path="$(select_cpk_image "$tmpdir" "$manifest_json")"
+    icon_path="$(find_cpk_icon "$tmpdir")"
+    cpk_summary_json "$manifest_json" "$cpk_file" "$image_path" "$icon_path"
+}
+
+cmd_cpk_install() {
+    local cpk_file="$1"
+    local user="$2"
+    local tmpdir manifest_yaml manifest_json image_path icon_path app_name icon_name load_output image_ref
+
+    require_root
+    [[ -f "$cpk_file" ]] || die "CPK file not found: $cpk_file"
+    need_cmd tar jq yq podman
+    ensure_user_dirs "$user"
+
+    tmpdir="$(mktemp -d)"
+    trap 'rm -rf "$tmpdir"' RETURN
+    extract_cpk "$cpk_file" "$tmpdir"
+    manifest_yaml="$(find_cpk_manifest "$tmpdir")"
+    manifest_json="$tmpdir/manifest.json"
+    read_manifest_json_from_yaml "$manifest_yaml" "$manifest_json"
+    validate_manifest_for_user "$manifest_json" "$user"
+
+    app_name="$(manifest_value "$manifest_json" '.app.name')"
+    ensure_app_dirs "$user" "$app_name"
+    image_path="$(select_cpk_image "$tmpdir" "$manifest_json")"
+    icon_path="$(find_cpk_icon "$tmpdir")"
+    icon_name=""
+    if [[ -n "$icon_path" ]]; then
+        icon_name="$(basename "$icon_path")"
+    fi
+
+    load_output="$(podman load -i "$image_path" 2>&1)"
+    image_ref="$(detect_image_ref_from_load "$load_output")"
+
+    cp "$manifest_yaml" "$(app_manifest_yaml_path "$user" "$app_name")"
+    cp "$manifest_json" "$(app_manifest_json_path "$user" "$app_name")"
+    copy_if_present "$icon_path" "$(app_state_dir "$user" "$app_name")/$icon_name"
+    write_app_meta "$user" "$app_name" "$image_ref" "$icon_name" "$manifest_json"
+    write_app_hostexec "$user" "$app_name" "$manifest_json"
+    create_container_from_manifest "$user" "$manifest_json" "$image_ref"
+    install_publish_rules_from_manifest "$user" "$app_name" "$manifest_json"
+    render_app_info "$user" "$app_name"
+}
+
+cmd_app_list() {
+    local user="$1"
+    local apps_dir
+
+    ensure_user_dirs "$user"
+    apps_dir="$(user_apps_dir "$user")"
+    {
+        printf '[\n'
+        local first=1
+        local app_dir app_name
+        for app_dir in "$apps_dir"/*; do
+            [[ -d "$app_dir" ]] || continue
+            app_name="$(basename "$app_dir")"
+            app_is_installed "$user" "$app_name" || continue
+            if ((first)); then
+                first=0
+            else
+                printf ',\n'
+            fi
+            render_app_info "$user" "$app_name"
+        done
+        printf '\n]\n'
+    } | jq -s '.[0]'
+}
+
+cmd_app_info() {
+    local user="$1"
+    local app="$2"
+    render_app_info "$user" "$app"
+}
+
+cmd_app_start() {
+    local user="$1"
+    local app="$2"
+    local container_name
+    require_root
+    app_is_installed "$user" "$app" || die "app is not installed: $app"
+    container_name="$(container_name_for_app "$user" "$app")"
+    podman start "$container_name" >/dev/null
+    reconcile_portmaps "$user" "$app"
+    render_app_info "$user" "$app"
+}
+
+cmd_app_stop() {
+    local user="$1"
+    local app="$2"
+    local container_name rule
+    require_root
+    app_is_installed "$user" "$app" || die "app is not installed: $app"
+    container_name="$(container_name_for_app "$user" "$app")"
+    podman stop "$container_name" >/dev/null
+    while IFS=$'\t' read -r proto listen target; do
+        [[ -n "$proto" ]] || continue
+        stop_portmap_rule "$user" "$app" "$proto" "$listen" "$target"
+    done < <(jq -r '.[] | [.proto, (.listen|tostring), (.target_port|tostring)] | @tsv' "$(app_portmaps_path "$user" "$app")")
+    render_app_info "$user" "$app"
+}
+
+cmd_app_restart() {
+    local user="$1"
+    local app="$2"
+    local container_name
+    require_root
+    app_is_installed "$user" "$app" || die "app is not installed: $app"
+    container_name="$(container_name_for_app "$user" "$app")"
+    podman restart "$container_name" >/dev/null
+    reconcile_portmaps "$user" "$app"
+    render_app_info "$user" "$app"
+}
+
+cmd_app_uninstall() {
+    local user="$1"
+    local app="$2"
+    local container_name
+    require_root
+    app_is_installed "$user" "$app" || die "app is not installed: $app"
+    while IFS=$'\t' read -r proto listen target; do
+        [[ -n "$proto" ]] || continue
+        stop_portmap_rule "$user" "$app" "$proto" "$listen" "$target"
+    done < <(jq -r '.[] | [.proto, (.listen|tostring), (.target_port|tostring)] | @tsv' "$(app_portmaps_path "$user" "$app")")
+
+    container_name="$(container_name_for_app "$user" "$app")"
+    if command -v podman >/dev/null 2>&1 && podman inspect "$container_name" >/dev/null 2>&1; then
+        podman rm -f "$container_name" >/dev/null
+    fi
+    rm -rf "$(app_state_dir "$user" "$app")" "$(app_runtime_dir "$user" "$app")"
+    if [[ -f "$(desktop_path "$user")" ]] && [[ "$(cat "$(desktop_path "$user")")" == "$app" ]]; then
+        rm -f "$(desktop_path "$user")"
+    fi
+    print_json --arg message "uninstalled $app" '{ok: true, message: $message}'
+}
+
+cmd_portmap_list() {
+    local user="$1"
+    local app="$2"
+    app_is_installed "$user" "$app" || die "app is not installed: $app"
+    cat "$(app_portmaps_path "$user" "$app")"
+}
+
+cmd_portmap_set() {
+    local user="$1"
+    local app="$2"
+    local listen="$3"
+    local target="$4"
+    local proto="$5"
+    require_root
+    set_portmap "$user" "$app" "$listen" "$target" "$proto"
+    cmd_portmap_list "$user" "$app"
+}
+
+cmd_portmap_remove() {
+    local user="$1"
+    local app="$2"
+    local listen="$3"
+    local target="$4"
+    local proto="$5"
+    require_root
+    remove_portmap "$user" "$app" "$listen" "$target" "$proto"
+    cmd_portmap_list "$user" "$app"
+}
+
+cmd_desktop_get() {
+    local user="$1"
+    local app=""
+    if [[ -f "$(desktop_path "$user")" ]]; then
+        app="$(cat "$(desktop_path "$user")")"
+    fi
+    jq -n --arg app "$app" '{ok: true, app: (if $app == "" then null else $app end)}'
+}
+
+cmd_desktop_set() {
+    local user="$1"
+    local app="$2"
+    app_is_installed "$user" "$app" || die "app is not installed: $app"
+    ensure_user_dirs "$user"
+    printf '%s\n' "$app" > "$(desktop_path "$user")"
+    cmd_desktop_get "$user"
+}
+
+cmd_reconcile() {
+    local user="$1"
+    local app="$2"
+    if [[ -n "$app" ]]; then
+        app_is_installed "$user" "$app" || die "app is not installed: $app"
+        reconcile_portmaps "$user" "$app"
+        render_app_info "$user" "$app"
+        return 0
+    fi
+
+    local app_dir app_name
+    for app_dir in "$(user_apps_dir "$user")"/*; do
+        [[ -d "$app_dir" ]] || continue
+        app_name="$(basename "$app_dir")"
+        app_is_installed "$user" "$app_name" || continue
+        reconcile_portmaps "$user" "$app_name"
+    done
+    print_json --arg message "reconciled user $user" '{ok: true, message: $message}'
+}
+
+cmd_hostexec_run() {
+    local user="$1"
+    local app="$2"
+    shift 2
+    local command_path="${1:-}"
+
+    hostexec_validate_request "$user" "$app" "$command_path"
+
+    local started ended exit_code
+    started="$(current_unix_time)"
+    if run_as_user "$user" "$@"; then
+        exit_code=0
+    else
+        exit_code=$?
+    fi
+    ended="$(current_unix_time)"
+    append_hostexec_log "$user" "$app" "$(printf '%s app=%s user=%s cmd=%q exit=%s duration=%s' "$started" "$app" "$user" "$*" "$exit_code" "$((ended - started))")"
+    return "$exit_code"
+}
+
+cmd_hostexec_invoke() {
+    local user="$1"
+    local app="$2"
+    local token="$3"
+    shift 3
+    local command_path="${1:-}"
+    local started ended exit_code tmp output
+
+    hostexec_token_matches "$user" "$app" "$token" || die "hostexec token is invalid"
+    hostexec_validate_request "$user" "$app" "$command_path"
+
+    tmp="$(mktemp)"
+    started="$(current_unix_time)"
+    if run_as_user "$user" "$@" >"$tmp" 2>&1; then
+        exit_code=0
+    else
+        exit_code=$?
+    fi
+    ended="$(current_unix_time)"
+    output="$(cat "$tmp")"
+    rm -f "$tmp"
+
+    append_hostexec_log "$user" "$app" "$(printf '%s app=%s user=%s cmd=%q exit=%s duration=%s source=api' "$started" "$app" "$user" "$*" "$exit_code" "$((ended - started))")"
+    jq -n \
+        --argjson exit_code "$exit_code" \
+        --arg output "$output" '
+        {
+            ok: true,
+            exit_code: $exit_code,
+            success: ($exit_code == 0),
+            output: $output
+        }
+    '
+}
+
+usage() {
+    cat <<'EOF'
+Usage:
+  capbox user info [--user USER]
+  capbox cpk inspect FILE
+  capbox cpk validate FILE [--user USER]
+  capbox cpk install FILE [--user USER]
+  capbox app list [--user USER]
+  capbox app info APP [--user USER]
+  capbox app start APP [--user USER]
+  capbox app stop APP [--user USER]
+  capbox app restart APP [--user USER]
+  capbox app uninstall APP [--user USER]
+  capbox portmap list APP [--user USER]
+  capbox portmap set APP --listen PORT --target PORT [--proto tcp|udp] [--user USER]
+  capbox portmap remove APP --listen PORT --target PORT [--proto tcp|udp] [--user USER]
+  capbox desktop get [--user USER]
+  capbox desktop set APP [--user USER]
+  capbox hostexec run APP --user USER -- /absolute/command [args...]
+  capbox hostexec invoke APP --user USER --token TOKEN -- /absolute/command [args...]
+  capbox reconcile [APP] [--user USER]
+EOF
+}
+
+main() {
+    local group="${1:-}"
+    local action="${2:-}"
+    local user=""
+
+    [[ -n "$group" ]] || {
+        usage
+        exit 1
+    }
+
+    shift $(( $# > 0 ? 1 : 0 ))
+    case "$group" in
+        user)
+            [[ "${1:-}" == "info" ]] || die "unknown user command"
+            shift
+            while (($#)); do
+                case "$1" in
+                    --user) user="$2"; shift 2 ;;
+                    *) die "unexpected argument: $1" ;;
+                esac
+            done
+            cmd_user_info "$user"
+            ;;
+        cpk)
+            [[ -n "${1:-}" ]] || die "missing cpk action"
+            action="$1"
+            shift
+            local file=""
+            while (($#)); do
+                case "$1" in
+                    --user) user="$2"; shift 2 ;;
+                    *)
+                        [[ -z "$file" ]] || die "unexpected argument: $1"
+                        file="$1"
+                        shift
+                        ;;
+                esac
+            done
+            [[ -n "$file" ]] || die "missing CPK file"
+            case "$action" in
+                inspect) cmd_cpk_inspect "$file" ;;
+                validate) cmd_cpk_validate "$file" "$(resolve_target_user "$user")" ;;
+                install) cmd_cpk_install "$file" "$(resolve_target_user "$user")" ;;
+                *) die "unknown cpk action: $action" ;;
+            esac
+            ;;
+        app)
+            [[ -n "${1:-}" ]] || die "missing app action"
+            action="$1"
+            shift
+            local app=""
+            while (($#)); do
+                case "$1" in
+                    --user) user="$2"; shift 2 ;;
+                    *)
+                        [[ -z "$app" ]] || die "unexpected argument: $1"
+                        app="$1"
+                        shift
+                        ;;
+                esac
+            done
+            user="$(resolve_target_user "$user")"
+            case "$action" in
+                list) cmd_app_list "$user" ;;
+                info) [[ -n "$app" ]] || die "missing app name"; cmd_app_info "$user" "$app" ;;
+                start) [[ -n "$app" ]] || die "missing app name"; cmd_app_start "$user" "$app" ;;
+                stop) [[ -n "$app" ]] || die "missing app name"; cmd_app_stop "$user" "$app" ;;
+                restart) [[ -n "$app" ]] || die "missing app name"; cmd_app_restart "$user" "$app" ;;
+                uninstall) [[ -n "$app" ]] || die "missing app name"; cmd_app_uninstall "$user" "$app" ;;
+                *) die "unknown app action: $action" ;;
+            esac
+            ;;
+        portmap)
+            [[ -n "${1:-}" ]] || die "missing portmap action"
+            action="$1"
+            shift
+            local app="" listen="" target="" proto="tcp"
+            while (($#)); do
+                case "$1" in
+                    --user) user="$2"; shift 2 ;;
+                    --listen) listen="$2"; shift 2 ;;
+                    --target) target="$2"; shift 2 ;;
+                    --proto) proto="$2"; shift 2 ;;
+                    *)
+                        [[ -z "$app" ]] || die "unexpected argument: $1"
+                        app="$1"
+                        shift
+                        ;;
+                esac
+            done
+            [[ -n "$app" ]] || die "missing app name"
+            user="$(resolve_target_user "$user")"
+            case "$action" in
+                list) cmd_portmap_list "$user" "$app" ;;
+                set)
+                    [[ -n "$listen" && -n "$target" ]] || die "listen and target ports are required"
+                    cmd_portmap_set "$user" "$app" "$listen" "$target" "$proto"
+                    ;;
+                remove)
+                    [[ -n "$listen" && -n "$target" ]] || die "listen and target ports are required"
+                    cmd_portmap_remove "$user" "$app" "$listen" "$target" "$proto"
+                    ;;
+                *) die "unknown portmap action: $action" ;;
+            esac
+            ;;
+        desktop)
+            [[ -n "${1:-}" ]] || die "missing desktop action"
+            action="$1"
+            shift
+            local app=""
+            while (($#)); do
+                case "$1" in
+                    --user) user="$2"; shift 2 ;;
+                    *)
+                        [[ -z "$app" ]] || die "unexpected argument: $1"
+                        app="$1"
+                        shift
+                        ;;
+                esac
+            done
+            user="$(resolve_target_user "$user")"
+            case "$action" in
+                get) cmd_desktop_get "$user" ;;
+                set) [[ -n "$app" ]] || die "missing app name"; cmd_desktop_set "$user" "$app" ;;
+                *) die "unknown desktop action: $action" ;;
+            esac
+            ;;
+        hostexec)
+            [[ -n "${1:-}" ]] || die "missing hostexec action"
+            action="$1"
+            shift
+            local app="" token=""
+            while (($#)); do
+                case "$1" in
+                    --user) user="$2"; shift 2 ;;
+                    --token) token="$2"; shift 2 ;;
+                    --) shift; break ;;
+                    *)
+                        [[ -z "$app" ]] || die "unexpected argument: $1"
+                        app="$1"
+                        shift
+                        ;;
+                esac
+            done
+            [[ -n "$app" ]] || die "missing app name"
+            user="$(resolve_target_user "$user")"
+            case "$action" in
+                run)
+                    cmd_hostexec_run "$user" "$app" "$@"
+                    ;;
+                invoke)
+                    [[ -n "$token" ]] || die "missing hostexec token"
+                    cmd_hostexec_invoke "$user" "$app" "$token" "$@"
+                    ;;
+                *)
+                    die "unknown hostexec action: $action"
+                    ;;
+            esac
+            ;;
+        reconcile)
+            local app=""
+            shift 0
+            while (($#)); do
+                case "$1" in
+                    --user) user="$2"; shift 2 ;;
+                    *)
+                        [[ -z "$app" ]] || die "unexpected argument: $1"
+                        app="$1"
+                        shift
+                        ;;
+                esac
+            done
+            cmd_reconcile "$(resolve_target_user "$user")" "$app"
+            ;;
+        -h|--help|help)
+            usage
+            ;;
+        *)
+            die "unknown command group: $group"
+            ;;
+    esac
+}
+
+main "$@"
