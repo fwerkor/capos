@@ -442,9 +442,9 @@ validate_manifest_for_user() {
 
     while IFS= read -r dep; do
         [[ -z "$dep" ]] && continue
-        command -v opkg >/dev/null 2>&1 || die "opkg is required to verify package dependencies"
-        opkg status "$dep" >/dev/null 2>&1 || die "missing opkg dependency: $dep"
-    done < <(jq -r '.dependencies.opkg // [] | .[]' "$manifest")
+        command -v apk >/dev/null 2>&1 || die "apk is required to verify package dependencies"
+        apk info -e "$dep" >/dev/null 2>&1 || die "missing apk dependency: $dep"
+    done < <(jq -r '((.dependencies.apk // []) + (.dependencies.opkg // [])) | .[]' "$manifest")
 
     while IFS= read -r dep; do
         [[ -z "$dep" ]] && continue
