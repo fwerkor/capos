@@ -74,7 +74,7 @@ ifdef SDK
 endif
 
 # Local package ban list
-IGNORE_PACKAGES += nowut owut attendedsysupgrade-common luci-app-attendedsysupgrade
+IGNORE_PACKAGES += owut attendedsysupgrade-common luci-app-attendedsysupgrade
 
 _ignore = $(foreach p,$(IGNORE_PACKAGES),--ignore $(p))
 
