@@ -115,10 +115,11 @@
       .workspace {
         position: relative;
         min-height: 100vh;
+        padding-top: var(--workspace-top, 84px);
       }
 
       .desktop {
-        height: 100vh;
+        height: calc(100vh - var(--workspace-top, 84px));
       }
 
       .desktop-frame {
@@ -183,7 +184,7 @@
 
       .control-drawer {
         position: fixed;
-        top: 72px;
+        top: var(--workspace-top, 84px);
         right: 12px;
         bottom: 12px;
         width: min(360px, calc(100vw - 24px));
@@ -453,6 +454,7 @@
 
       const loginView = $("loginView");
       const appShell = $("appShell");
+      const topbar = document.querySelector(".topbar");
       const controlDrawer = $("controlDrawer");
       const appsList = $("appsList");
       const sessionSummary = $("sessionSummary");
@@ -492,6 +494,12 @@
       function setAuthedUi(authed) {
         loginView.style.display = authed ? "none" : "grid";
         appShell.classList.toggle("ready", authed);
+      }
+
+      function updateViewportOffsets() {
+        const topbarHeight = topbar ? topbar.offsetHeight : 60;
+        const workspaceTop = topbarHeight + 24;
+        document.documentElement.style.setProperty("--workspace-top", `${workspaceTop}px`);
       }
 
       function refreshDesktopFrame() {
@@ -560,6 +568,7 @@
         }`;
         luciLink.style.display = data.session.is_sudo ? "inline-flex" : "none";
         setAuthedUi(true);
+        updateViewportOffsets();
         return true;
       }
 
@@ -573,6 +582,7 @@
         const data = await api("/desktop");
         state.desktop = data;
         desktopHint.textContent = data.app ? `当前桌面应用：${data.app}` : "请选择一个已安装应用作为桌面应用。";
+        updateViewportOffsets();
         refreshDesktopFrame();
       }
 
@@ -585,6 +595,7 @@
 
       $("toggleDrawerBtn").addEventListener("click", () => controlDrawer.classList.toggle("open"));
       $("closeDrawerBtn").addEventListener("click", () => controlDrawer.classList.remove("open"));
+      window.addEventListener("resize", updateViewportOffsets);
 
       $("loginForm").addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -741,6 +752,7 @@
         setAuthedUi(false);
         showStatus(error.message, "error");
       });
+      updateViewportOffsets();
     </script>
   </body>
 </html>
