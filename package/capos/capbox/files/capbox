@@ -280,8 +280,25 @@ manifest_requires_sudo() {
 read_manifest_json_from_yaml() {
     local yaml_path="$1"
     local out_json="$2"
-    need_cmd yq
-    yq eval -o=json '.' "$yaml_path" > "$out_json"
+    need_cmd yq jq
+    yq eval -o=json '.' "$yaml_path" \
+        | jq '
+            if (.dependencies | type) != "object" then
+                .dependencies = {}
+            else
+                .
+            end
+            | if (.dependencies | has("apk")) then
+                .
+              else
+                .dependencies.apk = (.dependencies.opkg // [])
+              end
+            | if (.dependencies | has("opkg")) then
+                .
+              else
+                .dependencies.opkg = (.dependencies.apk // [])
+              end
+        ' > "$out_json"
 }
 
 extract_cpk() {
@@ -444,7 +461,7 @@ validate_manifest_for_user() {
         [[ -z "$dep" ]] && continue
         command -v apk >/dev/null 2>&1 || die "apk is required to verify package dependencies"
         apk info -e "$dep" >/dev/null 2>&1 || die "missing apk dependency: $dep"
-    done < <(jq -r '((.dependencies.apk // []) + (.dependencies.opkg // [])) | .[]' "$manifest")
+    done < <(jq -r '.dependencies.apk // [] | .[]' "$manifest")
 
     while IFS= read -r dep; do
         [[ -z "$dep" ]] && continue
