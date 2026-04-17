@@ -73,6 +73,9 @@ ifdef SDK
   IGNORE_PACKAGES = linux
 endif
 
+# Local package ban list
+IGNORE_PACKAGES += owut attendedsysupgrade-common luci-app-attendedsysupgrade
+
 _ignore = $(foreach p,$(IGNORE_PACKAGES),--ignore $(p))
 
 prepare-tmpinfo: FORCE
@@ -269,4 +272,3 @@ ifeq ($(findstring v,$(DEBUG)),)
 endif
 .PHONY: help FORCE
 .NOTPARALLEL:
-
