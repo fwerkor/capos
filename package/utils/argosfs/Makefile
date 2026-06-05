@@ -12,7 +12,7 @@ PKG_MAINTAINER:=FWERKOR
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
 
-PKG_BUILD_DEPENDS:=rust/host fuse3
+PKG_BUILD_DEPENDS:=rust/host fuse3 argosfs/host
 HOST_BUILD_DEPENDS:=rust/host
 PKG_BUILD_PARALLEL:=1
 HOST_BUILD_PARALLEL:=1
@@ -21,6 +21,9 @@ include $(INCLUDE_DIR)/host-build.mk
 include $(INCLUDE_DIR)/package.mk
 include $(TOPDIR)/feeds/packages/lang/rust/rust-package.mk
 include $(TOPDIR)/feeds/packages/lang/rust/rust-host-build.mk
+
+HOST_FUSE3_PKG_CONFIG_LIBDIR:=$(shell env -u PKG_CONFIG_LIBDIR -u PKG_CONFIG_PATH PATH=/usr/local/bin:/usr/bin:/bin pkg-config --variable pc_path pkg-config 2>/dev/null)
+CARGO_HOST_VARS += PKG_CONFIG_LIBDIR=$(STAGING_DIR_HOSTPKG)/lib/pkgconfig:$(STAGING_DIR_HOST)/lib/pkgconfig:$(HOST_FUSE3_PKG_CONFIG_LIBDIR)
 
 define Package/argosfs
   SECTION:=utils
@@ -43,6 +46,8 @@ define Package/argosfs/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/contrib/capos/initramfs/argosfs-root.sh $(1)/lib/argosfs/argosfs-root.sh
 	$(INSTALL_DIR) $(1)/lib/argosfs/initramfs-hooks
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/contrib/capos/initramfs/hooks/argosfs $(1)/lib/argosfs/initramfs-hooks/argosfs
+	$(INSTALL_DIR) $(1)/lib/preinit
+	$(INSTALL_BIN) ./files/05_argosfs_root $(1)/lib/preinit/05_argosfs_root
 	$(INSTALL_DIR) $(1)/etc/argosfs
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/contrib/capos/mkinitramfs/argosfs.conf $(1)/etc/argosfs/initramfs.conf
 	$(INSTALL_DIR) $(1)/lib/systemd/system

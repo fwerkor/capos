@@ -221,6 +221,11 @@ ifneq ($(CONFIG_PACKAGE_podman),)
     $(error TARGET_ROOTFS_PARTSIZE=$(CONFIG_TARGET_ROOTFS_PARTSIZE) MiB is too small for Podman. Set it to at least 256 MiB or regenerate the config with the updated defaults)
   endif
 endif
+ifneq ($(CONFIG_TARGET_ROOTFS_ARGOSFS),)
+  ifneq ($(shell [ -n "$(CONFIG_TARGET_ROOTFS_PARTSIZE)" ] && [ "$(CONFIG_TARGET_ROOTFS_PARTSIZE)" -lt 384 ] && echo y),)
+    $(error TARGET_ROOTFS_PARTSIZE=$(CONFIG_TARGET_ROOTFS_PARTSIZE) MiB is too small for ArgosFS. Set it to at least 384 MiB or regenerate the config with the updated defaults)
+  endif
+endif
 endif
 
 define Image/pad-root-squashfs
@@ -343,20 +348,20 @@ define Image/mkfs/targz
 endef
 
 define Image/mkfs/argosfs
-	rm -f $@ $@.disk*
+	rm -f $@
 	$(STAGING_DIR_HOSTPKG)/bin/argosfs mkfs --backend loop \
-		--images $@.disk0,$@.disk1,$@.disk2 \
-		--k 2 --m 1 \
+		--images $@ \
+		--k 1 --m 0 \
+		--chunk-size 262144 \
+		--compression none \
 		--image-size $(ROOTFS_PARTSIZE) \
 		--pool-name capos-root \
 		--force
 	$(STAGING_DIR_HOSTPKG)/bin/argosfs import-tree --backend loop \
-		--images $@.disk0,$@.disk1,$@.disk2 \
+		--images $@ \
 		$(call mkfs_target_dir,$(1)) /
 	$(STAGING_DIR_HOSTPKG)/bin/argosfs preflight-root --backend loop \
-		--images $@.disk0,$@.disk1,$@.disk2 --mode rw
-	tar -C $(dir $@) -cf $@.tar $(notdir $@).disk0 $(notdir $@).disk1 $(notdir $@).disk2
-	mv $@.tar $@
+		--images $@ --mode rw
 endef
 
 define Image/Manifest
