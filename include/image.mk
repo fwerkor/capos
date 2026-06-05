@@ -112,6 +112,7 @@ EROFSCOMP := lzma,109
 endif
 
 fs-types-$(CONFIG_TARGET_ROOTFS_SQUASHFS) += squashfs
+fs-types-$(CONFIG_TARGET_ROOTFS_ARGOSFS) += argosfs
 fs-types-$(CONFIG_TARGET_ROOTFS_JFFS2) += $(addprefix jffs2-,$(JFFS2_BLOCKSIZE))
 fs-types-$(CONFIG_TARGET_ROOTFS_JFFS2_NAND) += $(addprefix jffs2-nand-,$(NAND_BLOCKSIZE))
 fs-types-$(CONFIG_TARGET_ROOTFS_EXT4FS) += ext4
@@ -339,6 +340,23 @@ define Image/mkfs/targz
 	$(TAR) -cp --numeric-owner --owner=0 --group=0 --mode=a-s --sort=name \
 		$(if $(SOURCE_DATE_EPOCH),--mtime="@$(SOURCE_DATE_EPOCH)") \
 		-C $(call mkfs_target_dir,$(1)) . | gzip -9n > $@
+endef
+
+define Image/mkfs/argosfs
+	rm -f $@ $@.disk*
+	$(STAGING_DIR_HOSTPKG)/bin/argosfs mkfs --backend loop \
+		--images $@.disk0,$@.disk1,$@.disk2 \
+		--k 2 --m 1 \
+		--image-size $(ROOTFS_PARTSIZE) \
+		--pool-name capos-root \
+		--force
+	$(STAGING_DIR_HOSTPKG)/bin/argosfs import-tree --backend loop \
+		--images $@.disk0,$@.disk1,$@.disk2 \
+		$(call mkfs_target_dir,$(1)) /
+	$(STAGING_DIR_HOSTPKG)/bin/argosfs preflight-root --backend loop \
+		--images $@.disk0,$@.disk1,$@.disk2 --mode rw
+	tar -C $(dir $@) -cf $@.tar $(notdir $@).disk0 $(notdir $@).disk1 $(notdir $@).disk2
+	mv $@.tar $@
 endef
 
 define Image/Manifest
