@@ -222,6 +222,9 @@ ifneq ($(CONFIG_PACKAGE_podman),)
   endif
 endif
 ifneq ($(CONFIG_TARGET_ROOTFS_ARGOSFS),)
+  ifneq ($(shell [ -n "$(CONFIG_TARGET_KERNEL_PARTSIZE)" ] && [ "$(CONFIG_TARGET_KERNEL_PARTSIZE)" -lt 64 ] && echo y),)
+    $(error TARGET_KERNEL_PARTSIZE=$(CONFIG_TARGET_KERNEL_PARTSIZE) MiB is too small for ArgosFS initramfs kernel. Set it to at least 64 MiB or regenerate the config with the updated defaults)
+  endif
   ifneq ($(shell [ -n "$(CONFIG_TARGET_ROOTFS_PARTSIZE)" ] && [ "$(CONFIG_TARGET_ROOTFS_PARTSIZE)" -lt 384 ] && echo y),)
     $(error TARGET_ROOTFS_PARTSIZE=$(CONFIG_TARGET_ROOTFS_PARTSIZE) MiB is too small for ArgosFS. Set it to at least 384 MiB or regenerate the config with the updated defaults)
   endif
