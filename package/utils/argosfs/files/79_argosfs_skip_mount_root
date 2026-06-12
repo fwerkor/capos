@@ -1,0 +1,9 @@
+#!/bin/sh
+
+argosfs_mark_root_active() {
+	[ -e /run/argosfs-root-active ] || return 0
+	export ARGOSFS_ROOT_ACTIVE=1
+	export INITRAMFS=1
+}
+
+argosfs_mark_root_active
