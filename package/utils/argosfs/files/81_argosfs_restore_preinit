@@ -1,0 +1,8 @@
+#!/bin/sh
+
+argosfs_restore_regular_preinit() {
+	[ "$ARGOSFS_ROOT_ACTIVE" = "1" ] || return 0
+	unset INITRAMFS
+}
+
+argosfs_restore_regular_preinit

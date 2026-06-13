@@ -2,6 +2,35 @@
 # Copyright (C) 2006 OpenWrt.org
 export INITRAMFS=1
 
+argosfs_cmdline_enabled() {
+	[ -r /proc/cmdline ] || return 1
+	for arg in $(cat /proc/cmdline); do
+		case "$arg" in
+			argosfs.images=*|argosfs.devices=*) return 0 ;;
+			argosfs.autoscan=1) return 0 ;;
+		esac
+	done
+	return 1
+}
+
+argosfs_root_enabled() {
+	argosfs_cmdline_enabled && return 0
+	[ -r /etc/argosfs/initramfs.conf ] || return 1
+	. /etc/argosfs/initramfs.conf
+	[ "${ARGOSFS_AUTOSCAN:-0}" = "1" ]
+}
+
+mkdir -p /proc
+mount -t proc proc /proc 2>/dev/null || true
+if argosfs_root_enabled; then
+	if [ -x /lib/argosfs/argosfs-root.sh ]; then
+		exec /lib/argosfs/argosfs-root.sh
+	fi
+	echo "argosfs: /lib/argosfs/argosfs-root.sh is missing" >/dev/console
+	exec sh
+fi
+umount /proc 2>/dev/null || true
+
 # switch to tmpfs to allow run daemons in jail on initramfs boot
 DIRS=$(echo *)
 NEW_ROOT=/new_root

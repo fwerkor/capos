@@ -112,6 +112,7 @@ EROFSCOMP := lzma,109
 endif
 
 fs-types-$(CONFIG_TARGET_ROOTFS_SQUASHFS) += squashfs
+fs-types-$(CONFIG_TARGET_ROOTFS_ARGOSFS) += argosfs
 fs-types-$(CONFIG_TARGET_ROOTFS_JFFS2) += $(addprefix jffs2-,$(JFFS2_BLOCKSIZE))
 fs-types-$(CONFIG_TARGET_ROOTFS_JFFS2_NAND) += $(addprefix jffs2-nand-,$(NAND_BLOCKSIZE))
 fs-types-$(CONFIG_TARGET_ROOTFS_EXT4FS) += ext4
@@ -218,6 +219,14 @@ ROOTFS_PARTSIZE=$(shell echo $$(($(CONFIG_TARGET_ROOTFS_PARTSIZE)*1024*1024)))
 ifneq ($(CONFIG_PACKAGE_podman),)
   ifneq ($(shell [ -n "$(CONFIG_TARGET_ROOTFS_PARTSIZE)" ] && [ "$(CONFIG_TARGET_ROOTFS_PARTSIZE)" -lt 256 ] && echo y),)
     $(error TARGET_ROOTFS_PARTSIZE=$(CONFIG_TARGET_ROOTFS_PARTSIZE) MiB is too small for Podman. Set it to at least 256 MiB or regenerate the config with the updated defaults)
+  endif
+endif
+ifneq ($(CONFIG_TARGET_ROOTFS_ARGOSFS),)
+  ifneq ($(shell [ -n "$(CONFIG_TARGET_KERNEL_PARTSIZE)" ] && [ "$(CONFIG_TARGET_KERNEL_PARTSIZE)" -lt 64 ] && echo y),)
+    $(error TARGET_KERNEL_PARTSIZE=$(CONFIG_TARGET_KERNEL_PARTSIZE) MiB is too small for ArgosFS initramfs kernel. Set it to at least 64 MiB or regenerate the config with the updated defaults)
+  endif
+  ifneq ($(shell [ -n "$(CONFIG_TARGET_ROOTFS_PARTSIZE)" ] && [ "$(CONFIG_TARGET_ROOTFS_PARTSIZE)" -lt 384 ] && echo y),)
+    $(error TARGET_ROOTFS_PARTSIZE=$(CONFIG_TARGET_ROOTFS_PARTSIZE) MiB is too small for ArgosFS. Set it to at least 384 MiB or regenerate the config with the updated defaults)
   endif
 endif
 endif
@@ -339,6 +348,26 @@ define Image/mkfs/targz
 	$(TAR) -cp --numeric-owner --owner=0 --group=0 --mode=a-s --sort=name \
 		$(if $(SOURCE_DATE_EPOCH),--mtime="@$(SOURCE_DATE_EPOCH)") \
 		-C $(call mkfs_target_dir,$(1)) . | gzip -9n > $@
+endef
+
+define Image/mkfs/argosfs
+	rm -f $@
+	$(STAGING_DIR_HOSTPKG)/bin/argosfs mkfs --backend loop \
+		--images $@ \
+		--k 1 --m 0 \
+		--chunk-size 262144 \
+		--compression none \
+		--image-size $(ROOTFS_PARTSIZE) \
+		--pool-name capos-root \
+		--defer-journal-flush \
+		--defer-metadata-commit \
+		--defer-data-flush \
+		--force
+	$(STAGING_DIR_HOSTPKG)/bin/argosfs import-tree --backend loop \
+		--images $@ \
+		$(call mkfs_target_dir,$(1)) /
+	$(STAGING_DIR_HOSTPKG)/bin/argosfs preflight-root --backend loop \
+		--images $@ --mode rw
 endef
 
 define Image/Manifest

@@ -15,7 +15,7 @@ ROOTFSIMAGE="$5"
 ROOTFSPARTTYPE=${ROOTFSPARTTYPE:-83}
 ALIGN="$6"
 
-rm -f "$OUTPUT"
+rm -f "$OUTPUT" "$OUTPUT.kernel"
 
 head=16
 sect=63
