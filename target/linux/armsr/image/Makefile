@@ -26,6 +26,10 @@ ROOTPART:=$(call qstrip,$(CONFIG_TARGET_ROOTFS_PARTNAME))
 ROOTPART:=$(if $(ROOTPART),$(ROOTPART),PARTUUID=$(IMG_PART_SIGNATURE)-02)
 GPT_ROOTPART:=$(call qstrip,$(CONFIG_TARGET_ROOTFS_PARTNAME))
 GPT_ROOTPART:=$(if $(GPT_ROOTPART),$(GPT_ROOTPART),PARTUUID=$(shell echo $(IMG_PART_DISKGUID) | sed 's/00$$/02/'))
+argosfs_part_path = $(patsubst PARTUUID=%,/dev/disk/by-partuuid/%,$(1))
+ROOTPART_BOOTARG:=$(if $(CONFIG_TARGET_ROOTFS_ARGOSFS),argosfs.images=$(call argosfs_part_path,$(ROOTPART)) rootwait,root=$(ROOTPART) rootwait)
+GPT_ROOTPART_BOOTARG:=$(if $(CONFIG_TARGET_ROOTFS_ARGOSFS),argosfs.images=$(call argosfs_part_path,$(GPT_ROOTPART)) rootwait,root=$(GPT_ROOTPART) rootwait)
+COMBINED_KERNEL_NAME=$(if $(CONFIG_TARGET_ROOTFS_ARGOSFS),$(KERNEL_NAME)-initramfs,$(KERNEL_NAME))
 
 GRUB_TIMEOUT:=$(call qstrip,$(CONFIG_GRUB_TIMEOUT))
 GRUB_TITLE:=$(call qstrip,$(CONFIG_GRUB_TITLE))
@@ -33,8 +37,8 @@ GRUB_TITLE:=$(call qstrip,$(CONFIG_GRUB_TITLE))
 BOOTOPTS:=$(call qstrip,$(CONFIG_GRUB_BOOTOPTS))
 
 define Build/combined
-  $(INSTALL_DIR) $@.boot/
-	$(CP) $(KDIR)/$(KERNEL_NAME) $@.boot/efi/openwrt/
+	$(INSTALL_DIR) $@.boot/
+	$(CP) $(KDIR)/$(COMBINED_KERNEL_NAME) $@.boot/efi/openwrt/$(KERNEL_NAME)
 	-$(CP) $(STAGING_DIR_ROOT)/boot/. $@.boot/boot/
 	$(if $(filter $(1),efi),
 		$(INSTALL_DIR) $@.boot/efi/boot
@@ -55,8 +59,8 @@ define Build/grub-config
 	sed \
 		-e 's#@SERIAL_CONFIG@#$(strip $(GRUB_SERIAL_CONFIG))#g' \
 		-e 's#@TERMINAL_CONFIG@#$(strip $(GRUB_TERMINAL_CONFIG))#g' \
-		-e 's#@ROOTPART@#root=$(ROOTPART) rootwait#g' \
-		-e 's#@GPT_ROOTPART@#root=$(GPT_ROOTPART) rootwait#g' \
+		-e 's#@ROOTPART@#$(ROOTPART_BOOTARG)#g' \
+		-e 's#@GPT_ROOTPART@#$(GPT_ROOTPART_BOOTARG)#g' \
 		-e 's#@CMDLINE@#$(BOOTOPTS) $(GRUB_CONSOLE_CMDLINE)#g' \
 		-e 's#@TIMEOUT@#$(GRUB_TIMEOUT)#g' \
 		-e 's#@TITLE@#$(GRUB_TITLE)#g' \

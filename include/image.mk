@@ -359,6 +359,9 @@ define Image/mkfs/argosfs
 		--compression none \
 		--image-size $(ROOTFS_PARTSIZE) \
 		--pool-name capos-root \
+		--defer-journal-flush \
+		--defer-metadata-commit \
+		--defer-data-flush \
 		--force
 	$(STAGING_DIR_HOSTPKG)/bin/argosfs import-tree --backend loop \
 		--images $@ \
