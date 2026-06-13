@@ -75,6 +75,9 @@ const methods = {
 	setInitAction: {
 		args: { name: 'name', action: 'action' },
 		call: function(request) {
+			if (!match(request.args.name, /^[a-zA-Z0-9_.-]+$/))
+				return { error: 'Invalid init script name' };
+
 			switch (request.args.action) {
 			case 'enable':
 			case 'disable':
