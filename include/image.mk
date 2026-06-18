@@ -352,6 +352,7 @@ endef
 
 define Image/mkfs/argosfs
 	rm -f $@
+	mkdir -p $(call mkfs_target_dir,$(1))/run
 	$(STAGING_DIR_HOSTPKG)/bin/argosfs mkfs --backend loop \
 		--images $@ \
 		--k 1 --m 0 \
