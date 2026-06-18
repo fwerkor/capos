@@ -4,6 +4,7 @@ set -euo pipefail
 
 CAPBOX_STATE_DIR="${CAPBOX_STATE_DIR:-/var/lib/capbox}"
 CAPBOX_RUN_DIR="${CAPBOX_RUN_DIR:-/run/capbox}"
+CAPBOX_HOSTEXEC_TIMEOUT="${CAPBOX_HOSTEXEC_TIMEOUT:-10}"
 
 die() {
     echo "$*" >&2
@@ -11,7 +12,7 @@ die() {
 }
 
 need_cmd() {
-    local dep
+    local dep env_item allow_item
     for dep in "$@"; do
         command -v "$dep" >/dev/null 2>&1 || die "missing dependency: $dep"
     done
@@ -258,6 +259,11 @@ manifest_risks_json() {
         []
         + (if (.network.host // false) then ["host_network"] else [] end)
         + (if ((.network.publish // []) | length) > 0 then ["publish_ports"] else [] end)
+        + (if (((.dependencies.apk // []) | length) > 0) then ["apk_dependencies"] else [] end)
+        + (if (((.dependencies.opkg // []) | length) > 0) then ["legacy_opkg_dependencies"] else [] end)
+        + (if (((.dependencies.capp // []) | length) > 0) then ["app_dependencies"] else [] end)
+        + (if ((.container.environment // []) | length) > 0 then ["environment"] else [] end)
+        + (if ((.container.volumes.from // []) | length) > 0 then ["shared_volumes"] else [] end)
         + (if (.container.privileges.enabled // false) then ["privileged_container"] else [] end)
         + (if ((.container.privileges.capabilities // []) | length) > 0 then ["extra_capabilities"] else [] end)
         + (if ((.container.devices // []) | length) > 0 then ["devices"] else [] end)
@@ -366,6 +372,34 @@ manifest_publish_rules_tsv() {
     ' "$manifest"
 }
 
+manifest_capp_dependencies() {
+    local manifest="$1"
+    jq -r '
+        if (.dependencies | type) == "object" then
+            .dependencies.capp // []
+        else
+            []
+        end
+        | .[]
+        | tostring
+    ' "$manifest"
+}
+
+manifest_package_dependencies() {
+    local manifest="$1"
+    jq -r '
+        if (.dependencies | type) == "object" and (.dependencies | has("apk")) then
+            .dependencies.apk // []
+        elif (.dependencies | type) == "object" and (.dependencies | has("opkg")) then
+            .dependencies.opkg // []
+        else
+            []
+        end
+        | .[]
+        | tostring
+    ' "$manifest"
+}
+
 manifest_environment_items() {
     local manifest="$1"
     jq -r '
@@ -408,6 +442,37 @@ manifest_volume_from_refs() {
     ' "$manifest"
 }
 
+manifest_hostexec_allowlist() {
+    local manifest="$1"
+    jq -r '
+        .host.exec.allow // []
+        | .[]
+        | if type == "string" then
+            .
+          elif type == "object" then
+            (.command // .path // "")
+          else
+            empty
+          end
+    ' "$manifest"
+}
+
+validate_environment_item() {
+    local env_item="$1"
+    local name
+
+    [[ "$env_item" == *=* ]] || die "invalid environment item: $env_item"
+    name="${env_item%%=*}"
+    [[ "$name" =~ ^[A-Za-z_][A-Za-z0-9_]*$ ]] || die "invalid environment variable name: $name"
+}
+
+validate_hostexec_allow_item() {
+    local command_path="$1"
+
+    [[ "$command_path" = /* ]] || die "hostexec allowlist entries must be absolute paths: $command_path"
+    [[ "$command_path" =~ ^/[A-Za-z0-9._/@+-]+$ ]] || die "hostexec allowlist entry contains unsupported characters: $command_path"
+}
+
 validate_manifest_for_user() {
     local manifest="$1"
     local user="$2"
@@ -437,27 +502,31 @@ validate_manifest_for_user() {
 
     while IFS= read -r dep; do
         [[ -z "$dep" ]] && continue
+        validate_app_name "$dep"
         app_is_installed "$user" "$dep" || die "missing app dependency: $dep"
-    done < <(jq -r '.dependencies.capp // [] | .[]' "$manifest")
+    done < <(manifest_capp_dependencies "$manifest")
 
     while IFS= read -r dep; do
         [[ -z "$dep" ]] && continue
         command -v apk >/dev/null 2>&1 || die "apk is required to verify package dependencies"
         apk info -e "$dep" >/dev/null 2>&1 || die "missing apk dependency: $dep"
-    done < <(jq -r '
-        if (.dependencies | type) == "object" and (.dependencies | has("apk")) then
-            .dependencies.apk // []
-        else
-            .dependencies.opkg // []
-        end
-        | .[]
-    ' "$manifest")
+    done < <(manifest_package_dependencies "$manifest")
 
     while IFS= read -r dep; do
         [[ -z "$dep" ]] && continue
         validate_app_name "$dep"
         app_is_installed "$user" "$dep" || die "missing shared-volume source app: $dep"
     done < <(manifest_volume_from_refs "$manifest")
+
+    while IFS= read -r env_item; do
+        [[ -z "$env_item" ]] && continue
+        validate_environment_item "$env_item"
+    done < <(manifest_environment_items "$manifest")
+
+    while IFS= read -r allow_item; do
+        [[ -z "$allow_item" ]] && continue
+        validate_hostexec_allow_item "$allow_item"
+    done < <(manifest_hostexec_allowlist "$manifest")
 }
 
 validate_publish_mapping() {
@@ -528,6 +597,17 @@ cpk_summary_json() {
                 devices: ($manifest.container.devices // []),
                 host_exec: ($manifest.host.exec.enabled // false)
             },
+            checks: {
+                dependencies: {
+                    apk: ($manifest.dependencies.apk // []),
+                    opkg_legacy: ($manifest.dependencies.opkg // []),
+                    capp: ($manifest.dependencies.capp // [])
+                },
+                publish: ($manifest.network.publish // []),
+                environment: ($manifest.container.environment // []),
+                volumes_from: ($manifest.container.volumes.from // []),
+                host_exec_allow: ($manifest.host.exec.allow // [])
+            },
             risks: $risks,
             manifest: $manifest
         }
@@ -556,6 +636,11 @@ podman_network_gateway() {
 podman_container_running() {
     local container_name="$1"
     podman inspect -f '{{.State.Running}}' "$container_name" 2>/dev/null | grep -qx 'true'
+}
+
+podman_container_exists() {
+    local container_name="$1"
+    podman inspect "$container_name" >/dev/null 2>&1
 }
 
 podman_container_ip() {
@@ -646,6 +731,7 @@ write_app_hostexec() {
                     end
                 )
                 | map(select(length > 0))
+                | map(select(startswith("/")))
                 | unique
             )
         }
@@ -685,6 +771,26 @@ hostexec_validate_request() {
     [[ -x "$command_path" ]] || die "hostexec command is not executable: $command_path"
     hostexec_is_enabled "$user" "$app" || die "hostexec is not enabled for app: $app"
     hostexec_is_allowed "$user" "$app" "$command_path" || die "hostexec command is not allowed for app: $command_path"
+}
+
+hostexec_timeout_seconds() {
+    if [[ "$CAPBOX_HOSTEXEC_TIMEOUT" =~ ^[0-9]+$ ]] && ((CAPBOX_HOSTEXEC_TIMEOUT >= 1 && CAPBOX_HOSTEXEC_TIMEOUT <= 300)); then
+        printf '%s\n' "$CAPBOX_HOSTEXEC_TIMEOUT"
+    else
+        printf '10\n'
+    fi
+}
+
+run_hostexec_command() {
+    local user="$1"
+    shift
+
+    if command -v timeout >/dev/null 2>&1; then
+        run_as_user "$user" timeout "$(hostexec_timeout_seconds)" "$@"
+        return $?
+    fi
+
+    run_as_user "$user" "$@"
 }
 
 run_as_user() {
@@ -1189,6 +1295,7 @@ remove_portmap() {
     local state_file tmp
 
     app_is_installed "$user" "$app" || die "app is not installed: $app"
+    validate_publish_mapping "$listen" "$target" "$proto" "$user"
     state_file="$(app_portmaps_path "$user" "$app")"
     tmp="$(mktemp)"
     jq \
@@ -1341,14 +1448,37 @@ cmd_app_info() {
     render_app_info "$user" "$app"
 }
 
+ensure_app_container() {
+    local user="$1"
+    local app="$2"
+    local container_name manifest meta image_ref
+
+    need_cmd podman
+    container_name="$(container_name_for_app "$user" "$app")"
+    if podman_container_exists "$container_name"; then
+        return 0
+    fi
+
+    manifest="$(app_manifest_json_path "$user" "$app")"
+    meta="$(app_meta_path "$user" "$app")"
+    image_ref="$(manifest_value "$meta" '.image_ref // ""')"
+    [[ -n "$image_ref" && "$image_ref" != "null" ]] || die "app image reference is missing; reinstall app: $app"
+    create_container_from_manifest "$user" "$manifest" "$image_ref"
+}
+
 cmd_app_start() {
     local user="$1"
     local app="$2"
     local container_name
     require_root
+    need_cmd podman
     app_is_installed "$user" "$app" || die "app is not installed: $app"
     container_name="$(container_name_for_app "$user" "$app")"
-    podman start "$container_name" >/dev/null
+    if podman_container_exists "$container_name"; then
+        podman start "$container_name" >/dev/null
+    else
+        ensure_app_container "$user" "$app"
+    fi
     reconcile_portmaps "$user" "$app"
     render_app_info "$user" "$app"
 }
@@ -1356,11 +1486,13 @@ cmd_app_start() {
 cmd_app_stop() {
     local user="$1"
     local app="$2"
-    local container_name rule
+    local container_name
     require_root
     app_is_installed "$user" "$app" || die "app is not installed: $app"
     container_name="$(container_name_for_app "$user" "$app")"
-    podman stop "$container_name" >/dev/null
+    if command -v podman >/dev/null 2>&1 && podman_container_exists "$container_name"; then
+        podman stop "$container_name" >/dev/null
+    fi
     while IFS=$'\t' read -r proto listen target; do
         [[ -n "$proto" ]] || continue
         stop_portmap_rule "$user" "$app" "$proto" "$listen" "$target"
@@ -1373,11 +1505,32 @@ cmd_app_restart() {
     local app="$2"
     local container_name
     require_root
+    need_cmd podman
     app_is_installed "$user" "$app" || die "app is not installed: $app"
     container_name="$(container_name_for_app "$user" "$app")"
-    podman restart "$container_name" >/dev/null
+    if podman_container_exists "$container_name"; then
+        podman restart "$container_name" >/dev/null
+    else
+        ensure_app_container "$user" "$app"
+    fi
     reconcile_portmaps "$user" "$app"
     render_app_info "$user" "$app"
+}
+
+remove_user_network_if_unused() {
+    local user="$1"
+    local app_dir app_name network_name
+
+    for app_dir in "$(user_apps_dir "$user")"/*; do
+        [[ -d "$app_dir" ]] || continue
+        app_name="$(basename "$app_dir")"
+        app_is_installed "$user" "$app_name" && return 0
+    done
+
+    if command -v podman >/dev/null 2>&1; then
+        network_name="$(network_name_for_user "$user")"
+        podman network rm "$network_name" >/dev/null 2>&1 || true
+    fi
 }
 
 cmd_app_uninstall() {
@@ -1399,7 +1552,37 @@ cmd_app_uninstall() {
     if [[ -f "$(desktop_path "$user")" ]] && [[ "$(cat "$(desktop_path "$user")")" == "$app" ]]; then
         rm -f "$(desktop_path "$user")"
     fi
+    remove_user_network_if_unused "$user"
     print_json --arg message "uninstalled $app" '{ok: true, message: $message}'
+}
+
+cmd_app_logs() {
+    local user="$1"
+    local app="$2"
+    local container_name container_output="" hostexec_output="" hostexec_log
+
+    app_is_installed "$user" "$app" || die "app is not installed: $app"
+    container_name="$(container_name_for_app "$user" "$app")"
+    if command -v podman >/dev/null 2>&1 && podman_container_exists "$container_name"; then
+        container_output="$(podman logs --tail 120 "$container_name" 2>&1 || true)"
+    fi
+    hostexec_log="$(app_state_dir "$user" "$app")/hostexec.log"
+    if [[ -f "$hostexec_log" ]]; then
+        hostexec_output="$(tail -n 120 "$hostexec_log" 2>/dev/null || true)"
+    fi
+    jq -n \
+        --arg app "$app" \
+        --arg container "$container_output" \
+        --arg hostexec "$hostexec_output" '
+        {
+            ok: true,
+            app: $app,
+            logs: {
+                container: $container,
+                hostexec: $hostexec
+            }
+        }
+    '
 }
 
 cmd_portmap_list() {
@@ -1452,8 +1635,12 @@ cmd_desktop_set() {
 cmd_reconcile() {
     local user="$1"
     local app="$2"
+    require_root
     if [[ -n "$app" ]]; then
         app_is_installed "$user" "$app" || die "app is not installed: $app"
+        if command -v podman >/dev/null 2>&1; then
+            ensure_app_container "$user" "$app"
+        fi
         reconcile_portmaps "$user" "$app"
         render_app_info "$user" "$app"
         return 0
@@ -1479,7 +1666,7 @@ cmd_hostexec_run() {
 
     local started ended exit_code
     started="$(current_unix_time)"
-    if run_as_user "$user" "$@"; then
+    if run_hostexec_command "$user" "$@"; then
         exit_code=0
     else
         exit_code=$?
@@ -1502,7 +1689,7 @@ cmd_hostexec_invoke() {
 
     tmp="$(mktemp)"
     started="$(current_unix_time)"
-    if run_as_user "$user" "$@" >"$tmp" 2>&1; then
+    if run_hostexec_command "$user" "$@" >"$tmp" 2>&1; then
         exit_code=0
     else
         exit_code=$?
@@ -1537,6 +1724,7 @@ Usage:
   capbox app stop APP [--user USER]
   capbox app restart APP [--user USER]
   capbox app uninstall APP [--user USER]
+  capbox app logs APP [--user USER]
   capbox portmap list APP [--user USER]
   capbox portmap set APP --listen PORT --target PORT [--proto tcp|udp] [--user USER]
   capbox portmap remove APP --listen PORT --target PORT [--proto tcp|udp] [--user USER]
@@ -1617,6 +1805,7 @@ main() {
                 stop) [[ -n "$app" ]] || die "missing app name"; cmd_app_stop "$user" "$app" ;;
                 restart) [[ -n "$app" ]] || die "missing app name"; cmd_app_restart "$user" "$app" ;;
                 uninstall) [[ -n "$app" ]] || die "missing app name"; cmd_app_uninstall "$user" "$app" ;;
+                logs) [[ -n "$app" ]] || die "missing app name"; cmd_app_logs "$user" "$app" ;;
                 *) die "unknown app action: $action" ;;
             esac
             ;;
@@ -1731,4 +1920,6 @@ main() {
     esac
 }
 
-main "$@"
+if [[ "${CAPBOX_LIB_ONLY:-0}" != "1" ]]; then
+    main "$@"
+fi
