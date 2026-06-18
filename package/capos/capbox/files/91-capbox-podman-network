@@ -1,0 +1,16 @@
+#!/bin/sh
+
+conf="/etc/containers/containers.conf"
+[ -f "$conf" ] || exit 0
+
+# CapOS uses OpenWrt firewall4/nftables. Netavark's iptables compatibility
+# path is fragile on small images because xtables extensions are split out.
+if grep -q '^[[:space:]]*firewall_driver[[:space:]]*=' "$conf"; then
+	sed -i 's/^[[:space:]]*firewall_driver[[:space:]]*=.*/firewall_driver = "nftables"/' "$conf"
+elif grep -q '^[[:space:]]*#firewall_driver[[:space:]]*=' "$conf"; then
+	sed -i 's/^[[:space:]]*#firewall_driver[[:space:]]*=.*/firewall_driver = "nftables"/' "$conf"
+else
+	sed -i '/^[[:space:]]*network_backend[[:space:]]*=[[:space:]]*"netavark"/a firewall_driver = "nftables"' "$conf"
+fi
+
+exit 0

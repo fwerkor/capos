@@ -573,8 +573,10 @@ cpk_summary_json() {
         --arg arch "$(map_machine_arch)" \
         --arg image "$(basename "$image_path")" \
         --arg icon "$(basename "${icon_path:-}")" \
-        --argfile manifest "$manifest" \
+        --slurpfile manifest_file "$manifest" \
         --argjson risks "$(manifest_risks_json "$manifest")" '
+        ($manifest_file[0]) as $manifest
+        |
         {
             ok: true,
             cpk: {
@@ -690,7 +692,9 @@ write_app_meta() {
         --arg image "$image_ref" \
         --arg icon "$icon_name" \
         --arg installed_at "$installed_at" \
-        --argfile manifest "$manifest" '
+        --slurpfile manifest_file "$manifest" '
+        ($manifest_file[0]) as $manifest
+        |
         {
             owner: $owner,
             owner_uid: ($uid | tonumber),
@@ -826,7 +830,7 @@ append_hostexec_log() {
 render_app_info() {
     local user="$1"
     local app="$2"
-    local manifest meta container_name network_name running ip desktop_port desktop_scheme target_host
+    local manifest meta container_name network_name running ip desktop_port desktop_scheme desktop_https_skip_check target_host
     local portmaps='[]'
 
     app_is_installed "$user" "$app" || die "app is not installed: $app"
@@ -863,6 +867,10 @@ render_app_info() {
             desktop_scheme="https"
         fi
     fi
+    desktop_https_skip_check=false
+    if [[ "$desktop_scheme" == "https" ]]; then
+        desktop_https_skip_check="$(jq -r 'if (.network.service.https_skip_check // true) then "true" else "false" end' "$manifest")"
+    fi
 
     target_host="$ip"
     if manifest_bool "$manifest" '.network.host // false'; then
@@ -871,14 +879,19 @@ render_app_info() {
 
     jq -n \
         --arg user "$user" \
-        --argfile manifest "$manifest" \
-        --argfile meta "$meta" \
+        --slurpfile manifest_file "$manifest" \
+        --slurpfile meta_file "$meta" \
         --argjson running "$running" \
         --arg ip "$ip" \
         --arg target_host "$target_host" \
         --arg desktop_scheme "$desktop_scheme" \
         --arg desktop_port "$desktop_port" \
+        --argjson desktop_https_skip_check "$desktop_https_skip_check" \
         --argjson portmaps "$portmaps" '
+        ($manifest_file[0]) as $manifest
+        |
+        ($meta_file[0]) as $meta
+        |
         {
             ok: true,
             owner: $user,
@@ -898,7 +911,8 @@ render_app_info() {
             desktop: {
                 scheme: (if $desktop_port == "" or $desktop_port == "null" then null else $desktop_scheme end),
                 port: (if $desktop_port == "" or $desktop_port == "null" then null else ($desktop_port | tonumber) end),
-                target_host: (if $target_host == "" then null else $target_host end)
+                target_host: (if $target_host == "" then null else $target_host end),
+                https_skip_check: $desktop_https_skip_check
             },
             permissions: {
                 host_network: ($manifest.network.host // false),
@@ -1166,15 +1180,13 @@ start_portmap_rule() {
     local proto="$3"
     local listen="$4"
     local target="$5"
-    local container_name inspect running container_pid pidfile listen_arg target_arg nsenter_cmd spid
+    local container_name container_ip pidfile listen_arg target_arg spid
 
-    need_cmd podman nsenter socat
+    need_cmd podman socat
     container_name="$(container_name_for_app "$user" "$app")"
-    inspect="$(podman inspect -f '{{.State.Running}} {{.State.Pid}}' "$container_name" 2>/dev/null || true)"
-    [[ -n "$inspect" ]] || return 0
-    read -r running container_pid <<< "$inspect"
-    [[ "$running" == "true" ]] || return 0
-    [[ "$container_pid" =~ ^[0-9]+$ && "$container_pid" != "0" ]] || return 0
+    podman_container_running "$container_name" || return 0
+    container_ip="$(podman_container_ip "$container_name")"
+    [[ -n "$container_ip" ]] || container_ip="127.0.0.1"
 
     pidfile="$(portmap_pid_file "$user" "$app" "$proto" "$listen" "$target")"
     if [[ -f "$pidfile" ]]; then
@@ -1188,16 +1200,15 @@ start_portmap_rule() {
 
     if [[ "$proto" == "tcp" ]]; then
         listen_arg="TCP-LISTEN:${listen},fork,reuseaddr"
-        target_arg="TCP:127.0.0.1:${target}"
+        target_arg="TCP:${container_ip}:${target}"
     else
         listen_arg="UDP-LISTEN:${listen},fork,reuseaddr"
-        target_arg="UDP:127.0.0.1:${target}"
+        target_arg="UDP:${container_ip}:${target}"
     fi
 
-    printf -v nsenter_cmd 'nsenter -t %q -n socat STDIO %q' "$container_pid" "$target_arg"
-    socat "$listen_arg" EXEC:"$nsenter_cmd" >/dev/null 2>&1 &
+    socat "$listen_arg" "$target_arg" >/dev/null 2>&1 &
     spid=$!
-    sleep 0.05
+    sleep 1
     if ! kill -0 "$spid" 2>/dev/null; then
         wait "$spid" 2>/dev/null || true
         echo "failed to start port mapping for $app on port $listen/$proto" >&2
@@ -1348,7 +1359,7 @@ cmd_cpk_inspect() {
     [[ -f "$cpk_file" ]] || die "CPK file not found: $cpk_file"
     need_cmd tar jq yq
     tmpdir="$(mktemp -d)"
-    trap 'rm -rf "$tmpdir"' RETURN
+    trap 'rm -rf "${tmpdir:-}"; trap - RETURN' RETURN
     extract_cpk "$cpk_file" "$tmpdir"
     manifest_yaml="$(find_cpk_manifest "$tmpdir")"
     manifest_json="$tmpdir/manifest.json"
@@ -1366,7 +1377,7 @@ cmd_cpk_validate() {
     [[ -f "$cpk_file" ]] || die "CPK file not found: $cpk_file"
     need_cmd tar jq yq
     tmpdir="$(mktemp -d)"
-    trap 'rm -rf "$tmpdir"' RETURN
+    trap 'rm -rf "${tmpdir:-}"; trap - RETURN' RETURN
     extract_cpk "$cpk_file" "$tmpdir"
     manifest_yaml="$(find_cpk_manifest "$tmpdir")"
     manifest_json="$tmpdir/manifest.json"
@@ -1388,7 +1399,7 @@ cmd_cpk_install() {
     ensure_user_dirs "$user"
 
     tmpdir="$(mktemp -d)"
-    trap 'rm -rf "$tmpdir"' RETURN
+    trap 'rm -rf "${tmpdir:-}"; trap - RETURN' RETURN
     extract_cpk "$cpk_file" "$tmpdir"
     manifest_yaml="$(find_cpk_manifest "$tmpdir")"
     manifest_json="$tmpdir/manifest.json"
