@@ -34,7 +34,7 @@ jobs:
           # 只装 menuconfig/metadata 所需的最小集合（不做编译的话不需要一堆工具链依赖）
           sudo apt-get install -y \
             bash coreutils findutils grep sed gawk make \
-            git perl python3 \
+            git perl python3 g++ nodejs jq \
             file rsync \
             libncurses-dev
 
@@ -56,6 +56,20 @@ jobs:
 
           # 只做可读性检查，不 update/install（不触网）
           ./scripts/feeds list >/dev/null
+
+      - name: CapOS webdesktop and capbox smoke tests
+        shell: bash
+        run: |
+          set -euxo pipefail
+
+          bash -n package/capos/capbox/files/capbox
+          g++ -std=gnu++17 -Ipackage/capos/capos-webpanel/src \
+            -o /tmp/capos-api-smoke package/capos/capos-webpanel/src/api.cpp -lcrypt
+          g++ -std=gnu++17 -Ipackage/capos/capos-webpanel/src \
+            -o /tmp/capos-app-smoke package/capos/capos-webpanel/src/app.cpp -lcrypt
+
+          tests/capbox_logic_tests.sh
+          tests/webpanel_frontend_smoke.sh
 
       - name: Kconfig sanity (defconfig)
         shell: bash
