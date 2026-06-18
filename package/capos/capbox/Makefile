@@ -26,6 +26,8 @@ endef
 define Package/capbox/install
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) ./files/capbox $(1)/usr/bin/capbox
+	$(INSTALL_DIR) $(1)/etc/uci-defaults
+	$(INSTALL_BIN) ./files/91-capbox-podman-network $(1)/etc/uci-defaults/91-capbox-podman-network
 endef
 
 $(eval $(call BuildPackage,capbox))
