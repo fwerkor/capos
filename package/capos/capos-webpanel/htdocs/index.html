@@ -4,384 +4,25 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CapOS WebDesktop</title>
-    <style>
-      :root {
-        --bg: #ebe3d6;
-        --surface: rgba(255, 251, 244, 0.96);
-        --ink: #15202a;
-        --muted: #65727d;
-        --line: #ddd2c1;
-        --accent: #c75531;
-        --danger: #b53b33;
-        --shadow: 0 16px 36px rgba(23, 30, 36, 0.15);
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html,
-      body {
-        margin: 0;
-        min-height: 100%;
-        font-family: "Segoe UI", "PingFang SC", sans-serif;
-        color: var(--ink);
-        background: linear-gradient(180deg, #f3ecdf 0%, var(--bg) 100%);
-      }
-
-      button,
-      .link-button,
-      input {
-        font: inherit;
-      }
-
-      button,
-      .link-button {
-        border: none;
-        border-radius: 999px;
-        padding: 8px 14px;
-        cursor: pointer;
-        text-decoration: none;
-        transition: transform 0.14s ease, opacity 0.14s ease;
-      }
-
-      button:hover,
-      .link-button:hover {
-        transform: translateY(-1px);
-      }
-
-      .primary {
-        background: var(--accent);
-        color: #fff;
-      }
-
-      .secondary {
-        background: #fff;
-        color: var(--ink);
-        border: 1px solid var(--line);
-      }
-
-      .danger {
-        background: rgba(181, 59, 51, 0.12);
-        color: var(--danger);
-      }
-
-      .login {
-        display: grid;
-        place-items: center;
-        min-height: 100vh;
-        padding: 20px;
-      }
-
-      .login-card {
-        width: min(420px, 100%);
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        border-radius: 22px;
-        background: var(--surface);
-        box-shadow: var(--shadow);
-        padding: 24px;
-        display: grid;
-        gap: 14px;
-      }
-
-      .login-card h1,
-      .login-card p {
-        margin: 0;
-      }
-
-      .login-card p {
-        color: var(--muted);
-      }
-
-      input[type="text"],
-      input[type="password"],
-      input[type="file"] {
-        width: 100%;
-        padding: 11px 13px;
-        border-radius: 12px;
-        border: 1px solid var(--line);
-        background: #fff;
-      }
-
-      .app {
-        display: none;
-        min-height: 100vh;
-      }
-
-      .app.ready {
-        display: block;
-      }
-
-      .workspace {
-        position: relative;
-        min-height: 100vh;
-        padding-top: var(--workspace-top, 84px);
-      }
-
-      .desktop {
-        height: calc(100vh - var(--workspace-top, 84px));
-      }
-
-      .desktop-frame {
-        width: 100%;
-        height: 100%;
-        border: none;
-        display: block;
-        background: #f7f6f1;
-      }
-
-      .topbar {
-        position: fixed;
-        z-index: 20;
-        top: 12px;
-        left: 12px;
-        right: 12px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 10px;
-        padding: 10px 14px;
-        border-radius: 16px;
-        border: 1px solid var(--line);
-        background: rgba(255, 251, 244, 0.9);
-        backdrop-filter: blur(10px);
-        box-shadow: var(--shadow);
-      }
-
-      .topbar-main {
-        display: grid;
-        min-width: 0;
-      }
-
-      .topbar-main strong {
-        font-size: 14px;
-      }
-
-      .topbar-main span {
-        color: var(--muted);
-        font-size: 12px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-
-      .topbar-actions {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .pill {
-        display: inline-flex;
-        align-items: center;
-        border-radius: 999px;
-        padding: 7px 12px;
-        font-size: 13px;
-        font-weight: 700;
-        background: rgba(199, 85, 49, 0.12);
-        color: var(--accent);
-      }
-
-      .control-drawer {
-        position: fixed;
-        top: var(--workspace-top, 84px);
-        right: 12px;
-        bottom: 12px;
-        width: min(360px, calc(100vw - 24px));
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        background: var(--surface);
-        box-shadow: var(--shadow);
-        padding: 14px;
-        display: grid;
-        grid-template-rows: auto 1fr;
-        gap: 12px;
-        z-index: 18;
-        transform: translateX(calc(100% + 18px));
-        transition: transform 0.2s ease;
-      }
-
-      .control-drawer.open {
-        transform: translateX(0);
-      }
-
-      .drawer-head {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .drawer-head h2,
-      .drawer-head p {
-        margin: 0;
-      }
-
-      .drawer-head h2 {
-        font-size: 16px;
-      }
-
-      .drawer-head p {
-        margin-top: 3px;
-        color: var(--muted);
-        font-size: 12px;
-      }
-
-      .drawer-content {
-        overflow: auto;
-        display: grid;
-        gap: 12px;
-        padding-right: 4px;
-      }
-
-      .panel {
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.75);
-        padding: 12px;
-        display: grid;
-        gap: 10px;
-      }
-
-      .panel h3,
-      .panel p {
-        margin: 0;
-      }
-
-      .panel h3 {
-        font-size: 15px;
-      }
-
-      .panel p {
-        font-size: 12px;
-        color: var(--muted);
-      }
-
-      .apps {
-        display: grid;
-        gap: 10px;
-      }
-
-      .app-card {
-        border: 1px solid var(--line);
-        border-radius: 12px;
-        background: #fff;
-        padding: 10px;
-        display: grid;
-        gap: 8px;
-      }
-
-      .app-card h4,
-      .app-card p {
-        margin: 0;
-      }
-
-      .app-card h4 {
-        font-size: 14px;
-      }
-
-      .app-card p {
-        font-size: 12px;
-        color: var(--muted);
-      }
-
-      .app-meta,
-      .actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-      }
-
-      .chip {
-        display: inline-flex;
-        border-radius: 999px;
-        border: 1px solid var(--line);
-        padding: 4px 8px;
-        background: #fff;
-        color: var(--muted);
-        font-size: 11px;
-        font-weight: 700;
-      }
-
-      .chip.running {
-        color: #1f7a54;
-      }
-
-      .chip.stopped {
-        color: var(--danger);
-      }
-
-      .chip.portmap {
-        cursor: pointer;
-      }
-
-      .actions button {
-        font-size: 12px;
-        padding: 6px 10px;
-      }
-
-      .upload-box {
-        display: grid;
-        gap: 9px;
-      }
-
-      .inspection {
-        background: #171d22;
-        color: #d7e1e8;
-        border-radius: 10px;
-        padding: 10px;
-        overflow: auto;
-        max-height: 180px;
-        font: 11px/1.4 ui-monospace, monospace;
-      }
-
-      .status {
-        position: fixed;
-        right: 14px;
-        bottom: 14px;
-        max-width: 320px;
-        padding: 12px 14px;
-        border-radius: 12px;
-        background: rgba(22, 32, 40, 0.92);
-        color: #fff;
-        box-shadow: var(--shadow);
-        opacity: 0;
-        transform: translateY(8px);
-        pointer-events: none;
-        transition: opacity 0.2s ease, transform 0.2s ease;
-        z-index: 22;
-      }
-
-      .status.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      @media (max-width: 720px) {
-        .topbar {
-          flex-wrap: wrap;
-        }
-
-        .topbar-actions {
-          width: 100%;
-          justify-content: flex-end;
-        }
-
-        .control-drawer {
-          top: 118px;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="/cap/assets/styles.css" />
   </head>
   <body>
-    <section class="login" id="loginView">
+    <section class="login" id="loginView" aria-labelledby="loginTitle">
       <form class="login-card" id="loginForm">
+        <div class="brand-mark">CapOS</div>
         <div>
-          <h1>CapOS WebDesktop</h1>
-          <p>使用系统 Linux 用户登录，进入你自己的应用桌面。</p>
+          <h1 id="loginTitle">WebDesktop</h1>
+          <p>使用系统 Linux 用户登录，进入你自己的 CPK 应用桌面。</p>
         </div>
-        <input id="username" type="text" autocomplete="username" placeholder="用户名" required />
-        <input id="password" type="password" autocomplete="current-password" placeholder="密码" required />
-        <button class="primary" type="submit">登录</button>
+        <label>
+          <span>用户名</span>
+          <input id="username" type="text" autocomplete="username" required />
+        </label>
+        <label>
+          <span>密码</span>
+          <input id="password" type="password" autocomplete="current-password" required />
+        </label>
+        <button class="primary wide" id="loginBtn" type="submit">登录</button>
       </form>
     </section>
 
@@ -390,35 +31,50 @@
         <header class="topbar">
           <div class="topbar-main">
             <strong>CapOS WebDesktop</strong>
-            <span id="sessionSummary">正在同步你的应用环境…</span>
+            <span id="sessionSummary">正在同步你的应用环境...</span>
             <span id="desktopHint">选择一个已安装应用作为你的桌面应用。</span>
           </div>
           <div class="topbar-actions">
             <span class="pill" id="userBadge">访客</span>
-            <a class="secondary link-button" href="/cgi-bin/luci/" id="luciLink" style="display:none">LuCI</a>
-            <button class="secondary" id="toggleDrawerBtn" type="button">管理</button>
+            <a class="secondary link-button" href="/cgi-bin/luci/" id="luciLink">LuCI</a>
+            <button class="secondary" id="refreshBtn" type="button">刷新</button>
+            <button class="secondary" id="toggleDrawerBtn" type="button">应用</button>
             <button class="danger" id="logoutBtn" type="button">退出</button>
           </div>
         </header>
 
         <main class="desktop">
-          <iframe class="desktop-frame" id="desktopFrame" src="/cgi-bin/cap/app"></iframe>
+          <div class="desktop-status" id="desktopStatus"></div>
+          <iframe class="desktop-frame" id="desktopFrame" src="/cgi-bin/cap/app" title="CapOS desktop app"></iframe>
         </main>
 
         <aside class="control-drawer" id="controlDrawer">
           <div class="drawer-head">
             <div>
-              <h2>控制面板</h2>
-              <p>保持极简，只在需要时展开。</p>
+              <h2>应用</h2>
+              <p>当前登录用户自己的 CPK 应用。</p>
             </div>
             <button class="secondary" id="closeDrawerBtn" type="button">收起</button>
           </div>
 
           <div class="drawer-content">
             <section class="panel">
-              <div>
-                <h3>应用库</h3>
-                <p>仅显示当前登录用户自己的应用。</p>
+              <div class="panel-head">
+                <div>
+                  <h3>应用库</h3>
+                  <p id="appsCount">0 个应用</p>
+                </div>
+                <button class="secondary small" id="appsRefreshBtn" type="button">刷新</button>
+              </div>
+              <div class="filters">
+                <input id="appSearch" type="search" placeholder="搜索应用名、描述、端口" />
+                <select id="appFilter">
+                  <option value="all">全部</option>
+                  <option value="running">运行中</option>
+                  <option value="stopped">已停止</option>
+                  <option value="desktop">当前桌面</option>
+                  <option value="risk">有风险能力</option>
+                </select>
               </div>
               <div class="apps" id="appsList"></div>
             </section>
@@ -426,13 +82,15 @@
             <section class="panel">
               <div>
                 <h3>上传安装 CPK</h3>
-                <p>支持本地上传后预检与安装。</p>
+                <p>上传后先展示人类可读预检，确认后才安装。</p>
               </div>
               <div class="upload-box">
                 <input id="cpkFile" type="file" accept=".cpk,.tar.gz,.tgz" />
                 <button class="primary" id="uploadBtn" type="button">上传并预检</button>
-                <button class="secondary" id="installBtn" type="button" disabled>确认安装</button>
-                <div class="inspection" id="inspectionBox">等待上传 CPK…</div>
+                <div class="review" id="inspectionBox">
+                  <p>等待上传 CPK。</p>
+                </div>
+                <button class="primary" id="installBtn" type="button" disabled>确认安装</button>
               </div>
             </section>
           </div>
@@ -440,319 +98,54 @@
       </div>
     </section>
 
-    <div class="status" id="statusToast"></div>
+    <dialog class="modal" id="portModal">
+      <form method="dialog" class="modal-card" id="portForm">
+        <div class="modal-head">
+          <div>
+            <h3>端口映射</h3>
+            <p id="portModalApp">选择宿主机监听端口和容器目标端口。</p>
+          </div>
+          <button class="secondary icon-button" value="cancel" type="submit" aria-label="关闭">x</button>
+        </div>
+        <label>
+          <span>宿主机监听端口</span>
+          <input id="portListen" name="listen" inputmode="numeric" pattern="[0-9]+" required />
+        </label>
+        <label>
+          <span>容器目标端口</span>
+          <input id="portTarget" name="target" inputmode="numeric" pattern="[0-9]+" required />
+        </label>
+        <label>
+          <span>协议</span>
+          <select id="portProto" name="proto">
+            <option value="tcp">tcp</option>
+            <option value="udp">udp</option>
+          </select>
+        </label>
+        <div class="modal-actions">
+          <button class="secondary" value="cancel" type="submit">取消</button>
+          <button class="primary" id="savePortBtn" value="default" type="submit">保存映射</button>
+        </div>
+      </form>
+    </dialog>
 
-    <script>
-      const state = {
-        session: null,
-        apps: [],
-        desktop: null,
-        upload: null,
-      };
+    <dialog class="modal" id="confirmModal">
+      <form method="dialog" class="modal-card">
+        <div class="modal-head">
+          <div>
+            <h3 id="confirmTitle">确认操作</h3>
+            <p id="confirmMessage">确认继续？</p>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button class="secondary" value="cancel" type="submit">取消</button>
+          <button class="danger" id="confirmOkBtn" value="ok" type="submit">确认</button>
+        </div>
+      </form>
+    </dialog>
 
-      const $ = (id) => document.getElementById(id);
+    <div class="toast-stack" id="toastStack" aria-live="polite"></div>
 
-      const loginView = $("loginView");
-      const appShell = $("appShell");
-      const topbar = document.querySelector(".topbar");
-      const controlDrawer = $("controlDrawer");
-      const appsList = $("appsList");
-      const sessionSummary = $("sessionSummary");
-      const userBadge = $("userBadge");
-      const luciLink = $("luciLink");
-      const inspectionBox = $("inspectionBox");
-      const desktopHint = $("desktopHint");
-      const desktopFrame = $("desktopFrame");
-      const statusToast = $("statusToast");
-
-      function showStatus(message, kind = "info") {
-        statusToast.textContent = message;
-        statusToast.style.background = kind === "error" ? "rgba(181,59,51,.95)" : "rgba(22,32,40,.92)";
-        statusToast.classList.add("visible");
-        clearTimeout(showStatus.timer);
-        showStatus.timer = setTimeout(() => statusToast.classList.remove("visible"), 2800);
-      }
-
-      async function api(path, options = {}) {
-        const res = await fetch(`/cgi-bin/cap/api${path}`, {
-          credentials: "same-origin",
-          ...options,
-        });
-        const text = await res.text();
-        let data;
-        try {
-          data = JSON.parse(text);
-        } catch (error) {
-          throw new Error(text || `HTTP ${res.status}`);
-        }
-        if (!res.ok || data.ok === false) {
-          throw new Error(data.message || `HTTP ${res.status}`);
-        }
-        return data;
-      }
-
-      function setAuthedUi(authed) {
-        loginView.style.display = authed ? "none" : "grid";
-        appShell.classList.toggle("ready", authed);
-      }
-
-      function updateViewportOffsets() {
-        const topbarHeight = topbar ? topbar.offsetHeight : 60;
-        const workspaceTop = topbarHeight + 24;
-        document.documentElement.style.setProperty("--workspace-top", `${workspaceTop}px`);
-      }
-
-      function refreshDesktopFrame() {
-        desktopFrame.src = `/cgi-bin/cap/app?ts=${Date.now()}`;
-      }
-
-      function renderApps() {
-        if (!state.apps.length) {
-          appsList.innerHTML = `<div class="app-card"><h4>还没有已安装应用</h4><p>上传 CPK 之后将在这里显示。</p></div>`;
-          return;
-        }
-
-        appsList.innerHTML = state.apps
-          .map((item) => {
-            const nickname = item.app.nickname || item.app.name;
-            const running = item.runtime.running;
-            const desktop = state.desktop && state.desktop.app === item.app.name;
-            const risks = [];
-            if (item.permissions.host_network) risks.push("Host Network");
-            if (item.permissions.host_exec) risks.push("Host Exec");
-            const portmaps = (item.portmaps || [])
-              .map(
-                (map) =>
-                  `<button class="chip portmap" type="button" data-action="remove-port" data-app="${item.app.name}" data-listen="${map.listen}" data-target="${map.target_port}" data-proto="${map.proto}">${map.proto} ${map.listen}→${map.target_port}</button>`
-              )
-              .join("");
-            return `
-              <article class="app-card">
-                <div>
-                  <h4>${nickname}</h4>
-                  <p>${item.app.description || "这个应用还没有提供描述。"}</p>
-                </div>
-                <div class="app-meta">
-                  <span class="chip ${running ? "running" : "stopped"}">${running ? "Running" : "Stopped"}</span>
-                  <span class="chip">Version ${item.app.version || "-"}</span>
-                  ${desktop ? '<span class="chip">Desktop</span>' : ""}
-                  ${risks.map((risk) => `<span class="chip">${risk}</span>`).join("")}
-                  ${portmaps}
-                </div>
-                <div class="actions">
-                  <button class="secondary" data-action="start" data-app="${item.app.name}">启动</button>
-                  <button class="secondary" data-action="stop" data-app="${item.app.name}">停止</button>
-                  <button class="secondary" data-action="restart" data-app="${item.app.name}">重启</button>
-                  <button class="secondary" data-action="portmap" data-app="${item.app.name}">映射端口</button>
-                  <button class="secondary" data-action="desktop" data-app="${item.app.name}">设为桌面</button>
-                  <button class="danger" data-action="uninstall" data-app="${item.app.name}">卸载</button>
-                </div>
-              </article>
-            `;
-          })
-          .join("");
-      }
-
-      async function loadSession() {
-        const data = await api("/session");
-        if (!data.authenticated) {
-          state.session = null;
-          setAuthedUi(false);
-          return false;
-        }
-
-        state.session = data.session;
-        userBadge.textContent = `${data.session.username}${data.session.is_sudo ? " · sudo" : ""}`;
-        sessionSummary.textContent = `当前用户：${data.session.username} · ${
-          data.session.is_sudo ? "具备 sudo 权限" : "普通用户权限"
-        }`;
-        luciLink.style.display = data.session.is_sudo ? "inline-flex" : "none";
-        setAuthedUi(true);
-        updateViewportOffsets();
-        return true;
-      }
-
-      async function loadApps() {
-        const data = await api("/apps");
-        state.apps = data.apps || [];
-        renderApps();
-      }
-
-      async function loadDesktop() {
-        const data = await api("/desktop");
-        state.desktop = data;
-        desktopHint.textContent = data.app ? `当前桌面应用：${data.app}` : "请选择一个已安装应用作为桌面应用。";
-        updateViewportOffsets();
-        refreshDesktopFrame();
-      }
-
-      async function refreshAll() {
-        if (!(await loadSession())) {
-          return;
-        }
-        await Promise.all([loadApps(), loadDesktop()]);
-      }
-
-      $("toggleDrawerBtn").addEventListener("click", () => controlDrawer.classList.toggle("open"));
-      $("closeDrawerBtn").addEventListener("click", () => controlDrawer.classList.remove("open"));
-      window.addEventListener("resize", updateViewportOffsets);
-
-      $("loginForm").addEventListener("submit", async (event) => {
-        event.preventDefault();
-        try {
-          await api("/login", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
-            body: new URLSearchParams({
-              username: $("username").value,
-              password: $("password").value,
-            }),
-          });
-          $("password").value = "";
-          showStatus("登录成功");
-          await refreshAll();
-        } catch (error) {
-          showStatus(error.message, "error");
-        }
-      });
-
-      $("logoutBtn").addEventListener("click", async () => {
-        try {
-          await api("/logout", { method: "POST" });
-        } finally {
-          state.session = null;
-          state.apps = [];
-          state.desktop = null;
-          state.upload = null;
-          inspectionBox.textContent = "等待上传 CPK…";
-          controlDrawer.classList.remove("open");
-          setAuthedUi(false);
-        }
-      });
-
-      appsList.addEventListener("click", async (event) => {
-        const button = event.target.closest("button[data-action]");
-        if (!button) return;
-        const { action, app } = button.dataset;
-        try {
-          if (action === "remove-port") {
-            if (!window.confirm(`移除 ${app} 的 ${button.dataset.proto} ${button.dataset.listen}->${button.dataset.target} 映射？`)) {
-              return;
-            }
-            await api(`/apps/${encodeURIComponent(app)}/ports`, {
-              method: "POST",
-              headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
-              body: new URLSearchParams({
-                action: "remove",
-                listen: button.dataset.listen,
-                target: button.dataset.target,
-                proto: button.dataset.proto,
-              }),
-            });
-            showStatus(`已移除 ${app} 的端口映射`);
-            await refreshAll();
-            return;
-          }
-
-          if (action === "portmap") {
-            const spec = window.prompt("输入端口映射，格式为 宿主端口:容器端口 或 宿主端口:容器端口/udp", "8080:80");
-            if (!spec) {
-              return;
-            }
-            const matched = spec.match(/^(\d+):(\d+)(?:\/(tcp|udp))?$/i);
-            if (!matched) {
-              showStatus("格式不正确，应为 8080:80 或 5353:53/udp", "error");
-              return;
-            }
-            await api(`/apps/${encodeURIComponent(app)}/ports`, {
-              method: "POST",
-              headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
-              body: new URLSearchParams({
-                listen: matched[1],
-                target: matched[2],
-                proto: matched[3] || "tcp",
-              }),
-            });
-            showStatus(`已更新 ${app} 的端口映射`);
-            await refreshAll();
-            return;
-          }
-
-          if (action === "desktop") {
-            await api("/desktop", {
-              method: "POST",
-              headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
-              body: new URLSearchParams({ app }),
-            });
-            showStatus(`已将 ${app} 设为桌面应用`);
-            await loadDesktop();
-            await loadApps();
-            return;
-          }
-
-          if (action === "uninstall" && !window.confirm(`确定要卸载 ${app} 吗？`)) {
-            return;
-          }
-
-          await api(`/apps/${encodeURIComponent(app)}/${action}`, { method: "POST" });
-          showStatus(`操作成功：${action} ${app}`);
-          await refreshAll();
-        } catch (error) {
-          showStatus(error.message, "error");
-        }
-      });
-
-      $("uploadBtn").addEventListener("click", async () => {
-        const file = $("cpkFile").files[0];
-        if (!file) {
-          showStatus("请先选择一个 CPK 文件", "error");
-          return;
-        }
-        try {
-          const data = await api(`/upload?filename=${encodeURIComponent(file.name)}`, {
-            method: "POST",
-            headers: { "Content-Type": "application/octet-stream" },
-            body: await file.arrayBuffer(),
-          });
-          state.upload = data.upload;
-          $("installBtn").disabled = false;
-          inspectionBox.textContent = JSON.stringify(data.inspection, null, 2);
-          showStatus("上传完成，预检通过");
-        } catch (error) {
-          state.upload = null;
-          $("installBtn").disabled = true;
-          inspectionBox.textContent = error.message;
-          showStatus(error.message, "error");
-        }
-      });
-
-      $("installBtn").addEventListener("click", async () => {
-        if (!state.upload) {
-          showStatus("还没有可安装的上传结果", "error");
-          return;
-        }
-        try {
-          await api("/install", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
-            body: new URLSearchParams({ upload_id: state.upload.id }),
-          });
-          inspectionBox.textContent = "安装成功，可以在应用库中查看。";
-          $("installBtn").disabled = true;
-          $("cpkFile").value = "";
-          state.upload = null;
-          showStatus("应用已安装");
-          await refreshAll();
-        } catch (error) {
-          showStatus(error.message, "error");
-        }
-      });
-
-      refreshAll().catch((error) => {
-        setAuthedUi(false);
-        showStatus(error.message, "error");
-      });
-      updateViewportOffsets();
-    </script>
+    <script src="/cap/assets/app.js" defer></script>
   </body>
 </html>
