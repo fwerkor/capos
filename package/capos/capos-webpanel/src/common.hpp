@@ -4,10 +4,12 @@
 #include <algorithm>
 #include <array>
 #include <cerrno>
+#include <cctype>
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
 #include <ctime>
+#include <dirent.h>
 #include <fcntl.h>
 #include <fstream>
 #include <iomanip>
@@ -358,6 +360,19 @@ inline std::string sessionPath(const std::string& sessionId) {
     return std::string(kSessionDir) + "/" + sessionId + ".session";
 }
 
+inline bool isHexToken(const std::string& value, size_t minLength, size_t maxLength) {
+    if (value.size() < minLength || value.size() > maxLength) {
+        return false;
+    }
+    return std::all_of(value.begin(), value.end(), [](unsigned char ch) {
+        return std::isxdigit(ch) != 0;
+    });
+}
+
+inline bool isSafeSessionId(const std::string& sessionId) {
+    return isHexToken(sessionId, 32, 96);
+}
+
 inline std::string sessionCookieHeader(const std::string& value, std::time_t maxAge) {
     std::ostringstream header;
     header << kSessionCookieName << '=' << value
@@ -370,6 +385,9 @@ inline std::string uploadPathFor(const std::string& sessionId, const std::string
 }
 
 inline bool saveSession(const Session& session) {
+    if (!isSafeSessionId(session.id)) {
+        return false;
+    }
     std::ostringstream data;
     data << "id=" << session.id << "\n"
          << "username=" << session.username << "\n"
@@ -381,6 +399,10 @@ inline bool saveSession(const Session& session) {
 }
 
 inline std::optional<Session> loadSessionById(const std::string& sessionId) {
+    if (!isSafeSessionId(sessionId)) {
+        return std::nullopt;
+    }
+
     const auto content = readFile(sessionPath(sessionId));
     if (!content.has_value()) {
         return std::nullopt;
@@ -412,6 +434,44 @@ inline std::optional<Session> loadSessionById(const std::string& sessionId) {
         return std::nullopt;
     }
     return session;
+}
+
+inline void cleanupExpiredSessions() {
+    DIR* dir = ::opendir(kSessionDir);
+    if (dir == nullptr) {
+        return;
+    }
+
+    const auto now = std::time(nullptr);
+    while (dirent* entry = ::readdir(dir)) {
+        const std::string name = entry->d_name;
+        const std::string suffix = ".session";
+        if (name.size() <= suffix.size() || name.substr(name.size() - suffix.size()) != suffix) {
+            continue;
+        }
+        const auto sessionId = name.substr(0, name.size() - suffix.size());
+        if (!isSafeSessionId(sessionId)) {
+            continue;
+        }
+        const auto content = readFile(sessionPath(sessionId));
+        if (!content.has_value()) {
+            continue;
+        }
+        std::stringstream stream(*content);
+        std::string line;
+        std::time_t expiresAt = 0;
+        while (std::getline(stream, line)) {
+            const auto pos = line.find('=');
+            if (pos != std::string::npos && line.substr(0, pos) == "expires_at") {
+                expiresAt = static_cast<std::time_t>(std::strtoll(line.substr(pos + 1).c_str(), nullptr, 10));
+                break;
+            }
+        }
+        if (expiresAt != 0 && expiresAt < now) {
+            std::remove(sessionPath(sessionId).c_str());
+        }
+    }
+    ::closedir(dir);
 }
 
 inline std::optional<Session> currentSession() {
