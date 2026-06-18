@@ -500,6 +500,8 @@ inline std::string reasonPhrase(int status) {
         case 404: return "Not Found";
         case 405: return "Method Not Allowed";
         case 409: return "Conflict";
+        case 501: return "Not Implemented";
+        case 502: return "Bad Gateway";
         case 500: return "Internal Server Error";
         default: return "OK";
     }
