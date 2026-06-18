@@ -38,15 +38,20 @@ std::string proxyPrefix() {
     return "/cgi-bin/cap/app";
 }
 
+std::string lowerAscii(std::string value) {
+    std::transform(value.begin(), value.end(), value.begin(), [](unsigned char ch) { return static_cast<char>(std::tolower(ch)); });
+    return value;
+}
+
 std::string requestScheme() {
     auto scheme = getenvOrEmpty("REQUEST_SCHEME");
-    std::transform(scheme.begin(), scheme.end(), scheme.begin(), [](unsigned char ch) { return static_cast<char>(std::tolower(ch)); });
+    scheme = lowerAscii(scheme);
     if (scheme == "http" || scheme == "https") {
         return scheme;
     }
 
     auto https = getenvOrEmpty("HTTPS");
-    std::transform(https.begin(), https.end(), https.begin(), [](unsigned char ch) { return static_cast<char>(std::tolower(ch)); });
+    https = lowerAscii(https);
     if (https == "on" || https == "1" || https == "yes" || https == "true") {
         return "https";
     }
@@ -59,6 +64,37 @@ std::string requestScheme() {
     }
 
     return "http";
+}
+
+bool isWebSocketRequest() {
+    const auto upgrade = lowerAscii(getenvOrEmpty("HTTP_UPGRADE"));
+    return upgrade == "websocket";
+}
+
+std::string stripQueryParam(const std::string& rawQuery, const std::string& excludedKey) {
+    std::stringstream stream(rawQuery);
+    std::string item;
+    std::vector<std::string> kept;
+    while (std::getline(stream, item, '&')) {
+        if (item.empty()) {
+            continue;
+        }
+        const auto eq = item.find('=');
+        const auto key = urlDecode(item.substr(0, eq));
+        if (key == excludedKey) {
+            continue;
+        }
+        kept.push_back(item);
+    }
+
+    std::ostringstream out;
+    for (size_t i = 0; i < kept.size(); ++i) {
+        if (i != 0) {
+            out << '&';
+        }
+        out << kept[i];
+    }
+    return out.str();
 }
 
 std::string filterForwardCookies(const std::string& cookieHeader, const std::string& panelSessionId) {
@@ -135,15 +171,16 @@ std::string htmlShell(const std::string& title, const std::string& body) {
         << "<title>" << htmlEscape(title) << "</title>"
         << "<style>"
         << ":root{color-scheme:light;"
-        << "--bg:#f2f0ea;--panel:#fffaf0;--ink:#192126;--muted:#61717d;--line:#d8d2c5;--accent:#ca4e2f;--accent-soft:#ffe0d2;}"
-        << "html,body{height:100%;margin:0;font-family:'Segoe UI',sans-serif;background:radial-gradient(circle at top,#fff9ef, #ece7dd 72%);color:var(--ink);}body{display:flex;min-height:100%;}"
-        << ".shell{display:flex;flex-direction:column;gap:18px;width:100%;padding:22px;box-sizing:border-box;}.card{background:rgba(255,250,240,.92);border:1px solid var(--line);border-radius:20px;box-shadow:0 16px 40px rgba(45,53,59,.08);}"
-        << ".empty{padding:28px;display:flex;flex-direction:column;gap:10px;}.empty h1{margin:0;font-size:22px;}.empty p{margin:0;color:var(--muted);line-height:1.5;}"
-        << ".meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;padding:0 28px 24px;}.meta div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;}"
-        << ".meta strong{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px;}"
-        << ".actions{display:flex;gap:12px;flex-wrap:wrap;padding:0 28px 24px;}.button{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:10px 16px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;}"
-        << ".hint{padding:0 28px 24px;color:var(--muted);}.badge{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:12px;}"
-        << ".json{margin:0 28px 28px;background:#171c21;color:#dce4eb;border-radius:16px;padding:16px;overflow:auto;font:12px/1.5 ui-monospace,monospace;}"
+        << "--bg:#eef1f4;--panel:#fff;--ink:#18222c;--muted:#62717f;--line:#d7dde4;--accent:#276a8f;--danger:#b23b36;--soft:#edf5f8;}"
+        << "html,body{height:100%;margin:0;font-family:'Segoe UI',sans-serif;background:linear-gradient(180deg,#f8fafb,#e8edf1);color:var(--ink);}body{display:flex;min-height:100%;}"
+        << ".shell{display:flex;flex-direction:column;gap:14px;width:100%;padding:18px;box-sizing:border-box;}.card{background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:12px;box-shadow:0 16px 36px rgba(19,31,43,.12);}"
+        << ".empty{padding:22px;display:flex;flex-direction:column;gap:10px;}.empty h1{margin:0;font-size:22px;}.empty p{margin:0;color:var(--muted);line-height:1.5;}"
+        << ".meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;padding:0 22px 20px;}.meta div{background:#fbfcfd;border:1px solid var(--line);border-radius:8px;padding:10px 12px;overflow-wrap:anywhere;}"
+        << ".meta strong{display:block;font-size:11px;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}"
+        << ".actions{display:flex;gap:8px;flex-wrap:wrap;padding:0 22px 20px;}.button{display:inline-flex;align-items:center;justify-content:center;border-radius:8px;padding:9px 12px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;border:0;cursor:pointer;font:inherit;}"
+        << ".button.secondary{background:#fff;color:var(--ink);border:1px solid var(--line);}.button.danger{background:rgba(178,59,54,.1);color:var(--danger);}"
+        << ".hint{padding:0 22px 20px;color:var(--muted);}.badge{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;background:var(--soft);color:var(--accent);font-weight:700;font-size:12px;}"
+        << ".json{margin:0 22px 22px;background:#18222c;color:#dce4eb;border-radius:8px;padding:14px;overflow:auto;font:12px/1.5 ui-monospace,monospace;}"
         << "</style></head><body><main class=\"shell\">" << body << "</main></body></html>";
     return out.str();
 }
@@ -186,14 +223,40 @@ std::string replaceAll(std::string text, const std::string& from, const std::str
 
 std::string rewriteHtmlBody(std::string body) {
     const auto prefix = proxyPrefix();
-    body = replaceAll(body, "href=\"/", "href=\"" + prefix + "/");
-    body = replaceAll(body, "src=\"/", "src=\"" + prefix + "/");
-    body = replaceAll(body, "action=\"/", "action=\"" + prefix + "/");
-    body = replaceAll(body, "href='/", "href='" + prefix + "/");
-    body = replaceAll(body, "src='/", "src='" + prefix + "/");
-    body = replaceAll(body, "action='/", "action='" + prefix + "/");
+    const std::vector<std::string> markers = {
+        "href=\"/", "src=\"/", "action=\"/", "poster=\"/",
+        "href='/", "src='/", "action='/", "poster='/",
+        "HREF=\"/", "SRC=\"/", "ACTION=\"/", "POSTER=\"/",
+        "HREF='/", "SRC='/", "ACTION='/", "POSTER='/",
+    };
+    for (const auto& marker : markers) {
+        size_t pos = 0;
+        while ((pos = body.find(marker, pos)) != std::string::npos) {
+            const auto slash = pos + marker.size() - 1;
+            if (slash + 1 < body.size() && body[slash + 1] == '/') {
+                pos = slash + 2;
+                continue;
+            }
+            body.replace(slash, 1, prefix + "/");
+            pos = slash + prefix.size() + 1;
+        }
+    }
 
-    const auto headPos = body.find("<head");
+    for (const auto& marker : {"url(/", "url('/", "url(\"/"}) {
+        size_t pos = 0;
+        while ((pos = body.find(marker, pos)) != std::string::npos) {
+            const auto slash = pos + std::strlen(marker) - 1;
+            if (slash + 1 < body.size() && body[slash + 1] == '/') {
+                pos = slash + 2;
+                continue;
+            }
+            body.replace(slash, 1, prefix + "/");
+            pos = slash + prefix.size() + 1;
+        }
+    }
+
+    const auto lowered = lowerAscii(body);
+    const auto headPos = lowered.find("<head");
     if (headPos != std::string::npos) {
         const auto tagEnd = body.find('>', headPos);
         if (tagEnd != std::string::npos) {
@@ -354,6 +417,8 @@ std::optional<UpstreamResponse> fetchHttp(const std::string& host, int port, con
     return response;
 }
 
+bool isHopByHop(const std::string& header);
+
 std::string buildForwardRequest(const std::string& host, int port, const std::string& upstreamPath, const std::string& body,
                                 const std::string& panelSessionId) {
     std::ostringstream request;
@@ -378,7 +443,7 @@ std::string buildForwardRequest(const std::string& host, int port, const std::st
         auto name = entry.substr(5, eq - 5);
         auto value = entry.substr(eq + 1);
         std::replace(name.begin(), name.end(), '_', '-');
-        std::transform(name.begin(), name.end(), name.begin(), [](unsigned char ch) { return static_cast<char>(std::tolower(ch)); });
+        name = lowerAscii(name);
         if (name == "cookie") {
             value = filterForwardCookies(value, panelSessionId);
             if (value.empty()) {
@@ -386,7 +451,7 @@ std::string buildForwardRequest(const std::string& host, int port, const std::st
             }
         }
         // Keep hop-by-hop headers and the panel-managed host header under proxy control.
-        if (name == "host" || name == "connection" || name == "accept-encoding" || name == "content-length") {
+        if (name == "host" || name == "accept-encoding" || name == "content-length" || isHopByHop(name)) {
             continue;
         }
         std::transform(name.begin(), name.end(), name.begin(), [](unsigned char ch) { return static_cast<char>(ch == '-' ? '-' : std::toupper(ch)); });
@@ -405,12 +470,68 @@ std::string buildForwardRequest(const std::string& host, int port, const std::st
 }
 
 bool isHopByHop(const std::string& header) {
-    const std::string lowered = [&header]() {
-        std::string s = header;
-        std::transform(s.begin(), s.end(), s.begin(), [](unsigned char ch) { return static_cast<char>(std::tolower(ch)); });
-        return s;
-    }();
-    return lowered == "connection" || lowered == "transfer-encoding" || lowered == "content-length";
+    const auto lowered = lowerAscii(header);
+    return lowered == "connection" ||
+           lowered == "keep-alive" ||
+           lowered == "proxy-authenticate" ||
+           lowered == "proxy-authorization" ||
+           lowered == "proxy-connection" ||
+           lowered == "te" ||
+           lowered == "trailer" ||
+           lowered == "transfer-encoding" ||
+           lowered == "upgrade" ||
+           lowered == "content-length";
+}
+
+std::string rewriteResponseLocation(const std::string& value, const std::string& upstreamHost, int upstreamPort) {
+    if (value.empty()) {
+        return value;
+    }
+    if (value[0] == '/' && (value.size() == 1 || value[1] != '/')) {
+        return proxyPrefix() + value;
+    }
+
+    const auto httpPrefix = "http://" + upstreamHost + ":" + std::to_string(upstreamPort);
+    if (value.rfind(httpPrefix + "/", 0) == 0) {
+        return proxyPrefix() + value.substr(httpPrefix.size());
+    }
+    const auto httpPrefixNoPort = "http://" + upstreamHost;
+    if (value.rfind(httpPrefixNoPort + "/", 0) == 0) {
+        return proxyPrefix() + value.substr(httpPrefixNoPort.size());
+    }
+    return value;
+}
+
+std::string rewriteSetCookiePath(const std::string& value) {
+    std::stringstream stream(value);
+    std::string item;
+    std::vector<std::string> parts;
+    bool hasPath = false;
+    while (std::getline(stream, item, ';')) {
+        auto part = trim(item);
+        if (part.empty()) {
+            continue;
+        }
+        const auto lowered = lowerAscii(part);
+        if (lowered.rfind("path=", 0) == 0) {
+            parts.push_back("Path=" + proxyPrefix());
+            hasPath = true;
+        } else {
+            parts.push_back(part);
+        }
+    }
+    if (!hasPath) {
+        parts.push_back("Path=" + proxyPrefix());
+    }
+
+    std::ostringstream out;
+    for (size_t i = 0; i < parts.size(); ++i) {
+        if (i != 0) {
+            out << "; ";
+        }
+        out << parts[i];
+    }
+    return out.str();
 }
 
 std::string renderStatusPage(const std::string& selectedApp, const std::string& infoJson, const std::string& message) {
@@ -420,6 +541,10 @@ std::string renderStatusPage(const std::string& selectedApp, const std::string& 
     const auto running = findJsonBool(infoJson, "running").value_or(false);
     const auto desktopPort = findJsonInt(infoJson, "port");
     const auto hostNetwork = findJsonBool(infoJson, "host_network").value_or(false);
+    const auto targetHost = findJsonString(infoJson, "target_host").value_or("-");
+    const auto scheme = findJsonString(infoJson, "scheme").value_or("-");
+    const auto target = desktopPort.has_value() ? scheme + "://" + targetHost + ":" + std::to_string(*desktopPort) : std::string("-");
+    const auto appUrl = urlEncode(selectedApp);
 
     std::ostringstream body;
     body << "<section class=\"card empty\">"
@@ -434,6 +559,12 @@ std::string renderStatusPage(const std::string& selectedApp, const std::string& 
          << "<div><strong>版本</strong>" << htmlEscape(version) << "</div>"
          << "<div><strong>桌面端口</strong>" << (desktopPort.has_value() ? std::to_string(*desktopPort) : std::string("-")) << "</div>"
          << "<div><strong>访问方式</strong>" << (hostNetwork ? "Host Network" : "Container Proxy") << "</div>"
+         << "<div><strong>目标</strong>" << htmlEscape(target) << "</div>"
+         << "</div>"
+         << "<div class=\"actions\">"
+         << "<button class=\"button\" onclick=\"fetch('/cgi-bin/cap/api/apps/" << htmlEscape(appUrl) << "/start',{method:'POST',credentials:'same-origin'}).then(function(){location.reload();})\">启动应用</button>"
+         << "<a class=\"button secondary\" href=\"javascript:location.reload()\">刷新</a>"
+         << "<a class=\"button secondary\" target=\"_top\" href=\"/cap/\">返回面板</a>"
          << "</div>"
          << "<pre class=\"json\">" << htmlEscape(infoJson) << "</pre>"
          << "</section>";
@@ -449,7 +580,13 @@ int main() {
         return 0;
     }
 
-    const auto query = parseKv(getenvOrEmpty("QUERY_STRING"));
+    if (isWebSocketRequest()) {
+        sendHtml(501, renderEmpty("暂不支持 WebSocket", "当前桌面代理这一轮只支持 HTTP 请求。WebSocket 转发会在后续版本补齐，当前不会静默失败。"));
+        return 0;
+    }
+
+    const auto rawQuery = getenvOrEmpty("QUERY_STRING");
+    const auto query = parseKv(rawQuery);
     std::string selectedApp;
     if (const auto it = query.find("app"); it != query.end()) {
         selectedApp = it->second;
@@ -500,7 +637,7 @@ int main() {
         path = "/";
     }
 
-    const auto upstreamQuery = joinQuery(query, {"app"});
+    const auto upstreamQuery = stripQueryParam(rawQuery, "app");
     std::string upstreamPath = path;
     if (!upstreamQuery.empty()) {
         upstreamPath += (upstreamPath.find('?') == std::string::npos ? "?" : "&");
@@ -540,19 +677,21 @@ int main() {
         response->body = *decoded;
     }
 
-    if (contentType.find("text/html") != std::string::npos) {
+    if (lowerAscii(contentType).find("text/html") != std::string::npos) {
         response->body = rewriteHtmlBody(response->body);
     }
 
     std::vector<std::pair<std::string, std::string>> outHeaders;
     for (const auto& [name, value] : response->headers) {
-        if (isHopByHop(name)) {
+        std::string lowered = name;
+        lowered = lowerAscii(lowered);
+        if (isHopByHop(lowered) || lowered == "content-type") {
             continue;
         }
-        std::string lowered = name;
-        std::transform(lowered.begin(), lowered.end(), lowered.begin(), [](unsigned char ch) { return static_cast<char>(std::tolower(ch)); });
-        if (lowered == "location" && !value.empty() && value[0] == '/') {
-            outHeaders.emplace_back(name, proxyPrefix() + value);
+        if (lowered == "location") {
+            outHeaders.emplace_back(name, rewriteResponseLocation(value, *host, static_cast<int>(*port)));
+        } else if (lowered == "set-cookie") {
+            outHeaders.emplace_back(name, rewriteSetCookiePath(value));
         } else {
             outHeaders.emplace_back(name, value);
         }
