@@ -82,6 +82,7 @@ function resetSessionUi(message) {
   nodes.controlDrawer.classList.remove("open");
   nodes.loginView.style.display = "grid";
   nodes.appShell.classList.remove("ready");
+  nodes.desktopFrame.src = "about:blank";
   nodes.installBtn.disabled = true;
   nodes.inspectionBox.innerHTML = "<p>等待上传 CPK。</p>";
   if (message) {
@@ -297,6 +298,12 @@ function updateViewportOffsets() {
 }
 
 function refreshDesktopFrame() {
+  const appName = state.desktop?.app;
+  const item = state.apps.find((candidate) => candidate.app?.name === appName);
+  if (!appName || !item?.runtime?.running || !item.desktop?.port) {
+    nodes.desktopFrame.src = "about:blank";
+    return;
+  }
   nodes.desktopFrame.src = `/cgi-bin/cap/app?ts=${Date.now()}`;
 }
 

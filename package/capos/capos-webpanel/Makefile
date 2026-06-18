@@ -13,7 +13,7 @@ define Package/capos-webpanel
   SECTION:=capos
   CATEGORY:=CapOS
   TITLE:=CapOS Web Panel
-  DEPENDS:=+libstdcpp +luci +uhttpd +capbox
+  DEPENDS:=+libstdcpp +libopenssl +luci +uhttpd +libustream-mbedtls +px5g-mbedtls +capbox
 endef
 
 define Package/capos-webpanel/description
@@ -37,7 +37,7 @@ define Build/Compile
 
 	$(TARGET_CXX) $(TARGET_CXXFLAGS) $(TARGET_CPPFLAGS) -std=gnu++17 -I$(PKG_BUILD_DIR)/src \
 		-o $(PKG_BUILD_DIR)/bin/app $(PKG_BUILD_DIR)/src/app.cpp \
-		$(TARGET_LDFLAGS) -lcrypt
+		$(TARGET_LDFLAGS) -lcrypt -lssl -lcrypto
 endef
 
 define Package/capos-webpanel/install
@@ -47,6 +47,9 @@ define Package/capos-webpanel/install
 
 	$(INSTALL_DIR) $(1)$(CAP_WWW_DIR)
 	$(CP) -a ./htdocs/* $(1)$(CAP_WWW_DIR)/
+
+	$(INSTALL_DIR) $(1)/etc/uci-defaults
+	$(INSTALL_BIN) ./files/90-capos-webpanel-uhttpd $(1)/etc/uci-defaults/90-capos-webpanel-uhttpd
 endef
 
 $(eval $(call BuildPackage,capos-webpanel))

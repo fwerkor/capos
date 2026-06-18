@@ -1,6 +1,11 @@
 #include "common.hpp"
 
 #include <netdb.h>
+#include <openssl/err.h>
+#include <openssl/ssl.h>
+#include <openssl/x509v3.h>
+#include <poll.h>
+#include <signal.h>
 #include <sys/socket.h>
 
 using namespace capos;
@@ -14,6 +19,57 @@ struct UpstreamResponse {
     std::string reason = "Bad Gateway";
     std::vector<std::pair<std::string, std::string>> headers;
     std::string body;
+};
+
+struct UpstreamConnection {
+    int fd = -1;
+    SSL_CTX* ctx = nullptr;
+    SSL* ssl = nullptr;
+    bool tls = false;
+
+    UpstreamConnection() = default;
+    UpstreamConnection(const UpstreamConnection&) = delete;
+    UpstreamConnection& operator=(const UpstreamConnection&) = delete;
+
+    UpstreamConnection(UpstreamConnection&& other) noexcept {
+        *this = std::move(other);
+    }
+
+    UpstreamConnection& operator=(UpstreamConnection&& other) noexcept {
+        if (this != &other) {
+            close();
+            fd = other.fd;
+            ctx = other.ctx;
+            ssl = other.ssl;
+            tls = other.tls;
+            other.fd = -1;
+            other.ctx = nullptr;
+            other.ssl = nullptr;
+            other.tls = false;
+        }
+        return *this;
+    }
+
+    ~UpstreamConnection() {
+        close();
+    }
+
+    void close() {
+        if (ssl != nullptr) {
+            SSL_shutdown(ssl);
+            SSL_free(ssl);
+            ssl = nullptr;
+        }
+        if (fd >= 0) {
+            ::close(fd);
+            fd = -1;
+        }
+        if (ctx != nullptr) {
+            SSL_CTX_free(ctx);
+            ctx = nullptr;
+        }
+        tls = false;
+    }
 };
 
 std::string effectivePathInfo() {
@@ -319,7 +375,7 @@ std::optional<std::string> decodeChunkedBody(const std::string& input) {
     return std::nullopt;
 }
 
-std::optional<UpstreamResponse> fetchHttp(const std::string& host, int port, const std::string& requestText) {
+std::optional<int> connectTcp(const std::string& host, int port) {
     addrinfo hints{};
     hints.ai_family = AF_UNSPEC;
     hints.ai_socktype = SOCK_STREAM;
@@ -347,44 +403,127 @@ std::optional<UpstreamResponse> fetchHttp(const std::string& host, int port, con
         return std::nullopt;
     }
 
-    ssize_t sentTotal = 0;
-    while (sentTotal < static_cast<ssize_t>(requestText.size())) {
-        const auto sent = send(sock, requestText.data() + sentTotal, requestText.size() - sentTotal, 0);
-        if (sent <= 0) {
-            close(sock);
-            return std::nullopt;
-        }
-        sentTotal += sent;
-    }
+    return sock;
+}
 
-    std::string raw;
-    std::array<char, 8192> buffer{};
-    while (true) {
-        const auto got = recv(sock, buffer.data(), buffer.size(), 0);
-        if (got <= 0) {
-            break;
-        }
-        raw.append(buffer.data(), static_cast<size_t>(got));
-    }
-    close(sock);
-
-    const auto sep = raw.find("\r\n\r\n");
-    const auto altSep = raw.find("\n\n");
-    size_t headerEnd = std::string::npos;
-    size_t headerSize = 0;
-    if (sep != std::string::npos) {
-        headerEnd = sep;
-        headerSize = 4;
-    } else if (altSep != std::string::npos) {
-        headerEnd = altSep;
-        headerSize = 2;
-    } else {
+std::optional<UpstreamConnection> openUpstream(const std::string& host, int port, const std::string& scheme, bool verifyTls) {
+    auto sock = connectTcp(host, port);
+    if (!sock.has_value()) {
         return std::nullopt;
     }
 
+    UpstreamConnection connection;
+    connection.fd = *sock;
+
+    if (scheme == "https") {
+        SSL_library_init();
+        SSL_load_error_strings();
+        connection.tls = true;
+        connection.ctx = SSL_CTX_new(TLS_client_method());
+        if (connection.ctx == nullptr) {
+            return std::nullopt;
+        }
+        if (verifyTls) {
+            SSL_CTX_set_verify(connection.ctx, SSL_VERIFY_PEER, nullptr);
+            SSL_CTX_set_default_verify_paths(connection.ctx);
+        } else {
+            SSL_CTX_set_verify(connection.ctx, SSL_VERIFY_NONE, nullptr);
+        }
+
+        connection.ssl = SSL_new(connection.ctx);
+        if (connection.ssl == nullptr) {
+            return std::nullopt;
+        }
+        SSL_set_fd(connection.ssl, connection.fd);
+        SSL_set_tlsext_host_name(connection.ssl, host.c_str());
+        if (verifyTls) {
+            X509_VERIFY_PARAM* param = SSL_get0_param(connection.ssl);
+            X509_VERIFY_PARAM_set_hostflags(param, X509_CHECK_FLAG_NO_PARTIAL_WILDCARDS);
+            X509_VERIFY_PARAM_set1_host(param, host.c_str(), 0);
+        }
+        if (SSL_connect(connection.ssl) != 1) {
+            return std::nullopt;
+        }
+    }
+
+    return connection;
+}
+
+bool writeUpstream(UpstreamConnection& connection, const char* data, size_t size) {
+    size_t sentTotal = 0;
+    while (sentTotal < size) {
+        int sent = 0;
+        if (connection.tls) {
+            sent = SSL_write(connection.ssl, data + sentTotal, static_cast<int>(size - sentTotal));
+            if (sent <= 0) {
+                const auto err = SSL_get_error(connection.ssl, sent);
+                if (err == SSL_ERROR_WANT_READ || err == SSL_ERROR_WANT_WRITE) {
+                    continue;
+                }
+                return false;
+            }
+        } else {
+            const auto rawSent = send(connection.fd, data + sentTotal, size - sentTotal, 0);
+            if (rawSent <= 0) {
+                return false;
+            }
+            sent = static_cast<int>(rawSent);
+        }
+        sentTotal += static_cast<size_t>(sent);
+    }
+    return true;
+}
+
+bool writeUpstream(UpstreamConnection& connection, const std::string& data) {
+    return writeUpstream(connection, data.data(), data.size());
+}
+
+ssize_t readUpstream(UpstreamConnection& connection, char* buffer, size_t size) {
+    if (connection.tls) {
+        const auto got = SSL_read(connection.ssl, buffer, static_cast<int>(size));
+        if (got <= 0) {
+            const auto err = SSL_get_error(connection.ssl, got);
+            if (err == SSL_ERROR_WANT_READ || err == SSL_ERROR_WANT_WRITE) {
+                return -2;
+            }
+            return 0;
+        }
+        return got;
+    }
+    return recv(connection.fd, buffer, size, 0);
+}
+
+struct HeaderReadResult {
     UpstreamResponse response;
+    std::string firstBodyBytes;
+};
+
+std::optional<HeaderReadResult> readResponseHeaders(UpstreamConnection& connection) {
+    std::string raw;
+    std::array<char, 8192> buffer{};
+    size_t headerEnd = std::string::npos;
+    size_t headerSize = 0;
+
+    while (headerEnd == std::string::npos) {
+        const auto got = readUpstream(connection, buffer.data(), buffer.size());
+        if (got <= 0) {
+            return std::nullopt;
+        }
+        raw.append(buffer.data(), static_cast<size_t>(got));
+        const auto sep = raw.find("\r\n\r\n");
+        const auto altSep = raw.find("\n\n");
+        if (sep != std::string::npos) {
+            headerEnd = sep;
+            headerSize = 4;
+        } else if (altSep != std::string::npos) {
+            headerEnd = altSep;
+            headerSize = 2;
+        }
+    }
+
+    HeaderReadResult parsed;
     std::string headerBlock = raw.substr(0, headerEnd);
-    response.body = raw.substr(headerEnd + headerSize);
+    parsed.firstBodyBytes = raw.substr(headerEnd + headerSize);
 
     std::stringstream headers(headerBlock);
     std::string line;
@@ -395,10 +534,10 @@ std::optional<UpstreamResponse> fetchHttp(const std::string& host, int port, con
     {
         std::smatch match;
         if (std::regex_search(line, match, std::regex(R"(HTTP/\d+\.\d+\s+(\d+)\s*(.*))"))) {
-            response.status = std::stoi(match[1].str());
-            response.reason = trim(match[2].str());
-            if (response.reason.empty()) {
-                response.reason = reasonPhrase(response.status);
+            parsed.response.status = std::stoi(match[1].str());
+            parsed.response.reason = trim(match[2].str());
+            if (parsed.response.reason.empty()) {
+                parsed.response.reason = reasonPhrase(parsed.response.status);
             }
         }
     }
@@ -412,21 +551,54 @@ std::optional<UpstreamResponse> fetchHttp(const std::string& host, int port, con
         if (pos == std::string::npos) {
             continue;
         }
-        response.headers.emplace_back(trim(line.substr(0, pos)), trim(line.substr(pos + 1)));
+        parsed.response.headers.emplace_back(trim(line.substr(0, pos)), trim(line.substr(pos + 1)));
     }
+    return parsed;
+}
+
+std::optional<UpstreamResponse> fetchHttp(const std::string& host, int port, const std::string& scheme, bool verifyTls,
+                                          const std::string& requestText) {
+    auto connection = openUpstream(host, port, scheme, verifyTls);
+    if (!connection.has_value()) {
+        return std::nullopt;
+    }
+    if (!writeUpstream(*connection, requestText)) {
+        return std::nullopt;
+    }
+
+    auto parsed = readResponseHeaders(*connection);
+    if (!parsed.has_value()) {
+        return std::nullopt;
+    }
+    auto response = parsed->response;
+    response.body = parsed->firstBodyBytes;
+
+    std::array<char, 8192> buffer{};
+    while (true) {
+        const auto got = readUpstream(*connection, buffer.data(), buffer.size());
+        if (got <= 0) {
+            break;
+        }
+        response.body.append(buffer.data(), static_cast<size_t>(got));
+    }
+
     return response;
 }
 
 bool isHopByHop(const std::string& header);
 
 std::string buildForwardRequest(const std::string& host, int port, const std::string& upstreamPath, const std::string& body,
-                                const std::string& panelSessionId) {
+                                const std::string& panelSessionId, bool websocket = false) {
     std::ostringstream request;
     const auto method = getenvOrEmpty("REQUEST_METHOD").empty() ? "GET" : getenvOrEmpty("REQUEST_METHOD");
     request << method << ' ' << upstreamPath << " HTTP/1.1\r\n";
     request << "Host: " << host << ':' << port << "\r\n";
-    request << "Connection: close\r\n";
-    request << "Accept-Encoding: identity\r\n";
+    request << "Connection: " << (websocket ? "Upgrade" : "close") << "\r\n";
+    if (websocket) {
+        request << "Upgrade: websocket\r\n";
+    } else {
+        request << "Accept-Encoding: identity\r\n";
+    }
     request << "X-Forwarded-Host: " << hostWithoutPort() << "\r\n";
     request << "X-Forwarded-Proto: " << requestScheme() << "\r\n";
     request << "X-Forwarded-Prefix: " << proxyPrefix() << "\r\n";
@@ -462,10 +634,13 @@ std::string buildForwardRequest(const std::string& host, int port, const std::st
     if (!contentType.empty()) {
         request << "Content-Type: " << contentType << "\r\n";
     }
-    if (!body.empty()) {
+    if (!body.empty() && !websocket) {
         request << "Content-Length: " << body.size() << "\r\n";
     }
-    request << "\r\n" << body;
+    request << "\r\n";
+    if (!websocket) {
+        request << body;
+    }
     return request.str();
 }
 
@@ -483,7 +658,8 @@ bool isHopByHop(const std::string& header) {
            lowered == "content-length";
 }
 
-std::string rewriteResponseLocation(const std::string& value, const std::string& upstreamHost, int upstreamPort) {
+std::string rewriteResponseLocation(const std::string& value, const std::string& upstreamScheme,
+                                    const std::string& upstreamHost, int upstreamPort) {
     if (value.empty()) {
         return value;
     }
@@ -491,13 +667,13 @@ std::string rewriteResponseLocation(const std::string& value, const std::string&
         return proxyPrefix() + value;
     }
 
-    const auto httpPrefix = "http://" + upstreamHost + ":" + std::to_string(upstreamPort);
-    if (value.rfind(httpPrefix + "/", 0) == 0) {
-        return proxyPrefix() + value.substr(httpPrefix.size());
+    const auto prefixWithPort = upstreamScheme + "://" + upstreamHost + ":" + std::to_string(upstreamPort);
+    if (value.rfind(prefixWithPort + "/", 0) == 0) {
+        return proxyPrefix() + value.substr(prefixWithPort.size());
     }
-    const auto httpPrefixNoPort = "http://" + upstreamHost;
-    if (value.rfind(httpPrefixNoPort + "/", 0) == 0) {
-        return proxyPrefix() + value.substr(httpPrefixNoPort.size());
+    const auto prefixNoPort = upstreamScheme + "://" + upstreamHost;
+    if (value.rfind(prefixNoPort + "/", 0) == 0) {
+        return proxyPrefix() + value.substr(prefixNoPort.size());
     }
     return value;
 }
@@ -532,6 +708,141 @@ std::string rewriteSetCookiePath(const std::string& value) {
         out << parts[i];
     }
     return out.str();
+}
+
+bool writeStdoutAll(const char* data, size_t size) {
+    size_t writtenTotal = 0;
+    while (writtenTotal < size) {
+        const auto written = ::write(STDOUT_FILENO, data + writtenTotal, size - writtenTotal);
+        if (written <= 0) {
+            return false;
+        }
+        writtenTotal += static_cast<size_t>(written);
+    }
+    return true;
+}
+
+bool writeStdoutAll(const std::string& data) {
+    return writeStdoutAll(data.data(), data.size());
+}
+
+void writeWebSocketSwitchingHeaders(const UpstreamResponse& response) {
+    bool hasUpgrade = false;
+    bool hasConnection = false;
+    std::cout << "Status: 101 Switching Protocols\r\n";
+    for (const auto& [name, value] : response.headers) {
+        const auto lowered = lowerAscii(name);
+        if (lowered == "content-length" || lowered == "transfer-encoding" || lowered == "content-type") {
+            continue;
+        }
+        if (lowered == "upgrade") {
+            hasUpgrade = true;
+        }
+        if (lowered == "connection") {
+            hasConnection = true;
+        }
+        std::cout << name << ": " << value << "\r\n";
+    }
+    if (!hasUpgrade) {
+        std::cout << "Upgrade: websocket\r\n";
+    }
+    if (!hasConnection) {
+        std::cout << "Connection: Upgrade\r\n";
+    }
+    std::cout << "\r\n";
+    std::cout.flush();
+}
+
+void relayWebSocket(UpstreamConnection& connection, const std::string& initialBytes) {
+    if (!initialBytes.empty()) {
+        writeStdoutAll(initialBytes);
+    }
+
+    bool clientOpen = true;
+    std::array<char, 8192> buffer{};
+    while (true) {
+        bool upstreamReady = connection.tls && SSL_pending(connection.ssl) > 0;
+        pollfd fds[2]{};
+        nfds_t nfds = 0;
+        if (clientOpen) {
+            fds[nfds].fd = STDIN_FILENO;
+            fds[nfds].events = POLLIN;
+            ++nfds;
+        }
+        fds[nfds].fd = connection.fd;
+        fds[nfds].events = POLLIN;
+        ++nfds;
+
+        if (!upstreamReady) {
+            const auto ready = poll(fds, nfds, -1);
+            if (ready < 0) {
+                if (errno == EINTR) {
+                    continue;
+                }
+                break;
+            }
+        }
+
+        size_t index = 0;
+        if (clientOpen) {
+            if ((fds[index].revents & (POLLIN | POLLHUP | POLLERR)) != 0) {
+                const auto got = ::read(STDIN_FILENO, buffer.data(), buffer.size());
+                if (got > 0) {
+                    if (!writeUpstream(connection, buffer.data(), static_cast<size_t>(got))) {
+                        break;
+                    }
+                } else {
+                    clientOpen = false;
+                }
+            }
+            ++index;
+        }
+
+        if (upstreamReady || (fds[index].revents & (POLLIN | POLLHUP | POLLERR)) != 0) {
+            const auto got = readUpstream(connection, buffer.data(), buffer.size());
+            if (got == -2) {
+                continue;
+            }
+            if (got <= 0) {
+                break;
+            }
+            if (!writeStdoutAll(buffer.data(), static_cast<size_t>(got))) {
+                break;
+            }
+        }
+    }
+}
+
+std::string renderStatusPage(const std::string& selectedApp, const std::string& infoJson, const std::string& message);
+
+bool proxyWebSocket(const Session& session, const std::string& selectedApp, const std::string& infoJson,
+                    const std::string& host, int port, const std::string& scheme, bool verifyTls,
+                    const std::string& upstreamPath) {
+    auto connection = openUpstream(host, port, scheme, verifyTls);
+    if (!connection.has_value()) {
+        sendHtml(502, renderStatusPage(selectedApp, infoJson, "WebSocket 连接上游失败，目标服务可能尚未监听。"));
+        return false;
+    }
+
+    const auto requestText = buildForwardRequest(host, port, upstreamPath, "", session.id, true);
+    if (!writeUpstream(*connection, requestText)) {
+        sendHtml(502, renderStatusPage(selectedApp, infoJson, "WebSocket 握手请求发送失败。"));
+        return false;
+    }
+
+    auto parsed = readResponseHeaders(*connection);
+    if (!parsed.has_value()) {
+        sendHtml(502, renderStatusPage(selectedApp, infoJson, "WebSocket 上游没有返回有效握手响应。"));
+        return false;
+    }
+    if (parsed->response.status != 101) {
+        sendHtml(502, renderStatusPage(selectedApp, infoJson, "WebSocket 上游拒绝升级连接，未返回 101 Switching Protocols。"));
+        return false;
+    }
+
+    writeWebSocketSwitchingHeaders(parsed->response);
+    relayWebSocket(*connection, parsed->firstBodyBytes);
+    return true;
 }
 
 std::string renderStatusPage(const std::string& selectedApp, const std::string& infoJson, const std::string& message) {
@@ -574,14 +885,11 @@ std::string renderStatusPage(const std::string& selectedApp, const std::string& 
 }  // namespace
 
 int main() {
+    signal(SIGPIPE, SIG_IGN);
+
     const auto session = currentSession();
     if (!session.has_value()) {
         sendHtml(401, renderEmpty("需要登录", "请先返回 CapOS 面板完成登录，然后再查看桌面应用。"));
-        return 0;
-    }
-
-    if (isWebSocketRequest()) {
-        sendHtml(501, renderEmpty("暂不支持 WebSocket", "当前桌面代理这一轮只支持 HTTP 请求。WebSocket 转发会在后续版本补齐，当前不会静默失败。"));
         return 0;
     }
 
@@ -618,15 +926,16 @@ int main() {
     const auto scheme = findJsonString(info.output, "scheme").value_or("http");
     const auto host = findJsonString(info.output, "target_host");
     const auto port = findJsonInt(info.output, "port");
+    const auto httpsSkipCheck = findJsonBool(info.output, "https_skip_check").value_or(true);
 
-    if (!running || !host.has_value() || !port.has_value() || scheme != "http") {
-        std::string why = "当前桌面应用还没有可代理的 HTTP 入口。";
+    if (!running || !host.has_value() || !port.has_value() || (scheme != "http" && scheme != "https")) {
+        std::string why = "当前桌面应用还没有可代理的 HTTP/HTTPS 入口。";
         if (!running) {
             why = "当前桌面应用还没有启动。";
         } else if (!port.has_value()) {
             why = "当前桌面应用在元数据里没有声明 service 端口。";
-        } else if (scheme != "http") {
-            why = "当前桌面应用仅声明了 HTTPS 入口，这一轮代理先优先支持 HTTP。";
+        } else if (scheme != "http" && scheme != "https") {
+            why = "当前桌面应用声明了暂不支持的 service scheme。";
         }
         sendHtml(200, renderStatusPage(selectedApp, info.output, why));
         return 0;
@@ -644,9 +953,14 @@ int main() {
         upstreamPath += upstreamQuery;
     }
 
+    if (isWebSocketRequest()) {
+        proxyWebSocket(*session, selectedApp, info.output, *host, static_cast<int>(*port), scheme, !httpsSkipCheck, upstreamPath);
+        return 0;
+    }
+
     const auto requestBody = readRequestBody();
     const auto requestText = buildForwardRequest(*host, static_cast<int>(*port), upstreamPath, requestBody, session->id);
-    auto response = fetchHttp(*host, static_cast<int>(*port), requestText);
+    auto response = fetchHttp(*host, static_cast<int>(*port), scheme, !httpsSkipCheck, requestText);
     if (!response.has_value()) {
         sendHtml(502, renderStatusPage(selectedApp, info.output, "连接桌面应用失败，可能容器尚未完全启动，或目标服务没有监听声明的端口。"));
         return 0;
@@ -689,7 +1003,7 @@ int main() {
             continue;
         }
         if (lowered == "location") {
-            outHeaders.emplace_back(name, rewriteResponseLocation(value, *host, static_cast<int>(*port)));
+            outHeaders.emplace_back(name, rewriteResponseLocation(value, scheme, *host, static_cast<int>(*port)));
         } else if (lowered == "set-cookie") {
             outHeaders.emplace_back(name, rewriteSetCookiePath(value));
         } else {

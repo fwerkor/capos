@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# ArgosFS currently rejects fsync for px5g output under /etc on first boot.
+# Generate uhttpd's self-signed certificate on tmpfs instead.
+uci -q set uhttpd.main.cert='/tmp/uhttpd.crt'
+uci -q set uhttpd.main.key='/tmp/uhttpd.key'
+uci -q set uhttpd.defaults.key_type='rsa'
+uci -q commit uhttpd
+
+rm -f /etc/uhttpd.crt /etc/uhttpd.key /tmp/uhttpd.crt /tmp/uhttpd.key
+exit 0
