@@ -36,7 +36,7 @@ jobs:
             bash coreutils findutils grep sed gawk make \
             git perl python3 g++ nodejs jq \
             file rsync \
-            libncurses-dev
+            libncurses-dev libssl-dev
 
       - name: Assert vendored feeds exist
         shell: bash
@@ -66,10 +66,11 @@ jobs:
           g++ -std=gnu++17 -Ipackage/capos/capos-webpanel/src \
             -o /tmp/capos-api-smoke package/capos/capos-webpanel/src/api.cpp -lcrypt
           g++ -std=gnu++17 -Ipackage/capos/capos-webpanel/src \
-            -o /tmp/capos-app-smoke package/capos/capos-webpanel/src/app.cpp -lcrypt
+            -o /tmp/capos-app-smoke package/capos/capos-webpanel/src/app.cpp -lcrypt -lssl -lcrypto
 
           tests/capbox_logic_tests.sh
           tests/webpanel_frontend_smoke.sh
+          tests/webpanel_proxy_smoke.sh
 
       - name: Kconfig sanity (defconfig)
         shell: bash
