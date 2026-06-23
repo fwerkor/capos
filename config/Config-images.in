@@ -360,13 +360,13 @@ menu "Target Images"
 		int "Root filesystem partition size (in MiB)"
 		depends on USES_ROOTFS_PART || TARGET_ROOTFS_EXT4FS || TARGET_ROOTFS_ARGOSFS
 		default 448 if TARGET_mediatek || TARGET_microchipsw
-		default 384 if TARGET_ROOTFS_ARGOSFS
+		default 512 if TARGET_ROOTFS_ARGOSFS
 		default 256 if PACKAGE_podman
 		default 232 if TARGET_loongarch64
 		default 104
 		help
 		  Select the root filesystem partition size.
-		  When ArgosFS is enabled, the default is raised to 384 MiB to
+		  When ArgosFS is enabled, the default is raised to 512 MiB to
 		  leave room for raw metadata, journal, and normal rootfs growth.
 		  When Podman is enabled, the default is raised to 256 MiB to
 		  accommodate the larger root filesystem footprint.
