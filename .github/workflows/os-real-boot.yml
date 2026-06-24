@@ -1,0 +1,155 @@
+name: OS Real Boot Check
+
+on:
+  pull_request:
+    branches: ["main"]
+    paths:
+      - ".config"
+      - ".github/workflows/os-real-boot.yml"
+      - "config/**"
+      - "feeds.conf*"
+      - "include/**"
+      - "package/capos/**"
+      - "package/utils/argosfs/**"
+      - "scripts/ci/**"
+      - "target/linux/generic/**"
+      - "target/linux/x86/**"
+      - "target/linux/armsr/**"
+      - "target/linux/malta/**"
+      - "toolchain/**"
+  push:
+    branches: ["main"]
+    paths:
+      - ".config"
+      - ".github/workflows/os-real-boot.yml"
+      - "config/**"
+      - "feeds.conf*"
+      - "include/**"
+      - "package/capos/**"
+      - "package/utils/argosfs/**"
+      - "scripts/ci/**"
+      - "target/linux/generic/**"
+      - "target/linux/x86/**"
+      - "target/linux/armsr/**"
+      - "target/linux/malta/**"
+      - "toolchain/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: os-real-boot-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  real-boot:
+    name: Build + QEMU boot (${{ matrix.name }})
+    runs-on: ubuntu-22.04
+    timeout-minutes: 360
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: x86_64
+            target: x86
+            subtarget: "64"
+          - name: aarch64
+            target: armsr
+            subtarget: armv8
+          - name: mips64el
+            target: malta
+            subtarget: le64
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Install build and QEMU prerequisites
+        shell: bash
+        run: |
+          set -euxo pipefail
+          sudo apt-get update
+          sudo apt-get install -y \
+            bash build-essential ccache clang flex bison g++ gawk gcc-multilib \
+            gettext git jq libelf-dev libncurses-dev libssl-dev make patch perl \
+            python3 python3-distutils python3-pyelftools python3-setuptools \
+            rsync unzip wget zlib1g-dev file curl netcat-openbsd \
+            qemu-system-arm qemu-system-mips qemu-system-x86 qemu-utils qemu-efi-aarch64
+
+      - name: Cache downloads
+        uses: actions/cache@v4
+        with:
+          path: dl
+          key: capos-dl-${{ matrix.name }}-${{ hashFiles('feeds.conf.default', 'feeds.conf', 'package/**/Makefile', 'target/linux/**/Makefile') }}
+          restore-keys: |
+            capos-dl-${{ matrix.name }}-
+            capos-dl-
+
+      - name: Cache compiler output
+        uses: actions/cache@v4
+        with:
+          path: .ccache
+          key: capos-ccache-${{ matrix.name }}-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            capos-ccache-${{ matrix.name }}-${{ github.ref_name }}-
+            capos-ccache-${{ matrix.name }}-
+
+      - name: Configure CapOS target
+        shell: bash
+        run: |
+          set -euxo pipefail
+          mkdir -p ci-artifacts
+          if [ ! -f feeds.conf ] && [ -f feeds.conf.default ]; then
+            cp feeds.conf.default feeds.conf
+          fi
+          ./scripts/feeds list >/dev/null
+          ./scripts/feeds install -a
+          scripts/ci/capos-real-boot-config.sh "${{ matrix.target }}" "${{ matrix.subtarget }}"
+          make defconfig
+          cp .config "ci-artifacts/config-${{ matrix.name }}"
+          ./scripts/diffconfig.sh | tee "ci-artifacts/diffconfig-${{ matrix.name }}.txt"
+
+      - name: Download sources
+        shell: bash
+        run: |
+          set -euxo pipefail
+          make -j"$(nproc)" download V=s
+
+      - name: Build image
+        shell: bash
+        run: |
+          set -euxo pipefail
+          mkdir -p ci-artifacts
+          set +e
+          make -j"$(nproc)" V=s 2>&1 | tee "ci-artifacts/build-${{ matrix.name }}.log"
+          status=${PIPESTATUS[0]}
+          set -e
+          if [ "$status" -ne 0 ]; then
+            echo "parallel build failed; retrying serially for a deterministic error log" | tee -a "ci-artifacts/build-${{ matrix.name }}.log"
+            make -j1 V=sc 2>&1 | tee -a "ci-artifacts/build-${{ matrix.name }}.log"
+          fi
+
+      - name: QEMU boot and probe 2000/tcp
+        shell: bash
+        run: |
+          set -euxo pipefail
+          CAPOS_CI_ARTIFACT_DIR=ci-artifacts \
+          CAPOS_CI_BOOT_TIMEOUT_S=360 \
+            scripts/ci/qemu-port-check.sh "${{ matrix.target }}" "${{ matrix.subtarget }}"
+
+      - name: Upload diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: capos-real-boot-${{ matrix.name }}
+          path: |
+            ci-artifacts/**
+            logs/**
+            bin/targets/${{ matrix.target }}/${{ matrix.subtarget }}/*.manifest
+            bin/targets/${{ matrix.target }}/${{ matrix.subtarget }}/*sha256sums
+          if-no-files-found: ignore
+          retention-days: 14

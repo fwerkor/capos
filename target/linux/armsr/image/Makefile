@@ -104,7 +104,7 @@ define Device/generic
   $(call Device/efi-default)
   DEVICE_TITLE := Generic EFI Boot
   GRUB2_VARIANT := generic
-  FILESYSTEMS := ext4 squashfs
+  FILESYSTEMS := ext4 squashfs argosfs
   UBOOT := $(if $(CONFIG_aarch64),qemu_armv8,qemu_armv7)
   DEVICE_PACKAGES += kmod-amazon-ena kmod-e1000e kmod-vmxnet3 kmod-rtc-rx8025 \
 	kmod-i2c-mux-pca954x kmod-gpio-pca953x partx-utils kmod-wdt-sp805 \

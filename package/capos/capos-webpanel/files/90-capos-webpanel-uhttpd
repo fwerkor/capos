@@ -1,5 +1,17 @@
 #!/bin/sh
 
+# CapOS exposes its built-in web panel on stable, documented ports instead of
+# OpenWrt's stock 80/443 defaults.
+uci -q delete uhttpd.main.listen_http
+uci add_list uhttpd.main.listen_http='0.0.0.0:2000'
+uci add_list uhttpd.main.listen_http='[::]:2000'
+uci -q delete uhttpd.main.listen_https
+uci add_list uhttpd.main.listen_https='0.0.0.0:2020'
+uci add_list uhttpd.main.listen_https='[::]:2020'
+uci -q set uhttpd.main.home='/www'
+uci -q set uhttpd.main.cgi_prefix='/cgi-bin'
+uci -q set uhttpd.main.redirect_https='0'
+
 # ArgosFS currently rejects fsync for px5g output under /etc on first boot.
 # Generate uhttpd's self-signed certificate on tmpfs instead.
 uci -q set uhttpd.main.cert='/tmp/uhttpd.crt'
