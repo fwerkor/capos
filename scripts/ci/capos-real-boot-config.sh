@@ -56,7 +56,7 @@ patch_pinned_gpgme_feed_for_ci() {
  nodist_include_HEADERS = gpgme.h
  
 -bin_PROGRAMS = gpgme-tool gpgme-json
-+bin_PROGRAMS = gpgme-json
++bin_PROGRAMS =
  
  if BUILD_W32_GLIB
  ltlib_gpgme_glib = libgpgme-glib.la
@@ -66,7 +66,7 @@ patch_pinned_gpgme_feed_for_ci() {
  build_triplet = @build@
  host_triplet = @host@
 -bin_PROGRAMS = gpgme-tool$(EXEEXT) gpgme-json$(EXEEXT)
-+bin_PROGRAMS = gpgme-json$(EXEEXT)
++bin_PROGRAMS =
  @HAVE_W32_SYSTEM_TRUE@libexec_PROGRAMS = gpgme-w32spawn$(EXEEXT)
  subdir = src
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
