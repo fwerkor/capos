@@ -10,6 +10,30 @@ fi
 target="$1"
 subtarget="$2"
 
+patch_pinned_rust_feed_for_ci() {
+    local rust_values="feeds/packages/lang/rust/rust-values.mk"
+
+    if [[ "$target/$subtarget" != "malta/le64" || ! -f "$rust_values" ]]; then
+        return 0
+    fi
+
+    if grep -q 'mips64el-unknown-linux-muslabi64' "$rust_values"; then
+        return 0
+    fi
+
+    python3 - <<'PY'
+from pathlib import Path
+
+path = Path("feeds/packages/lang/rust/rust-values.mk")
+text = path.read_text()
+old = """else ifeq ($(ARCH),riscv64)\n  RUSTC_TARGET_ARCH:=$(subst riscv64,riscv64gc,$(RUSTC_TARGET_ARCH))\nendif\n"""
+new = """else ifeq ($(ARCH),riscv64)\n  RUSTC_TARGET_ARCH:=$(subst riscv64,riscv64gc,$(RUSTC_TARGET_ARCH))\nelse ifeq ($(ARCH),mips64el)\n  RUSTC_TARGET_ARCH:=$(subst linux-musl,linux-muslabi64,$(RUSTC_TARGET_ARCH))\nendif\n"""
+if old not in text:
+    raise SystemExit("could not patch pinned rust feed target mapping")
+path.write_text(text.replace(old, new, 1))
+PY
+}
+
 case "$target/$subtarget" in
     x86/64|armsr/armv8|malta/le64)
         ;;
@@ -18,6 +42,8 @@ case "$target/$subtarget" in
         exit 2
         ;;
 esac
+
+patch_pinned_rust_feed_for_ci
 
 cat > .config <<CONFIG
 CONFIG_TARGET_${target}=y
