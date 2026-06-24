@@ -71,6 +71,7 @@ jobs:
           tests/capbox_logic_tests.sh
           tests/webpanel_frontend_smoke.sh
           tests/webpanel_proxy_smoke.sh
+          tests/webpanel_runtime_config_smoke.sh
 
       - name: Kconfig sanity (defconfig)
         shell: bash
