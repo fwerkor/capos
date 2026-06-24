@@ -117,7 +117,9 @@ jobs:
         shell: bash
         run: |
           set -euxo pipefail
-          make -j"$(nproc)" download V=s
+          scripts/ci/run-with-log.sh "ci-artifacts/download-${{ matrix.name }}.log" \
+            "Download sources (${{ matrix.name }})" -- \
+            make -j"$(nproc)" download V=s
 
       - name: Build image
         shell: bash
@@ -125,12 +127,16 @@ jobs:
           set -euxo pipefail
           mkdir -p ci-artifacts
           set +e
-          make -j"$(nproc)" V=s 2>&1 | tee "ci-artifacts/build-${{ matrix.name }}.log"
-          status=${PIPESTATUS[0]}
+          scripts/ci/run-with-log.sh "ci-artifacts/build-${{ matrix.name }}.log" \
+            "Parallel image build (${{ matrix.name }})" -- \
+            make -j"$(nproc)" V=s
+          status=$?
           set -e
           if [ "$status" -ne 0 ]; then
-            echo "parallel build failed; retrying serially for a deterministic error log" | tee -a "ci-artifacts/build-${{ matrix.name }}.log"
-            make -j1 V=sc 2>&1 | tee -a "ci-artifacts/build-${{ matrix.name }}.log"
+            echo "parallel build failed; retrying serially for a deterministic error log"
+            scripts/ci/run-with-log.sh --append "ci-artifacts/build-${{ matrix.name }}.log" \
+              "Serial image build retry (${{ matrix.name }})" -- \
+              make -j1 V=sc
           fi
 
       - name: QEMU boot and probe 2000/tcp
