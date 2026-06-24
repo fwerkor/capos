@@ -34,6 +34,45 @@ path.write_text(text.replace(old, new, 1))
 PY
 }
 
+
+patch_pinned_gpgme_feed_for_ci() {
+    local patch_dir="feeds/packages/libs/gpgme/patches"
+    local patch_file="$patch_dir/900-capos-ci-skip-gpgme-tool.patch"
+
+    if [[ ! -f "feeds/packages/libs/gpgme/Makefile" ]]; then
+        return 0
+    fi
+
+    mkdir -p "$patch_dir"
+    if [[ -f "$patch_file" ]]; then
+        return 0
+    fi
+
+    cat > "$patch_file" <<'PATCH'
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -35,7 +35,7 @@ m4datadir = $(datadir)/aclocal
+ m4data_DATA = gpgme.m4
+ nodist_include_HEADERS = gpgme.h
+ 
+-bin_PROGRAMS = gpgme-tool gpgme-json
++bin_PROGRAMS = gpgme-json
+ 
+ if BUILD_W32_GLIB
+ ltlib_gpgme_glib = libgpgme-glib.la
+--- a/src/Makefile.in
++++ b/src/Makefile.in
+@@ -111,7 +111,7 @@ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-bin_PROGRAMS = gpgme-tool$(EXEEXT) gpgme-json$(EXEEXT)
++bin_PROGRAMS = gpgme-json$(EXEEXT)
+ @HAVE_W32_SYSTEM_TRUE@libexec_PROGRAMS = gpgme-w32spawn$(EXEEXT)
+ subdir = src
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+PATCH
+}
+
 case "$target/$subtarget" in
     x86/64|armsr/armv8|malta/le64)
         ;;
@@ -44,6 +83,7 @@ case "$target/$subtarget" in
 esac
 
 patch_pinned_rust_feed_for_ci
+patch_pinned_gpgme_feed_for_ci
 
 cat > .config <<CONFIG
 CONFIG_TARGET_${target}=y
