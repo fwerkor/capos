@@ -40,7 +40,7 @@ permissions:
 
 concurrency:
   group: os-real-boot-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   real-boot:
