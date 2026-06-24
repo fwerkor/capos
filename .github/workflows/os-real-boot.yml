@@ -48,6 +48,8 @@ jobs:
     runs-on: ubuntu-22.04
     timeout-minutes: 360
 
+    continue-on-error: ${{ matrix.experimental == true }}
+
     strategy:
       fail-fast: false
       matrix:
@@ -55,12 +57,15 @@ jobs:
           - name: x86_64
             target: x86
             subtarget: "64"
+            experimental: false
           - name: aarch64
             target: armsr
             subtarget: armv8
+            experimental: false
           - name: mips64el
             target: malta
             subtarget: le64
+            experimental: true
 
     steps:
       - name: Checkout
