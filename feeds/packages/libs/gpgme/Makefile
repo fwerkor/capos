@@ -19,6 +19,8 @@ PKG_BUILD_PARALLEL:=1
 
 include $(INCLUDE_DIR)/package.mk
 
+CONFIGURE_VARS += ac_cv_path_GPGRT_CONFIG="$(STAGING_DIR)/usr/bin/gpgrt-config"
+
 define Package/libgpgme
   SECTION:=libs
   CATEGORY:=Libraries
