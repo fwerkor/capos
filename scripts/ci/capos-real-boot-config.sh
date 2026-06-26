@@ -45,12 +45,17 @@ esac
 
 patch_pinned_rust_feed_for_ci
 
+kernel_partsize=64
+if [[ "$target/$subtarget" == "armsr/armv8" ]]; then
+    kernel_partsize=128
+fi
+
 cat > .config <<CONFIG
 CONFIG_TARGET_${target}=y
 CONFIG_TARGET_${target}_${subtarget}=y
 CONFIG_PACKAGE_capos-core=y
 CONFIG_TARGET_ROOTFS_ARGOSFS=y
-CONFIG_TARGET_KERNEL_PARTSIZE=64
+CONFIG_TARGET_KERNEL_PARTSIZE=${kernel_partsize}
 CONFIG_TARGET_ROOTFS_PARTSIZE=512
 CONFIG_TARGET_IMAGES_GZIP=y
 CONFIG_BUILD_LOG=y
