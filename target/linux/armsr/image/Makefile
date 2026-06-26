@@ -98,6 +98,9 @@ define Device/efi-default
  ifeq ($(CONFIG_arm),y)
   KERNEL_NAME = zImage
  endif
+ ifeq ($(CONFIG_aarch64),y)
+  KERNEL_NAME = Image.gz
+ endif
 endef
 
 define Device/generic
