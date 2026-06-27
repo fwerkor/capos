@@ -99,7 +99,7 @@ define Device/efi-default
   KERNEL_NAME = zImage
  endif
  ifeq ($(CONFIG_aarch64),y)
-  KERNEL_NAME = Image.gz
+  KERNEL_NAME = vmlinuz.efi
  endif
 endef
 
