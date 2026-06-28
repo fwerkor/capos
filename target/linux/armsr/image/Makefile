@@ -27,8 +27,9 @@ ROOTPART:=$(if $(ROOTPART),$(ROOTPART),PARTUUID=$(IMG_PART_SIGNATURE)-02)
 GPT_ROOTPART:=$(call qstrip,$(CONFIG_TARGET_ROOTFS_PARTNAME))
 GPT_ROOTPART:=$(if $(GPT_ROOTPART),$(GPT_ROOTPART),PARTUUID=$(shell echo $(IMG_PART_DISKGUID) | sed 's/00$$/02/'))
 argosfs_part_path = $(patsubst PARTUUID=%,/dev/disk/by-partuuid/%,$(1))
-ROOTPART_BOOTARG:=$(if $(CONFIG_TARGET_ROOTFS_ARGOSFS),argosfs.images=$(call argosfs_part_path,$(ROOTPART)) rootwait,root=$(ROOTPART) rootwait)
-GPT_ROOTPART_BOOTARG:=$(if $(CONFIG_TARGET_ROOTFS_ARGOSFS),argosfs.images=$(call argosfs_part_path,$(GPT_ROOTPART)) rootwait,root=$(GPT_ROOTPART) rootwait)
+ARGOSFS_ROOTPART_BOOTARG:=argosfs.autoscan=1 rootwait
+ROOTPART_BOOTARG:=$(if $(CONFIG_TARGET_ROOTFS_ARGOSFS),$(ARGOSFS_ROOTPART_BOOTARG),root=$(ROOTPART) rootwait)
+GPT_ROOTPART_BOOTARG:=$(if $(CONFIG_TARGET_ROOTFS_ARGOSFS),$(ARGOSFS_ROOTPART_BOOTARG),root=$(GPT_ROOTPART) rootwait)
 COMBINED_KERNEL_NAME=$(if $(CONFIG_TARGET_ROOTFS_ARGOSFS),$(KERNEL_NAME)-initramfs,$(KERNEL_NAME))
 
 GRUB_TIMEOUT:=$(call qstrip,$(CONFIG_GRUB_TIMEOUT))
