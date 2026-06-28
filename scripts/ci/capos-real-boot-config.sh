@@ -79,7 +79,7 @@ CONFIG
 CONFIG_GRUB_EFI_IMAGES=y
 # CONFIG_VMDK_IMAGES is not set
 CONFIG_TARGET_SERIAL="ttyAMA0"
-CONFIG_GRUB_BOOTOPTS="panic=5"
+CONFIG_GRUB_BOOTOPTS="panic=5 argosfs.images=/dev/vda2"
 CONFIG
         ;;
     malta/le64)
